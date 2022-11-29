@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteTermStoreSetChildSet
 
 ## SYNOPSIS
-Get set from groups
+The [set] in which the term is created.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Get-MgGroupSiteTermStoreSetChildSet -InputObject <ISitesIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get set from groups
+The [set] in which the term is created.
 
 ## EXAMPLES
 

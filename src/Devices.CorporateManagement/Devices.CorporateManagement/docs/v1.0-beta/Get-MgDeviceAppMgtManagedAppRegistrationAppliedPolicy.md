@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy
 
 ## SYNOPSIS
-Get appliedPolicies from deviceAppManagement
+Zero or more policys already applied on the registered app when it last synchronized with managment service.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy -InputObject <IDevicesCorp
 ```
 
 ## DESCRIPTION
-Get appliedPolicies from deviceAppManagement
+Zero or more policys already applied on the registered app when it last synchronized with managment service.
 
 ## EXAMPLES
 
@@ -244,7 +244,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## NOTES
 

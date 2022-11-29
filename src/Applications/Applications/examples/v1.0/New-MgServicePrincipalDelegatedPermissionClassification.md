@@ -1,18 +1,12 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgServicePrincipalDelegatedPermissionClassification Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	PermissionId = "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+	PermissionName = "User.Read"
+	Classification = "low"
+}
+New-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgServicePrincipalDelegatedPermissionClassification Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

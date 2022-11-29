@@ -198,7 +198,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths1Kxp2ItDeviceappmanagementMobileappsMobileappIdMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[TargetDisplayName <String>]`: The target mobile app's display name.
     - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
     - `[TargetId <String>]`: The target mobile app's app id.
@@ -275,7 +275,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
 RELATIONSHIPS <IMicrosoftGraphMobileAppRelationship[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[TargetDisplayName <String>]`: The target mobile app's display name.
   - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
   - `[TargetId <String>]`: The target mobile app's app id.

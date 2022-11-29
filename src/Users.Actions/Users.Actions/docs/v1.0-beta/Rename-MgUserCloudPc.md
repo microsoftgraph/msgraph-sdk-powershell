@@ -8,7 +8,8 @@ schema: 2.0.0
 # Rename-MgUserCloudPc
 
 ## SYNOPSIS
-Invoke action rename
+Rename a specific Cloud PC.
+Use this API to update the **displayName** for the Cloud PC entity.
 
 ## SYNTAX
 
@@ -39,9 +40,20 @@ Rename-MgUserCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Invoke action rename
+Rename a specific Cloud PC.
+Use this API to update the **displayName** for the Cloud PC entity.
 
 ## EXAMPLES
+
+### Example 1: Using the Rename-MgUserCloudPc Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+# A UPN can also be used as -UserId.
+Rename-MgUserCloudPc -UserId $userId -CloudPCId $cloudPCId
+```
+
+This example shows how to use the Rename-MgUserCloudPc Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

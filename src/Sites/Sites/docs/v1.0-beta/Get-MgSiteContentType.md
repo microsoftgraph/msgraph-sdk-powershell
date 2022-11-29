@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteContentType
 
 ## SYNOPSIS
-Get contentTypes from sites
+The collection of content types defined for this site.
 
 ## SYNTAX
 
@@ -32,9 +32,36 @@ Get-MgSiteContentType -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Get contentTypes from sites
+The collection of content types defined for this site.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSiteContentType Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteContentType -SiteId $siteId -OutFile $outFileId
+```
+
+This example shows how to use the Get-MgSiteContentType Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgSiteContentType Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
+```
+
+This example shows how to use the Get-MgSiteContentType Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgSiteContentType Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteContentType -SiteId $siteId
+```
+
+This example shows how to use the Get-MgSiteContentType Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

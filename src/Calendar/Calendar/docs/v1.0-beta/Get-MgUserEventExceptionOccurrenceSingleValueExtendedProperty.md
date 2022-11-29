@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserEventExceptionOccurrenceSingleValueExtendedProperty
 
 ## SYNOPSIS
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -34,7 +36,9 @@ Get-MgUserEventExceptionOccurrenceSingleValueExtendedProperty -InputObject <ICal
 ```
 
 ## DESCRIPTION
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

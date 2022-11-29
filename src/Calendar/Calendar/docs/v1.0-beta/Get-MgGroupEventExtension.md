@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupEventExtension
 
 ## SYNOPSIS
-Get extensions from groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +33,19 @@ Get-MgGroupEventExtension -InputObject <ICalendarIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get extensions from groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgGroupEventExtension Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+Get-MgGroupEventExtension -GroupId $groupId -EventId $eventId -ExtensionId $extensionId
+```
+
+This example shows how to use the Get-MgGroupEventExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

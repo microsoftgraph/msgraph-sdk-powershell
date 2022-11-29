@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListItemDocumentSetVersion
 
 ## SYNOPSIS
-Get documentSetVersions from shares
+Version information for a document set version created by a user.
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Get-MgShareListItemDocumentSetVersion -ListItemId <String> -SharedDriveItemId <S
 ```
 
 ## DESCRIPTION
-Get documentSetVersions from shares
+Version information for a document set version created by a user.
 
 ## EXAMPLES
 

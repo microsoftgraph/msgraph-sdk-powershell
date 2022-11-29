@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgServicePrincipalDelegatedPermissionClassification
 
 ## SYNOPSIS
-Get delegatedPermissionClassifications from servicePrincipals
+The permission classifications for delegated permissions exposed by the app that this service principal represents.
+Supports $expand.
 
 ## SYNTAX
 
@@ -32,9 +33,19 @@ Get-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplicati
 ```
 
 ## DESCRIPTION
-Get delegatedPermissionClassifications from servicePrincipals
+The permission classifications for delegated permissions exposed by the app that this service principal represents.
+Supports $expand.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgServicePrincipalDelegatedPermissionClassification Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId
+```
+
+This example shows how to use the Get-MgServicePrincipalDelegatedPermissionClassification Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

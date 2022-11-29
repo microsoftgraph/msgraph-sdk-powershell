@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAuthenticationFlowPolicy
 
 ## SYNOPSIS
-Get authenticationFlowsPolicy from policies
+Read the properties and relationships of an authenticationFlowsPolicy object.
 
 ## SYNTAX
 
@@ -17,9 +17,18 @@ Get-MgPolicyAuthenticationFlowPolicy [-ExpandProperty <String[]>] [-Property <St
 ```
 
 ## DESCRIPTION
-Get authenticationFlowsPolicy from policies
+Read the properties and relationships of an authenticationFlowsPolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPolicyAuthenticationFlowPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyAuthenticationFlowPolicy
+```
+
+This example shows how to use the Get-MgPolicyAuthenticationFlowPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

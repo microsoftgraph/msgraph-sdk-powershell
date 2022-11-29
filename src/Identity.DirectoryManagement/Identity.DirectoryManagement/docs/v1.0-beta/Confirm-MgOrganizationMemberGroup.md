@@ -8,7 +8,11 @@ schema: 2.0.0
 # Confirm-MgOrganizationMemberGroup
 
 ## SYNOPSIS
-Invoke action checkMemberGroups
+Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
+This function is transitive.
+You can check up to a maximum of 20 groups per request.
+This function supports all groups provisioned in Azure AD.
+Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
 ## SYNTAX
 
@@ -39,7 +43,11 @@ Confirm-MgOrganizationMemberGroup -InputObject <IIdentityDirectoryManagementIden
 ```
 
 ## DESCRIPTION
-Invoke action checkMemberGroups
+Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
+This function is transitive.
+You can check up to a maximum of 20 groups per request.
+This function supports all groups provisioned in Azure AD.
+Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
 ## EXAMPLES
 

@@ -15,13 +15,13 @@ Invoke function getSupportedProperties
 ### Get (Default)
 ```
 Get-MgDeviceManagementAssignmentFilterSupportedProperty -DeviceAndAppManagementAssignmentFilterId <String>
- [<CommonParameters>]
+ [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgDeviceManagementAssignmentFilterSupportedProperty -InputObject <IDeviceManagementFunctionsIdentity>
- [<CommonParameters>]
+ [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,6 +30,21 @@ Invoke function getSupportedProperties
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DeviceAndAppManagementAssignmentFilterId
 key: id of deviceAndAppManagementAssignmentFilter
@@ -40,6 +55,21 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -59,6 +89,51 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Search
+Search items by search phrases
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -104,6 +179,7 @@ INPUTOBJECT <IDeviceManagementFunctionsIdentity>: Identity Parameter
   - `[ResourceOperationId <String>]`: key: id of resourceOperation
   - `[Scope <String>]`: Usage: scope='{scope}'
   - `[SecretReferenceValueId <String>]`: Usage: secretReferenceValueId='{secretReferenceValueId}'
+  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[SubscriptionId <String>]`: Usage: subscriptionId='{subscriptionId}'
   - `[SummarizeBy <String>]`: Usage: summarizeBy='{summarizeBy}'
   - `[TemplateId <String>]`: Usage: templateId='{templateId}'

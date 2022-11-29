@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamPrimaryChannelMessageReplyHostedContent
 
 ## SYNOPSIS
-Get hostedContents from teams
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgTeamPrimaryChannelMessageReplyHostedContent -InputObject <ITeamsIdentity> 
 ```
 
 ## DESCRIPTION
-Get hostedContents from teams
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## EXAMPLES
 

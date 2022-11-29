@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtPolicySet
 
 ## SYNOPSIS
-Get policySets from deviceAppManagement
+The PolicySet of Policies and Applications
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Get-MgDeviceAppMgtPolicySet [-ExpandProperty <String[]>] [-Filter <String>] [-Pr
 ```
 
 ## DESCRIPTION
-Get policySets from deviceAppManagement
+The PolicySet of Policies and Applications
 
 ## EXAMPLES
 

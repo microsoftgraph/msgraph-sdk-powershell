@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteContentTypeColumn
 
 ## SYNOPSIS
-Get columns from groups
+The collection of column definitions for this contentType.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupSiteContentTypeColumn -InputObject <ISitesIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get columns from groups
+The collection of column definitions for this contentType.
 
 ## EXAMPLES
 

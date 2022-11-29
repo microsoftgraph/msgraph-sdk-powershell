@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgDriveRootListItem
 
 ## SYNOPSIS
-Get listItem from drives
+For drives in SharePoint, the associated document library list item.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgDriveRootListItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get listItem from drives
+For drives in SharePoint, the associated document library list item.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

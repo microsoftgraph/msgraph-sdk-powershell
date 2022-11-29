@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource
 
 ## SYNOPSIS
-Get unifiedGroupSources from security
+Data source entity for groups associated with the custodian.
 
 ## SYNTAX
 
@@ -34,9 +34,18 @@ Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource -InputObject <ISecur
 ```
 
 ## DESCRIPTION
-Get unifiedGroupSources from security
+Data source entity for groups associated with the custodian.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

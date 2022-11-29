@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceAccessReviewDecisionInstanceDecision
 
 ## SYNOPSIS
-Get decisions from identityGovernance
+Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgIdentityGovernanceAccessReviewDecisionInstanceDecision -InputObject <IIden
 ```
 
 ## DESCRIPTION
-Get decisions from identityGovernance
+Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
 
 ## EXAMPLES
 
@@ -245,7 +245,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewInstanceDecisionItem
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewInstanceDecisionItem1
 
 ## NOTES
 
@@ -295,7 +295,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -316,8 +318,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 ## RELATED LINKS
 

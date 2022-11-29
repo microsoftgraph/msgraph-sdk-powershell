@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteListItemAnalytic
 
 ## SYNOPSIS
-Get analytics from sites
+Analytics about the view activities that took place on this item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSiteListItemAnalytic -InputObject <ISitesIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get analytics from sites
+Analytics about the view activities that took place on this item.
 
 ## EXAMPLES
 

@@ -1,18 +1,15 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+$params = @{
+	"@odata.type" = "#microsoft.graph.cloudPcDeviceImage"
+	DisplayName = "Display Name value"
+	OsBuildNumber = "OS Build Number value"
+	OperatingSystem = "Operating System value"
+	Version = "Version value"
+	SourceImageResourceId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c58ffff/resourceGroups/Example/providers/Microsoft.Compute/images/exampleImage"
+}
+New-MgDeviceManagementVirtualEndpointDeviceImage -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

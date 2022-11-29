@@ -8,8 +8,7 @@ schema: 2.0.0
 # Set-MgUserContactPhotoContent
 
 ## SYNOPSIS
-The user's profile photo.
-Read-only.
+Update media content for the navigation property photo in users
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Set-MgUserContactPhotoContent -InputObject <IPersonalContactsIdentity> -InFile <
 ```
 
 ## DESCRIPTION
-The user's profile photo.
-Read-only.
+Update media content for the navigation property photo in users
 
 ## EXAMPLES
 

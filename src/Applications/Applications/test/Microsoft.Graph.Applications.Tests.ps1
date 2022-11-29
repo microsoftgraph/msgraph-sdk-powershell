@@ -43,19 +43,5 @@ Describe "Microsoft.Graph.Applications Module" {
     
             $ps.Dispose()
         }
-    
-        It "Module import should write to streams when debug preference is set" {
-            $ps = [powershell]::Create()
-            $ps.AddScript("`$DebugPreference = 'Inquire'; Import-Module $ModulePath -ErrorAction SilentlyContinue").Invoke()
-    
-            $ps.Streams.Information.Count | Should -Be 0
-            $ps.Streams.Debug.Count | Should -Be 0
-            $ps.Streams.Error.Count | Should -Be 0
-            $ps.Streams.Verbose.Count | Should -Be 0
-            $ps.Streams.Warning.Count | Should -Be 0
-            $ps.Streams.Progress.Count | Should -Be 0
-    
-            $ps.Dispose()
-        }
     }
 }

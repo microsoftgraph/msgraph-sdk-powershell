@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseLegalHold
 
 ## SYNOPSIS
-Get legalHolds from security
+Returns a list of case eDiscoveryHoldPolicy objects for this case.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgSecurityCaseEdiscoveryCaseLegalHold -InputObject <ISecurityIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get legalHolds from security
+Returns a list of case eDiscoveryHoldPolicy objects for this case.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseLegalHold Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryHoldPolicyId $ediscoveryHoldPolicyId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseLegalHold Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgSecurityCaseEdiscoveryCaseLegalHold Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseLegalHold -EdiscoveryCaseId $ediscoveryCaseId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseLegalHold Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

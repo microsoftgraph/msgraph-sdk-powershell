@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupDriveList
 
 ## SYNOPSIS
-Get list from groups
+For drives in SharePoint, the underlying document library list.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgGroupDriveList -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get list from groups
+For drives in SharePoint, the underlying document library list.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

@@ -8,19 +8,18 @@ schema: 2.0.0
 # New-MgGroupTeamScheduleSwapShiftChangeRequest
 
 ## SYNOPSIS
-Create new navigation property to swapShiftsChangeRequests for groups
+Create an instance of a swapShiftsChangeRequest object.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgGroupTeamScheduleSwapShiftChangeRequest -GroupId <String> [-AdditionalProperties <Hashtable>]
- [-AssignedTo <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-ManagerActionDateTime <DateTime>] [-ManagerActionMessage <String>] [-ManagerUserId <String>]
- [-RecipientActionDateTime <DateTime>] [-RecipientActionMessage <String>] [-RecipientShiftId <String>]
- [-RecipientUserId <String>] [-SenderDateTime <DateTime>] [-SenderMessage <String>] [-SenderShiftId <String>]
- [-SenderUserId <String>] [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AssignedTo <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Id <String>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ManagerActionMessage <String>]
+ [-RecipientActionMessage <String>] [-RecipientShiftId <String>] [-RecipientUserId <String>]
+ [-SenderMessage <String>] [-SenderShiftId <String>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -39,16 +38,14 @@ New-MgGroupTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity>
 ```
 New-MgGroupTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity>
  [-AdditionalProperties <Hashtable>] [-AssignedTo <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
- [-CreatedDateTime <DateTime>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-ManagerActionDateTime <DateTime>] [-ManagerActionMessage <String>]
- [-ManagerUserId <String>] [-RecipientActionDateTime <DateTime>] [-RecipientActionMessage <String>]
- [-RecipientShiftId <String>] [-RecipientUserId <String>] [-SenderDateTime <DateTime>]
- [-SenderMessage <String>] [-SenderShiftId <String>] [-SenderUserId <String>] [-State <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-ManagerActionMessage <String>]
+ [-RecipientActionMessage <String>] [-RecipientShiftId <String>] [-RecipientUserId <String>]
+ [-SenderMessage <String>] [-SenderShiftId <String>] [-State <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to swapShiftsChangeRequests for groups
+Create an instance of a swapShiftsChangeRequest object.
 
 ## EXAMPLES
 
@@ -116,22 +113,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CreatedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -GroupId
 key: id of group
 
@@ -148,7 +129,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -194,73 +176,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -LastModifiedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ManagerActionDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ManagerActionMessage
 .
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ManagerUserId
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RecipientActionDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -316,21 +236,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SenderDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SenderMessage
 .
 
@@ -348,21 +253,6 @@ Accept wildcard characters: False
 
 ### -SenderShiftId
 User id of the sender of the offer shift request.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SenderUserId
-.
 
 ```yaml
 Type: System.String
@@ -446,17 +336,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSwapShiftsChangeRequest1>: swapShiftsChangeRequest
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[RecipientActionDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
   - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
   - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
-  - `[ManagerActionDateTime <DateTime?>]`: 
   - `[ManagerActionMessage <String>]`: 
-  - `[ManagerUserId <String>]`: 
-  - `[SenderDateTime <DateTime?>]`: 
   - `[SenderMessage <String>]`: 
-  - `[SenderUserId <String>]`: 
   - `[State <String>]`: scheduleChangeState
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -466,10 +351,8 @@ BODYPARAMETER <IMicrosoftGraphSwapShiftsChangeRequest1>: swapShiftsChangeRequest
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet

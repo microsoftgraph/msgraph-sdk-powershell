@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalClaimMappingPolicy
 
 ## SYNOPSIS
-Get claimsMappingPolicies from servicePrincipals
+List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 
 ## SYNTAX
 
@@ -19,9 +19,18 @@ Get-MgServicePrincipalClaimMappingPolicy -ServicePrincipalId <String> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get claimsMappingPolicies from servicePrincipals
+List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgServicePrincipalClaimMappingPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgServicePrincipalClaimMappingPolicy -ServicePrincipalId $servicePrincipalId
+```
+
+This example shows how to use the Get-MgServicePrincipalClaimMappingPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

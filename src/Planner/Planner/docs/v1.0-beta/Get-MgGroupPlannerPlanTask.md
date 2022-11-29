@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPlannerPlanTask
 
 ## SYNOPSIS
-Get tasks from groups
+Retrieve a list of plannerTask objects associated with a plannerPlan object.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgGroupPlannerPlanTask -GroupId <String> -PlannerPlanId <String> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Get tasks from groups
+Retrieve a list of plannerTask objects associated with a plannerPlan object.
 
 ## EXAMPLES
 

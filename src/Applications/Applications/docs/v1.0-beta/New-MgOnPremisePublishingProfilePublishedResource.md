@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgOnPremisePublishingProfilePublishedResource
 
 ## SYNOPSIS
-Create new navigation property to publishedResources for onPremisesPublishingProfiles
+Create a new publishedResource object.
 
 ## SYNTAX
 
@@ -41,9 +41,22 @@ New-MgOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIde
 ```
 
 ## DESCRIPTION
-Create new navigation property to publishedResources for onPremisesPublishingProfiles
+Create a new publishedResource object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgOnPremisePublishingProfilePublishedResource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	DisplayName = "New provisioning"
+	ResourceName = "domain1.contoso.com"
+}
+New-MgOnPremisePublishingProfilePublishedResource -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -BodyParameter $params
+```
+
+This example shows how to use the New-MgOnPremisePublishingProfilePublishedResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

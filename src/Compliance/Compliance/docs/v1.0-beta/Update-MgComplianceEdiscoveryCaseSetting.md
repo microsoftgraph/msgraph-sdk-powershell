@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgComplianceEdiscoveryCaseSetting
 
 ## SYNOPSIS
-Update the navigation property settings in compliance
+Update the properties of a an eDiscovery caseSettings object.
 
 ## SYNTAX
 
@@ -43,9 +43,63 @@ Update-MgComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property settings in compliance
+Update the properties of a an eDiscovery caseSettings object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgComplianceEdiscoveryCaseSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+$params = @{
+	RedundancyDetection = @{
+		IsEnabled = $false
+		SimilarityThreshold = 70
+		MinWords = 12
+		MaxWords = 400000
+	}
+	TopicModeling = @{
+		IsEnabled = $false
+		IgnoreNumbers = $false
+		TopicCount = 50
+		DynamicallyAdjustTopicCount = $false
+	}
+	Ocr = @{
+		IsEnabled = $true
+		MaxImageSize = 12000
+	}
+}
+Update-MgComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgComplianceEdiscoveryCaseSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Update-MgComplianceEdiscoveryCaseSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+$params = @{
+	RedundancyDetection = @{
+		IsEnabled = $false
+		SimilarityThreshold = 70
+		MinWords = 12
+		MaxWords = 400000
+	}
+	TopicModeling = @{
+		IsEnabled = $false
+		IgnoreNumbers = $false
+		TopicCount = 50
+		DynamicallyAdjustTopicCount = $false
+	}
+	Ocr = @{
+		IsEnabled = $true
+		MaxImageSize = 12000
+	}
+}
+Update-MgComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgComplianceEdiscoveryCaseSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -96,7 +150,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -244,7 +299,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEdiscoveryCaseSettings>: caseSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Ocr <IMicrosoftGraphEdiscoveryOcrSettings>]`: ocrSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Indicates whether or not OCR is enabled for the case.

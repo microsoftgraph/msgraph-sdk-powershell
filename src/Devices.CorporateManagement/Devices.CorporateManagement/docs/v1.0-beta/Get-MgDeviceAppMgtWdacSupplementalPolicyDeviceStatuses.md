@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses
 
 ## SYNOPSIS
-Get deviceStatuses from deviceAppManagement
+The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses -InputObject <IDevicesCor
 ```
 
 ## DESCRIPTION
-Get deviceStatuses from deviceAppManagement
+The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
 
 ## EXAMPLES
 

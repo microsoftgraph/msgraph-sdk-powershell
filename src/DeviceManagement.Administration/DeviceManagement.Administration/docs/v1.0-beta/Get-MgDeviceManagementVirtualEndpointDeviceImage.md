@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
-Get deviceImages from deviceManagement
+The image resource on Cloud PC.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-Get deviceImages from deviceManagement
+The image resource on Cloud PC.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId $cloudPcDeviceImageId
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointDeviceImage
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -245,6 +263,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

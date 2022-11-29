@@ -111,7 +111,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -253,7 +254,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceConfigurationUserStateSummary>: deviceConfigurationUserStateSummary
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CompliantUserCount <Int32?>]`: Number of compliant users
   - `[ConflictUserCount <Int32?>]`: Number of conflict users
   - `[ErrorUserCount <Int32?>]`: Number of error users

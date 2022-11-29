@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserTodoListTaskLinkedResource
 
 ## SYNOPSIS
-Create new navigation property to linkedResources for users
+Create a linkedResource object to associate a specified task with an item in a partner application.
+For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association.
+You can also create a **linkedResource** object while creating a todoTask.
 
 ## SYNTAX
 
@@ -39,9 +41,27 @@ New-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Create new navigation property to linkedResources for users
+Create a linkedResource object to associate a specified task with an item in a partner application.
+For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association.
+You can also create a **linkedResource** object while creating a todoTask.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserTodoListTaskLinkedResource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+$params = @{
+	WebUrl = "https://microsoft.com"
+	ApplicationName = "Microsoft"
+	DisplayName = "Microsoft"
+	ExternalId = "dk9cddce2-dce2-f9dd-e2dc-cdf9e2dccdf9"
+}
+# A UPN can also be used as -UserId.
+New-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserTodoListTaskLinkedResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -122,7 +142,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -267,7 +288,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphLinkedResource>: linkedResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
   - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
   - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.

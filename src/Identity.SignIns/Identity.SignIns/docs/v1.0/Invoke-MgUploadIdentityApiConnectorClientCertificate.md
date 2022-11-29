@@ -8,7 +8,9 @@ schema: 2.0.0
 # Invoke-MgUploadIdentityApiConnectorClientCertificate
 
 ## SYNOPSIS
-Invoke action uploadClientCertificate
+Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
+The input is a base-64 encoded value of the PKCS 12 certificate contents.
+This method returns an apiConnector.
 
 ## SYNTAX
 
@@ -41,9 +43,24 @@ Invoke-MgUploadIdentityApiConnectorClientCertificate -InputObject <IIdentitySign
 ```
 
 ## DESCRIPTION
-Invoke action uploadClientCertificate
+Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
+The input is a base-64 encoded value of the PKCS 12 certificate contents.
+This method returns an apiConnector.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgUploadIdentityApiConnectorClientCertificate Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
+	Password = "<password>"
+}
+Invoke-MgUploadIdentityApiConnectorClientCertificate -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgUploadIdentityApiConnectorClientCertificate Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -200,10 +217,14 @@ BODYPARAMETER <IPaths1Yvv9YeIdentityApiconnectorsIdentityapiconnectorIdMicrosoft
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -212,6 +233,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

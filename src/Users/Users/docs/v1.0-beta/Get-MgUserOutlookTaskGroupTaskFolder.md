@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserOutlookTaskGroupTaskFolder
 
 ## SYNOPSIS
-Get taskFolders from users
+The collection of task folders in the task group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -31,9 +33,21 @@ Get-MgUserOutlookTaskGroupTaskFolder -InputObject <IUsersIdentity> [-Property <S
 ```
 
 ## DESCRIPTION
-Get taskFolders from users
+The collection of task folders in the task group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserOutlookTaskGroupTaskFolder Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+# A UPN can also be used as -UserId.
+Get-MgUserOutlookTaskGroupTaskFolder -UserId $userId -OutlookTaskGroupId $outlookTaskGroupId
+```
+
+This example shows how to use the Get-MgUserOutlookTaskGroupTaskFolder Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

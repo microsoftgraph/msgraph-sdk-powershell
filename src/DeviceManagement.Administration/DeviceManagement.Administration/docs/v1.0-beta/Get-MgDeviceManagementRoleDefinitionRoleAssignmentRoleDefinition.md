@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition
 
 ## SYNOPSIS
-Get roleDefinition from deviceManagement
+Role definition this assignment is part of.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementRoleDefinitionRoleAssignmentRoleDefinition
 ```
 
 ## DESCRIPTION
-Get roleDefinition from deviceManagement
+Role definition this assignment is part of.
 
 ## EXAMPLES
 
@@ -133,6 +133,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

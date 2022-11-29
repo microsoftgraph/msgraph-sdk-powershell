@@ -139,7 +139,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -269,7 +270,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEducationSynchronizationError>: educationSynchronizationError
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[EntryType <String>]`: Represents the sync entity (school, section, student, teacher).
   - `[ErrorCode <String>]`: Represents the error code for this error.
   - `[ErrorMessage <String>]`: Contains a description of the error.

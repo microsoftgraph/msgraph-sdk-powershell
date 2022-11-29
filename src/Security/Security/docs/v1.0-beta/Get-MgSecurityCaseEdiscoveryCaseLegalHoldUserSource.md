@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource
 
 ## SYNOPSIS
-Get userSources from security
+Data sources that represent Exchange mailboxes.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource -InputObject <ISecurityIdent
 ```
 
 ## DESCRIPTION
-Get userSources from security
+Data sources that represent Exchange mailboxes.
 
 ## EXAMPLES
 

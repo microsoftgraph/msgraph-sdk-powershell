@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgGroupConversationThreadPostAttachment
 
 ## SYNOPSIS
-Get attachments from groups
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -34,7 +37,10 @@ Get-MgGroupConversationThreadPostAttachment -InputObject <IGroupsIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get attachments from groups
+The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 

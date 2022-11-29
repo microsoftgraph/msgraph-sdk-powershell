@@ -15,7 +15,7 @@ Invoke action assign
 ### AssignExpanded (Default)
 ```
 Set-MgDeviceAppMgtMobileApp -MobileAppId <String> [-AdditionalProperties <Hashtable>]
- [-MobileAppAssignments <IMicrosoftGraphMobileAppAssignment[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [-MobileAppAssignments <IMicrosoftGraphMobileAppAssignment1[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Set-MgDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity>
 ### AssignViaIdentityExpanded
 ```
 Set-MgDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-MobileAppAssignments <IMicrosoftGraphMobileAppAssignment[]>]
+ [-AdditionalProperties <Hashtable>] [-MobileAppAssignments <IMicrosoftGraphMobileAppAssignment1[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for MOBILEAPPASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1[]
 Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
 Aliases:
 
@@ -197,14 +197,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IPaths12NzrcrDeviceappmanagementMobileappsMobileappIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema1>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[MobileAppAssignments <IMicrosoftGraphMobileAppAssignment[]>]`: 
-    - `[Id <String>]`: 
+  - `[MobileAppAssignments <IMicrosoftGraphMobileAppAssignment1[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Intent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
     - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: The identifier of the source of the assignment.
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
@@ -278,14 +278,14 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
   - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
-MOBILEAPPASSIGNMENTS <IMicrosoftGraphMobileAppAssignment[]>: .
-  - `[Id <String>]`: 
+MOBILEAPPASSIGNMENTS <IMicrosoftGraphMobileAppAssignment1[]>: .
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Intent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
   - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: The identifier of the source of the assignment.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
     - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.

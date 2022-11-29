@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupLifecyclePolicyByGroup
 
 ## SYNOPSIS
-Get groupLifecyclePolicies from groups
+Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 
 ## SYNTAX
 
@@ -19,9 +19,18 @@ Get-MgGroupLifecyclePolicyByGroup -GroupId <String> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Get groupLifecyclePolicies from groups
+Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgGroupLifecyclePolicyByGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupLifecyclePolicyByGroup -GroupId $groupId
+```
+
+This example shows how to use the Get-MgGroupLifecyclePolicyByGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

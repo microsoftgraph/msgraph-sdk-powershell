@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationClassTeacher
 
 ## SYNOPSIS
-Get teachers from education
+Retrieve a list teachers for a class.
+Delegated tokens must be members of the class to get the teacher list.
 
 ## SYNTAX
 
@@ -19,9 +20,19 @@ Get-MgEducationClassTeacher -EducationClassId <String> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get teachers from education
+Retrieve a list teachers for a class.
+Delegated tokens must be members of the class to get the teacher list.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgEducationClassTeacher Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Get-MgEducationClassTeacher -EducationClassId $educationClassId
+```
+
+This example shows how to use the Get-MgEducationClassTeacher Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

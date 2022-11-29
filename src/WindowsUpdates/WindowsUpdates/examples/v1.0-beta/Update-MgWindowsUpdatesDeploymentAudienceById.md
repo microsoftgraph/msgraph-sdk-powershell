@@ -1,18 +1,22 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgWindowsUpdatesDeploymentAudienceById Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.WindowsUpdates
+$params = @{
+	MemberEntityType = "String"
+	AddMembers = @(
+		"String"
+	)
+	RemoveMembers = @(
+		"String"
+	)
+	AddExclusions = @(
+		"String"
+	)
+	RemoveExclusions = @(
+		"String"
+	)
+}
+Update-MgWindowsUpdatesDeploymentAudienceById -DeploymentId $deploymentId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgWindowsUpdatesDeploymentAudienceById Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

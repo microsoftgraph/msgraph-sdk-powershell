@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalAppManagementPolicy
 
 ## SYNOPSIS
-Get appManagementPolicies from servicePrincipals
+The appManagementPolicy applied to this service principal.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgServicePrincipalAppManagementPolicy -InputObject <IApplicationsIdentity> [
 ```
 
 ## DESCRIPTION
-Get appManagementPolicies from servicePrincipals
+The appManagementPolicy applied to this service principal.
 
 ## EXAMPLES
 

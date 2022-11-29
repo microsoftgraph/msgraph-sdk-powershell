@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgGroupDriveItemVersion
 
 ## SYNOPSIS
-Get versions from groups
+The list of previous versions of the item.
+For more info, see [getting previous versions][].
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +35,10 @@ Get-MgGroupDriveItemVersion -InputObject <IFilesIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get versions from groups
+The list of previous versions of the item.
+For more info, see [getting previous versions][].
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

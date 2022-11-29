@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupSite
 
 ## SYNOPSIS
-Get sites from groups
+The list of SharePoint sites in this group.
+Access the default site with /sites/root.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgGroupSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Get sites from groups
+The list of SharePoint sites in this group.
+Access the default site with /sites/root.
 
 ## EXAMPLES
 

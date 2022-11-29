@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgUnarchiveServiceAnnouncementMessage
 
 ## SYNOPSIS
-Invoke action unarchive
+Unarchive a list of serviceUpdateMessages for the signed in user.
 
 ## SYNTAX
 
@@ -26,9 +26,24 @@ Invoke-MgUnarchiveServiceAnnouncementMessage
 ```
 
 ## DESCRIPTION
-Invoke action unarchive
+Unarchive a list of serviceUpdateMessages for the signed in user.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgUnarchiveServiceAnnouncementMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+$params = @{
+	MessageIds = @(
+		"MC172851"
+		"MC167983"
+	)
+}
+Invoke-MgUnarchiveServiceAnnouncementMessage -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgUnarchiveServiceAnnouncementMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

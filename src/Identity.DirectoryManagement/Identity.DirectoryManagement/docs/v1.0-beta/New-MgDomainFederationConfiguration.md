@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDomainFederationConfiguration
 
 ## SYNOPSIS
-Create new navigation property to federationConfiguration for domains
+Create a new internalDomainFederation object.
 
 ## SYNTAX
 
@@ -48,7 +48,7 @@ New-MgDomainFederationConfiguration -InputObject <IIdentityDirectoryManagementId
 ```
 
 ## DESCRIPTION
-Create new navigation property to federationConfiguration for domains
+Create a new internalDomainFederation object.
 
 ## EXAMPLES
 

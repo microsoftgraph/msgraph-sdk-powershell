@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgCommunicationOnlineMeetingRecording
 
 ## SYNOPSIS
-Get recording for the navigation property onlineMeetings from communications
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgCommunicationOnlineMeetingRecording -InputObject <ICloudCommunicationsIden
 ```
 
 ## DESCRIPTION
-Get recording for the navigation property onlineMeetings from communications
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## EXAMPLES
 

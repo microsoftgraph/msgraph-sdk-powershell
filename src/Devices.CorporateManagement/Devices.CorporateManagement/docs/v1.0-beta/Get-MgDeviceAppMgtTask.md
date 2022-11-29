@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtTask
 
 ## SYNOPSIS
-Get deviceAppManagementTasks from deviceAppManagement
+Device app management tasks.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtTask -InputObject <IDevicesCorporateManagementIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Get deviceAppManagementTasks from deviceAppManagement
+Device app management tasks.
 
 ## EXAMPLES
 

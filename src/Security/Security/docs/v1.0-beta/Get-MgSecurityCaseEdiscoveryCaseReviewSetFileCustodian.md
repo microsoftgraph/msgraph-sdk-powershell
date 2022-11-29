@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseReviewSetFileCustodian
 
 ## SYNOPSIS
-Get custodian from security
+Custodians associated with the file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSecurityCaseEdiscoveryCaseReviewSetFileCustodian -InputObject <ISecurityId
 ```
 
 ## DESCRIPTION
-Get custodian from security
+Custodians associated with the file.
 
 ## EXAMPLES
 

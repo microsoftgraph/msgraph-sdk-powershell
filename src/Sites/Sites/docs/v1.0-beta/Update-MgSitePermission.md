@@ -53,6 +53,20 @@ Update the navigation property permissions in sites
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgSitePermission Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	Roles = @(
+		"read"
+	)
+}
+Update-MgSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgSitePermission Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -188,7 +202,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -399,7 +414,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPermission>: permission
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
   - `[GrantedTo <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

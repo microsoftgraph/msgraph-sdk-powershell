@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityThreatSubmission
 
 ## SYNOPSIS
-Get threatSubmission from security
+A threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgSecurityThreatSubmission [-ExpandProperty <String[]>] [-Property <String[]
 ```
 
 ## DESCRIPTION
-Get threatSubmission from security
+A threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
 
 ## EXAMPLES
 

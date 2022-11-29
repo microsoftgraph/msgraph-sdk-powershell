@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrintSharePrinter
 
 ## SYNOPSIS
-Get printer from print
+The printer that this printer share is related to.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgPrintSharePrinter -InputObject <IDevicesCloudPrintIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get printer from print
+The printer that this printer share is related to.
 
 ## EXAMPLES
 

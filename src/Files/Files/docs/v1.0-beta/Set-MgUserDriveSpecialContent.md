@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserDriveSpecialContent
 
 ## SYNOPSIS
-Update content for the navigation property special in users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgUserDriveSpecialContent -InputObject <IFilesIdentity> -InFile <String> [-B
 ```
 
 ## DESCRIPTION
-Update content for the navigation property special in users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

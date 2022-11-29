@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserMobileAppTroubleshootingEvent
 
 ## SYNOPSIS
-Get mobileAppTroubleshootingEvents from users
+The list of mobile app troubleshooting events for this user.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserMobileAppTroubleshootingEvent -InputObject <IDevicesCorporateManagemen
 ```
 
 ## DESCRIPTION
-Get mobileAppTroubleshootingEvents from users
+The list of mobile app troubleshooting events for this user.
 
 ## EXAMPLES
 

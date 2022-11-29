@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember
 
 ## SYNOPSIS
-Get allowedMembers from teamwork
+A collection of team members who have access to the shared channel.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgTeamworkDeletedTeamChannelSharedWithTeamAllowedMember -InputObject <ITeams
 ```
 
 ## DESCRIPTION
-Get allowedMembers from teamwork
+A collection of team members who have access to the shared channel.
 
 ## EXAMPLES
 

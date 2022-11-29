@@ -8,30 +8,30 @@ schema: 2.0.0
 # New-MgTeamTag
 
 ## SYNOPSIS
-Create new navigation property to tags for teams
+Create a standard tag for members in the team.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgTeamTag -TeamId <String> [-AdditionalProperties <Hashtable>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-MemberCount <Int32>] [-Members <IMicrosoftGraphTeamworkTagMember[]>]
  [-TagType <String>] [-TeamId1 <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgTeamTag -TeamId <String> -BodyParameter <IMicrosoftGraphTeamworkTag> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### CreateViaIdentity1
 ```
 New-MgTeamTag -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamworkTag> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgTeamTag -InputObject <ITeamsIdentity> [-TeamId <String>] [-AdditionalProperties <Hashtable>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-MemberCount <Int32>]
@@ -39,9 +39,29 @@ New-MgTeamTag -InputObject <ITeamsIdentity> [-TeamId <String>] [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Create new navigation property to tags for teams
+Create a standard tag for members in the team.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgTeamTag Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	DisplayName = "Finance"
+	Members = @(
+		@{
+			UserId = "92f6952f-61ca-4a94-8910-508a240bc167"
+		}
+		@{
+			UserId = "085d800c-b86b-4bfc-a857-9371ad1caf29"
+		}
+	)
+}
+New-MgTeamTag -TeamId $teamId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamTag Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -50,7 +70,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -66,7 +86,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTag
-Parameter Sets: Create, CreateViaIdentity
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -77,11 +97,11 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Tag description as it will appear to the user in Microsoft Teams.
+The description of the tag as it will appear to the user in Microsoft Teams.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -92,11 +112,11 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Tag name as it will appear to the user in Microsoft Teams.
+The name of the tag as it will appear to the user in Microsoft Teams.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -107,11 +127,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -127,7 +148,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -142,7 +163,7 @@ The number of users assigned to the tag.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -158,7 +179,7 @@ To construct, please use Get-Help -Online and see NOTES section for MEMBERS prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkTagMember[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -173,7 +194,7 @@ teamworkTagType
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -188,7 +209,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: Create1, CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -203,7 +224,7 @@ ID of the team in which the tag is defined.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -268,15 +289,15 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTeamworkTag>: teamworkTag
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-  - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+  - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
   - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
   - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The member's display name.
-    - `[TenantId <String>]`: 
-    - `[UserId <String>]`: 
+    - `[TenantId <String>]`: The ID of the tenant that the tag member is a part of.
+    - `[UserId <String>]`: The user ID of the member.
   - `[TagType <String>]`: teamworkTagType
   - `[TeamId <String>]`: ID of the team in which the tag is defined.
 
@@ -320,10 +341,10 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
 MEMBERS <IMicrosoftGraphTeamworkTagMember[]>: Users assigned to the tag.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The member's display name.
-  - `[TenantId <String>]`: 
-  - `[UserId <String>]`: 
+  - `[TenantId <String>]`: The ID of the tenant that the tag member is a part of.
+  - `[UserId <String>]`: The user ID of the member.
 
 ## RELATED LINKS
 

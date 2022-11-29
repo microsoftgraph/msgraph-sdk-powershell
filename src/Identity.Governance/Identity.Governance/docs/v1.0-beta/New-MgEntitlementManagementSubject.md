@@ -15,7 +15,7 @@ Create new navigation property to subjects for identityGovernance
 ### CreateExpanded (Default)
 ```
 New-MgEntitlementManagementSubject [-AdditionalProperties <Hashtable>] [-AltSecId <String>]
- [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization>] [-ConnectedOrganizationId <String>]
+ [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization1>] [-ConnectedOrganizationId <String>]
  [-DisplayName <String>] [-Email <String>] [-Id <String>] [-ObjectId <String>]
  [-OnPremisesSecurityIdentifier <String>] [-PrincipalName <String>] [-SubjectLifecycle <String>]
  [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -23,7 +23,7 @@ New-MgEntitlementManagementSubject [-AdditionalProperties <Hashtable>] [-AltSecI
 
 ### Create
 ```
-New-MgEntitlementManagementSubject -BodyParameter <IMicrosoftGraphAccessPackageSubject> [-Confirm] [-WhatIf]
+New-MgEntitlementManagementSubject -BodyParameter <IMicrosoftGraphAccessPackageSubject1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ accessPackageSubject
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject1
 Parameter Sets: Create
 Aliases:
 
@@ -85,7 +85,7 @@ connectedOrganization
 To construct, please use Get-Help -Online and see NOTES section for CONNECTEDORGANIZATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization1
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -142,7 +142,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -268,11 +269,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject1
 
 ## NOTES
 
@@ -283,19 +284,19 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphAccessPackageSubject>: accessPackageSubject
+BODYPARAMETER <IMicrosoftGraphAccessPackageSubject1>: accessPackageSubject
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AltSecId <String>]`: 
-  - `[ConnectedOrganization <IMicrosoftGraphConnectedOrganization>]`: connectedOrganization
+  - `[ConnectedOrganization <IMicrosoftGraphConnectedOrganization1>]`: connectedOrganization
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <String>]`: UPN of the user who created this resource. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Description <String>]`: The description of the connected organization.
     - `[DisplayName <String>]`: The display name of the connected organization. Supports $filter (eq).
     - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
     - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
@@ -311,15 +312,15 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageSubject>: accessPackageSubject
   - `[SubjectLifecycle <String>]`: accessPackageSubjectLifecycle
   - `[Type <String>]`: The resource type of the subject.
 
-CONNECTEDORGANIZATION <IMicrosoftGraphConnectedOrganization>: connectedOrganization
+CONNECTEDORGANIZATION <IMicrosoftGraphConnectedOrganization1>: connectedOrganization
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <String>]`: UPN of the user who created this resource. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Description <String>]`: The description of the connected organization.
   - `[DisplayName <String>]`: The display name of the connected organization. Supports $filter (eq).
   - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
   - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: 

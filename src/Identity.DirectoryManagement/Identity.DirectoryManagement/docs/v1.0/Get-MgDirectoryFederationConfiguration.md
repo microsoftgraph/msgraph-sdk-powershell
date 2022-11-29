@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryFederationConfiguration
 
 ## SYNOPSIS
-Get federationConfigurations from directory
+Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgDirectoryFederationConfiguration -InputObject <IIdentityDirectoryManagemen
 ```
 
 ## DESCRIPTION
-Get federationConfigurations from directory
+Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDirectoryFederationConfiguration Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId -Filter "domains/any(x: x/id eq 'contoso.com')" 
+```
+
+This example shows how to use the Get-MgDirectoryFederationConfiguration Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgDirectoryFederationConfiguration Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
+```
+
+This example shows how to use the Get-MgDirectoryFederationConfiguration Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

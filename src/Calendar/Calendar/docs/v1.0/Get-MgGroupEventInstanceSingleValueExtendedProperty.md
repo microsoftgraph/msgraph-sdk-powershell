@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupEventInstanceSingleValueExtendedProperty
 
 ## SYNOPSIS
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -33,7 +35,9 @@ Get-MgGroupEventInstanceSingleValueExtendedProperty -InputObject <ICalendarIdent
 ```
 
 ## DESCRIPTION
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

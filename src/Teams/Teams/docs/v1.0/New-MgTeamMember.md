@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamMember
 
 ## SYNOPSIS
-Create new navigation property to members for teams
+Add a new conversationMember to a team.
 
 ## SYNTAX
 
@@ -38,9 +38,41 @@ New-MgTeamMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable
 ```
 
 ## DESCRIPTION
-Create new navigation property to members for teams
+Add a new conversationMember to a team.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgTeamMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	Roles = @(
+		"owner"
+	)
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
+}
+New-MgTeamMember -TeamId $teamId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgTeamMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	Roles = @(
+		"owner"
+	)
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
+}
+New-MgTeamMember -TeamId $teamId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -91,7 +123,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -225,7 +258,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphConversationMember>: conversationMember
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the user.
   - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
   - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.

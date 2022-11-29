@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupTeamTemplate
 
 ## SYNOPSIS
-Get template from groups
+The template this team was created from.
+See available templates.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgGroupTeamTemplate -InputObject <ITeamsIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get template from groups
+The template this team was created from.
+See available templates.
 
 ## EXAMPLES
 

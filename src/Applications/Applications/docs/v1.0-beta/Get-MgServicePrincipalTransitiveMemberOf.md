@@ -16,25 +16,35 @@ Get transitiveMemberOf from servicePrincipals
 ```
 Get-MgServicePrincipalTransitiveMemberOf -ServicePrincipalId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
+ [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgServicePrincipalTransitiveMemberOf -DirectoryObjectId <String> -ServicePrincipalId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+ [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-MgServicePrincipalTransitiveMemberOf -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Get transitiveMemberOf from servicePrincipals
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgServicePrincipalTransitiveMemberOf Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+Get-MgServicePrincipalTransitiveMemberOf -ServicePrincipalId $servicePrincipalId
+```
+
+This example shows how to use the Get-MgServicePrincipalTransitiveMemberOf Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -44,6 +54,22 @@ List all pages.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False

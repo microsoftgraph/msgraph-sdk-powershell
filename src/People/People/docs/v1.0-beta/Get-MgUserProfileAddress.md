@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileAddress
 
 ## SYNOPSIS
-Get addresses from users
+Represents details of addresses associated with the user.
 
 ## SYNTAX
 
@@ -32,9 +32,29 @@ Get-MgUserProfileAddress -InputObject <IPeopleIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get addresses from users
+Represents details of addresses associated with the user.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserProfileAddress Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileAddress -UserId $userId -ItemAddressId $itemAddressId
+```
+
+This example shows how to use the Get-MgUserProfileAddress Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserProfileAddress Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileAddress -UserId $userId
+```
+
+This example shows how to use the Get-MgUserProfileAddress Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

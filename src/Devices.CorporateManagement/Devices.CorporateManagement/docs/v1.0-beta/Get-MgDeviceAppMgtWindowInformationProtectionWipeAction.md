@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtWindowInformationProtectionWipeAction
 
 ## SYNOPSIS
-Get windowsInformationProtectionWipeActions from deviceAppManagement
+Windows information protection wipe actions.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtWindowInformationProtectionWipeAction -InputObject <IDevicesCo
 ```
 
 ## DESCRIPTION
-Get windowsInformationProtectionWipeActions from deviceAppManagement
+Windows information protection wipe actions.
 
 ## EXAMPLES
 

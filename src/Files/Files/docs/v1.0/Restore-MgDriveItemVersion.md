@@ -8,7 +8,8 @@ schema: 2.0.0
 # Restore-MgDriveItemVersion
 
 ## SYNOPSIS
-Invoke action restoreVersion
+Restore a previous version of a DriveItem to be the current version.
+This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
 
 ## SYNTAX
 
@@ -24,9 +25,19 @@ Restore-MgDriveItemVersion -InputObject <IFilesIdentity> [-PassThru] [-Confirm] 
 ```
 
 ## DESCRIPTION
-Invoke action restoreVersion
+Restore a previous version of a DriveItem to be the current version.
+This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
 
 ## EXAMPLES
+
+### Example 1: Using the Restore-MgDriveItemVersion Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Files
+Restore-MgDriveItemVersion -DriveId $driveId -DriveItemId $driveItemId -DriveItemVersionId $driveItemVersionId
+```
+
+This example shows how to use the Restore-MgDriveItemVersion Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

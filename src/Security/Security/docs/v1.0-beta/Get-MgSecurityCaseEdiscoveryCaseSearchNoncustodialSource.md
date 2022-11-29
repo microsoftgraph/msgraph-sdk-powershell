@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource
 
 ## SYNOPSIS
-Get noncustodialSources from security
+noncustodialDataSource sources that are included in the eDiscovery search
 
 ## SYNTAX
 
@@ -34,9 +34,18 @@ Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource -InputObject <ISecurity
 ```
 
 ## DESCRIPTION
-Get noncustodialSources from security
+noncustodialDataSource sources that are included in the eDiscovery search
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

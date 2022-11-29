@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityTriggerRetentionEventType
 
 ## SYNOPSIS
-Get retentionEventType from security
+Specifies the event that will start the retention period for labels that use this event type when an event is created.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSecurityTriggerRetentionEventType -InputObject <ISecurityIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get retentionEventType from security
+Specifies the event that will start the retention period for labels that use this event type when an event is created.
 
 ## EXAMPLES
 

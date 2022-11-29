@@ -12,15 +12,28 @@ Create new navigation property ref to acceptedSenders for groups
 
 ## SYNTAX
 
-### Create (Default)
+### CreateExpanded (Default)
 ```
-New-MgGroupAcceptedSenderByRef -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgGroupAcceptedSenderByRef -GroupId <String> [-AdditionalProperties <Hashtable>] [-OdataId <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Create
+```
+New-MgGroupAcceptedSenderByRef -GroupId <String> -BodyParameter <IReferenceCreate> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> -BodyParameter <IReferenceCreate> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-MgGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+ [-OdataId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,14 +41,57 @@ Create new navigation property ref to acceptedSenders for groups
 
 ## EXAMPLES
 
+### Example 1: Using the New-MgGroupAcceptedSenderByRef Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+$params = @{
+	"@odata.id" = "https://graph.microsoft.com/beta/users/alexd@contoso.com"
+}
+New-MgGroupAcceptedSenderByRef -GroupId $groupId -BodyParameter $params
+```
+
+This example shows how to use the New-MgGroupAcceptedSenderByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IReferenceCreate
+Parameter Sets: Create, CreateViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -GroupId
 key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Create
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -51,13 +107,28 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: CreateViaIdentity
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -OdataId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -114,6 +185,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
 
+### Microsoft.Graph.PowerShell.Models.IReferenceCreate
+
 ## OUTPUTS
 
 ### System.Boolean
@@ -126,6 +199,10 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+BODYPARAMETER <IReferenceCreate>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[OdataId <String>]`: 
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment

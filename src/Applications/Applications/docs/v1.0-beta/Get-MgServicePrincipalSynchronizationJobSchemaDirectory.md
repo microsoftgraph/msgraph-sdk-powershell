@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalSynchronizationJobSchemaDirectory
 
 ## SYNOPSIS
-Get directories from servicePrincipals
+Contains the collection of directories and all of their objects.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgServicePrincipalSynchronizationJobSchemaDirectory -InputObject <IApplicati
 ```
 
 ## DESCRIPTION
-Get directories from servicePrincipals
+Contains the collection of directories and all of their objects.
 
 ## EXAMPLES
 

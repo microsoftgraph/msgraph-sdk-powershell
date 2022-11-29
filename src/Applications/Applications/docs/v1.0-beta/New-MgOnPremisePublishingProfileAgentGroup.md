@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgOnPremisePublishingProfileAgentGroup
 
 ## SYNOPSIS
-Create new navigation property to agentGroups for onPremisesPublishingProfiles
+Create a new onPremisesAgentGroup object.
 
 ## SYNTAX
 
@@ -41,9 +41,18 @@ New-MgOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to agentGroups for onPremisesPublishingProfiles
+Create a new onPremisesAgentGroup object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgOnPremisePublishingProfileAgentGroup Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+New-MgOnPremisePublishingProfileAgentGroup -OnPremisesPublishingProfileId $onPremisesPublishingProfileId
+```
+
+This example shows how to use the New-MgOnPremisePublishingProfileAgentGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

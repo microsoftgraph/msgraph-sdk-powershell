@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionCategory
 
 ## SYNOPSIS
-Get category from deviceManagement
+The group policy category associated with the definition.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementGroupPolicyDefinitionPreviouVersionDefinitionCategory
 ```
 
 ## DESCRIPTION
-Get category from deviceManagement
+The group policy category associated with the definition.
 
 ## EXAMPLES
 
@@ -118,6 +118,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

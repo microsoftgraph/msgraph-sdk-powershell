@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListItem
 
 ## SYNOPSIS
-Get items from groups
+All items contained in the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupDriveListItem -InputObject <IFilesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get items from groups
+All items contained in the list.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgCleanDeviceManagementManagedDeviceWindowDevice
 
 ## SYNOPSIS
-Invoke action cleanWindowsDevice
+Clean Windows device
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgCleanDeviceManagementManagedDeviceWindowDevice -InputObject <IDeviceMan
 ```
 
 ## DESCRIPTION
-Invoke action cleanWindowsDevice
+Clean Windows device
 
 ## EXAMPLES
 
@@ -195,6 +195,7 @@ BODYPARAMETER <IPaths1Ll2DrbDevicemanagementManageddevicesManageddeviceIdMicroso
   - `[KeepUserData <Boolean?>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

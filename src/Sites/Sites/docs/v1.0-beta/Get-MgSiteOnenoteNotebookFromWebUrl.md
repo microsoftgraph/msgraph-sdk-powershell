@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgSiteOnenoteNotebookFromWebUrl
 
 ## SYNOPSIS
-Invoke action getNotebookFromWebUrl
+Retrieve the properties and relationships of a notebook object by using its URL path.
+The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Get-MgSiteOnenoteNotebookFromWebUrl -InputObject <ISitesIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Invoke action getNotebookFromWebUrl
+Retrieve the properties and relationships of a notebook object by using its URL path.
+The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDirectorySetting
 
 ## SYNOPSIS
-Delete directorySetting
+Delete a directory setting.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Remove-MgDirectorySetting -InputObject <IIdentityDirectoryManagementIdentity> [-
 ```
 
 ## DESCRIPTION
-Delete directorySetting
+Delete a directory setting.
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgDirectorySetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Remove-MgDirectorySetting -DirectorySettingId $directorySettingId
+```
+
+This example shows how to use the Remove-MgDirectorySetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

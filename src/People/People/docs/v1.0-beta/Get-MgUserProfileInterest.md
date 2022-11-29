@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileInterest
 
 ## SYNOPSIS
-Get interests from users
+Provides detailed information about interests the user has associated with themselves in various services.
 
 ## SYNTAX
 
@@ -32,9 +32,29 @@ Get-MgUserProfileInterest -InputObject <IPeopleIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get interests from users
+Provides detailed information about interests the user has associated with themselves in various services.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserProfileInterest Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileInterest -UserId $userId
+```
+
+This example shows how to use the Get-MgUserProfileInterest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserProfileInterest Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileInterest -UserId $userId -PersonInterestId $personInterestId
+```
+
+This example shows how to use the Get-MgUserProfileInterest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

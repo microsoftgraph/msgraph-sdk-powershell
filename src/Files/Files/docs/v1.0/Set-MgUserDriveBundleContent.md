@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserDriveBundleContent
 
 ## SYNOPSIS
-Update content for the navigation property bundles in users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgUserDriveBundleContent -InputObject <IFilesIdentity> -InFile <String> [-Bo
 ```
 
 ## DESCRIPTION
-Update content for the navigation property bundles in users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

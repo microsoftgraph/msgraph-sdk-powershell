@@ -11,6 +11,7 @@ paths:
       tags:
         - deviceManagement.applePushNotificationCertificate
       summary: Get applePushNotificationCertificate from deviceManagement
+      description: Apple push notification certificate.
       operationId: deviceManagement_GetApplePushNotificationCertificate
       parameters:
         - name: $select
@@ -27,6 +28,8 @@ paths:
                 - appleIdentifier
                 - certificate
                 - certificateSerialNumber
+                - certificateUploadFailureReason
+                - certificateUploadStatus
                 - expirationDateTime
                 - lastModifiedDateTime
                 - topicIdentifier
@@ -83,6 +86,235 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/auditEvents:
+    get:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Get auditEvents from deviceManagement
+      description: The Audit Events
+      operationId: deviceManagement_ListAuditEvents
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activity
+                - activity desc
+                - activityDateTime
+                - activityDateTime desc
+                - activityOperationType
+                - activityOperationType desc
+                - activityResult
+                - activityResult desc
+                - activityType
+                - activityType desc
+                - actor
+                - actor desc
+                - category
+                - category desc
+                - componentName
+                - componentName desc
+                - correlationId
+                - correlationId desc
+                - displayName
+                - displayName desc
+                - resources
+                - resources desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activity
+                - activityDateTime
+                - activityOperationType
+                - activityResult
+                - activityType
+                - actor
+                - category
+                - componentName
+                - correlationId
+                - displayName
+                - resources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.auditEventCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Create new navigation property to auditEvents for deviceManagement
+      operationId: deviceManagement_CreateAuditEvents
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/auditEvents/{auditEvent-id}':
+    get:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Get auditEvents from deviceManagement
+      description: The Audit Events
+      operationId: deviceManagement_GetAuditEvents
+      parameters:
+        - name: auditEvent-id
+          in: path
+          description: 'key: id of auditEvent'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditEvent
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activity
+                - activityDateTime
+                - activityOperationType
+                - activityResult
+                - activityType
+                - actor
+                - category
+                - componentName
+                - correlationId
+                - displayName
+                - resources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Update the navigation property auditEvents in deviceManagement
+      operationId: deviceManagement_UpdateAuditEvents
+      parameters:
+        - name: auditEvent-id
+          in: path
+          description: 'key: id of auditEvent'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditEvent
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Delete navigation property auditEvents for deviceManagement
+      operationId: deviceManagement_DeleteAuditEvents
+      parameters:
+        - name: auditEvent-id
+          in: path
+          description: 'key: id of auditEvent'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: auditEvent
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -96,6 +328,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
+      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_ListComplianceManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -203,12 +436,14 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
+      description: The list of Compliance Management Partners configured by the tenant.
       operationId: deviceManagement_GetComplianceManagementPartners
       parameters:
         - name: complianceManagementPartner-id
           in: path
           description: 'key: id of complianceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: complianceManagementPartner
@@ -265,6 +500,7 @@ paths:
           in: path
           description: 'key: id of complianceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: complianceManagementPartner
@@ -291,12 +527,14 @@ paths:
           in: path
           description: 'key: id of complianceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: complianceManagementPartner
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -310,6 +548,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
+      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_ListDeviceManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -414,12 +653,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
+      description: The list of Device Management Partners configured by the tenant.
       operationId: deviceManagement_GetDeviceManagementPartners
       parameters:
         - name: deviceManagementPartner-id
           in: path
           description: 'key: id of deviceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementPartner
@@ -462,6 +703,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
+          links:
+            terminate:
+              operationId: deviceManagement.deviceManagementPartners.deviceManagementPartner.terminate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -475,6 +719,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementPartner
@@ -501,12 +746,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementPartner
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -520,6 +767,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
+      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_ListExchangeConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -627,12 +875,14 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
+      description: The list of Exchange Connectors configured by the tenant.
       operationId: deviceManagement_GetExchangeConnectors
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
           description: 'key: id of deviceManagementExchangeConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeConnector
@@ -692,6 +942,7 @@ paths:
           in: path
           description: 'key: id of deviceManagementExchangeConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeConnector
@@ -718,12 +969,14 @@ paths:
           in: path
           description: 'key: id of deviceManagementExchangeConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementExchangeConnector
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -737,6 +990,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
+      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_ListIosUpdateStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -850,12 +1104,14 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
+      description: The IOS software update installation statuses for this account.
       operationId: deviceManagement_GetIosUpdateStatuses
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
           description: 'key: id of iosUpdateDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosUpdateDeviceStatus
@@ -914,6 +1170,7 @@ paths:
           in: path
           description: 'key: id of iosUpdateDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosUpdateDeviceStatus
@@ -940,12 +1197,14 @@ paths:
           in: path
           description: 'key: id of iosUpdateDeviceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: iosUpdateDeviceStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -959,6 +1218,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
+      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_ListMobileThreatDefenseConnectors
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1063,12 +1323,14 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
+      description: The list of Mobile threat Defense connectors configured by the tenant.
       operationId: deviceManagement_GetMobileThreatDefenseConnectors
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
           description: 'key: id of mobileThreatDefenseConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileThreatDefenseConnector
@@ -1124,6 +1386,7 @@ paths:
           in: path
           description: 'key: id of mobileThreatDefenseConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileThreatDefenseConnector
@@ -1150,12 +1413,14 @@ paths:
           in: path
           description: 'key: id of mobileThreatDefenseConnector'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mobileThreatDefenseConnector
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1169,6 +1434,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
+      description: The remote assist partners.
       operationId: deviceManagement_ListRemoteAssistancePartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1261,12 +1527,14 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
+      description: The remote assist partners.
       operationId: deviceManagement_GetRemoteAssistancePartners
       parameters:
         - name: remoteAssistancePartner-id
           in: path
           description: 'key: id of remoteAssistancePartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
@@ -1323,6 +1591,7 @@ paths:
           in: path
           description: 'key: id of remoteAssistancePartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
@@ -1349,12 +1618,14 @@ paths:
           in: path
           description: 'key: id of remoteAssistancePartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1368,6 +1639,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
+      description: The Resource Operations.
       operationId: deviceManagement_ListResourceOperations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1457,12 +1729,14 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
+      description: The Resource Operations.
       operationId: deviceManagement_GetResourceOperations
       parameters:
         - name: resourceOperation-id
           in: path
           description: 'key: id of resourceOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: resourceOperation
@@ -1513,6 +1787,7 @@ paths:
           in: path
           description: 'key: id of resourceOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: resourceOperation
@@ -1539,12 +1814,14 @@ paths:
           in: path
           description: 'key: id of resourceOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: resourceOperation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1558,6 +1835,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
+      description: The Role Assignments.
       operationId: deviceManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1652,12 +1930,14 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
+      description: The Role Assignments.
       operationId: deviceManagement_GetRoleAssignments
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
           description: 'key: id of deviceAndAppManagementRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
@@ -1716,6 +1996,7 @@ paths:
           in: path
           description: 'key: id of deviceAndAppManagementRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
@@ -1742,12 +2023,14 @@ paths:
           in: path
           description: 'key: id of deviceAndAppManagementRoleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1761,6 +2044,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
+      description: The Role Definitions.
       operationId: deviceManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1855,12 +2139,14 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
+      description: The Role Definitions.
       operationId: deviceManagement_GetRoleDefinitions
       parameters:
         - name: roleDefinition-id
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -1919,6 +2205,7 @@ paths:
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -1945,12 +2232,14 @@ paths:
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1964,12 +2253,14 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
+      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_ListRoleAssignments
       parameters:
         - name: roleDefinition-id
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -2045,6 +2336,7 @@ paths:
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -2070,12 +2362,14 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
+      description: List of Role assignments for this role definition.
       operationId: deviceManagement.roleDefinitions_GetRoleAssignments
       parameters:
         - name: roleDefinition-id
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -2083,6 +2377,7 @@ paths:
           in: path
           description: 'key: id of roleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleAssignment
@@ -2141,6 +2436,7 @@ paths:
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -2148,6 +2444,7 @@ paths:
           in: path
           description: 'key: id of roleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleAssignment
@@ -2174,6 +2471,7 @@ paths:
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -2181,12 +2479,14 @@ paths:
           in: path
           description: 'key: id of roleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2200,12 +2500,14 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinition from deviceManagement
+      description: Role definition this assignment is part of.
       operationId: deviceManagement.roleDefinitions.roleAssignments_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
           description: 'key: id of roleDefinition'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleDefinition
@@ -2213,6 +2515,7 @@ paths:
           in: path
           description: 'key: id of roleAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: roleAssignment
@@ -2267,6 +2570,7 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
+      description: The telecom expense management partners.
       operationId: deviceManagement_ListTelecomExpenseManagementPartners
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2362,12 +2666,14 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
+      description: The telecom expense management partners.
       operationId: deviceManagement_GetTelecomExpenseManagementPartners
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
           description: 'key: id of telecomExpenseManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: telecomExpenseManagementPartner
@@ -2420,6 +2726,7 @@ paths:
           in: path
           description: 'key: id of telecomExpenseManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: telecomExpenseManagementPartner
@@ -2446,12 +2753,14 @@ paths:
           in: path
           description: 'key: id of telecomExpenseManagementPartner'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: telecomExpenseManagementPartner
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2465,6 +2774,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_ListTermsAndConditions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2573,12 +2883,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: The terms and conditions associated with device management of the company.
       operationId: deviceManagement_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -2647,6 +2959,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -2673,12 +2986,14 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2692,12 +3007,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
+      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -2776,6 +3093,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -2801,12 +3119,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
+      description: The list of acceptance statuses for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetAcceptanceStatuses
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -2814,6 +3134,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAcceptanceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
@@ -2873,6 +3194,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -2880,6 +3202,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAcceptanceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
@@ -2906,6 +3229,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -2913,12 +3237,14 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAcceptanceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2932,12 +3258,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
+      description: Navigation link to the terms and conditions that are assigned.
       operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -2945,6 +3273,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAcceptanceStatus'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAcceptanceStatus
@@ -3010,12 +3339,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_ListAssignments
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -3083,6 +3414,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -3108,12 +3440,14 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
+      description: The list of assignments for this T&C policy.
       operationId: deviceManagement.termsAndConditions_GetAssignments
       parameters:
         - name: termsAndConditions-id
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -3121,6 +3455,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAssignment
@@ -3169,6 +3504,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -3176,6 +3512,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAssignment
@@ -3202,6 +3539,7 @@ paths:
           in: path
           description: 'key: id of termsAndConditions'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditions
@@ -3209,12 +3547,14 @@ paths:
           in: path
           description: 'key: id of termsAndConditionsAssignment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: termsAndConditionsAssignment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3243,6 +3583,15 @@ components:
               type: string
               description: Certificate serial number. This property is read-only.
               nullable: true
+              readOnly: true
+            certificateUploadFailureReason:
+              type: string
+              description: The reason the certificate upload failed.
+              nullable: true
+            certificateUploadStatus:
+              type: string
+              description: The certificate upload status.
+              nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -3260,6 +3609,60 @@ components:
           additionalProperties:
             type: object
           description: Apple push notification certificate.
+    microsoft.graph.auditEvent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: auditEvent
+          type: object
+          properties:
+            activity:
+              type: string
+              description: Friendly name of the activity.
+              nullable: true
+            activityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date time in UTC when the activity was performed.
+              format: date-time
+            activityOperationType:
+              type: string
+              description: The HTTP operation type of the activity.
+              nullable: true
+            activityResult:
+              type: string
+              description: The result of the activity.
+              nullable: true
+            activityType:
+              type: string
+              description: The type of activity that was being performed.
+              nullable: true
+            actor:
+              $ref: '#/components/schemas/microsoft.graph.auditActor'
+            category:
+              type: string
+              description: Audit category.
+              nullable: true
+            componentName:
+              type: string
+              description: Component name.
+              nullable: true
+            correlationId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: The client request Id that is used to correlate activity within the system.
+              format: uuid
+            displayName:
+              type: string
+              description: Event display name.
+              nullable: true
+            resources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.auditResource'
+              description: Resources being modified.
+          additionalProperties:
+            type: object
+          description: A class containing the properties for Audit Event.
     microsoft.graph.complianceManagementPartner:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3561,6 +3964,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.roleAssignment'
               description: List of Role assignments for this role definition.
+              readOnly: true
           additionalProperties:
             type: object
           description: 'The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.'
@@ -3663,11 +4067,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
               description: The list of acceptance statuses for this T&C policy.
+              readOnly: true
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
               description: The list of assignments for this T&C policy.
+              readOnly: true
           additionalProperties:
             type: object
           description: A termsAndConditions entity represents the metadata and contents of a given Terms and Conditions (T&C) policy. T&C policies’ contents are presented to users upon their first attempt to enroll into Intune and subsequently upon edits where an administrator has required re-acceptance. They enable administrators to communicate the provisions to which a user must agree in order to have devices enrolled into Intune.
@@ -3718,8 +4124,74 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.auditActor:
+      title: auditActor
+      type: object
+      properties:
+        applicationDisplayName:
+          type: string
+          description: Name of the Application.
+          nullable: true
+        applicationId:
+          type: string
+          description: AAD Application Id.
+          nullable: true
+        auditActorType:
+          type: string
+          description: Actor Type.
+          nullable: true
+        ipAddress:
+          type: string
+          description: IPAddress.
+          nullable: true
+        servicePrincipalName:
+          type: string
+          description: Service Principal Name (SPN).
+          nullable: true
+        userId:
+          type: string
+          description: User Id.
+          nullable: true
+        userPermissions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of user permissions when the audit was performed.
+        userPrincipalName:
+          type: string
+          description: User Principal Name (UPN).
+          nullable: true
+      additionalProperties:
+        type: object
+      description: A class containing the properties for Audit Actor.
+    microsoft.graph.auditResource:
+      title: auditResource
+      type: object
+      properties:
+        auditResourceType:
+          type: string
+          description: Audit resource's type.
+          nullable: true
+        displayName:
+          type: string
+          description: Display name.
+          nullable: true
+        modifiedProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.auditProperty'
+          description: List of modified properties.
+        resourceId:
+          type: string
+          description: Audit resource's Id.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: A class containing the properties for Audit Resource.
     microsoft.graph.complianceManagementPartnerAssignment:
       title: complianceManagementPartnerAssignment
       type: object
@@ -3940,6 +4412,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    microsoft.graph.auditEventCollectionResponse:
+      title: Collection of auditEvent
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.auditEvent'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.complianceManagementPartnerCollectionResponse:
       title: Collection of complianceManagementPartner
       type: object
@@ -3950,6 +4435,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementPartnerCollectionResponse:
@@ -3962,6 +4448,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceManagementExchangeConnectorCollectionResponse:
@@ -3974,6 +4461,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.iosUpdateDeviceStatusCollectionResponse:
@@ -3986,6 +4474,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.mobileThreatDefenseConnectorCollectionResponse:
@@ -3998,6 +4487,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.remoteAssistancePartnerCollectionResponse:
@@ -4010,6 +4500,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.resourceOperationCollectionResponse:
@@ -4022,6 +4513,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.resourceOperation'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.deviceAndAppManagementRoleAssignmentCollectionResponse:
@@ -4034,6 +4526,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.roleDefinitionCollectionResponse:
@@ -4046,6 +4539,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.roleDefinition'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.roleAssignmentCollectionResponse:
@@ -4058,6 +4552,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.roleAssignment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.telecomExpenseManagementPartnerCollectionResponse:
@@ -4070,6 +4565,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.termsAndConditionsCollectionResponse:
@@ -4082,6 +4578,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.termsAndConditionsAcceptanceStatusCollectionResponse:
@@ -4094,6 +4591,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.termsAndConditionsAssignmentCollectionResponse:
@@ -4106,8 +4604,28 @@ components:
             $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.auditProperty:
+      title: auditProperty
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Display name.
+          nullable: true
+        newValue:
+          type: string
+          description: New value.
+          nullable: true
+        oldValue:
+          type: string
+          description: Old value.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: A class containing the properties for Audit Property.
     microsoft.graph.resourceAction:
       title: resourceAction
       type: object
@@ -4175,6 +4693,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.auditEventCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.auditEventCollectionResponse'
     microsoft.graph.complianceManagementPartnerCollectionResponse:
       description: Retrieved collection
       content:
@@ -4264,6 +4788,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -4272,6 +4798,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -4279,18 +4807,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

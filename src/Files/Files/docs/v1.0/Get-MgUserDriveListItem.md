@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListItem
 
 ## SYNOPSIS
-Get items from users
+All items contained in the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDriveListItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get items from users
+All items contained in the list.
 
 ## EXAMPLES
 

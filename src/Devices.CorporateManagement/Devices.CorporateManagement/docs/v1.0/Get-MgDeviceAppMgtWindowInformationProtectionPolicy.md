@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtWindowInformationProtectionPolicy
 
 ## SYNOPSIS
-Get windowsInformationProtectionPolicies from deviceAppManagement
+Windows information protection for apps running on devices which are not MDM enrolled.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtWindowInformationProtectionPolicy -InputObject <IDevicesCorpor
 ```
 
 ## DESCRIPTION
-Get windowsInformationProtectionPolicies from deviceAppManagement
+Windows information protection for apps running on devices which are not MDM enrolled.
 
 ## EXAMPLES
 
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionPolicy
 
 ## NOTES
 

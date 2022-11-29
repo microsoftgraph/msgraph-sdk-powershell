@@ -17,11 +17,10 @@ Create new navigation property to configurationPolicyTemplates for deviceManagem
 New-MgDeviceManagementConfigurationPolicyTemplate [-AdditionalProperties <Hashtable>]
  [-AllowUnmanagedSettings] [-BaseId <String>] [-Description <String>] [-DisplayName <String>]
  [-DisplayVersion <String>] [-Id <String>] [-LifecycleState <DeviceManagementTemplateLifecycleState>]
- [-Platforms <DeviceManagementConfigurationPlatforms>] [-SettingTemplateCount <Int32>]
+ [-Platforms <DeviceManagementConfigurationPlatforms>]
  [-SettingTemplates <IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>]
- [-TemplateFamily <DeviceManagementConfigurationTemplateFamily>] [-Version <Int32>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TemplateFamily <DeviceManagementConfigurationTemplateFamily>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -145,7 +144,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -179,23 +179,6 @@ Supported platform types.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationPlatforms
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingTemplateCount
-Number of setting templates.
-Valid values 0 to 2147483647.
-This property is read-only.
-
-```yaml
-Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -242,23 +225,6 @@ Describes the TemplateFamily for the Template entity
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Support.DeviceManagementConfigurationTemplateFamily
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Version
-Template version.
-Valid values 1 to 2147483647.
-This property is read-only.
-
-```yaml
-Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -322,7 +288,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate>: Device Management Configuration Policy Template
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowUnmanagedSettings <Boolean?>]`: Allow unmanaged setting templates
   - `[BaseId <String>]`: Template base identifier
   - `[Description <String>]`: Template description
@@ -330,11 +296,10 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate>: Devi
   - `[DisplayVersion <String>]`: Description of template version
   - `[LifecycleState <DeviceManagementTemplateLifecycleState?>]`: Describes current lifecycle state of a template
   - `[Platforms <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
-  - `[SettingTemplateCount <Int32?>]`: Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
   - `[SettingTemplates <IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]>]`: Setting templates
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]`: List of related Setting Definitions
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AccessTypes <String>]`: deviceManagementConfigurationSettingAccessTypes
       - `[Applicability <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>]`: deviceManagementConfigurationSettingApplicability
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -369,12 +334,11 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationPolicyTemplate>: Devi
       - `[SettingInstanceTemplateId <String>]`: Setting Instance Template Id
   - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
   - `[TemplateFamily <DeviceManagementConfigurationTemplateFamily?>]`: Describes the TemplateFamily for the Template entity
-  - `[Version <Int32?>]`: Template version. Valid values 1 to 2147483647. This property is read-only.
 
 SETTINGTEMPLATES <IMicrosoftGraphDeviceManagementConfigurationSettingTemplate[]>: Setting templates
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]`: List of related Setting Definitions
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AccessTypes <String>]`: deviceManagementConfigurationSettingAccessTypes
     - `[Applicability <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>]`: deviceManagementConfigurationSettingApplicability
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

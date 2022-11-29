@@ -12,14 +12,14 @@ Delete navigation property versions for identityGovernance
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
 Remove-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion -AgreementFileLocalizationId <String>
  -AgreementFileVersionId <String> -AgreementId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgIdentityGovernanceTermOfUseAgreementFileLocalizationVersion
  -InputObject <IIdentityGovernanceIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -38,7 +38,7 @@ key: id of agreementFileLocalization
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -53,7 +53,7 @@ key: id of agreementFileVersion
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ key: id of agreement
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -214,7 +214,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -235,8 +237,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 ## RELATED LINKS
 

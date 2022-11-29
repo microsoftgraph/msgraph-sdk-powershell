@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveListContentTypeColumn
 
 ## SYNOPSIS
-Get columns from drives
+The collection of column definitions for this contentType.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDriveListContentTypeColumn -InputObject <IFilesIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get columns from drives
+The collection of column definitions for this contentType.
 
 ## EXAMPLES
 

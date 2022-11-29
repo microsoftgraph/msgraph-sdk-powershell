@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityB2CUserFlowIdentityProviderByRef
 
 ## SYNOPSIS
-Get ref of identityProviders from identity
+Get the identity providers in a b2cIdentityUserFlow object.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <String> [
 ```
 
 ## DESCRIPTION
-Get ref of identityProviders from identity
+Get the identity providers in a b2cIdentityUserFlow object.
 
 ## EXAMPLES
 

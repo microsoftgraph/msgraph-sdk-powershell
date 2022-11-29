@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserDriveRootListItemDriveItemContent
 
 ## SYNOPSIS
-Update content for the navigation property driveItem in users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgUserDriveRootListItemDriveItemContent -InputObject <IFilesIdentity> -InFil
 ```
 
 ## DESCRIPTION
-Update content for the navigation property driveItem in users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

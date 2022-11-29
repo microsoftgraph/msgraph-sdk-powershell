@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgBookingBusinessStaffMember
 
 ## SYNOPSIS
-Get staffMembers from bookingBusinesses
+All the staff members that provide services in this business.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +34,29 @@ Get-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get staffMembers from bookingBusinesses
+All the staff members that provide services in this business.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgBookingBusinessStaffMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId -BookingStaffMemberId $bookingStaffMemberId
+```
+
+This example shows how to use the Get-MgBookingBusinessStaffMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgBookingBusinessStaffMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+Get-MgBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId
+```
+
+This example shows how to use the Get-MgBookingBusinessStaffMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

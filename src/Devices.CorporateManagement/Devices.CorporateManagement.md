@@ -42,4 +42,18 @@ directive:
       variant: ^Update1$|^UpdateExpanded1$|^UpdateViaIdentity1$|^UpdateViaIdentityExpanded1$
     set:
       subject: $1Multiple$2
+  - where:
+      verb: Get
+      subject: ^DeviceAppManagementMobileAppTopMobileApp$
+      variant: GetViaIdentity
+      parameter-name: Count
+    set:
+      parameter-name: ItemCount
+  - where:
+      verb: Get
+      subject: ^DeviceAppManagementMobileAppTopMobileApp$
+      variant: ^Get$
+      parameter-name: Count1
+    set:
+      parameter-name: ItemCount
 ```

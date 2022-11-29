@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationClassMemberByRef
 
 ## SYNOPSIS
-Get ref of members from education
+Retrieves the teachers and students for a class.
+Note that if the delegated token is used, members can only be seen by other members of the class.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgEducationClassMemberByRef -EducationClassId <String> [-Filter <String>] [-
 ```
 
 ## DESCRIPTION
-Get ref of members from education
+Retrieves the teachers and students for a class.
+Note that if the delegated token is used, members can only be seen by other members of the class.
 
 ## EXAMPLES
 

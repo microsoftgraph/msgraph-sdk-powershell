@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgPolicyPermissionGrantPolicyInclude
 
 ## SYNOPSIS
-Get includes from policies
+Condition sets which are included in this permission grant policy.
+Automatically expanded on GET.
 
 ## SYNTAX
 
@@ -32,9 +33,30 @@ Get-MgPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Get includes from policies
+Condition sets which are included in this permission grant policy.
+Automatically expanded on GET.
 
 ## EXAMPLES
+
+### Example 1: Get a permission grant policy include by ID 
+```powershell
+Connect-MgGraph -Scopes "Policy.Read.PermissionGrant" 
+Get-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId "microsoft-all-application-permissions" | fl  
+
+CertifiedClientApplicationsOnly             : False
+ClientApplicationIds                        : {all}
+ClientApplicationPublisherIds               : {all}
+ClientApplicationTenantIds                  : {all}
+ClientApplicationsFromVerifiedPublisherOnly : False
+Id                                          : bddda1ec-0174-44d5-84e2-47fb0ac01595
+PermissionClassification                    : all
+PermissionType                              : application
+Permissions                                 : {all}
+ResourceApplication                         : any
+AdditionalProperties                        : {[scopeSensitivityLabels, System.Collections.Generic.Dictionary`2[System.String,System.Object]]}
+```
+
+This command retrieves a specified permission grant policy include configuration in Azure AD.
 
 ## PARAMETERS
 
@@ -258,10 +280,14 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -270,6 +296,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

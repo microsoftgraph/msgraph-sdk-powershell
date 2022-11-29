@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseTagChildTag
 
 ## SYNOPSIS
-Get childTags from security
+Returns the tags that are a child of a tag.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityCaseEdiscoveryCaseTagChildTag -InputObject <ISecurityIdentity> [-E
 ```
 
 ## DESCRIPTION
-Get childTags from security
+Returns the tags that are a child of a tag.
 
 ## EXAMPLES
 

@@ -11,129 +11,91 @@ parameters:
   - name: SkipForceRefresh
     type: string
 
-jobs:
-  - job: GetLatestDocs
-    displayName: Download OpenApiDocs
-    timeoutInMinutes: 240
-    pool: $(BuildAgent)
-    steps:
-      - template: ./checkout.yml
-        parameters:
-          TargetBranch: ${{ parameters.BaseBranch }}
+steps:
+  - template: ./checkout.yml
+    parameters:
+      TargetBranch: ${{ parameters.BaseBranch }}
 
-      - template: ./install-tools-template.yml
+  - template: ./install-tools.yml
 
-      - task: PowerShell@2
-        name: "ComputeBranch"
-        displayName: "Compute weekly branch name"
-        inputs:
-          targetType: inline
-          script: |
-            $branch = "{0}/{1}" -f "$(Branch)", (Get-Date -Format yyyyMMddHHmm)
-            Write-Host "##vso[task.setvariable variable=WeeklyBranch;isOutput=true]$branch"
+  - task: PowerShell@2
+    name: "ComputeBranch"
+    displayName: "Compute weekly branch name"
+    inputs:
+      targetType: inline
+      script: |
+        $branch = "{0}/{1}" -f "$(Branch)", (Get-Date -Format yyyyMMddHHmm)
+        Write-Host "##vso[task.setvariable variable=WeeklyBranch;isOutput=true]$branch"
 
-      - task: Bash@3
-        displayName: "Create weekly branch"
-        inputs:
-          targetType: inline
-          script: |
-            git status
-            git branch $(ComputeBranch.WeeklyBranch)
-            git checkout $(ComputeBranch.WeeklyBranch)
-            git status
+  - task: Bash@3
+    displayName: "Create weekly branch"
+    inputs:
+      targetType: inline
+      script: |
+        git status
+        git branch $(ComputeBranch.WeeklyBranch)
+        git checkout $(ComputeBranch.WeeklyBranch)
+        git status
 
-      - task: PowerShell@2
-        displayName: Download v1.0 OpenApi docs
-        continueOnError: false
-        inputs:
-          filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
-          arguments: -SkipForceRefresh:$$(SkipForceRefresh)
-          pwsh: true
+  - task: PowerShell@2
+    displayName: Download v1.0 OpenApi docs
+    continueOnError: false
+    inputs:
+      filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
+      arguments: -SkipForceRefresh:$$(SkipForceRefresh)
+      pwsh: true
 
-      - task: PowerShell@2
-        displayName: Download beta OpenApi docs
-        continueOnError: false
-        inputs:
-          filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
-          arguments: -BetaGraphVersion -SkipForceRefresh:$$(SkipForceRefresh)
-          pwsh: true
+  - task: PowerShell@2
+    displayName: Download beta OpenApi docs
+    continueOnError: false
+    inputs:
+      filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
+      arguments: -BetaGraphVersion -SkipForceRefresh:$$(SkipForceRefresh)
+      pwsh: true
 
-      - task: PowerShell@2
-        name: OpenAPIDocDiff
-        displayName: Get OpenAPI docs diff
-        inputs:
-          pwsh: true
-          targetType: "inline"
-          script: |
-            $diff = git diff --name-only
-            $ModulesWithChanges = @{}
-            $diff | %{
-              if (($_ -match 'openApiDocs\/(v1.0|beta)\/(.*).yml') -and !$ModulesWithChanges.ContainsKey($matches.2))
-              {
-                $ModulesWithChanges.Add($matches.2, $matches.1)
-              }
-            }
-            $ModuleNames = $ModulesWithChanges.Keys
-            Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
+  - task: PowerShell@2
+    name: OpenAPIDocDiff
+    displayName: Get OpenAPI docs diff
+    inputs:
+      pwsh: true
+      targetType: "inline"
+      script: |
+        $diff = git diff --name-only
+        $ModulesWithChanges = @{}
+        $diff | %{
+          if (($_ -match 'openApiDocs\/(v1.0|beta)\/(.*).yml') -and !$ModulesWithChanges.ContainsKey($matches.2))
+          {
+            $ModulesWithChanges.Add($matches.2, $matches.1)
+          }
+        }
+        $ModuleNames = $ModulesWithChanges.Keys
+        Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
 
-      - task: PowerShell@2
-        displayName: Generate profiles
-        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
-        continueOnError: false
-        inputs:
-          targetType: filePath
-          pwsh: true
-          filePath: $(System.DefaultWorkingDirectory)/tools/GenerateProfiles.ps1
+  - task: PowerShell@2
+    name: CalculateAndBumpModuleVersion
+    displayName: Calculate and bump module version
+    condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    inputs:
+      pwsh: true
+      targetType: inline
+      script: |
+        $nugetFeedName = '$(NUGETFEEDNAME)'
+        . "$(System.DefaultWorkingDirectory)\tools\Versions\BumpModuleVersion.ps1" -Repository $nugetFeedName -BumpV1Module -BumpBetaModule -BumpAuthModule -Debug
 
-      - task: PowerShell@2
-        name: CalculateAndBumpModuleVersion
-        displayName: Calculate and bump module version
-        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
-        inputs:
-          pwsh: true
-          targetType: inline
-          script: |
-            # Calculate meta-module version
-            $MetaModule = Find-Module "Microsoft.Graph" -Repository PSGallery
-            $MetaModuleVersion = [System.Version]($MetaModule.Version)
-            $NewMetaModuleVersion = "$($MetaModuleVersion.Major).$($MetaModuleVersion.Minor).$($MetaModuleVersion.Build + 1)"
-            # Bump meta-module minor version
-            Write-Host "Bumping Microsoft.Graph to $NewMetaModuleVersion."
-            & "$(System.DefaultWorkingDirectory)\tools\SetMetaModuleVersion.ps1" -VersionNumber $NewMetaModuleVersion
-            & "$(System.DefaultWorkingDirectory)\tools\SetServiceModuleVersion.ps1" -VersionNumber $NewMetaModuleVersion -SetAuthModule
-
-            # Calculate existing service module version
-            "$(OpenAPIDocDiff.ModulesWithChanges)" -split " " | ForEach-Object {
-              try {
-                $Module = Find-Module "Microsoft.Graph.$_" -Repository PSGallery -ErrorAction Stop
-                $ModuleVersion = [System.Version]($Module.Version)
-                $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor).$($ModuleVersion.Build + 1)"
-                Write-Host "Bumping $_ to $NewModuleVersion."
-              } catch {
-                if ($_.Exception.Message -like "No match*") {
-                  Write-Warning "$_. Version will be set to $NewMetaModuleVersion."
-                }
-              }
-            }
-
-            # Calculate new service module version
-            $NewModuleReadMePath = Join-Path $(System.DefaultWorkingDirectory) "/tools/Templates/readme.md"
-            . "$(System.DefaultWorkingDirectory)\tools\WriteToModuleReadMe.ps1" -ReadMePath $NewModuleReadMePath -FieldName "module-version" -NewFieldValue $NewMetaModuleVersion
-
-      - task: Bash@3
-        displayName: Commit downloaded files
-        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
-        env:
-          GITHUB_TOKEN: $(GITHUB_TOKEN)
-        inputs:
-          targetType: inline
-          script: |
-            git status
-            git add .
-            git commit -m 'Weekly OpenApiDocs Download. [run ci]'
-            git status
-            git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.WeeklyBranch)
-            git status
+  - task: Bash@3
+    displayName: Commit downloaded files
+    condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    env:
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+    inputs:
+      targetType: inline
+      script: |
+        git status
+        git add .
+        git commit -m 'Weekly OpenApiDocs Download. [run ci]'
+        git status
+        git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.WeeklyBranch)
+        git status
 
 # References
 # [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables

@@ -1,18 +1,34 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgGroupEvent Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Calendar
+$params = @{
+	Subject = "Let's go for lunch"
+	Body = @{
+		ContentType = "HTML"
+		Content = "Does late morning work for you?"
+	}
+	Start = @{
+		DateTime = "2019-06-15T12:00:00"
+		TimeZone = "Pacific Standard Time"
+	}
+	End = @{
+		DateTime = "2019-06-15T14:00:00"
+		TimeZone = "Pacific Standard Time"
+	}
+	Location = @{
+		DisplayName = "Harry's Bar"
+	}
+	Attendees = @(
+		@{
+			EmailAddress = @{
+				Address = "adelev@contoso.onmicrosoft.com"
+				Name = "Adele Vance"
+			}
+			Type = "required"
+		}
+	)
+}
+New-MgGroupEvent -GroupId $groupId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgGroupEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

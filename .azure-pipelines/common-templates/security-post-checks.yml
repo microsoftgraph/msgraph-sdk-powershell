@@ -1,53 +1,53 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 steps:
-- task: CodesignValidation@0
+  - task: CodesignValidation@0
 
-- task: SdtReport@1
-  displayName: "Security Analysis Report"
-  continueOnError: true
-  condition: succeededOrFailed()
-  inputs:
-    AllTools: false
-    APIScan: false
-    BinSkim: false
-    BinSkimBreakOn: 'WarningAbove'
-    CodesignValidation: true
-    CodesignValidationBreakOn: 'WarningAbove'
-    CredScan: true
-    FortifySCA: false
-    FxCop: false
-    ModernCop: false
-    MSRD: false
-    PoliCheck: true
-    PoliCheckBreakOn: 'Severity1'
-    RoslynAnalyzers: true
-    RoslynAnalyzersBreakOn: 'WarningAbove'
-    SDLNativeRules: false
-    Semmle: false
-    TSLint: false
-    TSLintBreakOn: 'WarningAbove'
-    ToolLogsNotFoundAction: 'Standard'
+  - task: SdtReport@1
+    displayName: "Security Analysis Report"
+    continueOnError: true
+    condition: succeededOrFailed()
+    inputs:
+      AllTools: false
+      APIScan: false
+      BinSkim: false
+      BinSkimBreakOn: "WarningAbove"
+      CodesignValidation: true
+      CodesignValidationBreakOn: "WarningAbove"
+      CredScan: true
+      FortifySCA: false
+      FxCop: false
+      ModernCop: false
+      MSRD: false
+      PoliCheck: true
+      PoliCheckBreakOn: "Severity1"
+      RoslynAnalyzers: true
+      RoslynAnalyzersBreakOn: "WarningAbove"
+      SDLNativeRules: false
+      Semmle: false
+      TSLint: false
+      TSLintBreakOn: "WarningAbove"
+      ToolLogsNotFoundAction: "Standard"
 
-- task: PublishSecurityAnalysisLogs@3
-  displayName: 'Publish Security Analysis Logs'
-  inputs:
-    ArtifactName: 'CodeAnalysisLogs'
-    ArtifactType: 'Container'
-    AllTools: false
-    AntiMalware: false
-    APIScan: false
-    BinSkim: false
-    CodesignValidation: true
-    CredScan: true
-    FortifySCA: false
-    FxCop: false
-    ModernCop: true
-    MSRD: false
-    PoliCheck: true
-    RoslynAnalyzers: true
-    SDLNativeRules: false
-    Semmle: false
-    TSLint: false
-    WebScout: false
-    ToolLogsNotFoundAction: 'Standard'
+  - task: PublishSecurityAnalysisLogs@3
+    displayName: "Publish Security Analysis Logs"
+    inputs:
+      ArtifactName: "CodeAnalysisLogs"
+      ArtifactType: "Container"
+      AllTools: false
+      AntiMalware: false
+      APIScan: false
+      BinSkim: false
+      CodesignValidation: true
+      CredScan: true
+      FortifySCA: false
+      FxCop: false
+      ModernCop: true
+      MSRD: false
+      PoliCheck: true
+      RoslynAnalyzers: true
+      SDLNativeRules: false
+      Semmle: false
+      TSLint: false
+      WebScout: false
+      ToolLogsNotFoundAction: "Standard"

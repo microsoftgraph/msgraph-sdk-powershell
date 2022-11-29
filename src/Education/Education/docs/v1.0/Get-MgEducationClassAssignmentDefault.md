@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgEducationClassAssignmentDefault
 
 ## SYNOPSIS
-Get assignmentDefaults from education
+Read the properties and relationships of an educationAssignmentDefaults object.
+These are the class-level assignment defaults respected by new assignments created in the class.
+Callers can continue to specify custom values on each **assignment** creation if they don't want the default behaviors.
 
 ## SYNTAX
 
@@ -25,9 +27,20 @@ Get-MgEducationClassAssignmentDefault -InputObject <IEducationIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get assignmentDefaults from education
+Read the properties and relationships of an educationAssignmentDefaults object.
+These are the class-level assignment defaults respected by new assignments created in the class.
+Callers can continue to specify custom values on each **assignment** creation if they don't want the default behaviors.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgEducationClassAssignmentDefault Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Get-MgEducationClassAssignmentDefault -EducationClassId $educationClassId
+```
+
+This example shows how to use the Get-MgEducationClassAssignmentDefault Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

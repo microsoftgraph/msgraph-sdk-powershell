@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgTeamPrimaryChannelTabTeamApp
 
 ## SYNOPSIS
-Get teamsApp from teams
+The application that is linked to the tab.
+This cannot be changed after tab creation.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgTeamPrimaryChannelTabTeamApp -InputObject <ITeamsIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get teamsApp from teams
+The application that is linked to the tab.
+This cannot be changed after tab creation.
 
 ## EXAMPLES
 

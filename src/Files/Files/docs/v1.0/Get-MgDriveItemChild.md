@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgDriveItemChild
 
 ## SYNOPSIS
-Get children from drives
+Collection containing Item objects for the immediate children of Item.
+Only items representing folders have children.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +35,21 @@ Get-MgDriveItemChild -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get children from drives
+Collection containing Item objects for the immediate children of Item.
+Only items representing folders have children.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDriveItemChild Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Files
+Get-MgDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
+```
+
+This example shows how to use the Get-MgDriveItemChild Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef
 
 ## SYNOPSIS
-Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef -ServicePrincipalId <String>
 ```
 
 ## DESCRIPTION
-Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
 
 ## EXAMPLES
 

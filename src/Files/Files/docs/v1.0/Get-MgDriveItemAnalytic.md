@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveItemAnalytic
 
 ## SYNOPSIS
-Get analytics from drives
+Analytics about the view activities that took place on this item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDriveItemAnalytic -InputObject <IFilesIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get analytics from drives
+Analytics about the view activities that took place on this item.
 
 ## EXAMPLES
 

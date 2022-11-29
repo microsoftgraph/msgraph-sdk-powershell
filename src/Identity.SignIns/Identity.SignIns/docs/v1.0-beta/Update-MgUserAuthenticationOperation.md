@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The start time of the operation.
 
 ```yaml
 Type: System.DateTime
@@ -94,7 +94,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -125,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastActionDateTime
-.
+The time of the last action in the operation.
 
 ```yaml
 Type: System.DateTime
@@ -170,7 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceLocation
-.
+URI of the resource that the operation is performed on.
 
 ```yaml
 Type: System.String
@@ -200,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -StatusDetail
-.
+Details about the status of the operation.
 
 ```yaml
 Type: System.String
@@ -284,20 +285,24 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphLongRunningOperation>: longRunningOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[LastActionDateTime <DateTime?>]`: 
-  - `[ResourceLocation <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[CreatedDateTime <DateTime?>]`: The start time of the operation.
+  - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation.
+  - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
   - `[Status <String>]`: longRunningOperationStatus
-  - `[StatusDetail <String>]`: 
+  - `[StatusDetail <String>]`: Details about the status of the operation.
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -306,6 +311,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

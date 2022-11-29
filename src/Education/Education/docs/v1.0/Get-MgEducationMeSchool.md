@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationMeSchool
 
 ## SYNOPSIS
-Get schools from education
+Schools to which the user belongs.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +33,19 @@ Get-MgEducationMeSchool -InputObject <IEducationIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get schools from education
+Schools to which the user belongs.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgEducationMeSchool Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Get-MgEducationMeSchool
+```
+
+This example shows how to use the Get-MgEducationMeSchool Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

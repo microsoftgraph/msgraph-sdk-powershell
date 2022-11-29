@@ -16,6 +16,7 @@ paths:
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
           schema:
             type: string
           examples:
@@ -103,12 +104,17 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get directoryObject
+      description: Retrieve the properties and relationships of a directoryObject object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-get?view=graph-rest-1.0
       operationId: directoryObjects.directoryObject_GetDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -168,6 +174,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -188,18 +195,24 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Delete directoryObject
+      description: 'Delete a directory object, for example, a group, user, application, or service principal.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-delete?view=graph-rest-1.0
       operationId: directoryObjects.directoryObject_DeleteDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -213,12 +226,17 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberGroups
+      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: directoryObjects_checkMemberGroups
       parameters:
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -242,18 +260,23 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberObjects':
     post:
       tags:
@@ -265,6 +288,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -288,29 +312,39 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberGroups':
     post:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getMemberGroups
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: directoryObjects_getMemberGroups
       parameters:
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -334,18 +368,23 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/directoryObjects/{directoryObject-id}/microsoft.graph.getMemberObjects':
     post:
       tags:
@@ -357,6 +396,7 @@ paths:
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -380,29 +420,39 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of directoryObject
                 type: object
                 properties:
                   value:
                     type: array
                     items:
                       type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/directoryObjects/{directoryObject-id}/microsoft.graph.restore':
     post:
       tags:
         - directoryObjects.Actions
       summary: Invoke action restore
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: directoryObjects_restore
       parameters:
         - name: directoryObject-id
           in: path
           description: 'key: id of directoryObject'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
@@ -421,6 +471,10 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getByIds
+      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: directoryObjects_getGraphBPreIds
       requestBody:
         description: Action parameters
@@ -454,11 +508,17 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /directoryObjects/microsoft.graph.getUserOwnedObjects:
     post:
       tags:
@@ -496,6 +556,10 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action validateProperties
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: directoryObjects_validateProperties
       requestBody:
         description: Action parameters
@@ -549,6 +613,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.directoryObjectCollectionResponse:
@@ -561,6 +626,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.directoryObject'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -631,6 +697,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -639,6 +707,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -646,18 +716,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

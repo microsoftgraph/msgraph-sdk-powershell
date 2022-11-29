@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgChatMessageReply
 
 ## SYNOPSIS
-Get replies from chats
+Replies for a specified message.
+Supports $expand for channel messages.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgChatMessageReply -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get replies from chats
+Replies for a specified message.
+Supports $expand for channel messages.
 
 ## EXAMPLES
 

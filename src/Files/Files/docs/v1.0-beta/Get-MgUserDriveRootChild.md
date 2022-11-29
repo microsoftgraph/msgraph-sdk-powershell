@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgUserDriveRootChild
 
 ## SYNOPSIS
-Get children from users
+Collection containing Item objects for the immediate children of Item.
+Only items representing folders have children.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +35,10 @@ Get-MgUserDriveRootChild -InputObject <IFilesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get children from users
+Collection containing Item objects for the immediate children of Item.
+Only items representing folders have children.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

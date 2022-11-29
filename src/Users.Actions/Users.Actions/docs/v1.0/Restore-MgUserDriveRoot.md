@@ -8,38 +8,40 @@ schema: 2.0.0
 # Restore-MgUserDriveRoot
 
 ## SYNOPSIS
-Invoke action restore
+Restore a driveItem that has been deleted and is currently in the recycle bin.
+**NOTE**: This functionality is currently only available for OneDrive Personal.
 
 ## SYNTAX
 
-### RestoreExpanded (Default)
+### RestoreExpanded1 (Default)
 ```
 Restore-MgUserDriveRoot -DriveId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Restore
+### Restore1
 ```
 Restore-MgUserDriveRoot -DriveId <String> -UserId <String>
  -BodyParameter <IPathsWcmhxwUsersUserIdDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RestoreViaIdentity
+### RestoreViaIdentity1
 ```
 Restore-MgUserDriveRoot -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsWcmhxwUsersUserIdDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RestoreViaIdentityExpanded
+### RestoreViaIdentityExpanded1
 ```
 Restore-MgUserDriveRoot -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Name <String>] [-ParentReference <IMicrosoftGraphItemReference>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action restore
+Restore a driveItem that has been deleted and is currently in the recycle bin.
+**NOTE**: This functionality is currently only available for OneDrive Personal.
 
 ## EXAMPLES
 
@@ -50,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: RestoreExpanded, RestoreViaIdentityExpanded
+Parameter Sets: RestoreExpanded1, RestoreViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -66,7 +68,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsWcmhxwUsersUserIdDrivesDriveIdRootMicrosoftGraphRestorePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Restore, RestoreViaIdentity
+Parameter Sets: Restore1, RestoreViaIdentity1
 Aliases:
 
 Required: True
@@ -81,7 +83,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore, RestoreExpanded
+Parameter Sets: Restore1, RestoreExpanded1
 Aliases:
 
 Required: True
@@ -97,7 +99,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: RestoreViaIdentity, RestoreViaIdentityExpanded
+Parameter Sets: RestoreViaIdentity1, RestoreViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -112,7 +114,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: RestoreExpanded, RestoreViaIdentityExpanded
+Parameter Sets: RestoreExpanded1, RestoreViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -128,7 +130,7 @@ To construct, please use Get-Help -Online and see NOTES section for PARENTREFERE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
-Parameter Sets: RestoreExpanded, RestoreViaIdentityExpanded
+Parameter Sets: RestoreExpanded1, RestoreViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -143,7 +145,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore, RestoreExpanded
+Parameter Sets: Restore1, RestoreExpanded1
 Aliases:
 
 Required: True

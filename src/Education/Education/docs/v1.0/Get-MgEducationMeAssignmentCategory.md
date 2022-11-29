@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationMeAssignmentCategory
 
 ## SYNOPSIS
-Get categories from education
+List all the categories associated with an assignment.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgEducationMeAssignmentCategory -EducationAssignmentId <String> [-ExpandProp
 ```
 
 ## DESCRIPTION
-Get categories from education
+List all the categories associated with an assignment.
 
 ## EXAMPLES
 

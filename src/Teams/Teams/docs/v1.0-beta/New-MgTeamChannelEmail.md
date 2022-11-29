@@ -8,24 +8,39 @@ schema: 2.0.0
 # New-MgTeamChannelEmail
 
 ## SYNOPSIS
-Invoke action provisionEmail
+Provision an email address for a channel.
+Microsoft Teams doesn't automatically provision an email address for a **channel** by default.
+To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one.
+To remove the email address of a **channel**, use the removeEmail method.
 
 ## SYNTAX
 
-### Provision (Default)
+### Provision1 (Default)
 ```
 New-MgTeamChannelEmail -ChannelId <String> -TeamId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ProvisionViaIdentity
+### ProvisionViaIdentity1
 ```
 New-MgTeamChannelEmail -InputObject <ITeamsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action provisionEmail
+Provision an email address for a channel.
+Microsoft Teams doesn't automatically provision an email address for a **channel** by default.
+To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one.
+To remove the email address of a **channel**, use the removeEmail method.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgTeamChannelEmail Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+New-MgTeamChannelEmail -TeamId $teamId -ChannelId $channelId
+```
+
+This example shows how to use the New-MgTeamChannelEmail Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -34,7 +49,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Provision
+Parameter Sets: Provision1
 Aliases:
 
 Required: True
@@ -50,7 +65,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: ProvisionViaIdentity
+Parameter Sets: ProvisionViaIdentity1
 Aliases:
 
 Required: True
@@ -65,7 +80,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Provision
+Parameter Sets: Provision1
 Aliases:
 
 Required: True

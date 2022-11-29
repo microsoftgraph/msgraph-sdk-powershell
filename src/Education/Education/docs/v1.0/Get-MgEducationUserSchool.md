@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationUserSchool
 
 ## SYNOPSIS
-Get schools from education
+Schools to which the user belongs.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgEducationUserSchool -InputObject <IEducationIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get schools from education
+Schools to which the user belongs.
+Nullable.
 
 ## EXAMPLES
 

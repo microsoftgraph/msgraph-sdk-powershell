@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgExternalConnectionItemActivity
 
 ## SYNOPSIS
-Get activities from external
+Write-only property.
+Returns results.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgExternalConnectionItemActivity -InputObject <ISearchIdentity> [-ExpandProp
 ```
 
 ## DESCRIPTION
-Get activities from external
+Write-only property.
+Returns results.
 
 ## EXAMPLES
 

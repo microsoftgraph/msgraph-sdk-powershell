@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserSettingItemInsight
 
 ## SYNOPSIS
-Update the navigation property itemInsights in users
+Update the privacy settings for itemInsights and meeting hours insights of a user.
 
 ## SYNTAX
 
@@ -37,9 +37,21 @@ Update-MgUserSettingItemInsight -InputObject <IUsersIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Update the navigation property itemInsights in users
+Update the privacy settings for itemInsights and meeting hours insights of a user.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgUserSettingItemInsight Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+$params = @{
+	IsEnabled = "false"
+}
+Update-MgUserSettingItemInsight -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgUserSettingItemInsight Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -75,7 +87,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -207,7 +220,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserInsightsSettings>: userInsightsSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[IsEnabled <Boolean?>]`: true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter

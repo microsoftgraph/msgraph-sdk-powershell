@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgApplicationLogo
 
 ## SYNOPSIS
-Update logo for application in applications
+The main logo for the application.
+Not nullable.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgApplicationLogo -InputObject <IApplicationsIdentity> -InFile <String> [-Bo
 ```
 
 ## DESCRIPTION
-Update logo for application in applications
+The main logo for the application.
+Not nullable.
 
 ## EXAMPLES
 

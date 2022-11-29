@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgDirectoryDeletedItem
 
 ## SYNOPSIS
-Get deletedItems from directory
+Recently deleted items.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity> [
 ```
 
 ## DESCRIPTION
-Get deletedItems from directory
+Recently deleted items.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

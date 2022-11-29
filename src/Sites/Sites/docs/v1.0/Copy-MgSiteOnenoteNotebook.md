@@ -8,7 +8,7 @@ schema: 2.0.0
 # Copy-MgSiteOnenoteNotebook
 
 ## SYNOPSIS
-Invoke action copyNotebook
+For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Copy-MgSiteOnenoteNotebook -InputObject <ISitesIdentity> [-SiteId <String>]
 ```
 
 ## DESCRIPTION
-Invoke action copyNotebook
+For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
 
 ## EXAMPLES
 

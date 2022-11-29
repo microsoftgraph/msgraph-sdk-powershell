@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserDriveItem
 
 ## SYNOPSIS
-Get items from users
+All items contained in the drive.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgUserDriveItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get items from users
+All items contained in the drive.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

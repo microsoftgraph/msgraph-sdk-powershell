@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteListContentTypeColumnLink
 
 ## SYNOPSIS
-Get columnLinks from groups
+The collection of columns that are required by this content type.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgGroupSiteListContentTypeColumnLink -InputObject <ISitesIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get columnLinks from groups
+The collection of columns that are required by this content type.
 
 ## EXAMPLES
 

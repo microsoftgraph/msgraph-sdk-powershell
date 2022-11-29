@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgUserEventAttachment
 
 ## SYNOPSIS
-Get attachments from users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +35,22 @@ Get-MgUserEventAttachment -InputObject <ICalendarIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get attachments from users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserEventAttachment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+# A UPN can also be used as -UserId.
+Get-MgUserEventAttachment -UserId $userId -EventId $eventId
+```
+
+This example shows how to use the Get-MgUserEventAttachment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

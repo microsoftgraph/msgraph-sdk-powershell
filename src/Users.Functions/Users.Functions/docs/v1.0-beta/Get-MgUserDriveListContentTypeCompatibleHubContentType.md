@@ -14,13 +14,16 @@ Invoke function getCompatibleHubContentTypes
 
 ### Get1 (Default)
 ```
-Get-MgUserDriveListContentTypeCompatibleHubContentType -DriveId <String> -UserId <String> [<CommonParameters>]
+Get-MgUserDriveListContentTypeCompatibleHubContentType -DriveId <String> -UserId <String> [-Count]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserDriveListContentTypeCompatibleHubContentType -InputObject <IUsersFunctionsIdentity>
- [<CommonParameters>]
+Get-MgUserDriveListContentTypeCompatibleHubContentType -InputObject <IUsersFunctionsIdentity> [-Count]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,6 +32,21 @@ Invoke function getCompatibleHubContentTypes
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DriveId
 key: id of drive
@@ -39,6 +57,21 @@ Parameter Sets: Get1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -58,6 +91,81 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Property
+Select properties to be returned
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Select
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Search
+Search items by search phrases
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sort
+Order items by property values
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -122,6 +230,7 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[Q <String>]`: Usage: q='{q}'
   - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
+  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
   - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'

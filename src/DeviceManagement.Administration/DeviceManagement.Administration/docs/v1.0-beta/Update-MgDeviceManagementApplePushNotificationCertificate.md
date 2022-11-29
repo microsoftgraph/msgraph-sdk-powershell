@@ -15,10 +15,10 @@ Update the navigation property applePushNotificationCertificate in deviceManagem
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceManagementApplePushNotificationCertificate [-AdditionalProperties <Hashtable>]
- [-AppleIdentifier <String>] [-Certificate <String>] [-CertificateSerialNumber <String>]
- [-CertificateUploadFailureReason <String>] [-CertificateUploadStatus <String>]
- [-ExpirationDateTime <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-TopicIdentifier <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppleIdentifier <String>] [-Certificate <String>] [-CertificateUploadFailureReason <String>]
+ [-CertificateUploadStatus <String>] [-ExpirationDateTime <DateTime>] [-Id <String>]
+ [-LastModifiedDateTime <DateTime>] [-TopicIdentifier <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -96,22 +96,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CertificateSerialNumber
-Certificate serial number.
-This property is read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -CertificateUploadFailureReason
 The reason the certificate upload failed.
 
@@ -158,7 +142,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -270,10 +255,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphApplePushNotificationCertificate>: Apple push notification certificate.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppleIdentifier <String>]`: Apple Id of the account used to create the MDM push certificate.
   - `[Certificate <String>]`: Not yet documented
-  - `[CertificateSerialNumber <String>]`: Certificate serial number. This property is read-only.
   - `[CertificateUploadFailureReason <String>]`: The reason the certificate upload failed.
   - `[CertificateUploadStatus <String>]`: The certificate upload status.
   - `[ExpirationDateTime <DateTime?>]`: The expiration date and time for Apple push notification certificate.

@@ -8,18 +8,28 @@ schema: 2.0.0
 # Get-MgGroupOwner
 
 ## SYNOPSIS
-Get owners from groups
+The owners of the group.
+Limited to 100 owners.
+Nullable.
+If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
+Supports $expand including nested $select.
+For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ## SYNTAX
 
 ```
 Get-MgGroupOwner -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get owners from groups
+The owners of the group.
+Limited to 100 owners.
+Nullable.
+If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
+Supports $expand including nested $select.
+For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ## EXAMPLES
 
@@ -41,6 +51,22 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

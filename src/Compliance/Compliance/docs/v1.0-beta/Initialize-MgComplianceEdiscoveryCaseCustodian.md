@@ -8,7 +8,8 @@ schema: 2.0.0
 # Initialize-MgComplianceEdiscoveryCaseCustodian
 
 ## SYNOPSIS
-Invoke action activate
+Activate a custodian that has been released from a case to make them part of the case again.
+For details, see Manage custodians in an Advanced eDiscovery case.
 
 ## SYNTAX
 
@@ -25,9 +26,19 @@ Initialize-MgComplianceEdiscoveryCaseCustodian -InputObject <IComplianceIdentity
 ```
 
 ## DESCRIPTION
-Invoke action activate
+Activate a custodian that has been released from a case to make them part of the case again.
+For details, see Manage custodians in an Advanced eDiscovery case.
 
 ## EXAMPLES
+
+### Example 1: Using the Initialize-MgComplianceEdiscoveryCaseCustodian Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Initialize-MgComplianceEdiscoveryCaseCustodian -CaseId $caseId -CustodianId $custodianId
+```
+
+This example shows how to use the Initialize-MgComplianceEdiscoveryCaseCustodian Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

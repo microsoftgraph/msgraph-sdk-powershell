@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationUserTaughtClass
 
 ## SYNOPSIS
-Get taughtClasses from education
+Classes for which the user is a teacher.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgEducationUserTaughtClass -InputObject <IEducationIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get taughtClasses from education
+Classes for which the user is a teacher.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgEducationUserTaughtClass Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Get-MgEducationUserTaughtClass -EducationUserId $educationUserId
+```
+
+This example shows how to use the Get-MgEducationUserTaughtClass Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgEducationUserTaughtClass Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Get-MgEducationUserTaughtClass -EducationUserId $educationUserId -OutFile $outFileId
+```
+
+This example shows how to use the Get-MgEducationUserTaughtClass Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -244,7 +262,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationClass
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationClass1
 
 ## NOTES
 

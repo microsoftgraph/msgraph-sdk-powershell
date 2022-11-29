@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgGroupConversationThread
 
 ## SYNOPSIS
-Get threads from groups
+A collection of all the conversation threads in the conversation.
+A navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +35,21 @@ Get-MgGroupConversationThread -InputObject <IGroupsIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get threads from groups
+A collection of all the conversation threads in the conversation.
+A navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgGroupConversationThread Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupConversationThread -GroupId $groupId -ConversationId $conversationId
+```
+
+This example shows how to use the Get-MgGroupConversationThread Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

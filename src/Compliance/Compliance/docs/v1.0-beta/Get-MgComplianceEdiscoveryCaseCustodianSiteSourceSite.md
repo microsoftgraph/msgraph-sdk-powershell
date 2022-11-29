@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseCustodianSiteSourceSite
 
 ## SYNOPSIS
-Get site from compliance
+The SharePoint site associated with the siteSource.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgComplianceEdiscoveryCaseCustodianSiteSourceSite -InputObject <IComplianceI
 ```
 
 ## DESCRIPTION
-Get site from compliance
+The SharePoint site associated with the siteSource.
 
 ## EXAMPLES
 

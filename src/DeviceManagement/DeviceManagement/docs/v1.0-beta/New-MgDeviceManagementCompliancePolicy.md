@@ -15,12 +15,11 @@ Create new navigation property to compliancePolicies for deviceManagement
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementCompliancePolicy [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>] [-CreatedDateTime <DateTime>]
- [-CreationSource <String>] [-Description <String>] [-Id <String>] [-IsAssigned]
- [-LastModifiedDateTime <DateTime>] [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>]
+ [-Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>] [-CreationSource <String>]
+ [-Description <String>] [-Id <String>] [-Name <String>] [-Platforms <DeviceManagementConfigurationPlatforms>]
  [-RoleScopeTagIds <String[]>]
  [-ScheduledActionsForRule <IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule[]>]
- [-SettingCount <Int32>] [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
+ [-Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]
  [-Technologies <DeviceManagementConfigurationTechnologies>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -84,22 +83,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -CreatedDateTime
-Policy creation date and time.
-This property is read-only.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -CreationSource
 Policy creation source
 
@@ -131,42 +114,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IsAssigned
-Policy assignment status.
-This property is read-only.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-Policy last modification date and time.
-This property is read-only.
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -228,22 +180,6 @@ To construct, please use Get-Help -Online and see NOTES section for SCHEDULEDACT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule[]
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingCount
-Number of settings.
-This property is read-only.
-
-```yaml
-Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -337,7 +273,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>: Policy assignments
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: The identifier of the source of the assignment.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -347,37 +283,33 @@ ASSIGNMENTS <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>: Po
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementCompliancePolicy>: Device Management Compliance Policy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Assignments <IMicrosoftGraphDeviceManagementConfigurationPolicyAssignment[]>]`: Policy assignments
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: The identifier of the source of the assignment.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
-  - `[CreatedDateTime <DateTime?>]`: Policy creation date and time. This property is read-only.
   - `[CreationSource <String>]`: Policy creation source
   - `[Description <String>]`: Policy description
-  - `[IsAssigned <Boolean?>]`: Policy assignment status. This property is read-only.
-  - `[LastModifiedDateTime <DateTime?>]`: Policy last modification date and time. This property is read-only.
   - `[Name <String>]`: Policy name
   - `[Platforms <DeviceManagementConfigurationPlatforms?>]`: Supported platform types.
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[ScheduledActionsForRule <IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule[]>]`: The list of scheduled action for this rule
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[RuleName <String>]`: Name of the rule which this scheduled action applies to.
     - `[ScheduledActionConfigurations <IMicrosoftGraphDeviceManagementComplianceActionItem[]>]`: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ActionType <DeviceManagementComplianceActionType?>]`: Scheduled Action Type Enum
       - `[GracePeriodHours <Int32?>]`: Number of hours to wait till the action will be enforced. Valid values 0 to 8760
       - `[NotificationMessageCcList <String[]>]`: A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
       - `[NotificationTemplateId <String>]`: What notification Message template to use
-  - `[SettingCount <Int32?>]`: Number of settings. This property is read-only.
   - `[Settings <IMicrosoftGraphDeviceManagementConfigurationSetting[]>]`: Policy settings
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]`: List of related Setting Definitions. This property is read-only.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AccessTypes <String>]`: deviceManagementConfigurationSettingAccessTypes
       - `[Applicability <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>]`: deviceManagementConfigurationSettingApplicability
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -414,19 +346,19 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementCompliancePolicy>: Device Manageme
   - `[Technologies <DeviceManagementConfigurationTechnologies?>]`: Describes which technology this setting can be deployed with
 
 SCHEDULEDACTIONSFORRULE <IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule[]>: The list of scheduled action for this rule
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[RuleName <String>]`: Name of the rule which this scheduled action applies to.
   - `[ScheduledActionConfigurations <IMicrosoftGraphDeviceManagementComplianceActionItem[]>]`: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ActionType <DeviceManagementComplianceActionType?>]`: Scheduled Action Type Enum
     - `[GracePeriodHours <Int32?>]`: Number of hours to wait till the action will be enforced. Valid values 0 to 8760
     - `[NotificationMessageCcList <String[]>]`: A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
     - `[NotificationTemplateId <String>]`: What notification Message template to use
 
 SETTINGS <IMicrosoftGraphDeviceManagementConfigurationSetting[]>: Policy settings
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[SettingDefinitions <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition[]>]`: List of related Setting Definitions. This property is read-only.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AccessTypes <String>]`: deviceManagementConfigurationSettingAccessTypes
     - `[Applicability <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>]`: deviceManagementConfigurationSettingApplicability
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

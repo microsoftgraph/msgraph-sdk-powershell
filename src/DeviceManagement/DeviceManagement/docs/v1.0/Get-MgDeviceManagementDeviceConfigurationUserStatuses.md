@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceConfigurationUserStatuses
 
 ## SYNOPSIS
-Get userStatuses from deviceManagement
+Device configuration installation status by user.
 
 ## SYNTAX
 
@@ -19,21 +19,21 @@ Get-MgDeviceManagementDeviceConfigurationUserStatuses -DeviceConfigurationId <St
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgDeviceManagementDeviceConfigurationUserStatuses -DeviceConfigurationId <String>
  -DeviceConfigurationUserStatusId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgDeviceManagementDeviceConfigurationUserStatuses -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get userStatuses from deviceManagement
+Device configuration installation status by user.
 
 ## EXAMPLES
 
@@ -75,7 +75,7 @@ key: id of deviceConfiguration
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List1
 Aliases:
 
 Required: True
@@ -90,7 +90,7 @@ key: id of deviceConfigurationUserStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -136,7 +136,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -343,6 +343,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

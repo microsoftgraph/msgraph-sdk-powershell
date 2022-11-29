@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgUserMailFolderMessageMention
 
 ## SYNOPSIS
-A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest.
-By default, a GET /messages does not return this property unless you apply $expand on the property.
+Delete navigation property mentions for users
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgUserMailFolderMessageMention -InputObject <IMailIdentity> [-IfMatch <St
 ```
 
 ## DESCRIPTION
-A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest.
-By default, a GET /messages does not return this property unless you apply $expand on the property.
+Delete navigation property mentions for users
 
 ## EXAMPLES
 

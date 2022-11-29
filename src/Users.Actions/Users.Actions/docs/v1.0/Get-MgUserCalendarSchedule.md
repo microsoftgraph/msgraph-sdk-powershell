@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserCalendarSchedule
 
 ## SYNOPSIS
-Invoke action getSchedule
+Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Get-MgUserCalendarSchedule -InputObject <IUsersActionsIdentity> [-AdditionalProp
 ```
 
 ## DESCRIPTION
-Invoke action getSchedule
+Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
 
 ## EXAMPLES
 
@@ -244,15 +244,15 @@ BODYPARAMETER <IPathsQue4OrUsersUserIdCalendarsCalendarIdMicrosoftGraphGetschedu
   - `[AvailabilityViewInterval <Int32?>]`: 
   - `[EndTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
   - `[Schedules <String[]>]`: 
   - `[StartTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 ENDTIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -304,8 +304,8 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
 
 STARTTIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
+  - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+  - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
 ## RELATED LINKS
 

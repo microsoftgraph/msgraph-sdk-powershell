@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSearchAcronym
 
 ## SYNOPSIS
-Create new navigation property to acronyms for search
+Create a new acronym object.
 
 ## SYNTAX
 
@@ -25,9 +25,25 @@ New-MgSearchAcronym -BodyParameter <IMicrosoftGraphSearchAcronym> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Create new navigation property to acronyms for search
+Create a new acronym object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgSearchAcronym Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Search
+$params = @{
+	DisplayName = "DNN"
+	StandsFor = "Deep Neural Network"
+	Description = "A deep neural network is a neural network with a certain level of complexity, a neural network with more than two layers."
+	WebUrl = "http://microsoft.com/deep-neural-network"
+	State = "draft"
+}
+New-MgSearchAcronym -BodyParameter $params
+```
+
+This example shows how to use the New-MgSearchAcronym Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -93,7 +109,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -250,7 +267,7 @@ BODYPARAMETER <IMicrosoftGraphSearchAcronym>: acronym
     - `[User <IMicrosoftGraphSearchIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: Timestamp of when the search answer is created or edited. Read-only.
   - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they will go to this URL.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[StandsFor <String>]`: What the acronym stands for.
   - `[State <String>]`: answerState
 

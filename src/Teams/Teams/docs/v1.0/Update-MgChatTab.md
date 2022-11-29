@@ -45,6 +45,18 @@ Update the navigation property tabs in chats
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgChatTab Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	DisplayName = "My Contoso Tab - updated again"
+}
+Update-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgChatTab Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -125,7 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -272,7 +285,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTeamsTab>: teamsTab
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Configuration <IMicrosoftGraphTeamsTabConfiguration>]`: teamsTabConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ContentUrl <String>]`: Url used for rendering tab contents in Teams. Required.
@@ -282,12 +295,12 @@ BODYPARAMETER <IMicrosoftGraphTeamsTab>: teamsTab
   - `[DisplayName <String>]`: Name of the tab.
   - `[TeamsApp <IMicrosoftGraphTeamsApp1>]`: teamsApp
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -356,12 +369,12 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
 
 TEAMSAPP <IMicrosoftGraphTeamsApp1>: teamsApp
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity

@@ -21,14 +21,14 @@ Get-MgUserMailFolderMultiValueExtendedProperty -MailFolderId <String> -UserId <S
  [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgUserMailFolderMultiValueExtendedProperty -MailFolderId <String>
  -MultiValueLegacyExtendedPropertyId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgUserMailFolderMultiValueExtendedProperty -InputObject <IMailIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -110,7 +110,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -125,7 +125,7 @@ key: id of mailFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List1
 Aliases:
 
 Required: True
@@ -140,7 +140,7 @@ key: id of multiValueLegacyExtendedProperty
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -245,7 +245,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List1
 Aliases:
 
 Required: True

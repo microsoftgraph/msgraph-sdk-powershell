@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Remove-MgServicePrincipalAppRoleAssignedTo Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Applications
+Remove-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -AppRoleAssignmentId $appRoleAssignmentId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Remove-MgServicePrincipalAppRoleAssignedTo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

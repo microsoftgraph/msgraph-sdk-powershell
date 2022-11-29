@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteListContentTypeBaseType
 
 ## SYNOPSIS
-Get baseTypes from groups
+The collection of content types that are ancestors of this content type.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgGroupSiteListContentTypeBaseType -InputObject <ISitesIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Get baseTypes from groups
+The collection of content types that are ancestors of this content type.
 
 ## EXAMPLES
 

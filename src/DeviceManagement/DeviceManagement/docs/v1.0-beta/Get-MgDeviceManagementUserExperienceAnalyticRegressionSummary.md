@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementUserExperienceAnalyticRegressionSummary
 
 ## SYNOPSIS
-Get userExperienceAnalyticsRegressionSummary from deviceManagement
+User experience analytics regression summary
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgDeviceManagementUserExperienceAnalyticRegressionSummary [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Get userExperienceAnalyticsRegressionSummary from deviceManagement
+User experience analytics regression summary
 
 ## EXAMPLES
 

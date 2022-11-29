@@ -1,18 +1,12 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgProgramControl Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	ControlId = "7e59d237-2fb0-4e5d-b7bb-d4f9f9129213"
+	ControlTypeId = "6e4f3d20-c5c3-407f-9695-8460952bcc68"
+	ProgramId = "7e59d237-2fb0-4e5d-b7bb-d4f9f9129213"
+}
+New-MgProgramControl -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgProgramControl Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

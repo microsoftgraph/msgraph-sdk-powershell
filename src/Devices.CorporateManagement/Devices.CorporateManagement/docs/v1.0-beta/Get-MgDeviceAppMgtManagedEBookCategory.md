@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtManagedEBookCategory
 
 ## SYNOPSIS
-Get managedEBookCategories from deviceAppManagement
+The mobile eBook categories.
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Get-MgDeviceAppMgtManagedEBookCategory -ManagedEBookId <String> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Get managedEBookCategories from deviceAppManagement
+The mobile eBook categories.
 
 ## EXAMPLES
 

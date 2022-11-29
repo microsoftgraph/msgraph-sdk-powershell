@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamPhoto
 
 ## SYNOPSIS
-Get photo from groups
+The profile photo for the team.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupTeamPhoto -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get photo from groups
+The profile photo for the team.
 
 ## EXAMPLES
 

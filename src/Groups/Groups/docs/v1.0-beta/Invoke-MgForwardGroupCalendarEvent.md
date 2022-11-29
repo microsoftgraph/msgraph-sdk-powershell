@@ -8,7 +8,9 @@ schema: 2.0.0
 # Invoke-MgForwardGroupCalendarEvent
 
 ## SYNOPSIS
-Invoke action forward
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
+This convenience is not available when forwarding from an Outlook.com account.
 
 ## SYNTAX
 
@@ -41,7 +43,9 @@ Invoke-MgForwardGroupCalendarEvent -InputObject <IGroupsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Invoke action forward
+This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
+If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
+This convenience is not available when forwarding from an Outlook.com account.
 
 ## EXAMPLES
 
@@ -229,8 +233,8 @@ BODYPARAMETER <IPaths154X2NnGroupsGroupIdCalendarEventsEventIdMicrosoftGraphForw
   - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of an entity instance.
-      - `[Name <String>]`: The display name of an entity instance.
+      - `[Address <String>]`: The email address of the person or entity.
+      - `[Name <String>]`: The display name of the person or entity.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
@@ -278,8 +282,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
 TORECIPIENTS <IMicrosoftGraphRecipient[]>: .
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of an entity instance.
-    - `[Name <String>]`: The display name of an entity instance.
+    - `[Address <String>]`: The email address of the person or entity.
+    - `[Name <String>]`: The display name of the person or entity.
 
 ## RELATED LINKS
 

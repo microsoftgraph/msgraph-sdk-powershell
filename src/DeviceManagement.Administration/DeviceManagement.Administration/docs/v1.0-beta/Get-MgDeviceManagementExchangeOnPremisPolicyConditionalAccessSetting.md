@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
 
 ## SYNOPSIS
-Get conditionalAccessSettings from deviceManagement
+The Exchange on premises conditional access settings.
+On premises conditional access will require devices to be both enrolled and compliant for mail access
 
 ## SYNTAX
 
@@ -33,7 +34,8 @@ Get-MgDeviceManagementExchangeOnPremisPolicyConditionalAccessSetting
 ```
 
 ## DESCRIPTION
-Get conditionalAccessSettings from deviceManagement
+The Exchange on premises conditional access settings.
+On premises conditional access will require devices to be both enrolled and compliant for mail access
 
 ## EXAMPLES
 
@@ -125,6 +127,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

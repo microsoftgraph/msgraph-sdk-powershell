@@ -16,7 +16,7 @@ Invoke action getZebraFotaDeploymentReport
 ```
 Get-MgDeviceManagementReportZebraFotaDeploymentReport -OutFile <String> [-AdditionalProperties <Hashtable>]
  [-Filter <String>] [-GroupBy <String[]>] [-Name <String>] [-Property <String[]>] [-Search <String>]
- [-SessionId <Int32>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf]
+ [-SessionId <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: System.String
 Parameter Sets: GetExpanded
 Aliases:
 
@@ -289,7 +289,7 @@ BODYPARAMETER <IPaths13QvfzrDevicemanagementReportsMicrosoftGraphGetzebrafotadep
   - `[OrderBy <String[]>]`: 
   - `[Search <String>]`: 
   - `[Select <String[]>]`: 
-  - `[SessionId <Int32?>]`: 
+  - `[SessionId <String>]`: 
   - `[Skip <Int32?>]`: 
   - `[Top <Int32?>]`: 
 

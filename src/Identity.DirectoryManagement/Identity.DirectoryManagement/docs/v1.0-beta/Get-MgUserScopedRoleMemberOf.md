@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserScopedRoleMemberOf
 
 ## SYNOPSIS
-Get scopedRoleMemberOf from users
+The scoped-role administrative unit memberships for this user.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +34,21 @@ Get-MgUserScopedRoleMemberOf -InputObject <IIdentityDirectoryManagementIdentity>
 ```
 
 ## DESCRIPTION
-Get scopedRoleMemberOf from users
+The scoped-role administrative unit memberships for this user.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserScopedRoleMemberOf Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+# A UPN can also be used as -UserId.
+Get-MgUserScopedRoleMemberOf -UserId $userId
+```
+
+This example shows how to use the Get-MgUserScopedRoleMemberOf Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

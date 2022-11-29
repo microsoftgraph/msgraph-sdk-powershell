@@ -27,14 +27,14 @@ Update-MgIdentityGovernanceAccessReviewHistoryDefinition -AccessReviewHistoryDef
 ### Update1
 ```
 Update-MgIdentityGovernanceAccessReviewHistoryDefinition -AccessReviewHistoryDefinitionId <String>
- -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition1> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgIdentityGovernanceAccessReviewHistoryDefinition -InputObject <IIdentityGovernanceIdentity>
- -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition1> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphAccessReviewHistoryDefinition> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -92,7 +92,7 @@ accessReviewHistoryDefinition
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -169,7 +169,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -351,7 +352,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewHistoryDefinition
 
 ## OUTPUTS
 
@@ -366,9 +367,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphAccessReviewHistoryDefinition1>: accessReviewHistoryDefinition
+BODYPARAMETER <IMicrosoftGraphAccessReviewHistoryDefinition>: accessReviewHistoryDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -379,7 +380,7 @@ BODYPARAMETER <IMicrosoftGraphAccessReviewHistoryDefinition1>: accessReviewHisto
   - `[Decisions <String[]>]`: Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
   - `[DisplayName <String>]`: Name for the access review history data collection. Required.
   - `[Instances <IMicrosoftGraphAccessReviewHistoryInstance[]>]`: If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DownloadUri <String>]`: Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
     - `[ExpirationDateTime <DateTime?>]`: Timestamp when this instance and associated data expires and the history is deleted. Required.
     - `[FulfilledDateTime <DateTime?>]`: Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.
@@ -459,7 +460,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -480,11 +483,21 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 INSTANCES <IMicrosoftGraphAccessReviewHistoryInstance[]>: If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DownloadUri <String>]`: Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
   - `[ExpirationDateTime <DateTime?>]`: Timestamp when this instance and associated data expires and the history is deleted. Required.
   - `[FulfilledDateTime <DateTime?>]`: Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.

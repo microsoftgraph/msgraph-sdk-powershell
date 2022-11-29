@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgDirectoryRole Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	RoleTemplateId = "fe930be7-5e62-47db-91af-98c3a49a38b1"
+}
+New-MgDirectoryRole -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgDirectoryRole Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

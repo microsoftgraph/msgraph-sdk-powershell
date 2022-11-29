@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgGroupConversationThreadPostInReplyToExtension
 
 ## SYNOPSIS
-Get extensions from groups
+The collection of open extensions defined for the post.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -34,7 +37,10 @@ Get-MgGroupConversationThreadPostInReplyToExtension -InputObject <IGroupsIdentit
 ```
 
 ## DESCRIPTION
-Get extensions from groups
+The collection of open extensions defined for the post.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 

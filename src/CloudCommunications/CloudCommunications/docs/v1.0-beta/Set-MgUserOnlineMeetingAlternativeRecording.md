@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgUserOnlineMeetingAlternativeRecording
 
 ## SYNOPSIS
-Update alternativeRecording for the navigation property onlineMeetings in users
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgUserOnlineMeetingAlternativeRecording -InputObject <ICloudCommunicationsId
 ```
 
 ## DESCRIPTION
-Update alternativeRecording for the navigation property onlineMeetings in users
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ## EXAMPLES
 

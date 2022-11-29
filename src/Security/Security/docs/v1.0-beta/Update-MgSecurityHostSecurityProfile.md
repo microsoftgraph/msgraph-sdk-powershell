@@ -162,7 +162,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -475,7 +476,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphHostSecurityProfile>: hostSecurityProfile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AzureSubscriptionId <String>]`: 
   - `[AzureTenantId <String>]`: 
   - `[FirstSeenDateTime <DateTime?>]`: 
@@ -494,7 +495,7 @@ BODYPARAMETER <IMicrosoftGraphHostSecurityProfile>: hostSecurityProfile
     - `[LogonTypes <String[]>]`: Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
   - `[NetBiosName <String>]`: 
   - `[NetworkInterfaces <IMicrosoftGraphNetworkInterface[]>]`: 
-    - `[Description <String>]`: Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#/>, etc.).
+    - `[Description <String>]`: Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
     - `[IPV4Address <String>]`: Last IPv4 address associated with this NIC.
     - `[IPV6Address <String>]`: Last Public (aka global) IPv6 address associated with this NIC.
     - `[LocalIPV6Address <String>]`: Last local (link-local or site-local) IPv6 address associated with this NIC.
@@ -566,7 +567,7 @@ LOGONUSERS <IMicrosoftGraphLogonUser[]>: .
   - `[LogonTypes <String[]>]`: Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
 
 NETWORKINTERFACES <IMicrosoftGraphNetworkInterface[]>: .
-  - `[Description <String>]`: Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#/>, etc.).
+  - `[Description <String>]`: Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
   - `[IPV4Address <String>]`: Last IPv4 address associated with this NIC.
   - `[IPV6Address <String>]`: Last Public (aka global) IPv6 address associated with this NIC.
   - `[LocalIPV6Address <String>]`: Last local (link-local or site-local) IPv6 address associated with this NIC.

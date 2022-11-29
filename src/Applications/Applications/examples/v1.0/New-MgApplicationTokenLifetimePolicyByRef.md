@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgApplicationTokenLifetimePolicyByRef Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	"@odata.id" = "https://graph.microsoft.com/v1.0/policies/tokenLifetimePolicies/cd3d9b57-0aee-4f25-8ee3-ac74ef5986a9"
+}
+New-MgApplicationTokenLifetimePolicyByRef -ApplicationId $applicationId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgApplicationTokenLifetimePolicyByRef Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

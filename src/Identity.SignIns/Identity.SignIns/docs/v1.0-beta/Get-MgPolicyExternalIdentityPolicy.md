@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyExternalIdentityPolicy
 
 ## SYNOPSIS
-Get externalIdentitiesPolicy from policies
+Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
 
 ## SYNTAX
 
@@ -17,9 +17,18 @@ Get-MgPolicyExternalIdentityPolicy [-ExpandProperty <String[]>] [-Property <Stri
 ```
 
 ## DESCRIPTION
-Get externalIdentitiesPolicy from policies
+Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPolicyExternalIdentityPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgPolicyExternalIdentityPolicy
+```
+
+This example shows how to use the Get-MgPolicyExternalIdentityPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

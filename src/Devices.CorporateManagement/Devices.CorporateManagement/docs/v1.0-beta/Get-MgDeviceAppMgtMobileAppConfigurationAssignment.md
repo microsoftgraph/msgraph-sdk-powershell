@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtMobileAppConfigurationAssignment
 
 ## SYNOPSIS
-Get assignments from deviceAppManagement
+The list of group assignemenets for app configration.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceAppMgtMobileAppConfigurationAssignment -InputObject <IDevicesCorpora
 ```
 
 ## DESCRIPTION
-Get assignments from deviceAppManagement
+The list of group assignemenets for app configration.
 
 ## EXAMPLES
 
@@ -245,7 +245,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1
 
 ## NOTES
 

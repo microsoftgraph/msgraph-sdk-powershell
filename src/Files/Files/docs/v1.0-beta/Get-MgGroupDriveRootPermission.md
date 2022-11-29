@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupDriveRootPermission
 
 ## SYNOPSIS
-Get permissions from groups
+The set of permissions for the item.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgGroupDriveRootPermission -InputObject <IFilesIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get permissions from groups
+The set of permissions for the item.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

@@ -214,7 +214,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -407,7 +408,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsResourcePerformance>: The user experience analytics resource performance entity.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AverageSpikeTimeScore <Int32?>]`: AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
   - `[CpuSpikeTimePercentage <Double?>]`: CPU spike time in percentage. Valid values 0 to 100
   - `[CpuSpikeTimePercentageThreshold <Double?>]`: Threshold of cpuSpikeTimeScore. Valid values 0 to 100
@@ -509,6 +510,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

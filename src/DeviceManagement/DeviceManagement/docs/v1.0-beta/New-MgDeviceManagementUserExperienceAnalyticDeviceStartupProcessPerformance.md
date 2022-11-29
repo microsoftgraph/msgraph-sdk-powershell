@@ -81,7 +81,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -253,7 +254,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcessPerformance>: The user experience analytics device startup process performance.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeviceCount <Int64?>]`: User experience analytics device startup process summarized count.
   - `[MedianImpactInMS <Int32?>]`: User experience analytics device startup process median impact in milliseconds.
   - `[MedianImpactInMs2 <Int64?>]`: User experience analytics device startup process median impact in milliseconds.

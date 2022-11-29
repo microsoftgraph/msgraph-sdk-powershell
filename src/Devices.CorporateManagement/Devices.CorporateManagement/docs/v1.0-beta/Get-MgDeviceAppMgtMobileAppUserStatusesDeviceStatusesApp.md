@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesApp
 
 ## SYNOPSIS
-Get app from deviceAppManagement
+The navigation link to the mobile app.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesApp -InputObject <IDevicesC
 ```
 
 ## DESCRIPTION
-Get app from deviceAppManagement
+The navigation link to the mobile app.
 
 ## EXAMPLES
 
@@ -132,7 +132,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
 
 ## NOTES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserChatMessageReplyHostedContent
 
 ## SYNOPSIS
-Get hostedContents from users
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgUserChatMessageReplyHostedContent -InputObject <ITeamsIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get hostedContents from users
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## EXAMPLES
 

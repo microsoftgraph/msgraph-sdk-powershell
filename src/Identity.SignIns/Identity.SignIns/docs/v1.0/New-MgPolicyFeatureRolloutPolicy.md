@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyFeatureRolloutPolicy
 
 ## SYNOPSIS
-Create new navigation property to featureRolloutPolicies for policies
+Create a new featureRolloutPolicy object.
 
 ## SYNTAX
 
@@ -27,9 +27,25 @@ New-MgPolicyFeatureRolloutPolicy -BodyParameter <IMicrosoftGraphFeatureRolloutPo
 ```
 
 ## DESCRIPTION
-Create new navigation property to featureRolloutPolicies for policies
+Create a new featureRolloutPolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgPolicyFeatureRolloutPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	DisplayName = "PassthroughAuthentication rollout policy"
+	Description = "PassthroughAuthentication rollout policy"
+	Feature = "passthroughAuthentication"
+	IsEnabled = $true
+	IsAppliedToOrganization = $false
+}
+New-MgPolicyFeatureRolloutPolicy -BodyParameter $params
+```
+
+This example shows how to use the New-MgPolicyFeatureRolloutPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -127,7 +143,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -223,14 +240,14 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPLIESTO <IMicrosoftGraphDirectoryObject[]>: Nullable. Specifies a list of directoryObjects that feature is enabled for.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 BODYPARAMETER <IMicrosoftGraphFeatureRolloutPolicy>: featureRolloutPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Nullable. Specifies a list of directoryObjects that feature is enabled for.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Description <String>]`: A description for this feature rollout policy.
   - `[DisplayName <String>]`: The display name for this  feature rollout policy.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListItemField
 
 ## SYNOPSIS
-Get fields from shares
+The values of the columns set on this list item.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Get-MgShareListItemField -InputObject <IFilesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get fields from shares
+The values of the columns set on this list item.
 
 ## EXAMPLES
 

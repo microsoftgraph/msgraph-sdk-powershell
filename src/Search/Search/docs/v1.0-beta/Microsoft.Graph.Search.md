@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: 72ef0558-7117-440f-9726-3f51cd0c0905
+Module Guid: b020b071-8e97-4de3-9d8c-89287b5505a0
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -24,49 +24,52 @@ Get connections from external
 Get groups from external
 
 ### [Get-MgExternalConnectionGroupMember](Get-MgExternalConnectionGroupMember.md)
-Get members from external
+A member added to an externalGroup.
+You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
 
 ### [Get-MgExternalConnectionItem](Get-MgExternalConnectionItem.md)
 Get items from external
 
 ### [Get-MgExternalConnectionItemActivity](Get-MgExternalConnectionItemActivity.md)
-Get activities from external
+Write-only property.
+Returns results.
 
 ### [Get-MgExternalConnectionItemActivityPerformedBy](Get-MgExternalConnectionItemActivityPerformedBy.md)
-Get performedBy from external
+Represents an identity used to identify who is responsible for the activity.
 
 ### [Get-MgExternalConnectionOperation](Get-MgExternalConnectionOperation.md)
 Get operations from external
 
 ### [Get-MgExternalConnectionQuota](Get-MgExternalConnectionQuota.md)
-Get quota from external
+Retrieve the properties and relationships of a connectionQuota object.
 
 ### [Get-MgExternalConnectionSchema](Get-MgExternalConnectionSchema.md)
-Get schema from external
+Retrieve the properties of a schema for an externalConnection.
 
 ### [Get-MgSearchAcronym](Get-MgSearchAcronym.md)
-Get acronyms from search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ### [Get-MgSearchBookmark](Get-MgSearchBookmark.md)
-Get bookmarks from search
+Administrative answer in Microsoft Search results for common search queries in an organization.
 
 ### [Get-MgSearchEntity](Get-MgSearchEntity.md)
 Get search
 
 ### [Get-MgSearchQna](Get-MgSearchQna.md)
-Get qnas from search
+Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 
 ### [Invoke-MgQuerySearch](Invoke-MgQuerySearch.md)
-Invoke action query
+Run a specified search query.
+Search results are provided in the response.
 
 ### [New-MgExternalConnection](New-MgExternalConnection.md)
-Create new navigation property to connections for external
+Create a new externalConnection.
 
 ### [New-MgExternalConnectionGroup](New-MgExternalConnectionGroup.md)
-Create new navigation property to groups for external
+Create a new externalGroup object.
 
 ### [New-MgExternalConnectionGroupMember](New-MgExternalConnectionGroupMember.md)
-Create new navigation property to members for external
+Create a new externalGroupMember object.
 
 ### [New-MgExternalConnectionItem](New-MgExternalConnectionItem.md)
 Create new navigation property to items for external
@@ -78,13 +81,13 @@ Create new navigation property to activities for external
 Create new navigation property to operations for external
 
 ### [New-MgSearchAcronym](New-MgSearchAcronym.md)
-Create new navigation property to acronyms for search
+Create a new acronym object.
 
 ### [New-MgSearchBookmark](New-MgSearchBookmark.md)
-Create new navigation property to bookmarks for search
+Create a new bookmark object.
 
 ### [New-MgSearchQna](New-MgSearchQna.md)
-Create new navigation property to qnas for search
+Create a new qna object.
 
 ### [Remove-MgExternalConnection](Remove-MgExternalConnection.md)
 Delete navigation property connections for external
@@ -103,6 +106,9 @@ Delete navigation property activities for external
 
 ### [Remove-MgExternalConnectionOperation](Remove-MgExternalConnectionOperation.md)
 Delete navigation property operations for external
+
+### [Remove-MgExternalConnectionQuota](Remove-MgExternalConnectionQuota.md)
+Delete navigation property quota for external
 
 ### [Remove-MgExternalConnectionSchema](Remove-MgExternalConnectionSchema.md)
 Delete navigation property schema for external
@@ -137,8 +143,11 @@ Update the navigation property activities in external
 ### [Update-MgExternalConnectionOperation](Update-MgExternalConnectionOperation.md)
 Update the navigation property operations in external
 
+### [Update-MgExternalConnectionQuota](Update-MgExternalConnectionQuota.md)
+Update the navigation property quota in external
+
 ### [Update-MgExternalConnectionSchema](Update-MgExternalConnectionSchema.md)
-Update the navigation property schema in external
+Update the properties of a schema for an externalConnection.
 
 ### [Update-MgSearchAcronym](Update-MgSearchAcronym.md)
 Update the navigation property acronyms in search

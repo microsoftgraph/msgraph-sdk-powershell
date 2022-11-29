@@ -73,7 +73,11 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connections from external
+      summary: List connections
+      description: Retrieve a list of externalConnections.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
       operationId: external_ListConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -170,7 +174,11 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create new navigation property to connections for external
+      summary: Create connection
+      description: Create a new externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
       operationId: external_CreateConnections
       requestBody:
         description: New navigation property
@@ -200,6 +208,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -288,6 +297,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -314,12 +324,14 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -339,6 +351,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -404,13 +417,18 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create new navigation property to groups for external
+      summary: Create externalGroup
+      description: Create a new externalGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
       operationId: external.connections_CreateGroups
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -442,6 +460,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -449,6 +468,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -506,6 +526,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -513,6 +534,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -539,6 +561,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -546,12 +569,14 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -565,12 +590,14 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
+      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
       operationId: external.connections.groups_ListMembers
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -578,6 +605,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -638,13 +666,18 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create new navigation property to members for external
+      summary: Create externalGroupMember
+      description: Create a new externalGroupMember object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
       operationId: external.connections.groups_CreateMembers
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -652,6 +685,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -677,12 +711,14 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
+      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
       operationId: external.connections.groups_GetMembers
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -690,6 +726,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -697,6 +734,7 @@ paths:
           in: path
           description: 'key: id of identity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: identity
@@ -745,6 +783,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -752,6 +791,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -759,6 +799,7 @@ paths:
           in: path
           description: 'key: id of identity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: identity
@@ -785,6 +826,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -792,6 +834,7 @@ paths:
           in: path
           description: 'key: id of externalGroup'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalGroup
@@ -799,12 +842,14 @@ paths:
           in: path
           description: 'key: id of identity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: identity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -824,6 +869,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -899,6 +945,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -930,6 +977,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -937,6 +985,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -997,6 +1046,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1004,6 +1054,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1030,6 +1081,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1037,12 +1089,14 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1056,12 +1110,14 @@ paths:
       tags:
         - external.externalConnection
       summary: Get activities from external
+      description: Write-only property. Returns results.
       operationId: external.connections.items_ListActivities
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1069,6 +1125,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1141,6 +1198,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1148,6 +1206,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1173,12 +1232,14 @@ paths:
       tags:
         - external.externalConnection
       summary: Get activities from external
+      description: Write-only property. Returns results.
       operationId: external.connections.items_GetActivities
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1186,6 +1247,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1193,6 +1255,7 @@ paths:
           in: path
           description: 'key: id of externalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalActivity
@@ -1251,6 +1314,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1258,6 +1322,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1265,6 +1330,7 @@ paths:
           in: path
           description: 'key: id of externalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalActivity
@@ -1291,6 +1357,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1298,6 +1365,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1305,12 +1373,14 @@ paths:
           in: path
           description: 'key: id of externalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalActivity
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1324,12 +1394,14 @@ paths:
       tags:
         - external.externalConnection
       summary: Get performedBy from external
+      description: Represents an identity used to identify who is responsible for the activity.
       operationId: external.connections.items.activities_GetPerformedGraphBPre
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1337,6 +1409,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1344,6 +1417,7 @@ paths:
           in: path
           description: 'key: id of externalActivity'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalActivity
@@ -1393,6 +1467,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1400,6 +1475,7 @@ paths:
           in: path
           description: 'key: id of externalItem'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalItem
@@ -1423,18 +1499,24 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of externalItem
+                title: Collection of externalActivityResult
                 type: object
                 properties:
                   value:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivityResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/external/connections/{externalConnection-id}/operations':
     get:
       tags:
@@ -1446,6 +1528,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1516,6 +1599,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1547,6 +1631,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1554,6 +1639,7 @@ paths:
           in: path
           description: 'key: id of connectionOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectionOperation
@@ -1603,6 +1689,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1610,6 +1697,7 @@ paths:
           in: path
           description: 'key: id of connectionOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectionOperation
@@ -1636,6 +1724,7 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1643,12 +1732,14 @@ paths:
           in: path
           description: 'key: id of connectionOperation'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: connectionOperation
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1661,13 +1752,18 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get quota from external
+      summary: Get connectionQuota
+      description: Retrieve the properties and relationships of a connectionQuota object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-1.0
       operationId: external.connections_GetQuota
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1706,17 +1802,75 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.externalConnection
+      summary: Update the navigation property quota in external
+      operationId: external.connections_UpdateQuota
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.externalConnection
+      summary: Delete navigation property quota for external
+      operationId: external.connections_DeleteQuota
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/external/connections/{externalConnection-id}/schema':
     get:
       tags:
         - external.externalConnection
-      summary: Get schema from external
+      summary: Get schema
+      description: Retrieve the properties of a schema for an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
       operationId: external.connections_GetSchema
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1759,13 +1913,18 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update the navigation property schema in external
+      summary: Update schema
+      description: Update the properties of a schema for an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0
       operationId: external.connections_UpdateSchema
       parameters:
         - name: externalConnection-id
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
@@ -1792,12 +1951,14 @@ paths:
           in: path
           description: 'key: id of externalConnection'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: externalConnection
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1884,7 +2045,11 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: Get acronyms from search
+      summary: List acronyms
+      description: Get a list of the acronym objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
       operationId: search_ListAcronyms
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1962,7 +2127,11 @@ paths:
     post:
       tags:
         - search.acronym
-      summary: Create new navigation property to acronyms for search
+      summary: Create acronym
+      description: Create a new acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
       operationId: search_CreateAcronyms
       requestBody:
         description: New navigation property
@@ -1986,12 +2155,14 @@ paths:
       tags:
         - search.acronym
       summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
       operationId: search_GetAcronyms
       parameters:
         - name: acronym-id
           in: path
           description: 'key: id of acronym'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: acronym
@@ -2046,6 +2217,7 @@ paths:
           in: path
           description: 'key: id of acronym'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: acronym
@@ -2072,12 +2244,14 @@ paths:
           in: path
           description: 'key: id of acronym'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: acronym
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2090,7 +2264,11 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: Get bookmarks from search
+      summary: List bookmarks
+      description: Get a list of bookmark objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
       operationId: search_ListBookmarks
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2195,7 +2373,11 @@ paths:
     post:
       tags:
         - search.bookmark
-      summary: Create new navigation property to bookmarks for search
+      summary: Create bookmark
+      description: Create a new bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
       operationId: search_CreateBookmarks
       requestBody:
         description: New navigation property
@@ -2219,12 +2401,14 @@ paths:
       tags:
         - search.bookmark
       summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_GetBookmarks
       parameters:
         - name: bookmark-id
           in: path
           description: 'key: id of bookmark'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookmark
@@ -2288,6 +2472,7 @@ paths:
           in: path
           description: 'key: id of bookmark'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookmark
@@ -2314,12 +2499,14 @@ paths:
           in: path
           description: 'key: id of bookmark'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookmark
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2333,6 +2520,10 @@ paths:
       tags:
         - search.Actions
       summary: Invoke action query
+      description: Run a specified search query. Search results are provided in the response.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-query?view=graph-rest-1.0
       operationId: search_query
       requestBody:
         description: Action parameters
@@ -2354,23 +2545,32 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of searchEntity
                 type: object
                 properties:
                   value:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.searchResponse'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /search/qnas:
     get:
       tags:
         - search.qna
-      summary: Get qnas from search
+      summary: List qnas
+      description: Get a list of the qna objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
       operationId: search_ListQnas
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2469,7 +2669,11 @@ paths:
     post:
       tags:
         - search.qna
-      summary: Create new navigation property to qnas for search
+      summary: Create qna
+      description: Create a new qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
       operationId: search_CreateQnas
       requestBody:
         description: New navigation property
@@ -2493,12 +2697,14 @@ paths:
       tags:
         - search.qna
       summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
       operationId: search_GetQnas
       parameters:
         - name: qna-id
           in: path
           description: 'key: id of qna'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: qna
@@ -2560,6 +2766,7 @@ paths:
           in: path
           description: 'key: id of qna'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: qna
@@ -2586,12 +2793,14 @@ paths:
           in: path
           description: 'key: id of qna'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: qna
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2610,6 +2819,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
+          readOnly: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalConnection:
@@ -2651,14 +2861,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
+              readOnly: true
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
+              readOnly: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
+              readOnly: true
             quota:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
             schema:
@@ -2684,6 +2897,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
               description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.identity:
@@ -2716,6 +2930,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
               description: Write-only property. Returns results.
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.externalActivity:
@@ -2797,16 +3012,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.acronym'
               description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
+              readOnly: true
             bookmarks:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.bookmark'
               description: Administrative answer in Microsoft Search results for common search queries in an organization.
+              readOnly: true
             qnas:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.qna'
               description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.search.acronym:
@@ -2900,6 +3118,11 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.aggregationOption'
           description: Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
+        collapseProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.collapseProperty'
+          description: Contains the ordered collection of fields and limit to collapse results. Optional.
         contentSources:
           type: array
           items:
@@ -2914,7 +3137,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.entityType'
-          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
+          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.'
         fields:
           type: array
           items:
@@ -2933,9 +3156,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.searchAlterationOptions'
         region:
           type: string
+          description: 'Required for searches that use application permissions. Represents the geographic location for the search. For details, see Get the region value.'
           nullable: true
         resultTemplateOptions:
           $ref: '#/components/schemas/microsoft.graph.resultTemplateOption'
+        sharePointOneDriveOptions:
+          $ref: '#/components/schemas/microsoft.graph.sharePointOneDriveOptions'
         size:
           maximum: 2147483647
           minimum: -2147483648
@@ -3035,6 +3261,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.activitySettings:
@@ -3056,6 +3283,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.displayTemplate'
+          description: Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.configuration:
@@ -3189,7 +3417,11 @@ components:
           items:
             type: string
             nullable: true
-          description: 'A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^. Optional.'
+          description: 'A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^. Optional.'
+        isExactMatchRequired:
+          type: boolean
+          description: Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for non-searchable properties of type string or stringCollection. Optional.
+          nullable: true
         isQueryable:
           type: boolean
           description: Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
@@ -3213,7 +3445,7 @@ components:
           description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.'
         name:
           type: string
-          description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
+          description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
         type:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.propertyType'
       additionalProperties:
@@ -3365,6 +3597,23 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.collapseProperty:
+      title: collapseProperty
+      type: object
+      properties:
+        fields:
+          type: array
+          items:
+            type: string
+          description: Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
+        limit:
+          maximum: 32767
+          minimum: -32768
+          type: integer
+          description: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
+          format: int16
+      additionalProperties:
+        type: object
     microsoft.graph.entityType:
       title: entityType
       enum:
@@ -3419,6 +3668,14 @@ components:
           type: boolean
           description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.'
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sharePointOneDriveOptions:
+      title: sharePointOneDriveOptions
+      type: object
+      properties:
+        includeContent:
+          $ref: '#/components/schemas/microsoft.graph.searchContent'
       additionalProperties:
         type: object
     microsoft.graph.sortProperty:
@@ -3501,6 +3758,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalGroupCollectionResponse:
@@ -3513,6 +3771,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.identityCollectionResponse:
@@ -3525,6 +3784,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
@@ -3537,6 +3797,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalActivityCollectionResponse:
@@ -3549,6 +3810,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.connectionOperationCollectionResponse:
@@ -3561,6 +3823,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.search.acronymCollectionResponse:
@@ -3573,6 +3836,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.search.acronym'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.search.bookmarkCollectionResponse:
@@ -3585,6 +3849,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.search.bookmark'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.search.qnaCollectionResponse:
@@ -3597,6 +3862,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.search.qna'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.urlToItemResolverBase:
@@ -3786,6 +4052,13 @@ components:
           description: Contains the actual search terms of the request.
       additionalProperties:
         type: object
+    microsoft.graph.searchContent:
+      title: searchContent
+      enum:
+        - sharedContent
+        - privateContent
+        - unknownFutureValue
+      type: string
     microsoft.graph.searchAggregation:
       title: searchAggregation
       type: object
@@ -4103,6 +4376,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -4111,6 +4386,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -4118,18 +4395,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgOrganizationSettingPersonInsight
 
 ## SYNOPSIS
-Update the navigation property peopleInsights in organization
+Update the privacy settings to display or return the specified type of insights in an organization.
+The type of settings can be item insights or people insights.
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ## SYNTAX
 
@@ -39,9 +41,24 @@ Update-MgOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManage
 ```
 
 ## DESCRIPTION
-Update the navigation property peopleInsights in organization
+Update the privacy settings to display or return the specified type of insights in an organization.
+The type of settings can be item insights or people insights.
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgOrganizationSettingPersonInsight Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+$params = @{
+	IsEnabledInOrganization = $true
+	DisabledForGroup = "edbfe4fb-ec70-4300-928f-dbb2ae86c981"
+}
+Update-MgOrganizationSettingPersonInsight -OrganizationId $organizationId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgOrganizationSettingPersonInsight Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserPlannerRosterPlan
 
 ## SYNOPSIS
-Get rosterPlans from users
+Read-only.
+Nullable.
+Returns the plannerPlans contained by the plannerRosters the user is a member.
 
 ## SYNTAX
 
@@ -32,9 +34,20 @@ Get-MgUserPlannerRosterPlan -InputObject <IPlannerIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get rosterPlans from users
+Read-only.
+Nullable.
+Returns the plannerPlans contained by the plannerRosters the user is a member.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserPlannerRosterPlan Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+Get-MgUserPlannerRosterPlan -UserId $userId
+```
+
+This example shows how to use the Get-MgUserPlannerRosterPlan Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

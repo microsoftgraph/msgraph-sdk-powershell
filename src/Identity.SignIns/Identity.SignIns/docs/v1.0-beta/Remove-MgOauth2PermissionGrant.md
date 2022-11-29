@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgOauth2PermissionGrant
 
 ## SYNOPSIS
-Delete oAuth2PermissionGrant (a delegated permission grant)
+Delete an oAuth2PermissionGrant, representing a delegated permission grant.
+When a delegated permission grant is deleted, the access it granted is revoked.
+Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted **oAuth2PermissionGrant**.
 
 ## SYNTAX
 
@@ -25,9 +27,20 @@ Remove-MgOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity> [-IfMatch
 ```
 
 ## DESCRIPTION
-Delete oAuth2PermissionGrant (a delegated permission grant)
+Delete an oAuth2PermissionGrant, representing a delegated permission grant.
+When a delegated permission grant is deleted, the access it granted is revoked.
+Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted **oAuth2PermissionGrant**.
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgOauth2PermissionGrant Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Remove-MgOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId
+```
+
+This example shows how to use the Remove-MgOauth2PermissionGrant Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -146,10 +159,14 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -158,6 +175,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

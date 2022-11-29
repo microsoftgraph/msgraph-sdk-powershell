@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteTermStoreSetTermRelation
 
 ## SYNOPSIS
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ## SYNTAX
 
@@ -21,14 +21,14 @@ Get-MgSiteTermStoreSetTermRelation -SetId <String> -SiteId <String> -TermId <Str
 
 ### Get
 ```
-Get-MgSiteTermStoreSetTermRelation -RelationId <String> -SetId <String> -SiteId <String> -TermId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get1
-```
 Get-MgSiteTermStoreSetTermRelation -RelationId <String> -SetId <String> -SiteId <String> -StoreId <String>
  -TermId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+```
+
+### Get2
+```
+Get-MgSiteTermStoreSetTermRelation -RelationId <String> -SetId <String> -SiteId <String> -TermId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -37,7 +37,7 @@ Get-MgSiteTermStoreSetTermRelation -InputObject <ISitesIdentity> [-ExpandPropert
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity2
 ```
 Get-MgSiteTermStoreSetTermRelation -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -51,7 +51,7 @@ Get-MgSiteTermStoreSetTermRelation -SetId <String> -SiteId <String> -StoreId <St
 ```
 
 ## DESCRIPTION
-Get relations from sites
+To indicate which terms are related to the current term as either pinned or reused.
 
 ## EXAMPLES
 
@@ -124,7 +124,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity, GetViaIdentity2
 Aliases:
 
 Required: True
@@ -169,7 +169,7 @@ key: id of relation
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get, Get2
 Aliases:
 
 Required: True
@@ -199,7 +199,7 @@ key: id of set
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List, List2
+Parameter Sets: Get, Get2, List, List2
 Aliases:
 
 Required: True
@@ -214,7 +214,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List, List2
+Parameter Sets: Get, Get2, List, List2
 Aliases:
 
 Required: True
@@ -259,7 +259,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -274,7 +274,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List, List2
+Parameter Sets: Get, Get2, List, List2
 Aliases:
 
 Required: True

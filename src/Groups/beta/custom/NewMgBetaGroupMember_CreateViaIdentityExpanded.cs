@@ -23,7 +23,7 @@
         private System.Threading.CancellationTokenSource _cancellationTokenSource = new System.Threading.CancellationTokenSource();
 
         /// <summary>Dictionary of <any></summary>
-        private Microsoft.Graph.Beta.PowerShell.Models.IDictionaryOfany1 _bodyParameter = new Microsoft.Graph.Beta.PowerShell.Models.DictionaryOfany1();
+        private Microsoft.Graph.Beta.PowerShell.Models.IReferenceCreate _bodyParameter = new Microsoft.Graph.Beta.PowerShell.Models.ReferenceCreate();
 
         /// <summary>Wait for .NET debugger to attach</summary>
         [System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
@@ -261,7 +261,7 @@
                     {
                         ThrowTerminatingError(new System.Management.Automation.ErrorRecord(new System.Exception("InputObject has null value for InputObject.GroupId"), string.Empty, System.Management.Automation.ErrorCategory.InvalidArgument, InputObject));
                     }
-                    _bodyParameter.Add("@odata.id", $"https://graph.microsoft.com/beta/directoryObjects/{DirectoryObjectId}");
+                    _bodyParameter.OdataId = $"https://graph.microsoft.com/beta/directoryObjects/{DirectoryObjectId}";
                     await this.Client.GroupsCreateMembersGraphBPreRef(InputObject.GroupId, _bodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }

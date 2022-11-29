@@ -8,7 +8,7 @@ schema: 2.0.0
 # Confirm-MgTeamScheduleTimeCard
 
 ## SYNOPSIS
-Invoke action confirm
+Confirm a specific timeCard.
 
 ## SYNTAX
 
@@ -23,9 +23,18 @@ Confirm-MgTeamScheduleTimeCard -InputObject <ITeamsIdentity> [-Confirm] [-WhatIf
 ```
 
 ## DESCRIPTION
-Invoke action confirm
+Confirm a specific timeCard.
 
 ## EXAMPLES
+
+### Example 1: Using the Confirm-MgTeamScheduleTimeCard Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Confirm-MgTeamScheduleTimeCard -TeamId $teamId -TimeCardId $timeCardId
+```
+
+This example shows how to use the Confirm-MgTeamScheduleTimeCard Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgTeamPrimaryChannelTab
 
 ## SYNOPSIS
-Get tabs from teams
+A collection of all the tabs in the channel.
+A navigation property.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgTeamPrimaryChannelTab -InputObject <ITeamsIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get tabs from teams
+A collection of all the tabs in the channel.
+A navigation property.
 
 ## EXAMPLES
 

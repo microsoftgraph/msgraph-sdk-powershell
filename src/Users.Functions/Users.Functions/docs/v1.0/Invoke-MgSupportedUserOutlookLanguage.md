@@ -8,26 +8,72 @@ schema: 2.0.0
 # Invoke-MgSupportedUserOutlookLanguage
 
 ## SYNOPSIS
-Invoke function supportedLanguages
+Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server.
+When setting up an Outlook client, the user selects the preferred language from this supported list.
+You can subsequently get the preferred language by \ngetting the user's mailbox settings.
 
 ## SYNTAX
 
 ### Supported (Default)
 ```
-Invoke-MgSupportedUserOutlookLanguage -UserId <String> [<CommonParameters>]
+Invoke-MgSupportedUserOutlookLanguage -UserId <String> [-Count] [-Filter <String>] [-Search <String>]
+ [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### SupportedViaIdentity
 ```
-Invoke-MgSupportedUserOutlookLanguage -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Invoke-MgSupportedUserOutlookLanguage -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
+ [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function supportedLanguages
+Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server.
+When setting up an Outlook client, the user selects the preferred language from this supported list.
+You can subsequently get the preferred language by \ngetting the user's mailbox settings.
 
 ## EXAMPLES
 
+### Example 1: Using the Invoke-MgSupportedUserOutlookLanguage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Functions
+# A UPN can also be used as -UserId.
+Invoke-MgSupportedUserOutlookLanguage -UserId $userId
+```
+
+This example shows how to use the Invoke-MgSupportedUserOutlookLanguage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
+
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -42,6 +88,51 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Search
+Search items by search phrases
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -106,6 +197,7 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[Q <String>]`: Usage: q='{q}'
   - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
+  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
   - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgTeamPrimaryChannelMessageReply
 
 ## SYNOPSIS
-Get replies from teams
+Replies for a specified message.
+Supports $expand for channel messages.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgTeamPrimaryChannelMessageReply -InputObject <ITeamsIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get replies from teams
+Replies for a specified message.
+Supports $expand for channel messages.
 
 ## EXAMPLES
 

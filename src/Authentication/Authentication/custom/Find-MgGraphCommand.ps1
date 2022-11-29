@@ -72,7 +72,6 @@ Function Find-MgGraphCommand {
         [Parameter(ParameterSetName = "FindByUri")]
         [Parameter(ParameterSetName = "FindByCommand")]
         [ValidateSet("v1.0", "beta")]
-        [Alias("Profile")]
         [string]$ApiVersion,
 
         [Parameter(ParameterSetName = "FindByCommand", Mandatory = $true)]

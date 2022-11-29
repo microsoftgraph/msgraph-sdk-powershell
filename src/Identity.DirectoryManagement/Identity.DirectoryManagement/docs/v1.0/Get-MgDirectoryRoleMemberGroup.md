@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDirectoryRoleMemberGroup
 
 ## SYNOPSIS
-Invoke action getMemberGroups
+Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
+This function is transitive.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Get-MgDirectoryRoleMemberGroup -InputObject <IIdentityDirectoryManagementIdentit
 ```
 
 ## DESCRIPTION
-Invoke action getMemberGroups
+Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
+This function is transitive.
 
 ## EXAMPLES
 

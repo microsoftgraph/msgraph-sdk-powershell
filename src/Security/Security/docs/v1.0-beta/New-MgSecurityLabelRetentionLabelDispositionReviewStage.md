@@ -77,7 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -222,7 +223,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecurityDispositionReviewStage>: dispositionReviewStage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Name <String>]`: Name representing each stage within a collection.
   - `[ReviewersEmailAddresses <String[]>]`: A collection of reviewers at each stage.
   - `[StageNumber <Int32?>]`: The sequence number for each stage of the disposition review.

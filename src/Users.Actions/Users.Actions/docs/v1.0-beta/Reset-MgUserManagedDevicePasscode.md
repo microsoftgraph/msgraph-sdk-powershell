@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgUserManagedDevicePasscode
 
 ## SYNOPSIS
-Invoke action resetPasscode
+Reset passcode
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Reset-MgUserManagedDevicePasscode -InputObject <IUsersActionsIdentity> [-PassThr
 ```
 
 ## DESCRIPTION
-Invoke action resetPasscode
+Reset passcode
 
 ## EXAMPLES
 

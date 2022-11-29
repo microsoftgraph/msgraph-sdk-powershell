@@ -12,12 +12,12 @@ Describe "Find-MgGraphCommand Command" {
             {
                 $MgCommand = Find-MgGraphCommand -Uri "/users"
                 $MgCommand | Should -HaveCount 4
-                $MgCommand.Command | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.Command | Select-Object -Unique | should -HaveCount 4
                 $MgCommand.Method | Select-Object -Unique | should -HaveCount 2
                 $MgCommand.APIVersion | Select-Object -Unique | should -HaveCount 2
-                $MgCommand.Variants | Select-Object -Unique | should -HaveCount 6
+                $MgCommand.Variants | Select-Object -Unique | should -HaveCount 3
                 $MgCommand.URI | Select-Object -Unique | Should -Be "/users"
-                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("New-MgUser", "Get-MgUser")
+                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("New-MgUser", "Get-MgUser", "New-MgBetaUser", "Get-MgBetaUser")
             } | Should -Not -Throw
         }
         It 'Should find beta command using tokenized key segments' {
@@ -30,7 +30,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.APIVersion | Should -Be "beta" # -APIVersion takes precedence.
                 $MgCommand.Variants | Should -Contain "Export"
                 $MgCommand.URI | Should -Be "/users/{user-id}/exportPersonalData"
-                $MgCommand.Command | Should -Be "Export-MgUserPersonalData"
+                $MgCommand.Command | Should -Be "Export-MgBetaUserPersonalData"
             } | Should -Not -Throw
         }
         It 'Should find v1.0 command using actual id in key segments' {
@@ -43,9 +43,10 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.APIVersion | Should -Be "beta"
                 $MgCommand.Variants | Should -Contain "Get"
                 $MgCommand.URI | Should -Be $ExpectedResourceUri
-                $MgCommand.Command | Should -Be "Get-MgEntitlementManagementAccessPackageAssignmentResourceRole"
+                $MgCommand.Command | Should -Be "Get-MgBetaEntitlementManagementAccessPackageAssignmentResourceRole"
             } | Should -Not -Throw
         }
+
         It 'Should find command using URI with query parameters' {
             {
                 $Uri = "beta/users?`$select=displayName&`$filter=identities/any(c:c/issuerAssignedId eq 'j.smith@yahoo.com')"
@@ -55,7 +56,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.APIVersion | Should -Be "beta"
                 $MgCommand.Variants | Should -Contain "List"
                 $MgCommand.URI | Should -Be "/users"
-                $MgCommand.Command | Should -Be "Get-MgUser"
+                $MgCommand.Command | Should -Be "Get-MgBetaUser"
             } | Should -Not -Throw
         }
         It 'Should find command using escaped URI' {
@@ -65,9 +66,9 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand | Should -HaveCount 2
                 $MgCommand.Method | Select-Object -Unique | Should -Be "POST"
                 $MgCommand.APIVersion | Should -BeIn @("v1.0", "beta")
-                $MgCommand.Variants | Should -Contain "Create1"
+                $MgCommand.Variants | Should -Contain "Create"
                 $MgCommand.URI | Select-Object -Unique | Should -Be "/servicePrincipals/{servicePrincipal-id}/endpoints"
-                $MgCommand.Command | Select-Object -Unique | Should -Be "New-MgServicePrincipalEndpoint"
+                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("New-MgServicePrincipalEndpoint", "New-MgBetaServicePrincipalEndpoint")
             } | Should -Not -Throw
         }
         It 'Should find command using regex' {
@@ -77,7 +78,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Count | Should -BeGreaterThan 1
                 $MgCommand.Method | Select-Object -Unique | Should -Be "POST"
                 $MgCommand.APIVersion | Select-Object -Unique | Should -Be "beta"
-                $MgCommand.Command | Select-Object -Unique | Should -BeLike "*-MgUserCalendar*"
+                $MgCommand.Command | Select-Object -Unique | Should -BeLike "*-MgBetaUserCalendar*"
             } | Should -Not -Throw
         }
         It 'Should find command using action with FQNamespace.' {
@@ -86,7 +87,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand = Find-MgGraphCommand -Uri $Uri -ApiVersion beta
                 $MgCommand.Method | Should -Be "POST"
                 $MgCommand.APIVersion | Should -Be "beta"
-                $MgCommand.Command | Should -Be "Update-MgSiteOnenotePageContent"
+                $MgCommand.Command | Should -Be "Update-MgBetaSiteOnenotePageContent"
                 $MgCommand.Uri | Should -Be "/sites/{site-id}/onenote/pages/{onenotePage-id}/onenotePatchContent"
             } | Should -Not -Throw
         }
@@ -96,7 +97,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand = Find-MgGraphCommand -Uri $Uri -ApiVersion beta
                 $MgCommand.Method | Should -Be "POST"
                 $MgCommand.APIVersion | Should -Be "beta"
-                $MgCommand.Command | Should -Be "Update-MgWindowsUpdatesDeploymentAudience"
+                $MgCommand.Command | Should -Be "Update-MgBetaWindowsUpdatesDeploymentAudience"
                 $MgCommand.Uri | Should -Be "/admin/windows/updates/deployments/{deployment-id}/audience/updateAudience"
             } | Should -Not -Throw
         }
@@ -106,7 +107,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand = Find-MgGraphCommand -Uri $Uri -ApiVersion beta
                 $MgCommand.Method | Should -Be "GET"
                 $MgCommand.APIVersion | Should -Be "beta"
-                $MgCommand.Command | Should -Be "Get-MgDeviceManagementAssignmentFilterState"
+                $MgCommand.Command | Should -Be "Get-MgBetaDeviceManagementAssignmentFilterState"
                 $MgCommand.Uri | Should -Be "/deviceManagement/assignmentFilters/getState"
             } | Should -Not -Throw
         }
@@ -116,7 +117,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Count | Should -BeGreaterThan 1
                 $MgCommand.Method | Select-Object -Unique | Should -Be "GET"
                 $MgCommand.APIVersion | Select-Object -Unique | Should -BeIn @("v1.0", "beta")
-                $MgCommand.Command | Select-Object -Unique | Should -Be "Get-MgUser"
+                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("Get-MgUser", "Get-MgBetaUser")
                 $MgCommand.Uri | Select-Object -Unique | Should -BeIn @("/users", "/users/{user-id}")
             } | Should -Not -Throw
         }
@@ -124,26 +125,39 @@ Describe "Find-MgGraphCommand Command" {
             $ExpectedErrorMessage = "*is not valid or is not currently supported by the SDK*"
             { Find-MgGraphCommand -Uri "invalidURI" -Method GET -ErrorAction Stop | Out-Null } | Should -Throw -ExpectedMessage $ExpectedErrorMessage
         }
+        It 'Should find command using actual id in key segments inside parenthesis' {
+            {
+                $ExpectedResourceUri = @("/reports/getSharePointActivityUserCounts(period='{period}')", "/reports/getSharePointActivityUserCounts(period='{period}')")
+                $Uri = "/reports/getSharePointActivityUserCounts(period='D3')"
+                $MgCommand = Find-MgGraphCommand -Uri $Uri 
+                $MgCommand | Should -HaveCount 2
+                $MgCommand.Method | Should -Be @("GET", "GET")
+                $MgCommand.APIVersion | Should -BeIn @("v1.0", "beta")
+                $MgCommand.Variants | Should -Contain "Get"
+                $MgCommand.URI | Should -Be $ExpectedResourceUri
+                $MgCommand.Command | Should -Be @("Get-MgReportSharePointActivityUserCount", "Get-MgBetaReportSharePointActivityUserCount")
+            } | Should -Not -Throw    
+        }
     }
 
     Context "FindByCommand" {
         It 'Should find command using only mandatory parameters' {
             {
                 $MgCommand = Find-MgGraphCommand -Command "Get-MgUser"
-                $MgCommand | Should -HaveCount 4 # /users and /users/{id}.
+                $MgCommand | Should -HaveCount 2 # /users and /users/{id}.
                 $MgCommand[0].Method | Select-Object -Unique | Should -Be "GET"
-                $MgCommand[0].APIVersion | Select-Object -Unique | Should -BeIn @("v1.0", "beta")
+                $MgCommand[0].APIVersion | Select-Object -Unique | Should -Be "v1.0"
                 $MgCommand[0].Command | Select-Object -Unique | Should -Be "Get-MgUser"
             } | Should -Not -Throw
         }
         Context "FindByCommand" {
             It 'Should find command using all parameters' {
                 {
-                    $MgCommand = Find-MgGraphCommand -Command "Invoke-MgAcceptGroupCalendarEvent" -Profile beta
+                    $MgCommand = Find-MgGraphCommand -Command "Invoke-MgBetaAcceptGroupCalendarEvent" -ApiVersion beta
                     $MgCommand | Should -HaveCount 1
                     $MgCommand.Method | Should -Be "POST"
                     $MgCommand.APIVersion | Should -Be "beta"
-                    $MgCommand.Command | Should -Be "Invoke-MgAcceptGroupCalendarEvent"
+                    $MgCommand.Command | Should -Be "Invoke-MgBetaAcceptGroupCalendarEvent"
                     $MgCommand.URI | Should -Be "/groups/{group-id}/calendar/events/{event-id}/accept"
                 } | Should -Not -Throw
             }
@@ -157,8 +171,10 @@ Describe "Find-MgGraphCommand Command" {
                 } | Should -Not -Throw
             }
             It 'Should throw error when command name is invalid' {
-                $ExpectedErrorMessage = "*'New-MgInvalid' is not a valid Microsoft Graph PowerShell command.*"
-                { Find-MgGraphCommand -Command "New-MgInvalid" -ErrorAction Stop | Out-Null } | Should -Throw -ExpectedMessage $ExpectedErrorMessage }
+                {
+                    Find-MgGraphCommand -Command "New-MgInvalid" -ErrorAction Stop | Out-Null
+                } | Should -Throw -ExpectedMessage "*'New-MgInvalid' is not a valid Microsoft Graph PowerShell command.*"
+            }
         }
     }
 }

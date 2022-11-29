@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgOrganizationBrandingBackgroundImage
 
 ## SYNOPSIS
-Get backgroundImage for the navigation property branding from organization
+Image that appears as the background of the sign-in page.
+The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels.
+A smaller image will reduce bandwidth requirements and make the page load faster.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgOrganizationBrandingBackgroundImage -InputObject <IIdentityDirectoryManage
 ```
 
 ## DESCRIPTION
-Get backgroundImage for the navigation property branding from organization
+Image that appears as the background of the sign-in page.
+The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels.
+A smaller image will reduce bandwidth requirements and make the page load faster.
 
 ## EXAMPLES
 

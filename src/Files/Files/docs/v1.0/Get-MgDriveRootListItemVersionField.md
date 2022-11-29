@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveRootListItemVersionField
 
 ## SYNOPSIS
-Get fields from drives
+A collection of the fields and values for this version of the list item.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDriveRootListItemVersionField -InputObject <IFilesIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get fields from drives
+A collection of the fields and values for this version of the list item.
 
 ## EXAMPLES
 

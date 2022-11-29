@@ -3,7 +3,7 @@
   "authors": "Microsoft",
   "copyright": "© Microsoft Corporation. All rights reserved.",
   "description": "Microsoft Graph PowerShell module",
-  "iconUri": "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png",
+  "iconUri": "https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/main/docs/images/graph_color256.png",
   "licenseUri": "https://aka.ms/devservicesagreement",
   "owners": "Microsoft",
   "projectUri": "https://github.com/microsoftgraph/msgraph-sdk-powershell",
@@ -26,15 +26,15 @@
   ],
   "versions": {
     "authentication": {
-      "prerelease": "preview3",
+      "prerelease": "preview11",
       "version": "2.0.0"
     },
     "beta": {
-      "prerelease": "preview3",
+      "prerelease": "preview11",
       "version": "2.0.0"
     },
     "v1.0": {
-      "prerelease": "preview3",
+      "prerelease": "preview11",
       "version": "2.0.0"
     }
   }

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupLifecyclePolicy
 
 ## SYNOPSIS
-Get groupLifecyclePolicy
+Retrieve the properties and relationships of a groupLifecyclePolicies object.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgGroupLifecyclePolicy -InputObject <IGroupsIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get groupLifecyclePolicy
+Retrieve the properties and relationships of a groupLifecyclePolicies object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgGroupLifecyclePolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
+```
+
+This example shows how to use the Get-MgGroupLifecyclePolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgGroupLifecyclePolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupLifecyclePolicy
+```
+
+This example shows how to use the Get-MgGroupLifecyclePolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,11 @@ schema: 2.0.0
 # Get-MgUser
 
 ## SYNOPSIS
-Get a user
+Retrieve the properties and relationships of user object.
+This operation returns by default only a subset of the more commonly used properties for each user.
+These _default_ properties are noted in the Properties section.
+To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option.
+Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 
 ## SYNTAX
 
@@ -31,14 +35,18 @@ Get-MgUser -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property
 ```
 
 ## DESCRIPTION
-Get a user
+Retrieve the properties and relationships of user object.
+This operation returns by default only a subset of the more commonly used properties for each user.
+These _default_ properties are noted in the Properties section.
+To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option.
+Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
 
 ## EXAMPLES
 
 ### Example 1: Get the list of all the users
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser  | Format-List  ID, DisplayName, Mail, UserPrincipalName
+Get-MgUser -All | Format-List  ID, DisplayName, Mail, UserPrincipalName
 
 Id                : e4e2b110-8d4f-434f-a990-7cd63e23aed6
 DisplayName       : Kristi Laar

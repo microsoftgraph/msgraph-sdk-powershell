@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgProgram
 
 ## SYNOPSIS
-Update program (deprecated)
+In the Azure AD access reviews feature, update an existing program object.
 
 ## SYNTAX
 
@@ -39,9 +39,21 @@ Update-MgProgram -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Update program (deprecated)
+In the Azure AD access reviews feature, update an existing program object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgProgram Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	DisplayName = "testprogram3 new name"
+}
+Update-MgProgram -ProgramId $programId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgProgram Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -124,7 +136,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -239,9 +252,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphProgram>: program
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Controls <IMicrosoftGraphProgramControl[]>]`: Controls associated with the program.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ControlId <String>]`: The controlId of the control, in particular the identifier of an access review. Required on create.
     - `[ControlTypeId <String>]`: The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
     - `[CreatedDateTime <DateTime?>]`: The creation date and time of the program control.
@@ -264,7 +277,7 @@ BODYPARAMETER <IMicrosoftGraphProgram>: program
   - `[DisplayName <String>]`: The name of the program.  Required on create.
 
 CONTROLS <IMicrosoftGraphProgramControl[]>: Controls associated with the program.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ControlId <String>]`: The controlId of the control, in particular the identifier of an access review. Required on create.
   - `[ControlTypeId <String>]`: The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
   - `[CreatedDateTime <DateTime?>]`: The creation date and time of the program control.
@@ -277,7 +290,7 @@ CONTROLS <IMicrosoftGraphProgramControl[]>: Controls associated with the program
     - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
   - `[Program <IMicrosoftGraphProgram>]`: program
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Controls <IMicrosoftGraphProgramControl[]>]`: Controls associated with the program.
     - `[Description <String>]`: The description of the program.
     - `[DisplayName <String>]`: The name of the program.  Required on create.
@@ -328,7 +341,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -349,8 +364,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 ## RELATED LINKS
 

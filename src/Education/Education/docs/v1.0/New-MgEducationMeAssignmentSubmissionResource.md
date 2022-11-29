@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-MgEducationMeAssignmentSubmissionResource
 
 ## SYNOPSIS
-Create new navigation property to resources for education
+Add an educationSubmissionResource to a submission resource list.
+Only the student assigned to the submission can perform this operation.
+The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
+To create a new file-based resource, upload the file to the resources folder associated with the submission.
+If the file doesn't exist or is not in that folder, the POST request will fail.
 
 ## SYNTAX
 
@@ -39,7 +43,11 @@ New-MgEducationMeAssignmentSubmissionResource -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to resources for education
+Add an educationSubmissionResource to a submission resource list.
+Only the student assigned to the submission can perform this operation.
+The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
+To create a new file-based resource, upload the file to the resources folder associated with the submission.
+If the file doesn't exist or is not in that folder, the POST request will fail.
 
 ## EXAMPLES
 
@@ -123,7 +131,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -224,7 +233,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphEducationSubmissionResource>: educationSubmissionResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
   - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -236,10 +245,8 @@ BODYPARAMETER <IMicrosoftGraphEducationSubmissionResource>: educationSubmissionR
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[DisplayName <String>]`: Display name of resource.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment
@@ -265,10 +272,8 @@ RESOURCE <IMicrosoftGraphEducationResource>: educationResource
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[DisplayName <String>]`: Display name of resource.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ## RELATED LINKS
 

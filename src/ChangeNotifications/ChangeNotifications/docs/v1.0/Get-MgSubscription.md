@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgSubscription
 
 ## SYNOPSIS
-Get entity from subscriptions by key
+Retrieve the properties and relationships of a subscription.
+See the table in the Permissions section for the list of resources that support subscribing to change notifications.
 
 ## SYNTAX
 
@@ -29,9 +30,28 @@ Get-MgSubscription -InputObject <IChangeNotificationsIdentity> [-Property <Strin
 ```
 
 ## DESCRIPTION
-Get entity from subscriptions by key
+Retrieve the properties and relationships of a subscription.
+See the table in the Permissions section for the list of resources that support subscribing to change notifications.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSubscription Cmdlet
+```powershell
+Import-Module Microsoft.Graph.ChangeNotifications
+Get-MgSubscription -SubscriptionId $subscriptionId
+```
+
+This example shows how to use the Get-MgSubscription Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgSubscription Cmdlet
+```powershell
+Import-Module Microsoft.Graph.ChangeNotifications
+Get-MgSubscription
+```
+
+This example shows how to use the Get-MgSubscription Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -151,7 +171,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
 
 ## NOTES
 

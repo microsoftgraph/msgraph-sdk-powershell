@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserDriveItemPermission
 
 ## SYNOPSIS
-Get permissions from users
+The set of permissions for the item.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgUserDriveItemPermission -InputObject <IFilesIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get permissions from users
+The set of permissions for the item.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryObject
 
 ## SYNOPSIS
-Get directoryObject
+Retrieve the properties and relationships of a directoryObject object.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get directoryObject
+Retrieve the properties and relationships of a directoryObject object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDirectoryObject Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DirectoryObjects
+Get-MgDirectoryObject -DirectoryObjectId $directoryObjectId
+```
+
+This example shows how to use the Get-MgDirectoryObject Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

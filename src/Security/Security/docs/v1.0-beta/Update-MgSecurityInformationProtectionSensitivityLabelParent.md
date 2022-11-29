@@ -143,7 +143,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -351,7 +352,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecuritySensitivityLabel>: sensitivityLabel
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Color <String>]`: The color that the UI should display for the label, if configured.
   - `[ContentFormats <String[]>]`: Returns the supported content formats for the label.
   - `[Description <String>]`: The admin-defined description for the label.
@@ -409,7 +410,7 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
 
 PARENT <IMicrosoftGraphSecuritySensitivityLabel>: sensitivityLabel
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Color <String>]`: The color that the UI should display for the label, if configured.
   - `[ContentFormats <String[]>]`: Returns the supported content formats for the label.
   - `[Description <String>]`: The admin-defined description for the label.

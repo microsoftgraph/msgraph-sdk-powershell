@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgApplicationSynchronizationJobOnDemand
 
 ## SYNOPSIS
-Invoke action provisionOnDemand
+Select a user and provision the account on-demand.
+The rate limit for this API is 5 requests per 10 seconds.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ New-MgApplicationSynchronizationJobOnDemand -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action provisionOnDemand
+Select a user and provision the account on-demand.
+The rate limit for this API is 5 requests per 10 seconds.
 
 ## EXAMPLES
 

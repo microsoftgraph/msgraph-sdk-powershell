@@ -8,7 +8,7 @@ schema: 2.0.0
 # Sync-MgDeviceAppMgtVppTokenLicense
 
 ## SYNOPSIS
-Invoke action syncLicenses
+Syncs licenses associated with a specific appleVolumePurchaseProgramToken
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Sync-MgDeviceAppMgtVppTokenLicense -InputObject <IDevicesCorporateManagementIden
 ```
 
 ## DESCRIPTION
-Invoke action syncLicenses
+Syncs licenses associated with a specific appleVolumePurchaseProgramToken
 
 ## EXAMPLES
 
@@ -101,7 +101,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken
 
 ## NOTES
 

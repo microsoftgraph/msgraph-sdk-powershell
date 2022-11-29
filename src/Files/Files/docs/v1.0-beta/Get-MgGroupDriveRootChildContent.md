@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveRootChildContent
 
 ## SYNOPSIS
-Get content for the navigation property children from groups
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupDriveRootChildContent -InputObject <IFilesIdentity> -OutFile <String>
 ```
 
 ## DESCRIPTION
-Get content for the navigation property children from groups
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

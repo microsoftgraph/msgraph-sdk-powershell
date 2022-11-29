@@ -43,6 +43,29 @@ Update the navigation property namedLocations in identity
 
 ## EXAMPLES
 
+### Example 1: Update a country named location by adding to the list of countries
+```powershell
+Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+
+$params = @{
+"@odata.type" = "#microsoft.graph.countryNamedLocation"
+DisplayName = "Named location with unknown countries and regions"
+CountriesAndRegions = @(
+    "US"
+    "XK"
+    "ID"
+    "CA"
+)
+IncludeUnknownCountriesAndRegions = $true
+}
+
+Update-MgIdentityConditionalAccessNamedLocation -NamedLocationId '1f0fd623-bf8f-4003-9627-32a68c3cdcc1' -BodyParameter $params
+```
+
+This example updates the details of an existing named location.
+Supply the values of the relevant fields that should be updated.
+In this example, `ID` and `CA` are added in the list of countries.
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -109,7 +132,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -241,7 +265,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphNamedLocation>: namedLocation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[DisplayName <String>]`: Human-readable name of the location.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents last modified date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -249,10 +273,14 @@ BODYPARAMETER <IMicrosoftGraphNamedLocation>: namedLocation
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -261,6 +289,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

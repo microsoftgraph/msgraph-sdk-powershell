@@ -8,7 +8,12 @@ schema: 2.0.0
 # Get-MgAccessReview
 
 ## SYNOPSIS
-Get accessReview (deprecated)
+In the Azure AD access reviews feature, retrieve an accessReview object.
+ To retrieve the reviewers of the access review, use the list accessReview reviewers API.
+To retrieve the decisions of the access review, use the list accessReview decisions API, or the list my accessReview decisions API.
+If this is a recurring access review, no decisions will be associated with the recurring access review series.
+Instead, use the `instances` relationship of that series to retrieve an accessReview collection of the past, current, and future instances of the access review.
+Each past and current instance will have decisions.
 
 ## SYNTAX
 
@@ -32,9 +37,32 @@ Get-MgAccessReview -InputObject <IIdentityGovernanceIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Get accessReview (deprecated)
+In the Azure AD access reviews feature, retrieve an accessReview object.
+ To retrieve the reviewers of the access review, use the list accessReview reviewers API.
+To retrieve the decisions of the access review, use the list accessReview decisions API, or the list my accessReview decisions API.
+If this is a recurring access review, no decisions will be associated with the recurring access review series.
+Instead, use the `instances` relationship of that series to retrieve an accessReview collection of the past, current, and future instances of the access review.
+Each past and current instance will have decisions.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgAccessReview Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgAccessReview -AccessReviewId $accessReviewId
+```
+
+This example shows how to use the Get-MgAccessReview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgAccessReview Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+Get-MgAccessReview -Filter "businessFlowTemplateId eq '6e4f3d20-c5c3-407f-9695-8460952bcc68'" -Top 100 -Skip 0 
+```
+
+This example shows how to use the Get-MgAccessReview Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -279,7 +307,9 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
   - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
+  - `[CustomTaskExtensionId <String>]`: key: id of customTaskExtension
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
@@ -300,8 +330,18 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId1 <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[RunId <String>]`: key: id of run
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[TaskDefinitionId <String>]`: key: id of taskDefinition
+  - `[TaskId <String>]`: key: id of task
+  - `[TaskProcessingResultId <String>]`: key: id of taskProcessingResult
+  - `[TaskReportId <String>]`: key: id of taskReport
   - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserProcessingResultId <String>]`: key: id of userProcessingResult
+  - `[WorkflowId <String>]`: key: id of workflow
+  - `[WorkflowTemplateId <String>]`: key: id of workflowTemplate
+  - `[WorkflowVersionNumber <Int32?>]`: key: versionNumber of workflowVersion
 
 ## RELATED LINKS
 

@@ -229,6 +229,7 @@ IMPORTEDAPPLEDEVICEIDENTITIES <IMicrosoftGraphImportedAppleDeviceIdentity[]>: .
   - `[SerialNumber <String>]`: Device serial number
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveItemActivity
 
 ## SYNOPSIS
-Get activities from drives
+The list of recent activities that took place on this item.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgDriveItemActivity -DriveId <String> -DriveItemId <String> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Get activities from drives
+The list of recent activities that took place on this item.
 
 ## EXAMPLES
 

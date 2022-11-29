@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserEventMultiValueExtendedProperty
 
 ## SYNOPSIS
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgUserEventMultiValueExtendedProperty -InputObject <ICalendarIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

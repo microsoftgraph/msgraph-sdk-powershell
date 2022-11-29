@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfileWebsite
 
 ## SYNOPSIS
-Get websites from users
+Represents detailed information about websites associated with a user in various services.
 
 ## SYNTAX
 
@@ -32,9 +32,29 @@ Get-MgUserProfileWebsite -InputObject <IPeopleIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get websites from users
+Represents detailed information about websites associated with a user in various services.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserProfileWebsite Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileWebsite -UserId $userId -PersonWebsiteId $personWebsiteId
+```
+
+This example shows how to use the Get-MgUserProfileWebsite Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserProfileWebsite Cmdlet
+```powershell
+Import-Module Microsoft.Graph.People
+# A UPN can also be used as -UserId.
+Get-MgUserProfileWebsite -UserId $userId
+```
+
+This example shows how to use the Get-MgUserProfileWebsite Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserEventInstanceExtension
 
 ## SYNOPSIS
-Get extensions from users
+The collection of open extensions defined for the event.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgUserEventInstanceExtension -InputObject <ICalendarIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get extensions from users
+The collection of open extensions defined for the event.
+Nullable.
 
 ## EXAMPLES
 

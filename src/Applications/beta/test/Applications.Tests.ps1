@@ -1,0 +1,47 @@
+﻿# ------------------------------------------------------------------------------
+# Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT License. See License in the project root for license information.
+# ------------------------------------------------------------------------------
+Describe "Microsoft.Graph.Beta.Applications Module" {
+    Context "On module import" {
+        BeforeAll {
+            $ModuleName = "Microsoft.Graph.Beta.Applications"
+            $ModulePath = Join-Path $PSScriptRoot "..\$ModuleName.psd1"
+            $PSModuleInfo = Get-Module $ModuleName
+        }
+
+        It "Should have exported commands" {
+            $PSModuleInfo | Should -Not -Be $null
+            $PSModuleInfo.ExportedCommands.Count | Should -Not -Be 0
+        }
+    
+        It 'Should be compatible with PS core and desktop' {
+            $PSModuleInfo.CompatiblePSEditions | Should -BeIn @("Core", "Desktop")
+        }
+    
+        It 'Should point to script module' {
+            $PSModuleInfo.Path | Should -BeLikeExactly "*$ModuleName.psm1"
+        }
+    
+        It 'Should have a definition' {
+            $PSModuleInfo.Definition | Should -Not -BeNullOrEmpty
+        }
+    
+        It 'Should lock GUID' -Skip {
+            # TODO: Remove Skip when GUID is locked.
+            $PSModuleInfo.Guid.Guid | Should -Be "467f54f2-44a8-4993-8e75-b96c3e443098"
+        }
+    
+        It "Module import should not write to error and information streams" {
+            $ps = [powershell]::Create()
+            $ps.AddScript("Import-Module $ModulePath -ErrorAction SilentlyContinue").Invoke()
+
+            $ps.Streams.Information.Count | Should -Be 0
+            $ps.Streams.Error.Count | Should -Be 0
+            $ps.Streams.Verbose.Count | Should -Be 0
+            $ps.Streams.Warning.Count | Should -Be 0
+            $ps.Streams.Progress.Count | Should -Be 0
+
+            $ps.Dispose()
+        }
+    }
+}

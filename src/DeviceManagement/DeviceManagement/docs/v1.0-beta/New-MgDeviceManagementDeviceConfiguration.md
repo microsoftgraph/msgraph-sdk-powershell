@@ -24,7 +24,7 @@ New-MgDeviceManagementDeviceConfiguration [-AdditionalProperties <Hashtable>]
  [-DeviceStatuses <IMicrosoftGraphDeviceConfigurationDeviceStatus1[]>]
  [-DeviceStatusOverview <IMicrosoftGraphDeviceConfigurationDeviceOverview1>] [-DisplayName <String>]
  [-GroupAssignments <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>] [-SupportsScopeTags]
+ [-LastModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>]
  [-UserStatuses <IMicrosoftGraphDeviceConfigurationUserStatus[]>]
  [-UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview1>] [-Version <Int32>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -248,7 +248,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -282,24 +283,6 @@ List of Scope Tags for this Entity instance.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SupportsScopeTags
-Indicates whether or not the underlying Device Configuration supports the assignment of scope tags.
-Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users.
-This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal.
-This property is read-only.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -409,10 +392,9 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphDeviceConfigurationAssignment1[]>: The list of assignments for the device configuration profile.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Intent <DeviceConfigAssignmentIntent?>]`: The administrator intent for the assignment of the profile.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
-  - `[SourceId <String>]`: The identifier of the source of the assignment. This property is read-only.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -420,12 +402,11 @@ ASSIGNMENTS <IMicrosoftGraphDeviceConfigurationAssignment1[]>: The list of assig
 
 BODYPARAMETER <IMicrosoftGraphDeviceConfiguration1>: Device Configuration.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Assignments <IMicrosoftGraphDeviceConfigurationAssignment1[]>]`: The list of assignments for the device configuration profile.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Intent <DeviceConfigAssignmentIntent?>]`: The administrator intent for the assignment of the profile.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
-    - `[SourceId <String>]`: The identifier of the source of the assignment. This property is read-only.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -449,7 +430,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceConfiguration1>: Device Configuration.
     - `[Name <String>]`: Name for object.
     - `[RuleType <DeviceManagementApplicabilityRuleType?>]`: Supported Applicability rule types for Device Configuration
   - `[DeviceSettingStateSummaries <IMicrosoftGraphSettingStateDeviceSummary[]>]`: Device Configuration Setting State Device Summary
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CompliantDeviceCount <Int32?>]`: Device Compliant count for the setting
     - `[ConflictDeviceCount <Int32?>]`: Device conflict error count for the setting
     - `[ErrorDeviceCount <Int32?>]`: Device error count for the setting
@@ -461,7 +442,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceConfiguration1>: Device Configuration.
     - `[UnknownDeviceCount <Int32?>]`: Device Unkown count for the setting
   - `[DeviceStatusOverview <IMicrosoftGraphDeviceConfigurationDeviceOverview1>]`: deviceConfigurationDeviceOverview
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
     - `[ConflictCount <Int32?>]`: Number of devices in conflict
     - `[ErrorCount <Int32?>]`: Number of error devices
@@ -472,7 +453,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceConfiguration1>: Device Configuration.
     - `[PendingCount <Int32?>]`: Number of pending devices
     - `[SuccessCount <Int32?>]`: Number of succeeded devices
   - `[DeviceStatuses <IMicrosoftGraphDeviceConfigurationDeviceStatus1[]>]`: Device configuration installation status by device.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
     - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
     - `[DeviceModel <String>]`: The device model that is being reported
@@ -483,16 +464,15 @@ BODYPARAMETER <IMicrosoftGraphDeviceConfiguration1>: Device Configuration.
     - `[UserPrincipalName <String>]`: UserPrincipalName.
   - `[DisplayName <String>]`: Admin provided name of the device configuration.
   - `[GroupAssignments <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>]`: The list of group assignments for the device configuration profile.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeviceConfiguration <IMicrosoftGraphDeviceConfiguration1>]`: Device Configuration.
     - `[ExcludeGroup <Boolean?>]`: Indicates if this group is should be excluded. Defaults that the group should be included
     - `[TargetGroupId <String>]`: The Id of the AAD group we are targeting the device configuration to.
   - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
-  - `[SupportsScopeTags <Boolean?>]`: Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
   - `[UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview1>]`: deviceConfigurationUserOverview
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
     - `[ConflictCount <Int32?>]`: Number of users in conflict
     - `[ErrorCount <Int32?>]`: Number of error Users
@@ -502,7 +482,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceConfiguration1>: Device Configuration.
     - `[PendingCount <Int32?>]`: Number of pending Users
     - `[SuccessCount <Int32?>]`: Number of succeeded Users
   - `[UserStatuses <IMicrosoftGraphDeviceConfigurationUserStatus[]>]`: Device configuration installation status by user.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DevicesCount <Int32?>]`: Devices count for that user.
     - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
     - `[Status <String>]`: complianceStatus
@@ -530,7 +510,7 @@ DEVICEMANAGEMENTAPPLICABILITYRULEOSVERSION <IMicrosoftGraphDeviceManagementAppli
   - `[RuleType <DeviceManagementApplicabilityRuleType?>]`: Supported Applicability rule types for Device Configuration
 
 DEVICESETTINGSTATESUMMARIES <IMicrosoftGraphSettingStateDeviceSummary[]>: Device Configuration Setting State Device Summary
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CompliantDeviceCount <Int32?>]`: Device Compliant count for the setting
   - `[ConflictDeviceCount <Int32?>]`: Device conflict error count for the setting
   - `[ErrorDeviceCount <Int32?>]`: Device error count for the setting
@@ -542,7 +522,7 @@ DEVICESETTINGSTATESUMMARIES <IMicrosoftGraphSettingStateDeviceSummary[]>: Device
   - `[UnknownDeviceCount <Int32?>]`: Device Unkown count for the setting
 
 DEVICESTATUSES <IMicrosoftGraphDeviceConfigurationDeviceStatus1[]>: Device configuration installation status by device.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
   - `[DeviceModel <String>]`: The device model that is being reported
@@ -554,7 +534,7 @@ DEVICESTATUSES <IMicrosoftGraphDeviceConfigurationDeviceStatus1[]>: Device confi
 
 DEVICESTATUSOVERVIEW <IMicrosoftGraphDeviceConfigurationDeviceOverview1>: deviceConfigurationDeviceOverview
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
   - `[ConflictCount <Int32?>]`: Number of devices in conflict
   - `[ErrorCount <Int32?>]`: Number of error devices
@@ -566,15 +546,14 @@ DEVICESTATUSOVERVIEW <IMicrosoftGraphDeviceConfigurationDeviceOverview1>: device
   - `[SuccessCount <Int32?>]`: Number of succeeded devices
 
 GROUPASSIGNMENTS <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>: The list of group assignments for the device configuration profile.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeviceConfiguration <IMicrosoftGraphDeviceConfiguration1>]`: Device Configuration.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Assignments <IMicrosoftGraphDeviceConfigurationAssignment1[]>]`: The list of assignments for the device configuration profile.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Intent <DeviceConfigAssignmentIntent?>]`: The administrator intent for the assignment of the profile.
       - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
-      - `[SourceId <String>]`: The identifier of the source of the assignment. This property is read-only.
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -598,7 +577,7 @@ GROUPASSIGNMENTS <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>: The list
       - `[Name <String>]`: Name for object.
       - `[RuleType <DeviceManagementApplicabilityRuleType?>]`: Supported Applicability rule types for Device Configuration
     - `[DeviceSettingStateSummaries <IMicrosoftGraphSettingStateDeviceSummary[]>]`: Device Configuration Setting State Device Summary
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[CompliantDeviceCount <Int32?>]`: Device Compliant count for the setting
       - `[ConflictDeviceCount <Int32?>]`: Device conflict error count for the setting
       - `[ErrorDeviceCount <Int32?>]`: Device error count for the setting
@@ -610,7 +589,7 @@ GROUPASSIGNMENTS <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>: The list
       - `[UnknownDeviceCount <Int32?>]`: Device Unkown count for the setting
     - `[DeviceStatusOverview <IMicrosoftGraphDeviceConfigurationDeviceOverview1>]`: deviceConfigurationDeviceOverview
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
       - `[ConflictCount <Int32?>]`: Number of devices in conflict
       - `[ErrorCount <Int32?>]`: Number of error devices
@@ -621,7 +600,7 @@ GROUPASSIGNMENTS <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>: The list
       - `[PendingCount <Int32?>]`: Number of pending devices
       - `[SuccessCount <Int32?>]`: Number of succeeded devices
     - `[DeviceStatuses <IMicrosoftGraphDeviceConfigurationDeviceStatus1[]>]`: Device configuration installation status by device.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
       - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
       - `[DeviceModel <String>]`: The device model that is being reported
@@ -634,10 +613,9 @@ GROUPASSIGNMENTS <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>: The list
     - `[GroupAssignments <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>]`: The list of group assignments for the device configuration profile.
     - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
     - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
-    - `[SupportsScopeTags <Boolean?>]`: Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
     - `[UserStatusOverview <IMicrosoftGraphDeviceConfigurationUserOverview1>]`: deviceConfigurationUserOverview
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
       - `[ConflictCount <Int32?>]`: Number of users in conflict
       - `[ErrorCount <Int32?>]`: Number of error Users
@@ -647,7 +625,7 @@ GROUPASSIGNMENTS <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>: The list
       - `[PendingCount <Int32?>]`: Number of pending Users
       - `[SuccessCount <Int32?>]`: Number of succeeded Users
     - `[UserStatuses <IMicrosoftGraphDeviceConfigurationUserStatus[]>]`: Device configuration installation status by user.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DevicesCount <Int32?>]`: Devices count for that user.
       - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
       - `[Status <String>]`: complianceStatus
@@ -658,7 +636,7 @@ GROUPASSIGNMENTS <IMicrosoftGraphDeviceConfigurationGroupAssignment[]>: The list
   - `[TargetGroupId <String>]`: The Id of the AAD group we are targeting the device configuration to.
 
 USERSTATUSES <IMicrosoftGraphDeviceConfigurationUserStatus[]>: Device configuration installation status by user.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DevicesCount <Int32?>]`: Devices count for that user.
   - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
   - `[Status <String>]`: complianceStatus
@@ -667,7 +645,7 @@ USERSTATUSES <IMicrosoftGraphDeviceConfigurationUserStatus[]>: Device configurat
 
 USERSTATUSOVERVIEW <IMicrosoftGraphDeviceConfigurationUserOverview1>: deviceConfigurationUserOverview
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
   - `[ConflictCount <Int32?>]`: Number of users in conflict
   - `[ErrorCount <Int32?>]`: Number of error Users

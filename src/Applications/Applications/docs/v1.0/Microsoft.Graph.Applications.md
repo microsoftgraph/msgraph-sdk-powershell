@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: 4ff0b450-f42a-408d-b252-df64dc8e7899
+Module Guid: 96119067-19a0-41cb-af74-84919706e128
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,109 +12,154 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Applications Cmdlets
 ### [Add-MgApplicationKey](Add-MgApplicationKey.md)
-Invoke action addKey
+Add a key credential to an application.
+This method, along with removeKey can be used by an application to automate rolling its expiring keys.
+As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
+Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action.
+You can use the Update application operation to perform an update instead.
 
 ### [Add-MgApplicationPassword](Add-MgApplicationPassword.md)
-Invoke action addPassword
+Adds a strong password or secret to an application.
 
 ### [Add-MgServicePrincipalKey](Add-MgServicePrincipalKey.md)
-Invoke action addKey
+Adds a key credential to a servicePrincipal.
+This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys.
+As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
+ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action.
+Update servicePrincipal can be used to perform an update instead.
 
 ### [Add-MgServicePrincipalPassword](Add-MgServicePrincipalPassword.md)
-Invoke action addPassword
+Add a strong password or secret to a servicePrincipal object.
 
 ### [Add-MgServicePrincipalTokenSigningCertificate](Add-MgServicePrincipalTokenSigningCertificate.md)
-Invoke action addTokenSigningCertificate
+Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.
+The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with **usage** set to `Sign`.\n    + A public key object with **usage** set to `Verify`.\n+ The passwordCredentials object.
+All the objects have the same value of **customKeyIdentifier**.
+The **passwordCredential** is used to open the PFX file (private key).
+It and the associated private key object have the same value of **keyId**.
+When set during creation through the **displayName** property, the subject of the certificate cannot be updated.
+The **startDateTime** is set to the same time the certificate is created using the action.
+The **endDateTime** can be up to three years after the certificate is created.
 
 ### [Clear-MgApplicationVerifiedPublisher](Clear-MgApplicationVerifiedPublisher.md)
-Invoke action unsetVerifiedPublisher
+Unset the verifiedPublisher previously set on an application, removing all verified publisher properties.
+For more information, see Publisher verification.
 
 ### [Confirm-MgApplicationMemberGroup](Confirm-MgApplicationMemberGroup.md)
-Invoke action checkMemberGroups
+Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
+This function is transitive.
+You can check up to a maximum of 20 groups per request.
+This function supports all groups provisioned in Azure AD.
+Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
 ### [Confirm-MgApplicationMemberObject](Confirm-MgApplicationMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgServicePrincipalMemberGroup](Confirm-MgServicePrincipalMemberGroup.md)
-Invoke action checkMemberGroups
+Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
+This function is transitive.
+You can check up to a maximum of 20 groups per request.
+This function supports all groups provisioned in Azure AD.
+Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 
 ### [Confirm-MgServicePrincipalMemberObject](Confirm-MgServicePrincipalMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Get-MgApplication](Get-MgApplication.md)
-Get application
+Get the properties and relationships of an application object.
 
 ### [Get-MgApplicationById](Get-MgApplicationById.md)
-Invoke action getByIds
+Return the directory objects specified in a list of IDs.
+Some common uses for this function are to:
 
 ### [Get-MgApplicationCreatedOnBehalfOf](Get-MgApplicationCreatedOnBehalfOf.md)
-Get createdOnBehalfOf from applications
+Supports $filter (eq when counting empty collections).
+Read-only.
 
 ### [Get-MgApplicationDelta](Get-MgApplicationDelta.md)
 Invoke function delta
 
 ### [Get-MgApplicationExtensionProperty](Get-MgApplicationExtensionProperty.md)
-Get extensionProperties from applications
+Read-only.
+Nullable.
+Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
 
 ### [Get-MgApplicationFederatedIdentityCredential](Get-MgApplicationFederatedIdentityCredential.md)
-Get federatedIdentityCredentials from applications
+Federated identities for applications.
+Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
 
 ### [Get-MgApplicationHomeRealmDiscoveryPolicy](Get-MgApplicationHomeRealmDiscoveryPolicy.md)
 Get homeRealmDiscoveryPolicies from applications
 
 ### [Get-MgApplicationLogo](Get-MgApplicationLogo.md)
-Get logo for application from applications
+The main logo for the application.
+Not nullable.
 
 ### [Get-MgApplicationMemberGroup](Get-MgApplicationMemberGroup.md)
-Invoke action getMemberGroups
+Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
+This function is transitive.
 
 ### [Get-MgApplicationMemberObject](Get-MgApplicationMemberObject.md)
-Invoke action getMemberObjects
+Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
+This function is transitive.
+**Note:** Only users and role-enabled groups can be members of directory roles.
 
 ### [Get-MgApplicationOwner](Get-MgApplicationOwner.md)
-Get owners from applications
+Directory objects that are owners of the application.
+Read-only.
+Nullable.
+Supports $expand and $filter (eq when counting empty collections).
 
 ### [Get-MgApplicationOwnerByRef](Get-MgApplicationOwnerByRef.md)
-Get ref of owners from applications
+Directory objects that are owners of the application.
+Read-only.
+Nullable.
+Supports $expand and $filter (eq when counting empty collections).
 
 ### [Get-MgApplicationTemplate](Get-MgApplicationTemplate.md)
-Get applicationTemplate
+Retrieve the properties of an applicationTemplate object.
 
 ### [Get-MgApplicationTokenIssuancePolicy](Get-MgApplicationTokenIssuancePolicy.md)
-Get tokenIssuancePolicies from applications
+List the tokenIssuancePolicy objects that are assigned to an application.
 
 ### [Get-MgApplicationTokenIssuancePolicyByRef](Get-MgApplicationTokenIssuancePolicyByRef.md)
-Get ref of tokenIssuancePolicies from applications
+List the tokenIssuancePolicy objects that are assigned to an application.
 
 ### [Get-MgApplicationTokenLifetimePolicy](Get-MgApplicationTokenLifetimePolicy.md)
-Get tokenLifetimePolicies from applications
+List the tokenLifetimePolicy objects that are assigned to an application.
 
 ### [Get-MgApplicationTokenLifetimePolicyByRef](Get-MgApplicationTokenLifetimePolicyByRef.md)
-Get ref of tokenLifetimePolicies from applications
+List the tokenLifetimePolicy objects that are assigned to an application.
 
 ### [Get-MgGroupAppRoleAssignment](Get-MgGroupAppRoleAssignment.md)
-Get appRoleAssignments from groups
+Represents the app roles a group has been granted for an application.
+Supports $expand.
 
 ### [Get-MgServicePrincipal](Get-MgServicePrincipal.md)
-Get servicePrincipal
+Retrieve the properties and relationships of a servicePrincipal object.
 
 ### [Get-MgServicePrincipalAppRoleAssignedTo](Get-MgServicePrincipalAppRoleAssignedTo.md)
-Get appRoleAssignedTo from servicePrincipals
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ### [Get-MgServicePrincipalAppRoleAssignment](Get-MgServicePrincipalAppRoleAssignment.md)
-Get appRoleAssignments from servicePrincipals
+App role assignment for another app or service, granted to this service principal.
+Supports $expand.
 
 ### [Get-MgServicePrincipalById](Get-MgServicePrincipalById.md)
-Invoke action getByIds
+Return the directory objects specified in a list of IDs.
+Some common uses for this function are to:
 
 ### [Get-MgServicePrincipalClaimMappingPolicy](Get-MgServicePrincipalClaimMappingPolicy.md)
-Get claimsMappingPolicies from servicePrincipals
+List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 
 ### [Get-MgServicePrincipalClaimMappingPolicyByRef](Get-MgServicePrincipalClaimMappingPolicyByRef.md)
-Get ref of claimsMappingPolicies from servicePrincipals
+List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 
 ### [Get-MgServicePrincipalCreatedObject](Get-MgServicePrincipalCreatedObject.md)
-Get createdObjects from servicePrincipals
+Directory objects created by this service principal.
+Read-only.
+Nullable.
 
 ### [Get-MgServicePrincipalDelegatedPermissionClassification](Get-MgServicePrincipalDelegatedPermissionClassification.md)
 Get delegatedPermissionClassifications from servicePrincipals
@@ -126,55 +171,79 @@ Invoke function delta
 Get endpoints from servicePrincipals
 
 ### [Get-MgServicePrincipalHomeRealmDiscoveryPolicy](Get-MgServicePrincipalHomeRealmDiscoveryPolicy.md)
-Get homeRealmDiscoveryPolicies from servicePrincipals
+List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
 
 ### [Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
-Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
 
 ### [Get-MgServicePrincipalMemberGroup](Get-MgServicePrincipalMemberGroup.md)
-Invoke action getMemberGroups
+Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
+This function is transitive.
 
 ### [Get-MgServicePrincipalMemberObject](Get-MgServicePrincipalMemberObject.md)
-Invoke action getMemberObjects
+Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
+This function is transitive.
+**Note:** Only users and role-enabled groups can be members of directory roles.
 
 ### [Get-MgServicePrincipalMemberOf](Get-MgServicePrincipalMemberOf.md)
-Get memberOf from servicePrincipals
+Roles that this service principal is a member of.
+HTTP Methods: GET Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgServicePrincipalOauth2PermissionGrant](Get-MgServicePrincipalOauth2PermissionGrant.md)
-Get oauth2PermissionGrants from servicePrincipals
+Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
+Read-only.
+Nullable.
 
 ### [Get-MgServicePrincipalOwnedObject](Get-MgServicePrincipalOwnedObject.md)
-Get ownedObjects from servicePrincipals
+Directory objects that are owned by this service principal.
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgServicePrincipalOwner](Get-MgServicePrincipalOwner.md)
-Get owners from servicePrincipals
+Directory objects that are owners of this servicePrincipal.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgServicePrincipalOwnerByRef](Get-MgServicePrincipalOwnerByRef.md)
-Get ref of owners from servicePrincipals
+Directory objects that are owners of this servicePrincipal.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgServicePrincipalTokenIssuancePolicy](Get-MgServicePrincipalTokenIssuancePolicy.md)
-Get tokenIssuancePolicies from servicePrincipals
+The tokenIssuancePolicies assigned to this service principal.
 
 ### [Get-MgServicePrincipalTokenLifetimePolicy](Get-MgServicePrincipalTokenLifetimePolicy.md)
-Get tokenLifetimePolicies from servicePrincipals
+The tokenLifetimePolicies assigned to this service principal.
 
 ### [Get-MgServicePrincipalTransitiveMemberOf](Get-MgServicePrincipalTransitiveMemberOf.md)
 Get transitiveMemberOf from servicePrincipals
 
 ### [Get-MgUserAppRoleAssignment](Get-MgUserAppRoleAssignment.md)
-Get appRoleAssignments from users
+Represents the app roles a user has been granted for an application.
+Supports $expand.
 
 ### [Invoke-MgInstantiateApplicationTemplate](Invoke-MgInstantiateApplicationTemplate.md)
-Invoke action instantiate
+Add an instance of an application from the Azure AD application gallery into your directory.
+You can also use this API to instantiate non-gallery apps.
+Use the following ID for the **applicationTemplate** object: `8adf8e6e-67b2-4cf2-a259-e3dc5476c621`.
 
 ### [New-MgApplication](New-MgApplication.md)
-Create application
+Create a new application object.
 
 ### [New-MgApplicationExtensionProperty](New-MgApplicationExtensionProperty.md)
-Create new navigation property to extensionProperties for applications
+Create a new directory extension definition, represented by an extensionProperty object.
 
 ### [New-MgApplicationFederatedIdentityCredential](New-MgApplicationFederatedIdentityCredential.md)
-Create new navigation property to federatedIdentityCredentials for applications
+Create a new federatedIdentityCredential object for an application.
+By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
+Maximum of 20 objects can be added to an application.
 
 ### [New-MgApplicationOwnerByRef](New-MgApplicationOwnerByRef.md)
 Create new navigation property ref to owners for applications
@@ -189,22 +258,30 @@ Create new navigation property ref to tokenIssuancePolicies for applications
 Create new navigation property ref to tokenLifetimePolicies for applications
 
 ### [New-MgGroupAppRoleAssignment](New-MgGroupAppRoleAssignment.md)
-Create new navigation property to appRoleAssignments for groups
+Use this API to assign an app role to a group.
+All direct members of the group will be considered assigned.
+To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
 
 ### [New-MgServicePrincipal](New-MgServicePrincipal.md)
-Create servicePrincipal
+Create a new servicePrincipal object.
 
 ### [New-MgServicePrincipalAppRoleAssignedTo](New-MgServicePrincipalAppRoleAssignedTo.md)
-Create new navigation property to appRoleAssignedTo for servicePrincipals
+Assign an app role for a resource service principal, to a user, group, or client service principal.
+App roles that are assigned to service principals are also known as application permissions.
+Application permissions can be granted directly with app role assignments, or through a consent experience.
+To grant an app role assignment, you need three identifiers:
 
 ### [New-MgServicePrincipalAppRoleAssignment](New-MgServicePrincipalAppRoleAssignment.md)
-Create new navigation property to appRoleAssignments for servicePrincipals
+Assign an app role to a client service principal.
+App roles that are assigned to service principals are also known as application permissions.
+Application permissions can be granted directly with app role assignments, or through a consent experience.
+To grant an app role assignment to a client service principal, you need three identifiers:
 
 ### [New-MgServicePrincipalClaimMappingPolicyByRef](New-MgServicePrincipalClaimMappingPolicyByRef.md)
 Create new navigation property ref to claimsMappingPolicies for servicePrincipals
 
 ### [New-MgServicePrincipalDelegatedPermissionClassification](New-MgServicePrincipalDelegatedPermissionClassification.md)
-Create new navigation property to delegatedPermissionClassifications for servicePrincipals
+Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
 
 ### [New-MgServicePrincipalEndpoint](New-MgServicePrincipalEndpoint.md)
 Create new navigation property to endpoints for servicePrincipals
@@ -216,10 +293,13 @@ Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrin
 Create new navigation property ref to owners for servicePrincipals
 
 ### [New-MgUserAppRoleAssignment](New-MgUserAppRoleAssignment.md)
-Create new navigation property to appRoleAssignments for users
+Use this API to assign an app role to a user.
+To grant an app role assignment to a user, you need three identifiers:
 
 ### [Remove-MgApplication](Remove-MgApplication.md)
-Delete application
+Delete an application object.
+When deleted, apps are moved to a temporary container and can be restored within 30 days.
+After that time, they are permanently deleted.
 
 ### [Remove-MgApplicationExtensionProperty](Remove-MgApplicationExtensionProperty.md)
 Delete navigation property extensionProperties for applications
@@ -228,13 +308,15 @@ Delete navigation property extensionProperties for applications
 Delete navigation property federatedIdentityCredentials for applications
 
 ### [Remove-MgApplicationKey](Remove-MgApplicationKey.md)
-Invoke action removeKey
+Remove a key credential from an application.
+This method along with addKey can be used by an application to automate rolling its expiring keys.
+As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
 
 ### [Remove-MgApplicationOwnerByRef](Remove-MgApplicationOwnerByRef.md)
 Delete ref of navigation property owners for applications
 
 ### [Remove-MgApplicationPassword](Remove-MgApplicationPassword.md)
-Invoke action removePassword
+Remove a password from an application.
 
 ### [Remove-MgApplicationTemplate](Remove-MgApplicationTemplate.md)
 Delete entity from applicationTemplates
@@ -249,7 +331,7 @@ Delete ref of navigation property tokenLifetimePolicies for applications
 Delete navigation property appRoleAssignments for groups
 
 ### [Remove-MgServicePrincipal](Remove-MgServicePrincipal.md)
-Delete servicePrincipal
+Delete a servicePrincipal object.
 
 ### [Remove-MgServicePrincipalAppRoleAssignedTo](Remove-MgServicePrincipalAppRoleAssignedTo.md)
 Delete navigation property appRoleAssignedTo for servicePrincipals
@@ -270,31 +352,53 @@ Delete navigation property endpoints for servicePrincipals
 Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
 
 ### [Remove-MgServicePrincipalKey](Remove-MgServicePrincipalKey.md)
-Invoke action removeKey
+Remove a key credential from a servicePrincipal.
+This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys.
+As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
 
 ### [Remove-MgServicePrincipalOwnerByRef](Remove-MgServicePrincipalOwnerByRef.md)
 Delete ref of navigation property owners for servicePrincipals
 
 ### [Remove-MgServicePrincipalPassword](Remove-MgServicePrincipalPassword.md)
-Invoke action removePassword
+Remove a password from a servicePrincipal object.
 
 ### [Remove-MgUserAppRoleAssignment](Remove-MgUserAppRoleAssignment.md)
 Delete navigation property appRoleAssignments for users
 
 ### [Set-MgApplicationLogo](Set-MgApplicationLogo.md)
-Update logo for application in applications
+The main logo for the application.
+Not nullable.
 
 ### [Set-MgApplicationVerifiedPublisher](Set-MgApplicationVerifiedPublisher.md)
-Invoke action setVerifiedPublisher
+Set the verifiedPublisher on an application.
+For more information, including prerequisites to setting a verified publisher, see Publisher verification.
 
 ### [Test-MgApplicationProperty](Test-MgApplicationProperty.md)
-Invoke action validateProperties
+Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
+Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
+To validate the properties of an existing group, use the group: validateProperties function.
+The following policy validations are performed for the display name and mail nickname properties:\n1.
+Validate the prefix and suffix naming policy\n2.
+Validate the custom banned words policy\n3.
+Validate that the mail nickname is unique This API only returns the first validation failure that is encountered.
+If the properties fail multiple validations, only the first validation failure is returned.
+However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+To learn more about configuring naming policies, see Configure naming policy.
 
 ### [Test-MgServicePrincipalProperty](Test-MgServicePrincipalProperty.md)
-Invoke action validateProperties
+Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
+Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
+To validate the properties of an existing group, use the group: validateProperties function.
+The following policy validations are performed for the display name and mail nickname properties:\n1.
+Validate the prefix and suffix naming policy\n2.
+Validate the custom banned words policy\n3.
+Validate that the mail nickname is unique This API only returns the first validation failure that is encountered.
+If the properties fail multiple validations, only the first validation failure is returned.
+However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+To learn more about configuring naming policies, see Configure naming policy.
 
 ### [Update-MgApplication](Update-MgApplication.md)
-Update application
+Update the properties of an application object.
 
 ### [Update-MgApplicationExtensionProperty](Update-MgApplicationExtensionProperty.md)
 Update the navigation property extensionProperties in applications
@@ -309,7 +413,7 @@ Update entity in applicationTemplates
 Update the navigation property appRoleAssignments in groups
 
 ### [Update-MgServicePrincipal](Update-MgServicePrincipal.md)
-Update servicePrincipal
+Update entity in servicePrincipals
 
 ### [Update-MgServicePrincipalAppRoleAssignedTo](Update-MgServicePrincipalAppRoleAssignedTo.md)
 Update the navigation property appRoleAssignedTo in servicePrincipals

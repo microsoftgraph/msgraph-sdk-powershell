@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyTokenIssuancePolicy
 
 ## SYNOPSIS
-Create new navigation property to tokenIssuancePolicies for policies
+Create a new tokenIssuancePolicy object.
 
 ## SYNTAX
 
@@ -26,9 +26,25 @@ New-MgPolicyTokenIssuancePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] 
 ```
 
 ## DESCRIPTION
-Create new navigation property to tokenIssuancePolicies for policies
+Create a new tokenIssuancePolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgPolicyTokenIssuancePolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Definition = @(
+		"definition-value"
+	)
+	DisplayName = "displayName-value"
+	IsOrganizationDefault = $true
+}
+New-MgPolicyTokenIssuancePolicy -BodyParameter $params
+```
+
+This example shows how to use the New-MgPolicyTokenIssuancePolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -144,7 +160,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -227,7 +244,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPLIESTO <IMicrosoftGraphDirectoryObject[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 ## RELATED LINKS

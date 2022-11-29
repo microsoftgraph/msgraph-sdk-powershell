@@ -10,13 +10,18 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: Get contactFolders from users
+      summary: List contactFolders
+      description: Get the contact folder collection in the default Contacts folder of the signed-in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
       operationId: users_ListContactFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -71,13 +76,18 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create new navigation property to contactFolders for users
+      summary: Create ContactFolder
+      description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
       operationId: users_CreateContactFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -103,12 +113,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contactFolders from users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_GetContactFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -116,6 +128,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -178,6 +191,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -185,6 +199,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -211,6 +226,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -218,12 +234,14 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -236,13 +254,18 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: Get childFolders from users
+      summary: List childFolders
+      description: Get a collection of child folders under the specified contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
       operationId: users.contactFolders_ListChildFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -250,6 +273,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -320,13 +344,18 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create new navigation property to childFolders for users
+      summary: Create ContactFolder
+      description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
       operationId: users.contactFolders_CreateChildFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -334,6 +363,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -359,12 +389,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get childFolders from users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_GetChildFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -372,6 +404,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -379,6 +412,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -461,6 +495,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -468,6 +503,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -475,6 +511,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -501,6 +538,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -508,6 +546,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -515,12 +554,14 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -533,13 +574,18 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: Get contacts from users
+      summary: List contacts
+      description: 'Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
       operationId: users.contactFolders.childFolders_ListContacts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -547,6 +593,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -554,6 +601,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -729,13 +777,18 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create new navigation property to contacts for users
+      summary: Create contact
+      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
       operationId: users.contactFolders.childFolders_CreateContacts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -743,6 +796,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -750,6 +804,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -775,12 +830,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_GetContacts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -788,6 +845,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -795,6 +853,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -802,6 +861,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -923,6 +983,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -930,6 +991,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -937,6 +999,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -944,6 +1007,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -970,6 +1034,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -977,6 +1042,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -984,6 +1050,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -991,12 +1058,14 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1010,12 +1079,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_ListExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1023,6 +1094,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1030,6 +1102,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1037,6 +1110,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1100,6 +1174,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1107,6 +1182,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1114,6 +1190,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1121,6 +1198,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1146,12 +1224,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_GetExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1159,6 +1239,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1166,6 +1247,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1173,6 +1255,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1180,6 +1263,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -1227,6 +1311,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1234,6 +1319,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1241,6 +1327,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1248,6 +1335,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1255,6 +1343,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -1281,6 +1370,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1288,6 +1378,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1295,6 +1386,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1302,6 +1394,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1309,12 +1402,14 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1328,12 +1423,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1341,6 +1438,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1348,6 +1446,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1355,6 +1454,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1422,6 +1522,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1429,6 +1530,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1436,6 +1538,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1443,6 +1546,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1468,12 +1572,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1481,6 +1587,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1488,6 +1595,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1495,6 +1603,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1502,6 +1611,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -1550,6 +1660,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1557,6 +1668,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1564,6 +1676,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1571,6 +1684,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1578,6 +1692,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -1604,6 +1719,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1611,6 +1727,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1618,6 +1735,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1625,6 +1743,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1632,12 +1751,14 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1651,12 +1772,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contactFolders.childFolders.contacts_GetPhoto
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1664,6 +1787,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1671,6 +1795,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1678,6 +1803,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1715,6 +1841,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1722,6 +1849,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1729,6 +1857,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1736,6 +1865,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1746,51 +1876,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.contactFolder
-      summary: Delete navigation property photo for users
-      operationId: users.contactFolders.childFolders.contacts_DeletePhoto
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contactFolder-id1
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -1808,6 +1893,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1815,6 +1901,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1822,6 +1909,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1829,6 +1917,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1853,6 +1942,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1860,6 +1950,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1867,6 +1958,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1874,6 +1966,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1896,12 +1989,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1909,6 +2004,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1916,6 +2012,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -1923,6 +2020,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -1990,6 +2088,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1997,6 +2096,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2004,6 +2104,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2011,6 +2112,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -2036,12 +2138,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.childFolders.contacts_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2049,6 +2153,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2056,6 +2161,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2063,6 +2169,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -2070,6 +2177,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -2118,6 +2226,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2125,6 +2234,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2132,6 +2242,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2139,6 +2250,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -2146,6 +2258,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -2172,6 +2285,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2179,6 +2293,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2186,6 +2301,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2193,6 +2309,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -2200,12 +2317,14 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2219,12 +2338,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2232,6 +2353,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2239,6 +2361,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2306,6 +2429,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2313,6 +2437,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2320,6 +2445,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2345,12 +2471,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2358,6 +2486,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2365,6 +2494,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2372,6 +2502,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -2420,6 +2551,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2427,6 +2559,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2434,6 +2567,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2441,6 +2575,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -2467,6 +2602,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2474,6 +2610,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2481,6 +2618,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2488,12 +2626,14 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2507,12 +2647,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2520,6 +2662,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2527,6 +2670,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2594,6 +2738,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2601,6 +2746,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2608,6 +2754,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2633,12 +2780,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2646,6 +2795,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2653,6 +2803,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2660,6 +2811,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -2708,6 +2860,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2715,6 +2868,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2722,6 +2876,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2729,6 +2884,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -2755,6 +2911,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2762,6 +2919,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2769,6 +2927,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2776,12 +2935,14 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2794,13 +2955,18 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: Get contacts from users
+      summary: List contacts
+      description: 'Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
       operationId: users.contactFolders_ListContacts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2808,6 +2974,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -2983,13 +3150,18 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create new navigation property to contacts for users
+      summary: Create contact
+      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
       operationId: users.contactFolders_CreateContacts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2997,6 +3169,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3022,12 +3195,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_GetContacts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3035,6 +3210,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3042,6 +3218,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3159,6 +3336,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3166,6 +3344,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3173,6 +3352,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3199,6 +3379,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3206,6 +3387,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3213,12 +3395,14 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3232,12 +3416,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3245,6 +3431,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3252,6 +3439,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3315,6 +3503,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3322,6 +3511,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3329,6 +3519,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3354,12 +3545,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3367,6 +3560,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3374,6 +3568,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3381,6 +3576,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -3428,6 +3624,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3435,6 +3632,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3442,6 +3640,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3449,6 +3648,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -3475,6 +3675,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3482,6 +3683,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3489,6 +3691,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3496,12 +3699,14 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3515,12 +3720,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3528,6 +3735,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3535,6 +3743,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3602,6 +3811,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3609,6 +3819,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3616,6 +3827,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3641,12 +3853,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3654,6 +3868,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3661,6 +3876,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3668,6 +3884,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -3716,6 +3933,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3723,6 +3941,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3730,6 +3949,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3737,6 +3957,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -3763,6 +3984,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3770,6 +3992,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3777,6 +4000,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3784,12 +4008,14 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3803,12 +4029,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contactFolders.contacts_GetPhoto
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3816,6 +4044,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3823,6 +4052,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3860,6 +4090,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3867,6 +4098,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3874,6 +4106,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3884,44 +4117,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.contactFolder
-      summary: Delete navigation property photo for users
-      operationId: users.contactFolders.contacts_DeletePhoto
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -3939,6 +4134,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3946,6 +4142,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3953,6 +4150,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -3977,6 +4175,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3984,6 +4183,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -3991,6 +4191,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -4013,12 +4214,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4026,6 +4229,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4033,6 +4237,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -4100,6 +4305,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4107,6 +4313,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4114,6 +4321,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -4139,12 +4347,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4152,6 +4362,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4159,6 +4370,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -4166,6 +4378,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -4214,6 +4427,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4221,6 +4435,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4228,6 +4443,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -4235,6 +4451,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -4261,6 +4478,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4268,6 +4486,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4275,6 +4494,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -4282,12 +4502,14 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4301,12 +4523,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4314,6 +4538,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4381,6 +4606,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4388,6 +4614,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4413,12 +4640,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4426,6 +4655,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4433,6 +4663,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -4481,6 +4712,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4488,6 +4720,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4495,6 +4728,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -4521,6 +4755,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4528,6 +4763,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4535,12 +4771,14 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4554,12 +4792,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4567,6 +4807,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4634,6 +4875,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4641,6 +4883,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4666,12 +4909,14 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4679,6 +4924,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4686,6 +4932,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -4734,6 +4981,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4741,6 +4989,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4748,6 +4997,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -4774,6 +5024,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4781,6 +5032,7 @@ paths:
           in: path
           description: 'key: id of contactFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contactFolder
@@ -4788,12 +5040,14 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4806,13 +5060,18 @@ paths:
     get:
       tags:
         - users.contact
-      summary: Get contacts from users
+      summary: List contacts
+      description: 'Get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user''s contact folder:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
       operationId: users_ListContacts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4973,13 +5232,18 @@ paths:
     post:
       tags:
         - users.contact
-      summary: Create new navigation property to contacts for users
+      summary: Create contact
+      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
       operationId: users_CreateContacts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5005,12 +5269,14 @@ paths:
       tags:
         - users.contact
       summary: Get contacts from users
+      description: The user's contacts. Read-only. Nullable.
       operationId: users_GetContacts
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5018,6 +5284,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5115,6 +5382,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5122,6 +5390,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5148,6 +5417,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5155,12 +5425,14 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5174,12 +5446,14 @@ paths:
       tags:
         - users.contact
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5187,6 +5461,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5250,6 +5525,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5257,6 +5533,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5282,12 +5559,14 @@ paths:
       tags:
         - users.contact
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5295,6 +5574,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5302,6 +5582,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -5349,6 +5630,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5356,6 +5638,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5363,6 +5646,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -5389,6 +5673,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5396,6 +5681,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5403,12 +5689,14 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5422,12 +5710,14 @@ paths:
       tags:
         - users.contact
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5435,6 +5725,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5502,6 +5793,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5509,6 +5801,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5534,12 +5827,14 @@ paths:
       tags:
         - users.contact
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5547,6 +5842,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5554,6 +5850,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -5602,6 +5899,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5609,6 +5907,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5616,6 +5915,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -5642,6 +5942,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5649,6 +5950,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5656,12 +5958,14 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5675,12 +5979,14 @@ paths:
       tags:
         - users.contact
       summary: Get photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contacts_GetPhoto
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5688,6 +5994,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5725,6 +6032,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5732,6 +6040,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5742,37 +6051,6 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.contact
-      summary: Delete navigation property photo for users
-      operationId: users.contacts_DeletePhoto
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
       responses:
         '204':
           description: Success
@@ -5790,6 +6068,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5797,6 +6076,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5821,6 +6101,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5828,6 +6109,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5850,12 +6132,14 @@ paths:
       tags:
         - users.contact
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5863,6 +6147,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5930,6 +6215,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5937,6 +6223,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5962,12 +6249,14 @@ paths:
       tags:
         - users.contact
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5975,6 +6264,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -5982,6 +6272,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -6030,6 +6321,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6037,6 +6329,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -6044,6 +6337,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -6070,6 +6364,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6077,6 +6372,7 @@ paths:
           in: path
           description: 'key: id of contact'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: contact
@@ -6084,12 +6380,14 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6119,21 +6417,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
               description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+              readOnly: true
             contacts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contact'
               description: The contacts in the folder. Navigation property. Read-only. Nullable.
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.contact:
@@ -6266,12 +6568,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the contact. Nullable.
+              description: The collection of open extensions defined for the contact. Read-only. Nullable.
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+              readOnly: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
             singleValueExtendedProperties:
@@ -6279,6 +6583,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.extension:
@@ -6342,6 +6647,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.outlookItem:
@@ -6406,11 +6712,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of an entity instance.
+          description: The email address of the person or entity.
           nullable: true
         name:
           type: string
-          description: The display name of an entity instance.
+          description: The display name of the person or entity.
           nullable: true
       additionalProperties:
         type: object
@@ -6424,6 +6730,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.contactFolder'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -6445,6 +6752,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.contact'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.extensionCollectionResponse:
@@ -6457,6 +6765,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.extension'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
@@ -6469,6 +6778,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse:
@@ -6481,6 +6791,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.MainError:
@@ -6566,6 +6877,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -6574,6 +6887,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -6581,18 +6896,24 @@ components:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
     search:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
   securitySchemes:

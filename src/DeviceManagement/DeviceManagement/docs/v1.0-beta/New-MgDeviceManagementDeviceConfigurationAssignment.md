@@ -16,7 +16,7 @@ Create new navigation property to assignments for deviceManagement
 ```
 New-MgDeviceManagementDeviceConfigurationAssignment -DeviceConfigurationId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Intent <DeviceConfigAssignmentIntent>]
- [-Source <DeviceAndAppManagementAssignmentSource>] [-SourceId <String>]
+ [-Source <DeviceAndAppManagementAssignmentSource>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ New-MgDeviceManagementDeviceConfigurationAssignment -InputObject <IDeviceManagem
 ```
 New-MgDeviceManagementDeviceConfigurationAssignment -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Intent <DeviceConfigAssignmentIntent>]
- [-Source <DeviceAndAppManagementAssignmentSource>] [-SourceId <String>]
+ [-Source <DeviceAndAppManagementAssignmentSource>]
  [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -94,7 +94,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -144,22 +145,6 @@ Represents source of assignment.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Support.DeviceAndAppManagementAssignmentSource
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SourceId
-The identifier of the source of the assignment.
-This property is read-only.
-
-```yaml
-Type: System.String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -241,10 +226,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphDeviceConfigurationAssignment1>: The device configuration assignment entity assigns an AAD group to a specific device configuration.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Intent <DeviceConfigAssignmentIntent?>]`: The administrator intent for the assignment of the profile.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
-  - `[SourceId <String>]`: The identifier of the source of the assignment. This property is read-only.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -337,6 +321,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

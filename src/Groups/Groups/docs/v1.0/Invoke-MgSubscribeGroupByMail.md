@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgSubscribeGroupByMail
 
 ## SYNOPSIS
-Invoke action subscribeByMail
+Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
+Supported for Microsoft 365 groups only.
 
 ## SYNTAX
 
@@ -24,9 +25,19 @@ Invoke-MgSubscribeGroupByMail -InputObject <IGroupsIdentity> [-PassThru] [-Confi
 ```
 
 ## DESCRIPTION
-Invoke action subscribeByMail
+Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
+Supported for Microsoft 365 groups only.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgSubscribeGroupByMail Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Invoke-MgSubscribeGroupByMail -GroupId $groupId
+```
+
+This example shows how to use the Invoke-MgSubscribeGroupByMail Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

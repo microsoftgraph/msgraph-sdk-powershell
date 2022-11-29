@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDeviceManagementTroubleshootingEvent
 
 ## SYNOPSIS
-Get deviceManagementTroubleshootingEvents from users
+The list of troubleshooting events for this user.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDeviceManagementTroubleshootingEvent -InputObject <IDevicesCorporateMa
 ```
 
 ## DESCRIPTION
-Get deviceManagementTroubleshootingEvents from users
+The list of troubleshooting events for this user.
 
 ## EXAMPLES
 

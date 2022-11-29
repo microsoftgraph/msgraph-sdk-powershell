@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyUploadedDefinitionFile
 
 ## SYNOPSIS
-Get groupPolicyUploadedDefinitionFiles from deviceManagement
+The available group policy uploaded definition files for this account.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementGroupPolicyUploadedDefinitionFile -InputObject <IDeviceMan
 ```
 
 ## DESCRIPTION
-Get groupPolicyUploadedDefinitionFiles from deviceManagement
+The available group policy uploaded definition files for this account.
 
 ## EXAMPLES
 
@@ -245,6 +245,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

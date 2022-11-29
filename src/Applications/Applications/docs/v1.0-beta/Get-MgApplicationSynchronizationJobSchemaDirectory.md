@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationSynchronizationJobSchemaDirectory
 
 ## SYNOPSIS
-Get directories from applications
+Contains the collection of directories and all of their objects.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsId
 ```
 
 ## DESCRIPTION
-Get directories from applications
+Contains the collection of directories and all of their objects.
 
 ## EXAMPLES
 

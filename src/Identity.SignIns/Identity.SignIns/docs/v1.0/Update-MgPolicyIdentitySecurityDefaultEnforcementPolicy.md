@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## SYNOPSIS
-Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
 
 ## SYNTAX
 
@@ -27,9 +27,21 @@ Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy
 ```
 
 ## DESCRIPTION
-Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	IsEnabled = $false
+}
+Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -113,7 +125,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -213,7 +226,7 @@ BODYPARAMETER <IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy>: identi
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[IsEnabled <Boolean?>]`: If set to true, Azure Active Directory security defaults is enabled for the tenant.
 
 ## RELATED LINKS

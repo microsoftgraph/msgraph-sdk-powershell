@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserDriveRootLink
 
 ## SYNOPSIS
-Invoke action createLink
+You can use **createLink** action to share a DriveItem via a sharing link.
+The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
+DriveItem resources inherit sharing permissions from their ancestors.
 
 ## SYNTAX
 
@@ -22,14 +24,14 @@ New-MgUserDriveRootLink -DriveId <String> -UserId <String> [-AdditionalPropertie
 ### Create
 ```
 New-MgUserDriveRootLink -DriveId <String> -UserId <String>
- -BodyParameter <IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema1>
+ -BodyParameter <IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserDriveRootLink -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema1>
+ -BodyParameter <IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,7 +43,9 @@ New-MgUserDriveRootLink -InputObject <IUsersActionsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Invoke action createLink
+You can use **createLink** action to share a DriveItem via a sharing link.
+The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
+DriveItem resources inherit sharing permissions from their ancestors.
 
 ## EXAMPLES
 
@@ -67,7 +71,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema1
+Type: Microsoft.Graph.PowerShell.Models.IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -250,7 +254,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema1
+### Microsoft.Graph.PowerShell.Models.IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
 
@@ -267,7 +271,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema1>: .
+BODYPARAMETER <IPathsI8Q6BgUsersUserIdDrivesDriveIdRootMicrosoftGraphCreatelinkPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ExpirationDateTime <DateTime?>]`: 
   - `[Message <String>]`: 

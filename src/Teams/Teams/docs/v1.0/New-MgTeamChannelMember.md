@@ -8,30 +8,31 @@ schema: 2.0.0
 # New-MgTeamChannelMember
 
 ## SYNOPSIS
-Create new navigation property to members for teams
+Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgTeamChannelMember -ChannelId <String> -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-Roles <String[]>] [-VisibleHistoryStartDateTime <DateTime>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgTeamChannelMember -ChannelId <String> -TeamId <String>
  -BodyParameter <IMicrosoftGraphConversationMember> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgTeamChannelMember -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphConversationMember>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-Roles <String[]>] [-VisibleHistoryStartDateTime <DateTime>]
@@ -39,9 +40,112 @@ New-MgTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Create new navigation property to members for teams
+Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgTeamChannelMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	Roles = @(
+		"owner"
+	)
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
+}
+New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgTeamChannelMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId
+```
+
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the New-MgTeamChannelMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	Roles = @(
+		"owner"
+	)
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
+}
+New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the New-MgTeamChannelMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	Roles = @(
+	)
+	"User@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
+}
+New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Using the New-MgTeamChannelMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	Roles = @(
+	)
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users/8b081ef6-4792-4def-b2c9-c363a1bf41d5"
+}
+New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 6: Using the New-MgTeamChannelMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	Roles = @(
+	)
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users/24b3819b-4e1d-4f3e-86bd-e42b54d0b2b4"
+}
+New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 7: Using the New-MgTeamChannelMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	Roles = @(
+	)
+	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users/bc3598dd-cce4-4742-ae15-173429951408"
+	TenantId = "a18103d1-a6ef-4f66-ac64-e4ef42ea8681"
+}
+New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+```
+
+This example shows how to use the New-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -50,7 +154,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -66,7 +170,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConversationMember
-Parameter Sets: Create1, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -81,7 +185,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -96,7 +200,7 @@ The display name of the user.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -107,11 +211,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -127,7 +232,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -145,7 +250,7 @@ A basic member should not have any values specified in the roles property.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -160,7 +265,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -176,7 +281,7 @@ This property is settable only for members of a chat.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -241,7 +346,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphConversationMember>: conversationMember
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the user.
   - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
   - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey
 
 ## SYNOPSIS
-Invoke action generateEncryptionPublicKey
+Generate a public key to use to encrypt the Apple device enrollment program token
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey -InputObject <IDev
 ```
 
 ## DESCRIPTION
-Invoke action generateEncryptionPublicKey
+Generate a public key to use to encrypt the Apple device enrollment program token
 
 ## EXAMPLES
 
@@ -114,6 +114,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

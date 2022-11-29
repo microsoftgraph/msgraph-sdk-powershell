@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: teams_GetGroup|users\.joinedTeams.*|users_(Get|Update|Delete|Create)JoinedTeams|.*_UpdateInstalledApps
+  - remove-path-by-operation: teams_GetGroup|users\.joinedTeams.*|users_(Get|Update|Delete|Create)JoinedTeams|.*_UpdateInstalledApps|^teamwork\.teamTemplates\.definitions\.teamDefinition.*
 # Remove cmdlets
   - where:
       verb: Remove
@@ -53,10 +53,16 @@ directive:
       verb: Remove|Update
       subject: ^(Chat|TeamChannel|TeamPrimaryChannel)MessageHostedContent$
     remove: true
+  - where:
+      verb: Get
+      subject: ^(TeamChannel|GroupTeamChannel)$
+      variant: ^Get$|Get2|^GetViaIdentity$|GetViaIdentity2|^List$|List2
+    set:
+      subject: All$1
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.11.1
+module-version: 1.13.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

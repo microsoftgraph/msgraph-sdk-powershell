@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: 0987f3f9-3487-42b5-84d4-a523e01def35
+Module Guid: 488ea4d2-2d4b-4aa3-9edd-3e764d57a0e7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -21,10 +21,10 @@ Invoke action approveApps
 Invoke action approveFotaApps
 
 ### [Clear-MgDeviceManagementComanagedDevice](Clear-MgDeviceManagementComanagedDevice.md)
-Invoke action wipe
+Wipe a device
 
 ### [Clear-MgDeviceManagementManagedDevice](Clear-MgDeviceManagementManagedDevice.md)
-Invoke action wipe
+Wipe a device
 
 ### [Complete-MgDeviceManagementAndroidForWorkSettingSignup](Complete-MgDeviceManagementAndroidForWorkSettingSignup.md)
 Invoke action completeSignup
@@ -45,13 +45,13 @@ Invoke action clone
 Invoke action disable
 
 ### [Disable-MgDeviceManagementComanagedDeviceLostMode](Disable-MgDeviceManagementComanagedDeviceLostMode.md)
-Invoke action disableLostMode
+Disable lost mode
 
 ### [Disable-MgDeviceManagementManagedDevice](Disable-MgDeviceManagementManagedDevice.md)
 Invoke action disable
 
 ### [Disable-MgDeviceManagementManagedDeviceLostMode](Disable-MgDeviceManagementManagedDeviceLostMode.md)
-Invoke action disableLostMode
+Disable lost mode
 
 ### [Disable-MgDeviceManagementOemWarrantyInformationOnboarding](Disable-MgDeviceManagementOemWarrantyInformationOnboarding.md)
 Invoke action disable
@@ -60,7 +60,7 @@ Invoke action disable
 Invoke action disconnect
 
 ### [Disconnect-MgDeviceManagementRemoteAssistancePartner](Disconnect-MgDeviceManagementRemoteAssistancePartner.md)
-Invoke action disconnect
+A request to remove the active TeamViewer connector
 
 ### [Disconnect-MgDeviceManagementZebraFotaConnector](Disconnect-MgDeviceManagementZebraFotaConnector.md)
 Invoke action disconnect
@@ -72,7 +72,7 @@ Invoke action enableAndroidDeviceAdministratorEnrollment
 Invoke action enable
 
 ### [Enable-MgDeviceManagementComanagedDeviceLostMode](Enable-MgDeviceManagementComanagedDeviceLostMode.md)
-Invoke action enableLostMode
+Enable lost mode
 
 ### [Enable-MgDeviceManagementDeviceHealthScriptGlobalScript](Enable-MgDeviceManagementDeviceHealthScriptGlobalScript.md)
 Invoke action enableGlobalScripts
@@ -81,7 +81,7 @@ Invoke action enableGlobalScripts
 Invoke action enableLegacyPcManagement
 
 ### [Enable-MgDeviceManagementManagedDeviceLostMode](Enable-MgDeviceManagementManagedDeviceLostMode.md)
-Invoke action enableLostMode
+Enable lost mode
 
 ### [Enable-MgDeviceManagementOemWarrantyInformationOnboarding](Enable-MgDeviceManagementOemWarrantyInformationOnboarding.md)
 Invoke action enable
@@ -90,13 +90,15 @@ Invoke action enable
 Invoke action enable
 
 ### [Enable-MgDeviceManagementUnlicensedAdminstrator](Enable-MgDeviceManagementUnlicensedAdminstrator.md)
-Invoke action enableUnlicensedAdminstrators
+Upon enabling, users assigned as administrators via Role Assignment Memberships will no longer require an assigned Intune license.
+You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators.
+Licensed administrators will continue to function as-is in that transitive memberships apply and are not subject to the 350 member limit.
 
 ### [Find-MgDeviceManagementComanagedDevice](Find-MgDeviceManagementComanagedDevice.md)
-Invoke action locateDevice
+Locate a device
 
 ### [Find-MgDeviceManagementManagedDevice](Find-MgDeviceManagementManagedDevice.md)
-Invoke action locateDevice
+Locate a device
 
 ### [Get-MgDeviceManagementAssignmentFilterStatusDetail](Get-MgDeviceManagementAssignmentFilterStatusDetail.md)
 Invoke action getAssignmentFiltersStatusDetails
@@ -111,7 +113,7 @@ Invoke action getHealthMetricTimeSeries
 Invoke action getTargetedUsersAndDevices
 
 ### [Get-MgDeviceManagementDeviceHealthScriptGlobalScriptHighestAvailableVersion](Get-MgDeviceManagementDeviceHealthScriptGlobalScriptHighestAvailableVersion.md)
-Invoke action getGlobalScriptHighestAvailableVersion
+Update the Proprietary Device Health Script
 
 ### [Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric](Get-MgDeviceManagementMicrosoftTunnelSiteMicrosoftTunnelServerHealthMetric.md)
 Invoke action getHealthMetrics
@@ -300,40 +302,41 @@ Invoke action importOffice365DeviceConfigurationPolicies
 Invoke action importOffice365DeviceConfigurationPolicies
 
 ### [Initialize-MgDeviceManagementComanagedDeviceEsim](Initialize-MgDeviceManagementComanagedDeviceEsim.md)
-Invoke action activateDeviceEsim
+Activate eSIM on the device.
 
 ### [Initialize-MgDeviceManagementManagedDeviceEsim](Initialize-MgDeviceManagementManagedDeviceEsim.md)
-Invoke action activateDeviceEsim
+Activate eSIM on the device.
 
 ### [Invoke-MgAccountDeviceManagementWindowAutopilotDeviceIdentity](Invoke-MgAccountDeviceManagementWindowAutopilotDeviceIdentity.md)
-Invoke action unassignResourceAccountFromDevice
+Unassigns the resource account from an Autopilot device.
 
 ### [Invoke-MgBeginDeviceManagementRemoteAssistancePartnerOnboarding](Invoke-MgBeginDeviceManagementRemoteAssistancePartnerOnboarding.md)
-Invoke action beginOnboarding
+A request to start onboarding.
+Must be coupled with the appropriate TeamViewer account information
 
 ### [Invoke-MgBulkDeviceManagementComanagedDeviceSetCloudPcReviewStatus](Invoke-MgBulkDeviceManagementComanagedDeviceSetCloudPcReviewStatus.md)
-Invoke action bulkSetCloudPcReviewStatus
+Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
 
 ### [Invoke-MgBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus](Invoke-MgBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus.md)
-Invoke action bulkSetCloudPcReviewStatus
+Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
 
 ### [Invoke-MgBulkReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgBulkReprovisionDeviceManagementComanagedDeviceCloudPc.md)
-Invoke action bulkReprovisionCloudPc
+Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
 
 ### [Invoke-MgBulkReprovisionDeviceManagementManagedDeviceCloudPc](Invoke-MgBulkReprovisionDeviceManagementManagedDeviceCloudPc.md)
-Invoke action bulkReprovisionCloudPc
+Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
 
 ### [Invoke-MgBulkRestoreDeviceManagementComanagedDeviceCloudPc](Invoke-MgBulkRestoreDeviceManagementComanagedDeviceCloudPc.md)
-Invoke action bulkRestoreCloudPc
+Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
 
 ### [Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc](Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc.md)
-Invoke action bulkRestoreCloudPc
+Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
 
 ### [Invoke-MgCleanDeviceManagementComanagedDeviceWindowDevice](Invoke-MgCleanDeviceManagementComanagedDeviceWindowDevice.md)
-Invoke action cleanWindowsDevice
+Clean Windows device
 
 ### [Invoke-MgCleanDeviceManagementManagedDeviceWindowDevice](Invoke-MgCleanDeviceManagementManagedDeviceWindowDevice.md)
-Invoke action cleanWindowsDevice
+Clean Windows device
 
 ### [Invoke-MgConsentDeviceManagementDataSharingConsentToDataSharing](Invoke-MgConsentDeviceManagementDataSharingConsentToDataSharing.md)
 Invoke action consentToDataSharing
@@ -351,10 +354,10 @@ Invoke action assignedAccessMultiModeProfiles
 Invoke action windowsPrivacyAccessControls
 
 ### [Invoke-MgDownDeviceManagementComanagedDeviceShut](Invoke-MgDownDeviceManagementComanagedDeviceShut.md)
-Invoke action shutDown
+Shut down device
 
 ### [Invoke-MgDownDeviceManagementManagedDeviceShut](Invoke-MgDownDeviceManagementManagedDeviceShut.md)
-Invoke action shutDown
+Shut down device
 
 ### [Invoke-MgDownloadDeviceManagementComanagedDeviceAppDiagnostic](Invoke-MgDownloadDeviceManagementComanagedDeviceAppDiagnostic.md)
 Invoke action downloadAppDiagnostics
@@ -393,10 +396,10 @@ Invoke action hasPayloadLinks
 Invoke action hasActiveDeployments
 
 ### [Invoke-MgLogoutDeviceManagementComanagedDeviceSharedAppleDeviceActiveUser](Invoke-MgLogoutDeviceManagementComanagedDeviceSharedAppleDeviceActiveUser.md)
-Invoke action logoutSharedAppleDeviceActiveUser
+Logout shared Apple device active user
 
 ### [Invoke-MgLogoutDeviceManagementManagedDeviceSharedAppleDeviceActiveUser](Invoke-MgLogoutDeviceManagementManagedDeviceSharedAppleDeviceActiveUser.md)
-Invoke action logoutSharedAppleDeviceActiveUser
+Logout shared Apple device active user
 
 ### [Invoke-MgOverrideDeviceManagementComanagedDeviceComplianceState](Invoke-MgOverrideDeviceManagementComanagedDeviceComplianceState.md)
 Invoke action overrideComplianceState
@@ -405,10 +408,10 @@ Invoke action overrideComplianceState
 Invoke action overrideComplianceState
 
 ### [Invoke-MgPlayDeviceManagementComanagedDeviceLostModeSound](Invoke-MgPlayDeviceManagementComanagedDeviceLostModeSound.md)
-Invoke action playLostModeSound
+Play lost mode sound
 
 ### [Invoke-MgPlayDeviceManagementManagedDeviceLostModeSound](Invoke-MgPlayDeviceManagementManagedDeviceLostModeSound.md)
-Invoke action playLostModeSound
+Play lost mode sound
 
 ### [Invoke-MgQueryDeviceManagementResourceAccessProfileByPlatformType](Invoke-MgQueryDeviceManagementResourceAccessProfileByPlatformType.md)
 Invoke action queryByPlatformType
@@ -420,31 +423,31 @@ Invoke action reenable
 Invoke action reenable
 
 ### [Invoke-MgReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgReprovisionDeviceManagementComanagedDeviceCloudPc.md)
-Invoke action reprovisionCloudPc
+Reprovision a Cloud PC with an Intune managed device ID.
 
 ### [Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc](Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc.md)
-Invoke action reprovisionCloudPc
+Reprovision a Cloud PC with an Intune managed device ID.
 
 ### [Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc](Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc.md)
-Invoke action reprovision
+Reprovision a specific Cloud PC.
 
 ### [Invoke-MgRetireDeviceManagementComanagedDevice](Invoke-MgRetireDeviceManagementComanagedDevice.md)
-Invoke action retire
+Retire a device
 
 ### [Invoke-MgRetireDeviceManagementManagedDevice](Invoke-MgRetireDeviceManagementManagedDevice.md)
-Invoke action retire
+Retire a device
 
 ### [Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage](Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage.md)
-Invoke action reupload
+Reupload a cloudPcDeviceImage object that failed to upload.
 
 ### [Invoke-MgRotateDeviceManagementComanagedDeviceBitLockerKey](Invoke-MgRotateDeviceManagementComanagedDeviceBitLockerKey.md)
-Invoke action rotateBitLockerKeys
+Rotate BitLockerKeys
 
 ### [Invoke-MgRotateDeviceManagementComanagedDeviceFileVaultKey](Invoke-MgRotateDeviceManagementComanagedDeviceFileVaultKey.md)
 Invoke action rotateFileVaultKey
 
 ### [Invoke-MgRotateDeviceManagementManagedDeviceBitLockerKey](Invoke-MgRotateDeviceManagementManagedDeviceBitLockerKey.md)
-Invoke action rotateBitLockerKeys
+Rotate BitLockerKeys
 
 ### [Invoke-MgRotateDeviceManagementManagedDeviceFileVaultKey](Invoke-MgRotateDeviceManagementManagedDeviceFileVaultKey.md)
 Invoke action rotateFileVaultKey
@@ -462,13 +465,14 @@ Invoke action scheduleActionsForRules
 Invoke action shareForSchoolDataSyncService
 
 ### [Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc](Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc.md)
-Invoke action troubleshoot
+Troubleshoot a specific Cloud PC.
+Use this API to check the health status of the Cloud PC and the session host.
 
 ### [Invoke-MgUnassignDeviceManagementWindowAutopilotDeploymentProfileAssignedDeviceUserFromDevice](Invoke-MgUnassignDeviceManagementWindowAutopilotDeploymentProfileAssignedDeviceUserFromDevice.md)
-Invoke action unassignUserFromDevice
+Unassigns the user from an Autopilot device.
 
 ### [Invoke-MgUnassignDeviceManagementWindowAutopilotDeviceIdentityUserFromDevice](Invoke-MgUnassignDeviceManagementWindowAutopilotDeviceIdentityUserFromDevice.md)
-Invoke action unassignUserFromDevice
+Unassigns the user from an Autopilot device.
 
 ### [Invoke-MgUnbindDeviceManagementAndroidForWorkSetting](Invoke-MgUnbindDeviceManagementAndroidForWorkSetting.md)
 Invoke action unbind
@@ -477,16 +481,16 @@ Invoke action unbind
 Invoke action unbind
 
 ### [Invoke-MgUploadDeviceManagementDepOnboardingSettingDepToken](Invoke-MgUploadDeviceManagementDepOnboardingSettingDepToken.md)
-Invoke action uploadDepToken
+Uploads a new Device Enrollment Program token
 
 ### [Invoke-MgUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion](Invoke-MgUploadDeviceManagementGroupPolicyUploadedDefinitionFileNewVersion.md)
 Invoke action uploadNewVersion
 
 ### [Lock-MgDeviceManagementComanagedDeviceRemote](Lock-MgDeviceManagementComanagedDeviceRemote.md)
-Invoke action remoteLock
+Remote lock
 
 ### [Lock-MgDeviceManagementManagedDeviceRemote](Lock-MgDeviceManagementManagedDeviceRemote.md)
-Invoke action remoteLock
+Remote lock
 
 ### [Move-MgDeviceManagementComanagedDeviceToOu](Move-MgDeviceManagementComanagedDeviceToOu.md)
 Invoke action moveDevicesToOU
@@ -504,19 +508,22 @@ Invoke action createToken
 Invoke action createToken
 
 ### [New-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingGooglePlayWebToken](New-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingGooglePlayWebToken.md)
-Invoke action createGooglePlayWebToken
+Generates a web token that is used in an embeddable component.
 
 ### [New-MgDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest](New-MgDeviceManagementApplePushNotificationCertificateApplePushNotificationCertificateSigningRequest.md)
-Invoke action generateApplePushNotificationCertificateSigningRequest
+Download Apple push notification certificate signing request
 
 ### [New-MgDeviceManagementComanagedDeviceLogCollectionRequestDownloadUrl](New-MgDeviceManagementComanagedDeviceLogCollectionRequestDownloadUrl.md)
 Invoke action createDownloadUrl
+
+### [New-MgDeviceManagementComanagedDeviceRemoteHelpSession](New-MgDeviceManagementComanagedDeviceRemoteHelpSession.md)
+Remote help - Create session with a specific device
 
 ### [New-MgDeviceManagementConfigurationPolicyCopy](New-MgDeviceManagementConfigurationPolicyCopy.md)
 Invoke action createCopy
 
 ### [New-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey](New-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey.md)
-Invoke action generateEncryptionPublicKey
+Generate a public key to use to encrypt the Apple device enrollment program token
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration](New-MgDeviceManagementDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration.md)
 Invoke action createEnrollmentNotificationConfiguration
@@ -532,6 +539,9 @@ Invoke action createDeviceLogCollectionRequest
 
 ### [New-MgDeviceManagementManagedDeviceLogCollectionRequestDownloadUrl](New-MgDeviceManagementManagedDeviceLogCollectionRequestDownloadUrl.md)
 Invoke action createDownloadUrl
+
+### [New-MgDeviceManagementManagedDeviceRemoteHelpSession](New-MgDeviceManagementManagedDeviceRemoteHelpSession.md)
+Remote help - Create session with a specific device
 
 ### [New-MgDeviceManagementManagedDeviceWindowsDefenderUpdateSignature](New-MgDeviceManagementManagedDeviceWindowsDefenderUpdateSignature.md)
 Invoke action windowsDefenderUpdateSignatures
@@ -552,10 +562,10 @@ Invoke action createInstance
 Invoke action createInstance
 
 ### [Remove-MgDeviceManagementComanagedDeviceFirmwareConfigurationInterfaceManagement](Remove-MgDeviceManagementComanagedDeviceFirmwareConfigurationInterfaceManagement.md)
-Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+Remove device from Device Firmware Configuration Interface management
 
 ### [Remove-MgDeviceManagementComanagedDeviceUserFromSharedAppleDevice](Remove-MgDeviceManagementComanagedDeviceUserFromSharedAppleDevice.md)
-Invoke action deleteUserFromSharedAppleDevice
+Delete user from shared Apple device
 
 ### [Remove-MgDeviceManagementGroupPolicyUploadedDefinitionFile](Remove-MgDeviceManagementGroupPolicyUploadedDefinitionFile.md)
 Invoke action remove
@@ -564,16 +574,17 @@ Invoke action remove
 Invoke action removeLanguageFiles
 
 ### [Remove-MgDeviceManagementManagedDeviceFirmwareConfigurationInterfaceManagement](Remove-MgDeviceManagementManagedDeviceFirmwareConfigurationInterfaceManagement.md)
-Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+Remove device from Device Firmware Configuration Interface management
 
 ### [Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice](Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice.md)
-Invoke action deleteUserFromSharedAppleDevice
+Delete user from shared Apple device
 
 ### [Rename-MgDeviceManagementVirtualEndpointCloudPc](Rename-MgDeviceManagementVirtualEndpointCloudPc.md)
-Invoke action rename
+Rename a specific Cloud PC.
+Use this API to update the **displayName** for the Cloud PC entity.
 
 ### [Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType](Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType.md)
-Invoke action changeUserAccountType
+Change the account type of the user on a specific Cloud PC.
 
 ### [Request-MgDeviceManagementAndroidForWorkSettingSignupUrl](Request-MgDeviceManagementAndroidForWorkSettingSignupUrl.md)
 Invoke action requestSignupUrl
@@ -582,46 +593,56 @@ Invoke action requestSignupUrl
 Invoke action requestSignupUrl
 
 ### [Request-MgDeviceManagementComanagedDeviceRemoteAssistance](Request-MgDeviceManagementComanagedDeviceRemoteAssistance.md)
-Invoke action requestRemoteAssistance
+Request remote assistance
+
+### [Request-MgDeviceManagementComanagedDeviceRemoteHelpSessionAccess](Request-MgDeviceManagementComanagedDeviceRemoteHelpSessionAccess.md)
+Remote help - Request Remote help session access permission for an existing session
 
 ### [Request-MgDeviceManagementManagedDeviceRemoteAssistance](Request-MgDeviceManagementManagedDeviceRemoteAssistance.md)
-Invoke action requestRemoteAssistance
+Request remote assistance
+
+### [Request-MgDeviceManagementManagedDeviceRemoteHelpSessionAccess](Request-MgDeviceManagementManagedDeviceRemoteHelpSessionAccess.md)
+Remote help - Request Remote help session access permission for an existing session
 
 ### [Request-MgDeviceManagementMicrosoftTunnelSiteUpgrade](Request-MgDeviceManagementMicrosoftTunnelSiteUpgrade.md)
 Invoke action requestUpgrade
 
 ### [Reset-MgDeviceManagementComanagedDevicePasscode](Reset-MgDeviceManagementComanagedDevicePasscode.md)
-Invoke action resetPasscode
+Reset passcode
 
 ### [Reset-MgDeviceManagementManagedDevicePasscode](Reset-MgDeviceManagementManagedDevicePasscode.md)
-Invoke action resetPasscode
+Reset passcode
 
 ### [Resize-MgDeviceManagementComanagedDeviceCloudPc](Resize-MgDeviceManagementComanagedDeviceCloudPc.md)
-Invoke action resizeCloudPc
+Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 
 ### [Resize-MgDeviceManagementManagedDeviceCloudPc](Resize-MgDeviceManagementManagedDeviceCloudPc.md)
-Invoke action resizeCloudPc
+Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 
 ### [Restart-MgDeviceManagementComanagedDeviceNow](Restart-MgDeviceManagementComanagedDeviceNow.md)
-Invoke action rebootNow
+Reboot device
 
 ### [Restart-MgDeviceManagementManagedDeviceNow](Restart-MgDeviceManagementManagedDeviceNow.md)
-Invoke action rebootNow
+Reboot device
 
 ### [Restart-MgDeviceManagementVirtualEndpointCloudPc](Restart-MgDeviceManagementVirtualEndpointCloudPc.md)
-Invoke action reboot
+Reboot a specific Cloud PC.
 
 ### [Restore-MgDeviceManagementComanagedDeviceCloudPc](Restore-MgDeviceManagementComanagedDeviceCloudPc.md)
-Invoke action restoreCloudPc
+Restore a Cloud PC device to a previous state with an Intune managed device ID.
 
 ### [Restore-MgDeviceManagementComanagedDevicePasscode](Restore-MgDeviceManagementComanagedDevicePasscode.md)
-Invoke action recoverPasscode
+Recover passcode
 
 ### [Restore-MgDeviceManagementManagedDeviceCloudPc](Restore-MgDeviceManagementManagedDeviceCloudPc.md)
-Invoke action restoreCloudPc
+Restore a Cloud PC device to a previous state with an Intune managed device ID.
 
 ### [Restore-MgDeviceManagementManagedDevicePasscode](Restore-MgDeviceManagementManagedDevicePasscode.md)
-Invoke action recoverPasscode
+Recover passcode
+
+### [Restore-MgDeviceManagementVirtualEndpointCloudPc](Restore-MgDeviceManagementVirtualEndpointCloudPc.md)
+Restore a specific Cloud PC.
+Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
 
 ### [Revoke-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken](Revoke-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken.md)
 Invoke action revokeToken
@@ -630,10 +651,10 @@ Invoke action revokeToken
 Invoke action revokeToken
 
 ### [Revoke-MgDeviceManagementComanagedDeviceAppleVppLicense](Revoke-MgDeviceManagementComanagedDeviceAppleVppLicense.md)
-Invoke action revokeAppleVppLicenses
+Revoke all Apple Vpp licenses for a device
 
 ### [Revoke-MgDeviceManagementManagedDeviceAppleVppLicense](Revoke-MgDeviceManagementManagedDeviceAppleVppLicense.md)
-Invoke action revokeAppleVppLicenses
+Revoke all Apple Vpp licenses for a device
 
 ### [Search-MgDeviceManagementImportedDeviceIdentityExistingIdentity](Search-MgDeviceManagementImportedDeviceIdentityExistingIdentity.md)
 Invoke action searchExistingIdentities
@@ -648,19 +669,21 @@ Invoke action sendCustomNotificationToCompanyPortal
 Invoke action sendCustomNotificationToCompanyPortal
 
 ### [Send-MgDeviceManagementNotificationMessageTemplateTestMessage](Send-MgDeviceManagementNotificationMessageTemplateTestMessage.md)
-Invoke action sendTestMessage
+Sends test message using the specified notificationMessageTemplate in the default locale
 
 ### [Set-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingAndroidDeviceOwnerFullyManagedEnrollmentState](Set-MgDeviceManagementAndroidManagedStoreAccountEnterpriseSettingAndroidDeviceOwnerFullyManagedEnrollmentState.md)
-Invoke action setAndroidDeviceOwnerFullyManagedEnrollmentState
+Sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
 
 ### [Set-MgDeviceManagementAppleUserInitiatedEnrollmentProfilePriority](Set-MgDeviceManagementAppleUserInitiatedEnrollmentProfilePriority.md)
 Invoke action setPriority
 
 ### [Set-MgDeviceManagementComanagedDeviceCloudPcReviewStatus](Set-MgDeviceManagementComanagedDeviceCloudPcReviewStatus.md)
-Invoke action setCloudPcReviewStatus
+Set the review status of a specific Cloud PC device.
+Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious.
+After the review is completed, use this API again to set the Cloud PC back to a normal state.
 
 ### [Set-MgDeviceManagementComanagedDeviceName](Set-MgDeviceManagementComanagedDeviceName.md)
-Invoke action setDeviceName
+Set device name of the device.
 
 ### [Set-MgDeviceManagementCompliancePolicy](Set-MgDeviceManagementCompliancePolicy.md)
 Invoke action assign
@@ -714,10 +737,15 @@ Invoke action assign
 Invoke action assign
 
 ### [Set-MgDeviceManagementManagedDeviceCloudPcReviewStatus](Set-MgDeviceManagementManagedDeviceCloudPcReviewStatus.md)
-Invoke action setCloudPcReviewStatus
+Set the review status of a specific Cloud PC device.
+Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious.
+After the review is completed, use this API again to set the Cloud PC back to a normal state.
 
 ### [Set-MgDeviceManagementManagedDeviceName](Set-MgDeviceManagementManagedDeviceName.md)
-Invoke action setDeviceName
+Set device name of the device.
+
+### [Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent](Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent.md)
+Invoke action setPortalNotificationAsSent
 
 ### [Set-MgDeviceManagementResourceAccessProfile](Set-MgDeviceManagementResourceAccessProfile.md)
 Invoke action assign
@@ -729,22 +757,22 @@ Invoke action assign
 Invoke action assign
 
 ### [Set-MgDeviceManagementVirtualEndpointProvisioningPolicy](Set-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
-Invoke action assign
+Assign cloudPcProvisioningPolicy to user groups.
 
 ### [Set-MgDeviceManagementVirtualEndpointUserSetting](Set-MgDeviceManagementVirtualEndpointUserSetting.md)
-Invoke action assign
+Assign a cloudPcUserSetting to user groups.
 
 ### [Set-MgDeviceManagementWindowAutopilotDeploymentProfile](Set-MgDeviceManagementWindowAutopilotDeploymentProfile.md)
 Invoke action assign
 
 ### [Set-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDeviceUserToDevice](Set-MgDeviceManagementWindowAutopilotDeploymentProfileAssignedDeviceUserToDevice.md)
-Invoke action assignUserToDevice
+Assigns user to Autopilot devices.
 
 ### [Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice](Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice.md)
-Invoke action assignResourceAccountToDevice
+Assigns resource account to Autopilot devices.
 
 ### [Set-MgDeviceManagementWindowAutopilotDeviceIdentityUserToDevice](Set-MgDeviceManagementWindowAutopilotDeviceIdentityUserToDevice.md)
-Invoke action assignUserToDevice
+Assigns user to Autopilot devices.
 
 ### [Set-MgDeviceManagementWindowDriverUpdateProfile](Set-MgDeviceManagementWindowDriverUpdateProfile.md)
 Invoke action assign
@@ -756,25 +784,29 @@ Invoke action assign
 Invoke action assign
 
 ### [Skip-MgDeviceManagementComanagedDeviceActivationLock](Skip-MgDeviceManagementComanagedDeviceActivationLock.md)
-Invoke action bypassActivationLock
+Bypass activation lock
 
 ### [Skip-MgDeviceManagementManagedDeviceActivationLock](Skip-MgDeviceManagementManagedDeviceActivationLock.md)
-Invoke action bypassActivationLock
+Bypass activation lock
 
 ### [Start-MgDeviceManagementComanagedDeviceConfigurationManagerAction](Start-MgDeviceManagementComanagedDeviceConfigurationManagerAction.md)
-Invoke action triggerConfigurationManagerAction
+Trigger action on ConfigurationManager client
 
 ### [Start-MgDeviceManagementManagedDeviceConfigurationManagerAction](Start-MgDeviceManagementManagedDeviceConfigurationManagerAction.md)
-Invoke action triggerConfigurationManagerAction
+Trigger action on ConfigurationManager client
 
 ### [Start-MgDeviceManagementUserExperienceAnalyticDeviceScopeAction](Start-MgDeviceManagementUserExperienceAnalyticDeviceScopeAction.md)
 Invoke action triggerDeviceScopeAction
 
 ### [Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck](Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck.md)
-Invoke action runHealthChecks
+Run health checks on the cloudPcOnPremisesConnection object.
+This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
 
 ### [Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod](Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod.md)
-Invoke action endGracePeriod
+End the grace period for a specific Cloud PC.
+The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned.
+It allows users to access Cloud PCs for up to seven days before de-provisioning occurs.
+Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
 
 ### [Stop-MgDeviceManagementZebraFotaDeployment](Stop-MgDeviceManagementZebraFotaDeployment.md)
 Invoke action cancel
@@ -789,7 +821,7 @@ Invoke action syncApps
 Invoke action syncDevice
 
 ### [Sync-MgDeviceManagementDepOnboardingSettingWithAppleDeviceEnrollmentProgram](Sync-MgDeviceManagementDepOnboardingSettingWithAppleDeviceEnrollmentProgram.md)
-Invoke action syncWithAppleDeviceEnrollmentProgram
+Synchronizes between Apple Device Enrollment Program and Intune
 
 ### [Sync-MgDeviceManagementExchangeConnector](Sync-MgDeviceManagementExchangeConnector.md)
 Invoke action sync
@@ -798,10 +830,13 @@ Invoke action sync
 Invoke action syncDevice
 
 ### [Sync-MgDeviceManagementWindowAutopilotSetting](Sync-MgDeviceManagementWindowAutopilotSetting.md)
-Invoke action sync
+Initiates a sync of all AutoPilot registered devices from Store for Business and other portals.
+If the sync successful, this action returns a 204 No Content response code.
+If a sync is already in progress, the action returns a 409 Conflict response code.
+If this sync action is called within 10 minutes of the previous sync, the action returns a 429 Too Many Requests response code.
 
 ### [Sync-MgDeviceManagementWindowDriverUpdateProfileInventory](Sync-MgDeviceManagementWindowDriverUpdateProfileInventory.md)
-Invoke action syncInventory
+Sync the driver inventory of a WindowsDriverUpdateProfile.
 
 ### [Test-MgDeviceManagementAssignmentFilter](Test-MgDeviceManagementAssignmentFilter.md)
 Invoke action validateFilter
@@ -816,7 +851,7 @@ Invoke action updateDeviceProfileAssignment
 Invoke action refreshDeviceComplianceReportSummarization
 
 ### [Update-MgDeviceManagementDeviceHealthScriptGlobalScript](Update-MgDeviceManagementDeviceHealthScriptGlobalScript.md)
-Invoke action updateGlobalScript
+Update the Proprietary Device Health Script
 
 ### [Update-MgDeviceManagementGroupPolicyConfigurationMultipleDefinitionValue](Update-MgDeviceManagementGroupPolicyConfigurationMultipleDefinitionValue.md)
 Invoke action updateDefinitionValues
@@ -831,8 +866,9 @@ Invoke action updateSettings
 Invoke action updateWindowsDeviceAccount
 
 ### [Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword](Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword.md)
-Invoke action updateAdDomainPassword
+Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
+This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
 
 ### [Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty](Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty.md)
-Invoke action updateDeviceProperties
+Updates properties on Autopilot devices.
 

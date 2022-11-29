@@ -8,7 +8,7 @@ schema: 2.0.0
 # Initialize-MgDeviceManagementManagedDeviceEsim
 
 ## SYNOPSIS
-Invoke action activateDeviceEsim
+Activate eSIM on the device.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Initialize-MgDeviceManagementManagedDeviceEsim -InputObject <IDeviceManagementAc
 ```
 
 ## DESCRIPTION
-Invoke action activateDeviceEsim
+Activate eSIM on the device.
 
 ## EXAMPLES
 
@@ -196,6 +196,7 @@ BODYPARAMETER <IPathsL7OsalDevicemanagementManageddevicesManageddeviceIdMicrosof
   - `[CarrierUrl <String>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

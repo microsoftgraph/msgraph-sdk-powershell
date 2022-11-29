@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserOutlookTaskSingleValueExtendedProperty
 
 ## SYNOPSIS
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the task.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -33,7 +35,9 @@ Get-MgUserOutlookTaskSingleValueExtendedProperty -InputObject <IUsersIdentity> [
 ```
 
 ## DESCRIPTION
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the task.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

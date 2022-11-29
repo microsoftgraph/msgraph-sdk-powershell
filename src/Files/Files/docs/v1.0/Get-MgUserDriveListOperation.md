@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListOperation
 
 ## SYNOPSIS
-Get operations from users
+The collection of long-running operations on the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDriveListOperation -InputObject <IFilesIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get operations from users
+The collection of long-running operations on the list.
 
 ## EXAMPLES
 

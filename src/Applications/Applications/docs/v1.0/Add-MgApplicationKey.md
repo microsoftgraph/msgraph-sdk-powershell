@@ -8,7 +8,11 @@ schema: 2.0.0
 # Add-MgApplicationKey
 
 ## SYNOPSIS
-Invoke action addKey
+Add a key credential to an application.
+This method, along with removeKey can be used by an application to automate rolling its expiring keys.
+As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
+Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action.
+You can use the Update application operation to perform an update instead.
 
 ## SYNTAX
 
@@ -41,9 +45,51 @@ Add-MgApplicationKey -InputObject <IApplicationsIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Invoke action addKey
+Add a key credential to an application.
+This method, along with removeKey can be used by an application to automate rolling its expiring keys.
+As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
+Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action.
+You can use the Update application operation to perform an update instead.
 
 ## EXAMPLES
+
+### Example 1: Using the Add-MgApplicationKey Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	KeyCredential = @{
+		Type = "AsymmetricX509Cert"
+		Usage = "Verify"
+		Key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
+	}
+	PasswordCredential = $null
+	Proof = "eyJ0eXAiOiJ..."
+}
+Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgApplicationKey Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Add-MgApplicationKey Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Applications
+$params = @{
+	KeyCredential = @{
+		Type = "X509CertAndPassword"
+		Usage = "Sign"
+		Key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
+	}
+	PasswordCredential = @{
+		SecretText = "MKTr0w1..."
+	}
+	Proof = "eyJ0eXAiOiJ..."
+}
+Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgApplicationKey Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -216,8 +262,8 @@ BODYPARAMETER <IPaths17CrvdcApplicationsApplicationIdMicrosoftGraphAddkeyPostReq
     - `[CustomKeyIdentifier <Byte[]>]`: Custom key identifier
     - `[DisplayName <String>]`: Friendly name for the key. Optional.
     - `[EndDateTime <DateTime?>]`: The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
-    - `[KeyId <String>]`: The unique identifier for the key.
+    - `[Key <Byte[]>]`: The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
+    - `[KeyId <String>]`: The unique identifier (GUID) for the key.
     - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
     - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
@@ -267,8 +313,8 @@ KEYCREDENTIAL <IMicrosoftGraphKeyCredential>: keyCredential
   - `[CustomKeyIdentifier <Byte[]>]`: Custom key identifier
   - `[DisplayName <String>]`: Friendly name for the key. Optional.
   - `[EndDateTime <DateTime?>]`: The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
-  - `[KeyId <String>]`: The unique identifier for the key.
+  - `[Key <Byte[]>]`: The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
+  - `[KeyId <String>]`: The unique identifier (GUID) for the key.
   - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
   - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.

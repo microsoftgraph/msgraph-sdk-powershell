@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgAppCatalogTeamAppDefinitionBot
 
 ## SYNOPSIS
-Get bot from appCatalogs
+Get the bot associated with a specific definition of the  TeamsApp.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgAppCatalogTeamAppDefinitionBot -InputObject <ITeamsIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get bot from appCatalogs
+Get the bot associated with a specific definition of the  TeamsApp.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgAppCatalogTeamAppDefinitionBot Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgAppCatalogTeamAppDefinitionBot -TeamsAppId $teamsAppId -TeamsAppDefinitionId $teamsAppDefinitionId
+```
+
+This example shows how to use the Get-MgAppCatalogTeamAppDefinitionBot Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgComplianceEdiscoveryCaseSourceCollection
 
 ## SYNOPSIS
-Create new navigation property to sourceCollections for compliance
+Create a new sourceCollection object.
 
 ## SYNTAX
 
@@ -53,9 +53,25 @@ New-MgComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceIdentity
 ```
 
 ## DESCRIPTION
-Create new navigation property to sourceCollections for compliance
+Create a new sourceCollection object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgComplianceEdiscoveryCaseSourceCollection Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+$params = @{
+	DisplayName = "Quarterly Financials search"
+	ContentQuery = "subject:'Quarterly Financials'"
+	"CustodianSources@odata.bind" = @(
+		"https://graph.microsoft.com/beta/compliance/ediscovery/cases/47746044-fd0b-4a30-acfc-5272b691ba5b/custodians/2192ca408ea2410eba3bec8ae873be6b/userSources/46384443-4137-3032-3437-363939433735"
+	)
+}
+New-MgComplianceEdiscoveryCaseSourceCollection -CaseId $caseId -BodyParameter $params
+```
+
+This example shows how to use the New-MgComplianceEdiscoveryCaseSourceCollection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -247,7 +263,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -394,13 +411,13 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ADDITIONALSOURCES <IMicrosoftGraphEdiscoveryDataSource[]>: Adds an additional source to the sourceCollection.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
@@ -415,8 +432,8 @@ ADDTOREVIEWSETOPERATION <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>: addT
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -427,15 +444,15 @@ ADDTOREVIEWSETOPERATION <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>: addT
     - `[Message <String>]`: The message.
     - `[Subcode <Int32?>]`: The result sub-code.
   - `[Status <String>]`: caseOperationStatus
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ReviewSet <IMicrosoftGraphEdiscoveryReviewSet>]`: reviewSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[DisplayName <String>]`: The review set name. The name is unique with a maximum limit of 64 characters.
     - `[Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The time and date when the query was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[DisplayName <String>]`: The name of the query.
@@ -444,10 +461,10 @@ ADDTOREVIEWSETOPERATION <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>: addT
       - `[Query <String>]`: The query string in KQL (Keyword Query Language) query. For details, see Document metadata fields in Advanced eDiscovery.  This field maps directly to the keywords condition.  You can refine searches by using fields listed in the searchable field name paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
   - `[SourceCollection <IMicrosoftGraphEdiscoverySourceCollection>]`: sourceCollection
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddToReviewSetOperation <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>]`: addToReviewSetOperation
     - `[AdditionalSources <IMicrosoftGraphEdiscoveryDataSource[]>]`: Adds an additional source to the sourceCollection.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
       - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -468,7 +485,7 @@ ADDTOREVIEWSETOPERATION <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>: addT
       - `[PercentProgress <Int32?>]`: The progress of the operation.
       - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
       - `[Status <String>]`: caseOperationStatus
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[IndexedItemCount <Int64?>]`: The estimated count of items for the sourceCollection that matched the content query.
       - `[IndexedItemsSize <Int64?>]`: The estimated size of items for the sourceCollection that matched the content query.
       - `[MailboxCount <Int32?>]`: The number of mailboxes that had search hits.
@@ -491,17 +508,17 @@ ADDTOREVIEWSETOPERATION <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>: addT
         - `[PercentProgress <Int32?>]`: The progress of the operation.
         - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
         - `[Status <String>]`: caseOperationStatus
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time of the dataSourceContainer.
       - `[ReleasedDateTime <DateTime?>]`: Date and time that the dataSourceContainer was released from the case.
       - `[Status <String>]`: dataSourceContainerStatus
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ApplyHoldToSource <Boolean?>]`: Indicates if hold is applied to non-custodial data source (such as mailbox or site).
       - `[DataSource <IMicrosoftGraphEdiscoveryDataSource>]`: dataSource
 
 BODYPARAMETER <IMicrosoftGraphEdiscoverySourceCollection>: sourceCollection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AddToReviewSetOperation <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>]`: addToReviewSetOperation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Action <String>]`: caseAction
@@ -510,8 +527,8 @@ BODYPARAMETER <IMicrosoftGraphEdiscoverySourceCollection>: sourceCollection
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -522,15 +539,15 @@ BODYPARAMETER <IMicrosoftGraphEdiscoverySourceCollection>: sourceCollection
       - `[Message <String>]`: The message.
       - `[Subcode <Int32?>]`: The result sub-code.
     - `[Status <String>]`: caseOperationStatus
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ReviewSet <IMicrosoftGraphEdiscoveryReviewSet>]`: reviewSet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[DisplayName <String>]`: The review set name. The name is unique with a maximum limit of 64 characters.
       - `[Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>]`: 
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedDateTime <DateTime?>]`: The time and date when the query was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[DisplayName <String>]`: The name of the query.
@@ -539,7 +556,7 @@ BODYPARAMETER <IMicrosoftGraphEdiscoverySourceCollection>: sourceCollection
         - `[Query <String>]`: The query string in KQL (Keyword Query Language) query. For details, see Document metadata fields in Advanced eDiscovery.  This field maps directly to the keywords condition.  You can refine searches by using fields listed in the searchable field name paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
     - `[SourceCollection <IMicrosoftGraphEdiscoverySourceCollection>]`: sourceCollection
   - `[AdditionalSources <IMicrosoftGraphEdiscoveryDataSource[]>]`: Adds an additional source to the sourceCollection.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
     - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -560,7 +577,7 @@ BODYPARAMETER <IMicrosoftGraphEdiscoverySourceCollection>: sourceCollection
     - `[PercentProgress <Int32?>]`: The progress of the operation.
     - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
     - `[Status <String>]`: caseOperationStatus
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[IndexedItemCount <Int64?>]`: The estimated count of items for the sourceCollection that matched the content query.
     - `[IndexedItemsSize <Int64?>]`: The estimated size of items for the sourceCollection that matched the content query.
     - `[MailboxCount <Int32?>]`: The number of mailboxes that had search hits.
@@ -583,11 +600,11 @@ BODYPARAMETER <IMicrosoftGraphEdiscoverySourceCollection>: sourceCollection
       - `[PercentProgress <Int32?>]`: The progress of the operation.
       - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
       - `[Status <String>]`: caseOperationStatus
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time of the dataSourceContainer.
     - `[ReleasedDateTime <DateTime?>]`: Date and time that the dataSourceContainer was released from the case.
     - `[Status <String>]`: dataSourceContainerStatus
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ApplyHoldToSource <Boolean?>]`: Indicates if hold is applied to non-custodial data source (such as mailbox or site).
     - `[DataSource <IMicrosoftGraphEdiscoveryDataSource>]`: dataSource
 
@@ -595,19 +612,19 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
 CUSTODIANSOURCES <IMicrosoftGraphEdiscoveryDataSource[]>: Custodian sources that are included in the sourceCollection.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
@@ -638,8 +655,8 @@ LASTESTIMATESTATISTICSOPERATION <IMicrosoftGraphEdiscoveryEstimateStatisticsOper
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -650,14 +667,14 @@ LASTESTIMATESTATISTICSOPERATION <IMicrosoftGraphEdiscoveryEstimateStatisticsOper
     - `[Message <String>]`: The message.
     - `[Subcode <Int32?>]`: The result sub-code.
   - `[Status <String>]`: caseOperationStatus
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[IndexedItemCount <Int64?>]`: The estimated count of items for the sourceCollection that matched the content query.
   - `[IndexedItemsSize <Int64?>]`: The estimated size of items for the sourceCollection that matched the content query.
   - `[MailboxCount <Int32?>]`: The number of mailboxes that had search hits.
   - `[SiteCount <Int32?>]`: The number of mailboxes that had search hits.
   - `[SourceCollection <IMicrosoftGraphEdiscoverySourceCollection>]`: sourceCollection
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddToReviewSetOperation <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>]`: addToReviewSetOperation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Action <String>]`: caseAction
@@ -667,15 +684,15 @@ LASTESTIMATESTATISTICSOPERATION <IMicrosoftGraphEdiscoveryEstimateStatisticsOper
       - `[PercentProgress <Int32?>]`: The progress of the operation.
       - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
       - `[Status <String>]`: caseOperationStatus
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ReviewSet <IMicrosoftGraphEdiscoveryReviewSet>]`: reviewSet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedDateTime <DateTime?>]`: The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         - `[DisplayName <String>]`: The review set name. The name is unique with a maximum limit of 64 characters.
         - `[Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>]`: 
-          - `[Id <String>]`: 
+          - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[CreatedDateTime <DateTime?>]`: The time and date when the query was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
           - `[DisplayName <String>]`: The name of the query.
@@ -684,7 +701,7 @@ LASTESTIMATESTATISTICSOPERATION <IMicrosoftGraphEdiscoveryEstimateStatisticsOper
           - `[Query <String>]`: The query string in KQL (Keyword Query Language) query. For details, see Document metadata fields in Advanced eDiscovery.  This field maps directly to the keywords condition.  You can refine searches by using fields listed in the searchable field name paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
       - `[SourceCollection <IMicrosoftGraphEdiscoverySourceCollection>]`: sourceCollection
     - `[AdditionalSources <IMicrosoftGraphEdiscoveryDataSource[]>]`: Adds an additional source to the sourceCollection.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
       - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -712,11 +729,11 @@ LASTESTIMATESTATISTICSOPERATION <IMicrosoftGraphEdiscoveryEstimateStatisticsOper
         - `[PercentProgress <Int32?>]`: The progress of the operation.
         - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
         - `[Status <String>]`: caseOperationStatus
-        - `[Id <String>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time of the dataSourceContainer.
       - `[ReleasedDateTime <DateTime?>]`: Date and time that the dataSourceContainer was released from the case.
       - `[Status <String>]`: dataSourceContainerStatus
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ApplyHoldToSource <Boolean?>]`: Indicates if hold is applied to non-custodial data source (such as mailbox or site).
       - `[DataSource <IMicrosoftGraphEdiscoveryDataSource>]`: dataSource
   - `[UnindexedItemCount <Int64?>]`: The estimated count of unindexed items for the collection.
@@ -726,8 +743,8 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -743,8 +760,8 @@ NONCUSTODIALSOURCES <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>: noncust
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -755,15 +772,15 @@ NONCUSTODIALSOURCES <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>: noncust
       - `[Message <String>]`: The message.
       - `[Subcode <Int32?>]`: The result sub-code.
     - `[Status <String>]`: caseOperationStatus
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time of the dataSourceContainer.
   - `[ReleasedDateTime <DateTime?>]`: Date and time that the dataSourceContainer was released from the case.
   - `[Status <String>]`: dataSourceContainerStatus
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ApplyHoldToSource <Boolean?>]`: Indicates if hold is applied to non-custodial data source (such as mailbox or site).
   - `[DataSource <IMicrosoftGraphEdiscoveryDataSource>]`: dataSource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
     - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.

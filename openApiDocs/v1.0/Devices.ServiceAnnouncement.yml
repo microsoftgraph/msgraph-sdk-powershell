@@ -11,6 +11,7 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get serviceAnnouncement from admin
+      description: A container for service communications resources. Read-only.
       operationId: admin_GetServiceAnnouncement
       parameters:
         - name: $select
@@ -87,6 +88,7 @@ paths:
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -99,7 +101,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get healthOverviews from admin
+      summary: List healthOverviews
+      description: Retrieve the serviceHealth resources from the **healthOverviews** navigation property. This operation provides the health report of all subscribed services for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceannouncement-list-healthoverviews?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_ListHealthOverviews
       parameters:
         - $ref: '#/components/parameters/top'
@@ -188,12 +194,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get healthOverviews from admin
+      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetHealthOverviews
       parameters:
         - name: serviceHealth-id
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -250,6 +258,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -276,12 +285,14 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -295,12 +306,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_ListIssues
       parameters:
         - name: serviceHealth-id
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -407,6 +420,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -432,12 +446,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of issues that happened on the service, with detailed information for each issue.'
       operationId: admin.serviceAnnouncement.healthOverviews_GetIssues
       parameters:
         - name: serviceHealth-id
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -445,6 +461,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -509,6 +526,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -516,6 +534,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -542,6 +561,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -549,12 +569,14 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -574,6 +596,7 @@ paths:
           in: path
           description: 'key: id of serviceHealth'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealth
@@ -581,6 +604,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -605,7 +629,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get issues from admin
+      summary: List issues
+      description: Retrieve serviceHealthIssue resources from the **issues** navigation property. This operation retrieves information about all service health issues that exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceannouncement-list-issues?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_ListIssues
       parameters:
         - $ref: '#/components/parameters/top'
@@ -728,12 +756,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get issues from admin
+      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetIssues
       parameters:
         - name: serviceHealthIssue-id
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -798,6 +828,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -824,12 +855,14 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -849,6 +882,7 @@ paths:
           in: path
           description: 'key: id of serviceHealthIssue'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
@@ -873,7 +907,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get messages from admin
+      summary: List serviceAnnouncement messages
+      description: Retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_ListMessages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1001,12 +1039,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get messages from admin
+      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
       operationId: admin.serviceAnnouncement_GetMessages
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1076,6 +1116,7 @@ paths:
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1102,12 +1143,14 @@ paths:
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1120,13 +1163,18 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get attachments from admin
+      summary: List attachments
+      description: Get the list of attachments associated with a service message.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_ListAttachments
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1206,6 +1254,7 @@ paths:
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1231,12 +1280,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachments from admin
+      description: A collection of serviceAnnouncementAttachments.
       operationId: admin.serviceAnnouncement.messages_GetAttachments
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1244,6 +1295,7 @@ paths:
           in: path
           description: 'key: id of serviceAnnouncementAttachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceAnnouncementAttachment
@@ -1296,6 +1348,7 @@ paths:
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1303,6 +1356,7 @@ paths:
           in: path
           description: 'key: id of serviceAnnouncementAttachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceAnnouncementAttachment
@@ -1329,6 +1383,7 @@ paths:
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1336,12 +1391,14 @@ paths:
           in: path
           description: 'key: id of serviceAnnouncementAttachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceAnnouncementAttachment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1355,12 +1412,17 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get content for the navigation property attachments from admin
+      description: The attachment content.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-list-attachments?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_GetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1368,6 +1430,7 @@ paths:
           in: path
           description: 'key: id of serviceAnnouncementAttachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceAnnouncementAttachment
@@ -1386,12 +1449,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update content for the navigation property attachments in admin
+      description: The attachment content.
       operationId: admin.serviceAnnouncement.messages_SetAttachmentsContent
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1399,6 +1464,7 @@ paths:
           in: path
           description: 'key: id of serviceAnnouncementAttachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceAnnouncementAttachment
@@ -1421,12 +1487,17 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Get attachmentsArchive for the navigation property messages from admin
+      description: The zip file that contains all attachments for a message.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_GetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1445,12 +1516,14 @@ paths:
       tags:
         - admin.serviceAnnouncement
       summary: Update attachmentsArchive for the navigation property messages in admin
+      description: The zip file that contains all attachments for a message.
       operationId: admin.serviceAnnouncement_SetMessagesAttachmentsArchive
       parameters:
         - name: serviceUpdateMessage-id
           in: path
           description: 'key: id of serviceUpdateMessage'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: serviceUpdateMessage
@@ -1473,6 +1546,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action archive
+      description: Archive a list of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_archive
       requestBody:
         description: Action parameters
@@ -1511,6 +1588,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action favorite
+      description: Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_favorite
       requestBody:
         description: Action parameters
@@ -1549,6 +1630,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markRead
+      description: Mark a list of serviceUpdateMessages as **read** for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_markRead
       requestBody:
         description: Action parameters
@@ -1587,6 +1672,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action markUnread
+      description: Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_markUnread
       requestBody:
         description: Action parameters
@@ -1625,6 +1714,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unarchive
+      description: Unarchive a list of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_unarchive
       requestBody:
         description: Action parameters
@@ -1663,6 +1756,10 @@ paths:
       tags:
         - admin.Actions
       summary: Invoke action unfavorite
+      description: Remove the favorite status of serviceUpdateMessages for the signed in user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.messages_unfavorite
       requestBody:
         description: Action parameters
@@ -1709,16 +1806,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealth'
               description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              readOnly: true
             issues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
               description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              readOnly: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
               description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.serviceHealth:
@@ -1737,6 +1837,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
               description: 'A collection of issues that happened on the service, with detailed information for each issue.'
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.serviceHealthIssue:
@@ -1789,7 +1890,7 @@ components:
               nullable: true
             attachmentsArchive:
               type: string
-              description: The zip file of all attachments for a message.
+              description: The zip file that contains all attachments for a message.
               format: base64url
               nullable: true
             body:
@@ -1824,6 +1925,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
               description: A collection of serviceAnnouncementAttachments.
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.serviceAnnouncementAttachment:
@@ -1861,6 +1963,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.serviceHealthStatus:
@@ -2012,6 +2115,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.serviceHealth'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.serviceHealthIssueCollectionResponse:
@@ -2024,6 +2128,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.serviceUpdateMessageCollectionResponse:
@@ -2036,6 +2141,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.serviceAnnouncementAttachmentCollectionResponse:
@@ -2048,6 +2154,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.serviceAnnouncementAttachment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.keyValuePair:
@@ -2154,6 +2261,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -2162,6 +2271,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -2169,18 +2280,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

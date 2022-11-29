@@ -1,18 +1,33 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	Decision = "Approve"
+	Justification = "This person is still on my team"
+}
+Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	Decision = "Approve"
+	Justification = "This person is still on my team"
+}
+Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Using the Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+$params = @{
+	Decision = "Approve"
+	Justification = "This person is still on my team"
+}
+Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId -BodyParameter $params
+```
+This example shows how to use the Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

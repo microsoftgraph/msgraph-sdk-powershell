@@ -12,13 +12,13 @@ Delete navigation property contentSharingSessions for communications
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgCommunicationCallContentSharingSession -CallId <String> -ContentSharingSessionId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgCommunicationCallContentSharingSession -InputObject <ICloudCommunicationsIdentity>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of call
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ key: id of contentSharingSession
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True

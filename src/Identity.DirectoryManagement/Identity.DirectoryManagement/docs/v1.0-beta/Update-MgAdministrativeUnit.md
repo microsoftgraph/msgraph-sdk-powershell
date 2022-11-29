@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgAdministrativeUnit
 
 ## SYNOPSIS
-Update administrativeunit
+Update the properties of an administrativeUnit object.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdentity>
 ```
 
 ## DESCRIPTION
-Update administrativeunit
+Update the properties of an administrativeUnit object.
 
 ## EXAMPLES
 

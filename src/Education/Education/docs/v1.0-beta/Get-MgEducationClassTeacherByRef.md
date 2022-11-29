@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationClassTeacherByRef
 
 ## SYNOPSIS
-Get ref of teachers from education
+Retrieve a list teachers for a class.
+Delegated tokens must be members of the class to get the teacher list.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgEducationClassTeacherByRef -EducationClassId <String> [-Filter <String>] [
 ```
 
 ## DESCRIPTION
-Get ref of teachers from education
+Retrieve a list teachers for a class.
+Delegated tokens must be members of the class to get the teacher list.
 
 ## EXAMPLES
 

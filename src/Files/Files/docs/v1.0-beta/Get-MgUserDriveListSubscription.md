@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListSubscription
 
 ## SYNOPSIS
-Get subscriptions from users
+The set of subscriptions on the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDriveListSubscription -InputObject <IFilesIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Get subscriptions from users
+The set of subscriptions on the list.
 
 ## EXAMPLES
 

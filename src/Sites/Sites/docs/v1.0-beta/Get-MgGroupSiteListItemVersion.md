@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteListItemVersion
 
 ## SYNOPSIS
-Get versions from groups
+The list of previous versions of the list item.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgGroupSiteListItemVersion -InputObject <ISitesIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get versions from groups
+The list of previous versions of the list item.
 
 ## EXAMPLES
 

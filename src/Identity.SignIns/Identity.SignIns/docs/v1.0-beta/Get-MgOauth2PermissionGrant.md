@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgOauth2PermissionGrant
 
 ## SYNOPSIS
-Get oAuth2PermissionGrant (a delegated permission grant)
+Retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object.
+An **oAuth2PermissionGrant** represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.
 
 ## SYNTAX
 
@@ -32,9 +33,28 @@ Get-MgOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity> [-ExpandProp
 ```
 
 ## DESCRIPTION
-Get oAuth2PermissionGrant (a delegated permission grant)
+Retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object.
+An **oAuth2PermissionGrant** represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgOauth2PermissionGrant Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId
+```
+
+This example shows how to use the Get-MgOauth2PermissionGrant Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgOauth2PermissionGrant Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+Get-MgOauth2PermissionGrant
+```
+
+This example shows how to use the Get-MgOauth2PermissionGrant Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -243,10 +263,14 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -255,6 +279,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

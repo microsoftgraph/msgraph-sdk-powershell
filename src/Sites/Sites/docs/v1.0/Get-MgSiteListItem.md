@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteListItem
 
 ## SYNOPSIS
-Get items from sites
+All items contained in the list.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgSiteListItem -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Get items from sites
+All items contained in the list.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSiteListItem Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteListItem -SiteId $siteId -ListId $listId -ListItemId $listItemId -ExpandProperty "fields" 
+```
+
+This example shows how to use the Get-MgSiteListItem Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

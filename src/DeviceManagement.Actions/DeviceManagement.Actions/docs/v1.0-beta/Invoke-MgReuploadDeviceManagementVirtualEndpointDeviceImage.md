@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
-Invoke action reupload
+Reupload a cloudPcDeviceImage object that failed to upload.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Invoke action reupload
+Reupload a cloudPcDeviceImage object that failed to upload.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Actions
+Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId $cloudPcDeviceImageId
+```
+
+This example shows how to use the Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -129,6 +138,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

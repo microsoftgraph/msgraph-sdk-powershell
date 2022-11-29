@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListContentTypeColumnLink
 
 ## SYNOPSIS
-Get columnLinks from users
+The collection of columns that are required by this content type.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDriveListContentTypeColumnLink -InputObject <IFilesIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get columnLinks from users
+The collection of columns that are required by this content type.
 
 ## EXAMPLES
 

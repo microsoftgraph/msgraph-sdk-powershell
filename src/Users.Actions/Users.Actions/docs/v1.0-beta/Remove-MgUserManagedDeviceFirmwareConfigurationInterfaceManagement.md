@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserManagedDeviceFirmwareConfigurationInterfaceManagement
 
 ## SYNOPSIS
-Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+Remove device from Device Firmware Configuration Interface management
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserManagedDeviceFirmwareConfigurationInterfaceManagement -InputObject 
 ```
 
 ## DESCRIPTION
-Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
+Remove device from Device Firmware Configuration Interface management
 
 ## EXAMPLES
 

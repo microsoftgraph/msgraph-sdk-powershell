@@ -8,7 +8,11 @@ schema: 2.0.0
 # Update-MgSubscription
 
 ## SYNOPSIS
-Update entity in subscriptions
+Renew a subscription by extending its expiry time.
+The table in the Permissions section lists the resources that support subscribing to change notifications.
+Subscriptions expire after a length of time that varies by resource type.
+In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date.
+See subscription for maximum length of a subscription for each resource type.
 
 ## SYNTAX
 
@@ -24,14 +28,14 @@ Update-MgSubscription -SubscriptionId <String> [-AdditionalProperties <Hashtable
 
 ### Update1
 ```
-Update-MgSubscription -SubscriptionId <String> -BodyParameter <IMicrosoftGraphSubscription1> [-PassThru]
+Update-MgSubscription -SubscriptionId <String> -BodyParameter <IMicrosoftGraphSubscription> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgSubscription -InputObject <IChangeNotificationsIdentity>
- -BodyParameter <IMicrosoftGraphSubscription1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSubscription -InputObject <IChangeNotificationsIdentity> -BodyParameter <IMicrosoftGraphSubscription>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -45,9 +49,25 @@ Update-MgSubscription -InputObject <IChangeNotificationsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Update entity in subscriptions
+Renew a subscription by extending its expiry time.
+The table in the Permissions section lists the resources that support subscribing to change notifications.
+Subscriptions expire after a length of time that varies by resource type.
+In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date.
+See subscription for maximum length of a subscription for each resource type.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgSubscription Cmdlet
+```powershell
+Import-Module Microsoft.Graph.ChangeNotifications
+$params = @{
+	ExpirationDateTime = [System.DateTime]::Parse("2016-11-22T18:23:45.9356913Z")
+}
+Update-MgSubscription -SubscriptionId $subscriptionId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgSubscription Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -88,7 +108,7 @@ subscription
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -208,7 +228,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -431,7 +451,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
 
 ## OUTPUTS
 
@@ -446,9 +466,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphSubscription1>: subscription
+BODYPARAMETER <IMicrosoftGraphSubscription>: subscription
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
   - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
   - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.

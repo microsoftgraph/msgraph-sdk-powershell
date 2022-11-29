@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserTodoListTaskChecklistItem
 
 ## SYNOPSIS
-Get checklistItems from users
+A collection of checklistItems linked to a task.
 
 ## SYNTAX
 
@@ -32,9 +32,29 @@ Get-MgUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get checklistItems from users
+A collection of checklistItems linked to a task.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgUserTodoListTaskChecklistItem Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+# A UPN can also be used as -UserId.
+Get-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId
+```
+
+This example shows how to use the Get-MgUserTodoListTaskChecklistItem Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgUserTodoListTaskChecklistItem Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users
+# A UPN can also be used as -UserId.
+Get-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
+```
+
+This example shows how to use the Get-MgUserTodoListTaskChecklistItem Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

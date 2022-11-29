@@ -43,6 +43,18 @@ Update the navigation property buckets in planner
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgPlannerBucket Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	Name = "Development"
+}
+Update-MgPlannerBucket -PlannerBucketId $plannerBucketId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPlannerBucket Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -307,6 +319,10 @@ BODYPARAMETER <IMicrosoftGraphPlannerBucket1>: plannerBucket
       - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Description <String>]`: Description of the task.
+      - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Content <String>]`: The content of the item.
+        - `[ContentType <String>]`: bodyType
       - `[PreviewType <String>]`: plannerPreviewType
       - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -382,6 +398,10 @@ TASKS <IMicrosoftGraphPlannerTask1[]>: Read-only. Nullable. The collection of ta
     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Description <String>]`: Description of the task.
+    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Content <String>]`: The content of the item.
+      - `[ContentType <String>]`: bodyType
     - `[PreviewType <String>]`: plannerPreviewType
     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupLifecyclePolicy
 
 ## SYNOPSIS
-Delete groupLifecyclePolicy
+Delete a groupLifecyclePolicy.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Remove-MgGroupLifecyclePolicy -InputObject <IGroupsIdentity> [-IfMatch <String>]
 ```
 
 ## DESCRIPTION
-Delete groupLifecyclePolicy
+Delete a groupLifecyclePolicy.
 
 ## EXAMPLES
+
+### Example 1: Using the Remove-MgGroupLifecyclePolicy Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Remove-MgGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
+```
+
+This example shows how to use the Remove-MgGroupLifecyclePolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

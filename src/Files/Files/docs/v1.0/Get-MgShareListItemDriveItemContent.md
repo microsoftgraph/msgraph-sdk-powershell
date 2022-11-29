@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListItemDriveItemContent
 
 ## SYNOPSIS
-Get content for the navigation property driveItem from shares
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Get-MgShareListItemDriveItemContent -InputObject <IFilesIdentity> -OutFile <Stri
 ```
 
 ## DESCRIPTION
-Get content for the navigation property driveItem from shares
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

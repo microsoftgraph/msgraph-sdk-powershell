@@ -8,7 +8,7 @@ schema: 2.0.0
 # Move-MgUserTaskAlltask
 
 ## SYNOPSIS
-Invoke action move
+Move a baseTask object from one baseTaskList to another.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Move-MgUserTaskAlltask -InputObject <IUsersActionsIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Invoke action move
+Move a baseTask object from one baseTaskList to another.
 
 ## EXAMPLES
 

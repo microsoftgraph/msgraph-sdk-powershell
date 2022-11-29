@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Remove-MgPlannerTask Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Planner
+Remove-MgPlannerTask -PlannerTaskId $plannerTaskId-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc=" 
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Remove-MgPlannerTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

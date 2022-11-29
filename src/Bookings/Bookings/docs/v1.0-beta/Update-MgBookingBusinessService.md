@@ -22,7 +22,7 @@ Update-MgBookingBusinessService -BookingBusinessId <String> -BookingServiceId <S
  [-Id <String>] [-IsAnonymousJoinEnabled] [-IsHiddenFromCustomers] [-IsLocationOnline] [-LanguageTag <String>]
  [-MaximumAttendeesCount <Int32>] [-Notes <String>] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
  [-SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>] [-SmsNotificationsEnabled]
- [-StaffMemberIds <String[]>] [-WebUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StaffMemberIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -47,13 +47,26 @@ Update-MgBookingBusinessService -InputObject <IBookingsIdentity> [-AdditionalInf
  [-IsHiddenFromCustomers] [-IsLocationOnline] [-LanguageTag <String>] [-MaximumAttendeesCount <Int32>]
  [-Notes <String>] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
  [-SchedulingPolicy <IMicrosoftGraphBookingSchedulingPolicy>] [-SmsNotificationsEnabled]
- [-StaffMemberIds <String[]>] [-WebUrl <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StaffMemberIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Update the navigation property services in bookingBusinesses
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgBookingBusinessService Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Bookings
+$params = @{
+	"@odata.type" = "#microsoft.graph.bookingService"
+	DefaultDuration = "PT30M"
+}
+Update-MgBookingBusinessService -BookingBusinessId $bookingBusinessId -BookingServiceId $bookingServiceId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgBookingBusinessService Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -259,7 +272,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -474,21 +488,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WebUrl
-The URL a customer uses to access the service.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -545,11 +544,11 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphBookingService>: Represents a particular service offered by a booking business.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: A name for the derived entity, which interfaces with customers.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]`: Contains the set of custom questions associated with a particular service.
-    - `[IsRequired <Boolean?>]`: Indicates whether it is mandatory to answer the custom question.
-    - `[QuestionId <String>]`: If it is mandatory to answer the custom question.
+    - `[IsRequired <Boolean?>]`: The ID of the custom question.
+    - `[QuestionId <String>]`: Indicates whether it is mandatory to answer the custom question.
   - `[DefaultDuration <TimeSpan?>]`: The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
   - `[DefaultLocation <IMicrosoftGraphLocation>]`: location
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -599,11 +598,10 @@ BODYPARAMETER <IMicrosoftGraphBookingService>: Represents a particular service o
     - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot, denoted in ISO 8601 format.
   - `[SmsNotificationsEnabled <Boolean?>]`: True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
   - `[StaffMemberIds <String[]>]`: Represents those staff members who provide this service.
-  - `[WebUrl <String>]`: The URL a customer uses to access the service.
 
 CUSTOMQUESTIONS <IMicrosoftGraphBookingQuestionAssignment[]>: Contains the set of custom questions associated with a particular service.
-  - `[IsRequired <Boolean?>]`: Indicates whether it is mandatory to answer the custom question.
-  - `[QuestionId <String>]`: If it is mandatory to answer the custom question.
+  - `[IsRequired <Boolean?>]`: The ID of the custom question.
+  - `[QuestionId <String>]`: Indicates whether it is mandatory to answer the custom question.
 
 DEFAULTLOCATION <IMicrosoftGraphLocation>: location
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

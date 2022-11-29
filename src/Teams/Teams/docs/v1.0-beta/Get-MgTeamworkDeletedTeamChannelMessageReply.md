@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannelMessageReply
 
 ## SYNOPSIS
-Get replies from teamwork
+Replies for a specified message.
+Supports $expand for channel messages.
 
 ## SYNTAX
 
@@ -34,7 +35,8 @@ Get-MgTeamworkDeletedTeamChannelMessageReply -InputObject <ITeamsIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get replies from teamwork
+Replies for a specified message.
+Supports $expand for channel messages.
 
 ## EXAMPLES
 

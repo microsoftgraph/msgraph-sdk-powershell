@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserAuthenticationTemporaryAccessPassMethod
 
 ## SYNOPSIS
-Create new navigation property to temporaryAccessPassMethods for users
+Create a new temporaryAccessPassAuthenticationMethod object on a user.
+A user can only have one Temporary Access Pass that's usable within its specified lifetime.
+If the user requires a new Temporary Access Pass while the current Temporary Access Pass is valid, the admin can create a new Temporary Access Pass for the user, the previous Temporary Access Pass will be deleted, and a new Temporary Access Pass will be created.
 
 ## SYNTAX
 
@@ -43,9 +45,25 @@ New-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignIns
 ```
 
 ## DESCRIPTION
-Create new navigation property to temporaryAccessPassMethods for users
+Create a new temporaryAccessPassAuthenticationMethod object on a user.
+A user can only have one Temporary Access Pass that's usable within its specified lifetime.
+If the user requires a new Temporary Access Pass while the current Temporary Access Pass is valid, the admin can create a new Temporary Access Pass for the user, the previous Temporary Access Pass will be deleted, and a new Temporary Access Pass will be created.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserAuthenticationTemporaryAccessPassMethod Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	StartDateTime = [System.DateTime]::Parse("2022-06-05T00:00:00.000Z")
+	LifetimeInMinutes = 60
+	IsUsableOnce = $false
+}
+New-MgUserAuthenticationTemporaryAccessPassMethod -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserAuthenticationTemporaryAccessPassMethod Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -96,7 +114,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -290,7 +309,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod>: temporaryAccessPassAuthenticationMethod
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the Temporary Access Pass was created.
   - `[IsUsable <Boolean?>]`: The state of the authentication method that indicates whether it's currently usable by the user.
   - `[IsUsableOnce <Boolean?>]`: Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.
@@ -302,10 +321,14 @@ BODYPARAMETER <IMicrosoftGraphTemporaryAccessPassAuthenticationMethod>: temporar
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -314,6 +337,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDeviceCommand
 
 ## SYNOPSIS
-Get commands from users
+Set of commands sent to this device.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDeviceCommand -InputObject <ICrossDeviceExperiencesIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get commands from users
+Set of commands sent to this device.
 
 ## EXAMPLES
 

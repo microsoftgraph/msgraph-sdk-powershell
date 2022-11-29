@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledServices
-Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).
+Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
 
 ```yaml
 Type: System.String[]
@@ -173,7 +173,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -290,7 +291,7 @@ AVERAGECOMPARATIVESCORES <IMicrosoftGraphAverageComparativeScore[]>: Average sco
 
 BODYPARAMETER <IMicrosoftGraphSecureScore>: secureScore
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActiveUserCount <Int32?>]`: Active user count of the given tenant.
   - `[AverageComparativeScores <IMicrosoftGraphAverageComparativeScore[]>]`: Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
     - `[AverageScore <Double?>]`: Average score within specified basis.
@@ -303,7 +304,7 @@ BODYPARAMETER <IMicrosoftGraphSecureScore>: secureScore
     - `[Score <Double?>]`: Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
   - `[CreatedDateTime <DateTime?>]`: The date when the entity is created.
   - `[CurrentScore <Double?>]`: Tenant current attained score on specified date.
-  - `[EnabledServices <String[]>]`: Microsoft-provided services for the tenant (for example, Exchange online, Skype, SharePoint).
+  - `[EnabledServices <String[]>]`: Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
   - `[LicensedUserCount <Int32?>]`: Licensed user count of the given tenant.
   - `[MaxScore <Double?>]`: Tenant maximum possible score on specified date.
   - `[VendorInformation <IMicrosoftGraphSecurityVendorInformation>]`: securityVendorInformation

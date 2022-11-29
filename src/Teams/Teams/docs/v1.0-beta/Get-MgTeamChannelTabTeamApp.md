@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamChannelTabTeamApp
 
 ## SYNOPSIS
-Get teamsApp from teams
+The application that is linked to the tab.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgTeamChannelTabTeamApp -InputObject <ITeamsIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get teamsApp from teams
+The application that is linked to the tab.
 
 ## EXAMPLES
 

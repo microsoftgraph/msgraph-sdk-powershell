@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveSpecialContent
 
 ## SYNOPSIS
-Get content for the navigation property special from users
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgUserDriveSpecialContent -InputObject <IFilesIdentity> -OutFile <String> [-
 ```
 
 ## DESCRIPTION
-Get content for the navigation property special from users
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

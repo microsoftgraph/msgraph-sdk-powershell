@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannelSharedWithTeam
 
 ## SYNOPSIS
-Get sharedWithTeams from teamwork
+A collection of teams with which a channel is shared.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgTeamworkDeletedTeamChannelSharedWithTeam -InputObject <ITeamsIdentity> [-E
 ```
 
 ## DESCRIPTION
-Get sharedWithTeams from teamwork
+A collection of teams with which a channel is shared.
 
 ## EXAMPLES
 

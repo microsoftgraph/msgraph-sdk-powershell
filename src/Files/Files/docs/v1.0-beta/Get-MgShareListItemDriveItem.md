@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListItemDriveItem
 
 ## SYNOPSIS
-Get driveItem from shares
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Get-MgShareListItemDriveItem -InputObject <IFilesIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get driveItem from shares
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ## EXAMPLES
 

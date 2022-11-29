@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseSearch
 
 ## SYNOPSIS
-Get searches from security
+Returns a list of eDiscoverySearch objects associated with this case.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgSecurityCaseEdiscoveryCaseSearch -InputObject <ISecurityIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get searches from security
+Returns a list of eDiscoverySearch objects associated with this case.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseSearch Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseSearch -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseSearch Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgSecurityCaseEdiscoveryCaseSearch Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+Get-MgSecurityCaseEdiscoveryCaseSearch -EdiscoveryCaseId $ediscoveryCaseId
+```
+
+This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseSearch Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

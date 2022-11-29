@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDriveSpecialContent
 
 ## SYNOPSIS
-Update content for the navigation property special in drives
+The content stream, if the item represents a file.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgDriveSpecialContent -InputObject <IFilesIdentity> -InFile <String> [-BodyP
 ```
 
 ## DESCRIPTION
-Update content for the navigation property special in drives
+The content stream, if the item represents a file.
 
 ## EXAMPLES
 

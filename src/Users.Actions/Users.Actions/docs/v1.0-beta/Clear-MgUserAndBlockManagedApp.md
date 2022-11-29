@@ -8,7 +8,7 @@ schema: 2.0.0
 # Clear-MgUserAndBlockManagedApp
 
 ## SYNOPSIS
-Invoke action wipeAndBlockManagedApps
+Blocks the managed app user from app check-in.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Clear-MgUserAndBlockManagedApp -InputObject <IUsersActionsIdentity> [-PassThru] 
 ```
 
 ## DESCRIPTION
-Invoke action wipeAndBlockManagedApps
+Blocks the managed app user from app check-in.
 
 ## EXAMPLES
 

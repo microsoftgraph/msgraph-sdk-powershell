@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseLegalHoldSiteSource
 
 ## SYNOPSIS
-Get siteSources from compliance
+Data source entity for SharePoint sites associated with the legal hold.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgComplianceEdiscoveryCaseLegalHoldSiteSource -InputObject <IComplianceIdent
 ```
 
 ## DESCRIPTION
-Get siteSources from compliance
+Data source entity for SharePoint sites associated with the legal hold.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgComplianceEdiscoveryCaseLegalHoldSiteSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Get-MgComplianceEdiscoveryCaseLegalHoldSiteSource -CaseId $caseId -LegalHoldId $legalHoldId
+```
+
+This example shows how to use the Get-MgComplianceEdiscoveryCaseLegalHoldSiteSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,17 +8,26 @@ schema: 2.0.0
 # Get-MgGroupMemberByRef
 
 ## SYNOPSIS
-Get ref of members from groups
+Direct members of this group, who can be users, devices, other groups, or service principals.
+Supports the List members, Add member, and Remove member operations.
+Nullable.
+Supports $expand including nested $select.
+For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 
 ## SYNTAX
 
 ```
 Get-MgGroupMemberByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get ref of members from groups
+Direct members of this group, who can be users, devices, other groups, or service principals.
+Supports the List members, Add member, and Remove member operations.
+Nullable.
+Supports $expand including nested $select.
+For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 
 ## EXAMPLES
 
@@ -29,6 +38,22 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 

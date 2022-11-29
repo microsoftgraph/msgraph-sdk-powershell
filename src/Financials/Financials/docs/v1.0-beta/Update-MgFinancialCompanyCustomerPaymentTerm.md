@@ -14,7 +14,7 @@ Update the navigation property paymentTerm in financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerId <String>
+Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerPaymentId <String>
  [-AdditionalProperties <Hashtable>] [-CalculateDiscountOnCreditMemos] [-Code <String>]
  [-DiscountDateCalculation <String>] [-DiscountPercent <Decimal>] [-DisplayName <String>]
  [-DueDateCalculation <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
@@ -23,19 +23,19 @@ Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerId <St
 
 ### Update
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerId <String>
+Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerPaymentId <String>
  -BodyParameter <IMicrosoftGraphPaymentTerm> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerPaymentId <String>
+Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerId <String>
  -BodyParameter <IMicrosoftGraphPaymentTerm> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateExpanded1
 ```
-Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerPaymentId <String>
+Update-MgFinancialCompanyCustomerPaymentTerm -CompanyId <String> -CustomerId <String>
  [-AdditionalProperties <Hashtable>] [-CalculateDiscountOnCreditMemos] [-Code <String>]
  [-DiscountDateCalculation <String>] [-DiscountPercent <Decimal>] [-DisplayName <String>]
  [-DueDateCalculation <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-PassThru] [-Confirm]
@@ -160,7 +160,7 @@ key: id of customer
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -175,7 +175,7 @@ key: id of customerPayment
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -361,7 +361,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPaymentTerm>: paymentTerm
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
   - `[Code <String>]`: 
   - `[DiscountDateCalculation <String>]`: 

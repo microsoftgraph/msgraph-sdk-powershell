@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementExchangeConnector
 
 ## SYNOPSIS
-Get exchangeConnectors from deviceManagement
+The list of Exchange Connectors configured by the tenant.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementExchangeConnector -InputObject <IDeviceManagementAdministr
 ```
 
 ## DESCRIPTION
-Get exchangeConnectors from deviceManagement
+The list of Exchange Connectors configured by the tenant.
 
 ## EXAMPLES
 
@@ -245,6 +245,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

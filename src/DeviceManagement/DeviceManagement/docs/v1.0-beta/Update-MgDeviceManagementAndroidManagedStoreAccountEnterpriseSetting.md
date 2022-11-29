@@ -145,7 +145,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -332,7 +333,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAndroidManagedStoreAccountEnterpriseSettings>: Enterprise settings for an Android managed store account.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AndroidDeviceOwnerFullyManagedEnrollmentEnabled <Boolean?>]`: Company codes for AndroidManagedStoreAccountEnterpriseSettings
   - `[BindStatus <String>]`: Bind status of the tenant with the Google EMM API
   - `[CompanyCodes <IMicrosoftGraphAndroidEnrollmentCompanyCode[]>]`: Company codes for AndroidManagedStoreAccountEnterpriseSettings

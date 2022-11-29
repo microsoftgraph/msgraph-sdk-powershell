@@ -12,13 +12,13 @@ Delete navigation property members for teams
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
 Remove-MgTeamChannelMember -ChannelId <String> -ConversationMemberId <String> -TeamId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgTeamChannelMember -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -29,6 +29,15 @@ Delete navigation property members for teams
 
 ## EXAMPLES
 
+### Example 1: Using the Remove-MgTeamChannelMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Remove-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -ConversationMemberId $conversationMemberId
+```
+
+This example shows how to use the Remove-MgTeamChannelMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -ChannelId
@@ -36,7 +45,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -51,7 +60,7 @@ key: id of conversationMember
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -82,7 +91,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -112,7 +121,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True

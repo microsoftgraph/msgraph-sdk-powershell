@@ -29,6 +29,15 @@ Delete navigation property deviceImages for deviceManagement
 
 ## EXAMPLES
 
+### Example 1: Using the Remove-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Remove-MgDeviceManagementVirtualEndpointDeviceImage -CloudPcDeviceImageId $cloudPcDeviceImageId
+```
+
+This example shows how to use the Remove-MgDeviceManagementVirtualEndpointDeviceImage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -CloudPcDeviceImageId
@@ -148,6 +157,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

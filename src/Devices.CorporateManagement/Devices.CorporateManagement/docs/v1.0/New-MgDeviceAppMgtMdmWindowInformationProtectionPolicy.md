@@ -15,7 +15,7 @@ Create new navigation property to mdmWindowsInformationProtectionPolicies for de
 ### CreateExpanded1 (Default)
 ```
 New-MgDeviceAppMgtMdmWindowInformationProtectionPolicy [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>] [-AzureRightsManagementServicesAllowed]
+ [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>] [-AzureRightsManagementServicesAllowed]
  [-CreatedDateTime <DateTime>]
  [-DataRecoveryCertificate <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>]
  [-Description <String>] [-DisplayName <String>]
@@ -72,7 +72,7 @@ Navigation property to list of security groups targeted for policy.
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -393,7 +393,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -619,7 +620,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMdmWindowsInformationProtectionPolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMdmWindowsInformationProtectionPolicy
 
 ## NOTES
 
@@ -632,9 +633,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>: Navigation property to list of security groups targeted for policy.
-  - `[Id <String>]`: 
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
+ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>: Navigation property to list of security groups targeted for policy.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 DATARECOVERYCERTIFICATE <IMicrosoftGraphWindowsInformationProtectionDataRecoveryCertificate>: Windows Information Protection DataRecoveryCertificate
@@ -671,7 +672,7 @@ ENTERPRISEPROXYSERVERS <IMicrosoftGraphWindowsInformationProtectionResourceColle
   - `[Resources <String[]>]`: Collection of resources
 
 EXEMPTAPPLOCKERFILES <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>: Another way to input exempt apps through xml files
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The friendly name
   - `[File <Byte[]>]`: File as a byte array
   - `[FileHash <String>]`: SHA256 hash of the file
@@ -689,7 +690,7 @@ NEUTRALDOMAINRESOURCES <IMicrosoftGraphWindowsInformationProtectionResourceColle
   - `[Resources <String[]>]`: Collection of resources
 
 PROTECTEDAPPLOCKERFILES <IMicrosoftGraphWindowsInformationProtectionAppLockerFile[]>: Another way to input protected apps through xml files
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The friendly name
   - `[File <Byte[]>]`: File as a byte array
   - `[FileHash <String>]`: SHA256 hash of the file

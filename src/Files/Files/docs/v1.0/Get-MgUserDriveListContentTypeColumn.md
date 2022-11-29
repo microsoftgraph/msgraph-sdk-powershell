@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListContentTypeColumn
 
 ## SYNOPSIS
-Get columns from users
+The collection of column definitions for this contentType.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDriveListContentTypeColumn -InputObject <IFilesIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get columns from users
+The collection of column definitions for this contentType.
 
 ## EXAMPLES
 

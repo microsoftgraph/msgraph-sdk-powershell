@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDeviceEnrollmentConfiguration
 
 ## SYNOPSIS
-Get deviceEnrollmentConfigurations from users
+Get enrollment configurations targeted to the user
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserDeviceEnrollmentConfiguration -InputObject <IDevicesCorporateManagemen
 ```
 
 ## DESCRIPTION
-Get deviceEnrollmentConfigurations from users
+Get enrollment configurations targeted to the user
 
 ## EXAMPLES
 

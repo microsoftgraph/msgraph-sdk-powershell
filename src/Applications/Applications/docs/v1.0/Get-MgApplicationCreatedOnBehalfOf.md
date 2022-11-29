@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgApplicationCreatedOnBehalfOf
 
 ## SYNOPSIS
-Get createdOnBehalfOf from applications
+Supports $filter (eq when counting empty collections).
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgApplicationCreatedOnBehalfOf -InputObject <IApplicationsIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get createdOnBehalfOf from applications
+Supports $filter (eq when counting empty collections).
+Read-only.
 
 ## EXAMPLES
 

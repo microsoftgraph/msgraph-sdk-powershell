@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinition
 
 ## SYNOPSIS
-Get nextVersionDefinition from deviceManagement
+Definition of the next version of this definition
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgDeviceManagementGroupPolicyDefinitionNextVersionDefinition
 ```
 
 ## DESCRIPTION
-Get nextVersionDefinition from deviceManagement
+Definition of the next version of this definition
 
 ## EXAMPLES
 
@@ -118,6 +118,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

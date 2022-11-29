@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgSiteTermStoreSet
 
 ## SYNOPSIS
-Get sets from sites
+Collection of all sets available in the term store.
+This relationship can only be used to load a specific term set.
 
 ## SYNTAX
 
@@ -44,9 +45,19 @@ Get-MgSiteTermStoreSet -SiteId <String> -StoreId <String> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get sets from sites
+Collection of all sets available in the term store.
+This relationship can only be used to load a specific term set.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSiteTermStoreSet Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteTermStoreSet -SiteId $siteId -SetId $setId
+```
+
+This example shows how to use the Get-MgSiteTermStoreSet Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgSoftUserChatMessageDelete
 
 ## SYNOPSIS
-Invoke action softDelete
+Delete a single message or a message reply in a channel or a chat.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Invoke-MgSoftUserChatMessageDelete -InputObject <IUsersActionsIdentity> [-PassTh
 ```
 
 ## DESCRIPTION
-Invoke action softDelete
+Delete a single message or a message reply in a channel or a chat.
 
 ## EXAMPLES
+
+### Example 1: Using the Invoke-MgSoftUserChatMessageDelete Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+Invoke-MgSoftUserChatMessageDelete -UserId $userId -ChatId $chatId -ChatMessageId $chatMessageId
+```
+
+This example shows how to use the Invoke-MgSoftUserChatMessageDelete Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

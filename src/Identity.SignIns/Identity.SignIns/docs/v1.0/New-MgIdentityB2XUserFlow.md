@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityB2XUserFlow
 
 ## SYNOPSIS
-Create new navigation property to b2xUserFlows for identity
+Create a new b2xIdentityUserFlow object.
 
 ## SYNTAX
 
@@ -30,9 +30,66 @@ New-MgIdentityB2XUserFlow -BodyParameter <IMicrosoftGraphB2XIdentityUserFlow> [-
 ```
 
 ## DESCRIPTION
-Create new navigation property to b2xUserFlows for identity
+Create a new b2xIdentityUserFlow object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgIdentityB2XUserFlow Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Id = "UserFlowWithAPIConnector"
+	UserFlowType = "signUpOrSignIn"
+	UserFlowTypeVersion = 1
+	ApiConnectorConfiguration = @{
+		PostFederationSignup = @{
+			"@odata.id" = "https://graph.microsoft.com/v1/identity/apiConnectors/{id}"
+		}
+		PostAttributeCollection = @{
+			"@odata.id" = "https://graph.microsoft.com/v1/identity/apiConnectors/{id}"
+		}
+	}
+}
+New-MgIdentityB2XUserFlow -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityB2XUserFlow Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgIdentityB2XUserFlow Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Id = "Partner"
+	UserFlowType = "signUpOrSignIn"
+	UserFlowTypeVersion = 1
+	IdentityProviders = @(
+		@{
+			Id = "Facebook-OAuth"
+			Type = "Facebook"
+			Name = "Facebook"
+		}
+	)
+}
+New-MgIdentityB2XUserFlow -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityB2XUserFlow Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the New-MgIdentityB2XUserFlow Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	Id = "Partner"
+	UserFlowType = "signUpOrSignIn"
+	UserFlowTypeVersion = 1
+}
+New-MgIdentityB2XUserFlow -BodyParameter $params
+```
+
+This example shows how to use the New-MgIdentityB2XUserFlow Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -84,7 +141,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -116,8 +174,8 @@ Accept wildcard characters: False
 
 ### -Languages
 The languages supported for customization within the user flow.
-Language customization is enabled by default in self-service sign up user flow.
-You cannot create custom languages in self-service sign up user flows.
+Language customization is enabled by default in self-service sign-up user flow.
+You cannot create custom languages in self-service sign-up user flows.
 To construct, please use Get-Help -Online and see NOTES section for LANGUAGES properties and create a hash table.
 
 ```yaml
@@ -249,7 +307,7 @@ APICONNECTORCONFIGURATION <IMicrosoftGraphUserFlowApiConnectorConfiguration>: us
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[PostAttributeCollection <IMicrosoftGraphIdentityApiConnector>]`: identityApiConnector
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AuthenticationConfiguration <IMicrosoftGraphApiAuthenticationConfigurationBase>]`: apiAuthenticationConfigurationBase
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The name of the API connector.
@@ -260,86 +318,86 @@ BODYPARAMETER <IMicrosoftGraphB2XIdentityUserFlow>: b2xIdentityUserFlow
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[UserFlowType <String>]`: userFlowType
   - `[UserFlowTypeVersion <Single?>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ApiConnectorConfiguration <IMicrosoftGraphUserFlowApiConnectorConfiguration>]`: userFlowApiConnectorConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[PostAttributeCollection <IMicrosoftGraphIdentityApiConnector>]`: identityApiConnector
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AuthenticationConfiguration <IMicrosoftGraphApiAuthenticationConfigurationBase>]`: apiAuthenticationConfigurationBase
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The name of the API connector.
       - `[TargetUrl <String>]`: The URL of the API endpoint to call.
     - `[PostFederationSignup <IMicrosoftGraphIdentityApiConnector>]`: identityApiConnector
   - `[IdentityProviders <IMicrosoftGraphIdentityProvider[]>]`: The identity providers included in the user flow.
-    - `[Id <String>]`: 
-    - `[ClientId <String>]`: The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
-    - `[ClientSecret <String>]`: The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[ClientId <String>]`: The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
+    - `[ClientSecret <String>]`: The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
     - `[Name <String>]`: The display name of the identity provider. Not nullable.
-    - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
-  - `[Languages <IMicrosoftGraphUserFlowLanguageConfiguration[]>]`: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
-    - `[Id <String>]`: 
+    - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
+  - `[Languages <IMicrosoftGraphUserFlowLanguageConfiguration[]>]`: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DefaultPages <IMicrosoftGraphUserFlowLanguagePage[]>]`: Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The language name to display. This property is read-only.
     - `[IsEnabled <Boolean?>]`: Indicates whether the language is enabled within the user flow.
     - `[OverridesPages <IMicrosoftGraphUserFlowLanguagePage[]>]`: Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
   - `[UserAttributeAssignments <IMicrosoftGraphIdentityUserFlowAttributeAssignment[]>]`: The user attribute assignments included in the user flow.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The display name of the identityUserFlowAttribute within a user flow.
     - `[IsOptional <Boolean?>]`: Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
     - `[RequiresVerification <Boolean?>]`: Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
     - `[UserAttribute <IMicrosoftGraphIdentityUserFlowAttribute>]`: identityUserFlowAttribute
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DataType <String>]`: identityUserFlowAttributeDataType
       - `[Description <String>]`: The description of the user flow attribute that's shown to the user at the time of sign-up.
       - `[DisplayName <String>]`: The display name of the user flow attribute.
       - `[UserFlowAttributeType <String>]`: identityUserFlowAttributeType
     - `[UserAttributeValues <IMicrosoftGraphUserAttributeValuesItem[]>]`: The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
-      - `[IsDefault <Boolean?>]`: Used to set the value as the default.
-      - `[Name <String>]`: The display name of the property displayed to the end user in the user flow.
+      - `[IsDefault <Boolean?>]`: Determines whether the value is set as the default.
+      - `[Name <String>]`: The display name of the property displayed to the user in the user flow.
       - `[Value <String>]`: The value that is set when this item is selected.
     - `[UserInputType <String>]`: identityUserFlowAttributeInputType
   - `[UserFlowIdentityProviders <IMicrosoftGraphIdentityProviderBase[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The display name of the identity provider.
 
 IDENTITYPROVIDERS <IMicrosoftGraphIdentityProvider[]>: The identity providers included in the user flow.
-  - `[Id <String>]`: 
-  - `[ClientId <String>]`: The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
-  - `[ClientSecret <String>]`: The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[ClientId <String>]`: The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
+  - `[ClientSecret <String>]`: The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
   - `[Name <String>]`: The display name of the identity provider. Not nullable.
-  - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
+  - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
 
-LANGUAGES <IMicrosoftGraphUserFlowLanguageConfiguration[]>: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
-  - `[Id <String>]`: 
+LANGUAGES <IMicrosoftGraphUserFlowLanguageConfiguration[]>: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DefaultPages <IMicrosoftGraphUserFlowLanguagePage[]>]`: Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The language name to display. This property is read-only.
   - `[IsEnabled <Boolean?>]`: Indicates whether the language is enabled within the user flow.
   - `[OverridesPages <IMicrosoftGraphUserFlowLanguagePage[]>]`: Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
 
 USERATTRIBUTEASSIGNMENTS <IMicrosoftGraphIdentityUserFlowAttributeAssignment[]>: The user attribute assignments included in the user flow.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the identityUserFlowAttribute within a user flow.
   - `[IsOptional <Boolean?>]`: Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
   - `[RequiresVerification <Boolean?>]`: Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
   - `[UserAttribute <IMicrosoftGraphIdentityUserFlowAttribute>]`: identityUserFlowAttribute
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DataType <String>]`: identityUserFlowAttributeDataType
     - `[Description <String>]`: The description of the user flow attribute that's shown to the user at the time of sign-up.
     - `[DisplayName <String>]`: The display name of the user flow attribute.
     - `[UserFlowAttributeType <String>]`: identityUserFlowAttributeType
   - `[UserAttributeValues <IMicrosoftGraphUserAttributeValuesItem[]>]`: The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
-    - `[IsDefault <Boolean?>]`: Used to set the value as the default.
-    - `[Name <String>]`: The display name of the property displayed to the end user in the user flow.
+    - `[IsDefault <Boolean?>]`: Determines whether the value is set as the default.
+    - `[Name <String>]`: The display name of the property displayed to the user in the user flow.
     - `[Value <String>]`: The value that is set when this item is selected.
   - `[UserInputType <String>]`: identityUserFlowAttributeInputType
 
 USERFLOWIDENTITYPROVIDERS <IMicrosoftGraphIdentityProviderBase[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the identity provider.
 
 ## RELATED LINKS

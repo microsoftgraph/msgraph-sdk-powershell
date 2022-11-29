@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserManagedDeviceSecurityBaselineStateSettingState
 
 ## SYNOPSIS
-Get settingStates from users
+The security baseline state for different settings for a device
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgUserManagedDeviceSecurityBaselineStateSettingState -InputObject <IDevicesC
 ```
 
 ## DESCRIPTION
-Get settingStates from users
+The security baseline state for different settings for a device
 
 ## EXAMPLES
 

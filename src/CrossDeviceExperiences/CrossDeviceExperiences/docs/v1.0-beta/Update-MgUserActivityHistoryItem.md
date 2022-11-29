@@ -52,9 +52,7 @@ Update the navigation property historyItems in users
 ## PARAMETERS
 
 ### -ActiveDurationSeconds
-Optional.
-The duration of active user engagement.
-if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
+.
 
 ```yaml
 Type: System.Int32
@@ -386,9 +384,9 @@ ACTIVITY <IMicrosoftGraphUserActivity1>: userActivity
   - `[CreatedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was created on the server.
   - `[ExpirationDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object expired on the server.
   - `[FallbackUrl <String>]`: Optional. URL used to launch the activity in a web-based app, if available.
-  - `[HistoryItems <IMicrosoftGraphActivityHistoryItem[]>]`: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+  - `[HistoryItems <IMicrosoftGraphActivityHistoryItem[]>]`: 
     - `[Id <String>]`: 
-    - `[ActiveDurationSeconds <Int32?>]`: Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
+    - `[ActiveDurationSeconds <Int32?>]`: 
     - `[Activity <IMicrosoftGraphUserActivity1>]`: userActivity
     - `[CreatedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was created on the server.
     - `[ExpirationDateTime <DateTime?>]`: Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
@@ -416,7 +414,7 @@ ACTIVITY <IMicrosoftGraphUserActivity1>: userActivity
 BODYPARAMETER <IMicrosoftGraphActivityHistoryItem>: activityHistoryItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: 
-  - `[ActiveDurationSeconds <Int32?>]`: Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
+  - `[ActiveDurationSeconds <Int32?>]`: 
   - `[Activity <IMicrosoftGraphUserActivity1>]`: userActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: 
@@ -430,7 +428,7 @@ BODYPARAMETER <IMicrosoftGraphActivityHistoryItem>: activityHistoryItem
     - `[CreatedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was created on the server.
     - `[ExpirationDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object expired on the server.
     - `[FallbackUrl <String>]`: Optional. URL used to launch the activity in a web-based app, if available.
-    - `[HistoryItems <IMicrosoftGraphActivityHistoryItem[]>]`: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+    - `[HistoryItems <IMicrosoftGraphActivityHistoryItem[]>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: Set by the server. DateTime in UTC when the object was modified on the server.
     - `[Status <String>]`: status
     - `[UserTimezone <String>]`: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.

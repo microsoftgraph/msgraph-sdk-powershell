@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationUserAssignment
 
 ## SYNOPSIS
-Get assignments from education
+Assignments belonging to the user.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgEducationUserAssignment -InputObject <IEducationIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Get assignments from education
+Assignments belonging to the user.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgEducationUserAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Get-MgEducationUserAssignment -EducationUserId $educationUserId -ExpandProperty "submissions" 
+```
+
+This example shows how to use the Get-MgEducationUserAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgEducationUserAssignment Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+Get-MgEducationUserAssignment -EducationUserId $educationUserId
+```
+
+This example shows how to use the Get-MgEducationUserAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -1,18 +1,16 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the New-MgSiteContentType Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Sites
+$params = @{
+	Name = "docSet"
+	Description = "custom docset"
+	Base = @{
+		Name = "Document Set"
+		Id = "0x0120D520"
+	}
+	Group = "Document Set Content Types"
+}
+New-MgSiteContentType -SiteId $siteId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the New-MgSiteContentType Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

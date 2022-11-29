@@ -12,13 +12,13 @@ Delete navigation property channels for teams
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgTeamChannel -ChannelId <String> -TeamId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgTeamChannel -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -29,6 +29,15 @@ Delete navigation property channels for teams
 
 ## EXAMPLES
 
+### Example 1: Using the Remove-MgTeamChannel Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Remove-MgTeamChannel -TeamId $teamId -ChannelId $channelId
+```
+
+This example shows how to use the Remove-MgTeamChannel Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -ChannelId
@@ -36,7 +45,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -67,7 +76,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -97,7 +106,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

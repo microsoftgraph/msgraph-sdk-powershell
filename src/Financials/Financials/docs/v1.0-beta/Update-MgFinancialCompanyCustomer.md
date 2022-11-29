@@ -226,7 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -578,7 +578,7 @@ ADDRESS <IMicrosoftGraphPostalAddressType>: postalAddressType
 
 BODYPARAMETER <IMicrosoftGraphCustomer>: customer
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: 
@@ -589,7 +589,7 @@ BODYPARAMETER <IMicrosoftGraphCustomer>: customer
   - `[Blocked <String>]`: 
   - `[Currency <IMicrosoftGraphCurrency>]`: currency
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[AmountDecimalPlaces <String>]`: 
     - `[AmountRoundingPrecision <Decimal?>]`: 
     - `[Code <String>]`: 
@@ -604,14 +604,14 @@ BODYPARAMETER <IMicrosoftGraphCustomer>: customer
   - `[Number <String>]`: 
   - `[PaymentMethod <IMicrosoftGraphPaymentMethod>]`: paymentMethod
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Code <String>]`: 
     - `[DisplayName <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
   - `[PaymentMethodId <String>]`: 
   - `[PaymentTerm <IMicrosoftGraphPaymentTerm>]`: paymentTerm
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
     - `[Code <String>]`: 
     - `[DiscountDateCalculation <String>]`: 
@@ -622,14 +622,14 @@ BODYPARAMETER <IMicrosoftGraphCustomer>: customer
   - `[PaymentTermsId <String>]`: 
   - `[PhoneNumber <String>]`: 
   - `[Picture <IMicrosoftGraphPicture[]>]`: 
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Content <Byte[]>]`: 
     - `[ContentType <String>]`: 
     - `[Height <Int32?>]`: 
     - `[Width <Int32?>]`: 
   - `[ShipmentMethod <IMicrosoftGraphShipmentMethod>]`: shipmentMethod
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Code <String>]`: 
     - `[DisplayName <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
@@ -643,7 +643,7 @@ BODYPARAMETER <IMicrosoftGraphCustomer>: customer
 
 CURRENCY <IMicrosoftGraphCurrency>: currency
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[AmountDecimalPlaces <String>]`: 
   - `[AmountRoundingPrecision <Decimal?>]`: 
   - `[Code <String>]`: 
@@ -691,14 +691,14 @@ INPUTOBJECT <IFinancialsIdentity>: Identity Parameter
 
 PAYMENTMETHOD <IMicrosoftGraphPaymentMethod>: paymentMethod
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Code <String>]`: 
   - `[DisplayName <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
 
 PAYMENTTERM <IMicrosoftGraphPaymentTerm>: paymentTerm
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[CalculateDiscountOnCreditMemos <Boolean?>]`: 
   - `[Code <String>]`: 
   - `[DiscountDateCalculation <String>]`: 
@@ -708,7 +708,7 @@ PAYMENTTERM <IMicrosoftGraphPaymentTerm>: paymentTerm
   - `[LastModifiedDateTime <DateTime?>]`: 
 
 PICTURE <IMicrosoftGraphPicture[]>: .
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Content <Byte[]>]`: 
   - `[ContentType <String>]`: 
   - `[Height <Int32?>]`: 
@@ -716,7 +716,7 @@ PICTURE <IMicrosoftGraphPicture[]>: .
 
 SHIPMENTMETHOD <IMicrosoftGraphShipmentMethod>: shipmentMethod
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Code <String>]`: 
   - `[DisplayName <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 

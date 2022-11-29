@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceHealthScript
 
 ## SYNOPSIS
-Get deviceHealthScripts from deviceManagement
+The list of device health scripts associated with the tenant.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDeviceHealthScript -InputObject <IDeviceManagementIdentity
 ```
 
 ## DESCRIPTION
-Get deviceHealthScripts from deviceManagement
+The list of device health scripts associated with the tenant.
 
 ## EXAMPLES
 
@@ -327,6 +327,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

@@ -65,7 +65,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -179,16 +180,16 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecurityInformationProtection>: informationProtection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[LabelPolicySettings <IMicrosoftGraphSecurityInformationProtectionPolicySetting>]`: informationProtectionPolicySetting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DefaultLabelId <String>]`: 
     - `[IsDowngradeJustificationRequired <Boolean?>]`: Exposes whether justification input is required on label downgrade.
     - `[IsMandatory <Boolean?>]`: Exposes whether mandatory labeling is enabled.
     - `[MoreInfoUrl <String>]`: Exposes the more information URL that can be configured by the administrator.
   - `[SensitivityLabels <IMicrosoftGraphSecuritySensitivityLabel[]>]`: Read the Microsoft Purview Information Protection labels for the user or organization.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Color <String>]`: The color that the UI should display for the label, if configured.
     - `[ContentFormats <String[]>]`: Returns the supported content formats for the label.
     - `[Description <String>]`: The admin-defined description for the label.
@@ -202,14 +203,14 @@ BODYPARAMETER <IMicrosoftGraphSecurityInformationProtection>: informationProtect
 
 LABELPOLICYSETTINGS <IMicrosoftGraphSecurityInformationProtectionPolicySetting>: informationProtectionPolicySetting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DefaultLabelId <String>]`: 
   - `[IsDowngradeJustificationRequired <Boolean?>]`: Exposes whether justification input is required on label downgrade.
   - `[IsMandatory <Boolean?>]`: Exposes whether mandatory labeling is enabled.
   - `[MoreInfoUrl <String>]`: Exposes the more information URL that can be configured by the administrator.
 
 SENSITIVITYLABELS <IMicrosoftGraphSecuritySensitivityLabel[]>: Read the Microsoft Purview Information Protection labels for the user or organization.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Color <String>]`: The color that the UI should display for the label, if configured.
   - `[ContentFormats <String[]>]`: Returns the supported content formats for the label.
   - `[Description <String>]`: The admin-defined description for the label.

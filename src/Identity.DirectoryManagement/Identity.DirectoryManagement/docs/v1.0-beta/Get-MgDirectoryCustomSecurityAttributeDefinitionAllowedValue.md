@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
 
 ## SYNOPSIS
-Get allowedValues from directory
+Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query.
+For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 
 ## SYNTAX
 
@@ -34,9 +35,28 @@ Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
 ```
 
 ## DESCRIPTION
-Get allowedValues from directory
+Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query.
+For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue -CustomSecurityAttributeDefinitionId $customSecurityAttributeDefinitionId -AllowedValueId $allowedValueId
+```
+
+This example shows how to use the Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue -CustomSecurityAttributeDefinitionId $customSecurityAttributeDefinitionId
+```
+
+This example shows how to use the Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

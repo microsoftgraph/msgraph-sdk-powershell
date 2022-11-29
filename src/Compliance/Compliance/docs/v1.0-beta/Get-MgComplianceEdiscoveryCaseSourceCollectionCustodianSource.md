@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource
 
 ## SYNOPSIS
-Get custodianSources from compliance
+Custodian sources that are included in the sourceCollection.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource -InputObject <ICom
 ```
 
 ## DESCRIPTION
-Get custodianSources from compliance
+Custodian sources that are included in the sourceCollection.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource -CaseId $caseId -SourceCollectionId $sourceCollectionId
+```
+
+This example shows how to use the Get-MgComplianceEdiscoveryCaseSourceCollectionCustodianSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

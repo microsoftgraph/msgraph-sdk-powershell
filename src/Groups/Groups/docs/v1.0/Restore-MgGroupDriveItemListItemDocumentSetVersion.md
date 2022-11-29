@@ -8,24 +8,24 @@ schema: 2.0.0
 # Restore-MgGroupDriveItemListItemDocumentSetVersion
 
 ## SYNOPSIS
-Invoke action restore
+Restore a document set version.
 
 ## SYNTAX
 
-### Restore1 (Default)
+### Restore (Default)
 ```
 Restore-MgGroupDriveItemListItemDocumentSetVersion -DocumentSetVersionId <String> -DriveId <String>
  -DriveItemId <String> -GroupId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RestoreViaIdentity1
+### RestoreViaIdentity
 ```
 Restore-MgGroupDriveItemListItemDocumentSetVersion -InputObject <IGroupsIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action restore
+Restore a document set version.
 
 ## EXAMPLES
 
@@ -36,7 +36,7 @@ key: id of documentSetVersion
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore1
+Parameter Sets: Restore
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore1
+Parameter Sets: Restore
 Aliases:
 
 Required: True
@@ -66,7 +66,7 @@ key: id of driveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore1
+Parameter Sets: Restore
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Restore1
+Parameter Sets: Restore
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: RestoreViaIdentity1
+Parameter Sets: RestoreViaIdentity
 Aliases:
 
 Required: True

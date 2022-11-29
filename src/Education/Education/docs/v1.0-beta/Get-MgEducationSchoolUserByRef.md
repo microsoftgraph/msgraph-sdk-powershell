@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationSchoolUserByRef
 
 ## SYNOPSIS
-Get ref of users from education
+Retrieve a list of users at a school.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgEducationSchoolUserByRef -EducationSchoolId <String> [-Filter <String>] [-
 ```
 
 ## DESCRIPTION
-Get ref of users from education
+Retrieve a list of users at a school.
 
 ## EXAMPLES
 

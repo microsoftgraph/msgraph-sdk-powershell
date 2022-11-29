@@ -61,6 +61,27 @@ Update the navigation property tasks in planner
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgPlannerTask Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Planner
+$params = @{
+	Assignments = @{
+		"Fbab97d0-4932-4511-b675-204639209557" = @{
+			"@odata.type" = "#microsoft.graph.plannerAssignment"
+			OrderHint = "N9917 U2883!"
+		}
+	}
+	AppliedCategories = @{
+		Category3 = $true
+		Category4 = $false
+	}
+}
+Update-MgPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPlannerTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -ActiveChecklistItemCount
@@ -681,6 +702,10 @@ BODYPARAMETER <IMicrosoftGraphPlannerTask1>: plannerTask
     - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Description <String>]`: Description of the task.
+    - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Content <String>]`: The content of the item.
+      - `[ContentType <String>]`: bodyType
     - `[PreviewType <String>]`: plannerPreviewType
     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -738,6 +763,10 @@ DETAILS <IMicrosoftGraphPlannerTaskDetails1>: plannerTaskDetails
   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description of the task.
+  - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Content <String>]`: The content of the item.
+    - `[ContentType <String>]`: bodyType
   - `[PreviewType <String>]`: plannerPreviewType
   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

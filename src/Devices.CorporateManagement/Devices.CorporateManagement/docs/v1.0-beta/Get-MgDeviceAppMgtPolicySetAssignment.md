@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtPolicySetAssignment
 
 ## SYNOPSIS
-Get assignments from deviceAppManagement
+Assignments of the PolicySet.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtPolicySetAssignment -InputObject <IDevicesCorporateManagementI
 ```
 
 ## DESCRIPTION
-Get assignments from deviceAppManagement
+Assignments of the PolicySet.
 
 ## EXAMPLES
 

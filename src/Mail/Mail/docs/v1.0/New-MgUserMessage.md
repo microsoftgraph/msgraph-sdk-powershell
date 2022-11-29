@@ -8,13 +8,14 @@ schema: 2.0.0
 # New-MgUserMessage
 
 ## SYNOPSIS
-The messages in a mailbox or folder.
-Read-only.
-Nullable.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgUserMessage -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Attachments <IMicrosoftGraphAttachment[]>] [-BccRecipients <IMicrosoftGraphRecipient[]>]
@@ -34,19 +35,19 @@ New-MgUserMessage -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgUserMessage -UserId <String> -BodyParameter <IMicrosoftGraphMessage> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### CreateViaIdentity1
 ```
 New-MgUserMessage -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGraphMessage> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgUserMessage -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
  [-Attachments <IMicrosoftGraphAttachment[]>] [-BccRecipients <IMicrosoftGraphRecipient[]>]
@@ -67,11 +68,71 @@ New-MgUserMessage -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable
 ```
 
 ## DESCRIPTION
-The messages in a mailbox or folder.
-Read-only.
-Nullable.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgUserMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	Subject = "Did you see last night's game?"
+	Importance = "Low"
+	Body = @{
+		ContentType = "HTML"
+		Content = "They were <b>awesome</b>!"
+	}
+	ToRecipients = @(
+		@{
+			EmailAddress = @{
+				Address = "AdeleV@contoso.onmicrosoft.com"
+			}
+		}
+	)
+}
+# A UPN can also be used as -UserId.
+New-MgUserMessage -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the New-MgUserMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Mail
+$params = @{
+	Subject = "9/8/2018: concert"
+	Body = @{
+		ContentType = "HTML"
+		Content = "The group represents Washington."
+	}
+	ToRecipients = @(
+		@{
+			EmailAddress = @{
+				Address = "AlexW@contoso.OnMicrosoft.com"
+			}
+		}
+	)
+	InternetMessageHeaders = @(
+		@{
+			Name = "x-custom-header-group-name"
+			Value = "Washington"
+		}
+		@{
+			Name = "x-custom-header-group-id"
+			Value = "WA001"
+		}
+	)
+}
+# A UPN can also be used as -UserId.
+New-MgUserMessage -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -80,7 +141,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -96,7 +157,7 @@ To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTS 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -112,7 +173,7 @@ To construct, please use Get-Help -Online and see NOTES section for BCCRECIPIENT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -128,7 +189,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODY propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -144,7 +205,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
-Parameter Sets: Create, CreateViaIdentity
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -160,7 +221,7 @@ It is in text format.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -175,7 +236,7 @@ The categories associated with the item
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -191,7 +252,7 @@ To construct, please use Get-Help -Online and see NOTES section for CCRECIPIENTS
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -209,7 +270,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -224,7 +285,7 @@ The ID of the conversation the email belongs to.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -239,7 +300,7 @@ Input File for ConversationIndex (Indicates the position of the message within t
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -255,7 +316,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -272,7 +333,7 @@ To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -288,7 +349,7 @@ To construct, please use Get-Help -Online and see NOTES section for FLAG propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFollowupFlag
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -304,7 +365,7 @@ To construct, please use Get-Help -Online and see NOTES section for FROM propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -321,7 +382,7 @@ To verify the existence of inline attachments, parse the body property to look f
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -332,11 +393,11 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-Read-only.
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -351,7 +412,7 @@ importance
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -366,7 +427,7 @@ inferenceClassificationType
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -382,7 +443,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -398,7 +459,7 @@ To construct, please use Get-Help -Online and see NOTES section for INTERNETMESS
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInternetMessageHeader[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -413,7 +474,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -428,7 +489,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -443,7 +504,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -458,7 +519,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -473,7 +534,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -489,7 +550,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -506,7 +567,7 @@ To construct, please use Get-Help -Online and see NOTES section for MULTIVALUEEX
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -521,7 +582,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -536,7 +597,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -552,7 +613,7 @@ To construct, please use Get-Help -Online and see NOTES section for REPLYTO prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -568,7 +629,7 @@ To construct, please use Get-Help -Online and see NOTES section for SENDER prope
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -583,7 +644,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -600,7 +661,7 @@ To construct, please use Get-Help -Online and see NOTES section for SINGLEVALUEE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -615,7 +676,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -631,7 +692,7 @@ To construct, please use Get-Help -Online and see NOTES section for TORECIPIENTS
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -647,7 +708,7 @@ To construct, please use Get-Help -Online and see NOTES section for UNIQUEBODY p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -662,7 +723,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -677,7 +738,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -741,7 +802,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ATTACHMENTS <IMicrosoftGraphAttachment[]>: The fileAttachment and itemAttachment attachments for the message.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[ContentType <String>]`: The MIME type.
   - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -765,9 +826,9 @@ BODYPARAMETER <IMicrosoftGraphMessage>: message
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The fileAttachment and itemAttachment attachments for the message.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -787,7 +848,7 @@ BODYPARAMETER <IMicrosoftGraphMessage>: message
   - `[ConversationId <String>]`: The ID of the conversation the email belongs to.
   - `[ConversationIndex <Byte[]>]`: Indicates the position of the message within the conversation.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the message. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
   - `[Flag <IMicrosoftGraphFollowupFlag>]`: followupFlag
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -810,7 +871,7 @@ BODYPARAMETER <IMicrosoftGraphMessage>: message
   - `[IsRead <Boolean?>]`: 
   - `[IsReadReceiptRequested <Boolean?>]`: 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Value <String[]>]`: A collection of property values.
   - `[ParentFolderId <String>]`: 
   - `[ReceivedDateTime <DateTime?>]`: 
@@ -818,7 +879,7 @@ BODYPARAMETER <IMicrosoftGraphMessage>: message
   - `[Sender <IMicrosoftGraphRecipient>]`: recipient
   - `[SentDateTime <DateTime?>]`: 
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
-    - `[Id <String>]`: Read-only.
+    - `[Id <String>]`: 
     - `[Value <String>]`: A property value.
   - `[Subject <String>]`: 
   - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
@@ -832,7 +893,7 @@ CCRECIPIENTS <IMicrosoftGraphRecipient[]>: The Cc: recipients for the message.
     - `[Name <String>]`: The display name of the person or entity.
 
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the message. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
 
 FLAG <IMicrosoftGraphFollowupFlag>: followupFlag
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -870,7 +931,7 @@ INTERNETMESSAGEHEADERS <IMicrosoftGraphInternetMessageHeader[]>: .
   - `[Value <String>]`: The value in a key-value pair.
 
 MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>: The collection of multi-value extended properties defined for the message. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Value <String[]>]`: A collection of property values.
 
 REPLYTO <IMicrosoftGraphRecipient[]>: .
@@ -887,7 +948,7 @@ SENDER <IMicrosoftGraphRecipient>: recipient
     - `[Name <String>]`: The display name of the person or entity.
 
 SINGLEVALUEEXTENDEDPROPERTIES <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>: The collection of single-value extended properties defined for the message. Nullable.
-  - `[Id <String>]`: Read-only.
+  - `[Id <String>]`: 
   - `[Value <String>]`: A property value.
 
 TORECIPIENTS <IMicrosoftGraphRecipient[]>: .

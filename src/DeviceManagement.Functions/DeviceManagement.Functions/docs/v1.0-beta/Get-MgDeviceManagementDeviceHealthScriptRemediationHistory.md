@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceHealthScriptRemediationHistory
 
 ## SYNOPSIS
-Invoke function getRemediationHistory
+Function to get the number of remediations by a device health scripts
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgDeviceManagementDeviceHealthScriptRemediationHistory -InputObject <IDevice
 ```
 
 ## DESCRIPTION
-Invoke function getRemediationHistory
+Function to get the number of remediations by a device health scripts
 
 ## EXAMPLES
 
@@ -103,6 +103,7 @@ INPUTOBJECT <IDeviceManagementFunctionsIdentity>: Identity Parameter
   - `[ResourceOperationId <String>]`: key: id of resourceOperation
   - `[Scope <String>]`: Usage: scope='{scope}'
   - `[SecretReferenceValueId <String>]`: Usage: secretReferenceValueId='{secretReferenceValueId}'
+  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[SubscriptionId <String>]`: Usage: subscriptionId='{subscriptionId}'
   - `[SummarizeBy <String>]`: Usage: summarizeBy='{summarizeBy}'
   - `[TemplateId <String>]`: Usage: templateId='{templateId}'

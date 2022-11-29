@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting
 
 ## SYNOPSIS
-Get externalPartnerSettings from deviceManagement
+The external partner settings on a Cloud PC.
 
 ## SYNTAX
 
@@ -33,9 +33,45 @@ Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting
 ```
 
 ## DESCRIPTION
-Get externalPartnerSettings from deviceManagement
+The external partner settings on a Cloud PC.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting -CloudPcExternalPartnerSettingId $cloudPcExternalPartnerSettingId
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting -Property "id,partnerId,enableConnection"  -OutFile $outFileId
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet
+```powershell
+Import-Module Microsoft.Graph.DeviceManagement.Administration
+Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting -Property "id,partnerId,enableConnection" 
+```
+
+This example shows how to use the Get-MgDeviceManagementVirtualEndpointExternalPartnerSetting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -246,6 +282,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
   - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
   - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
   - `[CloudPcId <String>]`: key: id of cloudPC

@@ -177,7 +177,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -418,7 +419,7 @@ APPLICABILITY <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>
 
 BODYPARAMETER <IMicrosoftGraphDeviceManagementConfigurationSettingDefinition>: deviceManagementConfigurationSettingDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AccessTypes <String>]`: deviceManagementConfigurationSettingAccessTypes
   - `[Applicability <IMicrosoftGraphDeviceManagementConfigurationSettingApplicability>]`: deviceManagementConfigurationSettingApplicability
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

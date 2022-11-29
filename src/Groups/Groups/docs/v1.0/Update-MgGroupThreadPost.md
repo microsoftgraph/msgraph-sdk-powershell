@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgGroupThreadPost
 
 ## SYNOPSIS
-Update the navigation property posts in groups
+Update the navigation property inReplyTo in groups
 
 ## SYNTAX
 
@@ -33,34 +33,7 @@ Update-MgGroupThreadPost -ConversationThreadId <String> -GroupId <String> -PostI
  -BodyParameter <IMicrosoftGraphPost> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update3
-```
-Update-MgGroupThreadPost -ConversationThreadId <String> -GroupId <String> -PostId <String>
- -BodyParameter <IMicrosoftGraphPost> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateExpanded3
-```
-Update-MgGroupThreadPost -ConversationThreadId <String> -GroupId <String> -PostId <String>
- [-AdditionalProperties <Hashtable>] [-Attachments <IMicrosoftGraphAttachment[]>]
- [-Body <IMicrosoftGraphItemBody>] [-Categories <String[]>] [-ChangeKey <String>] [-ConversationId <String>]
- [-ConversationThreadId1 <String>] [-CreatedDateTime <DateTime>] [-Extensions <IMicrosoftGraphExtension[]>]
- [-From <IMicrosoftGraphRecipient>] [-HasAttachments] [-Id <String>] [-InReplyTo <IMicrosoftGraphPost>]
- [-LastModifiedDateTime <DateTime>]
- [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
- [-NewParticipants <IMicrosoftGraphRecipient[]>] [-ReceivedDateTime <DateTime>]
- [-Sender <IMicrosoftGraphRecipient>]
- [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
 ### UpdateViaIdentity2
-```
-Update-MgGroupThreadPost -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphPost> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity3
 ```
 Update-MgGroupThreadPost -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphPost> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -80,22 +53,8 @@ Update-MgGroupThreadPost -InputObject <IGroupsIdentity> [-ConversationThreadId <
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded3
-```
-Update-MgGroupThreadPost -InputObject <IGroupsIdentity> [-ConversationThreadId <String>]
- [-AdditionalProperties <Hashtable>] [-Attachments <IMicrosoftGraphAttachment[]>]
- [-Body <IMicrosoftGraphItemBody>] [-Categories <String[]>] [-ChangeKey <String>] [-ConversationId <String>]
- [-CreatedDateTime <DateTime>] [-Extensions <IMicrosoftGraphExtension[]>] [-From <IMicrosoftGraphRecipient>]
- [-HasAttachments] [-Id <String>] [-InReplyTo <IMicrosoftGraphPost>] [-LastModifiedDateTime <DateTime>]
- [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
- [-NewParticipants <IMicrosoftGraphRecipient[]>] [-ReceivedDateTime <DateTime>]
- [-Sender <IMicrosoftGraphRecipient>]
- [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Update the navigation property posts in groups
+Update the navigation property inReplyTo in groups
 
 ## EXAMPLES
 
@@ -106,7 +65,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -117,7 +76,6 @@ Accept wildcard characters: False
 ```
 
 ### -Attachments
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
@@ -125,7 +83,7 @@ To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTS 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachment[]
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -141,7 +99,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODY propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -157,7 +115,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost
-Parameter Sets: Update2, Update3, UpdateViaIdentity2, UpdateViaIdentity3
+Parameter Sets: Update2, UpdateViaIdentity2
 Aliases:
 
 Required: True
@@ -172,7 +130,7 @@ The categories associated with the item
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -190,7 +148,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -206,7 +164,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -221,7 +179,7 @@ key: id of conversationThread
 
 ```yaml
 Type: System.String
-Parameter Sets: Update2, Update3, UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: Update2, UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: True
@@ -237,7 +195,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3
+Parameter Sets: UpdateExpanded2
 Aliases:
 
 Required: False
@@ -253,7 +211,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -272,7 +230,7 @@ To construct, please use Get-Help -Online and see NOTES section for EXTENSIONS p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension[]
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -288,7 +246,7 @@ To construct, please use Get-Help -Online and see NOTES section for FROM propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -303,7 +261,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Update2, Update3, UpdateExpanded2, UpdateExpanded3
+Parameter Sets: Update2, UpdateExpanded2
 Aliases:
 
 Required: True
@@ -319,7 +277,7 @@ This is a default property.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -330,11 +288,12 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -350,7 +309,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: UpdateViaIdentity2, UpdateViaIdentity3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateViaIdentity2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: True
@@ -366,7 +325,7 @@ To construct, please use Get-Help -Online and see NOTES section for INREPLYTO pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPost
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -382,7 +341,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -400,7 +359,7 @@ To construct, please use Get-Help -Online and see NOTES section for MULTIVALUEEX
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -416,7 +375,7 @@ To construct, please use Get-Help -Online and see NOTES section for NEWPARTICIPA
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -446,7 +405,7 @@ key: id of post
 
 ```yaml
 Type: System.String
-Parameter Sets: Update2, Update3, UpdateExpanded2, UpdateExpanded3
+Parameter Sets: Update2, UpdateExpanded2
 Aliases:
 
 Required: True
@@ -463,7 +422,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -479,7 +438,7 @@ To construct, please use Get-Help -Online and see NOTES section for SENDER prope
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -497,7 +456,7 @@ To construct, please use Get-Help -Online and see NOTES section for SINGLEVALUEE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded3
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -560,12 +519,12 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ATTACHMENTS <IMicrosoftGraphAttachment[]>: The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
-  - `[Id <String>]`: 
+ATTACHMENTS <IMicrosoftGraphAttachment[]>: Read-only. Nullable. Supports $expand.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ContentType <String>]`: The MIME type.
   - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+  - `[Name <String>]`: The attachment's file name.
   - `[Size <Int32?>]`: The length of the attachment in bytes.
 
 BODY <IMicrosoftGraphItemBody>: itemBody
@@ -579,13 +538,13 @@ BODYPARAMETER <IMicrosoftGraphPost>: post
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
-  - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
-    - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Attachments <IMicrosoftGraphAttachment[]>]`: Read-only. Nullable. Supports $expand.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+    - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -594,34 +553,34 @@ BODYPARAMETER <IMicrosoftGraphPost>: post
   - `[ConversationId <String>]`: Unique ID of the conversation. Read-only.
   - `[ConversationThreadId <String>]`: Unique ID of the conversation thread. Read-only.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[From <IMicrosoftGraphRecipient>]`: recipient
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of an entity instance.
-      - `[Name <String>]`: The display name of an entity instance.
+      - `[Address <String>]`: The email address of the person or entity.
+      - `[Name <String>]`: The display name of the person or entity.
   - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
   - `[InReplyTo <IMicrosoftGraphPost>]`: post
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Value <String[]>]`: A collection of property values.
   - `[NewParticipants <IMicrosoftGraphRecipient[]>]`: Conversation participants that were added to the thread as part of this post.
   - `[ReceivedDateTime <DateTime?>]`: Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Sender <IMicrosoftGraphRecipient>]`: recipient
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Value <String>]`: A property value.
 
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
 
 FROM <IMicrosoftGraphRecipient>: recipient
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of an entity instance.
-    - `[Name <String>]`: The display name of an entity instance.
+    - `[Address <String>]`: The email address of the person or entity.
+    - `[Name <String>]`: The display name of the person or entity.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
@@ -672,13 +631,13 @@ INREPLYTO <IMicrosoftGraphPost>: post
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
-  - `[Attachments <IMicrosoftGraphAttachment[]>]`: The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
-    - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Attachments <IMicrosoftGraphAttachment[]>]`: Read-only. Nullable. Supports $expand.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+    - `[Name <String>]`: The attachment's file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -687,44 +646,44 @@ INREPLYTO <IMicrosoftGraphPost>: post
   - `[ConversationId <String>]`: Unique ID of the conversation. Read-only.
   - `[ConversationThreadId <String>]`: Unique ID of the conversation thread. Read-only.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[From <IMicrosoftGraphRecipient>]`: recipient
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of an entity instance.
-      - `[Name <String>]`: The display name of an entity instance.
+      - `[Address <String>]`: The email address of the person or entity.
+      - `[Name <String>]`: The display name of the person or entity.
   - `[HasAttachments <Boolean?>]`: Indicates whether the post has at least one attachment. This is a default property.
   - `[InReplyTo <IMicrosoftGraphPost>]`: post
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Value <String[]>]`: A collection of property values.
   - `[NewParticipants <IMicrosoftGraphRecipient[]>]`: Conversation participants that were added to the thread as part of this post.
   - `[ReceivedDateTime <DateTime?>]`: Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Sender <IMicrosoftGraphRecipient>]`: recipient
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Value <String>]`: A property value.
 
 MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Value <String[]>]`: A collection of property values.
 
 NEWPARTICIPANTS <IMicrosoftGraphRecipient[]>: Conversation participants that were added to the thread as part of this post.
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of an entity instance.
-    - `[Name <String>]`: The display name of an entity instance.
+    - `[Address <String>]`: The email address of the person or entity.
+    - `[Name <String>]`: The display name of the person or entity.
 
 SENDER <IMicrosoftGraphRecipient>: recipient
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of an entity instance.
-    - `[Name <String>]`: The display name of an entity instance.
+    - `[Address <String>]`: The email address of the person or entity.
+    - `[Name <String>]`: The display name of the person or entity.
 
 SINGLEVALUEEXTENDEDPROPERTIES <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>: The collection of single-value extended properties defined for the post. Read-only. Nullable.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Value <String>]`: A property value.
 
 ## RELATED LINKS

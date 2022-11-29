@@ -8,11 +8,12 @@ schema: 2.0.0
 # Send-MgUserChatActivityNotification
 
 ## SYNOPSIS
-Invoke action sendActivityNotification
+Send an activity feed notification in scope of a chat.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ## SYNTAX
 
-### SendExpanded (Default)
+### SendExpanded1 (Default)
 ```
 Send-MgUserChatActivityNotification -ChatId <String> -UserId <String> [-ActivityType <String>]
  [-AdditionalProperties <Hashtable>] [-ChainId <Int64>] [-PreviewText <IMicrosoftGraphItemBody>]
@@ -20,21 +21,21 @@ Send-MgUserChatActivityNotification -ChatId <String> -UserId <String> [-Activity
  [-Topic <IMicrosoftGraphTeamworkActivityTopic>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Send
+### Send1
 ```
 Send-MgUserChatActivityNotification -ChatId <String> -UserId <String>
  -BodyParameter <IPathsBdscpeUsersUserIdChatsChatIdMicrosoftGraphSendactivitynotificationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SendViaIdentity
+### SendViaIdentity1
 ```
 Send-MgUserChatActivityNotification -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsBdscpeUsersUserIdChatsChatIdMicrosoftGraphSendactivitynotificationPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SendViaIdentityExpanded
+### SendViaIdentityExpanded1
 ```
 Send-MgUserChatActivityNotification -InputObject <IUsersActionsIdentity> [-ActivityType <String>]
  [-AdditionalProperties <Hashtable>] [-ChainId <Int64>] [-PreviewText <IMicrosoftGraphItemBody>]
@@ -43,7 +44,8 @@ Send-MgUserChatActivityNotification -InputObject <IUsersActionsIdentity> [-Activ
 ```
 
 ## DESCRIPTION
-Invoke action sendActivityNotification
+Send an activity feed notification in scope of a chat.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 
 ## EXAMPLES
 
@@ -54,7 +56,7 @@ Invoke action sendActivityNotification
 
 ```yaml
 Type: System.String
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -69,7 +71,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -85,7 +87,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsBdscpeUsersUserIdChatsChatIdMicrosoftGraphSendactivitynotificationPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Send, SendViaIdentity
+Parameter Sets: Send1, SendViaIdentity1
 Aliases:
 
 Required: True
@@ -100,7 +102,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int64
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -115,7 +117,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Send, SendExpanded
+Parameter Sets: Send1, SendExpanded1
 Aliases:
 
 Required: True
@@ -131,7 +133,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: SendViaIdentity, SendViaIdentityExpanded
+Parameter Sets: SendViaIdentity1, SendViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -162,7 +164,7 @@ To construct, please use Get-Help -Online and see NOTES section for PREVIEWTEXT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -177,7 +179,7 @@ teamworkNotificationRecipient
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -193,7 +195,7 @@ To construct, please use Get-Help -Online and see NOTES section for TEMPLATEPARA
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -209,7 +211,7 @@ To construct, please use Get-Help -Online and see NOTES section for TOPIC proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkActivityTopic
-Parameter Sets: SendExpanded, SendViaIdentityExpanded
+Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -224,7 +226,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Send, SendExpanded
+Parameter Sets: Send1, SendExpanded1
 Aliases:
 
 Required: True

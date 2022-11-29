@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The start time of the operation.
 
 ```yaml
 Type: System.DateTime
@@ -112,7 +112,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -143,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastActionDateTime
-.
+The time of the last action in the operation.
 
 ```yaml
 Type: System.DateTime
@@ -173,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A unique identifier for the result.
+The unique identifier for the result.
 
 ```yaml
 Type: System.String
@@ -188,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceLocation
-.
+URI of the resource that the operation is performed on.
 
 ```yaml
 Type: System.String
@@ -233,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -StatusDetail
-.
+Details about the status of the operation.
 
 ```yaml
 Type: System.String
@@ -248,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-Type of the operation.
+The type of the operation.
 
 ```yaml
 Type: System.String
@@ -317,12 +318,12 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphRichLongRunningOperation>: richLongRunningOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[LastActionDateTime <DateTime?>]`: 
-  - `[ResourceLocation <String>]`: 
+  - `[CreatedDateTime <DateTime?>]`: The start time of the operation.
+  - `[LastActionDateTime <DateTime?>]`: The time of the last action in the operation.
+  - `[ResourceLocation <String>]`: URI of the resource that the operation is performed on.
   - `[Status <String>]`: longRunningOperationStatus
-  - `[StatusDetail <String>]`: 
-  - `[Id <String>]`: 
+  - `[StatusDetail <String>]`: Details about the status of the operation.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Error <IMicrosoftGraphPublicError>]`: publicError
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Code <String>]`: Represents the error code.
@@ -339,8 +340,8 @@ BODYPARAMETER <IMicrosoftGraphRichLongRunningOperation>: richLongRunningOperatio
     - `[Message <String>]`: A non-localized message for the developer.
     - `[Target <String>]`: The target of the error.
   - `[PercentageComplete <Int32?>]`: A value between 0 and 100 that indicates the progress of the operation.
-  - `[ResourceId <String>]`: A unique identifier for the result.
-  - `[Type <String>]`: Type of the operation.
+  - `[ResourceId <String>]`: The unique identifier for the result.
+  - `[Type <String>]`: The type of the operation.
 
 ERROR <IMicrosoftGraphPublicError>: publicError
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

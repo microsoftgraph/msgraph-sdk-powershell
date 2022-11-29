@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamScheduleTimeOffReason
 
 ## SYNOPSIS
-Get timeOffReasons from teams
+The set of reasons for a time off in the schedule.
 
 ## SYNTAX
 
@@ -31,9 +31,27 @@ Get-MgTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> [-Property <String
 ```
 
 ## DESCRIPTION
-Get timeOffReasons from teams
+The set of reasons for a time off in the schedule.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgTeamScheduleTimeOffReason Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamScheduleTimeOffReason -TeamId $teamId
+```
+
+This example shows how to use the Get-MgTeamScheduleTimeOffReason Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgTeamScheduleTimeOffReason Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgTeamScheduleTimeOffReason -TeamId $teamId -TimeOffReasonId $timeOffReasonId
+```
+
+This example shows how to use the Get-MgTeamScheduleTimeOffReason Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Send-MgUserPendingAccessReviewInstanceReminder
 
 ## SYNOPSIS
-Invoke action sendReminder
+Send a reminder to the reviewers of a currently active accessReviewInstance.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Send-MgUserPendingAccessReviewInstanceReminder -InputObject <IUsersActionsIdenti
 ```
 
 ## DESCRIPTION
-Invoke action sendReminder
+Send a reminder to the reviewers of a currently active accessReviewInstance.
 
 ## EXAMPLES
 

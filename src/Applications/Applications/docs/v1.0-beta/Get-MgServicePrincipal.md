@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipal
 
 ## SYNOPSIS
-Get servicePrincipal
+Retrieve the properties and relationships of a servicePrincipal object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgServicePrincipal -InputObject <IApplicationsIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get servicePrincipal
+Retrieve the properties and relationships of a servicePrincipal object.
 
 ## EXAMPLES
 

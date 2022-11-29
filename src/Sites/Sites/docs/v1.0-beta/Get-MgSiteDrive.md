@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteDrive
 
 ## SYNOPSIS
-Get drives from sites
+The collection of drives (document libraries) under this site.
 
 ## SYNTAX
 
@@ -32,9 +32,18 @@ Get-MgSiteDrive -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Get drives from sites
+The collection of drives (document libraries) under this site.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgSiteDrive Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Sites
+Get-MgSiteDrive -SiteId $siteId
+```
+
+This example shows how to use the Get-MgSiteDrive Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

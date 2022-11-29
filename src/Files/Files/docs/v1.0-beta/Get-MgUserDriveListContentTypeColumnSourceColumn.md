@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserDriveListContentTypeColumnSourceColumn
 
 ## SYNOPSIS
-Get sourceColumn from users
+The source column for content type column.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserDriveListContentTypeColumnSourceColumn -InputObject <IFilesIdentity> [
 ```
 
 ## DESCRIPTION
-Get sourceColumn from users
+The source column for content type column.
 
 ## EXAMPLES
 

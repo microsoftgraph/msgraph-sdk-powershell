@@ -128,7 +128,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -276,7 +277,7 @@ ACTIVEPERIPHERALS <IMicrosoftGraphTeamworkActivePeripherals>: teamworkActivePeri
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CommunicationSpeaker <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: Display name for the peripheral.
     - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
     - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.
@@ -287,12 +288,12 @@ ACTIVEPERIPHERALS <IMicrosoftGraphTeamworkActivePeripherals>: teamworkActivePeri
 
 BODYPARAMETER <IMicrosoftGraphTeamworkDeviceActivity>: teamworkDeviceActivity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActivePeripherals <IMicrosoftGraphTeamworkActivePeripherals>]`: teamworkActivePeripherals
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CommunicationSpeaker <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DisplayName <String>]`: Display name for the peripheral.
       - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
       - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.

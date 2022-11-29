@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamScheduleTimeOff
 
 ## SYNOPSIS
-Get timesOff from groups
+The instances of times off in the schedule.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-MgGroupTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-Property <String[
 ```
 
 ## DESCRIPTION
-Get timesOff from groups
+The instances of times off in the schedule.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule
 
 ## SYNOPSIS
-Get scheduledActionsForRule from deviceManagement
+The list of scheduled action per rule for this compliance policy.
+This is a required property when creating any individual per-platform compliance policies.
 
 ## SYNTAX
 
@@ -33,7 +34,8 @@ Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule -InputObject 
 ```
 
 ## DESCRIPTION
-Get scheduledActionsForRule from deviceManagement
+The list of scheduled action per rule for this compliance policy.
+This is a required property when creating any individual per-platform compliance policies.
 
 ## EXAMPLES
 
@@ -343,6 +345,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

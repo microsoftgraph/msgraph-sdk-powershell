@@ -11,12 +11,14 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Get inferenceClassification from users
+      description: Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
       operationId: users_GetInferenceClassification
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -58,6 +60,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -74,41 +77,22 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.inferenceClassification
-      summary: Delete navigation property inferenceClassification for users
-      operationId: users_DeleteInferenceClassification
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/inferenceClassification/overrides':
     get:
       tags:
         - users.inferenceClassification
-      summary: Get overrides from users
+      summary: List overrides
+      description: 'Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0
       operationId: users.inferenceClassification_ListOverrides
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -159,13 +143,18 @@ paths:
     post:
       tags:
         - users.inferenceClassification
-      summary: Create new navigation property to overrides for users
+      summary: Create inferenceClassificationOverride
+      description: "Create an override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classified\nas specified in the override. **Note**"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0
       operationId: users.inferenceClassification_CreateOverrides
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -191,12 +180,14 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Get overrides from users
+      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_GetOverrides
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -204,6 +195,7 @@ paths:
           in: path
           description: 'key: id of inferenceClassificationOverride'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: inferenceClassificationOverride
@@ -241,6 +233,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -248,6 +241,7 @@ paths:
           in: path
           description: 'key: id of inferenceClassificationOverride'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: inferenceClassificationOverride
@@ -274,6 +268,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -281,12 +276,14 @@ paths:
           in: path
           description: 'key: id of inferenceClassificationOverride'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: inferenceClassificationOverride
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -299,13 +296,18 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get mailFolders from users
+      summary: List mailFolders
+      description: 'Get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0
       operationId: users_ListMailFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -373,13 +375,18 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to mailFolders for users
+      summary: Create MailFolder
+      description: 'Use this API to create a new mail folder in the root folder of the user''s mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0
       operationId: users_CreateMailFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -405,12 +412,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get mailFolders from users
+      description: The user's mail folders. Read-only. Nullable.
       operationId: users_GetMailFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -418,6 +427,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -494,6 +504,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -501,6 +512,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -527,6 +539,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -534,12 +547,14 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -552,13 +567,18 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get childFolders from users
+      summary: List childFolders
+      description: "Get the folder collection under the specified folder. You can use the `.../me/mailFolders` shortcut to get the top-level \nfolder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0
       operationId: users.mailFolders_ListChildFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -566,6 +586,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -650,13 +671,18 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to childFolders for users
+      summary: Create child folder
+      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
       operationId: users.mailFolders_CreateChildFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -664,6 +690,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -689,12 +716,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get childFolders from users
+      description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_GetChildFolders
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -702,6 +731,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -709,6 +739,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -807,6 +838,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -814,6 +846,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -821,6 +854,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -847,6 +881,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -854,6 +889,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -861,12 +897,14 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -879,13 +917,18 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get messageRules from users
+      summary: List rules
+      description: Get all the messageRule objects defined for the user's inbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_ListMessageRules
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -893,6 +936,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -900,6 +944,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -968,13 +1013,18 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to messageRules for users
+      summary: Create rule
+      description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_CreateMessageRules
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -982,6 +1032,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -989,6 +1040,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1014,12 +1066,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders.childFolders_GetMessageRules
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1027,6 +1081,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1034,6 +1089,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1041,6 +1097,7 @@ paths:
           in: path
           description: 'key: id of messageRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: messageRule
@@ -1084,6 +1141,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1091,6 +1149,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1098,6 +1157,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1105,6 +1165,7 @@ paths:
           in: path
           description: 'key: id of messageRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: messageRule
@@ -1131,6 +1192,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1138,6 +1200,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1145,6 +1208,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1152,12 +1216,14 @@ paths:
           in: path
           description: 'key: id of messageRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: messageRule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1170,13 +1236,18 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get messages from users
+      summary: List messages
+      description: 'Get all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_ListMessages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1184,6 +1255,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1191,6 +1263,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1346,13 +1419,18 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to messages for users
+      summary: Create message in a mailfolder
+      description: Use this API to create a new Message in a mailfolder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_CreateMessages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1360,6 +1438,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1367,6 +1446,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1392,12 +1472,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders.childFolders_GetMessages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1405,6 +1487,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1412,6 +1495,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1419,6 +1503,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -1551,6 +1636,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1558,6 +1644,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1565,6 +1652,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1572,6 +1660,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -1598,6 +1687,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1605,6 +1695,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1612,6 +1703,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1619,12 +1711,14 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1638,12 +1732,16 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_GetMessagesContent
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1651,6 +1749,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1658,6 +1757,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1665,6 +1765,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -1689,6 +1790,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1696,6 +1798,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1703,6 +1806,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1710,6 +1814,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -1731,13 +1836,18 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get attachments from users
+      summary: List attachments
+      description: Retrieve a list of attachment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_ListAttachments
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1745,6 +1855,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1752,6 +1863,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1759,6 +1871,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -1830,13 +1943,18 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to attachments for users
+      summary: Add attachment
+      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can \nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_CreateAttachments
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1844,6 +1962,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1851,6 +1970,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1858,6 +1978,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -1883,12 +2004,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.childFolders.messages_GetAttachments
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -1896,6 +2019,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1903,6 +2027,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -1910,6 +2035,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -1917,6 +2043,7 @@ paths:
           in: path
           description: 'key: id of attachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attachment
@@ -1959,60 +2086,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.mailFolder
-      summary: Update the navigation property attachments in users
-      operationId: users.mailFolders.childFolders.messages_UpdateAttachments
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.attachment'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
@@ -2023,6 +2096,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2030,6 +2104,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2037,6 +2112,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2044,6 +2120,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2051,12 +2128,14 @@ paths:
           in: path
           description: 'key: id of attachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attachment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2070,12 +2149,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_ListExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2083,6 +2164,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2090,6 +2172,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2097,6 +2180,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2153,13 +2237,18 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to extensions for users
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_CreateExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2167,6 +2256,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2174,6 +2264,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2181,6 +2272,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2206,12 +2298,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_GetExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2219,6 +2313,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2226,6 +2321,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2233,6 +2329,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2240,6 +2337,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -2287,6 +2385,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2294,6 +2393,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2301,6 +2401,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2308,6 +2409,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2315,6 +2417,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -2341,6 +2444,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2348,6 +2452,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2355,6 +2460,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2362,6 +2468,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2369,12 +2476,14 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2388,12 +2497,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2401,6 +2512,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2408,6 +2520,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2415,6 +2528,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2482,6 +2596,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2489,6 +2604,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2496,6 +2612,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2503,6 +2620,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2528,12 +2646,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2541,6 +2661,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2548,6 +2669,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2555,6 +2677,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2562,6 +2685,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -2610,6 +2734,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2617,6 +2742,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2624,6 +2750,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2631,6 +2758,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2638,6 +2766,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -2664,6 +2793,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2671,6 +2801,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2678,6 +2809,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2685,6 +2817,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2692,12 +2825,14 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2711,12 +2846,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2724,6 +2861,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2731,6 +2869,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2738,6 +2877,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2805,6 +2945,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2812,6 +2953,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2819,6 +2961,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2826,6 +2969,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2851,12 +2995,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.childFolders.messages_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2864,6 +3010,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2871,6 +3018,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2878,6 +3026,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2885,6 +3034,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -2933,6 +3083,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2940,6 +3091,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2947,6 +3099,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -2954,6 +3107,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -2961,6 +3115,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -2987,6 +3142,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -2994,6 +3150,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3001,6 +3158,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3008,6 +3166,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -3015,12 +3174,14 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3034,12 +3195,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3047,6 +3210,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3054,6 +3218,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3121,6 +3286,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3128,6 +3294,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3135,6 +3302,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3160,12 +3328,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3173,6 +3343,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3180,6 +3351,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3187,6 +3359,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -3235,6 +3408,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3242,6 +3416,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3249,6 +3424,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3256,6 +3432,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -3282,6 +3459,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3289,6 +3467,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3296,6 +3475,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3303,12 +3483,14 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3322,12 +3504,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3335,6 +3519,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3342,6 +3527,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3409,6 +3595,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3416,6 +3603,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3423,6 +3611,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3448,12 +3637,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders.childFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3461,6 +3652,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3468,6 +3660,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3475,6 +3668,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -3523,6 +3717,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3530,6 +3725,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3537,6 +3733,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3544,6 +3741,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -3570,6 +3768,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3577,6 +3776,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3584,6 +3784,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3591,12 +3792,14 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3609,13 +3812,18 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get messageRules from users
+      summary: List rules
+      description: Get all the messageRule objects defined for the user's inbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
       operationId: users.mailFolders_ListMessageRules
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3623,6 +3831,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3691,13 +3900,18 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to messageRules for users
+      summary: Create rule
+      description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
       operationId: users.mailFolders_CreateMessageRules
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3705,6 +3919,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3730,12 +3945,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders_GetMessageRules
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3743,6 +3960,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3750,6 +3968,7 @@ paths:
           in: path
           description: 'key: id of messageRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: messageRule
@@ -3793,6 +4012,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3800,6 +4020,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3807,6 +4028,7 @@ paths:
           in: path
           description: 'key: id of messageRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: messageRule
@@ -3833,6 +4055,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3840,6 +4063,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -3847,12 +4071,14 @@ paths:
           in: path
           description: 'key: id of messageRule'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: messageRule
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -3865,13 +4091,18 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get messages from users
+      summary: List messages
+      description: 'Get all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: users.mailFolders_ListMessages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -3879,6 +4110,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4034,13 +4266,18 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to messages for users
+      summary: Create message in a mailfolder
+      description: Use this API to create a new Message in a mailfolder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
       operationId: users.mailFolders_CreateMessages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4048,6 +4285,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4073,12 +4311,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders_GetMessages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4086,6 +4326,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4093,6 +4334,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4221,6 +4463,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4228,6 +4471,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4235,6 +4479,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4261,6 +4506,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4268,6 +4514,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4275,12 +4522,14 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4294,12 +4543,16 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: users.mailFolders_GetMessagesContent
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4307,6 +4560,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4314,6 +4568,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4338,6 +4593,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4345,6 +4601,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4352,6 +4609,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4373,13 +4631,18 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: Get attachments from users
+      summary: List attachments
+      description: Retrieve a list of attachment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
       operationId: users.mailFolders.messages_ListAttachments
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4387,6 +4650,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4394,6 +4658,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4465,13 +4730,18 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to attachments for users
+      summary: Add attachment
+      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can \nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: users.mailFolders.messages_CreateAttachments
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4479,6 +4749,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4486,6 +4757,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4511,12 +4783,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_GetAttachments
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4524,6 +4798,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4531,6 +4806,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4538,6 +4814,7 @@ paths:
           in: path
           description: 'key: id of attachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attachment
@@ -4580,53 +4857,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.mailFolder
-      summary: Update the navigation property attachments in users
-      operationId: users.mailFolders.messages_UpdateAttachments
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.attachment'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
@@ -4637,6 +4867,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4644,6 +4875,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4651,6 +4883,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4658,12 +4891,14 @@ paths:
           in: path
           description: 'key: id of attachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attachment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4677,12 +4912,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4690,6 +4927,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4697,6 +4935,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4753,13 +4992,18 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create new navigation property to extensions for users
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: users.mailFolders.messages_CreateExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4767,6 +5011,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4774,6 +5019,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4799,12 +5045,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4812,6 +5060,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4819,6 +5068,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4826,6 +5076,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -4873,6 +5124,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4880,6 +5132,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4887,6 +5140,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4894,6 +5148,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -4920,6 +5175,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4927,6 +5183,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4934,6 +5191,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -4941,12 +5199,14 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -4960,12 +5220,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -4973,6 +5235,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -4980,6 +5243,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -5047,6 +5311,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5054,6 +5319,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5061,6 +5327,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -5086,12 +5353,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5099,6 +5368,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5106,6 +5376,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -5113,6 +5384,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -5161,6 +5433,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5168,6 +5441,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5175,6 +5449,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -5182,6 +5457,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -5208,6 +5484,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5215,6 +5492,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5222,6 +5500,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -5229,12 +5508,14 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5248,12 +5529,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5261,6 +5544,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5268,6 +5552,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -5335,6 +5620,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5342,6 +5628,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5349,6 +5636,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -5374,12 +5662,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5387,6 +5677,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5394,6 +5685,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -5401,6 +5693,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -5449,6 +5742,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5456,6 +5750,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5463,6 +5758,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -5470,6 +5766,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -5496,6 +5793,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5503,6 +5801,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5510,6 +5809,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -5517,12 +5817,14 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5536,12 +5838,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5549,6 +5853,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5616,6 +5921,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5623,6 +5929,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5648,12 +5955,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5661,6 +5970,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5668,6 +5978,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -5716,6 +6027,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5723,6 +6035,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5730,6 +6043,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -5756,6 +6070,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5763,6 +6078,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5770,12 +6086,14 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -5789,12 +6107,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5802,6 +6122,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5869,6 +6190,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5876,6 +6198,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5901,12 +6224,14 @@ paths:
       tags:
         - users.mailFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5914,6 +6239,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5921,6 +6247,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -5969,6 +6296,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -5976,6 +6304,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -5983,6 +6312,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -6009,6 +6339,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6016,6 +6347,7 @@ paths:
           in: path
           description: 'key: id of mailFolder'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
@@ -6023,12 +6355,14 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6041,13 +6375,18 @@ paths:
     get:
       tags:
         - users.message
-      summary: Get messages from users
+      summary: List messages
+      description: 'Get the messages in the signed-in user''s mailbox (including the Deleted Items and Clutter folders). Depending on the page size and mailbox data, getting messages from a mailbox can incur multiple requests. The default page size is 10 messages. Use `$top` to customize the page size, within the range of 1 and 1000. To improve the operation response time, use `$select` to specify the exact properties you need; see example 1 below. Fine-tune the values for `$select` and `$top`, especially when you must use a larger page size, as returning a page with hundreds of messages each with a full response payload may trigger the gateway timeout (HTTP 504). To get the next page of messages, simply apply the entire URL returned in `@odata.nextLink` to the next get-messages request. This URL includes any query parameters you may have specified in the initial request.  Do not try to extract the `$skip` value from the `@odata.nextLink` URL to manipulate responses. This API uses the `$skip` value to keep count of all the items it has gone through in the user''s mailbox to return a page of message-type items. It''s therefore possible that even in the initial response, the `$skip` value is larger than the page size. For more information, see Paging Microsoft Graph data in your app. Currently, this operation returns message bodies in only HTML format. There are two scenarios where an app can get messages in another user''s mail folder:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: users_ListMessages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6187,13 +6526,18 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create new navigation property to messages for users
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: users_CreateMessages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6219,12 +6563,14 @@ paths:
       tags:
         - users.message
       summary: Get messages from users
+      description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_GetMessages
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6232,6 +6578,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6340,6 +6687,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6347,6 +6695,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6373,6 +6722,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6380,12 +6730,14 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6399,12 +6751,16 @@ paths:
       tags:
         - users.message
       summary: Get media content for the navigation property messages from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: users_GetMessagesContent
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6412,6 +6768,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6436,6 +6793,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6443,6 +6801,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6464,13 +6823,18 @@ paths:
     get:
       tags:
         - users.message
-      summary: Get attachments from users
+      summary: List attachments
+      description: Retrieve a list of attachment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
       operationId: users.messages_ListAttachments
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6478,6 +6842,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6549,13 +6914,18 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create new navigation property to attachments for users
+      summary: Add attachment
+      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can \nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: users.messages_CreateAttachments
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6563,6 +6933,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6588,12 +6959,14 @@ paths:
       tags:
         - users.message
       summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_GetAttachments
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6601,6 +6974,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6608,6 +6982,7 @@ paths:
           in: path
           description: 'key: id of attachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attachment
@@ -6650,46 +7025,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.message
-      summary: Update the navigation property attachments in users
-      operationId: users.messages_UpdateAttachments
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.attachment'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.message
@@ -6700,6 +7035,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6707,6 +7043,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6714,12 +7051,14 @@ paths:
           in: path
           description: 'key: id of attachment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: attachment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6733,12 +7072,14 @@ paths:
       tags:
         - users.message
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_ListExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6746,6 +7087,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6802,13 +7144,18 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create new navigation property to extensions for users
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: users.messages_CreateExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6816,6 +7163,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6841,12 +7189,14 @@ paths:
       tags:
         - users.message
       summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_GetExtensions
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6854,6 +7204,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6861,6 +7212,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -6908,6 +7260,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6915,6 +7268,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6922,6 +7276,7 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
@@ -6948,6 +7303,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6955,6 +7311,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -6962,12 +7319,14 @@ paths:
           in: path
           description: 'key: id of extension'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -6981,12 +7340,14 @@ paths:
       tags:
         - users.message
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -6994,6 +7355,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -7061,6 +7423,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7068,6 +7431,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -7093,12 +7457,14 @@ paths:
       tags:
         - users.message
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7106,6 +7472,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -7113,6 +7480,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -7161,6 +7529,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7168,6 +7537,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -7175,6 +7545,7 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
@@ -7201,6 +7572,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7208,6 +7580,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -7215,12 +7588,14 @@ paths:
           in: path
           description: 'key: id of multiValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7234,12 +7609,14 @@ paths:
       tags:
         - users.message
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7247,6 +7624,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -7314,6 +7692,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7321,6 +7700,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -7346,12 +7726,14 @@ paths:
       tags:
         - users.message
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7359,6 +7741,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -7366,6 +7749,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -7414,6 +7798,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7421,6 +7806,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -7428,6 +7814,7 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
@@ -7454,6 +7841,7 @@ paths:
           in: path
           description: 'key: id of user'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: user
@@ -7461,6 +7849,7 @@ paths:
           in: path
           description: 'key: id of message'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: message
@@ -7468,12 +7857,14 @@ paths:
           in: path
           description: 'key: id of singleValueLegacyExtendedProperty'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -7495,6 +7886,7 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
               description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.inferenceClassificationOverride:
@@ -7553,26 +7945,31 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
               description: The collection of child folders in the mailFolder.
+              readOnly: true
             messageRules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
               description: The collection of rules that apply to the user's Inbox folder.
+              readOnly: true
             messages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.message'
               description: The collection of messages in the mailFolder.
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.messageRule:
@@ -7627,7 +8024,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyPreview:
               type: string
-              description: 'The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.'
+              description: The first 255 characters of the message body. It is in text format.
               nullable: true
             ccRecipients:
               type: array
@@ -7710,21 +8107,25 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
               description: The fileAttachment and itemAttachment attachments for the message.
+              readOnly: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for the message. Nullable.
+              readOnly: true
             multiValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
               description: The collection of multi-value extended properties defined for the message. Nullable.
+              readOnly: true
             singleValueExtendedProperties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the message. Nullable.
+              readOnly: true
           additionalProperties:
             type: object
     microsoft.graph.attachment:
@@ -7748,7 +8149,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The attachment's file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -7797,6 +8198,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.inferenceClassificationType:
@@ -7811,11 +8213,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of an entity instance.
+          description: The email address of the person or entity.
           nullable: true
         name:
           type: string
-          description: The display name of an entity instance.
+          description: The display name of the person or entity.
           nullable: true
       additionalProperties:
         type: object
@@ -7865,7 +8267,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email address to which a message should be redirected.
+          description: The email addresses to which a message should be redirected.
         stopProcessingRules:
           type: boolean
           description: Indicates whether subsequent rules should be evaluated.
@@ -8110,6 +8512,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.mailFolderCollectionResponse:
@@ -8122,6 +8525,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.mailFolder'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.messageRuleCollectionResponse:
@@ -8134,6 +8538,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.messageRule'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.messageCollectionResponse:
@@ -8146,6 +8551,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.message'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.attachmentCollectionResponse:
@@ -8158,6 +8564,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.attachment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.extensionCollectionResponse:
@@ -8170,6 +8577,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.extension'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
@@ -8182,6 +8590,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse:
@@ -8194,6 +8603,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.messageActionFlag:
@@ -8251,10 +8661,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -8366,6 +8776,8 @@ components:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -8374,6 +8786,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -8381,18 +8795,24 @@ components:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
     search:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
   securitySchemes:

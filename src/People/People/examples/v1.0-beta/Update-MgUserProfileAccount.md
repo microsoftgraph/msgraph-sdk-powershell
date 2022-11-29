@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Update-MgUserProfileAccount Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.People
+$params = @{
+	CountryCode = "NO"
+}
+# A UPN can also be used as -UserId.
+Update-MgUserProfileAccount -UserId $userId -UserAccountInformationId $userAccountInformationId -BodyParameter $params
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example shows how to use the Update-MgUserProfileAccount Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupTeamPrimaryChannelMessage
 
 ## SYNOPSIS
-Get messages from groups
+A collection of all the messages in the channel.
+A navigation property.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgGroupTeamPrimaryChannelMessage -InputObject <ITeamsIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get messages from groups
+A collection of all the messages in the channel.
+A navigation property.
+Nullable.
 
 ## EXAMPLES
 

@@ -119,7 +119,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -298,34 +299,34 @@ To create the parameters described below, construct a hash table containing the 
 
 BITLOCKER <IMicrosoftGraphBitlocker>: bitlocker
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
-    - `[Id <String>]`: 
-    - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
-    - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
-    - `[Key <String>]`: The BitLocker recovery key.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+    - `[DeviceId <String>]`: Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
+    - `[Key <String>]`: The BitLocker recovery key. Returned only on $select. Not nullable.
     - `[VolumeType <String>]`: volumeType
 
 BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Bitlocker <IMicrosoftGraphBitlocker>]`: bitlocker
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
-      - `[Id <String>]`: 
-      - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
-      - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
-      - `[Key <String>]`: The BitLocker recovery key.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+      - `[DeviceId <String>]`: Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
+      - `[Key <String>]`: The BitLocker recovery key. Returned only on $select. Not nullable.
       - `[VolumeType <String>]`: volumeType
   - `[DataLossPreventionPolicies <IMicrosoftGraphDataLossPreventionPolicy[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: 
   - `[Policy <IMicrosoftGraphInformationProtectionPolicy>]`: informationProtectionPolicy
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Labels <IMicrosoftGraphInformationProtectionLabel[]>]`: 
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Color <String>]`: The color that the UI should display for the label, if configured.
       - `[Description <String>]`: The admin-defined description for the label.
       - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
@@ -343,7 +344,7 @@ BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
       - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
       - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
   - `[SensitivityLabels <IMicrosoftGraphSensitivityLabel[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ApplicableTo <String>]`: sensitivityLabelTarget
     - `[ApplicationMode <String>]`: applicationMode
     - `[AssignedPolicies <IMicrosoftGraphLabelPolicy[]>]`: 
@@ -365,13 +366,13 @@ BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
     - `[ToolTip <String>]`: 
   - `[SensitivityPolicySettings <IMicrosoftGraphSensitivityPolicySettings>]`: sensitivityPolicySettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ApplicableTo <String>]`: sensitivityLabelTarget
     - `[DowngradeSensitivityRequiresJustification <Boolean?>]`: 
     - `[HelpWebUrl <String>]`: 
     - `[IsMandatory <Boolean?>]`: 
   - `[ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Category <String>]`: threatCategory
     - `[ContentType <String>]`: threatAssessmentContentType
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -386,23 +387,27 @@ BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
     - `[ExpectedAssessment <String>]`: threatExpectedAssessment
     - `[RequestSource <String>]`: threatAssessmentRequestSource
     - `[Results <IMicrosoftGraphThreatAssessmentResult[]>]`: A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Message <String>]`: The result message for each threat assessment.
       - `[ResultType <String>]`: threatAssessmentResultType
     - `[Status <String>]`: threatAssessmentStatus
 
 DATALOSSPREVENTIONPOLICIES <IMicrosoftGraphDataLossPreventionPolicy[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Name <String>]`: 
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
   - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
   - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
+  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
   - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
   - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
@@ -411,6 +416,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[CommandId <String>]`: key: id of command
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
   - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
@@ -470,9 +476,9 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
 
 POLICY <IMicrosoftGraphInformationProtectionPolicy>: informationProtectionPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Labels <IMicrosoftGraphInformationProtectionLabel[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Color <String>]`: The color that the UI should display for the label, if configured.
     - `[Description <String>]`: The admin-defined description for the label.
     - `[IsActive <Boolean?>]`: Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
@@ -491,7 +497,7 @@ POLICY <IMicrosoftGraphInformationProtectionPolicy>: informationProtectionPolicy
     - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
 
 SENSITIVITYLABELS <IMicrosoftGraphSensitivityLabel[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ApplicableTo <String>]`: sensitivityLabelTarget
   - `[ApplicationMode <String>]`: applicationMode
   - `[AssignedPolicies <IMicrosoftGraphLabelPolicy[]>]`: 
@@ -514,14 +520,14 @@ SENSITIVITYLABELS <IMicrosoftGraphSensitivityLabel[]>: .
 
 SENSITIVITYPOLICYSETTINGS <IMicrosoftGraphSensitivityPolicySettings>: sensitivityPolicySettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ApplicableTo <String>]`: sensitivityLabelTarget
   - `[DowngradeSensitivityRequiresJustification <Boolean?>]`: 
   - `[HelpWebUrl <String>]`: 
   - `[IsMandatory <Boolean?>]`: 
 
 THREATASSESSMENTREQUESTS <IMicrosoftGraphThreatAssessmentRequest[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Category <String>]`: threatCategory
   - `[ContentType <String>]`: threatAssessmentContentType
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -536,7 +542,7 @@ THREATASSESSMENTREQUESTS <IMicrosoftGraphThreatAssessmentRequest[]>: .
   - `[ExpectedAssessment <String>]`: threatExpectedAssessment
   - `[RequestSource <String>]`: threatAssessmentRequestSource
   - `[Results <IMicrosoftGraphThreatAssessmentResult[]>]`: A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Message <String>]`: The result message for each threat assessment.
     - `[ResultType <String>]`: threatAssessmentResultType

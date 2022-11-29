@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgExternalConnectionSchema
 
 ## SYNOPSIS
-Get schema from external
+Retrieve the properties of a schema for an externalConnection.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgExternalConnectionSchema -InputObject <ISearchIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Get schema from external
+Retrieve the properties of a schema for an externalConnection.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgExternalConnectionSchema Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Search
+Get-MgExternalConnectionSchema -ExternalConnectionId $externalConnectionId
+```
+
+This example shows how to use the Get-MgExternalConnectionSchema Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

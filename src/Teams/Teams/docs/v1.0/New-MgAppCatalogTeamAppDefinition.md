@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgAppCatalogTeamAppDefinition
 
 ## SYNOPSIS
-Create new navigation property to appDefinitions for appCatalogs
+Update an app previously published to the Microsoft Teams app catalog.
+To update an app, the **distributionMethod** property for the app must be set to `organization`.
+This API specifically updates an app published to your organization's app catalog (the tenant app catalog).
 
 ## SYNTAX
 
@@ -42,7 +44,9 @@ New-MgAppCatalogTeamAppDefinition -InputObject <ITeamsIdentity> [-TeamsAppId <St
 ```
 
 ## DESCRIPTION
-Create new navigation property to appDefinitions for appCatalogs
+Update an app previously published to the Microsoft Teams app catalog.
+To update an app, the **distributionMethod** property for the app must be set to `organization`.
+This API specifically updates an app published to your organization's app catalog (the tenant app catalog).
 
 ## EXAMPLES
 
@@ -141,7 +145,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -316,10 +321,10 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTeamsAppDefinition>: teamsAppDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity

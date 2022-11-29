@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrintPrinterTaskTrigger
 
 ## SYNOPSIS
-Get taskTriggers from print
+A list of task triggers that are associated with the printer.
 
 ## SYNTAX
 
@@ -32,9 +32,27 @@ Get-MgPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get taskTriggers from print
+A list of task triggers that are associated with the printer.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPrintPrinterTaskTrigger Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintPrinterTaskTrigger -PrinterId $printerId -PrintTaskTriggerId $printTaskTriggerId
+```
+
+This example shows how to use the Get-MgPrintPrinterTaskTrigger Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgPrintPrinterTaskTrigger Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+Get-MgPrintPrinterTaskTrigger -PrinterId $printerId
+```
+
+This example shows how to use the Get-MgPrintPrinterTaskTrigger Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

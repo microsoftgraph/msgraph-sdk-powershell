@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
 
 ## SYNOPSIS
-Invoke action assignResourceAccountToDevice
+Assigns resource account to Autopilot devices.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Set-MgDeviceManagementWindowAutopilotDeviceIdentityResourceAccountToDevice
 ```
 
 ## DESCRIPTION
-Invoke action assignResourceAccountToDevice
+Assigns resource account to Autopilot devices.
 
 ## EXAMPLES
 
@@ -233,6 +233,7 @@ BODYPARAMETER <IPaths1G076VfDevicemanagementWindowsautopilotdeviceidentitiesWind
   - `[UserPrincipalName <String>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
+  - `[AlertRecordId <String>]`: key: id of alertRecord
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
   - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest

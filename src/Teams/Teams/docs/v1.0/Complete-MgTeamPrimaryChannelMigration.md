@@ -8,7 +8,10 @@ schema: 2.0.0
 # Complete-MgTeamPrimaryChannelMigration
 
 ## SYNOPSIS
-Invoke action completeMigration
+Complete the message migration process by removing `migration mode` from a channel in a team.
+`Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process.
+After a **completeMigration** request is made, you cannot import additional messages into the team.
+You can add members to the team after the request returns a successful response.
 
 ## SYNTAX
 
@@ -24,7 +27,10 @@ Complete-MgTeamPrimaryChannelMigration -InputObject <ITeamsIdentity> [-PassThru]
 ```
 
 ## DESCRIPTION
-Invoke action completeMigration
+Complete the message migration process by removing `migration mode` from a channel in a team.
+`Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process.
+After a **completeMigration** request is made, you cannot import additional messages into the team.
+You can add members to the team after the request returns a successful response.
 
 ## EXAMPLES
 

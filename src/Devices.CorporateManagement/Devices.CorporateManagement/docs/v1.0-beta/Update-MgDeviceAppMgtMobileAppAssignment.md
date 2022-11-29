@@ -17,20 +17,20 @@ Update the navigation property assignments in deviceAppManagement
 Update-MgDeviceAppMgtMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Intent <InstallIntent>] [-Settings <Hashtable>]
  [-Source <DeviceAndAppManagementAssignmentSource>] [-SourceId <String>]
- [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceAppMgtMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- -BodyParameter <IMicrosoftGraphMobileAppAssignment> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMobileAppAssignment1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceAppMgtMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphMobileAppAssignment> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMobileAppAssignment1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -38,7 +38,7 @@ Update-MgDeviceAppMgtMobileAppAssignment -InputObject <IDevicesCorporateManageme
 Update-MgDeviceAppMgtMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Intent <InstallIntent>] [-Settings <Hashtable>]
  [-Source <DeviceAndAppManagementAssignmentSource>] [-SourceId <String>]
- [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ A class containing the properties used for Group Assignment of a Mobile App.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -81,7 +81,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -221,7 +222,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -270,7 +271,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
 
 ## OUTPUTS
 
@@ -287,15 +288,15 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphMobileAppAssignment>: A class containing the properties used for Group Assignment of a Mobile App.
+BODYPARAMETER <IMicrosoftGraphMobileAppAssignment1>: A class containing the properties used for Group Assignment of a Mobile App.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Intent <InstallIntent?>]`: Possible values for the install intent chosen by the admin.
   - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: The identifier of the source of the assignment.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
     - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
@@ -369,7 +370,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
   - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
-TARGET <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>: Base type for assignment targets.
+TARGET <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>: Base type for assignment targets.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
   - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.

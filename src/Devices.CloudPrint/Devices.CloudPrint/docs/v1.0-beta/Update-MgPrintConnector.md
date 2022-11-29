@@ -46,6 +46,26 @@ Update the navigation property connectors in print
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgPrintConnector Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Devices.CloudPrint
+$params = @{
+	DisplayName = "ConnectorName"
+	FullyQualifiedDomainName = "CONNECTOR-MACHINE"
+	OperatingSystem = "Microsoft Windows 10 Enterprise Insider Preview | 10.0.19555"
+	AppVersion = "0.19.7338.23496"
+	Location = @{
+		Latitude = 1.1
+		Longitude = 2.2
+		AltitudeInMeters = 3
+	}
+}
+Update-MgPrintConnector -PrintConnectorId $printConnectorId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgPrintConnector Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -141,7 +161,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -317,7 +338,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPrintConnector>: printConnector
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppVersion <String>]`: The connector's version.
   - `[DeviceHealth <IMicrosoftGraphDeviceHealth>]`: deviceHealth
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

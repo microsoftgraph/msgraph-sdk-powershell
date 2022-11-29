@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecuritySubjectRightsRequestNote
 
 ## SYNOPSIS
-Get notes from security
+List of notes associated with the request.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecuritySubjectRightsRequestNote -InputObject <ISecurityIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get notes from security
+List of notes associated with the request.
 
 ## EXAMPLES
 

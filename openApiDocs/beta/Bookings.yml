@@ -11,6 +11,10 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: List bookingBusinesses
+      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the **id** and **displayName** of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its **id** in a GET operation. You can also query for Bookings businesses by specifying a string in a `query` parameter to do substring matching among the businesses of a tenant. See an example below.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
       operationId: bookingBusinesses.bookingBusiness_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
@@ -116,6 +120,10 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Create bookingBusiness
+      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the **bookingBusiness**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-bookingbusinesses?view=graph-rest-1.0
       operationId: bookingBusinesses.bookingBusiness_CreateBookingBusiness
       requestBody:
         description: New entity
@@ -139,12 +147,17 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Get bookingBusiness
+      description: Get the properties and relationships of a bookingBusiness object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-get?view=graph-rest-1.0
       operationId: bookingBusinesses.bookingBusiness_GetBookingBusiness
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -241,12 +254,17 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Update bookingbusiness
+      description: Update the properties of a bookingBusiness object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-update?view=graph-rest-1.0
       operationId: bookingBusinesses.bookingBusiness_UpdateBookingBusiness
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -267,18 +285,24 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Delete bookingBusiness
+      description: Delete a bookingBusiness object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
       operationId: bookingBusinesses.bookingBusiness_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -291,13 +315,18 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Get appointments from bookingBusinesses
+      summary: List appointments
+      description: Get a list of bookingAppointment objects for the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
       operationId: bookingBusinesses_ListAppointments
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -463,13 +492,18 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Create new navigation property to appointments for bookingBusinesses
+      summary: Create bookingAppointment
+      description: Create a new bookingAppointment for the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
       operationId: bookingBusinesses_CreateAppointments
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -495,12 +529,14 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get appointments from bookingBusinesses
+      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetAppointments
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -508,6 +544,7 @@ paths:
           in: path
           description: 'key: id of bookingAppointment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingAppointment
@@ -594,6 +631,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -601,6 +639,7 @@ paths:
           in: path
           description: 'key: id of bookingAppointment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingAppointment
@@ -627,6 +666,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -634,12 +674,14 @@ paths:
           in: path
           description: 'key: id of bookingAppointment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingAppointment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -653,12 +695,17 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
+      description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: bookingBusinesses.appointments_cancel
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -666,6 +713,7 @@ paths:
           in: path
           description: 'key: id of bookingAppointment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingAppointment
@@ -693,12 +741,17 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
       operationId: bookingBusinesses_ListCalendarView
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -706,12 +759,16 @@ paths:
           in: query
           description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
           required: true
+          style: form
+          explode: false
           schema:
             type: string
         - name: end
           in: query
           description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
           required: true
+          style: form
+          explode: false
           schema:
             type: string
         - $ref: '#/components/parameters/top'
@@ -883,6 +940,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -908,12 +966,14 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
+      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_GetCalendarView
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -921,6 +981,7 @@ paths:
           in: path
           description: 'key: id of bookingAppointment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingAppointment
@@ -928,12 +989,16 @@ paths:
           in: query
           description: 'The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00'
           required: true
+          style: form
+          explode: false
           schema:
             type: string
         - name: end
           in: query
           description: 'The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
           required: true
+          style: form
+          explode: false
           schema:
             type: string
         - name: $select
@@ -1019,6 +1084,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1026,6 +1092,7 @@ paths:
           in: path
           description: 'key: id of bookingAppointment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingAppointment
@@ -1052,6 +1119,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1059,12 +1127,14 @@ paths:
           in: path
           description: 'key: id of bookingAppointment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingAppointment
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1078,12 +1148,17 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
+      description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: bookingBusinesses.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1091,6 +1166,7 @@ paths:
           in: path
           description: 'key: id of bookingAppointment'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingAppointment
@@ -1117,13 +1193,18 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Get customers from bookingBusinesses
+      summary: List customers
+      description: Get a list of bookingCustomer objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
       operationId: bookingBusinesses_ListCustomers
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1193,13 +1274,18 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Create new navigation property to customers for bookingBusinesses
+      summary: Create bookingCustomer
+      description: Create a new bookingCustomer object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
       operationId: bookingBusinesses_CreateCustomers
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1225,12 +1311,14 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get customers from bookingBusinesses
+      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetCustomers
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1238,6 +1326,7 @@ paths:
           in: path
           description: 'key: id of bookingCustomer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingCustomer
@@ -1289,6 +1378,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1296,6 +1386,7 @@ paths:
           in: path
           description: 'key: id of bookingCustomer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingCustomer
@@ -1322,6 +1413,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1329,12 +1421,14 @@ paths:
           in: path
           description: 'key: id of bookingCustomer'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingCustomer
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1347,13 +1441,18 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: Get customQuestions from bookingBusinesses
+      summary: List customQuestions
+      description: Get the bookingCustomQuestion resources associated with a bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
       operationId: bookingBusinesses_ListCustomQuestions
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1427,6 +1526,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1452,12 +1552,14 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get customQuestions from bookingBusinesses
+      description: All the custom questions of this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetCustomQuestions
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1465,6 +1567,7 @@ paths:
           in: path
           description: 'key: id of bookingCustomQuestion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingCustomQuestion
@@ -1515,6 +1618,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1522,6 +1626,7 @@ paths:
           in: path
           description: 'key: id of bookingCustomQuestion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingCustomQuestion
@@ -1548,6 +1653,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1555,12 +1661,14 @@ paths:
           in: path
           description: 'key: id of bookingCustomQuestion'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingCustomQuestion
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1574,12 +1682,17 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action getStaffAvailability
+      description: Get the availability information of staff members of a Microsoft Bookings calendar.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
       operationId: bookingBusinesses_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1607,29 +1720,39 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of bookingBusiness
                 type: object
                 properties:
                   value:
                     type: array
                     items:
                       $ref: '#/components/schemas/microsoft.graph.staffAvailabilityItem'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
                 additionalProperties:
                   type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish':
     post:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action publish
+      description: 'Make the scheduling page of this business available to external customers. Set the **isPublished** property to true, and **publicUrl** property to the URL of the scheduling page.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
       operationId: bookingBusinesses_publish
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1644,12 +1767,17 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action unpublish
+      description: 'Make the scheduling page of this business not available to external customers. Set the **isPublished** property to false, and **publicUrl** property to null.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
       operationId: bookingBusinesses_unpublish
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1663,13 +1791,18 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingService
-      summary: Get services from bookingBusinesses
+      summary: List services
+      description: Get a list of bookingService objects in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
       operationId: bookingBusinesses_ListServices
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1790,13 +1923,18 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingService
-      summary: Create new navigation property to services for bookingBusinesses
+      summary: Create bookingService
+      description: Create a new bookingService for the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
       operationId: bookingBusinesses_CreateServices
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1822,12 +1960,14 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get services from bookingBusinesses
+      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetServices
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1835,6 +1975,7 @@ paths:
           in: path
           description: 'key: id of bookingService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingService
@@ -1903,6 +2044,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1910,6 +2052,7 @@ paths:
           in: path
           description: 'key: id of bookingService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingService
@@ -1936,6 +2079,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -1943,12 +2087,14 @@ paths:
           in: path
           description: 'key: id of bookingService'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingService
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -1961,13 +2107,18 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Get staffMembers from bookingBusinesses
+      summary: List staffMembers
+      description: Get a list of bookingStaffMember objects in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
       operationId: bookingBusinesses_ListStaffMembers
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -2052,13 +2203,18 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Create new navigation property to staffMembers for bookingBusinesses
+      summary: Create bookingStaffMember
+      description: Create a new staff member in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
       operationId: bookingBusinesses_CreateStaffMembers
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -2084,12 +2240,14 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get staffMembers from bookingBusinesses
+      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_GetStaffMembers
       parameters:
         - name: bookingBusiness-id
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -2097,6 +2255,7 @@ paths:
           in: path
           description: 'key: id of bookingStaffMember'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingStaffMember
@@ -2153,6 +2312,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -2160,6 +2320,7 @@ paths:
           in: path
           description: 'key: id of bookingStaffMember'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingStaffMember
@@ -2186,6 +2347,7 @@ paths:
           in: path
           description: 'key: id of bookingBusiness'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingBusiness
@@ -2193,12 +2355,14 @@ paths:
           in: path
           description: 'key: id of bookingStaffMember'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingStaffMember
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2212,6 +2376,10 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: List bookingCurrencies
+      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
       operationId: bookingCurrencies.bookingCurrency_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2295,12 +2463,17 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Get bookingCurrency
+      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the **id** property, which is the currency code, to specify the currency.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0
       operationId: bookingCurrencies.bookingCurrency_GetBookingCurrency
       parameters:
         - name: bookingCurrency-id
           in: path
           description: 'key: id of bookingCurrency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingCurrency
@@ -2349,6 +2522,7 @@ paths:
           in: path
           description: 'key: id of bookingCurrency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingCurrency
@@ -2375,12 +2549,14 @@ paths:
           in: path
           description: 'key: id of bookingCurrency'
           required: true
+          style: simple
           schema:
             type: string
           x-ms-docs-key-type: bookingCurrency
         - name: If-Match
           in: header
           description: ETag
+          style: simple
           schema:
             type: string
       responses:
@@ -2405,6 +2581,8 @@ paths:
             uniqueItems: true
             type: array
             items:
+              enum:
+                - businessScenarios
               type: string
         - name: $expand
           in: query
@@ -2417,6 +2595,7 @@ paths:
             items:
               enum:
                 - '*'
+                - businessScenarios
               type: string
       responses:
         '200':
@@ -2425,6 +2604,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
+          links:
+            businessScenarios:
+              operationId: solutions.ListBusinessScenarios
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2440,6 +2622,1194 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /solutions/businessScenarios:
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get businessScenarios from solutions
+      operationId: solutions_ListBusinessScenarios
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - displayName
+                - displayName desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - ownerAppIds
+                - ownerAppIds desc
+                - uniqueName
+                - uniqueName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - ownerAppIds
+                - uniqueName
+                - planner
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - planner
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.businessScenarioCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.businessScenario
+      summary: Create new navigation property to businessScenarios for solutions
+      operationId: solutions_CreateBusinessScenarios
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get businessScenarios from solutions
+      operationId: solutions_GetBusinessScenarios
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - ownerAppIds
+                - uniqueName
+                - planner
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - planner
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenario'
+          links:
+            planner:
+              operationId: solutions.BusinessScenarios.GetPlanner
+              parameters:
+                businessScenario-id: $request.path.businessScenario-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property businessScenarios in solutions
+      operationId: solutions_UpdateBusinessScenarios
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property businessScenarios for solutions
+      operationId: solutions_DeleteBusinessScenarios
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get planner from solutions
+      operationId: solutions.businessScenarios_GetPlanner
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - planConfiguration
+                - taskConfiguration
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - planConfiguration
+                - taskConfiguration
+                - tasks
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
+          links:
+            planConfiguration:
+              operationId: solutions.businessScenarios.Planner.GetPlanConfiguration
+              parameters:
+                businessScenario-id: $request.path.businessScenario-id
+            taskConfiguration:
+              operationId: solutions.businessScenarios.Planner.GetTaskConfiguration
+              parameters:
+                businessScenario-id: $request.path.businessScenario-id
+            tasks:
+              operationId: solutions.businessScenarios.Planner.ListTasks
+              parameters:
+                businessScenario-id: $request.path.businessScenario-id
+            getPlan:
+              operationId: solutions.businessScenarios.businessScenario.planner.getPlan
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property planner in solutions
+      operationId: solutions.businessScenarios_UpdatePlanner
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property planner for solutions
+      operationId: solutions.businessScenarios_DeletePlanner
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/microsoft.graph.getPlan':
+    post:
+      tags:
+        - solutions.Actions
+      summary: Invoke action getPlan
+      operationId: solutions.businessScenarios.planner_getPlan
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                target:
+                  $ref: '#/components/schemas/microsoft.graph.businessScenarioTaskTargetBase'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get planConfiguration from solutions
+      operationId: solutions.businessScenarios.planner_GetPlanConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - buckets
+                - createdBy
+                - createdDateTime
+                - defaultLanguage
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - localizations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - localizations
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
+          links:
+            localizations:
+              operationId: solutions.businessScenarios.planner.PlanConfiguration.ListLocalizations
+              parameters:
+                businessScenario-id: $request.path.businessScenario-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property planConfiguration in solutions
+      operationId: solutions.businessScenarios.planner_UpdatePlanConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property planConfiguration for solutions
+      operationId: solutions.businessScenarios.planner_DeletePlanConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration/localizations':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get localizations from solutions
+      operationId: solutions.businessScenarios.planner.planConfiguration_ListLocalizations
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - buckets
+                - buckets desc
+                - languageTag
+                - languageTag desc
+                - planTitle
+                - planTitle desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - buckets
+                - languageTag
+                - planTitle
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.plannerPlanConfigurationLocalizationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.businessScenario
+      summary: Create new navigation property to localizations for solutions
+      operationId: solutions.businessScenarios.planner.planConfiguration_CreateLocalizations
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration/localizations/{plannerPlanConfigurationLocalization-id}':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get localizations from solutions
+      operationId: solutions.businessScenarios.planner.planConfiguration_GetLocalizations
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: plannerPlanConfigurationLocalization-id
+          in: path
+          description: 'key: id of plannerPlanConfigurationLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlanConfigurationLocalization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - buckets
+                - languageTag
+                - planTitle
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property localizations in solutions
+      operationId: solutions.businessScenarios.planner.planConfiguration_UpdateLocalizations
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: plannerPlanConfigurationLocalization-id
+          in: path
+          description: 'key: id of plannerPlanConfigurationLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlanConfigurationLocalization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property localizations for solutions
+      operationId: solutions.businessScenarios.planner.planConfiguration_DeleteLocalizations
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: plannerPlanConfigurationLocalization-id
+          in: path
+          description: 'key: id of plannerPlanConfigurationLocalization'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlanConfigurationLocalization
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/taskConfiguration':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get taskConfiguration from solutions
+      operationId: solutions.businessScenarios.planner_GetTaskConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - editPolicy
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property taskConfiguration in solutions
+      operationId: solutions.businessScenarios.planner_UpdateTaskConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property taskConfiguration for solutions
+      operationId: solutions.businessScenarios.planner_DeleteTaskConfiguration
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get tasks from solutions
+      operationId: solutions.businessScenarios.planner_ListTasks
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activeChecklistItemCount
+                - activeChecklistItemCount desc
+                - appliedCategories
+                - appliedCategories desc
+                - assigneePriority
+                - assigneePriority desc
+                - assignments
+                - assignments desc
+                - bucketId
+                - bucketId desc
+                - checklistItemCount
+                - checklistItemCount desc
+                - completedBy
+                - completedBy desc
+                - completedDateTime
+                - completedDateTime desc
+                - conversationThreadId
+                - conversationThreadId desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - creationSource
+                - creationSource desc
+                - dueDateTime
+                - dueDateTime desc
+                - hasDescription
+                - hasDescription desc
+                - orderHint
+                - orderHint desc
+                - percentComplete
+                - percentComplete desc
+                - planId
+                - planId desc
+                - previewType
+                - previewType desc
+                - priority
+                - priority desc
+                - referenceCount
+                - referenceCount desc
+                - startDateTime
+                - startDateTime desc
+                - title
+                - title desc
+                - businessScenarioProperties
+                - businessScenarioProperties desc
+                - target
+                - target desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activeChecklistItemCount
+                - appliedCategories
+                - assigneePriority
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
+                - createdDateTime
+                - creationSource
+                - dueDateTime
+                - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
+                - previewType
+                - priority
+                - referenceCount
+                - startDateTime
+                - title
+                - businessScenarioProperties
+                - target
+                - assignedToTaskBoardFormat
+                - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignedToTaskBoardFormat
+                - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.businessScenarioTaskCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.businessScenario
+      summary: Create new navigation property to tasks for solutions
+      operationId: solutions.businessScenarios.planner_CreateTasks
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get tasks from solutions
+      operationId: solutions.businessScenarios.planner_GetTasks
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: 'key: id of businessScenarioTask'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activeChecklistItemCount
+                - appliedCategories
+                - assigneePriority
+                - assignments
+                - bucketId
+                - checklistItemCount
+                - completedBy
+                - completedDateTime
+                - conversationThreadId
+                - createdBy
+                - createdDateTime
+                - creationSource
+                - dueDateTime
+                - hasDescription
+                - orderHint
+                - percentComplete
+                - planId
+                - previewType
+                - priority
+                - referenceCount
+                - startDateTime
+                - title
+                - businessScenarioProperties
+                - target
+                - assignedToTaskBoardFormat
+                - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignedToTaskBoardFormat
+                - bucketTaskBoardFormat
+                - details
+                - progressTaskBoardFormat
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+          links:
+            assignedToTaskBoardFormat:
+              operationId: solutions.businessScenarios.planner.Tasks.GetAssignedToTaskBoardFormat
+              parameters:
+                businessScenario-id: $request.path.businessScenario-id
+                businessScenarioTask-id: $request.path.businessScenarioTask-id
+            bucketTaskBoardFormat:
+              operationId: solutions.businessScenarios.planner.Tasks.GetBucketTaskBoardFormat
+              parameters:
+                businessScenario-id: $request.path.businessScenario-id
+                businessScenarioTask-id: $request.path.businessScenarioTask-id
+            details:
+              operationId: solutions.businessScenarios.planner.Tasks.GetDetails
+              parameters:
+                businessScenario-id: $request.path.businessScenario-id
+                businessScenarioTask-id: $request.path.businessScenarioTask-id
+            progressTaskBoardFormat:
+              operationId: solutions.businessScenarios.planner.Tasks.GetProgressTaskBoardFormat
+              parameters:
+                businessScenario-id: $request.path.businessScenario-id
+                businessScenarioTask-id: $request.path.businessScenarioTask-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property tasks in solutions
+      operationId: solutions.businessScenarios.planner_UpdateTasks
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: 'key: id of businessScenarioTask'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property tasks for solutions
+      operationId: solutions.businessScenarios.planner_DeleteTasks
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: 'key: id of businessScenario'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: 'key: id of businessScenarioTask'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -2477,6 +3847,7 @@ components:
               type: boolean
               description: The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
               nullable: true
+              readOnly: true
             languageTag:
               type: string
               description: The language of the self service booking page
@@ -2489,6 +3860,7 @@ components:
               type: string
               description: 'The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.'
               nullable: true
+              readOnly: true
             schedulingPolicy:
               $ref: '#/components/schemas/microsoft.graph.bookingSchedulingPolicy'
             webSiteUrl:
@@ -2500,31 +3872,37 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
               description: All the appointments of this business. Read-only. Nullable.
+              readOnly: true
             calendarView:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
               description: The set of appointments of this business in a specified date range. Read-only. Nullable.
+              readOnly: true
             customers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
               description: All the customers of this business. Read-only. Nullable.
+              readOnly: true
             customQuestions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
               description: All the custom questions of this business. Read-only. Nullable.
+              readOnly: true
             services:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingService'
               description: All the services offered by this business. Read-only. Nullable.
+              readOnly: true
             staffMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
               description: All the staff members that provide services in this business. Read-only. Nullable.
+              readOnly: true
           additionalProperties:
             type: object
           description: Represents a Microsot Bookings Business.
@@ -2578,6 +3956,7 @@ components:
               type: string
               description: 'The length of the appointment, denoted in ISO8601 format.'
               format: duration
+              readOnly: true
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             filledAttendeesCount:
@@ -2586,6 +3965,7 @@ components:
               type: integer
               description: The current number of customers in the appointment.
               format: int32
+              readOnly: true
             invoiceAmount:
               type: number
               description: The billed amount on the invoice.
@@ -2825,6 +4205,7 @@ components:
               type: string
               description: The URL a customer uses to access the service.
               nullable: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Represents a particular service offered by a booking business.
@@ -2877,8 +4258,155 @@ components:
     microsoft.graph.solutionsRoot:
       title: solutionsRoot
       type: object
+      properties:
+        businessScenarios:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.businessScenario'
+          readOnly: true
       additionalProperties:
         type: object
+    microsoft.graph.businessScenario:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: businessScenario
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            displayName:
+              type: string
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            ownerAppIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            uniqueName:
+              type: string
+              nullable: true
+            planner:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
+          additionalProperties:
+            type: object
+    microsoft.graph.businessScenarioPlanner:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: businessScenarioPlanner
+          type: object
+          properties:
+            planConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
+            taskConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.businessScenarioTaskTargetBase:
+      title: businessScenarioTaskTargetBase
+      type: object
+      properties:
+        taskTargetKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerTaskTargetKind'
+      additionalProperties:
+        type: object
+    microsoft.graph.businessScenarioPlanReference:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: businessScenarioPlanReference
+          type: object
+          properties:
+            title:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerPlanConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerPlanConfiguration
+          type: object
+          properties:
+            buckets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationBucketDefinition'
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            defaultLanguage:
+              type: string
+              nullable: true
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            localizations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+              readOnly: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerPlanConfigurationLocalization:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerPlanConfigurationLocalization
+          type: object
+          properties:
+            buckets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationBucketLocalization'
+            languageTag:
+              type: string
+              nullable: true
+            planTitle:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerTaskConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerTaskConfiguration
+          type: object
+          properties:
+            editPolicy:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskPolicy'
+          additionalProperties:
+            type: object
+    microsoft.graph.businessScenarioTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerTask'
+        - title: businessScenarioTask
+          type: object
+          properties:
+            businessScenarioProperties:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioProperties'
+            target:
+              $ref: '#/components/schemas/microsoft.graph.businessScenarioTaskTargetBase'
+          additionalProperties:
+            type: object
     microsoft.graph.bookingNamedEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2971,6 +4499,7 @@ components:
       properties:
         id:
           type: string
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.location:
@@ -3008,6 +4537,11 @@ components:
       type: object
       additionalProperties:
         type: object
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.bookingInvoiceStatus:
       title: bookingInvoiceStatus
       enum:
@@ -3147,6 +4681,190 @@ components:
         - scheduler
         - teamMember
       type: string
+    microsoft.graph.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskTargetKind:
+      title: plannerTaskTargetKind
+      enum:
+        - group
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerPlanConfigurationBucketDefinition:
+      title: plannerPlanConfigurationBucketDefinition
+      type: object
+      properties:
+        externalBucketId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanConfigurationBucketLocalization:
+      title: plannerPlanConfigurationBucketLocalization
+      type: object
+      properties:
+        externalBucketId:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskPolicy:
+      title: plannerTaskPolicy
+      type: object
+      properties:
+        rules:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerTaskRoleBasedRule'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerTask
+          type: object
+          properties:
+            activeChecklistItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Number of checklist items with value set to false, representing incomplete items.'
+              format: int32
+              nullable: true
+            appliedCategories:
+              $ref: '#/components/schemas/microsoft.graph.plannerAppliedCategories'
+            assigneePriority:
+              type: string
+              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              nullable: true
+            assignments:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
+            bucketId:
+              type: string
+              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+              nullable: true
+            checklistItemCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of checklist items that are present on the task.
+              format: int32
+              nullable: true
+            completedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read-only. Date and time at which the ''percentComplete'' of the task is set to ''100''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            conversationThreadId:
+              type: string
+              description: Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
+            dueDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            hasDescription:
+              type: boolean
+              description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+              nullable: true
+            orderHint:
+              type: string
+              description: Hint used to order items of this type in a list view. The format is defined as outlined here.
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Percentage of task completion. When set to 100, the task is considered completed.'
+              format: int32
+              nullable: true
+            planId:
+              type: string
+              description: Plan ID to which the task belongs.
+              nullable: true
+            previewType:
+              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as ''urgent'', 2 and 3 and 4 as ''important'', 5, 6, and 7 as ''medium'', and 8, 9, and 10 as ''low''.  Currently, Planner sets the value 1 for ''urgent'', 3 for ''important'', 5 for ''medium'', and 9 for ''low''.'
+              format: int32
+              nullable: true
+            referenceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of external references that exist on the task.
+              format: int32
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            title:
+              type: string
+              description: Title of the task.
+            assignedToTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+            bucketTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+            details:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+            progressTaskBoardFormat:
+              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+          additionalProperties:
+            type: object
+    microsoft.graph.businessScenarioProperties:
+      title: businessScenarioProperties
+      type: object
+      properties:
+        externalBucketId:
+          type: string
+          nullable: true
+        externalContextId:
+          type: string
+          nullable: true
+        externalObjectId:
+          type: string
+          nullable: true
+        externalObjectVersion:
+          type: string
+          nullable: true
+        webUrl:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.bookingBusinessCollectionResponse:
       title: Collection of bookingBusiness
       type: object
@@ -3157,6 +4875,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -3178,6 +4897,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingCustomerCollectionResponse:
@@ -3190,6 +4910,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingCustomQuestionCollectionResponse:
@@ -3202,6 +4923,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingServiceCollectionResponse:
@@ -3214,6 +4936,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingService'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingStaffMemberCollectionResponse:
@@ -3226,6 +4949,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
         '@odata.nextLink':
           type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.bookingCurrencyCollectionResponse:
@@ -3238,6 +4962,46 @@ components:
             $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         '@odata.nextLink':
           type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.businessScenarioCollectionResponse:
+      title: Collection of businessScenario
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.businessScenario'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanConfigurationLocalizationCollectionResponse:
+      title: Collection of plannerPlanConfigurationLocalization
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.businessScenarioTaskCollectionResponse:
+      title: Collection of businessScenarioTask
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
+        '@odata.nextLink':
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.physicalAddressType:
@@ -3359,6 +5123,127 @@ components:
         - outOfOffice
         - unknownFutureValue
       type: string
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name of the identity. This property is read-only.
+          nullable: true
+        id:
+          type: string
+          description: The identifier of the identity. This property is read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskRoleBasedRule:
+      title: plannerTaskRoleBasedRule
+      type: object
+      properties:
+        defaultRule:
+          type: string
+          nullable: true
+        propertyRule:
+          $ref: '#/components/schemas/microsoft.graph.plannerTaskPropertyRule'
+        role:
+          $ref: '#/components/schemas/microsoft.graph.plannerTaskConfigurationRoleBase'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerDelta:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerDelta
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerAppliedCategories:
+      title: plannerAppliedCategories
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerAssignments:
+      title: plannerAssignments
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskCreation:
+      title: plannerTaskCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
+        teamsPublicationInfo:
+          $ref: '#/components/schemas/microsoft.graph.plannerTeamsPublicationInfo'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPreviewType:
+      title: plannerPreviewType
+      enum:
+        - automatic
+        - noPreview
+        - checklist
+        - description
+        - reference
+      type: string
+    microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerAssignedToTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHintsByAssignee:
+              $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
+            unassignedOrderHint:
+              type: string
+              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerBucketTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerBucketTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHint:
+              type: string
+              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerTaskDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerTaskDetails
+          type: object
+          properties:
+            checklist:
+              $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
+            description:
+              type: string
+              description: Description of the task.
+              nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            previewType:
+              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
+            references:
+              $ref: '#/components/schemas/microsoft.graph.plannerExternalReferences'
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerProgressTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerProgressTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHint:
+              type: string
+              description: 'Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -3378,6 +5263,145 @@ components:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskPropertyRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerPropertyRule'
+        - title: plannerTaskPropertyRule
+          type: object
+          properties:
+            appliedCategories:
+              $ref: '#/components/schemas/microsoft.graph.plannerFieldRules'
+            assignments:
+              $ref: '#/components/schemas/microsoft.graph.plannerFieldRules'
+            checkLists:
+              $ref: '#/components/schemas/microsoft.graph.plannerFieldRules'
+            delete:
+              type: array
+              items:
+                type: string
+                nullable: true
+            dueDate:
+              type: array
+              items:
+                type: string
+                nullable: true
+            move:
+              type: array
+              items:
+                type: string
+                nullable: true
+            notes:
+              type: array
+              items:
+                type: string
+                nullable: true
+            order:
+              type: array
+              items:
+                type: string
+                nullable: true
+            percentComplete:
+              type: array
+              items:
+                type: string
+                nullable: true
+            previewType:
+              type: array
+              items:
+                type: string
+                nullable: true
+            priority:
+              type: array
+              items:
+                type: string
+                nullable: true
+            references:
+              $ref: '#/components/schemas/microsoft.graph.plannerFieldRules'
+            startDate:
+              type: array
+              items:
+                type: string
+                nullable: true
+            title:
+              type: array
+              items:
+                type: string
+                nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerTaskConfigurationRoleBase:
+      title: plannerTaskConfigurationRoleBase
+      type: object
+      properties:
+        roleKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerUserRoleKind'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerCreationSourceKind:
+      title: plannerCreationSourceKind
+      enum:
+        - none
+        - external
+        - publication
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerTeamsPublicationInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
+        - title: plannerTeamsPublicationInfo
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when this task was last modified by the publication process. Read-only.
+              format: date-time
+              nullable: true
+            publicationId:
+              type: string
+              description: The identifier of the publication. Read-only.
+              nullable: true
+            publishedToPlanId:
+              type: string
+              description: The identifier of the plannerPlan this task was originally placed in. Read-only.
+              nullable: true
+            publishingTeamId:
+              type: string
+              description: The identifier of the team that initiated the publication process. Read-only.
+              nullable: true
+            publishingTeamName:
+              type: string
+              description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerOrderHintsByAssignee:
+      title: plannerOrderHintsByAssignee
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerChecklistItems:
+      title: plannerChecklistItems
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerExternalReferences:
+      title: plannerExternalReferences
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ErrorDetails:
@@ -3400,6 +5424,63 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.plannerPropertyRule:
+      title: plannerPropertyRule
+      type: object
+      properties:
+        ruleKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerRuleKind'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerFieldRules:
+      title: plannerFieldRules
+      type: object
+      properties:
+        defaultRules:
+          type: array
+          items:
+            type: string
+            nullable: true
+        overrides:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.plannerRuleOverride'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerUserRoleKind:
+      title: plannerUserRoleKind
+      enum:
+        - relationship
+        - unknownFutureValue
+      type: string
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
+    microsoft.graph.plannerRuleKind:
+      title: plannerRuleKind
+      enum:
+        - taskRule
+        - bucketRule
+        - planRule
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerRuleOverride:
+      title: plannerRuleOverride
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        rules:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
   responses:
     microsoft.graph.bookingBusinessCollectionResponse:
       description: Retrieved collection
@@ -3449,11 +5530,31 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.bookingCurrencyCollectionResponse'
+    microsoft.graph.businessScenarioCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.businessScenarioCollectionResponse'
+    microsoft.graph.plannerPlanConfigurationLocalizationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalizationCollectionResponse'
+    microsoft.graph.businessScenarioTaskCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.businessScenarioTaskCollectionResponse'
   parameters:
     top:
       name: $top
       in: query
       description: Show only the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -3462,6 +5563,8 @@ components:
       name: $skip
       in: query
       description: Skip the first n items
+      style: form
+      explode: false
       schema:
         minimum: 0
         type: integer
@@ -3469,18 +5572,24 @@ components:
       name: $search
       in: query
       description: Search items by search phrases
+      style: form
+      explode: false
       schema:
         type: string
     filter:
       name: $filter
       in: query
       description: Filter items by property values
+      style: form
+      explode: false
       schema:
         type: string
     count:
       name: $count
       in: query
       description: Include count of items
+      style: form
+      explode: false
       schema:
         type: boolean
   securitySchemes:

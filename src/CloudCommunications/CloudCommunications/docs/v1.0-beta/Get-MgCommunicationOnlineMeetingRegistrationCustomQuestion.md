@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion
 
 ## SYNOPSIS
-Get customQuestions from communications
+Custom registration questions.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudC
 ```
 
 ## DESCRIPTION
-Get customQuestions from communications
+Custom registration questions.
 
 ## EXAMPLES
 

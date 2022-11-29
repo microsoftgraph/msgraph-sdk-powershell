@@ -8,7 +8,7 @@ schema: 2.0.0
 # Copy-MgUserDriveItem
 
 ## SYNOPSIS
-Invoke action copy
+Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Copy-MgUserDriveItem -InputObject <IUsersActionsIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Invoke action copy
+Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ## EXAMPLES
 

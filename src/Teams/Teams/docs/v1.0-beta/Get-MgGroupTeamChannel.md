@@ -8,21 +8,15 @@ schema: 2.0.0
 # Get-MgGroupTeamChannel
 
 ## SYNOPSIS
-Get allChannels from groups
+The collection of channels and messages associated with the team.
 
 ## SYNTAX
 
-### List (Default)
+### List1 (Default)
 ```
 Get-MgGroupTeamChannel -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-MgGroupTeamChannel -ChannelId <String> -GroupId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -31,27 +25,14 @@ Get-MgGroupTeamChannel -ChannelId <String> -GroupId <String> [-ExpandProperty <S
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
-```
-Get-MgGroupTeamChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
-```
-
 ### GetViaIdentity1
 ```
 Get-MgGroupTeamChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### List1
-```
-Get-MgGroupTeamChannel -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Get allChannels from groups
+The collection of channels and messages associated with the team.
 
 ## EXAMPLES
 
@@ -62,7 +43,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List1
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -77,7 +58,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -93,7 +74,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List1
 Aliases: CV
 
 Required: False
@@ -123,7 +104,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -138,7 +119,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List, List1
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -154,7 +135,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -169,7 +150,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -199,7 +180,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -214,7 +195,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -229,7 +210,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List1
+Parameter Sets: List1
 Aliases: OrderBy
 
 Required: False
@@ -244,7 +225,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List1
 Aliases: Limit
 
 Required: False

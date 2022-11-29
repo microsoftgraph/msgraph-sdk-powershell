@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityAction
 
 ## SYNOPSIS
-Create new navigation property to securityActions for security
+Create a new securityAction object.
 
 ## SYNTAX
 
@@ -28,9 +28,32 @@ New-MgSecurityAction -BodyParameter <IMicrosoftGraphSecurityAction> [-Confirm] [
 ```
 
 ## DESCRIPTION
-Create new navigation property to securityActions for security
+Create a new securityAction object.
 
 ## EXAMPLES
+
+### Example 1: Using the New-MgSecurityAction Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+$params = @{
+	Name = "BlockIp"
+	ActionReason = "Test"
+	Parameters = @(
+		@{
+			Name = "IP"
+			Value = "1.2.3.4"
+		}
+	)
+	VendorInformation = @{
+		Provider = "Windows Defender ATP"
+		Vendor = "Microsoft"
+	}
+}
+New-MgSecurityAction -BodyParameter $params
+```
+
+This example shows how to use the New-MgSecurityAction Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -178,7 +201,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -357,7 +381,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSecurityAction>: securityAction
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActionReason <String>]`: Reason for invoking this action.
   - `[AppId <String>]`: The Application ID of the calling application that submitted (POST) the action. The appId should be extracted from the auth token and not entered manually by the calling application.
   - `[AzureTenantId <String>]`: Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.

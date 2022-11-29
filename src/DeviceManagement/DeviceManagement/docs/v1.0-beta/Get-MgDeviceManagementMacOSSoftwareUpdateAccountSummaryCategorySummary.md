@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummary
 
 ## SYNOPSIS
-Get categorySummaries from deviceManagement
+Summary of the updates by category.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgDeviceManagementMacOSSoftwareUpdateAccountSummaryCategorySummary
 ```
 
 ## DESCRIPTION
-Get categorySummaries from deviceManagement
+Summary of the updates by category.
 
 ## EXAMPLES
 
@@ -345,6 +345,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

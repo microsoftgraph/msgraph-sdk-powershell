@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgShareListItemVersion
 
 ## SYNOPSIS
-Get versions from shares
+The list of previous versions of the list item.
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Get-MgShareListItemVersion -ListItemId <String> -SharedDriveItemId <String> [-Ex
 ```
 
 ## DESCRIPTION
-Get versions from shares
+The list of previous versions of the list item.
 
 ## EXAMPLES
 

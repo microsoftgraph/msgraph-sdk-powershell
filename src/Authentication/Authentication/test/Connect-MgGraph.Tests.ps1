@@ -18,7 +18,7 @@ Describe 'Connect-MgGraph ParameterSets' {
     }
     it 'Should have three ParameterSets' {
         $ConnectMgGraphCommand | Should -Not -BeNullOrEmpty
-        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 4
+        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 6
     }
     It 'Should have UserParameterSet' {
         $UserParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'UserParameterSet'
@@ -28,13 +28,29 @@ Describe 'Connect-MgGraph ParameterSets' {
         @('ClientId', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $UserParameterSet.Parameters.Name
     }
 
-    It 'Should have AppParameterSet' {
-        $AppParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppParameterSet'
-        $AppParameterSet | Should -Not -BeNull
-        @('ClientId', 'TenantId', 'CertificateSubjectName', 'CertificateThumbprint', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppParameterSet.Parameters.Name
-        $MandatoryParameters = $AppParameterSet.Parameters | Where-Object IsMandatory
+    It 'Should have AppCertificateParameterSet' {
+        $AppCertificateParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppCertificateParameterSet'
+        $AppCertificateParameterSet | Should -Not -BeNull
+        @('ClientId', 'TenantId', 'CertificateSubjectName', 'CertificateThumbprint', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppCertificateParameterSet.Parameters.Name
+        $MandatoryParameters = $AppCertificateParameterSet.Parameters | Where-Object IsMandatory
         $MandatoryParameters | Should -HaveCount 1
         $MandatoryParameters.Name | Should -Be 'ClientId'
+    }
+
+    It 'Should have AppSecretCredentialParameterSet' {
+        $AppSecretCredentialParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppSecretCredentialParameterSet'
+        $AppSecretCredentialParameterSet | Should -Not -BeNull
+        @('Credential', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppSecretCredentialParameterSet.Parameters.Name
+        $MandatoryParameters = $AppSecretCredentialParameterSet.Parameters | Where-Object IsMandatory
+        $MandatoryParameters | Should -HaveCount 0
+    }
+
+    It 'Should have EnvironmentVariableParameterSet' {
+        $EnvironmentVariableParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'EnvironmentVariableParameterSet'
+        $EnvironmentVariableParameterSet | Should -Not -BeNull
+        @('EnvironmentVariable', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $EnvironmentVariableParameterSet.Parameters.Name
+        $MandatoryParameters = $EnvironmentVariableParameterSet.Parameters | Where-Object IsMandatory
+        $MandatoryParameters | Should -HaveCount 0
     }
 
     It 'Should Have AccessTokenParameterSet' {
@@ -51,6 +67,20 @@ Describe 'Connect-MgGraph In Delegated Mode' {
     # We'll skip this test until https://github.com/Azure/azure-sdk-for-net/issues/28036 is fixed.
     It 'Should throw exception when invalid tenantId is specified' -skip {
         { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS90002*Tenant 'thisdomaindoesnotexist.com' not found*"
+    }
+}
+
+Describe 'Connect-MgGraph In Environment Variable Mode' {
+    It 'Should throw exception when supported environment variables are not specified' {
+        { Connect-MgGraph -EnvironmentVariable -ErrorAction Stop } | Should -Throw -ExpectedMessage "*EnvironmentCredential authentication unavailable. Environment variables are not fully configured*"
+    }
+    It 'Should attempt to use configured environment variables' {
+        {
+            $Env:AZURE_CLIENT_ID = "Not_Valid"
+            $Env:AZURE_CLIENT_SECRET = "Not_Valid"
+            $Env:AZURE_TENANT_ID = "common"
+            Connect-MgGraph -EnvironmentVariable -ErrorAction Stop
+        } | Should -Throw -ExpectedMessage "*ClientSecretCredential authentication failed: AADSTS700016: Application with identifier 'Not_Valid' was not found in the directory 'Microsoft'.*"
     }
 }
 

@@ -27,7 +27,7 @@ Update-MgDeviceAppMgtiOSManagedAppProtection -IosManagedAppProtectionId <String>
  [-AppActionIfUnableToAuthenticateUser <ManagedAppRemediationAction>]
  [-AppDataEncryptionType <ManagedAppDataEncryptionType>] [-AppGroupType <TargetedManagedAppGroupType>]
  [-Apps <IMicrosoftGraphManagedMobileApp[]>]
- [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]
+ [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]
  [-BlockDataIngestionIntoOrganizationDocuments] [-ContactSyncBlocked] [-CreatedDateTime <DateTime>]
  [-CustomBrowserProtocol <String>] [-CustomDialerAppProtocol <String>] [-DataBackupBlocked]
  [-DeployedAppCount <Int32>] [-DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]
@@ -44,7 +44,8 @@ Update-MgDeviceAppMgtiOSManagedAppProtection -IosManagedAppProtectionId <String>
  [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredSdkVersion <String>] [-MinimumWarningAppVersion <String>]
  [-MinimumWarningOSVersion <String>] [-MinimumWipeAppVersion <String>] [-MinimumWipeOSVersion <String>]
- [-MinimumWipeSdkVersion <String>] [-MobileThreatDefenseRemediationAction <ManagedAppRemediationAction>]
+ [-MinimumWipeSdkVersion <String>] [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
+ [-MobileThreatDefenseRemediationAction <ManagedAppRemediationAction>]
  [-NotificationRestriction <ManagedAppNotificationRestriction>] [-OrganizationalCredentialsRequired]
  [-PeriodBeforePinReset <TimeSpan>] [-PeriodOfflineBeforeAccessCheck <TimeSpan>]
  [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>] [-PeriodOnlineBeforeAccessCheck <TimeSpan>]
@@ -58,13 +59,15 @@ Update-MgDeviceAppMgtiOSManagedAppProtection -IosManagedAppProtectionId <String>
 ### Update1
 ```
 Update-MgDeviceAppMgtiOSManagedAppProtection -IosManagedAppProtectionId <String>
- -BodyParameter <IMicrosoftGraphIosManagedAppProtection> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIosManagedAppProtection1> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgDeviceAppMgtiOSManagedAppProtection -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphIosManagedAppProtection> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphIosManagedAppProtection1> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -82,7 +85,7 @@ Update-MgDeviceAppMgtiOSManagedAppProtection -InputObject <IDevicesCorporateMana
  [-AppActionIfUnableToAuthenticateUser <ManagedAppRemediationAction>]
  [-AppDataEncryptionType <ManagedAppDataEncryptionType>] [-AppGroupType <TargetedManagedAppGroupType>]
  [-Apps <IMicrosoftGraphManagedMobileApp[]>]
- [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]
+ [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]
  [-BlockDataIngestionIntoOrganizationDocuments] [-ContactSyncBlocked] [-CreatedDateTime <DateTime>]
  [-CustomBrowserProtocol <String>] [-CustomDialerAppProtocol <String>] [-DataBackupBlocked]
  [-DeployedAppCount <Int32>] [-DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]
@@ -99,7 +102,8 @@ Update-MgDeviceAppMgtiOSManagedAppProtection -InputObject <IDevicesCorporateMana
  [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>] [-MinimumRequiredOSVersion <String>]
  [-MinimumRequiredSdkVersion <String>] [-MinimumWarningAppVersion <String>]
  [-MinimumWarningOSVersion <String>] [-MinimumWipeAppVersion <String>] [-MinimumWipeOSVersion <String>]
- [-MinimumWipeSdkVersion <String>] [-MobileThreatDefenseRemediationAction <ManagedAppRemediationAction>]
+ [-MinimumWipeSdkVersion <String>] [-MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority>]
+ [-MobileThreatDefenseRemediationAction <ManagedAppRemediationAction>]
  [-NotificationRestriction <ManagedAppNotificationRestriction>] [-OrganizationalCredentialsRequired]
  [-PeriodBeforePinReset <TimeSpan>] [-PeriodOfflineBeforeAccessCheck <TimeSpan>]
  [-PeriodOfflineBeforeWipeIsEnforced <TimeSpan>] [-PeriodOnlineBeforeAccessCheck <TimeSpan>]
@@ -350,7 +354,7 @@ Navigation property to list of inclusion and exclusion groups to which the polic
 To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -381,7 +385,7 @@ Policy used to configure detailed management settings targeted to specific secur
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -682,7 +686,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -1002,6 +1007,21 @@ Versions less than the specified version will block the managed app from accessi
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MobileThreatDefensePartnerPriority
+Determines the conflict resolution strategy, when more than one Mobile Threat Defense provider is enabled.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Support.MobileThreatDefensePartnerPriority
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -1351,7 +1371,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosManagedAppProtection1
 
 ## OUTPUTS
 
@@ -1369,28 +1389,28 @@ To create the parameters described below, construct a hash table containing the 
 
 
 APPS <IMicrosoftGraphManagedMobileApp[]>: List of apps to which the policy is deployed.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Version <String>]`: Version of the entity.
 
-ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-  - `[Id <String>]`: 
+ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
     - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
-BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
+BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection1>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AppGroupType <TargetedManagedAppGroupType?>]`: Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
-  - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-    - `[Id <String>]`: 
+  - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
     - `[SourceId <String>]`: Identifier for resource used for deployment to a group
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
@@ -1427,6 +1447,7 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection>: Policy used to configure
   - `[MinimumWarningOSVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data.
   - `[MinimumWipeAppVersion <String>]`: Versions less than or equal to the specified version will wipe the managed app and the associated company data.
   - `[MinimumWipeOSVersion <String>]`: Versions less than or equal to the specified version will wipe the managed app and the associated company data.
+  - `[MobileThreatDefensePartnerPriority <MobileThreatDefensePartnerPriority?>]`: Determines the conflict resolution strategy, when more than one Mobile Threat Defense provider is enabled.
   - `[MobileThreatDefenseRemediationAction <ManagedAppRemediationAction?>]`: An admin initiated action to be applied on a managed app.
   - `[NotificationRestriction <ManagedAppNotificationRestriction?>]`: Restrict managed app notification
   - `[OrganizationalCredentialsRequired <Boolean?>]`: Indicates whether organizational credentials are required for app use.
@@ -1447,12 +1468,12 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection>: Policy used to configure
   - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[Version <String>]`: Version of the entity.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowedIosDeviceModels <String>]`: Semicolon seperated list of device models allowed, as a string, for the managed app to work.
   - `[AppActionIfIosDeviceModelNotAllowed <ManagedAppRemediationAction?>]`: An admin initiated action to be applied on a managed app.
   - `[AppDataEncryptionType <ManagedAppDataEncryptionType?>]`: Represents the level to which app data is encrypted for managed apps
   - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
@@ -1461,7 +1482,7 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection>: Policy used to configure
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
     - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
       - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
@@ -1484,7 +1505,7 @@ BODYPARAMETER <IMicrosoftGraphIosManagedAppProtection>: Policy used to configure
 
 DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
   - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
     - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.

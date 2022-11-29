@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserDriveFollowing
 
 ## SYNOPSIS
-Get following from users
+The list of items the user is following.
+Only in OneDrive for Business.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgUserDriveFollowing -InputObject <IFilesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get following from users
+The list of items the user is following.
+Only in OneDrive for Business.
 
 ## EXAMPLES
 

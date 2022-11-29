@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgChatPinnedMessage
 
 ## SYNOPSIS
-Get pinnedMessages from chats
+A collection of all the pinned messages in the chat.
+Nullable.
 
 ## SYNTAX
 
@@ -44,9 +45,37 @@ Get-MgChatPinnedMessage -InputObject <ITeamsIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get pinnedMessages from chats
+A collection of all the pinned messages in the chat.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgChatPinnedMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatPinnedMessage -ChatId $chatId -ExpandProperty "message"  -OutFile $outFileId
+```
+
+This example shows how to use the Get-MgChatPinnedMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgChatPinnedMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatPinnedMessage -ChatId $chatId -ExpandProperty "message" 
+```
+
+This example shows how to use the Get-MgChatPinnedMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgChatPinnedMessage Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Teams
+Get-MgChatPinnedMessage -ChatId $chatId
+```
+
+This example shows how to use the Get-MgChatPinnedMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -258,7 +287,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessage
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPinnedChatMessageInfo1
 
 ## NOTES
 

@@ -8,7 +8,11 @@ schema: 2.0.0
 # Remove-MgGroup
 
 ## SYNOPSIS
-Delete group
+Delete group.
+When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days.
+After that time, they're permanently deleted.
+This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately.
+To learn more, see deletedItems.
 
 ## SYNTAX
 
@@ -24,7 +28,11 @@ Remove-MgGroup -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassThru] [-
 ```
 
 ## DESCRIPTION
-Delete group
+Delete group.
+When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days.
+After that time, they're permanently deleted.
+This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately.
+To learn more, see deletedItems.
 
 ## EXAMPLES
 

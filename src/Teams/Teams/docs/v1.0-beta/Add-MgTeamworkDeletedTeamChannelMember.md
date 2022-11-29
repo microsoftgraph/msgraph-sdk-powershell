@@ -8,7 +8,8 @@ schema: 2.0.0
 # Add-MgTeamworkDeletedTeamChannelMember
 
 ## SYNOPSIS
-Invoke action add
+Add multiple members in a single request to a team.
+The response provides details about which memberships could and couldn't be created.
 
 ## SYNTAX
 
@@ -40,7 +41,8 @@ Add-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Invoke action add
+Add multiple members in a single request to a team.
+The response provides details about which memberships could and couldn't be created.
 
 ## EXAMPLES
 
@@ -195,7 +197,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPathsWalfg2TeamworkDeletedteamsDeletedteamIdChannelsChannelIdMembersMicrosoftGraphAddPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Values <IMicrosoftGraphConversationMember[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The display name of the user.
     - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
     - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
@@ -240,7 +242,7 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
 VALUES <IMicrosoftGraphConversationMember[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the user.
   - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
   - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.

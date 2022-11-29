@@ -1,18 +1,14 @@
-### Example 1: {{ Add title here }}
+### Example 1: Using the Invoke-MgReassignEducationClassAssignmentSubmission Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Education
+Invoke-MgReassignEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
+This example shows how to use the Invoke-MgReassignEducationClassAssignmentSubmission Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Using the Invoke-MgReassignEducationClassAssignmentSubmission Cmdlet
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+Import-Module Microsoft.Graph.Education
+Invoke-MgReassignEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
-
-{{ Add description here }}
-
+This example shows how to use the Invoke-MgReassignEducationClassAssignmentSubmission Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

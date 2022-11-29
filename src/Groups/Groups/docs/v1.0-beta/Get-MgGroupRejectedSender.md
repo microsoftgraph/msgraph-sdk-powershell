@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupRejectedSender
 
 ## SYNOPSIS
-Get rejectedSenders from groups
+Get a list of users or groups that are in the rejected-senders list for this group.
+Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL).
+Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 
 ## SYNTAX
 
@@ -18,9 +20,20 @@ Get-MgGroupRejectedSender -GroupId <String> [-Filter <String>] [-Property <Strin
 ```
 
 ## DESCRIPTION
-Get rejectedSenders from groups
+Get a list of users or groups that are in the rejected-senders list for this group.
+Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL).
+Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgGroupRejectedSender Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Groups
+Get-MgGroupRejectedSender -GroupId $groupId
+```
+
+This example shows how to use the Get-MgGroupRejectedSender Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

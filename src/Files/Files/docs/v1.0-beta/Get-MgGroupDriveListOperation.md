@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveListOperation
 
 ## SYNOPSIS
-Get operations from groups
+The collection of long running operations for the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupDriveListOperation -InputObject <IFilesIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get operations from groups
+The collection of long running operations for the list.
 
 ## EXAMPLES
 

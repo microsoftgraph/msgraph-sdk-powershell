@@ -8,7 +8,9 @@ schema: 2.0.0
 # Confirm-MgRiskyServicePrincipalCompromised
 
 ## SYNOPSIS
-Invoke action confirmCompromised
+Confirm one or more riskyServicePrincipal objects as compromised.
+This action sets the targeted service principal account's risk level to `high`.
+When the risk level of the service principal is confirmed as compromised, the service principal object is disabled and its **disabledByMicrosoftStatus** property is updated.
 
 ## SYNTAX
 
@@ -26,9 +28,25 @@ Confirm-MgRiskyServicePrincipalCompromised
 ```
 
 ## DESCRIPTION
-Invoke action confirmCompromised
+Confirm one or more riskyServicePrincipal objects as compromised.
+This action sets the targeted service principal account's risk level to `high`.
+When the risk level of the service principal is confirmed as compromised, the service principal object is disabled and its **disabledByMicrosoftStatus** property is updated.
 
 ## EXAMPLES
+
+### Example 1: Using the Confirm-MgRiskyServicePrincipalCompromised Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+$params = @{
+	ServicePrincipalIds = @(
+		"9089a539-a539-9089-39a5-899039a58990"
+	)
+}
+Confirm-MgRiskyServicePrincipalCompromised -BodyParameter $params
+```
+
+This example shows how to use the Confirm-MgRiskyServicePrincipalCompromised Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

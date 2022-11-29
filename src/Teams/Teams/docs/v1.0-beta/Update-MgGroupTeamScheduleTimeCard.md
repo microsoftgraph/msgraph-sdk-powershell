@@ -17,8 +17,7 @@ Update the navigation property timeCards in groups
 Update-MgGroupTeamScheduleTimeCard -GroupId <String> -TimeCardId <String> [-AdditionalProperties <Hashtable>]
  [-Breaks <IMicrosoftGraphTimeCardBreak[]>] [-ClockInEvent <IMicrosoftGraphTimeCardEvent>]
  [-ClockOutEvent <IMicrosoftGraphTimeCardEvent>] [-ConfirmedBy <String>]
- [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-Notes <IMicrosoftGraphItemBody>] [-OriginalEntry <IMicrosoftGraphTimeCardEntry>] [-State <String>]
  [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -40,8 +39,7 @@ Update-MgGroupTeamScheduleTimeCard -InputObject <ITeamsIdentity> -BodyParameter 
 Update-MgGroupTeamScheduleTimeCard -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
  [-Breaks <IMicrosoftGraphTimeCardBreak[]>] [-ClockInEvent <IMicrosoftGraphTimeCardEvent>]
  [-ClockOutEvent <IMicrosoftGraphTimeCardEvent>] [-ConfirmedBy <String>]
- [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Id <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-Notes <IMicrosoftGraphItemBody>] [-OriginalEntry <IMicrosoftGraphTimeCardEntry>] [-State <String>]
  [-UserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -163,22 +161,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CreatedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -GroupId
 key: id of group
 
@@ -195,7 +177,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -231,22 +214,6 @@ To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIED
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-
-```yaml
-Type: System.DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -412,10 +379,8 @@ BODYPARAMETER <IMicrosoftGraphTimeCard>: timeCard
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Breaks <IMicrosoftGraphTimeCardBreak[]>]`: The list of breaks associated with the timeCard.
     - `[BreakId <String>]`: ID of the timeCardBreak.
     - `[End <IMicrosoftGraphTimeCardEvent>]`: timeCardEvent

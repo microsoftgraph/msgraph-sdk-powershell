@@ -8,7 +8,7 @@ schema: 2.0.0
 # Publish-MgGroupDriveListContentType
 
 ## SYNOPSIS
-Invoke action publish
+Publishes a [contentType][] present in a content type hub site.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Publish-MgGroupDriveListContentType -InputObject <IGroupsIdentity> [-PassThru] [
 ```
 
 ## DESCRIPTION
-Invoke action publish
+Publishes a [contentType][] present in a content type hub site.
 
 ## EXAMPLES
 

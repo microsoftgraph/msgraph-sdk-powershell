@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgChatInstalledAppTeamAppDefinition
 
 ## SYNOPSIS
-Get teamsAppDefinition from chats
+The details of this version of the app.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgChatInstalledAppTeamAppDefinition -InputObject <ITeamsIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get teamsAppDefinition from chats
+The details of this version of the app.
 
 ## EXAMPLES
 

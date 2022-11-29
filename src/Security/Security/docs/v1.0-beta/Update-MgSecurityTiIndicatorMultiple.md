@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityTiIndicatorMultiple
 
 ## SYNOPSIS
-Invoke action updateTiIndicators
+Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 
 ## SYNTAX
 
@@ -26,9 +26,30 @@ Update-MgSecurityTiIndicatorMultiple
 ```
 
 ## DESCRIPTION
-Invoke action updateTiIndicators
+Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
 
 ## EXAMPLES
+
+### Example 1: Using the Update-MgSecurityTiIndicatorMultiple Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Security
+$params = @{
+	Value = @(
+		@{
+			Id = "c6fb948b-89c5-3bba-a2cd-a9d9a1e430e4"
+			AdditionalInformation = "mytest"
+		}
+		@{
+			Id = "e58c072b-c9bb-a5c4-34ce-eb69af44fb1e"
+			AdditionalInformation = "test again"
+		}
+	)
+}
+Update-MgSecurityTiIndicatorMultiple -BodyParameter $params
+```
+
+This example shows how to use the Update-MgSecurityTiIndicatorMultiple Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -133,7 +154,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Value <IMicrosoftGraphTiIndicator[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Action <String>]`: tiAction
     - `[ActivityGroupNames <String[]>]`: The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
     - `[AdditionalInformation <String>]`: A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
@@ -194,7 +215,7 @@ BODYPARAMETER <IPaths3Ccfi6SecurityTiindicatorsMicrosoftGraphUpdatetiindicatorsP
     - `[UserAgent <String>]`: 
 
 VALUE <IMicrosoftGraphTiIndicator[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Action <String>]`: tiAction
   - `[ActivityGroupNames <String[]>]`: The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
   - `[AdditionalInformation <String>]`: A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.

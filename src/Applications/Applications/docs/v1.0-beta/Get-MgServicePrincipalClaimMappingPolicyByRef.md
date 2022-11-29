@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalClaimMappingPolicyByRef
 
 ## SYNOPSIS
-Get ref of claimsMappingPolicies from servicePrincipals
+List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <String> [-Fil
 ```
 
 ## DESCRIPTION
-Get ref of claimsMappingPolicies from servicePrincipals
+List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
 
 ## EXAMPLES
 

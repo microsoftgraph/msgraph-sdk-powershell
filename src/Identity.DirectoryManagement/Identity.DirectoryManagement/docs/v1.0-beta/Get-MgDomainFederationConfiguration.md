@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDomainFederationConfiguration
 
 ## SYNOPSIS
-Get federationConfiguration from domains
+Domain settings configured by customer when federated with Azure AD.
+Supports $expand.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgDomainFederationConfiguration -InputObject <IIdentityDirectoryManagementId
 ```
 
 ## DESCRIPTION
-Get federationConfiguration from domains
+Domain settings configured by customer when federated with Azure AD.
+Supports $expand.
 
 ## EXAMPLES
 

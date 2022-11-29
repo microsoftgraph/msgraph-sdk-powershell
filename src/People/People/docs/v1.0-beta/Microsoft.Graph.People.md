@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.People
-Module Guid: c1450d90-eeaa-42e4-8def-e8163aaa3f6d
+Module Guid: 0cdd1f82-9744-4a96-a86d-b6847e78ee1e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,136 +12,138 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.People Cmdlets
 ### [Get-MgUserActivityStatistics](Get-MgUserActivityStatistics.md)
-Get activityStatistics from users
+The collection of work activities that a user spent time on during and outside of working hours.
+Read-only.
+Nullable.
 
 ### [Get-MgUserPerson](Get-MgUserPerson.md)
-Get people from users
+Read-only.
+The most relevant people to the user.
+The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
+A person is an aggregation of information from across mail, contacts and social networks.
 
 ### [Get-MgUserProfile](Get-MgUserProfile.md)
-Get profile from users
+Retrieve the properties and relationships of a profile object for a given user.
+The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities.
+To get one of these navigation properties, use the corresponding GET method on that property.
+See the methods exposed by **profile**.
 
 ### [Get-MgUserProfileAccount](Get-MgUserProfileAccount.md)
 Get account from users
 
 ### [Get-MgUserProfileAddress](Get-MgUserProfileAddress.md)
-Get addresses from users
+Represents details of addresses associated with the user.
 
 ### [Get-MgUserProfileAnniversary](Get-MgUserProfileAnniversary.md)
-Get anniversaries from users
+Represents the details of meaningful dates associated with a person.
 
 ### [Get-MgUserProfileAward](Get-MgUserProfileAward.md)
-Get awards from users
+Represents the details of awards or honors associated with a person.
 
 ### [Get-MgUserProfileCertification](Get-MgUserProfileCertification.md)
-Get certifications from users
+Represents the details of certifications associated with a person.
 
 ### [Get-MgUserProfileEducationalActivity](Get-MgUserProfileEducationalActivity.md)
-Get educationalActivities from users
+Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 
 ### [Get-MgUserProfileEmail](Get-MgUserProfileEmail.md)
-Get emails from users
+Represents detailed information about email addresses associated with the user.
 
 ### [Get-MgUserProfileInterest](Get-MgUserProfileInterest.md)
-Get interests from users
+Provides detailed information about interests the user has associated with themselves in various services.
 
 ### [Get-MgUserProfileLanguage](Get-MgUserProfileLanguage.md)
-Get languages from users
+Represents detailed information about languages that a user has added to their profile.
 
 ### [Get-MgUserProfileName](Get-MgUserProfileName.md)
-Get names from users
+Represents the names a user has added to their profile.
 
 ### [Get-MgUserProfileNote](Get-MgUserProfileNote.md)
-Get notes from users
+Represents notes that a user has added to their profile.
 
 ### [Get-MgUserProfilePatent](Get-MgUserProfilePatent.md)
-Get patents from users
+Represents patents that a user has added to their profile.
 
 ### [Get-MgUserProfilePhone](Get-MgUserProfilePhone.md)
-Get phones from users
+Represents detailed information about phone numbers associated with a user in various services.
 
 ### [Get-MgUserProfilePosition](Get-MgUserProfilePosition.md)
-Get positions from users
+Represents detailed information about work positions associated with a user's profile.
 
 ### [Get-MgUserProfileProject](Get-MgUserProfileProject.md)
-Get projects from users
+Represents detailed information about projects associated with a user.
 
 ### [Get-MgUserProfilePublication](Get-MgUserProfilePublication.md)
-Get publications from users
+Represents details of any publications a user has added to their profile.
 
 ### [Get-MgUserProfileSkill](Get-MgUserProfileSkill.md)
-Get skills from users
+Represents detailed information about skills associated with a user in various services.
 
 ### [Get-MgUserProfileWebAccount](Get-MgUserProfileWebAccount.md)
-Get webAccounts from users
+Represents web accounts the user has indicated they use or has added to their user profile.
 
 ### [Get-MgUserProfileWebsite](Get-MgUserProfileWebsite.md)
-Get websites from users
-
-### [New-MgUserPerson](New-MgUserPerson.md)
-Create new navigation property to people for users
+Represents detailed information about websites associated with a user in various services.
 
 ### [New-MgUserProfileAccount](New-MgUserProfileAccount.md)
-Create new navigation property to account for users
+Create a new userAccountInformation object in a user's profile.
 
 ### [New-MgUserProfileAddress](New-MgUserProfileAddress.md)
-Create new navigation property to addresses for users
+Create a new itemAddress object in a user's profile.
 
 ### [New-MgUserProfileAnniversary](New-MgUserProfileAnniversary.md)
-Create new navigation property to anniversaries for users
+Use this API to create a new personAnniversary object in a user's profile.
 
 ### [New-MgUserProfileAward](New-MgUserProfileAward.md)
-Create new navigation property to awards for users
+Create a new personAward object in a user's profile.
 
 ### [New-MgUserProfileCertification](New-MgUserProfileCertification.md)
-Create new navigation property to certifications for users
+Create a new personCertification object in a user's profile.
 
 ### [New-MgUserProfileEducationalActivity](New-MgUserProfileEducationalActivity.md)
-Create new navigation property to educationalActivities for users
+Create a new educationalActivity in a user's profile.
 
 ### [New-MgUserProfileEmail](New-MgUserProfileEmail.md)
-Create new navigation property to emails for users
+Create a new itemEmail object in a user's profile.
 
 ### [New-MgUserProfileInterest](New-MgUserProfileInterest.md)
-Create new navigation property to interests for users
+Create a new personInterest.
 
 ### [New-MgUserProfileLanguage](New-MgUserProfileLanguage.md)
-Create new navigation property to languages for users
+Use this API to create a new languageProficiency object in a user's profile.
 
 ### [New-MgUserProfileName](New-MgUserProfileName.md)
-Create new navigation property to names for users
+Use this API to create a new personName object in a user's profile.
 
 ### [New-MgUserProfileNote](New-MgUserProfileNote.md)
-Create new navigation property to notes for users
+Create a new personAnnotation object in a user's profile.
 
 ### [New-MgUserProfilePatent](New-MgUserProfilePatent.md)
-Create new navigation property to patents for users
+Create a new itemPatent object within a user's profile.
 
 ### [New-MgUserProfilePhone](New-MgUserProfilePhone.md)
-Create new navigation property to phones for users
+Use this API to create a new itemPhone object in a user's profile.
 
 ### [New-MgUserProfilePosition](New-MgUserProfilePosition.md)
-Create new navigation property to positions for users
+Use this API to create a new workPosition in a user's profile.
 
 ### [New-MgUserProfileProject](New-MgUserProfileProject.md)
-Create new navigation property to projects for users
+Use this API to create a new projectParticipation object in a user's profile.
 
 ### [New-MgUserProfilePublication](New-MgUserProfilePublication.md)
-Create new navigation property to publications for users
+Create a new itemPublication object in a user's profile.
 
 ### [New-MgUserProfileSkill](New-MgUserProfileSkill.md)
-Create new navigation property to skills for users
+Use this API to create a new skillProficiency object in a user's profile.
 
 ### [New-MgUserProfileWebAccount](New-MgUserProfileWebAccount.md)
-Create new navigation property to webAccounts for users
+Create a new webAccount object in a user's profile.
 
 ### [New-MgUserProfileWebsite](New-MgUserProfileWebsite.md)
-Create new navigation property to websites for users
-
-### [Remove-MgUserPerson](Remove-MgUserPerson.md)
-Delete navigation property people for users
+Create a new personWebsite object in a user's profile.
 
 ### [Remove-MgUserProfile](Remove-MgUserProfile.md)
-Delete navigation property profile for users
+Deletes a profile object from a user's account.
 
 ### [Remove-MgUserProfileAccount](Remove-MgUserProfileAccount.md)
 Delete navigation property account for users
@@ -199,9 +201,6 @@ Delete navigation property webAccounts for users
 
 ### [Remove-MgUserProfileWebsite](Remove-MgUserProfileWebsite.md)
 Delete navigation property websites for users
-
-### [Update-MgUserPerson](Update-MgUserPerson.md)
-Update the navigation property people in users
 
 ### [Update-MgUserProfile](Update-MgUserProfile.md)
 Update the navigation property profile in users

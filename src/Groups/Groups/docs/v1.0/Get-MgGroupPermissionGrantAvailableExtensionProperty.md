@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupPermissionGrantAvailableExtensionProperty
 
 ## SYNOPSIS
-Invoke action getAvailableExtensionProperties
+Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
+The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Get-MgGroupPermissionGrantAvailableExtensionProperty -InputObject <IGroupsIdenti
 ```
 
 ## DESCRIPTION
-Invoke action getAvailableExtensionProperties
+Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
+The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
 
 ## EXAMPLES
 

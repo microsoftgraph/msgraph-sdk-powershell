@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgPlace
 
 ## SYNOPSIS
-Get place
+Get the properties and relationships of a place object specified by either its ID or email address.
+The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.
 
 ## SYNTAX
 
@@ -31,9 +32,46 @@ Get-MgPlace -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>] [-Prop
 ```
 
 ## DESCRIPTION
-Get place
+Get the properties and relationships of a place object specified by either its ID or email address.
+The **place** object can be one of the following types: Both **room** and **roomList** are derived from the place object.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgPlace Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+Get-MgPlace -PlaceId $placeId
+```
+
+This example shows how to use the Get-MgPlace Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgPlace Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+Get-MgPlace -PlaceId $placeId
+```
+
+This example shows how to use the Get-MgPlace Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Using the Get-MgPlace Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+Get-MgPlace -PlaceId $placeId
+```
+
+This example shows how to use the Get-MgPlace Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Using the Get-MgPlace Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Calendar
+Get-MgPlace -PlaceId $placeId
+```
+
+This example shows how to use the Get-MgPlace Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

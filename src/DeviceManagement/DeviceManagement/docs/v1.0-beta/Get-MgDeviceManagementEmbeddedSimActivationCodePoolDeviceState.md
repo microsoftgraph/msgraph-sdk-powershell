@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementEmbeddedSimActivationCodePoolDeviceState
 
 ## SYNOPSIS
-Get deviceStates from deviceManagement
+Navigational property to a list of device states for this pool.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementEmbeddedSimActivationCodePoolDeviceState -InputObject <IDe
 ```
 
 ## DESCRIPTION
-Get deviceStates from deviceManagement
+Navigational property to a list of device states for this pool.
 
 ## EXAMPLES
 
@@ -342,6 +342,8 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: key: id of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: key: id of userExperienceAnalyticsAnomalyDevice
+  - `[UserExperienceAnalyticsAnomalyId <String>]`: key: id of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionId <String>]`: key: id of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion

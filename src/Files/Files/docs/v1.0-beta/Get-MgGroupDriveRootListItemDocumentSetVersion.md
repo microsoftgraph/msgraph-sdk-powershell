@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupDriveRootListItemDocumentSetVersion
 
 ## SYNOPSIS
-Get documentSetVersions from groups
+Version information for a document set version created by a user.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupDriveRootListItemDocumentSetVersion -InputObject <IFilesIdentity> [-E
 ```
 
 ## DESCRIPTION
-Get documentSetVersions from groups
+Version information for a document set version created by a user.
 
 ## EXAMPLES
 

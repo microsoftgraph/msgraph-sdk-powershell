@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteTermStore
 
 ## SYNOPSIS
-Get termStore from groups
+Read the properties and relationships of a store object.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Get-MgGroupSiteTermStore -GroupId <String> -SiteId <String> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get termStore from groups
+Read the properties and relationships of a store object.
 
 ## EXAMPLES
 

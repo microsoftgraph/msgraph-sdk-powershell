@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBulkUserManagedDeviceSetCloudPcReviewStatus
 
 ## SYNOPSIS
-Invoke action bulkSetCloudPcReviewStatus
+Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Invoke-MgBulkUserManagedDeviceSetCloudPcReviewStatus -InputObject <IUsersActions
 ```
 
 ## DESCRIPTION
-Invoke action bulkSetCloudPcReviewStatus
+Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
 
 ## EXAMPLES
 
@@ -200,6 +200,7 @@ BODYPARAMETER <IPathsG30KncUsersUserIdManageddevicesMicrosoftGraphBulksetcloudpc
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AzureStorageAccountId <String>]`: The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
     - `[AzureStorageAccountName <String>]`: The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
+    - `[AzureStorageContainerName <String>]`: The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.
     - `[InReview <Boolean?>]`: True if the Cloud PC is set to in review by the administrator.
     - `[RestorePointDateTime <DateTime?>]`: The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
     - `[ReviewStartDateTime <DateTime?>]`: The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
@@ -259,6 +260,7 @@ REVIEWSTATUS <IMicrosoftGraphCloudPcReviewStatus>: cloudPcReviewStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AzureStorageAccountId <String>]`: The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
   - `[AzureStorageAccountName <String>]`: The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
+  - `[AzureStorageContainerName <String>]`: The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.
   - `[InReview <Boolean?>]`: True if the Cloud PC is set to in review by the administrator.
   - `[RestorePointDateTime <DateTime?>]`: The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
   - `[ReviewStartDateTime <DateTime?>]`: The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDriveItemListItemField
 
 ## SYNOPSIS
-Update the navigation property fields in drives
+Update the properties on a **[listItem][]**.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgDriveItemListItemField -InputObject <IFilesIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Update the navigation property fields in drives
+Update the properties on a **[listItem][]**.
 
 ## EXAMPLES
 
@@ -104,7 +104,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String

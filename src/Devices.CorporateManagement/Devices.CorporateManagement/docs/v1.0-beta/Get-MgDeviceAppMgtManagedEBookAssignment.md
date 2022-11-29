@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtManagedEBookAssignment
 
 ## SYNOPSIS
-Get assignments from deviceAppManagement
+The list of assignments for this eBook.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppMgtManagedEBookAssignment -InputObject <IDevicesCorporateManageme
 ```
 
 ## DESCRIPTION
-Get assignments from deviceAppManagement
+The list of assignments for this eBook.
 
 ## EXAMPLES
 
@@ -244,7 +244,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1
 
 ## NOTES
 

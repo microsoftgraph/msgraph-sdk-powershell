@@ -15,7 +15,7 @@ Create new navigation property to assignments for deviceAppManagement
 ### CreateExpanded (Default)
 ```
 New-MgDeviceAppMgtPolicySetAssignment -PolicySetId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]
+ [-LastModifiedDateTime <DateTime>] [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ New-MgDeviceAppMgtPolicySetAssignment -InputObject <IDevicesCorporateManagementI
 ```
 New-MgDeviceAppMgtPolicySetAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,7 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -142,7 +143,7 @@ Base type for assignment targets.
 To construct, please use Get-Help -Online and see NOTES section for TARGET properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -210,9 +211,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphPolicySetAssignment>: A class containing the properties used for PolicySet Assignment.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetAssignment.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
+  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
     - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
@@ -286,7 +287,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
   - `[WindowsManagedAppProtectionId <String>]`: key: id of windowsManagedAppProtection
 
-TARGET <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>: Base type for assignment targets.
+TARGET <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>: Base type for assignment targets.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
   - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.

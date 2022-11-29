@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource
 
 ## SYNOPSIS
-Get noncustodialSources from compliance
+noncustodialDataSource sources that are included in the sourceCollection
 
 ## SYNTAX
 
@@ -33,9 +33,27 @@ Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource -InputObject <I
 ```
 
 ## DESCRIPTION
-Get noncustodialSources from compliance
+noncustodialDataSource sources that are included in the sourceCollection
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource -CaseId $caseId -SourceCollectionId $sourceCollectionId
+```
+
+This example shows how to use the Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Compliance
+Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource -CaseId $caseId -SourceCollectionId $sourceCollectionId -OutFile $outFileId
+```
+
+This example shows how to use the Get-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

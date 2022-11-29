@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserDeviceFromManagement
 
 ## SYNOPSIS
-Invoke action removeAllDevicesFromManagement
+Retire all devices from management for this user
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Remove-MgUserDeviceFromManagement -InputObject <IUsersActionsIdentity> [-PassThr
 ```
 
 ## DESCRIPTION
-Invoke action removeAllDevicesFromManagement
+Retire all devices from management for this user
 
 ## EXAMPLES
 

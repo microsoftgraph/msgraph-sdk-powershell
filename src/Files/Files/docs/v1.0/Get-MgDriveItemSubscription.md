@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgDriveItemSubscription
 
 ## SYNOPSIS
-Get subscriptions from drives
+The set of subscriptions on the item.
+Only supported on the root of a drive.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgDriveItemSubscription -InputObject <IFilesIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get subscriptions from drives
+The set of subscriptions on the item.
+Only supported on the root of a drive.
 
 ## EXAMPLES
 

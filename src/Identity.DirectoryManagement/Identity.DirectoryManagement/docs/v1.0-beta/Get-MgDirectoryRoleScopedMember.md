@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgDirectoryRoleScopedMember
 
 ## SYNOPSIS
-Get scopedMembers from directoryRoles
+Members of this directory role that are scoped to administrative units.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,9 +34,29 @@ Get-MgDirectoryRoleScopedMember -InputObject <IIdentityDirectoryManagementIdenti
 ```
 
 ## DESCRIPTION
-Get scopedMembers from directoryRoles
+Members of this directory role that are scoped to administrative units.
+Read-only.
+Nullable.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgDirectoryRoleScopedMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectoryRoleScopedMember -DirectoryRoleId $directoryRoleId
+```
+
+This example shows how to use the Get-MgDirectoryRoleScopedMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Using the Get-MgDirectoryRoleScopedMember Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgDirectoryRoleScopedMember -DirectoryRoleId $directoryRoleId
+```
+
+This example shows how to use the Get-MgDirectoryRoleScopedMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 

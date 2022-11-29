@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupTeamChannelMessageReply
 
 ## SYNOPSIS
-Get replies from groups
+Replies for a specified message.
+Supports $expand for channel messages.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgGroupTeamChannelMessageReply -InputObject <ITeamsIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get replies from groups
+Replies for a specified message.
+Supports $expand for channel messages.
 
 ## EXAMPLES
 

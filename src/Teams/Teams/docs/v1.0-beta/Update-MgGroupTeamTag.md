@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Tag description as it will appear to the user in Microsoft Teams.
+The description of the tag as it will appear to the user in Microsoft Teams.
 
 ```yaml
 Type: System.String
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Tag name as it will appear to the user in Microsoft Teams.
+The name of the tag as it will appear to the user in Microsoft Teams.
 
 ```yaml
 Type: System.String
@@ -124,7 +124,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -300,15 +301,15 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTeamworkTag>: teamworkTag
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
-  - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
-  - `[DisplayName <String>]`: Tag name as it will appear to the user in Microsoft Teams.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams.
+  - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
   - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
   - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DisplayName <String>]`: The member's display name.
-    - `[TenantId <String>]`: 
-    - `[UserId <String>]`: 
+    - `[TenantId <String>]`: The ID of the tenant that the tag member is a part of.
+    - `[UserId <String>]`: The user ID of the member.
   - `[TagType <String>]`: teamworkTagType
   - `[TeamId <String>]`: ID of the team in which the tag is defined.
 
@@ -352,10 +353,10 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
 MEMBERS <IMicrosoftGraphTeamworkTagMember[]>: Users assigned to the tag.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The member's display name.
-  - `[TenantId <String>]`: 
-  - `[UserId <String>]`: 
+  - `[TenantId <String>]`: The ID of the tenant that the tag member is a part of.
+  - `[UserId <String>]`: The user ID of the member.
 
 ## RELATED LINKS
 
