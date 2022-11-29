@@ -1,35 +1,80 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/invoke-mgsummarizedevicemanagementuserexperienceanalyticregressionsummarydeviceregressionperformance
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementauditeventauditactivitytype
 schema: 2.0.0
 ---
 
-# Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRegressionSummaryDeviceRegressionPerformance
+# Get-MgDeviceManagementAuditEventAuditActivityType
 
 ## SYNOPSIS
-Invoke function summarizeDeviceRegressionPerformance
+Invoke function getAuditActivityTypes
 
 ## SYNTAX
 
-### Summarize (Default)
+### Get1 (Default)
 ```
-Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRegressionSummaryDeviceRegressionPerformance
- -SummarizeBy <String> [<CommonParameters>]
+Get-MgDeviceManagementAuditEventAuditActivityType -Category <String> [-Count] [-Filter <String>]
+ [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
-### SummarizeViaIdentity
+### GetViaIdentity1
 ```
-Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRegressionSummaryDeviceRegressionPerformance
- -InputObject <IDeviceManagementFunctionsIdentity> [<CommonParameters>]
+Get-MgDeviceManagementAuditEventAuditActivityType -InputObject <IDeviceManagementFunctionsIdentity> [-Count]
+ [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function summarizeDeviceRegressionPerformance
+Invoke function getAuditActivityTypes
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -Category
+Usage: category='{category}'
+
+```yaml
+Type: System.String
+Parameter Sets: Get1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -37,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
-Parameter Sets: SummarizeViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -47,15 +92,45 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -SummarizeBy
-Usage: summarizeBy='{summarizeBy}'
+### -Search
+Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: Summarize
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Limit
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -71,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRegressionSummary
+### System.String
 
 ## NOTES
 

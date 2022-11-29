@@ -23,6 +23,7 @@ Update-MgDirectory [-AdditionalProperties <Hashtable>]
  [-FederationConfigurations <IMicrosoftGraphIdentityProviderBase[]>] [-Id <String>]
  [-ImpactedResources <IMicrosoftGraphRecommendationResource[]>]
  [-InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]
+ [-OnPremisesSynchronization <IMicrosoftGraphOnPremisesDirectorySynchronization[]>]
  [-OutboundSharedUserProfiles <IMicrosoftGraphOutboundSharedUserProfile[]>]
  [-Recommendations <IMicrosoftGraphRecommendation[]>]
  [-SharedEmailDomains <IMicrosoftGraphSharedEmailDomain[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -209,6 +210,22 @@ To construct, please use Get-Help -Online and see NOTES section for INBOUNDSHARE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInboundSharedUserProfile[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OnPremisesSynchronization
+.
+To construct, please use Get-Help -Online and see NOTES section for ONPREMISESSYNCHRONIZATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -430,6 +447,37 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[HomeTenantId <String>]`: 
     - `[UserId <String>]`: 
     - `[UserPrincipalName <String>]`: 
+  - `[OnPremisesSynchronization <IMicrosoftGraphOnPremisesDirectorySynchronization[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]`: onPremisesDirectorySynchronizationConfiguration
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[AccidentalDeletionPrevention <IMicrosoftGraphOnPremisesAccidentalDeletionPrevention>]`: onPremisesAccidentalDeletionPrevention
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[AlertThreshold <Int32?>]`: 
+        - `[SynchronizationPreventionType <String>]`: onPremisesDirectorySynchronizationDeletionPreventionType
+      - `[CustomerRequestedSynchronizationInterval <TimeSpan?>]`: 
+      - `[SynchronizationInterval <TimeSpan?>]`: 
+    - `[Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>]`: onPremisesDirectorySynchronizationFeature
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[BlockCloudObjectTakeoverThroughHardMatchEnabled <Boolean?>]`: 
+      - `[BlockSoftMatchEnabled <Boolean?>]`: 
+      - `[BypassDirSyncOverridesEnabled <Boolean?>]`: 
+      - `[CloudPasswordPolicyForPasswordSyncedUsersEnabled <Boolean?>]`: 
+      - `[ConcurrentCredentialUpdateEnabled <Boolean?>]`: 
+      - `[ConcurrentOrgIdProvisioningEnabled <Boolean?>]`: 
+      - `[DeviceWritebackEnabled <Boolean?>]`: 
+      - `[DirectoryExtensionsEnabled <Boolean?>]`: 
+      - `[FopeConflictResolutionEnabled <Boolean?>]`: 
+      - `[GroupWriteBackEnabled <Boolean?>]`: 
+      - `[PasswordSyncEnabled <Boolean?>]`: 
+      - `[PasswordWritebackEnabled <Boolean?>]`: 
+      - `[QuarantineUponProxyAddressesConflictEnabled <Boolean?>]`: 
+      - `[QuarantineUponUpnConflictEnabled <Boolean?>]`: 
+      - `[SoftMatchOnUpnEnabled <Boolean?>]`: 
+      - `[SynchronizeUpnForManagedUsersEnabled <Boolean?>]`: 
+      - `[UnifiedGroupWritebackEnabled <Boolean?>]`: 
+      - `[UserForcePasswordChangeOnLogonEnabled <Boolean?>]`: 
+      - `[UserWritebackEnabled <Boolean?>]`: 
   - `[OutboundSharedUserProfiles <IMicrosoftGraphOutboundSharedUserProfile[]>]`: 
     - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 
       - `[TenantId <String>]`: 
@@ -514,6 +562,38 @@ INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>: .
   - `[HomeTenantId <String>]`: 
   - `[UserId <String>]`: 
   - `[UserPrincipalName <String>]`: 
+
+ONPREMISESSYNCHRONIZATION <IMicrosoftGraphOnPremisesDirectorySynchronization[]>: .
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]`: onPremisesDirectorySynchronizationConfiguration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AccidentalDeletionPrevention <IMicrosoftGraphOnPremisesAccidentalDeletionPrevention>]`: onPremisesAccidentalDeletionPrevention
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[AlertThreshold <Int32?>]`: 
+      - `[SynchronizationPreventionType <String>]`: onPremisesDirectorySynchronizationDeletionPreventionType
+    - `[CustomerRequestedSynchronizationInterval <TimeSpan?>]`: 
+    - `[SynchronizationInterval <TimeSpan?>]`: 
+  - `[Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>]`: onPremisesDirectorySynchronizationFeature
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[BlockCloudObjectTakeoverThroughHardMatchEnabled <Boolean?>]`: 
+    - `[BlockSoftMatchEnabled <Boolean?>]`: 
+    - `[BypassDirSyncOverridesEnabled <Boolean?>]`: 
+    - `[CloudPasswordPolicyForPasswordSyncedUsersEnabled <Boolean?>]`: 
+    - `[ConcurrentCredentialUpdateEnabled <Boolean?>]`: 
+    - `[ConcurrentOrgIdProvisioningEnabled <Boolean?>]`: 
+    - `[DeviceWritebackEnabled <Boolean?>]`: 
+    - `[DirectoryExtensionsEnabled <Boolean?>]`: 
+    - `[FopeConflictResolutionEnabled <Boolean?>]`: 
+    - `[GroupWriteBackEnabled <Boolean?>]`: 
+    - `[PasswordSyncEnabled <Boolean?>]`: 
+    - `[PasswordWritebackEnabled <Boolean?>]`: 
+    - `[QuarantineUponProxyAddressesConflictEnabled <Boolean?>]`: 
+    - `[QuarantineUponUpnConflictEnabled <Boolean?>]`: 
+    - `[SoftMatchOnUpnEnabled <Boolean?>]`: 
+    - `[SynchronizeUpnForManagedUsersEnabled <Boolean?>]`: 
+    - `[UnifiedGroupWritebackEnabled <Boolean?>]`: 
+    - `[UserForcePasswordChangeOnLogonEnabled <Boolean?>]`: 
+    - `[UserWritebackEnabled <Boolean?>]`: 
 
 OUTBOUNDSHAREDUSERPROFILES <IMicrosoftGraphOutboundSharedUserProfile[]>: .
   - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 

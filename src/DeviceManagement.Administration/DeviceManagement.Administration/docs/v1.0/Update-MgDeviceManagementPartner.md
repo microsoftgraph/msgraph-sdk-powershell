@@ -12,7 +12,7 @@ Update the navigation property deviceManagementPartners in deviceManagement
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgDeviceManagementPartner -DeviceManagementPartnerId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Id <String>] [-IsConfigured] [-LastHeartbeatDateTime <DateTime>]
@@ -21,21 +21,21 @@ Update-MgDeviceManagementPartner -DeviceManagementPartnerId <String> [-Additiona
  [-WhenPartnerDevicesWillBeRemovedDateTime <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgDeviceManagementPartner -DeviceManagementPartnerId <String>
  -BodyParameter <IMicrosoftGraphDeviceManagementPartner1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgDeviceManagementPartner -InputObject <IDeviceManagementAdministrationIdentity>
  -BodyParameter <IMicrosoftGraphDeviceManagementPartner1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgDeviceManagementPartner -InputObject <IDeviceManagementAdministrationIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-IsConfigured]
@@ -57,7 +57,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -73,7 +73,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementPartner1
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -88,7 +88,7 @@ key: id of deviceManagementPartner
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -103,7 +103,7 @@ Partner display name
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -119,7 +119,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -135,7 +135,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementAdministrationIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -150,7 +150,7 @@ Whether device management partner is configured or not
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -165,7 +165,7 @@ Timestamp of last heartbeat after admin enabled option Connect to Device managem
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -180,7 +180,7 @@ Partner App Type.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Support.DeviceManagementPartnerAppType
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -195,7 +195,7 @@ Partner state of this tenant.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Support.DeviceManagementPartnerTenantState
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -225,7 +225,7 @@ Partner Single tenant App id
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -240,7 +240,7 @@ DateTime in UTC when PartnerDevices will be marked as NonCompliant
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -255,7 +255,7 @@ DateTime in UTC when PartnerDevices will be removed
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -343,6 +343,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CloudPcProvisioningPolicyAssignmentId <String>]`: key: id of cloudPcProvisioningPolicyAssignment
   - `[CloudPcProvisioningPolicyId <String>]`: key: id of cloudPcProvisioningPolicy
   - `[CloudPcServicePlanId <String>]`: key: id of cloudPcServicePlan
+  - `[CloudPcSharedUseServicePlanId <String>]`: key: id of cloudPcSharedUseServicePlan
   - `[CloudPcSnapshotId <String>]`: key: id of cloudPcSnapshot
   - `[CloudPcSupportedRegionId <String>]`: key: id of cloudPcSupportedRegion
   - `[CloudPcUserSettingAssignmentId <String>]`: key: id of cloudPcUserSettingAssignment

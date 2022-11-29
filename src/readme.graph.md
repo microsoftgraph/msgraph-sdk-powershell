@@ -102,6 +102,8 @@ directive:
     - microsoft.graph.security.ediscoveryReviewTag
     - microsoft.graph.security.ediscoverySearch
     - microsoft.graph.managedTenants.managementTemplateStep
+    - microsoft.graph.plannerTaskCreation
+    - microsoft.graph.plannerTeamsPublicationInfo
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -710,6 +712,36 @@ directive:
         // Remove Values from IAssociativeArray interface.
         let valuesRegex = /System\.Collections\.Generic\.IEnumerable<T>\s*Values\s*{\s*get;\s*}/gm
         $ = $.replace(valuesRegex, '');
+
+        return $;
+      }
+
+# Modify generated DictionaryExtensions.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Cruntime%5CDictionaryExtensions.cs/gm))
+      {
+        return $;
+      } else {
+        // Replace HashTableToDictionary call.
+        let hashtableRegex = /(HashTableToDictionary<V>\(nested, new System\.Collections\.Generic\.Dictionary<string, V>\(\)\);)/gm
+        $ = $.replace(hashtableRegex, 'try {dictionary[key] = (V)value;} catch {}');
+
+        return $;
+      }
+
+# Modify generated JsonObject class.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Cruntime%5CNodes%5CJsonObject.cs/gm))
+      {
+        return $;
+      } else {
+        // Change how JsonObject adds json node to avoid key conflicts.
+        let dictionaryAddRegex = /(items\.Add\(\s*name\s*\,\s*value\s*\)\;)/gm
+        $ = $.replace(dictionaryAddRegex, 'items[name] = value;');
 
         return $;
       }

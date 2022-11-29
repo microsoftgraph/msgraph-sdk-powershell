@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -InitiatedBy
-The id of actor that does the operation.
+The ID of actor that does the operation.
 
 ```yaml
 Type: System.String
@@ -315,7 +315,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-The id of the user.
+The ID of the user.
 
 ```yaml
 Type: System.String
@@ -420,8 +420,8 @@ BODYPARAMETER <IMicrosoftGraphRiskyUserHistoryItem1>: riskyUserHistoryItem
     - `[Detail <String>]`: 
     - `[EventTypes <String[]>]`: 
     - `[RiskEventTypes <String[]>]`: The type of risk event detected.
-  - `[InitiatedBy <String>]`: The id of actor that does the operation.
-  - `[UserId <String>]`: The id of the user.
+  - `[InitiatedBy <String>]`: The ID of actor that does the operation.
+  - `[UserId <String>]`: The ID of the user.
 
 HISTORY <IMicrosoftGraphRiskyUserHistoryItem1[]>: .
   - `[History <IMicrosoftGraphRiskyUserHistoryItem1[]>]`: 
@@ -439,8 +439,8 @@ HISTORY <IMicrosoftGraphRiskyUserHistoryItem1[]>: .
     - `[Detail <String>]`: 
     - `[EventTypes <String[]>]`: 
     - `[RiskEventTypes <String[]>]`: The type of risk event detected.
-  - `[InitiatedBy <String>]`: The id of actor that does the operation.
-  - `[UserId <String>]`: The id of the user.
+  - `[InitiatedBy <String>]`: The ID of actor that does the operation.
+  - `[UserId <String>]`: The ID of the user.
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy

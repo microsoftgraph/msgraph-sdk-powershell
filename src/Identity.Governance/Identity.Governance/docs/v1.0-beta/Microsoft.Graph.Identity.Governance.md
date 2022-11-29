@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 27d98467-f5d4-48c9-b91d-6411248e8993
+Module Guid: f35ec8f5-414a-4b7f-863f-632ec69c9a32
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -318,10 +318,10 @@ The workflows in the lifecycle workflows instance.
 The customTaskExtension instance.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy.md)
-The unique identifier of the Azure AD user that created the custom task extension.
+The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedBy](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedBy.md)
-The unique identifier of the Azure AD user that modified the custom task extension last.
+The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItem](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItem.md)
 Deleted workflows in your lifecycle workflows instance.
@@ -354,7 +354,7 @@ Get runs from identityGovernance
 The related taskProcessingResults.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject.md)
-The unique identifier of the Azure AD user targeted for the task execution.
+The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultTask](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultTask.md)
 The related workflow task
@@ -363,7 +363,7 @@ The related workflow task
 The associated individual user execution.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubject.md)
-The unique identifier of the AAD user targeted for the taskProcessingResult.
+The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
 The associated individual task execution.
@@ -378,16 +378,16 @@ The definition of tasks within the lifecycle workflows instance.
 Represents the aggregation of task execution data for tasks within a workflow object.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTask](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTask.md)
-The related lifecycle workflow task.
+The related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskDefinition.md)
-The taskDefinition associated with the related lifecycle workflow task.
+The taskDefinition associated with the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
 The related lifecycle workflow taskProcessingResults.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubject.md)
-The unique identifier of the Azure AD user targeted for the task execution.
+The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultTask](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultTask.md)
 The related workflow task
@@ -403,7 +403,7 @@ This relationship is expanded by default.
 The result of processing the task.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject.md)
-The unique identifier of the Azure AD user targeted for the task execution.
+The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultTask](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultTask.md)
 The related workflow task
@@ -412,7 +412,7 @@ The related workflow task
 Get userProcessingResults from identityGovernance
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject.md)
-The unique identifier of the AAD user targeted for the taskProcessingResult.
+The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
 The associated individual task execution.
@@ -801,7 +801,8 @@ Invoke function summary
 Invoke function summary
 
 ### [Move-MgEntitlementManagementAccessPackageToCatalog](Move-MgEntitlementManagementAccessPackageToCatalog.md)
-Invoke action moveToCatalog
+In Azure AD entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
+The resources in the access package must be present in the target catalog.
 
 ### [New-MgAccessReview](New-MgAccessReview.md)
 In the Azure AD access reviews feature, create a new accessReview object.

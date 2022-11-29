@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: dd688160-4e30-482d-8153-8257922e17a1
+Module Guid: 00fce1df-8c97-4569-99cf-7f23d3b34eed
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -379,9 +379,6 @@ Named locations can be either ipNamedLocation or countryNamedLocation objects.
 ### [New-MgIdentityConditionalAccessPolicy](New-MgIdentityConditionalAccessPolicy.md)
 Create a new conditionalAccessPolicy.
 
-### [New-MgIdentityConditionalAccessTemplate](New-MgIdentityConditionalAccessTemplate.md)
-Create new navigation property to templates for identity
-
 ### [New-MgIdentityProvider](New-MgIdentityProvider.md)
 Create an identity provider resource that is of the type specified in the request body.
 Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD.
@@ -547,9 +544,6 @@ Delete navigation property namedLocations for identity
 
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Delete navigation property policies for identity
-
-### [Remove-MgIdentityConditionalAccessTemplate](Remove-MgIdentityConditionalAccessTemplate.md)
-Delete navigation property templates for identity
 
 ### [Remove-MgIdentityProvider](Remove-MgIdentityProvider.md)
 Delete navigation property identityProviders for identity
@@ -744,9 +738,6 @@ Update the navigation property namedLocations in identity
 
 ### [Update-MgIdentityConditionalAccessPolicy](Update-MgIdentityConditionalAccessPolicy.md)
 Update the navigation property policies in identity
-
-### [Update-MgIdentityConditionalAccessTemplate](Update-MgIdentityConditionalAccessTemplate.md)
-Update the navigation property templates in identity
 
 ### [Update-MgIdentityProvider](Update-MgIdentityProvider.md)
 Update the navigation property identityProviders in identity

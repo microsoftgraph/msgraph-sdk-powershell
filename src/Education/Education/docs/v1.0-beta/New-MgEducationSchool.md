@@ -585,7 +585,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
         - `[Outcomes <IMicrosoftGraphEducationOutcome[]>]`: 
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
+          - `[LastModifiedDateTime <DateTime?>]`: The moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
         - `[ReassignedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[Recipient <IMicrosoftGraphEducationSubmissionRecipient>]`: educationSubmissionRecipient
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -679,7 +679,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
             - `[Status <IMicrosoftGraphResponseStatus>]`: responseStatus
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Response <String>]`: responseType
-              - `[Time <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+              - `[Time <DateTime?>]`: The date and time when the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
           - `[Body <IMicrosoftGraphItemBody>]`: itemBody
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Content <String>]`: The content of the item.
@@ -896,15 +896,15 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
             - `[AgreementFileId <String>]`: The identifier of the agreement file accepted by the user.
             - `[AgreementId <String>]`: The identifier of the agreement.
             - `[DeviceDisplayName <String>]`: The display name of the device used for accepting the agreement.
-            - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement.
+            - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
             - `[DeviceOSType <String>]`: The operating system used to accept the agreement.
             - `[DeviceOSVersion <String>]`: The operating system version of the device used to accept the agreement.
-            - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.
             - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[State <String>]`: agreementAcceptanceState
             - `[UserDisplayName <String>]`: Display name of the user when the acceptance was recorded.
             - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
-            - `[UserId <String>]`: The identifier of the user who accepted the agreement.
+            - `[UserId <String>]`: The identifier of the user who accepted the agreement. Supports $filter (eq).
             - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
           - `[Analytics <IMicrosoftGraphUserAnalytics>]`: userAnalytics
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -952,7 +952,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
           - `[AppRoleAssignedResources <IMicrosoftGraphServicePrincipal[]>]`: 
             - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
+            - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
             - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
               - `[Id <String>]`: 
               - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
@@ -1289,7 +1289,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
               - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
           - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
           - `[Approvals <IMicrosoftGraphApproval[]>]`: 
-          - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
+          - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
           - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
             - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
@@ -1560,6 +1560,18 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
+              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+                - `[Actions <String>]`: chatMessageActions
+                - `[ModifiedDateTime <DateTime?>]`: 
+                - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+                  - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+                  - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Application <IMicrosoftGraphIdentity>]`: identity
+                    - `[Device <IMicrosoftGraphIdentity>]`: identity
+                    - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[MessageType <String>]`: chatMessageType
               - `[OnBehalfOf <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
               - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
@@ -1574,13 +1586,6 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
                 - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
                 - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
               - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-                - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-                - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Application <IMicrosoftGraphIdentity>]`: identity
-                  - `[Device <IMicrosoftGraphIdentity>]`: identity
-                  - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
               - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
               - `[Subject <String>]`: The subject of the chat message, in plaintext.
@@ -1758,7 +1763,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
             - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
           - `[Contacts <IMicrosoftGraphContact1[]>]`: The user's contacts. Read-only. Nullable.
           - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-          - `[CreatedDateTime <DateTime?>]`: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+          - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
           - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
           - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
           - `[CustomSecurityAttributes <IMicrosoftGraphCustomSecurityAttributeValue>]`: customSecurityAttributeValue
@@ -1808,7 +1813,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
           - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
           - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
           - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-          - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. Read: Requires User-LifeCycleInfo.Read.All. For delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin.  Write: Requires User-LifeCycleInfo.ReadWrite.All. For delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in).
+          - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read or write this property, the calling app must be assigned the User-LifeCycleInfo.Read.All or User-LifeCycleInfo.ReadWrite.All permissions respectively. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin. To write this property in delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
           - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -3211,7 +3216,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
             - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
           - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
           - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
-          - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. Read-only. Returned only on $select.
+          - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
             - `[AssignedByGroup <String>]`: 
             - `[DisabledPlans <String[]>]`: 
             - `[Error <String>]`: 
@@ -3585,6 +3590,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
             - `[JoinType <JoinType?>]`: Device enrollment join type.
             - `[LogCollectionRequests <IMicrosoftGraphDeviceLogCollectionResponse[]>]`: List of log collection requests
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[EnrolledByUser <String>]`: The User Principal Name (UPN) of the user that enrolled the device
               - `[ErrorCode <Int64?>]`: The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
               - `[ExpirationDateTimeUtc <DateTime?>]`: The DateTime of the expiration of the logs
               - `[InitiatedByUserPrincipalName <String>]`: The UPN for who initiated the request
@@ -3622,7 +3628,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
             - `[ManagementAgent <ManagementAgentType?>]`: Management agent type.
             - `[ManagementFeatures <ManagedDeviceManagementFeatures?>]`: Device management features.
             - `[ManagementState <ManagementState?>]`: Management state of device in Microsoft Intune.
-            - `[Notes <String>]`: Notes on the device created by IT Admin
+            - `[Notes <String>]`: Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
             - `[OwnerType <OwnerType?>]`: Owner type of device.
             - `[PartnerReportedThreatState <ManagedDevicePartnerReportedHealthState?>]`: Available health states for the Device Health API
             - `[ProcessorArchitecture <ManagedDeviceArchitecture?>]`: Processor architecture
@@ -5058,7 +5064,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSchool>: educationSchool
         - `[State <String>]`: 
       - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
-      - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+      - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
       - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
       - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
       - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
@@ -5274,7 +5280,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
       - `[Outcomes <IMicrosoftGraphEducationOutcome[]>]`: 
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
+        - `[LastModifiedDateTime <DateTime?>]`: The moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
       - `[ReassignedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[Recipient <IMicrosoftGraphEducationSubmissionRecipient>]`: educationSubmissionRecipient
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5370,7 +5376,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
           - `[Status <IMicrosoftGraphResponseStatus>]`: responseStatus
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Response <String>]`: responseType
-            - `[Time <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            - `[Time <DateTime?>]`: The date and time when the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[Body <IMicrosoftGraphItemBody>]`: itemBody
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Content <String>]`: The content of the item.
@@ -5596,15 +5602,15 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
           - `[AgreementFileId <String>]`: The identifier of the agreement file accepted by the user.
           - `[AgreementId <String>]`: The identifier of the agreement.
           - `[DeviceDisplayName <String>]`: The display name of the device used for accepting the agreement.
-          - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement.
+          - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
           - `[DeviceOSType <String>]`: The operating system used to accept the agreement.
           - `[DeviceOSVersion <String>]`: The operating system version of the device used to accept the agreement.
-          - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.
           - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[State <String>]`: agreementAcceptanceState
           - `[UserDisplayName <String>]`: Display name of the user when the acceptance was recorded.
           - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
-          - `[UserId <String>]`: The identifier of the user who accepted the agreement.
+          - `[UserId <String>]`: The identifier of the user who accepted the agreement. Supports $filter (eq).
           - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
         - `[Analytics <IMicrosoftGraphUserAnalytics>]`: userAnalytics
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5652,7 +5658,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
         - `[AppRoleAssignedResources <IMicrosoftGraphServicePrincipal[]>]`: 
           - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
+          - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
           - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
             - `[Id <String>]`: 
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
@@ -5989,7 +5995,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
             - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
         - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
         - `[Approvals <IMicrosoftGraphApproval[]>]`: 
-        - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
+        - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
         - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
           - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
@@ -6260,6 +6266,18 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
+            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+              - `[Actions <String>]`: chatMessageActions
+              - `[ModifiedDateTime <DateTime?>]`: 
+              - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+                - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+                - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Application <IMicrosoftGraphIdentity>]`: identity
+                  - `[Device <IMicrosoftGraphIdentity>]`: identity
+                  - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[MessageType <String>]`: chatMessageType
             - `[OnBehalfOf <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
             - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
@@ -6274,13 +6292,6 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
               - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
               - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
             - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-              - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-              - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-              - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Application <IMicrosoftGraphIdentity>]`: identity
-                - `[Device <IMicrosoftGraphIdentity>]`: identity
-                - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
             - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
             - `[Subject <String>]`: The subject of the chat message, in plaintext.
@@ -6458,7 +6469,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
           - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
         - `[Contacts <IMicrosoftGraphContact1[]>]`: The user's contacts. Read-only. Nullable.
         - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        - `[CreatedDateTime <DateTime?>]`: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+        - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
         - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
         - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
         - `[CustomSecurityAttributes <IMicrosoftGraphCustomSecurityAttributeValue>]`: customSecurityAttributeValue
@@ -6508,7 +6519,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
         - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
         - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
         - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-        - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. Read: Requires User-LifeCycleInfo.Read.All. For delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin.  Write: Requires User-LifeCycleInfo.ReadWrite.All. For delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in).
+        - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read or write this property, the calling app must be assigned the User-LifeCycleInfo.Read.All or User-LifeCycleInfo.ReadWrite.All permissions respectively. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin. To write this property in delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
         - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -7911,7 +7922,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
           - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
         - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
         - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
-        - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. Read-only. Returned only on $select.
+        - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
           - `[AssignedByGroup <String>]`: 
           - `[DisabledPlans <String[]>]`: 
           - `[Error <String>]`: 
@@ -8285,6 +8296,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
           - `[JoinType <JoinType?>]`: Device enrollment join type.
           - `[LogCollectionRequests <IMicrosoftGraphDeviceLogCollectionResponse[]>]`: List of log collection requests
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[EnrolledByUser <String>]`: The User Principal Name (UPN) of the user that enrolled the device
             - `[ErrorCode <Int64?>]`: The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
             - `[ExpirationDateTimeUtc <DateTime?>]`: The DateTime of the expiration of the logs
             - `[InitiatedByUserPrincipalName <String>]`: The UPN for who initiated the request
@@ -8322,7 +8334,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
           - `[ManagementAgent <ManagementAgentType?>]`: Management agent type.
           - `[ManagementFeatures <ManagedDeviceManagementFeatures?>]`: Device management features.
           - `[ManagementState <ManagementState?>]`: Management state of device in Microsoft Intune.
-          - `[Notes <String>]`: Notes on the device created by IT Admin
+          - `[Notes <String>]`: Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
           - `[OwnerType <OwnerType?>]`: Owner type of device.
           - `[PartnerReportedThreatState <ManagedDevicePartnerReportedHealthState?>]`: Available health states for the Device Health API
           - `[ProcessorArchitecture <ManagedDeviceArchitecture?>]`: Processor architecture
@@ -9762,7 +9774,7 @@ CLASSES <IMicrosoftGraphEducationClass[]>: Classes taught at the school. Nullabl
       - `[State <String>]`: 
     - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
-    - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+    - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
     - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
     - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.
@@ -10002,7 +10014,7 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
       - `[Outcomes <IMicrosoftGraphEducationOutcome[]>]`: 
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
+        - `[LastModifiedDateTime <DateTime?>]`: The moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
       - `[ReassignedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[Recipient <IMicrosoftGraphEducationSubmissionRecipient>]`: educationSubmissionRecipient
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10112,7 +10124,7 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
             - `[Status <IMicrosoftGraphResponseStatus>]`: responseStatus
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Response <String>]`: responseType
-              - `[Time <DateTime?>]`: The date and time that the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+              - `[Time <DateTime?>]`: The date and time when the response was returned. It uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
           - `[Body <IMicrosoftGraphItemBody>]`: itemBody
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Content <String>]`: The content of the item.
@@ -10338,15 +10350,15 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
             - `[AgreementFileId <String>]`: The identifier of the agreement file accepted by the user.
             - `[AgreementId <String>]`: The identifier of the agreement.
             - `[DeviceDisplayName <String>]`: The display name of the device used for accepting the agreement.
-            - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement.
+            - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
             - `[DeviceOSType <String>]`: The operating system used to accept the agreement.
             - `[DeviceOSVersion <String>]`: The operating system version of the device used to accept the agreement.
-            - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.
             - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[State <String>]`: agreementAcceptanceState
             - `[UserDisplayName <String>]`: Display name of the user when the acceptance was recorded.
             - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
-            - `[UserId <String>]`: The identifier of the user who accepted the agreement.
+            - `[UserId <String>]`: The identifier of the user who accepted the agreement. Supports $filter (eq).
             - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
           - `[Analytics <IMicrosoftGraphUserAnalytics>]`: userAnalytics
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10394,7 +10406,7 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
           - `[AppRoleAssignedResources <IMicrosoftGraphServicePrincipal[]>]`: 
             - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
+            - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
             - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
               - `[Id <String>]`: 
               - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
@@ -10731,7 +10743,7 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
               - `[VerifiedPublisherId <String>]`: The ID of the verified publisher from the app publisher's Partner Center account.
           - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
           - `[Approvals <IMicrosoftGraphApproval[]>]`: 
-          - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
+          - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
           - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
           - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10998,6 +11010,18 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
+              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+                - `[Actions <String>]`: chatMessageActions
+                - `[ModifiedDateTime <DateTime?>]`: 
+                - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+                  - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+                  - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Application <IMicrosoftGraphIdentity>]`: identity
+                    - `[Device <IMicrosoftGraphIdentity>]`: identity
+                    - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[MessageType <String>]`: chatMessageType
               - `[OnBehalfOf <IMicrosoftGraphChatMessageFromIdentitySet>]`: chatMessageFromIdentitySet
               - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
@@ -11012,13 +11036,6 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
                 - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
                 - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
               - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-                - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-                - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Application <IMicrosoftGraphIdentity>]`: identity
-                  - `[Device <IMicrosoftGraphIdentity>]`: identity
-                  - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
               - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
               - `[Subject <String>]`: The subject of the chat message, in plaintext.
@@ -11196,7 +11213,7 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
             - `[WellKnownName <String>]`: The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
           - `[Contacts <IMicrosoftGraphContact1[]>]`: The user's contacts. Read-only. Nullable.
           - `[Country <String>]`: The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-          - `[CreatedDateTime <DateTime?>]`: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+          - `[CreatedDateTime <DateTime?>]`: The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
           - `[CreatedObjects <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that were created by the user. Read-only. Nullable.
           - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
           - `[CustomSecurityAttributes <IMicrosoftGraphCustomSecurityAttributeValue>]`: customSecurityAttributeValue
@@ -11246,7 +11263,7 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
           - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
           - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
           - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-          - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. Read: Requires User-LifeCycleInfo.Read.All. For delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin.  Write: Requires User-LifeCycleInfo.ReadWrite.All. For delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in).
+          - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read or write this property, the calling app must be assigned the User-LifeCycleInfo.Read.All or User-LifeCycleInfo.ReadWrite.All permissions respectively. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin. To write this property in delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
           - `[EmployeeOrgData <IMicrosoftGraphEmployeeOrgData>]`: employeeOrgData
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[CostCenter <String>]`: The cost center associated with the user. Returned only on $select. Supports $filter.
@@ -12649,7 +12666,7 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
             - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
           - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
           - `[LegalAgeGroupClassification <String>]`: Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
-          - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. Read-only. Returned only on $select.
+          - `[LicenseAssignmentStates <IMicrosoftGraphLicenseAssignmentState[]>]`: State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
             - `[AssignedByGroup <String>]`: 
             - `[DisabledPlans <String[]>]`: 
             - `[Error <String>]`: 
@@ -13023,6 +13040,7 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
             - `[JoinType <JoinType?>]`: Device enrollment join type.
             - `[LogCollectionRequests <IMicrosoftGraphDeviceLogCollectionResponse[]>]`: List of log collection requests
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[EnrolledByUser <String>]`: The User Principal Name (UPN) of the user that enrolled the device
               - `[ErrorCode <Int64?>]`: The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
               - `[ExpirationDateTimeUtc <DateTime?>]`: The DateTime of the expiration of the logs
               - `[InitiatedByUserPrincipalName <String>]`: The UPN for who initiated the request
@@ -13060,7 +13078,7 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
             - `[ManagementAgent <ManagementAgentType?>]`: Management agent type.
             - `[ManagementFeatures <ManagedDeviceManagementFeatures?>]`: Device management features.
             - `[ManagementState <ManagementState?>]`: Management state of device in Microsoft Intune.
-            - `[Notes <String>]`: Notes on the device created by IT Admin
+            - `[Notes <String>]`: Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
             - `[OwnerType <OwnerType?>]`: Owner type of device.
             - `[PartnerReportedThreatState <ManagedDevicePartnerReportedHealthState?>]`: Available health states for the Device Health API
             - `[ProcessorArchitecture <ManagedDeviceArchitecture?>]`: Processor architecture
@@ -14500,7 +14518,7 @@ USERS <IMicrosoftGraphEducationUser[]>: Users in the school. Nullable.
         - `[State <String>]`: 
       - `[Mail <String>]`: The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[MailEnabled <Boolean?>]`: Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
-      - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+      - `[MailNickname <String>]`: The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
       - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
       - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
       - `[MembersWithLicenseErrors <IMicrosoftGraphDirectoryObject[]>]`: A list of group members with license errors from this group-based license assignment. Read-only.

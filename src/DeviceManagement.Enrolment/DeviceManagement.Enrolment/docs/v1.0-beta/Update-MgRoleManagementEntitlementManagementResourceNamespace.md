@@ -237,7 +237,9 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRbacResourceNamespace>: unifiedRbacResource
   - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: Operations that an authorized principal are allowed to perform.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
+    - `[AuthenticationContextId <String>]`: 
     - `[Description <String>]`: Description for the action. Supports $filter (eq).
+    - `[IsAuthenticationContextSettable <Boolean?>]`: 
     - `[Name <String>]`: Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
     - `[ResourceScope <IMicrosoftGraphUnifiedRbacResourceScope>]`: unifiedRbacResourceScope
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -287,7 +289,9 @@ INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
 RESOURCEACTIONS <IMicrosoftGraphUnifiedRbacResourceAction[]>: Operations that an authorized principal are allowed to perform.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
+  - `[AuthenticationContextId <String>]`: 
   - `[Description <String>]`: Description for the action. Supports $filter (eq).
+  - `[IsAuthenticationContextSettable <Boolean?>]`: 
   - `[Name <String>]`: Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
   - `[ResourceScope <IMicrosoftGraphUnifiedRbacResourceScope>]`: unifiedRbacResourceScope
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

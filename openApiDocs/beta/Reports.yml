@@ -1437,6 +1437,8 @@ paths:
               operationId: deviceManagement.reports.getDeviceManagementIntentSettingsReport
             getDeviceNonComplianceReport:
               operationId: deviceManagement.reports.getDeviceNonComplianceReport
+            getEncryptionReportForDevices:
+              operationId: deviceManagement.reports.getEncryptionReportGraphFPreDevices
             getEnrollmentConfigurationPoliciesByDevice:
               operationId: deviceManagement.reports.getEnrollmentConfigurationPoliciesGraphBPreDevice
             getFailedMobileAppsReport:
@@ -1449,6 +1451,8 @@ paths:
               operationId: deviceManagement.reports.getHistoricalReport
             getMalwareSummaryReport:
               operationId: deviceManagement.reports.getMalwareSummaryReport
+            getMobileApplicationManagementAppConfigurationReport:
+              operationId: deviceManagement.reports.getMobileApplicationManagementAppConfigurationReport
             getMobileApplicationManagementAppRegistrationSummaryReport:
               operationId: deviceManagement.reports.getMobileApplicationManagementAppRegistrationSummaryReport
             getNoncompliantDevicesAndSettingsReport:
@@ -1990,6 +1994,7 @@ paths:
                 - authenticationMethods
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
+                - dailyPrintUsage
                 - dailyPrintUsageByPrinter
                 - dailyPrintUsageByUser
                 - dailyPrintUsageSummariesByPrinter
@@ -2015,6 +2020,7 @@ paths:
                 - authenticationMethods
                 - credentialUserRegistrationDetails
                 - userCredentialUsageDetails
+                - dailyPrintUsage
                 - dailyPrintUsageByPrinter
                 - dailyPrintUsageByUser
                 - dailyPrintUsageSummariesByPrinter
@@ -2041,6 +2047,8 @@ paths:
               operationId: reports.ListCredentialUserRegistrationDetails
             userCredentialUsageDetails:
               operationId: reports.ListUserCredentialUsageDetails
+            dailyPrintUsage:
+              operationId: reports.ListDailyPrintUsage
             dailyPrintUsageByPrinter:
               operationId: reports.ListDailyPrintUsageGraphBPrePrinter
             dailyPrintUsageByUser:
@@ -3120,6 +3128,232 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /reports/dailyPrintUsage:
+    get:
+      tags:
+        - reports.printUsage
+      summary: Get dailyPrintUsage from reports
+      operationId: reports_ListDailyPrintUsage
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
+                - usageDate
+                - usageDate desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - blackAndWhitePageCount
+                - colorPageCount
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
+                - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
+                - usageDate
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.printUsageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.printUsage
+      summary: Create new navigation property to dailyPrintUsage for reports
+      operationId: reports_CreateDailyPrintUsage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/dailyPrintUsage/{printUsage-id}':
+    get:
+      tags:
+        - reports.printUsage
+      summary: Get dailyPrintUsage from reports
+      operationId: reports_GetDailyPrintUsage
+      parameters:
+        - name: printUsage-id
+          in: path
+          description: 'key: id of printUsage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - blackAndWhitePageCount
+                - colorPageCount
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
+                - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
+                - usageDate
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.printUsage
+      summary: Update the navigation property dailyPrintUsage in reports
+      operationId: reports_UpdateDailyPrintUsage
+      parameters:
+        - name: printUsage-id
+          in: path
+          description: 'key: id of printUsage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.printUsage
+      summary: Delete navigation property dailyPrintUsage for reports
+      operationId: reports_DeleteDailyPrintUsage
+      parameters:
+        - name: printUsage-id
+          in: path
+          description: 'key: id of printUsage'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /reports/dailyPrintUsageByPrinter:
     get:
       tags:
@@ -3148,12 +3382,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - printerId
@@ -3170,9 +3418,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -3245,9 +3500,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -3354,12 +3616,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - userPrincipalName
@@ -3376,9 +3652,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -3451,9 +3734,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -3556,12 +3846,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - printerId
@@ -3578,9 +3882,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -3653,9 +3964,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -3758,12 +4076,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - userPrincipalName
@@ -3780,9 +4112,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -3855,9 +4194,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -3947,16 +4293,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3971,16 +4310,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8500,16 +8832,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8563,16 +8888,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8586,16 +8904,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8648,16 +8959,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8672,16 +8976,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8695,16 +8992,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8727,16 +9017,9 @@ paths:
         '200':
           description: Success
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: object
-                properties:
-                  value:
-                    type: string
-                    format: base64url
-                    nullable: true
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.report'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8768,12 +9051,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - printerId
@@ -8790,9 +9087,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -8865,9 +9169,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -8974,12 +9285,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - userPrincipalName
@@ -8996,9 +9321,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -9071,9 +9403,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -9176,12 +9515,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - printerId
@@ -9198,9 +9551,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -9273,9 +9633,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -9378,12 +9745,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - userPrincipalName
@@ -9400,9 +9781,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -9475,9 +9863,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -10489,6 +10884,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
               description: Represents the self-service password reset (SSPR) usage for a given tenant.
               x-ms-navigationProperty: true
+            dailyPrintUsage:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUsage'
+              x-ms-navigationProperty: true
             dailyPrintUsageByPrinter:
               type: array
               items:
@@ -10706,6 +11106,55 @@ components:
               description: Provides the user principal name of the corresponding user.
           additionalProperties:
             type: object
+    microsoft.graph.printUsage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printUsage
+          type: object
+          properties:
+            blackAndWhitePageCount:
+              type: integer
+              format: int64
+              nullable: true
+            colorPageCount:
+              type: integer
+              format: int64
+              nullable: true
+            completedBlackAndWhiteJobCount:
+              type: integer
+              format: int64
+            completedColorJobCount:
+              type: integer
+              format: int64
+            completedJobCount:
+              type: integer
+              format: int64
+              nullable: true
+            doubleSidedSheetCount:
+              type: integer
+              format: int64
+              nullable: true
+            incompleteJobCount:
+              type: integer
+              format: int64
+            mediaSheetCount:
+              type: integer
+              format: int64
+              nullable: true
+            pageCount:
+              type: integer
+              format: int64
+              nullable: true
+            singleSidedSheetCount:
+              type: integer
+              format: int64
+              nullable: true
+            usageDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+          additionalProperties:
+            type: object
     microsoft.graph.printUsageByPrinter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.printUsage'
@@ -10729,6 +11178,18 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.report:
+      title: report
+      type: object
+      properties:
+        content:
+          type: string
+          description: Report content; details vary by report type.
+          format: base64url
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Device Configuration profile History reports.
     microsoft.graph.attackSimulationRepeatOffender:
       title: attackSimulationRepeatOffender
       type: object
@@ -12247,27 +12708,6 @@ components:
         - appPassword
         - unknownFutureValue
       type: string
-    microsoft.graph.printUsage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: printUsage
-          type: object
-          properties:
-            completedBlackAndWhiteJobCount:
-              type: integer
-              format: int64
-            completedColorJobCount:
-              type: integer
-              format: int64
-            incompleteJobCount:
-              type: integer
-              format: int64
-            usageDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-          additionalProperties:
-            type: object
     microsoft.graph.attackSimulationUser:
       title: attackSimulationUser
       type: object
@@ -12506,6 +12946,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printUsageCollectionResponse:
+      title: Collection of printUsage
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printUsage'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -13007,6 +13460,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetailsCollectionResponse'
+    microsoft.graph.printUsageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printUsageCollectionResponse'
     microsoft.graph.printUsageByPrinterCollectionResponse:
       description: Retrieved collection
       content:

@@ -18305,7 +18305,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.passwordSingleSignOnSettings'
             accountEnabled:
               type: boolean
-              description: 'true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).'
+              description: 'true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).'
               nullable: true
             addIns:
               type: array
@@ -18986,17 +18986,22 @@ components:
       properties:
         allProperties:
           type: boolean
+          description: 'Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.'
           nullable: true
         credentialsWithUsageSign:
           type: boolean
+          description: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
           nullable: true
         credentialsWithUsageVerify:
           type: boolean
+          description: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
           nullable: true
         isEnabled:
           type: boolean
+          description: 'Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.'
         tokenEncryptionKeyId:
           type: boolean
+          description: Locks the tokenEncryptionKeyId property for modification on the service principal.
           nullable: true
       additionalProperties:
         type: object

@@ -178,6 +178,9 @@ BODYPARAMETER <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentAppli
         - `[SortBy <String>]`: bucketAggregationSortProperty
       - `[Field <String>]`: Computes aggregation on the field while the field exists in current entity type. Required.
       - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+    - `[CollapseProperties <IMicrosoftGraphCollapseProperty[]>]`: Contains the ordered collection of fields and limit to collapse results. Optional.
+      - `[Fields <String[]>]`: Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
+      - `[Limit <Int32?>]`: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
     - `[ContentSources <String[]>]`: Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
     - `[EnableTopResults <Boolean?>]`: This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
     - `[EntityTypes <String[]>]`: One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
@@ -222,6 +225,9 @@ REQUESTS <IMicrosoftGraphSearchRequest[]>: .
       - `[SortBy <String>]`: bucketAggregationSortProperty
     - `[Field <String>]`: Computes aggregation on the field while the field exists in current entity type. Required.
     - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+  - `[CollapseProperties <IMicrosoftGraphCollapseProperty[]>]`: Contains the ordered collection of fields and limit to collapse results. Optional.
+    - `[Fields <String[]>]`: Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
+    - `[Limit <Int32?>]`: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
   - `[ContentSources <String[]>]`: Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
   - `[EnableTopResults <Boolean?>]`: This triggers hybrid sort for messages: the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
   - `[EntityTypes <String[]>]`: One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.

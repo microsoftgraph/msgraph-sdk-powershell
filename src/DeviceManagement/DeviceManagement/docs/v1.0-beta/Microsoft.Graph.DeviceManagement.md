@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: 33618394-4d5f-4977-90dd-744cf9dcf676
+Module Guid: 3afb766d-198b-4c1d-b38b-9abc50cbac30
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -596,18 +596,6 @@ User experience analytics devices not Windows Autopilot ready.
 ### [Get-MgDeviceManagementUserExperienceAnalyticOverview](Get-MgDeviceManagementUserExperienceAnalyticOverview.md)
 User experience analytics overview
 
-### [Get-MgDeviceManagementUserExperienceAnalyticRegressionSummary](Get-MgDeviceManagementUserExperienceAnalyticRegressionSummary.md)
-User experience analytics regression summary
-
-### [Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression](Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression.md)
-The metric values for the user experience analytics Manufacturer regression.
-
-### [Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryModelRegression](Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryModelRegression.md)
-The metric values for the user experience analytics model regression.
-
-### [Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression](Get-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression.md)
-The metric values for the user experience analytics operating system regression.
-
 ### [Get-MgDeviceManagementUserExperienceAnalyticRemoteConnection](Get-MgDeviceManagementUserExperienceAnalyticRemoteConnection.md)
 User experience analytics remote connection
 
@@ -1075,15 +1063,6 @@ Create new navigation property to userExperienceAnalyticsModelScores for deviceM
 
 ### [New-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice](New-MgDeviceManagementUserExperienceAnalyticNotAutopilotReadyDevice.md)
 Create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
-
-### [New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression](New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression.md)
-Create new navigation property to manufacturerRegression for deviceManagement
-
-### [New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryModelRegression](New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryModelRegression.md)
-Create new navigation property to modelRegression for deviceManagement
-
-### [New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression](New-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression.md)
-Create new navigation property to operatingSystemRegression for deviceManagement
 
 ### [New-MgDeviceManagementUserExperienceAnalyticRemoteConnection](New-MgDeviceManagementUserExperienceAnalyticRemoteConnection.md)
 Create new navigation property to userExperienceAnalyticsRemoteConnection for deviceManagement
@@ -1621,18 +1600,6 @@ Delete navigation property userExperienceAnalyticsNotAutopilotReadyDevice for de
 
 ### [Remove-MgDeviceManagementUserExperienceAnalyticOverview](Remove-MgDeviceManagementUserExperienceAnalyticOverview.md)
 Delete navigation property userExperienceAnalyticsOverview for deviceManagement
-
-### [Remove-MgDeviceManagementUserExperienceAnalyticRegressionSummary](Remove-MgDeviceManagementUserExperienceAnalyticRegressionSummary.md)
-Delete navigation property userExperienceAnalyticsRegressionSummary for deviceManagement
-
-### [Remove-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression](Remove-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression.md)
-Delete navigation property manufacturerRegression for deviceManagement
-
-### [Remove-MgDeviceManagementUserExperienceAnalyticRegressionSummaryModelRegression](Remove-MgDeviceManagementUserExperienceAnalyticRegressionSummaryModelRegression.md)
-Delete navigation property modelRegression for deviceManagement
-
-### [Remove-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression](Remove-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression.md)
-Delete navigation property operatingSystemRegression for deviceManagement
 
 ### [Remove-MgDeviceManagementUserExperienceAnalyticRemoteConnection](Remove-MgDeviceManagementUserExperienceAnalyticRemoteConnection.md)
 Delete navigation property userExperienceAnalyticsRemoteConnection for deviceManagement
@@ -2173,18 +2140,6 @@ Update the navigation property userExperienceAnalyticsNotAutopilotReadyDevice in
 
 ### [Update-MgDeviceManagementUserExperienceAnalyticOverview](Update-MgDeviceManagementUserExperienceAnalyticOverview.md)
 Update the navigation property userExperienceAnalyticsOverview in deviceManagement
-
-### [Update-MgDeviceManagementUserExperienceAnalyticRegressionSummary](Update-MgDeviceManagementUserExperienceAnalyticRegressionSummary.md)
-Update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
-
-### [Update-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression](Update-MgDeviceManagementUserExperienceAnalyticRegressionSummaryManufacturerRegression.md)
-Update the navigation property manufacturerRegression in deviceManagement
-
-### [Update-MgDeviceManagementUserExperienceAnalyticRegressionSummaryModelRegression](Update-MgDeviceManagementUserExperienceAnalyticRegressionSummaryModelRegression.md)
-Update the navigation property modelRegression in deviceManagement
-
-### [Update-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression](Update-MgDeviceManagementUserExperienceAnalyticRegressionSummaryOperatingSystemRegression.md)
-Update the navigation property operatingSystemRegression in deviceManagement
 
 ### [Update-MgDeviceManagementUserExperienceAnalyticRemoteConnection](Update-MgDeviceManagementUserExperienceAnalyticRemoteConnection.md)
 Update the navigation property userExperienceAnalyticsRemoteConnection in deviceManagement

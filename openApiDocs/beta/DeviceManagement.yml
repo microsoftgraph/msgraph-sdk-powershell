@@ -146,7 +146,6 @@ paths:
                 - userExperienceAnalyticsModelScores
                 - userExperienceAnalyticsNotAutopilotReadyDevice
                 - userExperienceAnalyticsOverview
-                - userExperienceAnalyticsRegressionSummary
                 - userExperienceAnalyticsRemoteConnection
                 - userExperienceAnalyticsResourcePerformance
                 - userExperienceAnalyticsScoreHistory
@@ -180,8 +179,6 @@ paths:
                 - notificationMessageTemplates
                 - domainJoinConnectors
                 - configManagerCollections
-                - organizationalMessageDetails
-                - organizationalMessageGuidedContents
                 - resourceOperations
                 - roleAssignments
                 - roleDefinitions
@@ -318,7 +315,6 @@ paths:
                 - userExperienceAnalyticsModelScores
                 - userExperienceAnalyticsNotAutopilotReadyDevice
                 - userExperienceAnalyticsOverview
-                - userExperienceAnalyticsRegressionSummary
                 - userExperienceAnalyticsRemoteConnection
                 - userExperienceAnalyticsResourcePerformance
                 - userExperienceAnalyticsScoreHistory
@@ -352,8 +348,6 @@ paths:
                 - notificationMessageTemplates
                 - domainJoinConnectors
                 - configManagerCollections
-                - organizationalMessageDetails
-                - organizationalMessageGuidedContents
                 - resourceOperations
                 - roleAssignments
                 - roleDefinitions
@@ -591,8 +585,6 @@ paths:
               operationId: deviceManagement.ListUserExperienceAnalyticsNotAutopilotReadyDevice
             userExperienceAnalyticsOverview:
               operationId: deviceManagement.GetUserExperienceAnalyticsOverview
-            userExperienceAnalyticsRegressionSummary:
-              operationId: deviceManagement.GetUserExperienceAnalyticsRegressionSummary
             userExperienceAnalyticsRemoteConnection:
               operationId: deviceManagement.ListUserExperienceAnalyticsRemoteConnection
             userExperienceAnalyticsResourcePerformance:
@@ -659,10 +651,6 @@ paths:
               operationId: deviceManagement.ListDomainJoinConnectors
             configManagerCollections:
               operationId: deviceManagement.ListConfigManagerCollections
-            organizationalMessageDetails:
-              operationId: deviceManagement.ListOrganizationalMessageDetails
-            organizationalMessageGuidedContents:
-              operationId: deviceManagement.ListOrganizationalMessageGuidedContents
             resourceOperations:
               operationId: deviceManagement.ListResourceOperations
             roleAssignments:
@@ -721,22 +709,18 @@ paths:
               operationId: deviceManagement.getComanagementEligibleDevicesSummary
             getEffectivePermissions:
               operationId: deviceManagement.getEffectivePermissions
-            getOrganizationalMessageTenantConsent:
-              operationId: deviceManagement.getOrganizationalMessageTenantConsent
             getRoleScopeTagsByIds:
               operationId: deviceManagement.getRoleScopeTagsGraphBPreIds
             getRoleScopeTagsByResource:
               operationId: deviceManagement.getRoleScopeTagsGraphBPreResource
             getSuggestedEnrollmentLimit:
               operationId: deviceManagement.getSuggestedEnrollmentLimit
-            postOrganizationalMessageTenantConsent:
-              operationId: deviceManagement.postOrganizationalMessageTenantConsent
             scopedForResource:
               operationId: deviceManagement.scopedGraphFPreResource
             sendCustomNotificationToCompanyPortal:
               operationId: deviceManagement.sendCustomNotificationToCompanyPortal
-            updateOrganizationalMessageTenantConsent:
-              operationId: deviceManagement.updateOrganizationalMessageTenantConsent
+            userExperienceAnalyticsSummarizedDeviceScopes:
+              operationId: deviceManagement.userExperienceAnalyticsSummarizedDeviceScopes
             userExperienceAnalyticsSummarizeWorkFromAnywhereDevices:
               operationId: deviceManagement.userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
             verifyWindowsEnrollmentAutoDiscovery:
@@ -2916,6 +2900,8 @@ paths:
               operationId: deviceManagement.comanagedDevices.managedDevice.disableLostMode
             enableLostMode:
               operationId: deviceManagement.comanagedDevices.managedDevice.enableLostMode
+            endRemoteHelpSession:
+              operationId: deviceManagement.comanagedDevices.managedDevice.endRemoteHelpSession
             enrollNowAction:
               operationId: deviceManagement.comanagedDevices.managedDevice.enrollNowAction
             getCloudPcRemoteActionResults:
@@ -2928,6 +2914,8 @@ paths:
               operationId: deviceManagement.comanagedDevices.managedDevice.getNonCompliantSettings
             getOemWarranty:
               operationId: deviceManagement.comanagedDevices.managedDevice.getOemWarranty
+            initiateMobileDeviceManagementKeyRecovery:
+              operationId: deviceManagement.comanagedDevices.managedDevice.initiateMobileDeviceManagementKeyRecovery
             locateDevice:
               operationId: deviceManagement.comanagedDevices.managedDevice.locateDevice
             logoutSharedAppleDeviceActiveUser:
@@ -4085,6 +4073,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - enrolledByUser
+                - enrolledByUser desc
                 - errorCode
                 - errorCode desc
                 - expirationDateTimeUTC
@@ -4113,6 +4103,7 @@ paths:
             items:
               enum:
                 - id
+                - enrolledByUser
                 - errorCode
                 - expirationDateTimeUTC
                 - initiatedByUserPrincipalName
@@ -4209,6 +4200,7 @@ paths:
             items:
               enum:
                 - id
+                - enrolledByUser
                 - errorCode
                 - expirationDateTimeUTC
                 - initiatedByUserPrincipalName
@@ -7867,6 +7859,8 @@ paths:
               operationId: deviceManagement.configurationPolicies.deviceManagementConfigurationPolicy.assign
             createCopy:
               operationId: deviceManagement.configurationPolicies.deviceManagementConfigurationPolicy.createCopy
+            reorder:
+              operationId: deviceManagement.configurationPolicies.deviceManagementConfigurationPolicy.reorder
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26900,6 +26894,8 @@ paths:
               operationId: deviceManagement.managedDevices.managedDevice.disableLostMode
             enableLostMode:
               operationId: deviceManagement.managedDevices.managedDevice.enableLostMode
+            endRemoteHelpSession:
+              operationId: deviceManagement.managedDevices.managedDevice.endRemoteHelpSession
             enrollNowAction:
               operationId: deviceManagement.managedDevices.managedDevice.enrollNowAction
             getCloudPcRemoteActionResults:
@@ -26912,6 +26908,8 @@ paths:
               operationId: deviceManagement.managedDevices.managedDevice.getNonCompliantSettings
             getOemWarranty:
               operationId: deviceManagement.managedDevices.managedDevice.getOemWarranty
+            initiateMobileDeviceManagementKeyRecovery:
+              operationId: deviceManagement.managedDevices.managedDevice.initiateMobileDeviceManagementKeyRecovery
             locateDevice:
               operationId: deviceManagement.managedDevices.managedDevice.locateDevice
             logoutSharedAppleDeviceActiveUser:
@@ -28069,6 +28067,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - enrolledByUser
+                - enrolledByUser desc
                 - errorCode
                 - errorCode desc
                 - expirationDateTimeUTC
@@ -28097,6 +28097,7 @@ paths:
             items:
               enum:
                 - id
+                - enrolledByUser
                 - errorCode
                 - expirationDateTimeUTC
                 - initiatedByUserPrincipalName
@@ -28193,6 +28194,7 @@ paths:
             items:
               enum:
                 - id
+                - enrolledByUser
                 - errorCode
                 - expirationDateTimeUTC
                 - initiatedByUserPrincipalName
@@ -43727,675 +43729,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /deviceManagement/userExperienceAnalyticsRegressionSummary:
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Get userExperienceAnalyticsRegressionSummary from deviceManagement
-      description: User experience analytics regression summary
-      operationId: deviceManagement_GetUserExperienceAnalyticsRegressionSummary
-      parameters:
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - manufacturerRegression
-                - modelRegression
-                - operatingSystemRegression
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - manufacturerRegression
-                - modelRegression
-                - operatingSystemRegression
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsRegressionSummary'
-          links:
-            manufacturerRegression:
-              operationId: deviceManagement.UserExperienceAnalyticsRegressionSummary.ListManufacturerRegression
-            modelRegression:
-              operationId: deviceManagement.UserExperienceAnalyticsRegressionSummary.ListModelRegression
-            operatingSystemRegression:
-              operationId: deviceManagement.UserExperienceAnalyticsRegressionSummary.ListOperatingSystemRegression
-            summarizeDeviceRegressionPerformance:
-              operationId: deviceManagement.userExperienceAnalyticsRegressionSummary.summarizeDeviceRegressionPerformance
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Update the navigation property userExperienceAnalyticsRegressionSummary in deviceManagement
-      operationId: deviceManagement_UpdateUserExperienceAnalyticsRegressionSummary
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsRegressionSummary'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Delete navigation property userExperienceAnalyticsRegressionSummary for deviceManagement
-      operationId: deviceManagement_DeleteUserExperienceAnalyticsRegressionSummary
-      parameters:
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /deviceManagement/userExperienceAnalyticsRegressionSummary/manufacturerRegression:
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Get manufacturerRegression from deviceManagement
-      description: The metric values for the user experience analytics Manufacturer regression.
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_ListManufacturerRegression
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - unit
-                - unit desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - unit
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          $ref: '#/components/responses/microsoft.graph.userExperienceAnalyticsMetricCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Create new navigation property to manufacturerRegression for deviceManagement
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_CreateManufacturerRegression
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/userExperienceAnalyticsRegressionSummary/manufacturerRegression/{userExperienceAnalyticsMetric-id}':
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Get manufacturerRegression from deviceManagement
-      description: The metric values for the user experience analytics Manufacturer regression.
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_GetManufacturerRegression
-      parameters:
-        - name: userExperienceAnalyticsMetric-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetric'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetric
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - unit
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Update the navigation property manufacturerRegression in deviceManagement
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_UpdateManufacturerRegression
-      parameters:
-        - name: userExperienceAnalyticsMetric-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetric'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetric
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Delete navigation property manufacturerRegression for deviceManagement
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_DeleteManufacturerRegression
-      parameters:
-        - name: userExperienceAnalyticsMetric-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetric'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetric
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /deviceManagement/userExperienceAnalyticsRegressionSummary/modelRegression:
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Get modelRegression from deviceManagement
-      description: The metric values for the user experience analytics model regression.
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_ListModelRegression
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - unit
-                - unit desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - unit
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          $ref: '#/components/responses/microsoft.graph.userExperienceAnalyticsMetricCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Create new navigation property to modelRegression for deviceManagement
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_CreateModelRegression
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/userExperienceAnalyticsRegressionSummary/modelRegression/{userExperienceAnalyticsMetric-id}':
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Get modelRegression from deviceManagement
-      description: The metric values for the user experience analytics model regression.
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_GetModelRegression
-      parameters:
-        - name: userExperienceAnalyticsMetric-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetric'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetric
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - unit
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Update the navigation property modelRegression in deviceManagement
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_UpdateModelRegression
-      parameters:
-        - name: userExperienceAnalyticsMetric-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetric'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetric
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Delete navigation property modelRegression for deviceManagement
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_DeleteModelRegression
-      parameters:
-        - name: userExperienceAnalyticsMetric-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetric'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetric
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  /deviceManagement/userExperienceAnalyticsRegressionSummary/operatingSystemRegression:
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Get operatingSystemRegression from deviceManagement
-      description: The metric values for the user experience analytics operating system regression.
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_ListOperatingSystemRegression
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - unit
-                - unit desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - unit
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          $ref: '#/components/responses/microsoft.graph.userExperienceAnalyticsMetricCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Create new navigation property to operatingSystemRegression for deviceManagement
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_CreateOperatingSystemRegression
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/userExperienceAnalyticsRegressionSummary/operatingSystemRegression/{userExperienceAnalyticsMetric-id}':
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Get operatingSystemRegression from deviceManagement
-      description: The metric values for the user experience analytics operating system regression.
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_GetOperatingSystemRegression
-      parameters:
-        - name: userExperienceAnalyticsMetric-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetric'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetric
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - unit
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Update the navigation property operatingSystemRegression in deviceManagement
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_UpdateOperatingSystemRegression
-      parameters:
-        - name: userExperienceAnalyticsMetric-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetric'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetric
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.userExperienceAnalyticsRegressionSummary
-      summary: Delete navigation property operatingSystemRegression for deviceManagement
-      operationId: deviceManagement.userExperienceAnalyticsRegressionSummary_DeleteOperatingSystemRegression
-      parameters:
-        - name: userExperienceAnalyticsMetric-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetric'
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetric
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /deviceManagement/userExperienceAnalyticsRemoteConnection:
     get:
       tags:
@@ -47383,8 +46716,6 @@ components:
               x-ms-navigationProperty: true
             userExperienceAnalyticsOverview:
               $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsOverview'
-            userExperienceAnalyticsRegressionSummary:
-              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsRegressionSummary'
             userExperienceAnalyticsRemoteConnection:
               type: array
               items:
@@ -47570,18 +46901,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.configManagerCollection'
               description: A list of ConfigManagerCollection
-              x-ms-navigationProperty: true
-            organizationalMessageDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.organizationalMessageDetail'
-              description: A list of OrganizationalMessageDetails
-              x-ms-navigationProperty: true
-            organizationalMessageGuidedContents:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.organizationalMessageGuidedContent'
-              description: A list of OrganizationalMessageGuidedContents
               x-ms-navigationProperty: true
             resourceOperations:
               type: array
@@ -48222,14 +47541,14 @@ components:
               readOnly: true
             freeStorageSpaceInBytes:
               type: integer
-              description: Free Storage in Bytes. This property is read-only.
+              description: Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
               format: int64
               readOnly: true
             hardwareInformation:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -48295,7 +47614,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: Notes on the device created by IT Admin
+              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -48318,7 +47637,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: Total Memory in Bytes. This property is read-only.
+              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -48369,7 +47688,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
               readOnly: true
             specificationVersion:
@@ -48389,7 +47708,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -48650,6 +47969,10 @@ components:
         - title: deviceLogCollectionResponse
           type: object
           properties:
+            enrolledByUser:
+              type: string
+              description: The User Principal Name (UPN) of the user that enrolled the device
+              nullable: true
             errorCode:
               type: integer
               description: 'The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18'
@@ -53824,33 +53147,6 @@ components:
           additionalProperties:
             type: object
           description: The user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.
-    microsoft.graph.userExperienceAnalyticsRegressionSummary:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: userExperienceAnalyticsRegressionSummary
-          type: object
-          properties:
-            manufacturerRegression:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-              description: The metric values for the user experience analytics Manufacturer regression.
-              x-ms-navigationProperty: true
-            modelRegression:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-              description: The metric values for the user experience analytics model regression.
-              x-ms-navigationProperty: true
-            operatingSystemRegression:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-              description: The metric values for the user experience analytics operating system regression.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-          description: The user experience analytics Regression Summary.
     microsoft.graph.userExperienceAnalyticsRemoteConnection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -54737,12 +54033,6 @@ components:
           type: integer
           description: The number of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
           format: int32
-        otherSeverityAnomalyCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The number of anomalies which have been detected with undefined severity. Valid values -2147483648 to 2147483647
-          format: int32
       additionalProperties:
         type: object
       description: The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.
@@ -54890,6 +54180,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
               description: Cloud PC service plans.
+              x-ms-navigationProperty: true
+            sharedUseServicePlans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
               x-ms-navigationProperty: true
             snapshots:
               type: array
@@ -56724,6 +56019,12 @@ components:
               type: string
               description: The distinguished name of the OU.
               nullable: true
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of scope tags for the configuration.
             supportedSettingsCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -56787,6 +56088,12 @@ components:
             ouDistinguishedName:
               type: string
               description: The distinguished name of the OU.
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of scope tags for the configuration.
           additionalProperties:
             type: object
           description: The Group Policy Object file uploaded by admin.
@@ -56975,81 +56282,6 @@ components:
           additionalProperties:
             type: object
           description: A ConfigManager defined collection of devices or users.
-    microsoft.graph.organizationalMessageDetail:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: organizationalMessageDetail
-          type: object
-          properties:
-            content:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageContent'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time of when the message was created
-              format: date-time
-              nullable: true
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time of when the message will stop being displayed to clients
-              format: date-time
-              nullable: true
-            frequency:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageFrequency'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time of when the message was last modified
-              format: date-time
-              nullable: true
-            scenario:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageScenario'
-            startDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time of when the message will start being displayed to clients
-              format: date-time
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageStatus'
-            surface:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageSurface'
-            targeting:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageTargeting'
-            theme:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageTheme'
-            userEngagementStatistics:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageInsights'
-            variant:
-              type: string
-              description: Indicates the corresponding variant for the experience
-              nullable: true
-          additionalProperties:
-            type: object
-          description: This will allow the admin to see the specific details of an organizational message that has been created for their tenant
-    microsoft.graph.organizationalMessageGuidedContent:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: organizationalMessageGuidedContent
-          type: object
-          properties:
-            logo:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageLogoGuide'
-            placementDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.organizationalMessagePlacementDetail'
-              description: Contains the different types of text content that can be displayed to customers along with their localized values
-            scenario:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageScenario'
-            surface:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageSurface'
-            theme:
-              $ref: '#/components/schemas/microsoft.graph.organizationalMessageTheme'
-          additionalProperties:
-            type: object
-          description: This will allow the admin to see the different templated organizational messages that can be created
     microsoft.graph.resourceOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -57686,6 +56918,9 @@ components:
             showAzureADEnterpriseApps:
               type: boolean
               description: Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
+            showConfigurationManagerApps:
+              type: boolean
+              description: Boolean that indicates if Configuration Manager Apps will be shown in Company Portal
             showDisplayNameNextToLogo:
               type: boolean
               description: Boolean that represents whether the administrator-supplied display name will be shown next to the logo image or not
@@ -59319,7 +58554,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).'
             assignedPlans:
               type: array
               items:
@@ -59351,7 +58586,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
@@ -59385,7 +58620,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. Read: Requires User-LifeCycleInfo.Read.All. For delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin.  Write: Requires User-LifeCycleInfo.ReadWrite.All. For delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time when the user left or will leave the organization. To read or write this property, the calling app must be assigned the User-LifeCycleInfo.Read.All or User-LifeCycleInfo.ReadWrite.All permissions respectively. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin. To write this property in delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -59451,7 +58686,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
               description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
@@ -59964,6 +59199,7 @@ components:
         - androidDeviceAdministrator
         - androidWorkProfile
         - androidDedicatedAndFullyManaged
+        - unknownFutureValue
       type: string
       description: 'Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).'
       x-ms-enum:
@@ -60003,6 +59239,9 @@ components:
           - value: androidDedicatedAndFullyManaged
             description: Indicates that the platform of the detected application is Android dedicated and fully managed.
             name: androidDedicatedAndFullyManaged
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -60881,6 +60120,7 @@ components:
         - exchangeOnline
         - linuxMdm
         - enrollment
+        - endpointPrivilegeManagement
         - unknownFutureValue
       type: string
       description: Describes which technology this setting can be deployed with
@@ -60915,8 +60155,11 @@ components:
           - value: enrollment
             description: Setting can be deployed through device enrollment.
             name: enrollment
+          - value: endpointPrivilegeManagement
+            description: Setting can be deployed using the Endpoint privilege management channel
+            name: endpointPrivilegeManagement
           - value: unknownFutureValue
-            description: Sentinel member for cases where the client cannot handle the new enum values.
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceAndAppManagementAssignmentSource:
       title: deviceAndAppManagementAssignmentSource
@@ -61141,8 +60384,16 @@ components:
     microsoft.graph.deviceManagementPriorityMetaData:
       title: deviceManagementPriorityMetaData
       type: object
+      properties:
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Priority of the policy. Valid values 1 to 500
+          format: int32
       additionalProperties:
         type: object
+      description: Priority metadata of the policy.
     microsoft.graph.deviceManagementConfigurationPolicyTemplateReference:
       title: deviceManagementConfigurationPolicyTemplateReference
       type: object
@@ -61210,8 +60461,11 @@ components:
         - endpointSecurityAttackSurfaceReduction
         - endpointSecurityAccountProtection
         - endpointSecurityApplicationControl
+        - endpointSecurityEndpointPrivilegeManagement
         - enrollmentConfiguration
+        - appQuietTime
         - baseline
+        - unknownFutureValue
       type: string
       description: Describes the TemplateFamily for the Template entity
       x-ms-enum:
@@ -61242,12 +60496,21 @@ components:
           - value: endpointSecurityApplicationControl
             description: Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)
             name: endpointSecurityApplicationControl
+          - value: endpointSecurityEndpointPrivilegeManagement
+            description: Template Family for EPM Elevation Rules
+            name: endpointSecurityEndpointPrivilegeManagement
           - value: enrollmentConfiguration
             description: Template Family for EnrollmentConfiguration
             name: enrollmentConfiguration
+          - value: appQuietTime
+            description: Template Family for QuietTimeIndicates Template Family for all the Apps QuietTime policies and templates
+            name: appQuietTime
           - value: baseline
             description: Template Family for Baseline
             name: baseline
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementConfigurationSettingInstanceTemplate:
       title: deviceManagementConfigurationSettingInstanceTemplate
       type: object
@@ -62348,6 +61611,7 @@ components:
         - disable
         - reenable
         - moveDeviceToOrganizationalUnit
+        - initiateMobileDeviceManagementKeyRecovery
       type: string
       description: Remote actions Intune supports.
       x-ms-enum:
@@ -62438,6 +61702,9 @@ components:
           - value: moveDeviceToOrganizationalUnit
             description: Indicate user initiates an action to move the device to a new organizational unit.
             name: moveDeviceToOrganizationalUnit
+          - value: initiateMobileDeviceManagementKeyRecovery
+            description: Add device action of InitiateMobileDeviceManagementKeyRecovery
+            name: initiateMobileDeviceManagementKeyRecovery
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -65334,6 +64601,8 @@ components:
               type: string
               description: 'The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.'
               nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
             windowsSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcWindowsSettings'
             assignments:
@@ -65393,6 +64662,29 @@ components:
               type: integer
               description: The number of vCPUs. Read-only.
               format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcSharedUseServicePlan:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcSharedUseServicePlan
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            totalCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            usedCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcSnapshot:
@@ -66095,6 +65387,7 @@ components:
         - needsOsUpdate
         - ineligible
         - scheduledForEnrollment
+        - unknownFutureValue
       type: string
       x-ms-enum:
         name: comanagementEligibleType
@@ -66103,6 +65396,9 @@ components:
           - value: scheduledForEnrollment
             description: Devices scheduled for Co-Management enrollment
             name: scheduledForEnrollment
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceComplianceScriptDeviceState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -66354,7 +65650,7 @@ components:
               description: Indicates if Weclome screen is disabled
             userlessSharedAadModeEnabled:
               type: boolean
-              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
+              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
             userSessionTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648
@@ -67352,231 +66648,6 @@ components:
           - value: inactive
             description: There is no heart-beat from connector from last 5 days.
             name: inactive
-    microsoft.graph.organizationalMessageContent:
-      title: organizationalMessageContent
-      type: object
-      properties:
-        guidedContentId:
-          type: string
-          description: The ID of the guided content that this content is using
-          nullable: true
-        logoInfo:
-          $ref: '#/components/schemas/microsoft.graph.organizationalMessageLogo'
-        placementDetails:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.organizationalMessagePlacementDetail'
-          description: Contains the different types of text content that can be displayed to customers along with their localized values
-      additionalProperties:
-        type: object
-      description: Contains the entire content of the message that will be displayed to the clients
-    microsoft.graph.organizationalMessageFrequency:
-      title: organizationalMessageFrequency
-      enum:
-        - weeklyOnce
-        - monthlyOnce
-        - monthlyTwice
-        - unknownFutureValue
-      type: string
-      description: Indicates the frequency at which a client will see the message
-      x-ms-enum:
-        name: organizationalMessageFrequency
-        modelAsString: false
-        values:
-          - value: weeklyOnce
-            description: Indicates that the message will be displayed once a week
-            name: weeklyOnce
-          - value: monthlyOnce
-            description: Indicates that the message will be displayed once a month
-            name: monthlyOnce
-          - value: monthlyTwice
-            description: Indicates that the message will be displayed twice a month
-            name: monthlyTwice
-          - value: unknownFutureValue
-            description: 'UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.'
-            name: unknownFutureValue
-    microsoft.graph.organizationalMessageScenario:
-      title: organizationalMessageScenario
-      enum:
-        - onboarding
-        - lifecycle
-        - unknownFutureValue
-      type: string
-      description: Indicates the scenario for the message
-      x-ms-enum:
-        name: organizationalMessageScenario
-        modelAsString: false
-        values:
-          - value: onboarding
-            description: Indicates onboarding scenario
-            name: onboarding
-          - value: lifecycle
-            description: Indicates lifecycle scenario
-            name: lifecycle
-          - value: unknownFutureValue
-            description: 'UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.'
-            name: unknownFutureValue
-    microsoft.graph.organizationalMessageStatus:
-      title: organizationalMessageStatus
-      enum:
-        - scheduled
-        - active
-        - completed
-        - cancelled
-        - unknownFutureValue
-      type: string
-      description: Indicates the deployment status of the message
-      x-ms-enum:
-        name: organizationalMessageStatus
-        modelAsString: false
-        values:
-          - value: scheduled
-            description: Indicates that the message has been scheduled for a future date
-            name: scheduled
-          - value: active
-            description: Indicates that the message is currently live and being presented to clients
-            name: active
-          - value: completed
-            description: Indicates that the message has been displayed to users already and is no longer active
-            name: completed
-          - value: cancelled
-            description: Indicates that the message has been cancelled and will not be shown
-            name: cancelled
-          - value: unknownFutureValue
-            description: 'UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.'
-            name: unknownFutureValue
-    microsoft.graph.organizationalMessageSurface:
-      title: organizationalMessageSurface
-      enum:
-        - actionCenter
-        - getStarted
-        - softLanding
-        - unknownFutureValue
-      type: string
-      description: Indicates the area where content will be displayed to customers
-      x-ms-enum:
-        name: organizationalMessageSurface
-        modelAsString: false
-        values:
-          - value: actionCenter
-            description: Indicates the message will be displayed on the Window's Action Center
-            name: actionCenter
-          - value: getStarted
-            description: Indicates the message will be displayed on the Get Started page
-            name: getStarted
-          - value: softLanding
-            description: Indicates the message will be displayed to the Soft Landing which is anchored to the Windows taskbar
-            name: softLanding
-          - value: unknownFutureValue
-            description: 'UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.'
-            name: unknownFutureValue
-    microsoft.graph.organizationalMessageTargeting:
-      title: organizationalMessageTargeting
-      type: object
-      properties:
-        excludeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: 'The groups that will not receive the message. If a user from an excluded group is part of an included group, it will not receive the message'
-        includeIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The groups that will be targeted and receive the message
-        targetingType:
-          $ref: '#/components/schemas/microsoft.graph.organizationalMessageTargetingType'
-      additionalProperties:
-        type: object
-      description: 'Contains the groups of devices that will be targeted to receive the organizational message. If a device is part of the excluded group, then it will not receive the message, regardless of the device being part of an included group'
-    microsoft.graph.organizationalMessageTheme:
-      title: organizationalMessageTheme
-      enum:
-        - update
-        - training
-        - welcomeToWindows
-        - explore
-        - unknownFutureValue
-      type: string
-      description: Indicates the theme for the guided content
-      x-ms-enum:
-        name: organizationalMessageTheme
-        modelAsString: false
-        values:
-          - value: update
-            description: Indicates the Update theme
-            name: update
-          - value: training
-            description: Indicates the Training theme
-            name: training
-          - value: welcomeToWindows
-            description: Indicates the Welcome to Windows theme
-            name: welcomeToWindows
-          - value: explore
-            description: Indicates the Explore
-            name: explore
-          - value: unknownFutureValue
-            description: 'UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.'
-            name: unknownFutureValue
-    microsoft.graph.organizationalMessageInsights:
-      title: organizationalMessageInsights
-      type: object
-      properties:
-        clicks:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The number of times this message was clicked on
-          format: int32
-        dismisses:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The number of times this message was dismissed by a user. This may not be collected for some surfaces and will be null
-          format: int32
-          nullable: true
-        impressions:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The number of times this message was shown to all clients
-          format: int32
-      additionalProperties:
-        type: object
-      description: Contains statistics into how the organizational message was interacted with by clients
-    microsoft.graph.organizationalMessageLogoGuide:
-      title: organizationalMessageLogoGuide
-      type: object
-      properties:
-        assetName:
-          type: string
-          description: The asset name is the key for this specific logo. This is used to compute the required token when accessing the logoCdnUrl to fetch the logo
-          nullable: true
-        dimensions:
-          $ref: '#/components/schemas/microsoft.graph.organizationalMessageLogoDimensions'
-        logoCdnUrl:
-          type: string
-          description: The url at which the logo resides
-          nullable: true
-      additionalProperties:
-        type: object
-      description: Example logo and its size requirements
-    microsoft.graph.organizationalMessagePlacementDetail:
-      title: organizationalMessagePlacementDetail
-      type: object
-      properties:
-        placement:
-          $ref: '#/components/schemas/microsoft.graph.organizationalMessagePlacement'
-        variants:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.organizationalMessageVariant'
-          description: The list of different variants that can be displayed for this placement
-      additionalProperties:
-        type: object
-      description: Contains the different variants of text that can be displayed for a given placement within a surface
     microsoft.graph.roleAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -68547,7 +67618,7 @@ components:
       properties:
         assignedByGroup:
           type: string
-          description: 'The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.'
+          description: 'Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.'
           nullable: true
         disabledPlans:
           type: array
@@ -68821,7 +67892,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.passwordSingleSignOnSettings'
             accountEnabled:
               type: boolean
-              description: 'true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).'
+              description: 'true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).'
               nullable: true
             addIns:
               type: array
@@ -69767,7 +68838,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             membershipRule:
               type: string
@@ -70664,7 +69735,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: The unique identifier of the device used for accepting the agreement.
+              description: The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
               nullable: true
             deviceOSType:
               type: string
@@ -70677,13 +69748,13 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.'
               format: date-time
               nullable: true
             recordedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq) and eq for null values.'
               format: date-time
               nullable: true
             state:
@@ -70698,7 +69769,7 @@ components:
               nullable: true
             userId:
               type: string
-              description: ID of the user who accepted the agreement.
+              description: ID of the user who accepted the agreement. Supports $filter (eq).
               nullable: true
             userPrincipalName:
               type: string
@@ -72507,6 +71578,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktopType'
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcProvisioningPolicyAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -72708,7 +71786,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -73185,125 +72263,6 @@ components:
           - value: remove
             description: Group Policy remove uploaded file operation type.
             name: remove
-    microsoft.graph.organizationalMessageLogo:
-      title: organizationalMessageLogo
-      type: object
-      properties:
-        contentType:
-          $ref: '#/components/schemas/microsoft.graph.organizationalMessageLogoType'
-        logo:
-          type: string
-          description: The binary contents of the logo. This is null when logoCdnUrl is used to send the logo
-          format: base64url
-          nullable: true
-        logoCdnUrl:
-          type: string
-          description: The url at which the logo resides. This is null when logo and contentType are used to send the logo
-          nullable: true
-      additionalProperties:
-        type: object
-      description: Contains the logo's binary content or a url to the logo's downloadable location. Either both logo and contentType contain valid values or logoCdnUrl contains a valid url
-    microsoft.graph.organizationalMessageTargetingType:
-      title: organizationalMessageTargetingType
-      enum:
-        - aadGroup
-        - unknownFutureValue
-      type: string
-      description: Indicates the type of targeting
-      x-ms-enum:
-        name: organizationalMessageTargetingType
-        modelAsString: false
-        values:
-          - value: aadGroup
-            description: Indicates that client devices are targeted by their AAD group
-            name: aadGroup
-          - value: unknownFutureValue
-            description: 'UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.'
-            name: unknownFutureValue
-    microsoft.graph.organizationalMessageLogoDimensions:
-      title: organizationalMessageLogoDimensions
-      type: object
-      properties:
-        maxHeight:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Maximum height of the logo
-          format: int32
-        maxWidth:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Maximum width of the logo
-          format: int32
-        minHeight:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Minimum height of the logo
-          format: int32
-        minWidth:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Minimum width of the logo
-          format: int32
-      additionalProperties:
-        type: object
-      description: Contains the required size dimensions of a logo
-    microsoft.graph.organizationalMessagePlacement:
-      title: organizationalMessagePlacement
-      enum:
-        - default
-        - card0
-        - card1
-        - card2
-        - card3
-        - unknownFutureValue
-      type: string
-      description: Indicates the name of the placement
-      x-ms-enum:
-        name: organizationalMessagePlacement
-        modelAsString: false
-        values:
-          - value: default
-            description: Indicates the default area for text to be displayed. This is the only valid placement value for the actionCenter and softLanding surfaces
-            name: default
-          - value: card0
-            description: Indicates the area where the first card is displayed. Only applies to the getStarted surface
-            name: card0
-          - value: card1
-            description: Indicates the area where the second card is displayed. Only applies to the getStarted surface
-            name: card1
-          - value: card2
-            description: Indicates the area where the third card is displayed. Only applies to the getStarted surface
-            name: card2
-          - value: card3
-            description: Indicates the area where the fourth card is displayed. Only applies to the getStarted surface
-            name: card3
-          - value: unknownFutureValue
-            description: 'UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.'
-            name: unknownFutureValue
-    microsoft.graph.organizationalMessageVariant:
-      title: organizationalMessageVariant
-      type: object
-      properties:
-        localizedTexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.organizationalMessageLocalizedText'
-          description: The list of localized texts for this variant
-        name:
-          type: string
-          description: The name of the variant
-          nullable: true
-        variantId:
-          type: string
-          description: A unique identifier for this variant
-          nullable: true
-      additionalProperties:
-        type: object
-      description: Contains the localized text to be displayed for a given variant
     microsoft.graph.roleAssignmentScopeType:
       title: roleAssignmentScopeType
       enum:
@@ -78269,6 +77228,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
               description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.'
+            messageHistory:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             onBehalfOf:
@@ -79041,36 +78004,6 @@ components:
         - totalAggregatedRemoteConnectionReports
         - unknownFutureValue
       type: string
-    microsoft.graph.organizationalMessageLogoType:
-      title: organizationalMessageLogoType
-      enum:
-        - png
-        - unknownFutureValue
-      type: string
-      description: Indicates the content type of the logo
-      x-ms-enum:
-        name: organizationalMessageLogoType
-        modelAsString: false
-        values:
-          - value: png
-            description: Indicates that logo is a png file
-            name: png
-          - value: unknownFutureValue
-            description: 'UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.'
-            name: unknownFutureValue
-    microsoft.graph.organizationalMessageLocalizedText:
-      title: organizationalMessageLocalizedText
-      type: object
-      properties:
-        locale:
-          type: string
-          description: The locale for this text
-          nullable: true
-        text:
-          $ref: '#/components/schemas/microsoft.graph.organizationalMessageText'
-      additionalProperties:
-        type: object
-      description: Contains the text to be displayed for a given locale
     microsoft.graph.externalAudienceScope:
       title: externalAudienceScope
       enum:
@@ -82990,6 +81923,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatMessageHistoryItem:
+      title: chatMessageHistoryItem
+      type: object
+      properties:
+        actions:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageActions'
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        reaction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
       type: object
@@ -83285,13 +82232,11 @@ components:
               nullable: true
             schedulingGroupId:
               type: string
-              description: ID of the scheduling group the shift is part of. Required.
               nullable: true
             sharedShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
             userId:
               type: string
-              description: ID of the user assigned to the shift. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -83579,29 +82524,6 @@ components:
         - internalServerUnknownError
         - unknownFutureValue
       type: string
-    microsoft.graph.organizationalMessageText:
-      title: organizationalMessageText
-      type: object
-      properties:
-        buttonText:
-          type: string
-          description: Indicates the text that will be displayed on the button of the message. This field applies to the softLanding surface
-          nullable: true
-        clickUrl:
-          type: string
-          description: Indicates the url that the user will be directed to when the message is clicked
-          nullable: true
-        message:
-          type: string
-          description: Indicates the message that will be displayed
-          nullable: true
-        title:
-          type: string
-          description: Indicates the title that will be displayed
-          nullable: true
-      additionalProperties:
-        type: object
-      description: Contains the text that will be displayed to users for a particular variant
     microsoft.graph.printerCapabilities:
       title: printerCapabilities
       type: object
@@ -85622,6 +84544,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkTagIdentity'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageActions:
+      title: chatMessageActions
+      enum:
+        - reactionAdded
+        - reactionRemoved
+        - actionUndefined
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:

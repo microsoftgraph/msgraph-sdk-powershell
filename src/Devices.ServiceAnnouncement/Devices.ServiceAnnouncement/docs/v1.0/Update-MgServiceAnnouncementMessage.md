@@ -211,7 +211,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -447,7 +448,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ATTACHMENTS <IMicrosoftGraphServiceAnnouncementAttachment[]>: A collection of serviceAnnouncementAttachments.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Content <Byte[]>]`: The attachment content.
   - `[ContentType <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
@@ -468,10 +469,10 @@ BODYPARAMETER <IMicrosoftGraphServiceUpdateMessage>: serviceUpdateMessage
   - `[LastModifiedDateTime <DateTime?>]`: The last modified time of the service event.
   - `[StartDateTime <DateTime?>]`: The start time of the service event.
   - `[Title <String>]`: The title of the service event.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActionRequiredByDateTime <DateTime?>]`: The expected deadline of the action for the message.
   - `[Attachments <IMicrosoftGraphServiceAnnouncementAttachment[]>]`: A collection of serviceAnnouncementAttachments.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Content <Byte[]>]`: The attachment content.
     - `[ContentType <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 

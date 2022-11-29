@@ -6173,8 +6173,12 @@ paths:
                 - id desc
                 - actionVerb
                 - actionVerb desc
+                - authenticationContextId
+                - authenticationContextId desc
                 - description
                 - description desc
+                - isAuthenticationContextSettable
+                - isAuthenticationContextSettable desc
                 - name
                 - name desc
                 - resourceScopeId
@@ -6192,7 +6196,9 @@ paths:
               enum:
                 - id
                 - actionVerb
+                - authenticationContextId
                 - description
+                - isAuthenticationContextSettable
                 - name
                 - resourceScopeId
                 - resourceScope
@@ -6286,7 +6292,9 @@ paths:
               enum:
                 - id
                 - actionVerb
+                - authenticationContextId
                 - description
+                - isAuthenticationContextSettable
                 - name
                 - resourceScopeId
                 - resourceScope
@@ -8391,8 +8399,12 @@ paths:
                 - id desc
                 - actionVerb
                 - actionVerb desc
+                - authenticationContextId
+                - authenticationContextId desc
                 - description
                 - description desc
+                - isAuthenticationContextSettable
+                - isAuthenticationContextSettable desc
                 - name
                 - name desc
                 - resourceScopeId
@@ -8410,7 +8422,9 @@ paths:
               enum:
                 - id
                 - actionVerb
+                - authenticationContextId
                 - description
+                - isAuthenticationContextSettable
                 - name
                 - resourceScopeId
                 - resourceScope
@@ -8504,7 +8518,9 @@ paths:
               enum:
                 - id
                 - actionVerb
+                - authenticationContextId
                 - description
+                - isAuthenticationContextSettable
                 - name
                 - resourceScopeId
                 - resourceScope
@@ -10878,8 +10894,12 @@ paths:
                 - id desc
                 - actionVerb
                 - actionVerb desc
+                - authenticationContextId
+                - authenticationContextId desc
                 - description
                 - description desc
+                - isAuthenticationContextSettable
+                - isAuthenticationContextSettable desc
                 - name
                 - name desc
                 - resourceScopeId
@@ -10897,7 +10917,9 @@ paths:
               enum:
                 - id
                 - actionVerb
+                - authenticationContextId
                 - description
+                - isAuthenticationContextSettable
                 - name
                 - resourceScopeId
                 - resourceScope
@@ -10991,7 +11013,9 @@ paths:
               enum:
                 - id
                 - actionVerb
+                - authenticationContextId
                 - description
+                - isAuthenticationContextSettable
                 - name
                 - resourceScopeId
                 - resourceScope
@@ -17334,8 +17358,12 @@ paths:
                 - id desc
                 - actionVerb
                 - actionVerb desc
+                - authenticationContextId
+                - authenticationContextId desc
                 - description
                 - description desc
+                - isAuthenticationContextSettable
+                - isAuthenticationContextSettable desc
                 - name
                 - name desc
                 - resourceScopeId
@@ -17353,7 +17381,9 @@ paths:
               enum:
                 - id
                 - actionVerb
+                - authenticationContextId
                 - description
+                - isAuthenticationContextSettable
                 - name
                 - resourceScopeId
                 - resourceScope
@@ -17447,7 +17477,9 @@ paths:
               enum:
                 - id
                 - actionVerb
+                - authenticationContextId
                 - description
+                - isAuthenticationContextSettable
                 - name
                 - resourceScopeId
                 - resourceScope
@@ -23709,7 +23741,7 @@ components:
               description: Indicates if Weclome screen is disabled
             userlessSharedAadModeEnabled:
               type: boolean
-              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://docs.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
+              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
             userSessionTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648
@@ -24420,9 +24452,15 @@ components:
               type: string
               description: 'HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.'
               nullable: true
+            authenticationContextId:
+              type: string
+              nullable: true
             description:
               type: string
               description: Description for the action. Supports $filter (eq).
+              nullable: true
+            isAuthenticationContextSettable:
+              type: boolean
               nullable: true
             name:
               type: string
@@ -25405,7 +25443,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See https://docs.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
             supportDepartment:
               type: string
               description: Support department information

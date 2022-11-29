@@ -18,7 +18,8 @@ New-MgOrganization [-AdditionalProperties <Hashtable>] [-AssignedPlans <IMicroso
  [-Branding <IMicrosoftGraphOrganizationalBranding1>] [-BusinessPhones <String[]>]
  [-CertificateBasedAuthConfiguration <IMicrosoftGraphCertificateBasedAuthConfiguration[]>]
  [-CertificateConnectorSetting <IMicrosoftGraphCertificateConnectorSetting>] [-City <String>]
- [-Country <String>] [-CountryLetterCode <String>] [-CreatedDateTime <DateTime>] [-DeletedDateTime <DateTime>]
+ [-Country <String>] [-CountryLetterCode <String>] [-CreatedDateTime <DateTime>]
+ [-DefaultUsageLocation <String>] [-DeletedDateTime <DateTime>]
  [-DirectorySizeQuota <IMicrosoftGraphDirectorySizeQuota>] [-DisplayName <String>]
  [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsMultipleDataLocationsForServicesEnabled]
  [-MarketingNotificationEmails <String[]>] [-MobileDeviceManagementAuthority <MdmAuthority>]
@@ -209,6 +210,21 @@ Read-only.
 
 ```yaml
 Type: System.DateTime
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultUsageLocation
+Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -700,6 +716,7 @@ BODYPARAMETER <IMicrosoftGraphOrganization>: organization
   - `[Country <String>]`: Country/region name of the address for the organization.
   - `[CountryLetterCode <String>]`: Country or region abbreviation for the organization in ISO 3166-2 format.
   - `[CreatedDateTime <DateTime?>]`: Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+  - `[DefaultUsageLocation <String>]`: Two-letter ISO 3166 country code indicating the default service usage location of an organization.
   - `[DirectorySizeQuota <IMicrosoftGraphDirectorySizeQuota>]`: directorySizeQuota
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Total <Int32?>]`: Total amount of the directory quota.

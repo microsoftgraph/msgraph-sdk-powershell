@@ -1291,11 +1291,11 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
   - `[ServiceManagementReference <String>]`: References application or service contact information from a Service or Asset Management database. Nullable.
   - `[ServicePrincipalLockConfiguration <IMicrosoftGraphServicePrincipalLockConfiguration>]`: servicePrincipalLockConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllProperties <Boolean?>]`: 
-    - `[CredentialsWithUsageSign <Boolean?>]`: 
-    - `[CredentialsWithUsageVerify <Boolean?>]`: 
-    - `[IsEnabled <Boolean?>]`: 
-    - `[TokenEncryptionKeyId <Boolean?>]`: 
+    - `[AllProperties <Boolean?>]`: Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
+    - `[CredentialsWithUsageSign <Boolean?>]`: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
+    - `[CredentialsWithUsageVerify <Boolean?>]`: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
+    - `[IsEnabled <Boolean?>]`: Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
+    - `[TokenEncryptionKeyId <Boolean?>]`: Locks the tokenEncryptionKeyId property for modification on the service principal.
   - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
   - `[Spa <IMicrosoftGraphSpaApplication>]`: spaApplication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1688,11 +1688,11 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
     - `[ServiceManagementReference <String>]`: References application or service contact information from a Service or Asset Management database. Nullable.
     - `[ServicePrincipalLockConfiguration <IMicrosoftGraphServicePrincipalLockConfiguration>]`: servicePrincipalLockConfiguration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllProperties <Boolean?>]`: 
-      - `[CredentialsWithUsageSign <Boolean?>]`: 
-      - `[CredentialsWithUsageVerify <Boolean?>]`: 
-      - `[IsEnabled <Boolean?>]`: 
-      - `[TokenEncryptionKeyId <Boolean?>]`: 
+      - `[AllProperties <Boolean?>]`: Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
+      - `[CredentialsWithUsageSign <Boolean?>]`: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
+      - `[CredentialsWithUsageVerify <Boolean?>]`: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
+      - `[IsEnabled <Boolean?>]`: Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
+      - `[TokenEncryptionKeyId <Boolean?>]`: Locks the tokenEncryptionKeyId property for modification on the service principal.
     - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
     - `[Spa <IMicrosoftGraphSpaApplication>]`: spaApplication
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2084,11 +2084,11 @@ REQUIREDRESOURCEACCESS <IMicrosoftGraphRequiredResourceAccess[]>: Specifies the 
 
 SERVICEPRINCIPALLOCKCONFIGURATION <IMicrosoftGraphServicePrincipalLockConfiguration>: servicePrincipalLockConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AllProperties <Boolean?>]`: 
-  - `[CredentialsWithUsageSign <Boolean?>]`: 
-  - `[CredentialsWithUsageVerify <Boolean?>]`: 
-  - `[IsEnabled <Boolean?>]`: 
-  - `[TokenEncryptionKeyId <Boolean?>]`: 
+  - `[AllProperties <Boolean?>]`: Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
+  - `[CredentialsWithUsageSign <Boolean?>]`: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
+  - `[CredentialsWithUsageVerify <Boolean?>]`: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
+  - `[IsEnabled <Boolean?>]`: Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
+  - `[TokenEncryptionKeyId <Boolean?>]`: Locks the tokenEncryptionKeyId property for modification on the service principal.
 
 SPA <IMicrosoftGraphSpaApplication>: spaApplication
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -198,14 +198,14 @@ process {
         }
     }
 
-    $AccessPackageAssignmentRequestBodyAccessPackageAssignment = new-object microsoft.graph.powershell.models.MicrosoftGraphAccessPackageAssignment
+    $AccessPackageAssignmentRequestBodyAccessPackageAssignment = new-object microsoft.graph.powershell.models.MicrosoftGraphAccessPackageAssignment1
     if ($AccessPackageAssignmentId -ne $null -and $AccessPackageAssignmentId.Length -ne 0) {
         $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Id = $AccessPackageAssignmentId
     }
     if ($TargetId -ne $null -and $TargetId.Length -ne 0) {
         $AccessPackageAssignmentRequestBodyAccessPackageAssignment.TargetId = $TargetId
     } elseif ($TargetEmail -ne $null -and $TargetEmail.Length -ne 0) {
-        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target = new-object microsoft.graph.powershell.models.MicrosoftGraphAccessPackageSubject
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target = new-object microsoft.graph.powershell.models.MicrosoftGraphAccessPackageSubject1
         $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Target.Email = $TargetEmail
     }
 

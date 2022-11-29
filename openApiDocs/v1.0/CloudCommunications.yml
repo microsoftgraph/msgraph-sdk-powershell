@@ -1656,7 +1656,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action addLargeGalleryView
-      description: Add the large gallery view to a call.
+      description: 'Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0
@@ -5795,6 +5795,7 @@ components:
       properties:
         hidden:
           type: boolean
+          description: Optional. Whether to hide the participant from the roster.
           nullable: true
         identity:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -5804,6 +5805,7 @@ components:
           nullable: true
         removeFromDefaultAudioRoutingGroup:
           type: boolean
+          description: Optional. Whether to remove them from the main mixer.
           nullable: true
         replacesCallId:
           type: string

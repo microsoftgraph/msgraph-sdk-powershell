@@ -12,13 +12,13 @@ Device Configuration users status overview
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
 Get-MgDeviceManagementDeviceConfigurationUserStatusOverview -DeviceConfigurationId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgDeviceManagementDeviceConfigurationUserStatusOverview -InputObject <IDeviceManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of deviceConfiguration
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True

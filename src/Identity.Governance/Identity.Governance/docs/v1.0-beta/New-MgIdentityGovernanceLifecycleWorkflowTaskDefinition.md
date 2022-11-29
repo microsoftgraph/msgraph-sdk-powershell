@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of the taskDefinition`.
+The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.
 
 ```yaml
 Type: System.String
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-The parameters that must be supplied when creating a workflow task object.
+The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
 To construct, please use Get-Help -Online and see NOTES section for PARAMETERS properties and create a hash table.
 
 ```yaml
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 
 ### -Version
 The version number of the taskDefinition.
-New records are pushed when we add support for new parameters.
+New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.
 
 ```yaml
 Type: System.Int32
@@ -229,14 +229,14 @@ BODYPARAMETER <IMicrosoftGraphIdentityGovernanceTaskDefinition>: taskDefinition
   - `[Category <String>]`: lifecycleTaskCategory
   - `[ContinueOnError <Boolean?>]`: 
   - `[Description <String>]`: The description of the taskDefinition.
-  - `[DisplayName <String>]`: The display name of the taskDefinition`.
-  - `[Parameters <IMicrosoftGraphIdentityGovernanceParameter[]>]`: The parameters that must be supplied when creating a workflow task object.
+  - `[DisplayName <String>]`: The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.
+  - `[Parameters <IMicrosoftGraphIdentityGovernanceParameter[]>]`: The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
     - `[Name <String>]`: The name of the parameter.
     - `[ValueType <String>]`: valueType
     - `[Values <String[]>]`: The values of the parameter.
-  - `[Version <Int32?>]`: The version number of the taskDefinition. New records are pushed when we add support for new parameters.
+  - `[Version <Int32?>]`: The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.
 
-PARAMETERS <IMicrosoftGraphIdentityGovernanceParameter[]>: The parameters that must be supplied when creating a workflow task object.
+PARAMETERS <IMicrosoftGraphIdentityGovernanceParameter[]>: The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
   - `[Name <String>]`: The name of the parameter.
   - `[ValueType <String>]`: valueType
   - `[Values <String[]>]`: The values of the parameter.

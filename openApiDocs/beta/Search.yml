@@ -3118,6 +3118,11 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.aggregationOption'
           description: Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
+        collapseProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.collapseProperty'
+          description: Contains the ordered collection of fields and limit to collapse results. Optional.
         contentSources:
           type: array
           items:
@@ -3586,6 +3591,23 @@ components:
           description: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
           format: int32
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.collapseProperty:
+      title: collapseProperty
+      type: object
+      properties:
+        fields:
+          type: array
+          items:
+            type: string
+          description: Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
+        limit:
+          maximum: 32767
+          minimum: -32768
+          type: integer
+          description: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
+          format: int16
       additionalProperties:
         type: object
     microsoft.graph.entityType:

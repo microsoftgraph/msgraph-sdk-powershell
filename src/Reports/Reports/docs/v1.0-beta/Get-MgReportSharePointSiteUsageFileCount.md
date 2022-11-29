@@ -12,12 +12,12 @@ Invoke function getSharePointSiteUsageFileCounts
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-MgReportSharePointSiteUsageFileCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgReportSharePointSiteUsageFileCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Usage: period='{period}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -126,6 +126,7 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
+  - `[PrintUsageId <String>]`: key: id of printUsage
   - `[PrinterId <String>]`: Usage: printerId='{printerId}'
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[SignInId <String>]`: key: id of signIn

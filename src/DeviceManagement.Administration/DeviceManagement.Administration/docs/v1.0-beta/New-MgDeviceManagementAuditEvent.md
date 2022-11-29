@@ -12,16 +12,16 @@ Create new navigation property to auditEvents for deviceManagement
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgDeviceManagementAuditEvent [-Activity <String>] [-ActivityDateTime <DateTime>]
  [-ActivityOperationType <String>] [-ActivityResult <String>] [-ActivityType <String>]
- [-Actor <IMicrosoftGraphAuditActor>] [-AdditionalProperties <Hashtable>] [-Category <String>]
+ [-Actor <IMicrosoftGraphAuditActor1>] [-AdditionalProperties <Hashtable>] [-Category <String>]
  [-ComponentName <String>] [-CorrelationId <String>] [-DisplayName <String>] [-Id <String>]
- [-Resources <IMicrosoftGraphAuditResource[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resources <IMicrosoftGraphAuditResource1[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgDeviceManagementAuditEvent -BodyParameter <IMicrosoftGraphAuditEvent> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -39,7 +39,7 @@ Friendly name of the activity.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -54,7 +54,7 @@ The date time in UTC when the activity was performed.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -69,7 +69,7 @@ The HTTP operation type of the activity.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -84,7 +84,7 @@ The result of the activity.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -99,7 +99,7 @@ The type of activity that was being performed.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -114,8 +114,8 @@ A class containing the properties for Audit Actor.
 To construct, please use Get-Help -Online and see NOTES section for ACTOR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditActor
-Parameter Sets: CreateExpanded
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditActor1
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -130,7 +130,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -146,7 +146,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditEvent
-Parameter Sets: Create
+Parameter Sets: Create1
 Aliases:
 
 Required: True
@@ -161,7 +161,7 @@ Audit category.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -176,7 +176,7 @@ Component name.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -191,7 +191,7 @@ The client request Id that is used to correlate activity within the system.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -206,7 +206,7 @@ Event display name.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -222,7 +222,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -237,8 +237,8 @@ Resources being modified.
 To construct, please use Get-Help -Online and see NOTES section for RESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditResource[]
-Parameter Sets: CreateExpanded
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuditResource1[]
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -299,7 +299,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACTOR <IMicrosoftGraphAuditActor>: A class containing the properties for Audit Actor.
+ACTOR <IMicrosoftGraphAuditActor1>: A class containing the properties for Audit Actor.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ApplicationDisplayName <String>]`: Name of the Application.
   - `[ApplicationId <String>]`: AAD Application Id.
@@ -324,7 +324,7 @@ BODYPARAMETER <IMicrosoftGraphAuditEvent>: A class containing the properties for
   - `[ActivityOperationType <String>]`: The HTTP operation type of the activity.
   - `[ActivityResult <String>]`: The result of the activity.
   - `[ActivityType <String>]`: The type of activity that was being performed.
-  - `[Actor <IMicrosoftGraphAuditActor>]`: A class containing the properties for Audit Actor.
+  - `[Actor <IMicrosoftGraphAuditActor1>]`: A class containing the properties for Audit Actor.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ApplicationDisplayName <String>]`: Name of the Application.
     - `[ApplicationId <String>]`: AAD Application Id.
@@ -344,7 +344,7 @@ BODYPARAMETER <IMicrosoftGraphAuditEvent>: A class containing the properties for
   - `[ComponentName <String>]`: Component name.
   - `[CorrelationId <String>]`: The client request Id that is used to correlate activity within the system.
   - `[DisplayName <String>]`: Event display name.
-  - `[Resources <IMicrosoftGraphAuditResource[]>]`: Resources being modified.
+  - `[Resources <IMicrosoftGraphAuditResource1[]>]`: Resources being modified.
     - `[AuditResourceType <String>]`: Audit resource's type.
     - `[DisplayName <String>]`: Display name.
     - `[ModifiedProperties <IMicrosoftGraphAuditProperty[]>]`: List of modified properties.
@@ -354,7 +354,7 @@ BODYPARAMETER <IMicrosoftGraphAuditEvent>: A class containing the properties for
     - `[ResourceId <String>]`: Audit resource's Id.
     - `[Type <String>]`: Audit resource's type.
 
-RESOURCES <IMicrosoftGraphAuditResource[]>: Resources being modified.
+RESOURCES <IMicrosoftGraphAuditResource1[]>: Resources being modified.
   - `[AuditResourceType <String>]`: Audit resource's type.
   - `[DisplayName <String>]`: Display name.
   - `[ModifiedProperties <IMicrosoftGraphAuditProperty[]>]`: List of modified properties.

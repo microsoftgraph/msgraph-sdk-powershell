@@ -12,17 +12,17 @@ Invoke function getSharePointSiteUsageDetail
 
 ## SYNTAX
 
-### Get2 (Default)
-```
-Get-MgReportSharePointSiteUsageDetail -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get3
+### Get (Default)
 ```
 Get-MgReportSharePointSiteUsageDetail -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### Get3
+```
+Get-MgReportSharePointSiteUsageDetail -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity
 ```
 Get-MgReportSharePointSiteUsageDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
  [<CommonParameters>]
@@ -46,7 +46,7 @@ Usage: date={date}
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: Get2
+Parameter Sets: Get3
 Aliases:
 
 Required: True
@@ -62,7 +62,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity2, GetViaIdentity3
+Parameter Sets: GetViaIdentity, GetViaIdentity3
 Aliases:
 
 Required: True
@@ -107,7 +107,7 @@ Usage: period='{period}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Get3
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -152,6 +152,7 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
+  - `[PrintUsageId <String>]`: key: id of printUsage
   - `[PrinterId <String>]`: Usage: printerId='{printerId}'
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[SignInId <String>]`: key: id of signIn

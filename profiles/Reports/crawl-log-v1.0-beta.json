@@ -113,6 +113,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
+    "/reports/dailyPrintUsage": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/dailyPrintUsage/{printUsage-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
     "/reports/dailyPrintUsageByPrinter": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"

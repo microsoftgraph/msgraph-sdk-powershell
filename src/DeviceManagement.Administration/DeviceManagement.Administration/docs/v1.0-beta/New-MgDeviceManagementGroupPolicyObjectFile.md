@@ -16,7 +16,8 @@ Create new navigation property to groupPolicyObjectFiles for deviceManagement
 ```
 New-MgDeviceManagementGroupPolicyObjectFile [-AdditionalProperties <Hashtable>] [-Content <String>]
  [-CreatedDateTime <DateTime>] [-GroupPolicyObjectId <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-OuDistinguishedName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedDateTime <DateTime>] [-OuDistinguishedName <String>] [-RoleScopeTagIds <String[]>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -154,6 +155,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RoleScopeTagIds
+The list of scope tags for the configuration.
+
+```yaml
+Type: System.String[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -213,6 +229,7 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyObjectFile>: The Group Policy Object fi
   - `[GroupPolicyObjectId <String>]`: The Group Policy Object GUID from GPO Xml content
   - `[LastModifiedDateTime <DateTime?>]`: The date and time at which the GroupPolicyObjectFile was last modified.
   - `[OuDistinguishedName <String>]`: The distinguished name of the OU.
+  - `[RoleScopeTagIds <String[]>]`: The list of scope tags for the configuration.
 
 ## RELATED LINKS
 
