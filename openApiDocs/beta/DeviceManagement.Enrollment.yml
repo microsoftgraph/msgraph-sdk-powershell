@@ -6488,11 +6488,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List unifiedRoleAssignmentMultiple
-      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      summary: Get unifiedRoleAssignmentMultiple
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7383,7 +7383,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -8476,11 +8476,11 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List unifiedRoleAssignmentMultiple
-      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      summary: Get unifiedRoleAssignmentMultiple
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9371,7 +9371,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -12081,7 +12081,7 @@ components:
           description: Set of tasks that can be performed on a resource.
         condition:
           type: string
-          description: Optional constraints that must be met for the permission to be effective.
+          description: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
           nullable: true
         excludedResourceActions:
           type: array

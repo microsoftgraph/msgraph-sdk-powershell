@@ -825,7 +825,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get createdOnBehalfOf from applications
-      description: Supports $filter (eq when counting empty collections). Read-only.
+      description: 'Supports $filter (/$count eq 0, /$count ne 0). Read-only.'
       operationId: applications_GetCreatedOnBehalfGraphOPre
       parameters:
         - name: application-id
@@ -999,7 +999,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
-      description: Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+      description: 'Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
       operationId: applications_GetExtensionProperties
       parameters:
         - name: application-id
@@ -1252,7 +1252,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredentials from applications
-      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).'
+      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
       operationId: applications_GetFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -2066,7 +2066,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get owners from applications
-      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
+      description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
@@ -2191,7 +2191,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of owners from applications
-      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
+      description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
@@ -8179,10 +8179,10 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create connectorGroup
-      description: Create a new connectorGroup.
+      description: Create a connectorGroup object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0
       operationId: onPremisesPublishingProfiles_CreateConnectorGroups
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -13638,7 +13638,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
-      description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+      description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       operationId: servicePrincipals_GetOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -13697,7 +13697,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get owners from servicePrincipals
-      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+      description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
@@ -13822,7 +13822,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
-      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+      description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
@@ -17531,13 +17531,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extensionProperty'
-              description: Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+              description: 'Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
               readOnly: true
             federatedIdentityCredentials:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.federatedIdentityCredential'
-              description: 'Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).'
+              description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
               readOnly: true
             homeRealmDiscoveryPolicies:
               type: array
@@ -17548,7 +17548,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
+              description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               readOnly: true
             tokenIssuancePolicies:
               type: array
@@ -18539,13 +18539,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               readOnly: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               readOnly: true
             tokenIssuancePolicies:
               type: array
@@ -20608,11 +20608,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

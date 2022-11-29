@@ -1838,7 +1838,7 @@ components:
           description: Set of tasks that can be performed on a resource. Required.
         condition:
           type: string
-          description: Optional constraints that must be met for the permission to be effective.
+          description: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
           nullable: true
         excludedResourceActions:
           type: array

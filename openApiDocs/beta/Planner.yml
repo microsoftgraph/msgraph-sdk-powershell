@@ -1589,7 +1589,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update plannertaskdetails
-      description: Update the properties of **plannertaskdetails** object.
+      description: Update the properties of **plannerTaskDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -2804,7 +2804,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update plannertaskdetails
-      description: Update the properties of **plannertaskdetails** object.
+      description: Update the properties of **plannerTaskDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -4034,7 +4034,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update plannertaskdetails
-      description: Update the properties of **plannertaskdetails** object.
+      description: Update the properties of **plannerTaskDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -5530,7 +5530,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update plannertaskdetails
-      description: Update the properties of **plannertaskdetails** object.
+      description: Update the properties of **plannerTaskDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -6581,7 +6581,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update plannertaskdetails
-      description: Update the properties of **plannertaskdetails** object.
+      description: Update the properties of **plannerTaskDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -8015,7 +8015,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update plannertaskdetails
-      description: Update the properties of **plannertaskdetails** object.
+      description: Update the properties of **plannerTaskDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -10207,7 +10207,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update plannertaskdetails
-      description: Update the properties of **plannertaskdetails** object.
+      description: Update the properties of **plannerTaskDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -11422,7 +11422,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update plannertaskdetails
-      description: Update the properties of **plannertaskdetails** object.
+      description: Update the properties of **plannerTaskDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -12728,7 +12728,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update plannertaskdetails
-      description: Update the properties of **plannertaskdetails** object.
+      description: Update the properties of **plannerTaskDetails** object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
@@ -13185,7 +13185,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
+              description: 'Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
