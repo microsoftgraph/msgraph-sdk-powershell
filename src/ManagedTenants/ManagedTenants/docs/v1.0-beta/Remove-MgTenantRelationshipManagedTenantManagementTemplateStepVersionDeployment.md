@@ -182,9 +182,11 @@ INPUTOBJECT <IManagedTenantsIdentity>: Identity Parameter
   - `[ManagementActionTenantDeploymentStatusId <String>]`: key: id of managementActionTenantDeploymentStatus
   - `[ManagementIntentId <String>]`: key: id of managementIntent
   - `[ManagementTemplateCollectionId <String>]`: key: id of managementTemplateCollection
+  - `[ManagementTemplateCollectionTenantSummaryId <String>]`: key: id of managementTemplateCollectionTenantSummary
   - `[ManagementTemplateId <String>]`: key: id of managementTemplate
   - `[ManagementTemplateStepDeploymentId <String>]`: key: id of managementTemplateStepDeployment
   - `[ManagementTemplateStepId <String>]`: key: id of managementTemplateStep
+  - `[ManagementTemplateStepTenantSummaryId <String>]`: key: id of managementTemplateStepTenantSummary
   - `[ManagementTemplateStepVersionId <String>]`: key: id of managementTemplateStepVersion
   - `[MyRoleTenantId <String>]`: key: tenantId of myRole
   - `[TenantCustomizedInformationId <String>]`: key: id of tenantCustomizedInformation

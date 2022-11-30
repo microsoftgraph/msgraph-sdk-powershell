@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 0ffe167e-dabc-4009-84f0-c33da69b794b
+Module Guid: 7f47b15e-5961-4e82-b64d-89b1994e12a7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -560,7 +560,7 @@ Delete entity from subscribedSkus
 Delete navigation property scopedRoleMemberOf for users
 
 ### [Restore-MgDirectoryDeletedItem](Restore-MgDirectoryDeletedItem.md)
-Restore a recently deleted application, group, servicePrincipal, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.
