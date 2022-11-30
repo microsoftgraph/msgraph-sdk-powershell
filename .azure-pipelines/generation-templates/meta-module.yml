@@ -26,7 +26,7 @@ steps:
       - template: ../common-templates/esrp/codesign.yml
         parameters:
           FolderPath: "$(System.DefaultWorkingDirectory)/src/Graph"
-          Pattern: "Microsoft.Graph.*.psd1"
+          Pattern: "*.psd1"
 
       - task: PowerShell@2
         displayName: "Validate Authenticode Signature"
