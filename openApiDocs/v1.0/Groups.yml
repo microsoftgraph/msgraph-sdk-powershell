@@ -29395,6 +29395,220 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /groupSettings:
+    get:
+      tags:
+        - groupSettings.groupSetting
+      summary: List settings
+      description: Retrieve a list of tenant-level or group-specific group settings objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
+      operationId: groupSettings.groupSetting_ListGroupSetting
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - templateId
+                - templateId desc
+                - values
+                - values desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - templateId
+                - values
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.groupSettingCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groupSettings.groupSetting
+      summary: Create settings
+      description: 'Create a new setting based on the templates available in groupSettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
+      operationId: groupSettings.groupSetting_CreateGroupSetting
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.groupSetting'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groupSettings/{groupSetting-id}':
+    get:
+      tags:
+        - groupSettings.groupSetting
+      summary: Get groupSetting
+      description: Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/groupsetting-get?view=graph-rest-1.0
+      operationId: groupSettings.groupSetting_GetGroupSetting
+      parameters:
+        - name: groupSetting-id
+          in: path
+          description: 'key: id of groupSetting'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSetting
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - templateId
+                - values
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groupSettings.groupSetting
+      summary: Update groupSetting
+      description: Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/groupsetting-update?view=graph-rest-1.0
+      operationId: groupSettings.groupSetting_UpdateGroupSetting
+      parameters:
+        - name: groupSetting-id
+          in: path
+          description: 'key: id of groupSetting'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSetting
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.groupSetting'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groupSettings.groupSetting
+      summary: Delete a group setting
+      description: Delete a tenant-level or group-specific groupSetting object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/groupsetting-delete?view=graph-rest-1.0
+      operationId: groupSettings.groupSetting_DeleteGroupSetting
+      parameters:
+        - name: groupSetting-id
+          in: path
+          description: 'key: id of groupSetting'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSetting
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.groupLifecyclePolicy:
@@ -31086,6 +31300,27 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.groupSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: groupSetting
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: 'Display name of this group of settings, which comes from the associated template.'
+              nullable: true
+            templateId:
+              type: string
+              description: Unique identifier for the tenant-level groupSettingTemplates object that's been customized for this group-level settings object. Read-only.
+              nullable: true
+            values:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.settingValue'
+              description: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced groupSettingTemplates object.
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -31183,27 +31418,6 @@ components:
               description: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
               format: uuid
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.groupSetting:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: groupSetting
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: 'Display name of this group of settings, which comes from the associated template.'
-              nullable: true
-            templateId:
-              type: string
-              description: Unique identifier for the tenant-level groupSettingTemplates object that's been customized for this group-level settings object. Read-only.
-              nullable: true
-            values:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.settingValue'
-              description: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced groupSettingTemplates object.
           additionalProperties:
             type: object
     microsoft.graph.calendar:
@@ -33192,6 +33406,20 @@ components:
         - text
         - html
       type: string
+    microsoft.graph.settingValue:
+      title: settingValue
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the setting (as defined by the groupSettingTemplate).
+          nullable: true
+        value:
+          type: string
+          description: Value of the setting.
+          nullable: true
+      additionalProperties:
+        type: object
     ReferenceCreate:
       type: object
       properties:
@@ -33377,17 +33605,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.settingValue:
-      title: settingValue
+    microsoft.graph.groupSettingCollectionResponse:
+      title: Collection of groupSetting
       type: object
       properties:
-        name:
-          type: string
-          description: Name of the setting (as defined by the groupSettingTemplate).
-          nullable: true
         value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupSetting'
+        '@odata.nextLink':
           type: string
-          description: Value of the setting.
           nullable: true
       additionalProperties:
         type: object
@@ -42263,6 +42490,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.profilePhotoCollectionResponse'
+    microsoft.graph.groupSettingCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.groupSettingCollectionResponse'
   parameters:
     top:
       name: $top
