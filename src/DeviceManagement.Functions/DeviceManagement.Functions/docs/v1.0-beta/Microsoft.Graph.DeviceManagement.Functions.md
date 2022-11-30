@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-Module Guid: 846c5a7f-adc5-4d94-8ef3-0b99c665c3f3
+Module Guid: 89e505b7-b426-40ac-9e7a-9399f0ac100a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -139,6 +139,12 @@ Invoke function getCloudPcConnectivityHistory
 
 ### [Get-MgDeviceManagementVirtualEndpointCloudPcLaunchInfo](Get-MgDeviceManagementVirtualEndpointCloudPcLaunchInfo.md)
 Invoke function getCloudPcLaunchInfo
+
+### [Get-MgDeviceManagementVirtualEndpointCloudPcShiftWorkCloudPcAccessState](Get-MgDeviceManagementVirtualEndpointCloudPcShiftWorkCloudPcAccessState.md)
+Invoke function getShiftWorkCloudPcAccessState
+
+### [Get-MgDeviceManagementVirtualEndpointCloudPcSupportedCloudPcRemoteAction](Get-MgDeviceManagementVirtualEndpointCloudPcSupportedCloudPcRemoteAction.md)
+Invoke function getSupportedCloudPcRemoteActions
 
 ### [Get-MgDeviceManagementVirtualEndpointDeviceImageSourceImage](Get-MgDeviceManagementVirtualEndpointDeviceImageSourceImage.md)
 Invoke function getSourceImages

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: cc599579-9a66-4e2d-bfd0-cce7edd1adf7
+Module Guid: 0495599b-29dc-4963-b533-b66db030a2d0
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -89,7 +89,7 @@ The connectorGroup the application is using with Azure AD Application Proxy.
 Nullable.
 
 ### [Get-MgApplicationCreatedOnBehalfOf](Get-MgApplicationCreatedOnBehalfOf.md)
-Supports $filter (eq when counting empty collections).
+Supports $filter (/$count eq 0, /$count ne 0).
 Read-only.
 
 ### [Get-MgApplicationDelta](Get-MgApplicationDelta.md)
@@ -98,11 +98,11 @@ Invoke function delta
 ### [Get-MgApplicationExtensionProperty](Get-MgApplicationExtensionProperty.md)
 Read-only.
 Nullable.
-Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
+Supports $expand and $filter (/$count eq 0, /$count ne 0).
 
 ### [Get-MgApplicationFederatedIdentityCredential](Get-MgApplicationFederatedIdentityCredential.md)
 Federated identities for applications.
-Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
+Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
 
 ### [Get-MgApplicationHomeRealmDiscoveryPolicy](Get-MgApplicationHomeRealmDiscoveryPolicy.md)
 Get homeRealmDiscoveryPolicies from applications
@@ -122,13 +122,13 @@ Invoke action getMemberObjects
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (eq and ne when counting empty collections).
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgApplicationOwnerByRef](Get-MgApplicationOwnerByRef.md)
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (eq and ne when counting empty collections).
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgApplicationSynchronization](Get-MgApplicationSynchronization.md)
 Get synchronization from applications
@@ -330,21 +330,21 @@ Nullable.
 Directory objects that are owned by this service principal.
 Read-only.
 Nullable.
-Supports $expand.
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgServicePrincipalOwner](Get-MgServicePrincipalOwner.md)
 Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
-Supports $expand.
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgServicePrincipalOwnerByRef](Get-MgServicePrincipalOwnerByRef.md)
 Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
-Supports $expand.
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgServicePrincipalPasswordSingleSignOnCredentials](Get-MgServicePrincipalPasswordSingleSignOnCredentials.md)
 Get a list of single sign-on credentials using a password for a user or group.
@@ -481,8 +481,9 @@ Create new navigation property ref to tokenIssuancePolicies for applications
 Assign a tokenLifetimePolicy to an application or servicePrincipal.
 
 ### [New-MgGroupAppRoleAssignment](New-MgGroupAppRoleAssignment.md)
-Use this API to assign an app role to a group.
+Use this API to assign an app role to a security group.
 All direct members of the group will be considered assigned.
+Security groups with dynamic memberships are supported.
 To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
 
 ### [New-MgOnPremisePublishingProfile](New-MgOnPremisePublishingProfile.md)
@@ -513,7 +514,7 @@ Create new navigation property ref to agentGroups for onPremisesPublishingProfil
 Create new navigation property to connectors for onPremisesPublishingProfiles
 
 ### [New-MgOnPremisePublishingProfileConnectorGroup](New-MgOnPremisePublishingProfileConnectorGroup.md)
-Create a new connectorGroup.
+Create a connectorGroup object.
 
 ### [New-MgOnPremisePublishingProfileConnectorMemberOfByRef](New-MgOnPremisePublishingProfileConnectorMemberOfByRef.md)
 Create new navigation property ref to memberOf for onPremisesPublishingProfiles

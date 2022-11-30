@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPlannerTaskDetail
 
 ## SYNOPSIS
-Update the properties of **plannertaskdetails** object.
+Update the properties of **plannerTaskDetails** object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Update the properties of **plannertaskdetails** object.
+Update the properties of **plannerTaskDetails** object.
 
 ## EXAMPLES
 

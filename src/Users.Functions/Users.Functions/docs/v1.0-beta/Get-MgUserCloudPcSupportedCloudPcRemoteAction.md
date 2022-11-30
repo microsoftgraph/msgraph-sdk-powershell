@@ -1,36 +1,50 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusertaskalltaskdelta
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusercloudpcsupportedcloudpcremoteaction
 schema: 2.0.0
 ---
 
-# Get-MgUserTaskAlltaskDelta
+# Get-MgUserCloudPcSupportedCloudPcRemoteAction
 
 ## SYNOPSIS
-Invoke function delta
+Invoke function getSupportedCloudPcRemoteActions
 
 ## SYNTAX
 
-### Delta (Default)
+### Get (Default)
 ```
-Get-MgUserTaskAlltaskDelta -UserId <String> [-Count] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
+Get-MgUserCloudPcSupportedCloudPcRemoteAction -CloudPcId <String> -UserId <String> [-Count] [-Filter <String>]
+ [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
-### DeltaViaIdentity
+### GetViaIdentity
 ```
-Get-MgUserTaskAlltaskDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [<CommonParameters>]
+Get-MgUserCloudPcSupportedCloudPcRemoteAction -InputObject <IUsersFunctionsIdentity> [-Count]
+ [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function delta
+Invoke function getSupportedCloudPcRemoteActions
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -CloudPcId
+key: id of cloudPC
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Count
 Include count of items
@@ -68,28 +82,13 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: DeltaViaIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Property
-Select properties to be returned
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -123,21 +122,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Sort
-Order items by property values
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: OrderBy
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Top
 Show only the first n items
 
@@ -158,7 +142,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -177,7 +161,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBaseTask
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcRemoteActionCapability
 
 ## NOTES
 
@@ -191,7 +175,6 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

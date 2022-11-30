@@ -16,16 +16,32 @@ For more information about purging Teams messages, see:\n- eDiscovery solution s
 
 ## SYNTAX
 
-### Purge (Default)
+### PurgeExpanded (Default)
 ```
 Clear-MgSecurityCaseEdiscoveryCaseSearchData -EdiscoveryCaseId <String> -EdiscoverySearchId <String>
+ [-AdditionalProperties <Hashtable>] [-PurgeAreas <String>] [-PurgeType <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
+```
+
+### Purge
+```
+Clear-MgSecurityCaseEdiscoveryCaseSearchData -EdiscoveryCaseId <String> -EdiscoverySearchId <String>
+ -BodyParameter <IPathsMs4I8WSecurityCasesEdiscoverycasesEdiscoverycaseIdSearchesEdiscoverysearchIdMicrosoftGraphSecurityPurgedataPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### PurgeViaIdentity
 ```
-Clear-MgSecurityCaseEdiscoveryCaseSearchData -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Clear-MgSecurityCaseEdiscoveryCaseSearchData -InputObject <ISecurityIdentity>
+ -BodyParameter <IPathsMs4I8WSecurityCasesEdiscoverycasesEdiscoverycaseIdSearchesEdiscoverysearchIdMicrosoftGraphSecurityPurgedataPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### PurgeViaIdentityExpanded
+```
+Clear-MgSecurityCaseEdiscoveryCaseSearchData -InputObject <ISecurityIdentity>
+ [-AdditionalProperties <Hashtable>] [-PurgeAreas <String>] [-PurgeType <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,12 +64,43 @@ To learn about permissions for this resource, see the [permissions reference](/g
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: PurgeExpanded, PurgeViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IPathsMs4I8WSecurityCasesEdiscoverycasesEdiscoverycaseIdSearchesEdiscoverysearchIdMicrosoftGraphSecurityPurgedataPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Purge, PurgeViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -EdiscoveryCaseId
 key: id of ediscoveryCase
 
 ```yaml
 Type: System.String
-Parameter Sets: Purge
+Parameter Sets: Purge, PurgeExpanded
 Aliases:
 
 Required: True
@@ -68,7 +115,7 @@ key: id of ediscoverySearch
 
 ```yaml
 Type: System.String
-Parameter Sets: Purge
+Parameter Sets: Purge, PurgeExpanded
 Aliases:
 
 Required: True
@@ -84,7 +131,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: PurgeViaIdentity
+Parameter Sets: PurgeViaIdentity, PurgeViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -100,6 +147,36 @@ Returns true when the command succeeds
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PurgeAreas
+purgeAreas
+
+```yaml
+Type: System.String
+Parameter Sets: PurgeExpanded, PurgeViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PurgeType
+purgeType
+
+```yaml
+Type: System.String
+Parameter Sets: PurgeExpanded, PurgeViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -145,6 +222,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Graph.PowerShell.Models.IPathsMs4I8WSecurityCasesEdiscoverycasesEdiscoverycaseIdSearchesEdiscoverysearchIdMicrosoftGraphSecurityPurgedataPostRequestbodyContentApplicationJsonSchema
+
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
@@ -159,6 +238,11 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+BODYPARAMETER <IPathsMs4I8WSecurityCasesEdiscoverycasesEdiscoverycaseIdSearchesEdiscoverysearchIdMicrosoftGraphSecurityPurgedataPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[PurgeAreas <String>]`: purgeAreas
+  - `[PurgeType <String>]`: purgeType
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[AlertId <String>]`: key: id of alert
