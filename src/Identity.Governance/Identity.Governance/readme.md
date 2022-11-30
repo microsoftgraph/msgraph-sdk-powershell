@@ -38,7 +38,7 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.instance(\.|_).*|^identityGovernance\.accessReviews\.definitions\.instances(\.stages\.decisions.*)$|^privilegedAccess.roleAssignmentRequests.(resource|roleDefinition).*$|^privilegedAccess.roleAssignments.(resource|roleDefinition).*$|^privilegedAccess.roleDefinitions.(resource|roleSetting).*$|^privilegedAccess.roleSettings.(resource|roleDefinition).*$|(^agreements.|^identityGovernance.termsGraphOPreUse.agreements.).*files.*$|^identityGovernance_.*LifecycleWorkflows|^identityGovernance\.lifecycleWorkflows\.deletedItems\.workflows\..*|^identityGovernance\.lifecycleWorkflows\.workflows\.runs\.userProcessingResults\.taskProcessingResults.*|^identityGovernance\.lifecycleWorkflows\.workflows\.userProcessingResults\.taskProcessingResults.*
+  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.instance(\.|_).*|^identityGovernance\.accessReviews\.definitions\.instances(\.stages\.decisions.*)$|^privilegedAccess.roleAssignmentRequests.(resource|roleDefinition).*$|^privilegedAccess.roleAssignments.(resource|roleDefinition).*$|^privilegedAccess.roleDefinitions.(resource|roleSetting).*$|^privilegedAccess.roleSettings.(resource|roleDefinition).*$|(^agreements.|^identityGovernance.termsGraphOPreUse.agreements.).*files.*$|^identityGovernance_.*LifecycleWorkflows|^identityGovernance\.lifecycleWorkflows\.deletedItems\.workflows\..*|^identityGovernance\.lifecycleWorkflows\.workflows\.runs\.userProcessingResults\.taskProcessingResults.*|^identityGovernance\.lifecycleWorkflows\.workflows\.userProcessingResults\.taskProcessingResults.*|^identityGovernance\.entitlementManagement\.accessPackages(_.*AssignmentPolicies|\.assignmentPolicies_|\.accessPackageAssignmentPolicies.*)$
 # Remove cmdlets
   - where:
       verb: Get|Remove|Set
@@ -255,11 +255,6 @@ directive:
       verb: New|Remove|Update|Get
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResource$
       variant: (Create.*|Delete.*|Update.*|Get.*)
-    remove: true
-  - where:
-      verb: Get|New|Remove|Update
-      subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicy$
-      variant: ^(Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
     remove: true
   - where:
       subject: (.*)Privileged(Access|AccessResource)RoleAssignmentRequest$
