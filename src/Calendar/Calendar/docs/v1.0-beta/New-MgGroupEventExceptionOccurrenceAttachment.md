@@ -8,8 +8,9 @@ schema: 2.0.0
 # New-MgGroupEventExceptionOccurrenceAttachment
 
 ## SYNOPSIS
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Use this API to add an attachment to an existing event.
+This operation limits the size of the attachment you can add to under 3 MB.
+If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
 ## SYNTAX
 
@@ -40,8 +41,9 @@ New-MgGroupEventExceptionOccurrenceAttachment -InputObject <ICalendarIdentity>
 ```
 
 ## DESCRIPTION
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Use this API to add an attachment to an existing event.
+This operation limits the size of the attachment you can add to under 3 MB.
+If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
 
 ## EXAMPLES
 

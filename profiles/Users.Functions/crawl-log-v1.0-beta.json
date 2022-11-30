@@ -193,6 +193,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
+    "/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.getShiftWorkCloudPcAccessState()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
+    },
+    "/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.getSupportedCloudPcRemoteActions()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
+    },
     "/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/microsoft.graph.delta()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
@@ -478,18 +486,6 @@
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
     "/users/{user-id}/planner/all/microsoft.graph.delta()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
-    "/users/{user-id}/tasks/alltasks/microsoft.graph.delta()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
-    "/users/{user-id}/tasks/lists/{baseTaskList-id}/tasks/microsoft.graph.delta()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
-    "/users/{user-id}/tasks/lists/microsoft.graph.delta()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },

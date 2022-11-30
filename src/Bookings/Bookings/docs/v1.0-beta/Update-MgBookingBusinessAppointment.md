@@ -16,15 +16,15 @@ Update the navigation property appointments in bookingBusinesses
 ```
 Update-MgBookingBusinessAppointment -BookingAppointmentId <String> -BookingBusinessId <String>
  [-AdditionalInformation <String>] [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>]
- [-CustomerEmailAddress <String>] [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation>]
+ [-CustomerEmailAddress <String>] [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation1>]
  [-CustomerName <String>] [-CustomerNotes <String>] [-CustomerPhone <String>]
  [-Customers <IMicrosoftGraphBookingCustomerInformationBase[]>] [-CustomerTimeZone <String>]
  [-End <IMicrosoftGraphDateTimeZone>] [-Id <String>] [-InvoiceAmount <Double>]
  [-InvoiceDate <IMicrosoftGraphDateTimeZone>] [-InvoiceId <String>] [-InvoiceStatus <String>]
  [-InvoiceUrl <String>] [-IsLocationOnline] [-JoinWebUrl <String>] [-MaximumAttendeesCount <Int32>]
  [-OnlineMeetingUrl <String>] [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
- [-Price <Double>] [-PriceType <BookingPriceType>] [-Reminders <IMicrosoftGraphBookingReminder[]>]
- [-SelfServiceAppointmentId <String>] [-ServiceId <String>] [-ServiceLocation <IMicrosoftGraphLocation>]
+ [-Price <Double>] [-PriceType <BookingPriceType>] [-Reminders <IMicrosoftGraphBookingReminder1[]>]
+ [-SelfServiceAppointmentId <String>] [-ServiceId <String>] [-ServiceLocation <IMicrosoftGraphLocation1>]
  [-ServiceName <String>] [-ServiceNotes <String>] [-SmsNotificationsEnabled] [-StaffMemberIds <String[]>]
  [-Start <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -32,28 +32,28 @@ Update-MgBookingBusinessAppointment -BookingAppointmentId <String> -BookingBusin
 ### Update1
 ```
 Update-MgBookingBusinessAppointment -BookingAppointmentId <String> -BookingBusinessId <String>
- -BodyParameter <IMicrosoftGraphBookingAppointment> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBookingAppointment1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgBookingBusinessAppointment -InputObject <IBookingsIdentity>
- -BodyParameter <IMicrosoftGraphBookingAppointment> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphBookingAppointment1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgBookingBusinessAppointment -InputObject <IBookingsIdentity> [-AdditionalInformation <String>]
  [-AdditionalProperties <Hashtable>] [-AnonymousJoinWebUrl <String>] [-CustomerEmailAddress <String>]
- [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation>] [-CustomerName <String>]
+ [-CustomerId <String>] [-CustomerLocation <IMicrosoftGraphLocation1>] [-CustomerName <String>]
  [-CustomerNotes <String>] [-CustomerPhone <String>]
  [-Customers <IMicrosoftGraphBookingCustomerInformationBase[]>] [-CustomerTimeZone <String>]
  [-End <IMicrosoftGraphDateTimeZone>] [-Id <String>] [-InvoiceAmount <Double>]
  [-InvoiceDate <IMicrosoftGraphDateTimeZone>] [-InvoiceId <String>] [-InvoiceStatus <String>]
  [-InvoiceUrl <String>] [-IsLocationOnline] [-JoinWebUrl <String>] [-MaximumAttendeesCount <Int32>]
  [-OnlineMeetingUrl <String>] [-OptOutOfCustomerEmail] [-PostBuffer <TimeSpan>] [-PreBuffer <TimeSpan>]
- [-Price <Double>] [-PriceType <BookingPriceType>] [-Reminders <IMicrosoftGraphBookingReminder[]>]
- [-SelfServiceAppointmentId <String>] [-ServiceId <String>] [-ServiceLocation <IMicrosoftGraphLocation>]
+ [-Price <Double>] [-PriceType <BookingPriceType>] [-Reminders <IMicrosoftGraphBookingReminder1[]>]
+ [-SelfServiceAppointmentId <String>] [-ServiceId <String>] [-ServiceLocation <IMicrosoftGraphLocation1>]
  [-ServiceName <String>] [-ServiceNotes <String>] [-SmsNotificationsEnabled] [-StaffMemberIds <String[]>]
  [-Start <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -142,7 +142,7 @@ Represents a booked appointment of a service by a customer in a business.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -220,7 +220,7 @@ location
 To construct, please use Get-Help -Online and see NOTES section for CUSTOMERLOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -597,7 +597,7 @@ The value of this property is available only when reading this bookingAppointmen
 To construct, please use Get-Help -Online and see NOTES section for REMINDERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingReminder[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingReminder1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -643,7 +643,7 @@ location
 To construct, please use Get-Help -Online and see NOTES section for SERVICELOCATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocation1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -771,7 +771,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IBookingsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingAppointment1
 
 ## OUTPUTS
 
@@ -786,16 +786,16 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphBookingAppointment>: Represents a booked appointment of a service by a customer in a business.
+BODYPARAMETER <IMicrosoftGraphBookingAppointment1>: Represents a booked appointment of a service by a customer in a business.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[AnonymousJoinWebUrl <String>]`: Url of meeting to join anonymously.
   - `[CustomerEmailAddress <String>]`: The SMTP address of the bookingCustomer who is booking the appointment.
   - `[CustomerId <String>]`: The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
-  - `[CustomerLocation <IMicrosoftGraphLocation>]`: location
+  - `[CustomerLocation <IMicrosoftGraphLocation1>]`: location
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+    - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: The city.
       - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -840,22 +840,22 @@ BODYPARAMETER <IMicrosoftGraphBookingAppointment>: Represents a booked appointme
   - `[PreBuffer <TimeSpan?>]`: The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
   - `[Price <Double?>]`: The regular price for an appointment for the specified bookingService.
   - `[PriceType <BookingPriceType?>]`: Represents the type of pricing of a booking service.
-  - `[Reminders <IMicrosoftGraphBookingReminder[]>]`: The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
+  - `[Reminders <IMicrosoftGraphBookingReminder1[]>]`: The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
     - `[Message <String>]`: The message in the reminder.
     - `[Offset <TimeSpan?>]`: The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
     - `[Recipients <String>]`: 
   - `[SelfServiceAppointmentId <String>]`: An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
   - `[ServiceId <String>]`: The ID of the bookingService associated with this appointment.
-  - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
+  - `[ServiceLocation <IMicrosoftGraphLocation1>]`: location
   - `[ServiceName <String>]`: The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
   - `[ServiceNotes <String>]`: Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
   - `[SmsNotificationsEnabled <Boolean?>]`: True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
   - `[StaffMemberIds <String[]>]`: The ID of each bookingStaffMember who is scheduled in this appointment.
   - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
-CUSTOMERLOCATION <IMicrosoftGraphLocation>: location
+CUSTOMERLOCATION <IMicrosoftGraphLocation1>: location
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+  - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -893,20 +893,23 @@ INPUTOBJECT <IBookingsIdentity>: Identity Parameter
   - `[BookingServiceId <String>]`: key: id of bookingService
   - `[BookingStaffMemberBaseId <String>]`: key: id of bookingStaffMemberBase
   - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
+  - `[BusinessScenarioId <String>]`: key: id of businessScenario
+  - `[BusinessScenarioTaskId <String>]`: key: id of businessScenarioTask
+  - `[PlannerPlanConfigurationLocalizationId <String>]`: key: id of plannerPlanConfigurationLocalization
 
 INVOICEDATE <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
   - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
 
-REMINDERS <IMicrosoftGraphBookingReminder[]>: The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
+REMINDERS <IMicrosoftGraphBookingReminder1[]>: The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
   - `[Message <String>]`: The message in the reminder.
   - `[Offset <TimeSpan?>]`: The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
   - `[Recipients <String>]`: 
 
-SERVICELOCATION <IMicrosoftGraphLocation>: location
+SERVICELOCATION <IMicrosoftGraphLocation1>: location
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+  - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.

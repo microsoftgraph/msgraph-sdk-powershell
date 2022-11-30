@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new unifiedRoleDefinition object for an RBAC provider.
+This feature requires an Azure AD Premium P1 or P2 license.
 The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
 
 ## SYNTAX
@@ -30,6 +31,7 @@ New-MgRoleManagementCloudPcRoleDefinition -BodyParameter <IMicrosoftGraphUnified
 
 ## DESCRIPTION
 Create a new unifiedRoleDefinition object for an RBAC provider.
+This feature requires an Azure AD Premium P1 or P2 license.
 The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
 
 ## EXAMPLES
@@ -322,7 +324,7 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRoleDefinition>: unifiedRoleDefinition
   - `[ResourceScopes <String[]>]`: List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
   - `[RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]`: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
     - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource. Required.
-    - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective.
+    - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
     - `[ExcludedResourceActions <String[]>]`: Set of tasks that may not be performed on a resource. Not yet supported.
   - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
   - `[Version <String>]`: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
@@ -337,14 +339,14 @@ INHERITSPERMISSIONSFROM <IMicrosoftGraphUnifiedRoleDefinition[]>: Read-only coll
   - `[ResourceScopes <String[]>]`: List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
   - `[RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]`: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
     - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource. Required.
-    - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective.
+    - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
     - `[ExcludedResourceActions <String[]>]`: Set of tasks that may not be performed on a resource. Not yet supported.
   - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
   - `[Version <String>]`: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
 
 ROLEPERMISSIONS <IMicrosoftGraphUnifiedRolePermission[]>: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
   - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource. Required.
-  - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective.
+  - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
   - `[ExcludedResourceActions <String[]>]`: Set of tasks that may not be performed on a resource. Not yet supported.
 
 ## RELATED LINKS

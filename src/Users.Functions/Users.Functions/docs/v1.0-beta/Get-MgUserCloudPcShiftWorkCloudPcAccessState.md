@@ -1,87 +1,43 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusertasklisttaskdelta
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusercloudpcshiftworkcloudpcaccessstate
 schema: 2.0.0
 ---
 
-# Get-MgUserTaskListTaskDelta
+# Get-MgUserCloudPcShiftWorkCloudPcAccessState
 
 ## SYNOPSIS
-Invoke function delta
+Invoke function getShiftWorkCloudPcAccessState
 
 ## SYNTAX
 
-### Delta (Default)
+### Get (Default)
 ```
-Get-MgUserTaskListTaskDelta -BaseTaskListId <String> -UserId <String> [-Count] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [<CommonParameters>]
+Get-MgUserCloudPcShiftWorkCloudPcAccessState -CloudPcId <String> -UserId <String> [<CommonParameters>]
 ```
 
-### DeltaViaIdentity
+### GetViaIdentity
 ```
-Get-MgUserTaskListTaskDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [<CommonParameters>]
+Get-MgUserCloudPcShiftWorkCloudPcAccessState -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function delta
+Invoke function getShiftWorkCloudPcAccessState
 
 ## EXAMPLES
 
-### Example 1: Using the Get-MgUserTaskListTaskDelta Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Users.Functions
-# A UPN can also be used as -UserId.
-Get-MgUserTaskListTaskDelta -UserId $userId -BaseTaskListId $baseTaskListId
-```
-
-This example shows how to use the Get-MgUserTaskListTaskDelta Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
 ## PARAMETERS
 
-### -BaseTaskListId
-key: id of baseTaskList
+### -CloudPcId
+key: id of cloudPC
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta
+Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Count
-Include count of items
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -94,7 +50,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: DeltaViaIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -104,87 +60,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Property
-Select properties to be returned
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Search
-Search items by search phrases
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Sort
-Order items by property values
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: OrderBy
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Top
-Show only the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases: Limit
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -203,7 +84,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBaseTask
+### System.String
 
 ## NOTES
 
@@ -217,7 +98,6 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

@@ -88,6 +88,46 @@
     "/solutions": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
+    "/solutions/businessScenarios": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
+    "/solutions/businessScenarios/{businessScenario-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
+    "/solutions/businessScenarios/{businessScenario-id}/planner": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
+    "/solutions/businessScenarios/{businessScenario-id}/planner/microsoft.graph.getPlan": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
+    "/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
+    "/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration/localizations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
+    "/solutions/businessScenarios/{businessScenario-id}/planner/planConfiguration/localizations/{plannerPlanConfigurationLocalization-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
+    "/solutions/businessScenarios/{businessScenario-id}/planner/taskConfiguration": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
+    "/solutions/businessScenarios/{businessScenario-id}/planner/tasks": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
+    "/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
     }
   }
 }

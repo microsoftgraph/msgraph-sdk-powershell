@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 0ffe167e-dabc-4009-84f0-c33da69b794b
+Module Guid: 7f47b15e-5961-4e82-b64d-89b1994e12a7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -527,8 +527,14 @@ A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
+### [Get-MgOrganizationBrandingCustomCss](Get-MgOrganizationBrandingCustomCss.md)
+Get customCSS for the navigation property branding from organization
+
 ### [Get-MgOrganizationBrandingFavicon](Get-MgOrganizationBrandingFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+
+### [Get-MgOrganizationBrandingHeaderLogo](Get-MgOrganizationBrandingHeaderLogo.md)
+Get headerLogo for the navigation property branding from organization
 
 ### [Get-MgOrganizationBrandingLocalization](Get-MgOrganizationBrandingLocalization.md)
 Add different branding based on a locale.
@@ -543,8 +549,14 @@ A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
+### [Get-MgOrganizationBrandingLocalizationCustomCss](Get-MgOrganizationBrandingLocalizationCustomCss.md)
+Get customCSS for the navigation property localizations from organization
+
 ### [Get-MgOrganizationBrandingLocalizationFavicon](Get-MgOrganizationBrandingLocalizationFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+
+### [Get-MgOrganizationBrandingLocalizationHeaderLogo](Get-MgOrganizationBrandingLocalizationHeaderLogo.md)
+Get headerLogo for the navigation property localizations from organization
 
 ### [Get-MgOrganizationBrandingLocalizationSquareLogo](Get-MgOrganizationBrandingLocalizationSquareLogo.md)
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
@@ -996,7 +1008,7 @@ Delete entity from subscribedSkus
 Delete navigation property scopedRoleMemberOf for users
 
 ### [Restore-MgDirectoryDeletedItem](Restore-MgDirectoryDeletedItem.md)
-Restore a recently deleted application, group, servicePrincipal, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.
@@ -1012,8 +1024,14 @@ A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
+### [Set-MgOrganizationBrandingCustomCss](Set-MgOrganizationBrandingCustomCss.md)
+Update customCSS for the navigation property branding in organization
+
 ### [Set-MgOrganizationBrandingFavicon](Set-MgOrganizationBrandingFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+
+### [Set-MgOrganizationBrandingHeaderLogo](Set-MgOrganizationBrandingHeaderLogo.md)
+Update headerLogo for the navigation property branding in organization
 
 ### [Set-MgOrganizationBrandingLocalizationBackgroundImage](Set-MgOrganizationBrandingLocalizationBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -1025,8 +1043,14 @@ A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
+### [Set-MgOrganizationBrandingLocalizationCustomCss](Set-MgOrganizationBrandingLocalizationCustomCss.md)
+Update customCSS for the navigation property localizations in organization
+
 ### [Set-MgOrganizationBrandingLocalizationFavicon](Set-MgOrganizationBrandingLocalizationFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+
+### [Set-MgOrganizationBrandingLocalizationHeaderLogo](Set-MgOrganizationBrandingLocalizationHeaderLogo.md)
+Update headerLogo for the navigation property localizations in organization
 
 ### [Set-MgOrganizationBrandingLocalizationSquareLogo](Set-MgOrganizationBrandingLocalizationSquareLogo.md)
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.

@@ -7425,7 +7425,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -9651,7 +9651,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -14140,7 +14140,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -20604,7 +20604,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -25917,7 +25917,7 @@ components:
           description: Set of tasks that can be performed on a resource.
         condition:
           type: string
-          description: Optional constraints that must be met for the permission to be effective.
+          description: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
           nullable: true
         excludedResourceActions:
           type: array

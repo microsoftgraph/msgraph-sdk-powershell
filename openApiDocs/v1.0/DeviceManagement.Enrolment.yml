@@ -3556,7 +3556,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleDefinitions
-      description: Create a new custom unifiedRoleDefinition object.
+      description: Create a new custom unifiedRoleDefinition object. This feature requires an Azure AD Premium P1 or P2 license.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -7906,7 +7906,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleDefinitions
-      description: Create a new custom unifiedRoleDefinition object.
+      description: Create a new custom unifiedRoleDefinition object. This feature requires an Azure AD Premium P1 or P2 license.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -10467,7 +10467,7 @@ components:
           description: Set of tasks that can be performed on a resource. Required.
         condition:
           type: string
-          description: Optional constraints that must be met for the permission to be effective.
+          description: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
           nullable: true
         excludedResourceActions:
           type: array

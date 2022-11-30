@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 347db8c6-0876-410a-919a-5eb168f5d752
+Module Guid: 4bf63061-7c8d-48a3-9409-6aa1db92615e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -565,6 +565,9 @@ Reprovision a Cloud PC with an Intune managed device ID.
 ### [Invoke-MgRetireUserManagedDevice](Invoke-MgRetireUserManagedDevice.md)
 Retire a device
 
+### [Invoke-MgRetryUserCloudPcPartnerAgentInstallation](Invoke-MgRetryUserCloudPcPartnerAgentInstallation.md)
+Invoke action retryPartnerAgentInstallation
+
 ### [Invoke-MgRotateUserManagedDeviceBitLockerKey](Invoke-MgRotateUserManagedDeviceBitLockerKey.md)
 Rotate BitLockerKeys
 
@@ -661,12 +664,6 @@ Invoke action moveDevicesToOU
 ### [Move-MgUserMessage](Move-MgUserMessage.md)
 Move a message to another folder within the specified user's mailbox.
 This creates a new copy of the message in the destination folder and removes the original message.
-
-### [Move-MgUserTaskAlltask](Move-MgUserTaskAlltask.md)
-Move a baseTask object from one baseTaskList to another.
-
-### [Move-MgUserTaskListTask](Move-MgUserTaskListTask.md)
-Move a baseTask object from one baseTaskList to another.
 
 ### [New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration](New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration.md)
 Invoke action createEnrollmentNotificationConfiguration
@@ -930,7 +927,7 @@ Reboot a specific Cloud PC.
 Reboot device
 
 ### [Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
-Restore a recently deleted application, group, servicePrincipal, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.

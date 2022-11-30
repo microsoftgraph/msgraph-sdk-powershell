@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 347db8c6-0876-410a-919a-5eb168f5d752
+Module Guid: 4bf63061-7c8d-48a3-9409-6aa1db92615e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -589,7 +589,7 @@ Reset passcode
 Reboot device
 
 ### [Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
-Restore a recently deleted application, group, servicePrincipal, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.
