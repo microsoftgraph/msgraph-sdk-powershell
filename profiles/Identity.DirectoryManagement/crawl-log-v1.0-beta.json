@@ -833,7 +833,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
+    "/organization/{organization-id}/branding/customCSS": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
     "/organization/{organization-id}/branding/favicon": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/branding/headerLogo": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
@@ -853,7 +861,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
+    "/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/customCSS": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
     "/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/favicon": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/headerLogo": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },

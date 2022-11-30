@@ -241,6 +241,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
     },
+    "/tenantRelationships/managedTenants/managementTemplateCollectionTenantSummaries": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managementTemplateCollectionTenantSummaries/{managementTemplateCollectionTenantSummary-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
     "/tenantRelationships/managedTenants/managementTemplates": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
@@ -286,6 +294,14 @@
       "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
     },
     "/tenantRelationships/managedTenants/managementTemplateSteps/{managementTemplateStep-id}/versions/{managementTemplateStepVersion-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managementTemplateStepTenantSummaries": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
+    },
+    "/tenantRelationships/managedTenants/managementTemplateStepTenantSummaries/{managementTemplateStepTenantSummary-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/ManagedTenants.yml"
     },
