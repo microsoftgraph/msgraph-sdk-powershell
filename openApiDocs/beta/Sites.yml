@@ -76764,7 +76764,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -76958,7 +76958,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -76986,7 +76986,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -77159,7 +77159,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -77376,8 +77376,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.presence'
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
-            tasks:
-              $ref: '#/components/schemas/microsoft.graph.tasks'
             chats:
               type: array
               items:
@@ -78328,11 +78326,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -79275,6 +79273,10 @@ components:
               nullable: true
             osVersion:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+            partnerAgentInstallResults:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -79283,6 +79285,8 @@ components:
               type: string
               description: The provisioning policy that is applied during the provisioning of Cloud PCs.
               nullable: true
+            provisioningType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
             servicePlanId:
               type: string
               description: The service plan ID of the Cloud PC.
@@ -79587,13 +79591,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -79640,7 +79644,7 @@ components:
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.'
+              description: 'The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.'
               format: uuid
               nullable: true
             principalType:
@@ -80362,7 +80366,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
+              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -80485,7 +80489,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+              description: 'The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -82119,7 +82123,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -82205,7 +82209,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -82220,7 +82224,7 @@ components:
               type: array
               items:
                 type: string
-              description: List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
+              description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
@@ -82506,26 +82510,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
               description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.tasks:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: tasks
-          type: object
-          properties:
-            alltasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.baseTask'
-              description: All tasks in the users mailbox.
-              x-ms-navigationProperty: true
-            lists:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.baseTaskList'
-              description: The task lists in the users mailbox.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -83482,7 +83466,7 @@ components:
       title: cloudPcDiskEncryptionState
       enum:
         - notAvailable
-        - notEncryped
+        - notEncrypted
         - encryptedUsingPlatformManagedKey
         - encryptedUsingCustomerManagedKey
         - unknownFutureValue
@@ -83538,6 +83522,29 @@ components:
       enum:
         - windows10
         - windows11
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentInstallResult:
+      title: cloudPcPartnerAgentInstallResult
+      type: object
+      properties:
+        installStatus:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
+        isThirdPartyPartner:
+          type: boolean
+          nullable: true
+        partnerAgentName:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
+        retriable:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcProvisioningType:
+      title: cloudPcProvisioningType
+      enum:
+        - dedicated
+        - shared
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcServicePlanType:
@@ -87275,6 +87282,8 @@ components:
               description: 'Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerPlanCreation'
             owner:
               type: string
               nullable: true
@@ -88709,99 +88718,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
-    microsoft.graph.baseTask:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: baseTask
-          type: object
-          properties:
-            bodyLastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
-              format: date-time
-            completedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date when the task was finished.
-              format: date-time
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
-              format: date-time
-            displayName:
-              type: string
-              description: The name of the task.
-              nullable: true
-            dueDateTime:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-            importance:
-              $ref: '#/components/schemas/microsoft.graph.importance'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
-              format: date-time
-            recurrence:
-              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
-            startDateTime:
-              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.taskStatus_v2'
-            textBody:
-              type: string
-              description: The task body in text format that typically contains information about the task.
-              nullable: true
-            viewpoint:
-              $ref: '#/components/schemas/microsoft.graph.taskViewpoint'
-            checklistItems:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.checklistItem'
-              description: A collection of smaller subtasks linked to the more complex parent task.
-              x-ms-navigationProperty: true
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the task .
-              x-ms-navigationProperty: true
-            linkedResources:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.linkedResource_v2'
-              description: A collection of resources linked to the task.
-              x-ms-navigationProperty: true
-            parentList:
-              $ref: '#/components/schemas/microsoft.graph.baseTaskList'
-          additionalProperties:
-            type: object
-    microsoft.graph.baseTaskList:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: baseTaskList
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The name of the task list.
-              nullable: true
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the task list. Nullable.
-              x-ms-navigationProperty: true
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.baseTask'
-              description: The tasks in this task list. Read-only. Nullable.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.chatType:
       title: chatType
       enum:
@@ -89253,7 +89169,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: Channel name as it will appear to the user in Microsoft Teams.
+              description: Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
             email:
               type: string
               description: The email address for sending messages to the channel. Read-only.
@@ -89266,6 +89182,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
             moderationSettings:
               $ref: '#/components/schemas/microsoft.graph.channelModerationSettings'
+            summary:
+              $ref: '#/components/schemas/microsoft.graph.channelSummary'
             tenantId:
               type: string
               description: The ID of the Azure Active Directory tenant.
@@ -89919,6 +89837,23 @@ components:
         - done
         - failed
         - notSupported
+      type: string
+    microsoft.graph.cloudPcPartnerAgentInstallStatus:
+      title: cloudPcPartnerAgentInstallStatus
+      enum:
+        - installed
+        - installFailed
+        - installing
+        - uninstalling
+        - uninstallFailed
+        - licensed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcPartnerAgentName:
+      title: cloudPcPartnerAgentName
+      enum:
+        - citrix
+        - unknownFutureValue
       type: string
     microsoft.graph.bitlockerRecoveryKey:
       allOf:
@@ -92026,16 +91961,26 @@ components:
         containerId:
           type: string
           description: The identifier of the resource that contains the plan.
+          nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
         url:
           type: string
           description: The full canonical URL of the container.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.plannerPlanContextCollection:
       title: plannerPlanContextCollection
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPlanCreation:
+      title: plannerPlanCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
       additionalProperties:
         type: object
     microsoft.graph.plannerBucket:
@@ -92044,6 +91989,8 @@ components:
         - title: plannerBucket
           type: object
           properties:
+            creationSource:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketCreation'
             name:
               type: string
               description: Name of the bucket.
@@ -92091,6 +92038,8 @@ components:
       title: plannerTaskCreation
       type: object
       properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
         teamsPublicationInfo:
           $ref: '#/components/schemas/microsoft.graph.plannerTeamsPublicationInfo'
       additionalProperties:
@@ -92158,7 +92107,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.
+              description: 'Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -92793,79 +92742,6 @@ components:
         - weak
         - unknown
       type: string
-    microsoft.graph.taskStatus_v2:
-      title: taskStatus_v2
-      enum:
-        - notStarted
-        - inProgress
-        - completed
-        - unknownFutureValue
-      type: string
-    microsoft.graph.taskViewpoint:
-      title: taskViewpoint
-      type: object
-      properties:
-        categories:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
-        reminderDateTime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-      additionalProperties:
-        type: object
-    microsoft.graph.checklistItem:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: checklistItem
-          type: object
-          properties:
-            checkedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the checklistItem was finished.
-              format: date-time
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the checklistItem was created.
-              format: date-time
-            displayName:
-              type: string
-              description: Field indicating the title of checklistItem.
-              nullable: true
-            isChecked:
-              type: boolean
-              description: State indicating whether the item is checked off or not.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.linkedResource_v2:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: linkedResource_v2
-          type: object
-          properties:
-            applicationName:
-              type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
-              nullable: true
-            displayName:
-              type: string
-              description: Field indicating the title of the linkedResource.
-              nullable: true
-            externalId:
-              type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
-              nullable: true
-            webUrl:
-              type: string
-              description: Deep link to the linkedResource.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.teamworkUserIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -93187,6 +93063,33 @@ components:
           $ref: '#/components/schemas/microsoft.graph.replyRestriction'
         userNewMessageRestriction:
           $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
+      additionalProperties:
+        type: object
+    microsoft.graph.channelSummary:
+      title: channelSummary
+      type: object
+      properties:
+        guestsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        hasMembersFromOtherTenants:
+          type: boolean
+          nullable: true
+        membersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        ownersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.sharedWithChannelTeamInfo:
@@ -94194,6 +94097,16 @@ components:
         - title: printJob
           type: object
           properties:
+            acknowledgedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             configuration:
               $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
             createdBy:
@@ -94205,6 +94118,12 @@ components:
               format: date-time
             displayName:
               type: string
+              nullable: true
+            errorCode:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
               nullable: true
             isFetchable:
               type: boolean
@@ -95064,6 +94983,22 @@ components:
         - roster
         - project
       type: string
+    microsoft.graph.plannerCreationSourceKind:
+      title: plannerCreationSourceKind
+      enum:
+        - none
+        - external
+        - publication
+        - unknownFutureValue
+      type: string
+    microsoft.graph.plannerBucketCreation:
+      title: plannerBucketCreation
+      type: object
+      properties:
+        creationSourceKind:
+          $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
+      additionalProperties:
+        type: object
     microsoft.graph.plannerCategoryDescriptions:
       title: plannerCategoryDescriptions
       type: object
@@ -95181,33 +95116,35 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.plannerTeamsPublicationInfo:
-      title: plannerTeamsPublicationInfo
-      type: object
-      properties:
-        lastModifiedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The date and time when this task was last modified by the publication process. Read-only.
-          format: date-time
-          nullable: true
-        publicationId:
-          type: string
-          description: The identifier of the publication. Read-only.
-          nullable: true
-        publishedToPlanId:
-          type: string
-          description: The identifier of the plannerPlan this task was originally placed in. Read-only.
-          nullable: true
-        publishingTeamId:
-          type: string
-          description: The identifier of the team that initiated the publication process. Read-only.
-          nullable: true
-        publishingTeamName:
-          type: string
-          description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
-          nullable: true
-      additionalProperties:
-        type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerTaskCreation'
+        - title: plannerTeamsPublicationInfo
+          type: object
+          properties:
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when this task was last modified by the publication process. Read-only.
+              format: date-time
+              nullable: true
+            publicationId:
+              type: string
+              description: The identifier of the publication. Read-only.
+              nullable: true
+            publishedToPlanId:
+              type: string
+              description: The identifier of the plannerPlan this task was originally placed in. Read-only.
+              nullable: true
+            publishingTeamId:
+              type: string
+              description: The identifier of the team that initiated the publication process. Read-only.
+              nullable: true
+            publishingTeamName:
+              type: string
+              description: 'The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.plannerOrderHintsByAssignee:
       title: plannerOrderHintsByAssignee
       type: object
@@ -95853,6 +95790,33 @@ components:
                 type: string
                 nullable: true
               description: 'Indicates a single value {start} that represents the location in the file where the next upload should begin.'
+          additionalProperties:
+            type: object
+    microsoft.graph.checklistItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: checklistItem
+          type: object
+          properties:
+            checkedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was finished.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was created.
+              format: date-time
+            displayName:
+              type: string
+              description: Field indicating the title of checklistItem.
+              nullable: true
+            isChecked:
+              type: boolean
+              description: State indicating whether the item is checked off or not.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:
@@ -97197,10 +97161,20 @@ components:
               type: string
               description: The document's name. Read-only.
               nullable: true
+            downloadedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
             size:
               type: integer
               description: The document's size in bytes. Read-only.
               format: int64
+            uploadedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.printTask:

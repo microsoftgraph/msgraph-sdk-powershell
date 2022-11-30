@@ -3051,10 +3051,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communications.calls.participants_invite
       parameters:
         - name: call-id
@@ -4641,11 +4641,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      summary: Get meetingRegistration
+      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
       operationId: communications.onlineMeetings_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4745,11 +4745,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: communications.onlineMeetings_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -7501,11 +7501,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      summary: Get meetingRegistration
+      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
       operationId: users.onlineMeetings_GetRegistration
       parameters:
         - name: user-id
@@ -7623,11 +7623,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: users.onlineMeetings_DeleteRegistration
       parameters:
         - name: user-id
