@@ -39,7 +39,18 @@ steps:
       - template: ../common-templates/esrp/codesign.yml
         parameters:
           FolderPath: "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication"
-          Pattern: "Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, *.ps1"
+          Pattern: "Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, *.psm1, *.psd1, *.format.ps1xml, *.ps1"
+
+      - task: PowerShell@2
+        displayName: "Validate Authenticode Signature"
+        inputs:
+          targetType: "inline"
+          pwsh: true
+          script: |
+            $ModulePsd1 = "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication/Microsoft.Graph.Authentication.psd1"
+            $ModulePsm1 = "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication/Microsoft.Graph.Authentication.psm1"
+            ($ModulePsd1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
+            ($ModulePsm1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
 
   - ${{ if eq(parameters.Pack, true) }}:
       - task: PowerShell@2

@@ -39,7 +39,29 @@ steps:
       - template: ../common-templates/esrp/codesign.yml
         parameters:
           FolderPath: "$(System.DefaultWorkingDirectory)/src"
-          Pattern: "Microsoft.Graph.*.private.dll, Microsoft.Graph.*.psm1, Microsoft.Graph.*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1"
+          Pattern: "Microsoft.Graph.*.private.dll, Microsoft.Graph.*.psm1, Microsoft.Graph.*.psd1, Microsoft.Graph.*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1"
+
+      - task: PowerShell@2
+        displayName: "Validate Authenticode Signature"
+        inputs:
+          targetType: "inline"
+          pwsh: true
+          script: |
+            $ModuleMappingConfigPath = '$(System.DefaultWorkingDirectory)/config/ModulesMapping.jsonc'
+            [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
+            @("v1.0", "beta") | ForEach-Object {
+              $ApiVersion = $_
+              $ModuleMapping.Keys | ForEach-Object {
+                  $ModuleName = $_
+                  $ModulePath = "$(System.DefaultWorkingDirectory)/src/$ModuleName/$ApiVersion"
+                  if (Test-Path $ModulePath) {
+                    $ModulePsd1 = Join-Path $ModulePath "Microsoft.Graph*.$ModuleName.psd1" -Resolve
+                    $ModulePsm1 = Join-Path $ModulePath "Microsoft.Graph*.$ModuleName.psm1" -Resolve
+                    ($ModulePsd1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
+                    ($ModulePsm1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
+                  }
+              }
+            }
 
   - ${{ if eq(parameters.Pack, true) }}:
       - task: PowerShell@2
