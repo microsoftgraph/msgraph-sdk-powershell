@@ -14,7 +14,7 @@ paths:
       description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -50,7 +50,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -86,7 +86,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -133,7 +133,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -170,7 +170,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -208,7 +208,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:

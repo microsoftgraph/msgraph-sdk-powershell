@@ -47,23 +47,12 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationRoot'
-          links:
-            synchronizationProfiles:
-              operationId: education.ListSynchronizationProfiles
-            classes:
-              operationId: education.ListClasses
-            me:
-              operationId: education.GetMe
-            schools:
-              operationId: education.ListSchools
-            users:
-              operationId: education.ListUsers
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -80,8 +69,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -191,7 +184,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -216,7 +209,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationClass'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -293,45 +286,12 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
-          links:
-            assignmentCategories:
-              operationId: education.Classes.ListAssignmentCategories
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentDefaults:
-              operationId: education.Classes.GetAssignmentDefaults
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignments:
-              operationId: education.Classes.ListAssignments
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentSettings:
-              operationId: education.Classes.GetAssignmentSettings
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            group:
-              operationId: education.Classes.GetGroup
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.Classes.ListMembers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            schools:
-              operationId: education.Classes.ListSchools
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            teachers:
-              operationId: education.Classes.ListTeachers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -357,8 +317,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationClass'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationClass'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -453,7 +417,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -487,7 +451,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -546,7 +510,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -585,8 +549,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationCategory'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationCategory'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -673,7 +641,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -747,7 +715,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -782,8 +750,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentDefaults'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignmentDefaults'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -949,7 +921,7 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -983,7 +955,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1071,39 +1043,12 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignment'
-          links:
-            categories:
-              operationId: education.classes.Assignments.ListCategories
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            resources:
-              operationId: education.classes.Assignments.ListResources
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            rubric:
-              operationId: education.classes.Assignments.GetRubric
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            submissions:
-              operationId: education.classes.Assignments.ListSubmissions
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            publish:
-              operationId: education.classes.educationClass.assignments.educationAssignment.publish
-            setUpFeedbackResourcesFolder:
-              operationId: education.classes.educationClass.assignments.educationAssignment.setUpFeedbackResourcesFolder
-            setUpResourcesFolder:
-              operationId: education.classes.educationClass.assignments.educationAssignment.setUpResourcesFolder
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1137,8 +1082,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1249,7 +1198,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1287,7 +1236,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1394,7 +1343,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1489,7 +1438,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1543,7 +1492,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1580,7 +1529,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1617,7 +1566,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1702,7 +1651,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1744,7 +1693,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1812,7 +1761,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1859,8 +1808,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1967,7 +1920,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2006,8 +1959,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2073,7 +2030,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property link
           content:
             application/json:
@@ -2258,7 +2215,7 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2296,7 +2253,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2380,41 +2337,12 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmission'
-          links:
-            outcomes:
-              operationId: education.classes.assignments.Submissions.ListOutcomes
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            resources:
-              operationId: education.classes.assignments.Submissions.ListResources
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            submittedResources:
-              operationId: education.classes.assignments.Submissions.ListSubmittedResources
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            reassign:
-              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.reassign
-            return:
-              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.return
-            setUpResourcesFolder:
-              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
-            submit:
-              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.submit
-            unsubmit:
-              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.unsubmit
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2456,8 +2384,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2539,7 +2471,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2584,7 +2516,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2629,7 +2561,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2674,7 +2606,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2719,7 +2651,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2812,7 +2744,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationOutcomeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2862,7 +2794,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2937,7 +2869,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2992,8 +2924,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3131,7 +3067,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3181,7 +3117,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3256,7 +3192,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3311,8 +3247,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3446,7 +3386,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3492,7 +3432,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3567,7 +3507,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3622,8 +3562,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3793,7 +3737,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3864,7 +3808,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3899,8 +3843,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentSettings'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignmentSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4081,125 +4029,12 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.group'
-          links:
-            appRoleAssignments:
-              operationId: education.classes.Group.ListAppRoleAssignments
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            createdOnBehalfOf:
-              operationId: education.classes.Group.GetCreatedOnBehalfGraphOPre
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            endpoints:
-              operationId: education.classes.Group.ListEndpoints
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            memberOf:
-              operationId: education.classes.Group.ListMemberGraphOPre
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.classes.Group.ListMembers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            membersWithLicenseErrors:
-              operationId: education.classes.Group.ListMembersGraphWPreLicenseErrors
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            owners:
-              operationId: education.classes.Group.ListOwners
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            permissionGrants:
-              operationId: education.classes.Group.ListPermissionGrants
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            settings:
-              operationId: education.classes.Group.ListSettings
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            transitiveMemberOf:
-              operationId: education.classes.Group.ListTransitiveMemberGraphOPre
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            transitiveMembers:
-              operationId: education.classes.Group.ListTransitiveMembers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            acceptedSenders:
-              operationId: education.classes.Group.ListAcceptedSenders
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            calendar:
-              operationId: education.classes.Group.GetCalendar
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            calendarView:
-              operationId: education.classes.Group.ListCalendarView
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            conversations:
-              operationId: education.classes.Group.ListConversations
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            events:
-              operationId: education.classes.Group.ListEvents
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            rejectedSenders:
-              operationId: education.classes.Group.ListRejectedSenders
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            threads:
-              operationId: education.classes.Group.ListThreads
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            drive:
-              operationId: education.classes.Group.GetDrive
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            drives:
-              operationId: education.classes.Group.ListDrives
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            sites:
-              operationId: education.classes.Group.ListSites
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            extensions:
-              operationId: education.classes.Group.ListExtensions
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            groupLifecyclePolicies:
-              operationId: education.classes.Group.ListGroupLifecyclePolicies
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            planner:
-              operationId: education.classes.Group.GetPlanner
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            onenote:
-              operationId: education.classes.Group.GetOnenote
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            photo:
-              operationId: education.classes.Group.GetPhoto
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            photos:
-              operationId: education.classes.Group.ListPhotos
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            team:
-              operationId: education.classes.Group.GetTeam
-              parameters:
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4373,7 +4208,7 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4525,7 +4360,7 @@ paths:
                 - userType desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4668,7 +4503,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSchoolCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4746,28 +4581,12 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
-          links:
-            administrativeUnit:
-              operationId: education.classes.Schools.GetAdministrativeUnit
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationSchool-id: $request.path.educationSchool-id
-            classes:
-              operationId: education.classes.Schools.ListClasses
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationSchool-id: $request.path.educationSchool-id
-            users:
-              operationId: education.classes.Schools.ListUsers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationSchool-id: $request.path.educationSchool-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4941,7 +4760,7 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5093,7 +4912,7 @@ paths:
                 - userType desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5205,7 +5024,7 @@ paths:
                 - term desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5307,25 +5126,12 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationUser'
-          links:
-            assignments:
-              operationId: education.Me.ListAssignments
-            rubrics:
-              operationId: education.Me.ListRubrics
-            classes:
-              operationId: education.Me.ListClasses
-            schools:
-              operationId: education.Me.ListSchools
-            taughtClasses:
-              operationId: education.Me.ListTaughtClasses
-            user:
-              operationId: education.Me.GetUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5342,8 +5148,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationUser'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5493,7 +5303,7 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5514,7 +5324,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5594,35 +5404,12 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignment'
-          links:
-            categories:
-              operationId: education.me.Assignments.ListCategories
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-            resources:
-              operationId: education.me.Assignments.ListResources
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-            rubric:
-              operationId: education.me.Assignments.GetRubric
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-            submissions:
-              operationId: education.me.Assignments.ListSubmissions
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-            publish:
-              operationId: education.me.assignments.educationAssignment.publish
-            setUpFeedbackResourcesFolder:
-              operationId: education.me.assignments.educationAssignment.setUpFeedbackResourcesFolder
-            setUpResourcesFolder:
-              operationId: education.me.assignments.educationAssignment.setUpResourcesFolder
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5648,8 +5435,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5744,7 +5535,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5774,7 +5565,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5865,7 +5656,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5944,7 +5735,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5990,7 +5781,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6019,7 +5810,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6048,7 +5839,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6125,7 +5916,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6159,7 +5950,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6219,7 +6010,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6258,8 +6049,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6350,7 +6145,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6381,8 +6176,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6432,7 +6231,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property link
           content:
             application/json:
@@ -6593,7 +6392,7 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6623,7 +6422,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6699,38 +6498,12 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmission'
-          links:
-            outcomes:
-              operationId: education.me.assignments.Submissions.ListOutcomes
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            resources:
-              operationId: education.me.assignments.Submissions.ListResources
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            submittedResources:
-              operationId: education.me.assignments.Submissions.ListSubmittedResources
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            reassign:
-              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.reassign
-            return:
-              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.return
-            setUpResourcesFolder:
-              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
-            submit:
-              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.submit
-            unsubmit:
-              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.unsubmit
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6764,8 +6537,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6831,7 +6608,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6868,7 +6645,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6905,7 +6682,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6942,7 +6719,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6979,7 +6756,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7064,7 +6841,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationOutcomeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7106,7 +6883,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7173,7 +6950,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7220,8 +6997,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7343,7 +7124,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7385,7 +7166,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7452,7 +7233,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7499,8 +7280,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7618,7 +7403,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7656,7 +7441,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7723,7 +7508,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7770,8 +7555,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7925,7 +7714,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8057,7 +7846,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8134,45 +7923,12 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
-          links:
-            assignmentCategories:
-              operationId: education.me.Classes.ListAssignmentCategories
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentDefaults:
-              operationId: education.me.Classes.GetAssignmentDefaults
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignments:
-              operationId: education.me.Classes.ListAssignments
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentSettings:
-              operationId: education.me.Classes.GetAssignmentSettings
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            group:
-              operationId: education.me.Classes.GetGroup
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.me.Classes.ListMembers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            schools:
-              operationId: education.me.Classes.ListSchools
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            teachers:
-              operationId: education.me.Classes.ListTeachers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8257,7 +8013,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationRubricCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8282,7 +8038,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8341,7 +8097,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8372,8 +8128,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8508,7 +8268,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSchoolCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8578,25 +8338,12 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
-          links:
-            administrativeUnit:
-              operationId: education.me.Schools.GetAdministrativeUnit
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            classes:
-              operationId: education.me.Schools.ListClasses
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            users:
-              operationId: education.me.Schools.ListUsers
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8703,7 +8450,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8780,45 +8527,12 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
-          links:
-            assignmentCategories:
-              operationId: education.me.TaughtClasses.ListAssignmentCategories
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentDefaults:
-              operationId: education.me.TaughtClasses.GetAssignmentDefaults
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignments:
-              operationId: education.me.TaughtClasses.ListAssignments
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentSettings:
-              operationId: education.me.TaughtClasses.GetAssignmentSettings
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            group:
-              operationId: education.me.TaughtClasses.GetGroup
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.me.TaughtClasses.ListMembers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            schools:
-              operationId: education.me.TaughtClasses.ListSchools
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            teachers:
-              operationId: education.me.TaughtClasses.ListTeachers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9067,141 +8781,12 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
-          links:
-            analytics:
-              operationId: education.me.User.GetAnalytics
-            cloudPCs:
-              operationId: education.me.User.ListCloudPCs
-            usageRights:
-              operationId: education.me.User.ListUsageRights
-            informationProtection:
-              operationId: education.me.User.GetInformationProtection
-            appRoleAssignedResources:
-              operationId: education.me.User.ListAppRoleAssignedResources
-            appRoleAssignments:
-              operationId: education.me.User.ListAppRoleAssignments
-            createdObjects:
-              operationId: education.me.User.ListCreatedObjects
-            directReports:
-              operationId: education.me.User.ListDirectReports
-            licenseDetails:
-              operationId: education.me.User.ListLicenseDetails
-            manager:
-              operationId: education.me.User.GetManager
-            memberOf:
-              operationId: education.me.User.ListMemberGraphOPre
-            oauth2PermissionGrants:
-              operationId: education.me.User.ListOauth2PermissionGrants
-            ownedDevices:
-              operationId: education.me.User.ListOwnedDevices
-            ownedObjects:
-              operationId: education.me.User.ListOwnedObjects
-            registeredDevices:
-              operationId: education.me.User.ListRegisteredDevices
-            scopedRoleMemberOf:
-              operationId: education.me.User.ListScopedRoleMemberGraphOPre
-            transitiveMemberOf:
-              operationId: education.me.User.ListTransitiveMemberGraphOPre
-            transitiveReports:
-              operationId: education.me.User.ListTransitiveReports
-            calendar:
-              operationId: education.me.User.GetCalendar
-            calendarGroups:
-              operationId: education.me.User.ListCalendarGroups
-            calendars:
-              operationId: education.me.User.ListCalendars
-            calendarView:
-              operationId: education.me.User.ListCalendarView
-            contactFolders:
-              operationId: education.me.User.ListContactFolders
-            contacts:
-              operationId: education.me.User.ListContacts
-            events:
-              operationId: education.me.User.ListEvents
-            inferenceClassification:
-              operationId: education.me.User.GetInferenceClassification
-            joinedGroups:
-              operationId: education.me.User.ListJoinedGroups
-            mailFolders:
-              operationId: education.me.User.ListMailFolders
-            messages:
-              operationId: education.me.User.ListMessages
-            outlook:
-              operationId: education.me.User.GetOutlook
-            people:
-              operationId: education.me.User.ListPeople
-            drive:
-              operationId: education.me.User.GetDrive
-            drives:
-              operationId: education.me.User.ListDrives
-            followedSites:
-              operationId: education.me.User.ListFollowedSites
-            extensions:
-              operationId: education.me.User.ListExtensions
-            appConsentRequestsForApproval:
-              operationId: education.me.User.ListAppConsentRequestsGraphFPreApproval
-            approvals:
-              operationId: education.me.User.ListApprovals
-            pendingAccessReviewInstances:
-              operationId: education.me.User.ListPendingAccessReviewInstances
-            agreementAcceptances:
-              operationId: education.me.User.ListAgreementAcceptances
-            security:
-              operationId: education.me.User.GetSecurity
-            deviceEnrollmentConfigurations:
-              operationId: education.me.User.ListDeviceEnrollmentConfigurations
-            managedDevices:
-              operationId: education.me.User.ListManagedDevices
-            managedAppRegistrations:
-              operationId: education.me.User.ListManagedAppRegistrations
-            windowsInformationProtectionDeviceRegistrations:
-              operationId: education.me.User.ListWindowsInformationProtectionDeviceRegistrations
-            deviceManagementTroubleshootingEvents:
-              operationId: education.me.User.ListDeviceManagementTroubleshootingEvents
-            mobileAppIntentAndStates:
-              operationId: education.me.User.ListMobileAppIntentAndStates
-            mobileAppTroubleshootingEvents:
-              operationId: education.me.User.ListMobileAppTroubleshootingEvents
-            notifications:
-              operationId: education.me.User.ListNotifications
-            planner:
-              operationId: education.me.User.GetPlanner
-            insights:
-              operationId: education.me.User.GetInsights
-            settings:
-              operationId: education.me.User.GetSettings
-            onenote:
-              operationId: education.me.User.GetOnenote
-            photo:
-              operationId: education.me.User.GetPhoto
-            photos:
-              operationId: education.me.User.ListPhotos
-            profile:
-              operationId: education.me.User.GetProfile
-            activities:
-              operationId: education.me.User.ListActivities
-            devices:
-              operationId: education.me.User.ListDevices
-            onlineMeetings:
-              operationId: education.me.User.ListOnlineMeetings
-            presence:
-              operationId: education.me.User.GetPresence
-            authentication:
-              operationId: education.me.User.GetAuthentication
-            chats:
-              operationId: education.me.User.ListChats
-            joinedTeams:
-              operationId: education.me.User.ListJoinedTeams
-            teamwork:
-              operationId: education.me.User.GetTeamwork
-            todo:
-              operationId: education.me.User.GetTodo
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9310,7 +8895,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSchoolCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9335,7 +8920,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSchool'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9405,25 +8990,12 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
-          links:
-            administrativeUnit:
-              operationId: education.Schools.GetAdministrativeUnit
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            classes:
-              operationId: education.Schools.ListClasses
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            users:
-              operationId: education.Schools.ListUsers
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9449,8 +9021,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSchool'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSchool'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9535,25 +9111,12 @@ paths:
                 - extensions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
-          links:
-            members:
-              operationId: education.schools.AdministrativeUnit.ListMembers
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            scopedRoleMembers:
-              operationId: education.schools.AdministrativeUnit.ListScopedRoleMembers
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            extensions:
-              operationId: education.schools.AdministrativeUnit.ListExtensions
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9579,8 +9142,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9698,7 +9265,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9810,7 +9377,7 @@ paths:
                 - term desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10010,7 +9577,7 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10162,7 +9729,7 @@ paths:
                 - userType desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10278,7 +9845,7 @@ paths:
                 - schoolNumber desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10383,7 +9950,7 @@ paths:
                 - profileStatus
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSynchronizationProfileCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10404,7 +9971,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfile'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10464,31 +10031,12 @@ paths:
                 - profileStatus
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfile'
-          links:
-            errors:
-              operationId: education.SynchronizationProfiles.ListErrors
-              parameters:
-                educationSynchronizationProfile-id: $request.path.educationSynchronizationProfile-id
-            profileStatus:
-              operationId: education.SynchronizationProfiles.GetProfileStatus
-              parameters:
-                educationSynchronizationProfile-id: $request.path.educationSynchronizationProfile-id
-            pause:
-              operationId: education.synchronizationProfiles.educationSynchronizationProfile.pause
-            reset:
-              operationId: education.synchronizationProfiles.educationSynchronizationProfile.reset
-            resume:
-              operationId: education.synchronizationProfiles.educationSynchronizationProfile.resume
-            start:
-              operationId: education.synchronizationProfiles.educationSynchronizationProfile.start
-            uploadUrl:
-              operationId: education.synchronizationProfiles.educationSynchronizationProfile.uploadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10514,8 +10062,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfile'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10625,7 +10177,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSynchronizationErrorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10655,7 +10207,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSynchronizationError'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10719,7 +10271,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10758,8 +10310,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSynchronizationError'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSynchronizationError'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10892,7 +10448,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10930,7 +10486,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSynchronizationProfile
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10994,7 +10550,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11025,8 +10581,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfileStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSynchronizationProfileStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11218,7 +10778,7 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11243,7 +10803,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationUser'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11336,37 +10896,12 @@ paths:
                 - user
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationUser'
-          links:
-            assignments:
-              operationId: education.Users.ListAssignments
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            rubrics:
-              operationId: education.Users.ListRubrics
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            classes:
-              operationId: education.Users.ListClasses
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            schools:
-              operationId: education.Users.ListSchools
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            taughtClasses:
-              operationId: education.Users.ListTaughtClasses
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            user:
-              operationId: education.Users.GetUser
-              parameters:
-                educationUser-id: $request.path.educationUser-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11392,8 +10927,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationUser'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationUser'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11559,7 +11098,7 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11589,7 +11128,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11677,39 +11216,12 @@ paths:
                 - submissions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignment'
-          links:
-            categories:
-              operationId: education.users.Assignments.ListCategories
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            resources:
-              operationId: education.users.Assignments.ListResources
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            rubric:
-              operationId: education.users.Assignments.GetRubric
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            submissions:
-              operationId: education.users.Assignments.ListSubmissions
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            publish:
-              operationId: education.users.educationUser.assignments.educationAssignment.publish
-            setUpFeedbackResourcesFolder:
-              operationId: education.users.educationUser.assignments.educationAssignment.setUpFeedbackResourcesFolder
-            setUpResourcesFolder:
-              operationId: education.users.educationUser.assignments.educationAssignment.setUpResourcesFolder
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11743,8 +11255,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11855,7 +11371,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11893,7 +11409,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12000,7 +11516,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12095,7 +11611,7 @@ paths:
                 - displayName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12149,7 +11665,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12186,7 +11702,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12223,7 +11739,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12308,7 +11824,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationAssignmentResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12350,7 +11866,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12418,7 +11934,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12465,8 +11981,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignmentResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12573,7 +12093,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -12612,8 +12132,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12679,7 +12203,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationAssignment
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property link
           content:
             application/json:
@@ -12864,7 +12388,7 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12902,7 +12426,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12986,41 +12510,12 @@ paths:
                 - submittedResources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmission'
-          links:
-            outcomes:
-              operationId: education.users.assignments.Submissions.ListOutcomes
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            resources:
-              operationId: education.users.assignments.Submissions.ListResources
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            submittedResources:
-              operationId: education.users.assignments.Submissions.ListSubmittedResources
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            reassign:
-              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.reassign
-            return:
-              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.return
-            setUpResourcesFolder:
-              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
-            submit:
-              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.submit
-            unsubmit:
-              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.unsubmit
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13062,8 +12557,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmission'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13145,7 +12644,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -13190,7 +12689,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -13235,7 +12734,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -13280,7 +12779,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -13325,7 +12824,7 @@ paths:
             type: string
           x-ms-docs-key-type: educationSubmission
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -13418,7 +12917,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationOutcomeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13468,7 +12967,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13543,7 +13042,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13598,8 +13097,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationOutcome'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13737,7 +13240,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13787,7 +13290,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13862,7 +13365,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13917,8 +13420,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14052,7 +13559,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSubmissionResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14098,7 +13605,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14173,7 +13680,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14228,8 +13735,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationSubmissionResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14399,7 +13910,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -14539,7 +14050,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14624,53 +14135,12 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
-          links:
-            assignmentCategories:
-              operationId: education.users.Classes.ListAssignmentCategories
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignmentDefaults:
-              operationId: education.users.Classes.GetAssignmentDefaults
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignments:
-              operationId: education.users.Classes.ListAssignments
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignmentSettings:
-              operationId: education.users.Classes.GetAssignmentSettings
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            group:
-              operationId: education.users.Classes.GetGroup
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.users.Classes.ListMembers
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            schools:
-              operationId: education.users.Classes.ListSchools
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            teachers:
-              operationId: education.users.Classes.ListTeachers
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14763,7 +14233,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationRubricCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14797,7 +14267,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14864,7 +14334,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14903,8 +14373,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.educationRubric'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationRubric'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15055,7 +14529,7 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationSchoolCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15133,28 +14607,12 @@ paths:
                 - users
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
-          links:
-            administrativeUnit:
-              operationId: education.users.Schools.GetAdministrativeUnit
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationSchool-id: $request.path.educationSchool-id
-            classes:
-              operationId: education.users.Schools.ListClasses
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationSchool-id: $request.path.educationSchool-id
-            users:
-              operationId: education.users.Schools.ListUsers
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationSchool-id: $request.path.educationSchool-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15269,7 +14727,7 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.educationClassCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15354,53 +14812,12 @@ paths:
                 - teachers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
-          links:
-            assignmentCategories:
-              operationId: education.users.TaughtClasses.ListAssignmentCategories
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignmentDefaults:
-              operationId: education.users.TaughtClasses.GetAssignmentDefaults
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignments:
-              operationId: education.users.TaughtClasses.ListAssignments
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignmentSettings:
-              operationId: education.users.TaughtClasses.GetAssignmentSettings
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            group:
-              operationId: education.users.TaughtClasses.GetGroup
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.users.TaughtClasses.ListMembers
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            schools:
-              operationId: education.users.TaughtClasses.ListSchools
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            teachers:
-              operationId: education.users.TaughtClasses.ListTeachers
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15657,269 +15074,12 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
-          links:
-            analytics:
-              operationId: education.users.User.GetAnalytics
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            cloudPCs:
-              operationId: education.users.User.ListCloudPCs
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            usageRights:
-              operationId: education.users.User.ListUsageRights
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            informationProtection:
-              operationId: education.users.User.GetInformationProtection
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            appRoleAssignedResources:
-              operationId: education.users.User.ListAppRoleAssignedResources
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            appRoleAssignments:
-              operationId: education.users.User.ListAppRoleAssignments
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            createdObjects:
-              operationId: education.users.User.ListCreatedObjects
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            directReports:
-              operationId: education.users.User.ListDirectReports
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            licenseDetails:
-              operationId: education.users.User.ListLicenseDetails
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            manager:
-              operationId: education.users.User.GetManager
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            memberOf:
-              operationId: education.users.User.ListMemberGraphOPre
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            oauth2PermissionGrants:
-              operationId: education.users.User.ListOauth2PermissionGrants
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            ownedDevices:
-              operationId: education.users.User.ListOwnedDevices
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            ownedObjects:
-              operationId: education.users.User.ListOwnedObjects
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            registeredDevices:
-              operationId: education.users.User.ListRegisteredDevices
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            scopedRoleMemberOf:
-              operationId: education.users.User.ListScopedRoleMemberGraphOPre
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            transitiveMemberOf:
-              operationId: education.users.User.ListTransitiveMemberGraphOPre
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            transitiveReports:
-              operationId: education.users.User.ListTransitiveReports
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            calendar:
-              operationId: education.users.User.GetCalendar
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            calendarGroups:
-              operationId: education.users.User.ListCalendarGroups
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            calendars:
-              operationId: education.users.User.ListCalendars
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            calendarView:
-              operationId: education.users.User.ListCalendarView
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            contactFolders:
-              operationId: education.users.User.ListContactFolders
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            contacts:
-              operationId: education.users.User.ListContacts
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            events:
-              operationId: education.users.User.ListEvents
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            inferenceClassification:
-              operationId: education.users.User.GetInferenceClassification
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            joinedGroups:
-              operationId: education.users.User.ListJoinedGroups
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            mailFolders:
-              operationId: education.users.User.ListMailFolders
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            messages:
-              operationId: education.users.User.ListMessages
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            outlook:
-              operationId: education.users.User.GetOutlook
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            people:
-              operationId: education.users.User.ListPeople
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            drive:
-              operationId: education.users.User.GetDrive
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            drives:
-              operationId: education.users.User.ListDrives
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            followedSites:
-              operationId: education.users.User.ListFollowedSites
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            extensions:
-              operationId: education.users.User.ListExtensions
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            appConsentRequestsForApproval:
-              operationId: education.users.User.ListAppConsentRequestsGraphFPreApproval
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            approvals:
-              operationId: education.users.User.ListApprovals
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            pendingAccessReviewInstances:
-              operationId: education.users.User.ListPendingAccessReviewInstances
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            agreementAcceptances:
-              operationId: education.users.User.ListAgreementAcceptances
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            security:
-              operationId: education.users.User.GetSecurity
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            deviceEnrollmentConfigurations:
-              operationId: education.users.User.ListDeviceEnrollmentConfigurations
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            managedDevices:
-              operationId: education.users.User.ListManagedDevices
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            managedAppRegistrations:
-              operationId: education.users.User.ListManagedAppRegistrations
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            windowsInformationProtectionDeviceRegistrations:
-              operationId: education.users.User.ListWindowsInformationProtectionDeviceRegistrations
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            deviceManagementTroubleshootingEvents:
-              operationId: education.users.User.ListDeviceManagementTroubleshootingEvents
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            mobileAppIntentAndStates:
-              operationId: education.users.User.ListMobileAppIntentAndStates
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            mobileAppTroubleshootingEvents:
-              operationId: education.users.User.ListMobileAppTroubleshootingEvents
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            notifications:
-              operationId: education.users.User.ListNotifications
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            planner:
-              operationId: education.users.User.GetPlanner
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            insights:
-              operationId: education.users.User.GetInsights
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            settings:
-              operationId: education.users.User.GetSettings
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            onenote:
-              operationId: education.users.User.GetOnenote
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            photo:
-              operationId: education.users.User.GetPhoto
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            photos:
-              operationId: education.users.User.ListPhotos
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            profile:
-              operationId: education.users.User.GetProfile
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            activities:
-              operationId: education.users.User.ListActivities
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            devices:
-              operationId: education.users.User.ListDevices
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            onlineMeetings:
-              operationId: education.users.User.ListOnlineMeetings
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            presence:
-              operationId: education.users.User.GetPresence
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            authentication:
-              operationId: education.users.User.GetAuthentication
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            chats:
-              operationId: education.users.User.ListChats
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            joinedTeams:
-              operationId: education.users.User.ListJoinedTeams
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            teamwork:
-              operationId: education.users.User.GetTeamwork
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            todo:
-              operationId: education.users.User.GetTodo
-              parameters:
-                educationUser-id: $request.path.educationUser-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16063,7 +15223,7 @@ paths:
                 - userType desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -29314,6 +28474,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             onBehalfOf:
@@ -34493,6 +33654,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'

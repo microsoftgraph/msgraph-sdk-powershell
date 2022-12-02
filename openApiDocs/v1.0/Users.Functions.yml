@@ -96,7 +96,7 @@ paths:
                 - visualElements desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -303,7 +303,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -505,7 +505,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -715,7 +715,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -917,7 +917,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -971,7 +971,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1193,7 +1193,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1411,7 +1411,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1637,7 +1637,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1855,7 +1855,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1925,7 +1925,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2139,7 +2139,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2349,7 +2349,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2567,7 +2567,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2777,7 +2777,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2839,7 +2839,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3045,7 +3045,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3247,7 +3247,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3400,7 +3400,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3545,7 +3545,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3682,7 +3682,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3886,7 +3886,7 @@ paths:
                 - yomiSurname desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3980,7 +3980,7 @@ paths:
                 - parentFolderId desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4179,7 +4179,7 @@ paths:
                 - yomiSurname desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4265,7 +4265,7 @@ paths:
                 - parentFolderId desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4456,7 +4456,7 @@ paths:
                 - yomiSurname desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4572,7 +4572,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4709,7 +4709,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4903,7 +4903,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5108,7 +5108,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5224,7 +5224,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5361,7 +5361,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5563,7 +5563,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5618,7 +5618,7 @@ paths:
             type: string
           x-ms-docs-key-type: contentType
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5734,7 +5734,7 @@ paths:
                 - sealed desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5847,7 +5847,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5984,7 +5984,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6170,7 +6170,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/recentResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6349,7 +6349,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/searchResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6520,7 +6520,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/sharedWithMeResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6610,7 +6610,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6739,7 +6739,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6925,7 +6925,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7122,7 +7122,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7230,7 +7230,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7359,7 +7359,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7553,7 +7553,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7760,7 +7760,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7962,7 +7962,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8123,7 +8123,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8276,7 +8276,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8358,7 +8358,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8492,7 +8492,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8642,7 +8642,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8787,7 +8787,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8861,7 +8861,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8987,7 +8987,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9170,7 +9170,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9277,7 +9277,7 @@ paths:
                 - unreadItemCount desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9455,7 +9455,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9554,7 +9554,7 @@ paths:
                 - unreadItemCount desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9724,7 +9724,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9772,7 +9772,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/getManagedAppDiagnosticStatusesResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9842,7 +9842,7 @@ paths:
                 - version desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/getManagedAppPoliciesResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9886,7 +9886,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/reminderViewResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9942,7 +9942,7 @@ paths:
             type: string
           x-ms-docs-key-type: onenotePage
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9991,7 +9991,7 @@ paths:
             type: string
           x-ms-docs-key-type: onenotePage
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10029,7 +10029,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10075,7 +10075,7 @@ paths:
             type: string
           x-ms-docs-key-type: onenotePage
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10124,7 +10124,7 @@ paths:
             type: string
           x-ms-docs-key-type: onenotePage
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10165,7 +10165,7 @@ paths:
             type: string
           x-ms-docs-key-type: onenotePage
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10199,7 +10199,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10242,7 +10242,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10292,7 +10292,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10418,7 +10418,7 @@ paths:
                 - title desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10504,7 +10504,7 @@ paths:
                 - wellknownListName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10833,7 +10833,7 @@ paths:
                 - skills desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:

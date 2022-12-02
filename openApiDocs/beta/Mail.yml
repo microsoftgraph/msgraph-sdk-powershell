@@ -36,17 +36,12 @@ paths:
                 - overrides
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
-          links:
-            overrides:
-              operationId: users.InferenceClassification.ListOverrides
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -72,8 +67,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -132,7 +131,7 @@ paths:
                 - senderEmailAddress
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.inferenceClassificationOverrideCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -166,7 +165,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -214,7 +213,7 @@ paths:
                 - senderEmailAddress
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -253,8 +252,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -368,7 +371,7 @@ paths:
                 - userConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mailFolderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -402,7 +405,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mailFolder'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -461,47 +464,12 @@ paths:
                 - userConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
-          links:
-            childFolders:
-              operationId: users.MailFolders.ListChildFolders
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-            messageRules:
-              operationId: users.MailFolders.ListMessageRules
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-            messages:
-              operationId: users.MailFolders.ListMessages
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-            multiValueExtendedProperties:
-              operationId: users.MailFolders.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-            singleValueExtendedProperties:
-              operationId: users.MailFolders.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-            userConfigurations:
-              operationId: users.MailFolders.ListUserConfigurations
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-            copy:
-              operationId: users.user.mailFolders.mailFolder.copy
-            move:
-              operationId: users.user.mailFolders.mailFolder.move
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -535,8 +503,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mailFolder'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailFolder'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -676,7 +648,7 @@ paths:
                 - userConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mailFolderCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -718,7 +690,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mailFolder'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -803,53 +775,12 @@ paths:
                 - userConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
-          links:
-            childFolders:
-              operationId: users.mailFolders.ChildFolders.ListChildFolders
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-            messageRules:
-              operationId: users.mailFolders.ChildFolders.ListMessageRules
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-            messages:
-              operationId: users.mailFolders.ChildFolders.ListMessages
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-            multiValueExtendedProperties:
-              operationId: users.mailFolders.ChildFolders.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-            singleValueExtendedProperties:
-              operationId: users.mailFolders.ChildFolders.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-            userConfigurations:
-              operationId: users.mailFolders.ChildFolders.ListUserConfigurations
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-            copy:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.copy
-            move:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.move
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -891,8 +822,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mailFolder'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailFolder'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1024,7 +959,7 @@ paths:
                 - sequence
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.messageRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1070,7 +1005,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.messageRule'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1140,7 +1075,7 @@ paths:
                 - sequence
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1195,8 +1130,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.messageRule'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.messageRule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1437,7 +1376,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.messageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1487,7 +1426,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.message'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1604,68 +1543,12 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-          links:
-            attachments:
-              operationId: users.mailFolders.childFolders.Messages.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-                message-id: $request.path.message-id
-            extensions:
-              operationId: users.mailFolders.childFolders.Messages.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-                message-id: $request.path.message-id
-            mentions:
-              operationId: users.mailFolders.childFolders.Messages.ListMentions
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-                message-id: $request.path.message-id
-            multiValueExtendedProperties:
-              operationId: users.mailFolders.childFolders.Messages.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-                message-id: $request.path.message-id
-            singleValueExtendedProperties:
-              operationId: users.mailFolders.childFolders.Messages.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                mailFolder-id1: $request.path.mailFolder-id1
-                message-id: $request.path.message-id
-            copy:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.copy
-            createForward:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.createForward
-            createReply:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.createReply
-            createReplyAll:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.createReplyAll
-            forward:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.forward
-            move:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.move
-            reply:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.reply
-            replyAll:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.replyAll
-            send:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.send
-            unsubscribe:
-              operationId: users.user.mailFolders.mailFolder.childFolders.mailFolder.messages.message.unsubscribe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1715,8 +1598,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.message'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1813,7 +1700,7 @@ paths:
             type: string
           x-ms-docs-key-type: message
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -1975,7 +1862,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2033,7 +1920,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2120,7 +2007,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2269,7 +2156,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2327,7 +2214,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2409,7 +2296,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2472,8 +2359,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2641,7 +2532,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mentionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2695,7 +2586,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mention'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2785,7 +2676,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2938,7 +2829,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2992,7 +2883,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3075,7 +2966,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3138,8 +3029,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3287,7 +3182,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3341,7 +3236,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3424,7 +3319,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3487,8 +3382,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3628,7 +3527,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3674,7 +3573,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3749,7 +3648,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3804,8 +3703,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3937,7 +3840,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3983,7 +3886,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4058,7 +3961,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4113,8 +4016,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4232,7 +4139,7 @@ paths:
                 - binaryData
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4293,7 +4200,7 @@ paths:
                 - binaryData
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4380,7 +4287,7 @@ paths:
                 - sequence
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.messageRuleCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4418,7 +4325,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.messageRule'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4480,7 +4387,7 @@ paths:
                 - sequence
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4527,8 +4434,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.messageRule'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.messageRule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4753,7 +4664,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.messageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4795,7 +4706,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.message'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4904,63 +4815,12 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-          links:
-            attachments:
-              operationId: users.mailFolders.Messages.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-            extensions:
-              operationId: users.mailFolders.Messages.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-            mentions:
-              operationId: users.mailFolders.Messages.ListMentions
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-            multiValueExtendedProperties:
-              operationId: users.mailFolders.Messages.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-            singleValueExtendedProperties:
-              operationId: users.mailFolders.Messages.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                mailFolder-id: $request.path.mailFolder-id
-                message-id: $request.path.message-id
-            copy:
-              operationId: users.user.mailFolders.mailFolder.messages.message.copy
-            createForward:
-              operationId: users.user.mailFolders.mailFolder.messages.message.createForward
-            createReply:
-              operationId: users.user.mailFolders.mailFolder.messages.message.createReply
-            createReplyAll:
-              operationId: users.user.mailFolders.mailFolder.messages.message.createReplyAll
-            forward:
-              operationId: users.user.mailFolders.mailFolder.messages.message.forward
-            move:
-              operationId: users.user.mailFolders.mailFolder.messages.message.move
-            reply:
-              operationId: users.user.mailFolders.mailFolder.messages.message.reply
-            replyAll:
-              operationId: users.user.mailFolders.mailFolder.messages.message.replyAll
-            send:
-              operationId: users.user.mailFolders.mailFolder.messages.message.send
-            unsubscribe:
-              operationId: users.user.mailFolders.mailFolder.messages.message.unsubscribe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5002,8 +4862,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.message'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5084,7 +4948,7 @@ paths:
             type: string
           x-ms-docs-key-type: message
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -5230,7 +5094,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5280,7 +5144,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5359,7 +5223,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5492,7 +5356,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5542,7 +5406,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5616,7 +5480,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5671,8 +5535,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5824,7 +5692,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mentionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5870,7 +5738,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mention'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5952,7 +5820,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6089,7 +5957,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6135,7 +6003,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6210,7 +6078,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6265,8 +6133,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6398,7 +6270,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6444,7 +6316,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6519,7 +6391,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6574,8 +6446,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6699,7 +6575,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6737,7 +6613,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6804,7 +6680,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6851,8 +6727,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6968,7 +6848,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7006,7 +6886,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7073,7 +6953,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7120,8 +7000,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7223,7 +7107,7 @@ paths:
                 - binaryData
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7276,7 +7160,7 @@ paths:
                 - binaryData
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7439,7 +7323,7 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.messageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7473,7 +7357,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.message'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7557,58 +7441,12 @@ paths:
                 - singleValueExtendedProperties
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-          links:
-            attachments:
-              operationId: users.Messages.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-            extensions:
-              operationId: users.Messages.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-            mentions:
-              operationId: users.Messages.ListMentions
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-            multiValueExtendedProperties:
-              operationId: users.Messages.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-            singleValueExtendedProperties:
-              operationId: users.Messages.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                message-id: $request.path.message-id
-            copy:
-              operationId: users.user.messages.message.copy
-            createForward:
-              operationId: users.user.messages.message.createForward
-            createReply:
-              operationId: users.user.messages.message.createReply
-            createReplyAll:
-              operationId: users.user.messages.message.createReplyAll
-            forward:
-              operationId: users.user.messages.message.forward
-            move:
-              operationId: users.user.messages.message.move
-            reply:
-              operationId: users.user.messages.message.reply
-            replyAll:
-              operationId: users.user.messages.message.replyAll
-            send:
-              operationId: users.user.messages.message.send
-            unsubscribe:
-              operationId: users.user.messages.message.unsubscribe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7642,8 +7480,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.message'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.message'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7708,7 +7550,7 @@ paths:
             type: string
           x-ms-docs-key-type: message
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -7838,7 +7680,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7880,7 +7722,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7951,7 +7793,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8068,7 +7910,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8110,7 +7952,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8176,7 +8018,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8223,8 +8065,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8360,7 +8206,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mentionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8398,7 +8244,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mention'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8472,7 +8318,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8593,7 +8439,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8631,7 +8477,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8698,7 +8544,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8745,8 +8591,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8862,7 +8712,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8900,7 +8750,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8967,7 +8817,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9014,8 +8864,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

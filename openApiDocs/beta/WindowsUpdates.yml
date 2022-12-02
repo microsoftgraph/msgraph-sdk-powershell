@@ -46,7 +46,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -79,7 +79,7 @@ paths:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -111,7 +111,7 @@ paths:
             type: string
           x-ms-docs-key-type: serviceHealthIssue
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -153,7 +153,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -195,7 +195,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -237,7 +237,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -279,7 +279,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -321,7 +321,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -363,7 +363,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -414,15 +414,12 @@ paths:
                 - updates
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.windows'
-          links:
-            updates:
-              operationId: admin.Windows.GetUpdates
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -439,8 +436,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.windows'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.windows'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -503,21 +504,12 @@ paths:
                 - updatableAssets
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updates'
-          links:
-            catalog:
-              operationId: admin.windows.Updates.GetCatalog
-            deployments:
-              operationId: admin.windows.Updates.ListDeployments
-            resourceConnections:
-              operationId: admin.windows.Updates.ListResourceConnections
-            updatableAssets:
-              operationId: admin.windows.Updates.ListUpdatableAssets
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -534,8 +526,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updates'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updates'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -592,15 +588,12 @@ paths:
                 - entries
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalog'
-          links:
-            entries:
-              operationId: admin.windows.updates.Catalog.ListEntries
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -617,8 +610,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalog'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalog'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -703,7 +700,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsUpdates.catalogEntryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -724,7 +721,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -777,7 +774,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -808,8 +805,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -910,7 +911,7 @@ paths:
                 - audience
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsUpdates.deploymentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -935,7 +936,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -992,17 +993,12 @@ paths:
                 - audience
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
-          links:
-            audience:
-              operationId: admin.windows.updates.Deployments.GetAudience
-              parameters:
-                deployment-id: $request.path.deployment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1028,8 +1024,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1104,25 +1104,12 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
-          links:
-            exclusions:
-              operationId: admin.windows.updates.deployments.Audience.ListExclusions
-              parameters:
-                deployment-id: $request.path.deployment-id
-            members:
-              operationId: admin.windows.updates.deployments.Audience.ListMembers
-              parameters:
-                deployment-id: $request.path.deployment-id
-            updateAudience:
-              operationId: admin.windows.updates.deployments.deployment.audience.updateAudience
-            updateAudienceById:
-              operationId: admin.windows.updates.deployments.deployment.audience.updateAudienceGraphBPreId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1148,8 +1135,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentAudience'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1241,7 +1232,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1271,7 +1262,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1329,21 +1320,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
-          links:
-            addMembers:
-              operationId: admin.windows.updates.deployments.deployment.audience.exclusions.updatableAsset.addMembers
-            addMembersById:
-              operationId: admin.windows.updates.deployments.deployment.audience.exclusions.updatableAsset.addMembersGraphBPreId
-            removeMembers:
-              operationId: admin.windows.updates.deployments.deployment.audience.exclusions.updatableAsset.removeMembers
-            removeMembersById:
-              operationId: admin.windows.updates.deployments.deployment.audience.exclusions.updatableAsset.removeMembersGraphBPreId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1377,8 +1359,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1830,7 +1816,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1860,7 +1846,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1918,21 +1904,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
-          links:
-            addMembers:
-              operationId: admin.windows.updates.deployments.deployment.audience.members.updatableAsset.addMembers
-            addMembersById:
-              operationId: admin.windows.updates.deployments.deployment.audience.members.updatableAsset.addMembersGraphBPreId
-            removeMembers:
-              operationId: admin.windows.updates.deployments.deployment.audience.members.updatableAsset.removeMembers
-            removeMembersById:
-              operationId: admin.windows.updates.deployments.deployment.audience.members.updatableAsset.removeMembersGraphBPreId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1966,8 +1943,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2523,7 +2504,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsUpdates.resourceConnectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2548,7 +2529,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2599,7 +2580,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2630,8 +2611,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.resourceConnection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2715,7 +2700,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2740,7 +2725,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2790,21 +2775,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
-          links:
-            addMembers:
-              operationId: admin.windows.updates.updatableAssets.updatableAsset.addMembers
-            addMembersById:
-              operationId: admin.windows.updates.updatableAssets.updatableAsset.addMembersGraphBPreId
-            removeMembers:
-              operationId: admin.windows.updates.updatableAssets.updatableAsset.removeMembers
-            removeMembersById:
-              operationId: admin.windows.updates.updatableAssets.updatableAsset.removeMembersGraphBPreId
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2830,8 +2806,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

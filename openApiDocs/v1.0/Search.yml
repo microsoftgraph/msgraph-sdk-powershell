@@ -39,15 +39,12 @@ paths:
                 - connections
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.external'
-          links:
-            connections:
-              operationId: external.ListConnections
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -64,8 +61,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.external'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.external'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -143,7 +144,7 @@ paths:
                 - schema
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.externalConnectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -168,7 +169,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -229,29 +230,12 @@ paths:
                 - schema
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
-          links:
-            groups:
-              operationId: external.Connections.ListGroups
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-            items:
-              operationId: external.Connections.ListItems
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-            operations:
-              operationId: external.Connections.ListOperations
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-            schema:
-              operationId: external.Connections.GetSchema
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -277,8 +261,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -374,7 +362,7 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.externalGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -408,7 +396,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -469,18 +457,12 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
-          links:
-            members:
-              operationId: external.connections.Groups.ListMembers
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-                externalGroup-id: $request.path.externalGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -514,8 +496,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -623,7 +609,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.identityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -665,7 +651,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -732,7 +718,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -779,8 +765,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -893,7 +883,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.externalItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -923,7 +913,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -983,7 +973,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1022,8 +1012,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1125,7 +1119,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.connectionOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1155,7 +1149,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1214,7 +1208,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1253,8 +1247,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1338,7 +1336,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1369,8 +1367,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1432,15 +1434,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.searchEntity'
-          links:
-            query:
-              operationId: search.query
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1457,8 +1456,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.searchEntity'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.searchEntity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1483,7 +1486,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:

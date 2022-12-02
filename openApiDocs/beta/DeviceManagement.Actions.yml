@@ -165,7 +165,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -280,7 +280,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -315,7 +315,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -388,7 +388,7 @@ paths:
       description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_generateApplePushNotificationCertificateSigningRequest
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -483,7 +483,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -523,7 +523,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -573,7 +573,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -618,7 +618,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -634,7 +634,7 @@ paths:
       summary: Invoke action disconnect
       operationId: deviceManagement.chromeOSOnboardingSettings_disconnect
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -667,7 +667,7 @@ paths:
             type: string
           x-ms-docs-key-type: deviceLogCollectionResponse
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -802,7 +802,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -841,7 +841,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1385,7 +1385,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1928,7 +1928,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1970,7 +1970,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2007,7 +2007,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2035,7 +2035,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -2105,7 +2105,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2175,7 +2175,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2228,7 +2228,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2281,7 +2281,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2336,7 +2336,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2397,7 +2397,7 @@ paths:
             type: string
           x-ms-docs-key-type: dataSharingConsent
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2512,7 +2512,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2552,7 +2552,7 @@ paths:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2699,7 +2699,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2813,7 +2813,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -2851,7 +2851,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2937,7 +2937,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3015,7 +3015,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3130,7 +3130,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3174,7 +3174,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3354,7 +3354,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3428,7 +3428,7 @@ paths:
             type: string
           x-ms-docs-key-type: deviceHealthScript
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3473,7 +3473,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3582,7 +3582,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3673,7 +3673,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3759,7 +3759,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3845,7 +3845,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4048,7 +4048,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4092,7 +4092,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4136,7 +4136,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4226,7 +4226,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4366,7 +4366,7 @@ paths:
             type: string
           x-ms-docs-key-type: deviceLogCollectionResponse
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4501,7 +4501,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4540,7 +4540,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5084,7 +5084,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5627,7 +5627,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5669,7 +5669,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5706,7 +5706,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5734,7 +5734,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5804,7 +5804,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5900,7 +5900,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -5959,7 +5959,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6017,7 +6017,7 @@ paths:
             type: string
           x-ms-docs-key-type: microsoftTunnelServerLogCollectionResponse
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6048,7 +6048,7 @@ paths:
             type: string
           x-ms-docs-key-type: microsoftTunnelServerLogCollectionResponse
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6126,7 +6126,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6177,7 +6177,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6225,7 +6225,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6292,7 +6292,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6338,7 +6338,7 @@ paths:
             type: string
           x-ms-docs-key-type: appLogCollectionRequest
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6536,7 +6536,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6608,7 +6608,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6680,7 +6680,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6752,7 +6752,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6824,7 +6824,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6890,7 +6890,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -6962,7 +6962,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7034,7 +7034,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7106,7 +7106,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7178,7 +7178,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7250,7 +7250,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7322,7 +7322,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7394,7 +7394,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7466,7 +7466,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7538,7 +7538,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7610,7 +7610,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7682,7 +7682,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7754,7 +7754,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7826,7 +7826,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7898,7 +7898,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -7970,7 +7970,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8042,7 +8042,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8114,7 +8114,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8186,7 +8186,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8258,7 +8258,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8330,7 +8330,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8402,7 +8402,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8474,7 +8474,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8546,7 +8546,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8618,7 +8618,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8690,7 +8690,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8762,7 +8762,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8831,7 +8831,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8903,7 +8903,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -8975,7 +8975,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9047,7 +9047,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9116,7 +9116,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9188,7 +9188,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9260,7 +9260,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9332,7 +9332,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9404,7 +9404,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9476,7 +9476,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9548,7 +9548,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9620,7 +9620,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9695,7 +9695,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9767,7 +9767,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9839,7 +9839,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9911,7 +9911,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -9983,7 +9983,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10055,7 +10055,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10127,7 +10127,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10199,7 +10199,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10271,7 +10271,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10343,7 +10343,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10415,7 +10415,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10487,7 +10487,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10559,7 +10559,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10631,7 +10631,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10701,7 +10701,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -10747,7 +10747,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10789,7 +10789,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10828,7 +10828,7 @@ paths:
             type: string
           x-ms-docs-key-type: deviceManagementReusablePolicySetting
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10875,7 +10875,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10938,7 +10938,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11021,7 +11021,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11066,7 +11066,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11130,7 +11130,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11188,7 +11188,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11213,7 +11213,7 @@ paths:
             type: string
           x-ms-docs-key-type: deviceManagementTemplate
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11243,7 +11243,7 @@ paths:
       summary: Invoke action importOffice365DeviceConfigurationPolicies
       operationId: deviceManagement.templates_importOffice365DeviceConfigurationPolicies
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11312,7 +11312,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11351,7 +11351,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11789,7 +11789,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -11859,7 +11859,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -11929,7 +11929,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -12258,7 +12258,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12542,7 +12542,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12650,7 +12650,7 @@ paths:
       summary: Invoke action approveFotaApps
       operationId: deviceManagement.zebraFotaConnector_approveFotaApps
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12672,7 +12672,7 @@ paths:
       summary: Invoke action connect
       operationId: deviceManagement.zebraFotaConnector_connect
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12694,7 +12694,7 @@ paths:
       summary: Invoke action disconnect
       operationId: deviceManagement.zebraFotaConnector_disconnect
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12716,7 +12716,7 @@ paths:
       summary: Invoke action hasActiveDeployments
       operationId: deviceManagement.zebraFotaConnector_hasActiveDeployments
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12747,7 +12747,7 @@ paths:
             type: string
           x-ms-docs-key-type: zebraFotaDeployment
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:

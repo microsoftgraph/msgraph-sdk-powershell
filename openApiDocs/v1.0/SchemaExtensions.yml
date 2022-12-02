@@ -75,7 +75,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.schemaExtensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -100,7 +100,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schemaExtension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -157,7 +157,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -192,8 +192,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.schemaExtension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.schemaExtension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

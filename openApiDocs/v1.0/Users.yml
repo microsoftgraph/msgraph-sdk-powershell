@@ -381,7 +381,7 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -406,7 +406,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.user'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -624,235 +624,12 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
-          links:
-            appRoleAssignments:
-              operationId: users.ListAppRoleAssignments
-              parameters:
-                user-id: $request.path.user-id
-            createdObjects:
-              operationId: users.ListCreatedObjects
-              parameters:
-                user-id: $request.path.user-id
-            directReports:
-              operationId: users.ListDirectReports
-              parameters:
-                user-id: $request.path.user-id
-            licenseDetails:
-              operationId: users.ListLicenseDetails
-              parameters:
-                user-id: $request.path.user-id
-            manager:
-              operationId: users.GetManager
-              parameters:
-                user-id: $request.path.user-id
-            memberOf:
-              operationId: users.ListMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-            oauth2PermissionGrants:
-              operationId: users.ListOauth2PermissionGrants
-              parameters:
-                user-id: $request.path.user-id
-            ownedDevices:
-              operationId: users.ListOwnedDevices
-              parameters:
-                user-id: $request.path.user-id
-            ownedObjects:
-              operationId: users.ListOwnedObjects
-              parameters:
-                user-id: $request.path.user-id
-            registeredDevices:
-              operationId: users.ListRegisteredDevices
-              parameters:
-                user-id: $request.path.user-id
-            scopedRoleMemberOf:
-              operationId: users.ListScopedRoleMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-            transitiveMemberOf:
-              operationId: users.ListTransitiveMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-            calendar:
-              operationId: users.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-            calendarGroups:
-              operationId: users.ListCalendarGroups
-              parameters:
-                user-id: $request.path.user-id
-            calendars:
-              operationId: users.ListCalendars
-              parameters:
-                user-id: $request.path.user-id
-            calendarView:
-              operationId: users.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-            contactFolders:
-              operationId: users.ListContactFolders
-              parameters:
-                user-id: $request.path.user-id
-            contacts:
-              operationId: users.ListContacts
-              parameters:
-                user-id: $request.path.user-id
-            events:
-              operationId: users.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-            inferenceClassification:
-              operationId: users.GetInferenceClassification
-              parameters:
-                user-id: $request.path.user-id
-            mailFolders:
-              operationId: users.ListMailFolders
-              parameters:
-                user-id: $request.path.user-id
-            messages:
-              operationId: users.ListMessages
-              parameters:
-                user-id: $request.path.user-id
-            outlook:
-              operationId: users.GetOutlook
-              parameters:
-                user-id: $request.path.user-id
-            people:
-              operationId: users.ListPeople
-              parameters:
-                user-id: $request.path.user-id
-            drive:
-              operationId: users.GetDrive
-              parameters:
-                user-id: $request.path.user-id
-            drives:
-              operationId: users.ListDrives
-              parameters:
-                user-id: $request.path.user-id
-            followedSites:
-              operationId: users.ListFollowedSites
-              parameters:
-                user-id: $request.path.user-id
-            extensions:
-              operationId: users.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-            agreementAcceptances:
-              operationId: users.ListAgreementAcceptances
-              parameters:
-                user-id: $request.path.user-id
-            managedDevices:
-              operationId: users.ListManagedDevices
-              parameters:
-                user-id: $request.path.user-id
-            managedAppRegistrations:
-              operationId: users.ListManagedAppRegistrations
-              parameters:
-                user-id: $request.path.user-id
-            deviceManagementTroubleshootingEvents:
-              operationId: users.ListDeviceManagementTroubleshootingEvents
-              parameters:
-                user-id: $request.path.user-id
-            planner:
-              operationId: users.GetPlanner
-              parameters:
-                user-id: $request.path.user-id
-            insights:
-              operationId: users.GetInsights
-              parameters:
-                user-id: $request.path.user-id
-            settings:
-              operationId: users.GetSettings
-              parameters:
-                user-id: $request.path.user-id
-            onenote:
-              operationId: users.GetOnenote
-              parameters:
-                user-id: $request.path.user-id
-            photo:
-              operationId: users.GetPhoto
-              parameters:
-                user-id: $request.path.user-id
-            photos:
-              operationId: users.ListPhotos
-              parameters:
-                user-id: $request.path.user-id
-            activities:
-              operationId: users.ListActivities
-              parameters:
-                user-id: $request.path.user-id
-            onlineMeetings:
-              operationId: users.ListOnlineMeetings
-              parameters:
-                user-id: $request.path.user-id
-            presence:
-              operationId: users.GetPresence
-              parameters:
-                user-id: $request.path.user-id
-            authentication:
-              operationId: users.GetAuthentication
-              parameters:
-                user-id: $request.path.user-id
-            chats:
-              operationId: users.ListChats
-              parameters:
-                user-id: $request.path.user-id
-            joinedTeams:
-              operationId: users.ListJoinedTeams
-              parameters:
-                user-id: $request.path.user-id
-            teamwork:
-              operationId: users.GetTeamwork
-              parameters:
-                user-id: $request.path.user-id
-            todo:
-              operationId: users.GetTodo
-              parameters:
-                user-id: $request.path.user-id
-            assignLicense:
-              operationId: users.user.assignLicense
-            changePassword:
-              operationId: users.user.changePassword
-            checkMemberGroups:
-              operationId: users.user.checkMemberGroups
-            checkMemberObjects:
-              operationId: users.user.checkMemberObjects
-            exportPersonalData:
-              operationId: users.user.exportPersonalData
-            findMeetingTimes:
-              operationId: users.user.findMeetingTimes
-            getMailTips:
-              operationId: users.user.getMailTips
-            getManagedAppDiagnosticStatuses:
-              operationId: users.user.getManagedAppDiagnosticStatuses
-            getManagedAppPolicies:
-              operationId: users.user.getManagedAppPolicies
-            getMemberGroups:
-              operationId: users.user.getMemberGroups
-            getMemberObjects:
-              operationId: users.user.getMemberObjects
-            reminderView:
-              operationId: users.user.reminderView
-            removeAllDevicesFromManagement:
-              operationId: users.user.removeAllDevicesFromManagement
-            reprocessLicenseAssignment:
-              operationId: users.user.reprocessLicenseAssignment
-            restore:
-              operationId: users.user.restore
-            revokeSignInSessions:
-              operationId: users.user.revokeSignInSessions
-            sendMail:
-              operationId: users.user.sendMail
-            translateExchangeIds:
-              operationId: users.user.translateExchangeIds
-            wipeManagedAppRegistrationsByDeviceTag:
-              operationId: users.user.wipeManagedAppRegistrationsGraphBPreDeviceTag
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -882,8 +659,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.user'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -982,7 +763,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1040,7 +821,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1124,7 +905,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1192,7 +973,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1260,7 +1041,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1290,7 +1071,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1348,7 +1129,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1387,8 +1168,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1497,7 +1282,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.licenseDetailsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1527,7 +1312,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.licenseDetails'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1588,7 +1373,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1627,8 +1412,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.licenseDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.licenseDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1711,7 +1500,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1740,7 +1529,7 @@ paths:
             type: string
           x-ms-docs-key-type: user
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property link
           content:
             application/json:
@@ -1872,7 +1661,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1940,7 +1729,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2026,7 +1815,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.oAuth2PermissionGrantCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2087,7 +1876,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2125,21 +1914,12 @@ paths:
                 - masterCategories
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookUser'
-          links:
-            masterCategories:
-              operationId: users.Outlook.ListMasterCategories
-              parameters:
-                user-id: $request.path.user-id
-            supportedLanguages:
-              operationId: users.user.outlook.supportedLanguages
-            supportedTimeZones:
-              operationId: users.user.outlook.supportedTimeZones
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2198,7 +1978,7 @@ paths:
                 - displayName
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.outlookCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2232,7 +2012,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.outlookCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2280,7 +2060,7 @@ paths:
                 - displayName
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2319,8 +2099,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.outlookCategory'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.outlookCategory'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2433,7 +2217,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2501,7 +2285,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2585,7 +2369,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2653,7 +2437,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2693,7 +2477,7 @@ paths:
                 - width
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2724,8 +2508,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2745,7 +2533,7 @@ paths:
             type: string
           x-ms-docs-key-type: user
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -2834,7 +2622,7 @@ paths:
                 - width
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.profilePhotoCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2880,7 +2668,7 @@ paths:
                 - width
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2913,7 +2701,7 @@ paths:
             type: string
           x-ms-docs-key-type: profilePhoto
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -3034,7 +2822,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3102,7 +2890,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3155,17 +2943,12 @@ paths:
                 - shiftPreferences
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userSettings'
-          links:
-            shiftPreferences:
-              operationId: users.Settings.GetShiftPreferences
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3191,8 +2974,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userSettings'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3270,7 +3057,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3305,8 +3092,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3379,17 +3170,12 @@ paths:
                 - lists
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todo'
-          links:
-            lists:
-              operationId: users.Todo.ListLists
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3415,8 +3201,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.todo'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todo'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3524,7 +3314,7 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.todoTaskListCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3558,7 +3348,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.todoTaskList'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3624,23 +3414,12 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
-          links:
-            extensions:
-              operationId: users.todo.Lists.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-            tasks:
-              operationId: users.todo.Lists.ListTasks
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3674,8 +3453,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.todoTaskList'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todoTaskList'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3780,7 +3563,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3818,7 +3601,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3884,7 +3667,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3931,8 +3714,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4103,7 +3890,7 @@ paths:
                 - linkedResources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.todoTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4145,7 +3932,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.todoTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4236,43 +4023,12 @@ paths:
                 - linkedResources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
-          links:
-            attachments:
-              operationId: users.todo.lists.Tasks.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            attachmentSessions:
-              operationId: users.todo.lists.Tasks.ListAttachmentSessions
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            checklistItems:
-              operationId: users.todo.lists.Tasks.ListChecklistItems
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            extensions:
-              operationId: users.todo.lists.Tasks.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            linkedResources:
-              operationId: users.todo.lists.Tasks.ListLinkedResources
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4314,8 +4070,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.todoTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.todoTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4434,7 +4194,7 @@ paths:
                 - size
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.attachmentBaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4480,7 +4240,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachmentBase'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4545,7 +4305,7 @@ paths:
                 - size
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4644,7 +4404,7 @@ paths:
             type: string
           x-ms-docs-key-type: attachmentBase
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -4776,7 +4536,7 @@ paths:
                 - nextExpectedRanges
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.attachmentSessionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4839,7 +4599,7 @@ paths:
                 - nextExpectedRanges
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4894,8 +4654,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attachmentSession'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attachmentSession'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4989,7 +4753,7 @@ paths:
             type: string
           x-ms-docs-key-type: attachmentSession
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -5138,7 +4902,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.checklistItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5184,7 +4948,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.checklistItem'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5262,7 +5026,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5317,8 +5081,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.checklistItem'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checklistItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5447,7 +5215,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5493,7 +5261,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5567,7 +5335,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5622,8 +5390,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5767,7 +5539,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.linkedResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5817,7 +5589,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.linkedResource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5895,7 +5667,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5950,8 +5722,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.linkedResource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6080,7 +5856,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6148,7 +5924,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:

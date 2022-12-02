@@ -36,7 +36,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -58,8 +58,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.compliance'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.compliance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
