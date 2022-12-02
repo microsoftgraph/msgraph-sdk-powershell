@@ -3,10 +3,11 @@
 
 [CmdletBinding()]
 Param(
-    [string] $Module,
-    [string] $ModulesSrc,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()] [string] $Module,
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()] [string] $ModulesSrc,
     [ValidateSet("v1.0", "beta")]
     $ApiVersion = @("v1.0", "beta"),
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()] [string] $ArtifactsLocation,
     [switch] $SkipGeneration = $false,
     [switch] $Build,
     [switch] $Test,

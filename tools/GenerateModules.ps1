@@ -79,6 +79,7 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         EnableSigning           = $using:EnableSigning
         ExcludeExampleTemplates = $using:ExcludeExampleTemplates
         ExcludeNotesSection     = $using:ExcludeNotesSection
+        ArtifactsLocation       = $using:ArtifactsLocation
     }
     & $using:GenerateServiceModulePS1 @ServiceModuleParams
 }
