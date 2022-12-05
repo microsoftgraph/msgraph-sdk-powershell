@@ -108,7 +108,7 @@ paths:
                 - staffMembers
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingBusinessCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -133,7 +133,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -210,43 +210,12 @@ paths:
                 - staffMembers
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
-          links:
-            appointments:
-              operationId: bookingBusinesses.ListAppointments
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            calendarView:
-              operationId: bookingBusinesses.ListCalendarView
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            customers:
-              operationId: bookingBusinesses.ListCustomers
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            customQuestions:
-              operationId: bookingBusinesses.ListCustomQuestions
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            services:
-              operationId: bookingBusinesses.ListServices
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            staffMembers:
-              operationId: bookingBusinesses.ListStaffMembers
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            getStaffAvailability:
-              operationId: bookingBusinesses.bookingBusiness.getStaffAvailability
-            publish:
-              operationId: bookingBusinesses.bookingBusiness.publish
-            unpublish:
-              operationId: bookingBusinesses.bookingBusiness.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -276,8 +245,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -481,7 +454,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingAppointmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -515,7 +488,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -609,15 +582,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-          links:
-            cancel:
-              operationId: bookingBusinesses.bookingBusiness.appointments.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -651,8 +621,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -922,7 +896,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingAppointmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -952,7 +926,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1062,15 +1036,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-          links:
-            cancel:
-              operationId: bookingBusinesses.bookingBusiness.calendarView.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1104,8 +1075,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1263,7 +1238,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingCustomerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1297,7 +1272,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1359,7 +1334,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1398,8 +1373,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1508,7 +1487,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingCustomQuestionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1538,7 +1517,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1599,7 +1578,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1638,8 +1617,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1715,7 +1698,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1912,7 +1895,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingServiceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1946,7 +1929,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingService'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2025,7 +2008,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2064,8 +2047,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingService'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingService'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2192,7 +2179,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingStaffMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2226,7 +2213,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2293,7 +2280,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2332,8 +2319,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2428,7 +2419,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.bookingCurrencyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2449,7 +2440,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -2503,7 +2494,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -2534,8 +2525,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2598,15 +2593,12 @@ paths:
                 - businessScenarios
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
-          links:
-            businessScenarios:
-              operationId: solutions.ListBusinessScenarios
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2623,8 +2615,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2701,7 +2697,7 @@ paths:
                 - planner
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.businessScenarioCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2722,7 +2718,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.businessScenario'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2780,17 +2776,12 @@ paths:
                 - planner
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.businessScenario'
-          links:
-            planner:
-              operationId: solutions.BusinessScenarios.GetPlanner
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2816,8 +2807,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.businessScenario'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenario'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2893,27 +2888,12 @@ paths:
                 - tasks
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
-          links:
-            planConfiguration:
-              operationId: solutions.businessScenarios.Planner.GetPlanConfiguration
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-            taskConfiguration:
-              operationId: solutions.businessScenarios.Planner.GetTaskConfiguration
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-            tasks:
-              operationId: solutions.businessScenarios.Planner.ListTasks
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-            getPlan:
-              operationId: solutions.businessScenarios.businessScenario.planner.getPlan
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2939,8 +2919,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2998,7 +2982,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3055,17 +3039,12 @@ paths:
                 - localizations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
-          links:
-            localizations:
-              operationId: solutions.businessScenarios.planner.PlanConfiguration.ListLocalizations
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3091,8 +3070,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3189,7 +3172,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.plannerPlanConfigurationLocalizationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3219,7 +3202,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3279,7 +3262,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3318,8 +3301,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlanConfigurationLocalization'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3398,7 +3385,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3429,8 +3416,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3598,7 +3589,7 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.businessScenarioTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3628,7 +3619,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3717,33 +3708,12 @@ paths:
                 - progressTaskBoardFormat
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: solutions.businessScenarios.planner.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-                businessScenarioTask-id: $request.path.businessScenarioTask-id
-            bucketTaskBoardFormat:
-              operationId: solutions.businessScenarios.planner.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-                businessScenarioTask-id: $request.path.businessScenarioTask-id
-            details:
-              operationId: solutions.businessScenarios.planner.Tasks.GetDetails
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-                businessScenarioTask-id: $request.path.businessScenarioTask-id
-            progressTaskBoardFormat:
-              operationId: solutions.businessScenarios.planner.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-                businessScenarioTask-id: $request.path.businessScenarioTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3777,8 +3747,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

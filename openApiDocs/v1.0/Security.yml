@@ -48,23 +48,12 @@ paths:
                 - secureScores
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security'
-          links:
-            cases:
-              operationId: security.GetCases
-            attackSimulation:
-              operationId: security.GetAttackSimulation
-            alerts:
-              operationId: security.ListAlerts
-            secureScoreControlProfiles:
-              operationId: security.ListSecureScoreControlProfiles
-            secureScores:
-              operationId: security.ListSecureScores
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -81,8 +70,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -257,7 +250,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.alertCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -278,7 +271,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.alert'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -366,7 +359,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -397,8 +390,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.alert'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.alert'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -438,17 +435,12 @@ paths:
                 - simulations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
-          links:
-            simulationAutomations:
-              operationId: security.AttackSimulation.ListSimulationAutomations
-            simulations:
-              operationId: security.AttackSimulation.ListSimulations
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -465,8 +457,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -571,7 +567,7 @@ paths:
                 - runs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.simulationAutomationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -592,7 +588,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -653,17 +649,12 @@ paths:
                 - runs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
-          links:
-            runs:
-              operationId: security.attackSimulation.SimulationAutomations.ListRuns
-              parameters:
-                simulationAutomation-id: $request.path.simulationAutomation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -689,8 +680,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -794,7 +789,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.simulationAutomationRunCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -824,7 +819,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -886,7 +881,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -925,8 +920,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1063,7 +1062,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.simulationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1084,7 +1083,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1149,7 +1148,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1180,8 +1179,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1245,15 +1248,12 @@ paths:
                 - ediscoveryCases
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
-          links:
-            ediscoveryCases:
-              operationId: security.Cases.ListEdiscoveryCases
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1270,8 +1270,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1388,7 +1392,7 @@ paths:
                 - tags
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryCaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1413,7 +1417,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1485,45 +1489,12 @@ paths:
                 - tags
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
-          links:
-            custodians:
-              operationId: security.cases.EdiscoveryCases.ListCustodians
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            noncustodialDataSources:
-              operationId: security.cases.EdiscoveryCases.ListNoncustodialDataSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            operations:
-              operationId: security.cases.EdiscoveryCases.ListOperations
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            reviewSets:
-              operationId: security.cases.EdiscoveryCases.ListReviewSets
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            searches:
-              operationId: security.cases.EdiscoveryCases.ListSearches
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            settings:
-              operationId: security.cases.EdiscoveryCases.GetSettings
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            tags:
-              operationId: security.cases.EdiscoveryCases.ListTags
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            close:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.close
-            reopen:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.reopen
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1549,8 +1520,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1674,7 +1649,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryCustodianCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1708,7 +1683,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1782,43 +1757,12 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
-          links:
-            lastIndexOperation:
-              operationId: security.cases.ediscoveryCases.Custodians.GetLastIndexOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-            siteSources:
-              operationId: security.cases.ediscoveryCases.Custodians.ListSiteSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-            unifiedGroupSources:
-              operationId: security.cases.ediscoveryCases.Custodians.ListUnifiedGroupSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-            userSources:
-              operationId: security.cases.ediscoveryCases.Custodians.ListUserSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-            activate:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.custodians.ediscoveryCustodian.activate
-            applyHold:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.custodians.ediscoveryCustodian.applyHold
-            release:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.custodians.ediscoveryCustodian.release
-            removeHold:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.custodians.ediscoveryCustodian.removeHold
-            updateIndex:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.custodians.ediscoveryCustodian.updateIndex
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1852,8 +1796,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1950,7 +1898,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2208,7 +2156,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.siteSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2250,7 +2198,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2322,19 +2270,12 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.siteSource'
-          links:
-            site:
-              operationId: security.cases.ediscoveryCases.custodians.SiteSources.GetSite
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2376,8 +2317,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2526,109 +2471,12 @@ paths:
                 - onenote
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.site'
-          links:
-            createdByUser:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetCreatedGraphBPreUser
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            lastModifiedByUser:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetLastModifiedGraphBPreUser
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            analytics:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetAnalytics
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            columns:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListColumns
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            contentTypes:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListContentTypes
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            drive:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetDrive
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            drives:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListDrives
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            externalColumns:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListExternalColumns
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            items:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListItems
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            lists:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListLists
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            operations:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListOperations
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            permissions:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListPermissions
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            sites:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListSites
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            termStore:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetTermStore
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            termStores:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListTermStores
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            onenote:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetOnenote
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2719,7 +2567,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.unifiedGroupSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2761,7 +2609,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2834,19 +2682,12 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
-          links:
-            group:
-              operationId: security.cases.ediscoveryCases.custodians.UnifiedGroupSources.GetGroup
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2888,8 +2729,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3085,175 +2930,12 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.group'
-          links:
-            appRoleAssignments:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListAppRoleAssignments
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            createdOnBehalfOf:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            memberOf:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListMemberGraphOPre
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            members:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListMembers
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            membersWithLicenseErrors:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            owners:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListOwners
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            permissionGrants:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListPermissionGrants
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            settings:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListSettings
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            transitiveMemberOf:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            transitiveMembers:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListTransitiveMembers
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            acceptedSenders:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListAcceptedSenders
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            calendar:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetCalendar
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            calendarView:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListCalendarView
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            conversations:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListConversations
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            events:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListEvents
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            rejectedSenders:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListRejectedSenders
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            threads:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListThreads
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            drive:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetDrive
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            drives:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListDrives
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            sites:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListSites
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            extensions:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListExtensions
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            groupLifecyclePolicies:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListGroupLifecyclePolicies
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            planner:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetPlanner
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            onenote:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetOnenote
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            photo:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetPhoto
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            photos:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListPhotos
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            team:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetTeam
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3348,7 +3030,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.userSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3390,7 +3072,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.userSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3463,7 +3145,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3510,8 +3192,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.userSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.userSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3760,7 +3446,7 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryNoncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3794,7 +3480,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3862,31 +3548,12 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
-          links:
-            dataSource:
-              operationId: security.cases.ediscoveryCases.NoncustodialDataSources.GetDataSource
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryNoncustodialDataSource-id: $request.path.ediscoveryNoncustodialDataSource-id
-            lastIndexOperation:
-              operationId: security.cases.ediscoveryCases.NoncustodialDataSources.GetLastIndexOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryNoncustodialDataSource-id: $request.path.ediscoveryNoncustodialDataSource-id
-            applyHold:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.noncustodialDataSources.ediscoveryNoncustodialDataSource.applyHold
-            release:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.noncustodialDataSources.ediscoveryNoncustodialDataSource.release
-            removeHold:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.noncustodialDataSources.ediscoveryNoncustodialDataSource.removeHold
-            updateIndex:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.noncustodialDataSources.ediscoveryNoncustodialDataSource.updateIndex
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3920,8 +3587,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4012,7 +3683,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4051,8 +3722,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4146,7 +3821,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4442,7 +4117,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.caseOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4472,7 +4147,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4537,7 +4212,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4576,8 +4251,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4688,7 +4367,7 @@ paths:
                 - queries
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4722,7 +4401,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4785,20 +4464,12 @@ paths:
                 - queries
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
-          links:
-            queries:
-              operationId: security.cases.ediscoveryCases.ReviewSets.ListQueries
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-            addToReviewSet:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.reviewSets.ediscoveryReviewSet.addToReviewSet
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4832,8 +4503,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5009,7 +4684,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewSetQueryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5051,7 +4726,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5124,15 +4799,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
-          links:
-            applyTags:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.reviewSets.ediscoveryReviewSet.queries.ediscoveryReviewSetQuery.applyTags
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5174,8 +4846,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5376,7 +5052,7 @@ paths:
                 - noncustodialSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoverySearchCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5410,7 +5086,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5486,42 +5162,12 @@ paths:
                 - noncustodialSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
-          links:
-            additionalSources:
-              operationId: security.cases.ediscoveryCases.Searches.ListAdditionalSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            addToReviewSetOperation:
-              operationId: security.cases.ediscoveryCases.Searches.GetAddToReviewSetOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            custodianSources:
-              operationId: security.cases.ediscoveryCases.Searches.ListCustodianSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            lastEstimateStatisticsOperation:
-              operationId: security.cases.ediscoveryCases.Searches.GetLastEstimateStatisticsOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            noncustodialSources:
-              operationId: security.cases.ediscoveryCases.Searches.ListNoncustodialSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            estimateStatistics:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.searches.ediscoverySearch.estimateStatistics
-            purgeData:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.searches.ediscoverySearch.purgeData
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5555,8 +5201,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5676,7 +5326,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5718,7 +5368,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5788,7 +5438,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5835,8 +5485,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5942,23 +5596,12 @@ paths:
                 - search
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryAddToReviewSetOperation'
-          links:
-            reviewSet:
-              operationId: security.cases.ediscoveryCases.searches.AddToReviewSetOperation.GetReviewSet
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            search:
-              operationId: security.cases.ediscoveryCases.searches.AddToReviewSetOperation.GetSearch
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6044,7 +5687,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6113,7 +5756,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6189,18 +5832,12 @@ paths:
                 - search
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryEstimateOperation'
-          links:
-            search:
-              operationId: security.cases.ediscoveryCases.searches.LastEstimateStatisticsOperation.GetSearch
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6369,7 +6006,7 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryNoncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6444,25 +6081,12 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
-          links:
-            dataSource:
-              operationId: security.cases.ediscoveryCases.searches.NoncustodialSources.GetDataSource
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-                ediscoveryNoncustodialDataSource-id: $request.path.ediscoveryNoncustodialDataSource-id
-            lastIndexOperation:
-              operationId: security.cases.ediscoveryCases.searches.NoncustodialSources.GetLastIndexOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-                ediscoveryNoncustodialDataSource-id: $request.path.ediscoveryNoncustodialDataSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6513,15 +6137,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
-          links:
-            resetToDefault:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.settings.resetToDefault
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6551,8 +6172,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6688,7 +6313,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewTagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6722,7 +6347,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6789,23 +6414,12 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
-          links:
-            childTags:
-              operationId: security.cases.ediscoveryCases.Tags.ListChildTags
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
-            parent:
-              operationId: security.cases.ediscoveryCases.Tags.GetParent
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6839,8 +6453,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6964,7 +6582,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewTagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7038,25 +6656,12 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
-          links:
-            childTags:
-              operationId: security.cases.ediscoveryCases.tags.ChildTags.ListChildTags
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
-                ediscoveryReviewTag-id1: $request.path.ediscoveryReviewTag-id1
-            parent:
-              operationId: security.cases.ediscoveryCases.tags.ChildTags.GetParent
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
-                ediscoveryReviewTag-id1: $request.path.ediscoveryReviewTag-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7118,23 +6723,12 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
-          links:
-            childTags:
-              operationId: security.cases.ediscoveryCases.tags.Parent.ListChildTags
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
-            parent:
-              operationId: security.cases.ediscoveryCases.tags.Parent.GetParent
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7201,7 +6795,7 @@ paths:
                 - childSelectability desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7335,7 +6929,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.secureScoreControlProfileCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7356,7 +6950,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7424,7 +7018,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7455,8 +7049,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7570,7 +7168,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.secureScoreCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7591,7 +7189,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScore'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7650,7 +7248,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7681,8 +7279,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScore'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScore'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

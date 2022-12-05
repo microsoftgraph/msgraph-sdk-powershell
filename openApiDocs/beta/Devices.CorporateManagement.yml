@@ -95,67 +95,12 @@ paths:
                 - wdacSupplementalPolicies
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceAppManagement'
-          links:
-            managedEBookCategories:
-              operationId: deviceAppManagement.ListManagedEBookCategories
-            enterpriseCodeSigningCertificates:
-              operationId: deviceAppManagement.ListEnterpriseCodeSigningCertificates
-            iosLobAppProvisioningConfigurations:
-              operationId: deviceAppManagement.ListIosLobAppProvisioningConfigurations
-            mobileAppCategories:
-              operationId: deviceAppManagement.ListMobileAppCategories
-            mobileAppConfigurations:
-              operationId: deviceAppManagement.ListMobileAppConfigurations
-            mobileApps:
-              operationId: deviceAppManagement.ListMobileApps
-            symantecCodeSigningCertificate:
-              operationId: deviceAppManagement.GetSymantecCodeSigningCertificate
-            managedEBooks:
-              operationId: deviceAppManagement.ListManagedEBooks
-            policySets:
-              operationId: deviceAppManagement.ListPolicySets
-            sideLoadingKeys:
-              operationId: deviceAppManagement.ListSideLoadingKeys
-            vppTokens:
-              operationId: deviceAppManagement.ListVppTokens
-            windowsManagementApp:
-              operationId: deviceAppManagement.GetWindowsManagementApp
-            androidManagedAppProtections:
-              operationId: deviceAppManagement.ListAndroidManagedAppProtections
-            defaultManagedAppProtections:
-              operationId: deviceAppManagement.ListDefaultManagedAppProtections
-            iosManagedAppProtections:
-              operationId: deviceAppManagement.ListIosManagedAppProtections
-            managedAppPolicies:
-              operationId: deviceAppManagement.ListManagedAppPolicies
-            managedAppRegistrations:
-              operationId: deviceAppManagement.ListManagedAppRegistrations
-            managedAppStatuses:
-              operationId: deviceAppManagement.ListManagedAppStatuses
-            mdmWindowsInformationProtectionPolicies:
-              operationId: deviceAppManagement.ListMdmWindowsInformationProtectionPolicies
-            targetedManagedAppConfigurations:
-              operationId: deviceAppManagement.ListTargetedManagedAppConfigurations
-            windowsInformationProtectionDeviceRegistrations:
-              operationId: deviceAppManagement.ListWindowsInformationProtectionDeviceRegistrations
-            windowsInformationProtectionPolicies:
-              operationId: deviceAppManagement.ListWindowsInformationProtectionPolicies
-            windowsInformationProtectionWipeActions:
-              operationId: deviceAppManagement.ListWindowsInformationProtectionWipeActions
-            windowsManagedAppProtections:
-              operationId: deviceAppManagement.ListWindowsManagedAppProtections
-            deviceAppManagementTasks:
-              operationId: deviceAppManagement.ListDeviceAppManagementTasks
-            wdacSupplementalPolicies:
-              operationId: deviceAppManagement.ListWdacSupplementalPolicies
-            syncMicrosoftStoreForBusinessApps:
-              operationId: deviceAppManagement.syncMicrosoftStoreGraphFPreBusinessApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -172,8 +117,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceAppManagement'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceAppManagement'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -516,7 +465,7 @@ paths:
                 - deploymentSummary
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.androidManagedAppProtectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -537,7 +486,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -687,25 +636,12 @@ paths:
                 - deploymentSummary
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
-          links:
-            assignments:
-              operationId: deviceAppManagement.AndroidManagedAppProtections.ListAssignments
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
-            apps:
-              operationId: deviceAppManagement.AndroidManagedAppProtections.ListApps
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
-            deploymentSummary:
-              operationId: deviceAppManagement.AndroidManagedAppProtections.GetDeploymentSummary
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -731,8 +667,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -827,7 +767,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedMobileAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -857,7 +797,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -917,7 +857,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -956,8 +896,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1041,7 +985,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1072,8 +1016,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1125,7 +1073,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1514,7 +1462,7 @@ paths:
                 - deploymentSummary
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.defaultManagedAppProtectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1535,7 +1483,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1693,21 +1641,12 @@ paths:
                 - deploymentSummary
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
-          links:
-            apps:
-              operationId: deviceAppManagement.DefaultManagedAppProtections.ListApps
-              parameters:
-                defaultManagedAppProtection-id: $request.path.defaultManagedAppProtection-id
-            deploymentSummary:
-              operationId: deviceAppManagement.DefaultManagedAppProtections.GetDeploymentSummary
-              parameters:
-                defaultManagedAppProtection-id: $request.path.defaultManagedAppProtection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1733,8 +1672,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1829,7 +1772,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedMobileAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1859,7 +1802,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1919,7 +1862,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1958,8 +1901,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2043,7 +1990,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2074,8 +2021,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2186,7 +2137,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceAppManagementTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2207,7 +2158,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceAppManagementTask'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2267,15 +2218,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceAppManagementTask'
-          links:
-            updateStatus:
-              operationId: deviceAppManagement.deviceAppManagementTasks.deviceAppManagementTask.updateStatus
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2301,8 +2249,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceAppManagementTask'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceAppManagementTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2444,7 +2396,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.enterpriseCodeSigningCertificateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2465,7 +2417,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.enterpriseCodeSigningCertificate'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2523,7 +2475,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2554,8 +2506,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.enterpriseCodeSigningCertificate'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.enterpriseCodeSigningCertificate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2671,7 +2627,7 @@ paths:
                 - userStatuses
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.iosLobAppProvisioningConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2692,7 +2648,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2759,31 +2715,12 @@ paths:
                 - userStatuses
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfiguration'
-          links:
-            assignments:
-              operationId: deviceAppManagement.IosLobAppProvisioningConfigurations.ListAssignments
-              parameters:
-                iosLobAppProvisioningConfiguration-id: $request.path.iosLobAppProvisioningConfiguration-id
-            deviceStatuses:
-              operationId: deviceAppManagement.IosLobAppProvisioningConfigurations.ListDeviceStatuses
-              parameters:
-                iosLobAppProvisioningConfiguration-id: $request.path.iosLobAppProvisioningConfiguration-id
-            groupAssignments:
-              operationId: deviceAppManagement.IosLobAppProvisioningConfigurations.ListGroupAssignments
-              parameters:
-                iosLobAppProvisioningConfiguration-id: $request.path.iosLobAppProvisioningConfiguration-id
-            userStatuses:
-              operationId: deviceAppManagement.IosLobAppProvisioningConfigurations.ListUserStatuses
-              parameters:
-                iosLobAppProvisioningConfiguration-id: $request.path.iosLobAppProvisioningConfiguration-id
-            assign:
-              operationId: deviceAppManagement.iosLobAppProvisioningConfigurations.iosLobAppProvisioningConfiguration.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2809,8 +2746,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2902,7 +2843,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.iosLobAppProvisioningConfigurationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2932,7 +2873,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfigurationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2991,7 +2932,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3030,8 +2971,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfigurationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.iosLobAppProvisioningConfigurationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3152,7 +3097,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3182,7 +3127,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3248,7 +3193,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3287,8 +3232,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3388,7 +3337,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileAppProvisioningConfigGroupAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3418,7 +3367,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppProvisioningConfigGroupAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3477,7 +3426,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3516,8 +3465,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppProvisioningConfigGroupAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppProvisioningConfigGroupAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3668,7 +3621,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedDeviceMobileAppConfigurationUserStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3698,7 +3651,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3761,7 +3714,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3800,8 +3753,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3861,7 +3818,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4156,7 +4113,7 @@ paths:
                 - deploymentSummary
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.iosManagedAppProtectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4177,7 +4134,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4305,25 +4262,12 @@ paths:
                 - deploymentSummary
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
-          links:
-            assignments:
-              operationId: deviceAppManagement.IosManagedAppProtections.ListAssignments
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
-            apps:
-              operationId: deviceAppManagement.IosManagedAppProtections.ListApps
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
-            deploymentSummary:
-              operationId: deviceAppManagement.IosManagedAppProtections.GetDeploymentSummary
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4349,8 +4293,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4445,7 +4393,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedMobileAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4475,7 +4423,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4535,7 +4483,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4574,8 +4522,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4659,7 +4611,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4690,8 +4642,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4743,7 +4699,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4834,7 +4790,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedAppPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4855,7 +4811,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4911,15 +4867,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-          links:
-            targetApps:
-              operationId: deviceAppManagement.managedAppPolicies.managedAppPolicy.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4945,8 +4898,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5116,7 +5073,7 @@ paths:
                 - operations
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedAppRegistrationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5137,7 +5094,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5209,25 +5166,12 @@ paths:
                 - operations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
-          links:
-            appliedPolicies:
-              operationId: deviceAppManagement.ManagedAppRegistrations.ListAppliedPolicies
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-            intendedPolicies:
-              operationId: deviceAppManagement.ManagedAppRegistrations.ListIntendedPolicies
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-            operations:
-              operationId: deviceAppManagement.ManagedAppRegistrations.ListOperations
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5253,8 +5197,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5361,7 +5309,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedAppPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5391,7 +5339,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5455,15 +5403,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-          links:
-            targetApps:
-              operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.appliedPolicies.managedAppPolicy.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5497,8 +5442,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5656,7 +5605,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedAppPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5686,7 +5635,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5750,15 +5699,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-          links:
-            targetApps:
-              operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.intendedPolicies.managedAppPolicy.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5792,8 +5738,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5945,7 +5895,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedAppOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5975,7 +5925,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6037,7 +5987,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6076,8 +6026,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6128,7 +6082,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6208,7 +6162,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedAppStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6229,7 +6183,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6281,7 +6235,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6312,8 +6266,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6400,7 +6358,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedEBookCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6421,7 +6379,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedEBookCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6473,7 +6431,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6504,8 +6462,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedEBookCategory'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedEBookCategory'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6623,7 +6585,7 @@ paths:
                 - userStateSummary
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedEBookCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6644,7 +6606,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedEBook'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6713,35 +6675,12 @@ paths:
                 - userStateSummary
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedEBook'
-          links:
-            assignments:
-              operationId: deviceAppManagement.ManagedEBooks.ListAssignments
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            categories:
-              operationId: deviceAppManagement.ManagedEBooks.ListCategories
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            deviceStates:
-              operationId: deviceAppManagement.ManagedEBooks.ListDeviceStates
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            installSummary:
-              operationId: deviceAppManagement.ManagedEBooks.GetInstallSummary
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            userStateSummary:
-              operationId: deviceAppManagement.ManagedEBooks.ListUserStateSummary
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            assign:
-              operationId: deviceAppManagement.managedEBooks.managedEBook.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6767,8 +6706,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedEBook'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedEBook'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6863,7 +6806,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedEBookAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6893,7 +6836,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedEBookAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6953,7 +6896,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6992,8 +6935,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedEBookAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedEBookAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7096,7 +7043,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedEBookCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7155,7 +7102,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7247,7 +7194,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceInstallStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7277,7 +7224,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7343,7 +7290,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7382,8 +7329,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7468,7 +7419,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7499,8 +7450,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.eBookInstallSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.eBookInstallSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7638,7 +7593,7 @@ paths:
                 - deviceStates
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userInstallStateSummaryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7668,7 +7623,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7732,18 +7687,12 @@ paths:
                 - deviceStates
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
-          links:
-            deviceStates:
-              operationId: deviceAppManagement.managedEBooks.UserStateSummary.ListDeviceStates
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-                userInstallStateSummary-id: $request.path.userInstallStateSummary-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7777,8 +7726,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7907,7 +7860,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceInstallStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7945,7 +7898,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8019,7 +7972,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8066,8 +8019,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceInstallState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8254,7 +8211,7 @@ paths:
                 - protectedAppLockerFiles
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mdmWindowsInformationProtectionPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8275,7 +8232,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8359,25 +8316,12 @@ paths:
                 - protectedAppLockerFiles
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
-          links:
-            assignments:
-              operationId: deviceAppManagement.MdmWindowsInformationProtectionPolicies.ListAssignments
-              parameters:
-                mdmWindowsInformationProtectionPolicy-id: $request.path.mdmWindowsInformationProtectionPolicy-id
-            exemptAppLockerFiles:
-              operationId: deviceAppManagement.MdmWindowsInformationProtectionPolicies.ListExemptAppLockerFiles
-              parameters:
-                mdmWindowsInformationProtectionPolicy-id: $request.path.mdmWindowsInformationProtectionPolicy-id
-            protectedAppLockerFiles:
-              operationId: deviceAppManagement.MdmWindowsInformationProtectionPolicies.ListProtectedAppLockerFiles
-              parameters:
-                mdmWindowsInformationProtectionPolicy-id: $request.path.mdmWindowsInformationProtectionPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8403,8 +8347,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8456,7 +8404,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8548,7 +8496,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileAppCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8569,7 +8517,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8621,7 +8569,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8652,8 +8600,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8765,7 +8717,7 @@ paths:
                 - userStatusSummary
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedDeviceMobileAppConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8786,7 +8738,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8853,35 +8805,12 @@ paths:
                 - userStatusSummary
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
-          links:
-            assignments:
-              operationId: deviceAppManagement.MobileAppConfigurations.ListAssignments
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            deviceStatuses:
-              operationId: deviceAppManagement.MobileAppConfigurations.ListDeviceStatuses
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            deviceStatusSummary:
-              operationId: deviceAppManagement.MobileAppConfigurations.GetDeviceStatusSummary
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            userStatuses:
-              operationId: deviceAppManagement.MobileAppConfigurations.ListUserStatuses
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            userStatusSummary:
-              operationId: deviceAppManagement.MobileAppConfigurations.GetUserStatusSummary
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            assign:
-              operationId: deviceAppManagement.mobileAppConfigurations.managedDeviceMobileAppConfiguration.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8907,8 +8836,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9000,7 +8933,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedDeviceMobileAppConfigurationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9030,7 +8963,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9089,7 +9022,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9128,8 +9061,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9250,7 +9187,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9280,7 +9217,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9346,7 +9283,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9385,8 +9322,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9474,7 +9415,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9505,8 +9446,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationDeviceSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9645,7 +9590,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedDeviceMobileAppConfigurationUserStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9675,7 +9620,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -9738,7 +9683,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9777,8 +9722,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9865,7 +9814,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -9896,8 +9845,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationUserSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10047,7 +10000,7 @@ paths:
                 - userStatuses
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10068,7 +10021,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileApp'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10149,43 +10102,12 @@ paths:
                 - userStatuses
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
-          links:
-            assignments:
-              operationId: deviceAppManagement.MobileApps.ListAssignments
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-            categories:
-              operationId: deviceAppManagement.MobileApps.ListCategories
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-            deviceStatuses:
-              operationId: deviceAppManagement.MobileApps.ListDeviceStatuses
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-            installSummary:
-              operationId: deviceAppManagement.MobileApps.GetInstallSummary
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-            relationships:
-              operationId: deviceAppManagement.MobileApps.ListRelationships
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-            userStatuses:
-              operationId: deviceAppManagement.MobileApps.ListUserStatuses
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-            assign:
-              operationId: deviceAppManagement.mobileApps.mobileApp.assign
-            getRelatedAppStates:
-              operationId: deviceAppManagement.mobileApps.mobileApp.getRelatedAppStates
-            updateRelationships:
-              operationId: deviceAppManagement.mobileApps.mobileApp.updateRelationships
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10211,8 +10133,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileApp'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileApp'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10316,7 +10242,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileAppAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10346,7 +10272,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10409,7 +10335,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10448,8 +10374,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10552,7 +10482,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileAppCategoryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10611,7 +10541,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -10717,7 +10647,7 @@ paths:
                 - app
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileAppInstallStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -10747,7 +10677,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -10819,18 +10749,12 @@ paths:
                 - app
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-          links:
-            app:
-              operationId: deviceAppManagement.mobileApps.DeviceStatuses.GetApp
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10864,8 +10788,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10983,43 +10911,12 @@ paths:
                 - userStatuses
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
-          links:
-            assignments:
-              operationId: deviceAppManagement.mobileApps.deviceStatuses.App.ListAssignments
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
-            categories:
-              operationId: deviceAppManagement.mobileApps.deviceStatuses.App.ListCategories
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
-            deviceStatuses:
-              operationId: deviceAppManagement.mobileApps.deviceStatuses.App.ListDeviceStatuses
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
-            installSummary:
-              operationId: deviceAppManagement.mobileApps.deviceStatuses.App.GetInstallSummary
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
-            relationships:
-              operationId: deviceAppManagement.mobileApps.deviceStatuses.App.ListRelationships
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
-            userStatuses:
-              operationId: deviceAppManagement.mobileApps.deviceStatuses.App.ListUserStatuses
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11074,7 +10971,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11105,8 +11002,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppInstallSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11208,7 +11109,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11339,7 +11240,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileAppRelationshipCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11369,7 +11270,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11432,7 +11333,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -11471,8 +11372,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11588,7 +11493,7 @@ paths:
                 - deviceStatuses
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userAppInstallStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -11618,7 +11523,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -11685,23 +11590,12 @@ paths:
                 - deviceStatuses
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
-          links:
-            app:
-              operationId: deviceAppManagement.mobileApps.UserStatuses.GetApp
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-            deviceStatuses:
-              operationId: deviceAppManagement.mobileApps.UserStatuses.ListDeviceStatuses
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11735,8 +11629,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11854,43 +11752,12 @@ paths:
                 - userStatuses
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
-          links:
-            assignments:
-              operationId: deviceAppManagement.mobileApps.userStatuses.App.ListAssignments
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-            categories:
-              operationId: deviceAppManagement.mobileApps.userStatuses.App.ListCategories
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-            deviceStatuses:
-              operationId: deviceAppManagement.mobileApps.userStatuses.App.ListDeviceStatuses
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-            installSummary:
-              operationId: deviceAppManagement.mobileApps.userStatuses.App.GetInstallSummary
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-            relationships:
-              operationId: deviceAppManagement.mobileApps.userStatuses.App.ListRelationships
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-            userStatuses:
-              operationId: deviceAppManagement.mobileApps.userStatuses.App.ListUserStatuses
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11999,7 +11866,7 @@ paths:
                 - app
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileAppInstallStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12037,7 +11904,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12117,19 +11984,12 @@ paths:
                 - app
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-          links:
-            app:
-              operationId: deviceAppManagement.mobileApps.userStatuses.DeviceStatuses.GetApp
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12171,8 +12031,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12306,49 +12170,12 @@ paths:
                 - userStatuses
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
-          links:
-            assignments:
-              operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses.App.ListAssignments
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
-            categories:
-              operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses.App.ListCategories
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
-            deviceStatuses:
-              operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses.App.ListDeviceStatuses
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
-            installSummary:
-              operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses.App.GetInstallSummary
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
-            relationships:
-              operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses.App.ListRelationships
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
-            userStatuses:
-              operationId: deviceAppManagement.mobileApps.userStatuses.deviceStatuses.App.ListUserStatuses
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-                userAppInstallStatus-id: $request.path.userAppInstallStatus-id
-                mobileAppInstallStatus-id: $request.path.mobileAppInstallStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12368,7 +12195,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12500,7 +12327,7 @@ paths:
                 - uploadState desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12545,7 +12372,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12587,7 +12414,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -12681,7 +12508,7 @@ paths:
                 - items
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.policySetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12702,7 +12529,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.policySet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12764,23 +12591,12 @@ paths:
                 - items
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.policySet'
-          links:
-            assignments:
-              operationId: deviceAppManagement.PolicySets.ListAssignments
-              parameters:
-                policySet-id: $request.path.policySet-id
-            items:
-              operationId: deviceAppManagement.PolicySets.ListItems
-              parameters:
-                policySet-id: $request.path.policySet-id
-            update:
-              operationId: deviceAppManagement.policySets.policySet.update
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12806,8 +12622,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.policySet'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.policySet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12902,7 +12722,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.policySetAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -12932,7 +12752,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.policySetAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -12992,7 +12812,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13031,8 +12851,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.policySetAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.policySetAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13153,7 +12977,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.policySetItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13183,7 +13007,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.policySetItem'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13249,7 +13073,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13288,8 +13112,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.policySetItem'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.policySetItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13397,7 +13225,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -13486,7 +13314,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.sideLoadingKeyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13507,7 +13335,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sideLoadingKey'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13562,7 +13390,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13593,8 +13421,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.sideLoadingKey'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sideLoadingKey'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13666,7 +13498,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -13688,8 +13520,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.symantecCodeSigningCertificate'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.symantecCodeSigningCertificate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13801,7 +13637,7 @@ paths:
                 - deploymentSummary
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.targetedManagedAppConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -13822,7 +13658,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -13889,29 +13725,12 @@ paths:
                 - deploymentSummary
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
-          links:
-            apps:
-              operationId: deviceAppManagement.TargetedManagedAppConfigurations.ListApps
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-            assignments:
-              operationId: deviceAppManagement.TargetedManagedAppConfigurations.ListAssignments
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-            deploymentSummary:
-              operationId: deviceAppManagement.TargetedManagedAppConfigurations.GetDeploymentSummary
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-            assign:
-              operationId: deviceAppManagement.targetedManagedAppConfigurations.targetedManagedAppConfiguration.assign
-            targetApps:
-              operationId: deviceAppManagement.targetedManagedAppConfigurations.targetedManagedAppConfiguration.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13937,8 +13756,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14033,7 +13856,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedMobileAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14063,7 +13886,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14123,7 +13946,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14162,8 +13985,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14269,7 +14096,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.targetedManagedAppPolicyAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14299,7 +14126,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14360,7 +14187,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14399,8 +14226,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14484,7 +14315,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -14515,8 +14346,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedAppPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14640,7 +14475,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -14764,7 +14599,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.vppTokenCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -14785,7 +14620,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.vppToken'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -14852,17 +14687,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.vppToken'
-          links:
-            revokeLicenses:
-              operationId: deviceAppManagement.vppTokens.vppToken.revokeLicenses
-            syncLicenses:
-              operationId: deviceAppManagement.vppTokens.vppToken.syncLicenses
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14888,8 +14718,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.vppToken'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.vppToken'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14975,7 +14809,7 @@ paths:
             type: string
           x-ms-docs-key-type: vppToken
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -15005,7 +14839,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -15120,7 +14954,7 @@ paths:
                 - deviceStatuses
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15141,7 +14975,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -15205,27 +15039,12 @@ paths:
                 - deviceStatuses
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
-          links:
-            assignments:
-              operationId: deviceAppManagement.WdacSupplementalPolicies.ListAssignments
-              parameters:
-                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
-            deploySummary:
-              operationId: deviceAppManagement.WdacSupplementalPolicies.GetDeploySummary
-              parameters:
-                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
-            deviceStatuses:
-              operationId: deviceAppManagement.WdacSupplementalPolicies.ListDeviceStatuses
-              parameters:
-                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
-            assign:
-              operationId: deviceAppManagement.wdacSupplementalPolicies.windowsDefenderApplicationControlSupplementalPolicy.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15251,8 +15070,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15344,7 +15167,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15374,7 +15197,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -15433,7 +15256,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15472,8 +15295,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15554,7 +15381,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -15585,8 +15412,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15704,7 +15535,7 @@ paths:
                 - policy
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -15734,7 +15565,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -15803,18 +15634,12 @@ paths:
                 - policy
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
-          links:
-            policy:
-              operationId: deviceAppManagement.wdacSupplementalPolicies.DeviceStatuses.GetPolicy
-              parameters:
-                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
-                windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id: $request.path.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15848,8 +15673,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15950,28 +15779,12 @@ paths:
                 - deviceStatuses
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy'
-          links:
-            assignments:
-              operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.Policy.ListAssignments
-              parameters:
-                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
-                windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id: $request.path.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
-            deploySummary:
-              operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.Policy.GetDeploySummary
-              parameters:
-                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
-                windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id: $request.path.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
-            deviceStatuses:
-              operationId: deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.Policy.ListDeviceStatuses
-              parameters:
-                windowsDefenderApplicationControlSupplementalPolicy-id: $request.path.windowsDefenderApplicationControlSupplementalPolicy-id
-                windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id: $request.path.windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16079,7 +15892,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsInformationProtectionDeviceRegistrationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16100,7 +15913,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -16156,15 +15969,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
-          links:
-            wipe:
-              operationId: deviceAppManagement.windowsInformationProtectionDeviceRegistrations.windowsInformationProtectionDeviceRegistration.wipe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16190,8 +16000,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionDeviceRegistration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16419,7 +16233,7 @@ paths:
                 - protectedAppLockerFiles
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsInformationProtectionPolicyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16440,7 +16254,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -16536,25 +16350,12 @@ paths:
                 - protectedAppLockerFiles
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
-          links:
-            assignments:
-              operationId: deviceAppManagement.WindowsInformationProtectionPolicies.ListAssignments
-              parameters:
-                windowsInformationProtectionPolicy-id: $request.path.windowsInformationProtectionPolicy-id
-            exemptAppLockerFiles:
-              operationId: deviceAppManagement.WindowsInformationProtectionPolicies.ListExemptAppLockerFiles
-              parameters:
-                windowsInformationProtectionPolicy-id: $request.path.windowsInformationProtectionPolicy-id
-            protectedAppLockerFiles:
-              operationId: deviceAppManagement.WindowsInformationProtectionPolicies.ListProtectedAppLockerFiles
-              parameters:
-                windowsInformationProtectionPolicy-id: $request.path.windowsInformationProtectionPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16580,8 +16381,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16680,7 +16485,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsInformationProtectionWipeActionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16701,7 +16506,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionWipeAction'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -16757,7 +16562,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -16788,8 +16593,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionWipeAction'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionWipeAction'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16958,7 +16767,7 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsManagedAppProtectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -16979,7 +16788,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsManagedAppProtection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -17061,25 +16870,12 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsManagedAppProtection'
-          links:
-            apps:
-              operationId: deviceAppManagement.WindowsManagedAppProtections.ListApps
-              parameters:
-                windowsManagedAppProtection-id: $request.path.windowsManagedAppProtection-id
-            assignments:
-              operationId: deviceAppManagement.WindowsManagedAppProtections.ListAssignments
-              parameters:
-                windowsManagedAppProtection-id: $request.path.windowsManagedAppProtection-id
-            assign:
-              operationId: deviceAppManagement.windowsManagedAppProtections.windowsManagedAppProtection.assign
-            targetApps:
-              operationId: deviceAppManagement.windowsManagedAppProtections.windowsManagedAppProtection.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17105,8 +16901,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsManagedAppProtection'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsManagedAppProtection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17201,7 +17001,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedMobileAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17231,7 +17031,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -17291,7 +17091,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -17330,8 +17130,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedMobileApp'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17437,7 +17241,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.targetedManagedAppPolicyAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17467,7 +17271,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -17528,7 +17332,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -17567,8 +17371,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.targetedManagedAppPolicyAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17714,15 +17522,12 @@ paths:
                 - healthStates
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsManagementApp'
-          links:
-            healthStates:
-              operationId: deviceAppManagement.WindowsManagementApp.ListHealthStates
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17761,15 +17566,12 @@ paths:
                 - clientConfigurations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.officeConfiguration'
-          links:
-            clientConfigurations:
-              operationId: officeConfiguration.ListClientConfigurations
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17786,8 +17588,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.officeConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.officeConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17865,7 +17671,7 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.officeClientConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -17886,7 +17692,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.officeClientConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -17945,19 +17751,12 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.officeClientConfiguration'
-          links:
-            assignments:
-              operationId: officeConfiguration.ClientConfigurations.ListAssignments
-              parameters:
-                officeClientConfiguration-id: $request.path.officeClientConfiguration-id
-            assign:
-              operationId: officeConfiguration.clientConfigurations.officeClientConfiguration.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17983,8 +17782,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.officeClientConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.officeClientConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18076,7 +17879,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.officeClientConfigurationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18106,7 +17909,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.officeClientConfigurationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -18165,7 +17968,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -18204,8 +18007,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.officeClientConfigurationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.officeClientConfigurationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18273,7 +18080,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -18313,7 +18120,7 @@ paths:
             type: string
           x-ms-docs-key-type: officeClientConfiguration
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -18369,7 +18176,7 @@ paths:
             type: string
           x-ms-docs-key-type: officeClientConfiguration
       responses:
-        '200':
+        2XX:
           description: Retrieved media content
           content:
             application/octet-stream:
@@ -18527,7 +18334,7 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceEnrollmentConfigurationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18557,7 +18364,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -18625,22 +18432,12 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
-          links:
-            assignments:
-              operationId: users.DeviceEnrollmentConfigurations.ListAssignments
-              parameters:
-                user-id: $request.path.user-id
-                deviceEnrollmentConfiguration-id: $request.path.deviceEnrollmentConfiguration-id
-            assign:
-              operationId: users.user.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.assign
-            setPriority:
-              operationId: users.user.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.setPriority
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18674,8 +18471,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18789,7 +18590,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.enrollmentConfigurationAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -18827,7 +18628,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -18896,7 +18697,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -18943,8 +18744,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19064,7 +18869,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceManagementTroubleshootingEventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19094,7 +18899,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -19157,7 +18962,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -19196,8 +19001,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementTroubleshootingEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19348,7 +19157,7 @@ paths:
                 - operations
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedAppRegistrationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19427,28 +19236,12 @@ paths:
                 - operations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
-          links:
-            appliedPolicies:
-              operationId: users.ManagedAppRegistrations.ListAppliedPolicies
-              parameters:
-                user-id: $request.path.user-id
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-            intendedPolicies:
-              operationId: users.ManagedAppRegistrations.ListIntendedPolicies
-              parameters:
-                user-id: $request.path.user-id
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-            operations:
-              operationId: users.ManagedAppRegistrations.ListOperations
-              parameters:
-                user-id: $request.path.user-id
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19774,7 +19567,7 @@ paths:
                 - windowsProtectionState
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedDeviceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -19804,7 +19597,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDevice'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -19963,159 +19756,12 @@ paths:
                 - windowsProtectionState
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
-          links:
-            assignmentFilterEvaluationStatusDetails:
-              operationId: users.ManagedDevices.ListAssignmentFilterEvaluationStatusDetails
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            deviceCompliancePolicyStates:
-              operationId: users.ManagedDevices.ListDeviceCompliancePolicyStates
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            deviceConfigurationStates:
-              operationId: users.ManagedDevices.ListDeviceConfigurationStates
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            managedDeviceMobileAppConfigurationStates:
-              operationId: users.ManagedDevices.ListManagedDeviceMobileAppConfigurationStates
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            securityBaselineStates:
-              operationId: users.ManagedDevices.ListSecurityBaselineStates
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            detectedApps:
-              operationId: users.ManagedDevices.ListDetectedApps
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            deviceCategory:
-              operationId: users.ManagedDevices.GetDeviceCategory
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            logCollectionRequests:
-              operationId: users.ManagedDevices.ListLogCollectionRequests
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            users:
-              operationId: users.ManagedDevices.ListUsers
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            windowsProtectionState:
-              operationId: users.ManagedDevices.GetWindowsProtectionState
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            activateDeviceEsim:
-              operationId: users.user.managedDevices.managedDevice.activateDeviceEsim
-            bypassActivationLock:
-              operationId: users.user.managedDevices.managedDevice.bypassActivationLock
-            cleanWindowsDevice:
-              operationId: users.user.managedDevices.managedDevice.cleanWindowsDevice
-            createDeviceLogCollectionRequest:
-              operationId: users.user.managedDevices.managedDevice.createDeviceLogCollectionRequest
-            createRemoteHelpSession:
-              operationId: users.user.managedDevices.managedDevice.createRemoteHelpSession
-            deleteUserFromSharedAppleDevice:
-              operationId: users.user.managedDevices.managedDevice.deleteUserFromSharedAppleDevice
-            deprovision:
-              operationId: users.user.managedDevices.managedDevice.deprovision
-            disable:
-              operationId: users.user.managedDevices.managedDevice.disable
-            disableLostMode:
-              operationId: users.user.managedDevices.managedDevice.disableLostMode
-            enableLostMode:
-              operationId: users.user.managedDevices.managedDevice.enableLostMode
-            endRemoteHelpSession:
-              operationId: users.user.managedDevices.managedDevice.endRemoteHelpSession
-            enrollNowAction:
-              operationId: users.user.managedDevices.managedDevice.enrollNowAction
-            getCloudPcRemoteActionResults:
-              operationId: users.user.managedDevices.managedDevice.getCloudPcRemoteActionResults
-            getCloudPcReviewStatus:
-              operationId: users.user.managedDevices.managedDevice.getCloudPcReviewStatus
-            getFileVaultKey:
-              operationId: users.user.managedDevices.managedDevice.getFileVaultKey
-            getNonCompliantSettings:
-              operationId: users.user.managedDevices.managedDevice.getNonCompliantSettings
-            getOemWarranty:
-              operationId: users.user.managedDevices.managedDevice.getOemWarranty
-            initiateMobileDeviceManagementKeyRecovery:
-              operationId: users.user.managedDevices.managedDevice.initiateMobileDeviceManagementKeyRecovery
-            locateDevice:
-              operationId: users.user.managedDevices.managedDevice.locateDevice
-            logoutSharedAppleDeviceActiveUser:
-              operationId: users.user.managedDevices.managedDevice.logoutSharedAppleDeviceActiveUser
-            overrideComplianceState:
-              operationId: users.user.managedDevices.managedDevice.overrideComplianceState
-            playLostModeSound:
-              operationId: users.user.managedDevices.managedDevice.playLostModeSound
-            rebootNow:
-              operationId: users.user.managedDevices.managedDevice.rebootNow
-            recoverPasscode:
-              operationId: users.user.managedDevices.managedDevice.recoverPasscode
-            reenable:
-              operationId: users.user.managedDevices.managedDevice.reenable
-            remoteLock:
-              operationId: users.user.managedDevices.managedDevice.remoteLock
-            removeDeviceFirmwareConfigurationInterfaceManagement:
-              operationId: users.user.managedDevices.managedDevice.removeDeviceFirmwareConfigurationInterfaceManagement
-            reprovisionCloudPc:
-              operationId: users.user.managedDevices.managedDevice.reprovisionCloudPc
-            requestRemoteAssistance:
-              operationId: users.user.managedDevices.managedDevice.requestRemoteAssistance
-            requestRemoteHelpSessionAccess:
-              operationId: users.user.managedDevices.managedDevice.requestRemoteHelpSessionAccess
-            resetPasscode:
-              operationId: users.user.managedDevices.managedDevice.resetPasscode
-            resizeCloudPc:
-              operationId: users.user.managedDevices.managedDevice.resizeCloudPc
-            restoreCloudPc:
-              operationId: users.user.managedDevices.managedDevice.restoreCloudPc
-            retire:
-              operationId: users.user.managedDevices.managedDevice.retire
-            retrieveRemoteHelpSession:
-              operationId: users.user.managedDevices.managedDevice.retrieveRemoteHelpSession
-            revokeAppleVppLicenses:
-              operationId: users.user.managedDevices.managedDevice.revokeAppleVppLicenses
-            rotateBitLockerKeys:
-              operationId: users.user.managedDevices.managedDevice.rotateBitLockerKeys
-            rotateFileVaultKey:
-              operationId: users.user.managedDevices.managedDevice.rotateFileVaultKey
-            sendCustomNotificationToCompanyPortal:
-              operationId: users.user.managedDevices.managedDevice.sendCustomNotificationToCompanyPortal
-            setCloudPcReviewStatus:
-              operationId: users.user.managedDevices.managedDevice.setCloudPcReviewStatus
-            setDeviceName:
-              operationId: users.user.managedDevices.managedDevice.setDeviceName
-            shutDown:
-              operationId: users.user.managedDevices.managedDevice.shutDown
-            syncDevice:
-              operationId: users.user.managedDevices.managedDevice.syncDevice
-            triggerConfigurationManagerAction:
-              operationId: users.user.managedDevices.managedDevice.triggerConfigurationManagerAction
-            updateWindowsDeviceAccount:
-              operationId: users.user.managedDevices.managedDevice.updateWindowsDeviceAccount
-            windowsDefenderScan:
-              operationId: users.user.managedDevices.managedDevice.windowsDefenderScan
-            windowsDefenderUpdateSignatures:
-              operationId: users.user.managedDevices.managedDevice.windowsDefenderUpdateSignatures
-            wipe:
-              operationId: users.user.managedDevices.managedDevice.wipe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20149,8 +19795,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDevice'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDevice'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20258,7 +19908,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.assignmentFilterEvaluationStatusDetailsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20296,7 +19946,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationStatusDetails'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -20363,7 +20013,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20410,8 +20060,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationStatusDetails'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluationStatusDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20544,7 +20198,7 @@ paths:
                 - managedDevices
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.detectedAppCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20617,19 +20271,12 @@ paths:
                 - managedDevices
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.detectedApp'
-          links:
-            managedDevices:
-              operationId: users.managedDevices.DetectedApps.ListManagedDevices
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-                detectedApp-id: $request.path.detectedApp-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20685,7 +20332,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -20724,8 +20371,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceCategory'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20854,7 +20505,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceCompliancePolicyStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -20892,7 +20543,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -20966,7 +20617,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21013,8 +20664,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21151,7 +20806,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceConfigurationStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21189,7 +20844,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -21263,7 +20918,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21310,8 +20965,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceConfigurationState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21451,7 +21110,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceLogCollectionResponseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21489,7 +21148,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -21564,15 +21223,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
-          links:
-            createDownloadUrl:
-              operationId: users.user.managedDevices.managedDevice.logCollectionRequests.deviceLogCollectionResponse.createDownloadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21614,8 +21270,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21752,7 +21412,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.managedDeviceMobileAppConfigurationStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -21790,7 +21450,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -21864,7 +21524,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -21911,8 +21571,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfigurationState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22039,7 +21703,7 @@ paths:
                 - settingStates
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.securityBaselineStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22077,7 +21741,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -22149,19 +21813,12 @@ paths:
                 - settingStates
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
-          links:
-            settingStates:
-              operationId: users.managedDevices.SecurityBaselineStates.ListSettingStates
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-                securityBaselineState-id: $request.path.securityBaselineState-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22203,8 +21860,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.securityBaselineState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22349,7 +22010,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.securityBaselineSettingStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -22395,7 +22056,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -22477,7 +22138,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -22532,8 +22193,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.securityBaselineSettingState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23025,7 +22690,7 @@ paths:
                 - todo
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23104,18 +22769,12 @@ paths:
                 - detectedMalwareState
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
-          links:
-            detectedMalwareState:
-              operationId: users.managedDevices.WindowsProtectionState.ListDetectedMalwareState
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23149,8 +22808,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23285,7 +22948,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsDeviceMalwareStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23323,7 +22986,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsDeviceMalwareState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -23399,7 +23062,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -23446,8 +23109,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.windowsDeviceMalwareState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsDeviceMalwareState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23561,7 +23228,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileAppIntentAndStateCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23591,7 +23258,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppIntentAndState'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -23652,7 +23319,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -23691,8 +23358,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppIntentAndState'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppIntentAndState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23818,7 +23489,7 @@ paths:
                 - appLogCollectionRequests
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileAppTroubleshootingEventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -23848,7 +23519,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppTroubleshootingEvent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -23917,18 +23588,12 @@ paths:
                 - appLogCollectionRequests
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppTroubleshootingEvent'
-          links:
-            appLogCollectionRequests:
-              operationId: users.MobileAppTroubleshootingEvents.ListAppLogCollectionRequests
-              parameters:
-                user-id: $request.path.user-id
-                mobileAppTroubleshootingEvent-id: $request.path.mobileAppTroubleshootingEvent-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23962,8 +23627,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileAppTroubleshootingEvent'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppTroubleshootingEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24080,7 +23749,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.appLogCollectionRequestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24118,7 +23787,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -24188,15 +23857,12 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
-          links:
-            createDownloadUrl:
-              operationId: users.user.mobileAppTroubleshootingEvents.mobileAppTroubleshootingEvent.appLogCollectionRequests.appLogCollectionRequest.createDownloadUrl
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24238,8 +23904,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
         required: true
       responses:
-        '204':
-          description: Success
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appLogCollectionRequest'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24362,7 +24032,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.windowsInformationProtectionDeviceRegistrationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -24425,7 +24095,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -42142,6 +41812,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             onBehalfOf:
@@ -46562,6 +46233,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
