@@ -3,10 +3,15 @@
 
 steps:
   - task: UseDotNet@2
+    displayName: "Use .NET 2" # needed for ESRP signing
+    inputs:
+      version: 2.x
+
+  - task: UseDotNet@2
     displayName: Use .NET SDK
     inputs:
       debugMode: false
-      version: 6.x
+      version: 7.x
 
   - task: NuGetToolInstaller@1
     displayName: Install Nuget
