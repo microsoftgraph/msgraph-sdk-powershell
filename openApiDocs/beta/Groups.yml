@@ -46249,6 +46249,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
             webParts:
               type: array
@@ -49159,17 +49160,18 @@ components:
           additionalProperties:
             type: object
     microsoft.graph.webPart:
-      title: webPart
-      type: object
-      properties:
-        data:
-          $ref: '#/components/schemas/microsoft.graph.sitePageData'
-        type:
-          type: string
-          description: A unique identifier specifying the webPart type. Read-only.
-          nullable: true
-      additionalProperties:
-        type: object
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: webPart
+          type: object
+          properties:
+            data:
+              $ref: '#/components/schemas/microsoft.graph.sitePageData'
+            type:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.termStore.group:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -53833,7 +53835,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
