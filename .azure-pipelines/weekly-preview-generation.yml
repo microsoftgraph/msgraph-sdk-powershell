@@ -64,6 +64,7 @@ jobs:
       - template: ./common-templates/checkout.yml
         parameters:
           TargetBranch: $(WeeklyBranch)
+      - template: ./common-templates/install-tools.yml
       - template: ./common-templates/security-pre-checks.yml
       - template: ./generation-templates/authentication-module.yml
         parameters:
@@ -98,4 +99,5 @@ jobs:
               packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
               publishVstsFeed: $(PROJECT_NAME)/$(PREVIEW_FEED_NAME)
               allowPackageConflicts: true
+      - template: ./generation-templates/generate-command-metadata.yml
       - template: ./common-templates/security-post-checks.yml
