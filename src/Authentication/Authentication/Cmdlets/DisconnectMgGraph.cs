@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    [Cmdlet(VerbsCommunications.Disconnect, "MgGraph")]
+    [Cmdlet(VerbsCommunications.Disconnect, "MgGraph", HelpUri = "https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands#using-disconnect-mggraph")]
     [Alias("Disconnect-Graph")]
     [OutputType(typeof(IAuthContext))]
     public class DisconnectMgGraph : PSCmdlet
@@ -46,7 +46,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             if (GraphSession.Instance.AuthContext is null)
             {
                 WriteError(new ErrorRecord(new ArgumentException("No application to sign out from."), string.Empty, ErrorCategory.CloseError, null));
-            } else {
+            }
+            else
+            {
                 var authContext = await AuthenticationHelpers.LogoutAsync();
                 WriteObject(authContext);
             }

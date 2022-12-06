@@ -165,7 +165,10 @@ result is piped to the Format-List command so that the output of the Description
 in the default table view.
 
 .LINK
-https://docs.microsoft.com/en-us/graph/permissions-reference
+https://learn.microsoft.com/powershell/microsoftgraph/find-mg-graph-permission
+
+.LINK
+https://docs.microsoft.com/graph/permissions-reference
 #>
 function Find-MgGraphPermission {
     [cmdletbinding(positionalbinding=$false)]

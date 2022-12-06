@@ -6,9 +6,9 @@ using System.Management.Automation;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    [Cmdlet(VerbsCommon.Get, "MgContext", DefaultParameterSetName = Constants.UserParameterSet)]
+    [Cmdlet(VerbsCommon.Get, "MgContext", DefaultParameterSetName = Constants.UserParameterSet, HelpUri = "https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands#using-get-mgcontext")]
     [OutputType(typeof(IAuthContext))]
-    public class GetMgContext: PSCmdlet
+    public class GetMgContext : PSCmdlet
     {
         protected override void BeginProcessing()
         {

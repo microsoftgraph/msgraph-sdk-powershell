@@ -2,6 +2,13 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Extensions;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using Microsoft.Graph.PowerShell.Authentication.Properties;
+using Microsoft.PowerShell.Commands;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Globalization;
@@ -13,19 +20,12 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Graph.PowerShell.Authentication.Extensions;
-using Microsoft.Graph.PowerShell.Authentication.Helpers;
-using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-using Microsoft.Graph.PowerShell.Authentication.Models;
-using Microsoft.Graph.PowerShell.Authentication.Properties;
-using Microsoft.PowerShell.Commands;
-using Newtonsoft.Json;
 using static Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
 using DriveNotFoundException = System.Management.Automation.DriveNotFoundException;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    [Cmdlet(VerbsLifecycle.Invoke, "MgGraphRequest", DefaultParameterSetName = Constants.UserParameterSet)]
+    [Cmdlet(VerbsLifecycle.Invoke, "MgGraphRequest", DefaultParameterSetName = Constants.UserParameterSet, HelpUri = "https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands#using-invoke-mggraphrequest")]
     [Alias("Invoke-GraphRequest", "Invoke-MgRestMethod")]
     public class InvokeMgGraphRequest : PSCmdlet
     {
