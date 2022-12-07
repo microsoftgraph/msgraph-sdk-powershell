@@ -18532,6 +18532,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.riskLevel'
+          description: 'Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.'
         signInRiskLevels:
           type: array
           items:
@@ -27848,7 +27849,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
