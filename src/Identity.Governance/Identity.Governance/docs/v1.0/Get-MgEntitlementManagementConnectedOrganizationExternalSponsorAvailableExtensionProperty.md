@@ -9,7 +9,13 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+The following entities support extension properties:
++ user
++ group
++ administrativeUnit
++ application
++ device
++ organization
 
 ## SYNTAX
 
@@ -45,7 +51,13 @@ Get-MgEntitlementManagementConnectedOrganizationExternalSponsorAvailableExtensio
 
 ## DESCRIPTION
 Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+The following entities support extension properties:
++ user
++ group
++ administrativeUnit
++ application
++ device
++ organization
 
 ## EXAMPLES
 

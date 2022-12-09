@@ -9,7 +9,9 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+The following RBAC providers are currently supported:
+- Cloud PC 
+- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
 
 ## SYNTAX
 
@@ -31,7 +33,9 @@ New-MgRoleManagementCloudPcRoleAssignment -BodyParameter <IMicrosoftGraphUnified
 
 ## DESCRIPTION
 Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+The following RBAC providers are currently supported:
+- Cloud PC 
+- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
 
 ## EXAMPLES
 

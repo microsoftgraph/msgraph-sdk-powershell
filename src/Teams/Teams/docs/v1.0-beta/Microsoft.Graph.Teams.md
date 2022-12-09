@@ -104,7 +104,8 @@ Confirm a specific timeCard.
 
 ### [Copy-MgTeam](Copy-MgTeam.md)
 Create a copy of a team.
-This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state \n-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen.
+This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state 
+-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen.
 \n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation \nreturned by the Location: header to see if it's 'running' or 'succeeded' or 'failed'.
 \nYou should continue to GET until the status is not 'running'.
 \nThe recommended delay between GETs is 5 seconds.
@@ -1599,10 +1600,10 @@ End the open break in a specific timeCard.
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1610,10 +1611,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 

@@ -1079,10 +1079,10 @@ Set mobile device management authority
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1090,10 +1090,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1101,10 +1101,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1112,10 +1112,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1123,10 +1123,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1134,10 +1134,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1145,10 +1145,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1156,10 +1156,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1167,10 +1167,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1178,10 +1178,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1189,10 +1189,10 @@ However, you can validate both the mail nickname and the display name and receiv
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
 Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
+The following validations are performed for the display name and mail nickname properties: 
+1. Validate the prefix and suffix naming policy
+2. Validate the custom banned words policy
+3. Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 
@@ -1328,12 +1328,16 @@ Update the navigation property settings in organization
 ### [Update-MgOrganizationSettingContactInsight](Update-MgOrganizationSettingContactInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+To learn more about customizing insights privacy for your organization, see:
+-  Customize item insights privacy 
+-  Customize people insights privacy
 
 ### [Update-MgOrganizationSettingItemInsight](Update-MgOrganizationSettingItemInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+To learn more about customizing insights privacy for your organization, see:
+-  Customize item insights privacy 
+-  Customize people insights privacy
 
 ### [Update-MgOrganizationSettingMicrosoftApplicationDataAccess](Update-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
 Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
@@ -1341,7 +1345,9 @@ Update the settings in a microsoftApplicationDataAccessSettings object that spec
 ### [Update-MgOrganizationSettingPersonInsight](Update-MgOrganizationSettingPersonInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+To learn more about customizing insights privacy for your organization, see:
+-  Customize item insights privacy 
+-  Customize people insights privacy
 
 ### [Update-MgOrganizationSettingProfileCardProperty](Update-MgOrganizationSettingProfileCardProperty.md)
 Update the navigation property profileCardProperties in organization

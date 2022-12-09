@@ -310,7 +310,9 @@ Create new navigation property to roleAssignmentSchedules for roleManagement
 Create new navigation property to roleAssignmentScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
-In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:\n+ Request active and persistent role assignments for a principal, with or without expiry dates.\n+ Activate, deactivate, extend, or renew an eligible role assignment for a principal.
+In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:
++ Request active and persistent role assignments for a principal, with or without expiry dates.
++ Activate, deactivate, extend, or renew an eligible role assignment for a principal.
 To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
 See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
 
@@ -341,7 +343,9 @@ Create new navigation property to roleAssignmentSchedules for roleManagement
 Create new navigation property to roleAssignmentScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
-In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:\n+ Request active and persistent role assignments for a principal, with or without expiry dates.\n+ Activate, deactivate, extend, or renew an eligible role assignment for a principal.
+In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:
++ Request active and persistent role assignments for a principal, with or without expiry dates.
++ Activate, deactivate, extend, or renew an eligible role assignment for a principal.
 To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
 See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
 

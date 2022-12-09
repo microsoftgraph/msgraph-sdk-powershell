@@ -631,7 +631,9 @@ Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementCloudPcRoleAssignment](New-MgRoleManagementCloudPcRoleAssignment.md)
 Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+The following RBAC providers are currently supported:
+- Cloud PC 
+- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
 
 ### [New-MgRoleManagementCloudPcRoleAssignmentAppScope](New-MgRoleManagementCloudPcRoleAssignmentAppScope.md)
 Create new navigation property to appScopes for roleManagement
@@ -639,7 +641,10 @@ Create new navigation property to appScopes for roleManagement
 ### [New-MgRoleManagementCloudPcRoleDefinition](New-MgRoleManagementCloudPcRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
 This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
+The following RBAC providers are currently supported:
+- Cloud PC
+- device management (Intune)
+- directory (Azure AD)
 
 ### [New-MgRoleManagementCloudPcRoleDefinitionInheritPermissionFrom](New-MgRoleManagementCloudPcRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -652,7 +657,9 @@ Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementDeviceManagementRoleAssignment](New-MgRoleManagementDeviceManagementRoleAssignment.md)
 Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+The following RBAC providers are currently supported:
+- Cloud PC 
+- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
 
 ### [New-MgRoleManagementDeviceManagementRoleAssignmentAppScope](New-MgRoleManagementDeviceManagementRoleAssignmentAppScope.md)
 Create new navigation property to appScopes for roleManagement
@@ -660,7 +667,10 @@ Create new navigation property to appScopes for roleManagement
 ### [New-MgRoleManagementDeviceManagementRoleDefinition](New-MgRoleManagementDeviceManagementRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
 This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
+The following RBAC providers are currently supported:
+- Cloud PC
+- device management (Intune)
+- directory (Azure AD)
 
 ### [New-MgRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom](New-MgRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -695,7 +705,10 @@ See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in event
 ### [New-MgRoleManagementDirectoryRoleDefinition](New-MgRoleManagementDirectoryRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
 This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
+The following RBAC providers are currently supported:
+- Cloud PC
+- device management (Intune)
+- directory (Azure AD)
 
 ### [New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -743,7 +756,10 @@ See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in event
 ### [New-MgRoleManagementEntitlementManagementRoleDefinition](New-MgRoleManagementEntitlementManagementRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
 This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
+The following RBAC providers are currently supported:
+- Cloud PC
+- device management (Intune)
+- directory (Azure AD)
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement

@@ -128,7 +128,13 @@ The external sponsors are a set of users who can approve requests on behalf of o
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorAvailableExtensionProperty](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorAvailableExtensionProperty.md)
 Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+The following entities support extension properties:
++ user
++ group
++ administrativeUnit
++ application
++ device
++ organization
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorById](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorById.md)
 Return the directory objects specified in a list of IDs.
@@ -144,7 +150,13 @@ The internal sponsors are a set of users who can approve requests on behalf of o
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorAvailableExtensionProperty](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorAvailableExtensionProperty.md)
 Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+The following entities support extension properties:
++ user
++ group
++ administrativeUnit
++ application
++ device
++ organization
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorById](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorById.md)
 Return the directory objects specified in a list of IDs.
