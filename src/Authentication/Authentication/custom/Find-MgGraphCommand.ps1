@@ -6,16 +6,22 @@ Set-StrictMode -Version 2
 <#
 .Synopsis
 Find Microsoft Graph PowerShell command meta-info by URI or command name.
+
 .Description
 The Find-MgGraphCommand command retrieves meta-info about Microsoft Graph PowerShell commands by URI or command name.
+
 .PARAMETER Uri
 The API path a command calls. e.g., /users.
+
 .PARAMETER Method
 The HTTP method a command makes.
+
 .PARAMETER ApiVersion
 The service API version.
+
 .PARAMETER Command
 The name of a command. e.g., Get-MgUser.
+
 .Example
 PS C:\> Find-MgGraphCommand -Uri "/users/{id}"
 
@@ -36,6 +42,7 @@ Remove-MgUser Users  DELETE /users/{user-id}                     {DeviceManageme
 Update-MgUser Users  PATCH  /users/{user-id}                     {DeviceManagementApps.ReadWrite.All DeviceManagementMana…
 
 This example finds all commands that call the provided Microsoft Graph URI.
+
 .Example
 PS C:\> Find-MgGraphCommand -Command Send-MgUserMessage -ApiVersion beta
 
@@ -46,8 +53,10 @@ Command            Module        Method URI                                     
 Send-MgUserMessage Users.Actions POST   /users/{user-id}/messages/{message-id}/microsoft.graph.send            {Mail.Send}
 
 This example looks up a command with the provided command name that calls the beta version of the API.
+
 .Inputs
 Pipeline input accepts API URIs as an array of strings.
+
 .Outputs
 Microsoft.Graph.PowerShell.Authentication.Models.IGraphCommand with the following properties:
     1. Command: Name of command.
@@ -57,6 +66,9 @@ Microsoft.Graph.PowerShell.Authentication.Models.IGraphCommand with the followin
     5. OutputType: The return type of a command.
     6. Permissions: Permissions needed to use a command. This field can be empty if the permissions are not yet available in Graph Explorer.
     7. Variants: The parameter sets of a command.
+
+.LINK
+https://learn.microsoft.com/powershell/microsoftgraph/find-mg-graph-command
 #>
 Function Find-MgGraphCommand {
     [CmdletBinding(DefaultParameterSetName = 'FindByUri', PositionalBinding = $false)]

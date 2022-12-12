@@ -14,7 +14,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     /// <summary>
     /// Removes Microsoft Graph environment to the settings file..
     /// </summary>
-    [Cmdlet(VerbsCommon.Remove, "MgEnvironment", SupportsShouldProcess = true)]
+    [Cmdlet(VerbsCommon.Remove, "MgEnvironment", SupportsShouldProcess = true, HelpUri = "https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands#using-get-mgenvironment")]
     [OutputType(typeof(GraphEnvironment))]
     public class RemoveMgEnvironment : PSCmdlet
     {
