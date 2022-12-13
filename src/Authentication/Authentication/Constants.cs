@@ -20,6 +20,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal const string IdentityParameterSet = nameof(IdentityParameterSet);
         internal const string EnvironmentVariableParameterSet = nameof(EnvironmentVariableParameterSet);
         internal static readonly string ContextSettingsPath = Path.Combine(Core.Constants.GraphDirectoryPath, "mg.context.json");
+        internal const int MAX_RETRY_DELAY_IN_SECONDS = 180;
+        internal const int MAX_NUMBER_OF_RETRY = 10;
+        internal const int DEFAULT_RETRY_DELAY = 3;
+        internal const int DEFAULT_MAX_RETRY = 3;
 
         public static class HelpMessages
         {

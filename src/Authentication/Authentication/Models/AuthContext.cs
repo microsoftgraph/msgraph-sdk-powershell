@@ -8,11 +8,11 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    public class AuthContext: IAuthContext
+    public class AuthContext : IAuthContext
     {
         private const string PowerShellClientId = "14d82eec-204b-4c2f-b7e8-296a70dab67e";
         public string ClientId { get; set; }
-        public string TenantId { get; set; }  
+        public string TenantId { get; set; }
         public string[] Scopes { get; set; }
         public AuthenticationType AuthType { get; set; }
         public TokenCredentialType TokenCredentialType { get; set; }
@@ -20,10 +20,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public string CertificateSubjectName { get; set; }
         public string Account { get; set; }
         public string AppName { get; set; }
-        public ContextScope ContextScope { get ; set ; }
+        public ContextScope ContextScope { get; set; }
         public X509Certificate2 Certificate { get; set; }
         public Version PSHostVersion { get; set; }
-        public TimeSpan ClientTimeout { get; set; } = TimeSpan.FromSeconds(Constants.ClientTimeout);
         public string ManagedIdentityId { get; set; }
         public SecureString ClientSecret { get; set; }
 

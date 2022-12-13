@@ -43,7 +43,7 @@ if ($null -eq $ModuleMetadata.versions.authentication.version) {
 
 # Build and pack generated module.
 if ($Build -or $Run) {
-    $AuthCoreCSProj = Join-Path $AuthSrcPath "$ModuleName.Core" "$ModuleFullName.Core.csproj"
+  $AuthCoreCSProj = Join-Path $AuthSrcPath "$ModuleName.Core" "$ModuleFullName.Core.csproj"
   if ($EnableSigning) {
     Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -AssemblyOriginatorKeyFile $ModuleMetadata.assemblyOriginatorKeyFile -ModuleVersion $ModuleMetadata.versions.authentication.version -PreRelease $ModuleMetadata.versions.authentication.prerelease
   }
@@ -54,6 +54,10 @@ if ($Build -or $Run) {
 }
 
 if ($Test) {
+  dotnet test $AuthSrcPath --no-build --verbosity quiet
+  if (-not $?) {
+    Write-Error "Failed to execute: dotnet test $AuthSrcPath"
+  }
   & $TestModulePS1 -ModulePath (Join-Path $AuthModulePath "artifacts" ) -ModuleName "$ModuleFullName" -ModuleTestsPath (Join-Path $AuthModulePath "test")
 }
 

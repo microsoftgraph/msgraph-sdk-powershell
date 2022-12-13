@@ -1022,7 +1022,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 try
                 {
                     PrepareSession();
-                    var client = HttpHelpers.GetGraphHttpClient(this.MyInvocation);
+                    var client = HttpHelpers.GetGraphHttpClient();
                     ValidateRequestUri();
                     using (var httpRequestMessage = GetRequest(client, Uri))
                     {

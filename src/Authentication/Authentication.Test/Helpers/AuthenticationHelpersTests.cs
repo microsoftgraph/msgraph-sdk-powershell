@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 {
     public class AuthenticationHelpersTests : IDisposable
     {
-        private MockAuthRecord mockAuthRecord;
+        private readonly MockAuthRecord mockAuthRecord;
         public AuthenticationHelpersTests()
         {
             GraphSession.Initialize(() => new GraphSession());
@@ -160,6 +160,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
+                TokenCredentialType = TokenCredentialType.ClientCertificate,
                 ClientId = mockAuthRecord.ClientId,
                 CertificateSubjectName = "cn=dummyCert",
                 ContextScope = ContextScope.Process,
@@ -186,6 +187,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
+                TokenCredentialType = TokenCredentialType.ClientCertificate,
                 ClientId = mockAuthRecord.ClientId,
                 Certificate = certificate,
                 ContextScope = ContextScope.Process,
@@ -211,11 +213,12 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
+                TokenCredentialType = TokenCredentialType.ClientCertificate,
                 ClientId = mockAuthRecord.ClientId,
                 CertificateSubjectName = dummyCertName,
                 Certificate = inMemoryCertificate,
                 ContextScope = ContextScope.Process,
-                TenantId= mockAuthRecord.TenantId
+                TenantId = mockAuthRecord.TenantId
             };
             // Act
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
@@ -239,6 +242,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
+                TokenCredentialType = TokenCredentialType.ClientCertificate,
                 ClientId = mockAuthRecord.ClientId,
                 CertificateThumbprint = storedDummyCertificate.Thumbprint,
                 Certificate = inMemoryCertificate,
@@ -264,6 +268,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
+                TokenCredentialType = TokenCredentialType.ClientCertificate,
                 ClientId = mockAuthRecord.ClientId,
                 CertificateSubjectName = dummyCertName,
                 ContextScope = ContextScope.Process,
@@ -284,6 +289,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
+                TokenCredentialType = TokenCredentialType.ClientCertificate,
                 ClientId = mockAuthRecord.ClientId,
                 Certificate = null,
                 ContextScope = ContextScope.Process,
@@ -369,7 +375,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 xStore.Remove(xCertificate);
             }
         }
-        
+
         public void Dispose() => mockAuthRecord.DeleteCache();
     }
 }

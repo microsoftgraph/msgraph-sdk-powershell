@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 
 using Microsoft.Graph.PowerShell.Authentication.Core;
+using Microsoft.Graph.PowerShell.Authentication.Core.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using System;
@@ -44,6 +45,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// The selected national cloud environment.
         /// </summary>
         public IGraphEnvironment Environment { get; set; }
+
+        /// <summary>
+        /// Gets or Sets <see cref="IRequestContext"/>.
+        /// </summary>
+        public IRequestContext RequestContext { get; set; }
 
         /// <summary>
         /// Represents a collection of Microsoft Graph PowerShell meta-info.

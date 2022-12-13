@@ -21,7 +21,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             // Call Init to trigger any custom initialization needed after
             // module load and before pipeline is setup and used.
             Init();
-            pipeline = new Runtime.HttpPipeline(new Runtime.HttpClientFactory(HttpHelpers.GetGraphHttpClient(invocationInfo)));
+            pipeline = new Runtime.HttpPipeline(new Runtime.HttpClientFactory(HttpHelpers.GetGraphHttpClient()));
         }
 
         /// <summary>

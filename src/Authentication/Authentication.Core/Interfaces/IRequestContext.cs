@@ -2,14 +2,15 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph.PowerShell.Authentication.Core.Interfaces;
+using System;
 
-namespace Microsoft.Graph.PowerShell.Authentication.Interfaces
+namespace Microsoft.Graph.PowerShell.Authentication.Core.Interfaces
 {
-    public interface IGraphSession
+    public interface IRequestContext
     {
-        IAuthContext AuthContext { get; set; }
-        IDataStore DataStore { get; set; }
-        IRequestContext RequestContext { get; set; }
+        int RetryDelay { get; set; }
+        int MaxRetry { get; set; }
+        TimeSpan RetriesTimeLimit { get; set; }
+        TimeSpan ClientTimeout { get; set; }
     }
 }

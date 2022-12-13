@@ -2,11 +2,12 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using System;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
-using Microsoft.Graph.PowerShell.Authentication.Models;
-using System.Management.Automation;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using System;
+using System.Management.Automation;
+using RequestContext = Microsoft.Graph.PowerShell.Authentication.Models.RequestContext;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
@@ -27,7 +28,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         {
             return new GraphSession
             {
-                DataStore = dataStore ?? new DiskDataStore()
+                DataStore = dataStore ?? new DiskDataStore(),
+                RequestContext = new RequestContext()
             };
         }
         /// <summary>

@@ -10,7 +10,7 @@
     <WarningsAsErrors />
     <NuspecFile>Microsoft.Graph.Authentication.nuspec</NuspecFile>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
-    <VersionPrefix>1.11.0</VersionPrefix>
+    <VersionPrefix>2.0.0</VersionPrefix>
     <VersionSuffix>preview1</VersionSuffix>
   </PropertyGroup>
   <PropertyGroup>
