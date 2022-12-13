@@ -37,21 +37,3 @@ steps:
       command: custom
       customCommand: install -g autorest@latest
 
-  - task: PowerShell@2
-    displayName: Register PS Repository
-    enabled: true
-    inputs:
-      targetType: inline
-      pwsh: true
-      errorActionPreference: stop
-      script: |
-        Get-PSRepository
-        $patToken = '$(NUGETFEEDKEY)' | ConvertTo-SecureString -AsPlainText -Force
-        $nugetFeed = '$(NUGETFEED)'
-        $nugetFeedName = '$(NUGETFEEDNAME)'
-        $user = '$(NUGETBUILDUSER)'
-        $credsAzureDevopsServices = New-Object System.Management.Automation.PSCredential($user, $patToken)
-        Unregister-PSRepository -Name $nugetFeedName -ErrorAction Continue
-        Register-PSRepository -Name $nugetFeedName -SourceLocation $nugetFeed -PublishLocation $nugetFeed -InstallationPolicy Trusted -Credential $credsAzureDevopsServices
-        Get-PSRepository
-        Find-Module -Name Microsoft.Graph.Authentication -AllowPrerelease -Repository $nugetFeedName
