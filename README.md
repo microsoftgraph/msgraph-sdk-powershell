@@ -1,109 +1,88 @@
-# Microsoft Graph PowerShell SDK
+# Microsoft Graph PowerShell Module
 
-The Microsoft Graph PowerShell SDK is a collection of PowerShell modules that contain commands for calling Microsoft Graph service.
+Consume [Microsoft Graph](https://developer.microsoft.com/graph) resources directly from your PowerShell scripts!
+
+The Microsoft Graph PowerShell Module consists of a collection of PowerShell modules that contain commands for calling Microsoft Graph API. The module acts as an API wrapper for the Microsoft Graph APIs, exposing the entire API set for use in PowerShell.
 
 ## Modules
 
-The table below contains our Microsoft Graph rollup module. This module installs all the service modules as its dependencies.
+The table below contains a link to our latest Microsoft Graph meta module. This module installs all the service modules as their dependencies.
 Description       | Module Name       | PowerShell Gallery Link
 ----------------- | ----------------- | ------------------------
 Microsoft Graph   | `Microsoft.Graph` | [![Mg]][MgGallery]
 
-For a list of modules found in this repository, see the [Microsoft Graph PowerShell modules](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/MS-Graph-PowerShell-Modules) document.
+See [Microsoft Graph PowerShell modules](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/MS-Graph-PowerShell-Modules) for a list of all modules found in this repository, .
 
 ## Installation
 
 ### PowerShell Gallery
 
-All the modules are published on [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph). Installing is as simple as:
+Microsoft Graph PowerShell module is published on [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph). Installing is as simple as:
 
 ``` powershell
 Install-Module Microsoft.Graph
 ```
 
-If you are upgrading from our preview modules, run `Install-Module` with AllowClobber and Force parameters to avoid command name conflicts:
+> If you are upgrading from our preview modules, run `Install-Module` with AllowClobber and Force parameters to avoid command name conflicts:
+>
+>``` powershell
+> Install-Module Microsoft.Graph -AllowClobber -Force
+>```
 
-``` powershell
- Install-Module Microsoft.Graph -AllowClobber -Force
-```
-
-There is a set of samples in the `samples` folder to help in getting started with the library. If you have an older version of these modules installed, there are extra uninstall instructions in the [InstallModule](./samples/0-InstallModule.ps1) script.
-
+See [Install the Microsoft Graph PowerShell Module](https://learn.microsoft.com/powershell/microsoftgraph/installation) for detailed installation instructions.
 ## Usage
 
-1. Authentication
+### 1. Authentication
 
-    The SDK supports two types of authentication: delegated access and app-only access.
-    - Delegated access.
+The module supports two types of authentication models:
 
-        ``` powershell
-        # Using interactive authentication.
-        Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All"
-        ```
+#### Delegated access
 
-        or
+Get access to Microsoft Graph resources on behalf of a user.
 
-        ``` powershell
-        # Using device code flow.
-        Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -UseDeviceAuthentication
-        ```
+``` powershell
+# Using interactive authentication.
+Connect-MgGraph -Scopes "User.ReadBasic.All", "Application.ReadWrite.All"
+```
 
-        or
+#### App-only access (client credentials grant flow)
 
-        ``` powershell
-        # Using your own access token.
-        Connect-MgGraph -AccessToken $AccessToken
-        ```
+Get access to Microsoft Graph resources using the identity on an app and not on behalf of a user.
 
-    - App-only access via Client Credential with a certificate.
+``` powershell
+# Using -CertificateThumbprint
+Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT"
+```
 
-        The certificate will be loaded from `Cert:\CurrentUser\My\` store when `-CertificateThumbprint` or `-CertificateName` is specified. Ensure the certificate is present in the store before calling `Connect-MgGraph`.
+> The certificate will be loaded from `Cert:\CurrentUser\My\` store when `-CertificateThumbprint` or `-CertificateName` is specified. Ensure the certificate is present in the store before calling `Connect-MgGraph`.
 
-        ``` powershell
-        # Using -CertificateThumbprint
-        Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT"
-        ```
+See [Authentication module cmdlets in Microsoft Graph PowerShell](https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands) for more information.
 
-        or
+### 2. List users in your tenant
 
-        ``` powershell
-        # Using -CertificateName
-        Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateName "YOUR_CERT_SUBJECT"
-        ```
+``` powershell
+Get-MgUser -Top 10 -Property Id, DisplayName, BusinessPhones | Format-Table Id, DisplayName, BusinessPhones
+```
 
-        or
+### 3. Filter a user in your tenant
 
-        ``` powershell
-        # Using -Certificate
-        $Cert = Get-ChildItem Cert:\LocalMachine\My\$CertThumbprint
-        Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -Certificate $Cert
-        ```
+``` powershell
+$User = Get-MgUser -Filter "displayName eq 'Megan Bowen'"
+```
 
-2. List users in your tenant.
+### 4. Create a new app registration
 
-    ``` powershell
-    Get-MgUser -Top 10 -Property Id, DisplayName, BusinessPhones | Format-Table Id, DisplayName, BusinessPhones
-    ```
+``` powershell
+New-MgApplication -DisplayName "ScriptedGraphPSApp" `
+                  -SignInAudience "AzureADMyOrg" `
+                  -Web @{ RedirectUris = "https://localhost"}
+```
 
-3. Filter a user in your tenant.
+### 5. Sign out of the current logged-in context i.e. app only or delegated access
 
-    ``` powershell
-    $user = Get-MgUser -Filter "displayName eq 'Megan Bowen'"
-    ```
-
-4. Create a new app registration.
-
-    ``` powershell
-    New-MgApplication -DisplayName "ScriptedGraphPSApp" `
-                      -SignInAudience "AzureADMyOrg" `
-                      -Web @{ RedirectUris = "https://localhost"}
-    ```
-
-5. Sign out of the current logged-in context i.e. app only or delegated access.
-
-    ``` powershell
-    Disconnect-MgGraph
-    ```
+``` powershell
+Disconnect-MgGraph
+```
 
 ## API Version
 
@@ -112,6 +91,20 @@ By default, the SDK uses the Microsoft Graph REST API v1.0. You can change this 
 ``` powershell
 Select-MgProfile -Name "beta"
 ```
+
+## Notes
+
+### Upgrading to v2
+
+The following breaking changes have been introduced between `v1.x` and `v2.x`:
+
+- Dropped profile support.
+- Dropped support for `-ForceRefresh` on `Connect-MgGraph`.
+- Renamed `beta` command names from `<Verb>-Mg<Noun>` to `<Verb>-MgBeta<Noun>`.
+- Changed beta namespace from `Microsoft.Graph.PowerShell.Models.<Entity>` to `Microsoft.Graph.Beta.PowerShell.Models.<Entity>`.
+- Changed `-AccessToken` type on `Connect-MgGraph` from `String` to `SecureString`.
+
+See [v2 upgrade guide](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/features/2.0/docs/upgrade-to-v2.md) for more details.
 
 ## Troubleshooting Permission Related Errors
 
