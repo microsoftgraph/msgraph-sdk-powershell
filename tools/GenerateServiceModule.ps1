@@ -8,6 +8,7 @@ Param(
     [ValidateSet("v1.0", "beta")]
     $ApiVersion = @("v1.0", "beta"),
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()] [string] $ArtifactsLocation,
+    $RequiredModules = @(),
     [switch] $SkipGeneration = $false,
     [switch] $Build,
     [switch] $Test,
@@ -81,7 +82,7 @@ $ApiVersion | ForEach-Object {
 
         if ($Build) {
             # Build generated module.
-            & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $ModuleProjectPath -RequiredModules $RequiredGraphModules -EnableSigning:$EnableSigning -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection -Version $ModuleMetadata.versions[$CurrentApiVersion].version -Prerelease $ModuleMetadata.versions[$CurrentApiVersion].prerelease -ModuleMetadata $ModuleMetadata.Clone()
+            & $BuildModulePS1 -ModuleFullName $ModuleFullName -ModuleSrc $ModuleProjectPath -RequiredModules $RequiredModules -EnableSigning:$EnableSigning -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection -Version $ModuleMetadata.versions[$CurrentApiVersion].version -Prerelease $ModuleMetadata.versions[$CurrentApiVersion].prerelease -ModuleMetadata $ModuleMetadata.Clone()
             & $CleanUpPsm1 -ModuleProjectPath $ModuleProjectPath -FullyQualifiedModuleName $ModuleFullName
             if ($LastExitCode -ne 0) {
                 Write-Host -ForegroundColor Red "Failed to build '$ModuleFullName' module."
