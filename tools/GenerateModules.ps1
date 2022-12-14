@@ -80,6 +80,7 @@ $ModuleToGenerate | ForEach-Object -Parallel {
         ExcludeExampleTemplates = $using:ExcludeExampleTemplates
         ExcludeNotesSection     = $using:ExcludeNotesSection
         ArtifactsLocation       = $using:ArtifactsLocation
+        RequiredModules         = $using:RequiredGraphModules
     }
     & $using:GenerateServiceModulePS1 @ServiceModuleParams
 }
