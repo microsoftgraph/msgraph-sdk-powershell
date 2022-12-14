@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgTrustFrameworkKeySet Cmdlet
+### Example 1: Using the Remove-MgBetaTrustFrameworkKeySet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgTrustFrameworkKeySet -TrustFrameworkKeySetId $trustFrameworkKeySetId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaTrustFrameworkKeySet -TrustFrameworkKeySetId $trustFrameworkKeySetId
 ```
-This example shows how to use the Remove-MgTrustFrameworkKeySet Cmdlet.
+This example shows how to use the Remove-MgBetaTrustFrameworkKeySet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgCommunicationCall Cmdlet
+### Example 1: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	CallbackUri = "https://bot.contoso.com/callback"
@@ -38,13 +38,13 @@ $params = @{
 		Blob = "<Media Session Configuration>"
 	}
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgCommunicationCall Cmdlet
+### Example 2: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	CallbackUri = "https://bot.contoso.com/callback"
@@ -72,13 +72,13 @@ $params = @{
 		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
 	}
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgCommunicationCall Cmdlet
+### Example 3: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	CallbackUri = "https://bot.contoso.com/callback"
@@ -117,13 +117,13 @@ $params = @{
 	}
 	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgCommunicationCall Cmdlet
+### Example 4: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	CallbackUri = "https://bot.contoso.com/callback"
@@ -163,13 +163,13 @@ $params = @{
 	}
 	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the New-MgCommunicationCall Cmdlet
+### Example 5: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	Direction = "outgoing"
@@ -220,13 +220,13 @@ $params = @{
 	}
 	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 6: Using the New-MgCommunicationCall Cmdlet
+### Example 6: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	Direction = "outgoing"
@@ -276,13 +276,13 @@ $params = @{
 	}
 	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 7: Using the New-MgCommunicationCall Cmdlet
+### Example 7: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	CallbackUri = "https://bot.contoso.com/callback"
@@ -324,13 +324,13 @@ $params = @{
 		AllowConversationWithoutHost = $true
 	}
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 8: Using the New-MgCommunicationCall Cmdlet
+### Example 8: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	CallbackUri = "https://bot.contoso.com/callback"
@@ -361,13 +361,13 @@ $params = @{
 		AllowConversationWithoutHost = $true
 	}
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 9: Using the New-MgCommunicationCall Cmdlet
+### Example 9: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	Direction = "outgoing"
@@ -399,13 +399,13 @@ $params = @{
 	}
 	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 10: Using the New-MgCommunicationCall Cmdlet
+### Example 10: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	CallbackUri = "https://bot.contoso.com/callback"
@@ -437,13 +437,13 @@ $params = @{
 	}
 	TenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 11: Using the New-MgCommunicationCall Cmdlet
+### Example 11: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	CallbackUri = "https://bot.contoso.com/callback"
@@ -462,13 +462,13 @@ $params = @{
 	}
 	TenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 12: Using the New-MgCommunicationCall Cmdlet
+### Example 12: Using the New-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	CallbackUri = "https://bot.contoso.com/callback"
@@ -487,7 +487,7 @@ $params = @{
 	}
 	TenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
 }
-New-MgCommunicationCall -BodyParameter $params
+New-MgBetaCommunicationCall -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCall Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

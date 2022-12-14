@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgUserOnlineMeetingRegistrationCustomQuestion Cmdlet
+### Example 1: Using the Update-MgBetaUserOnlineMeetingRegistrationCustomQuestion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	AnswerInputType = "radioButton"
 	AnswerOptions = @(
@@ -12,7 +12,7 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-Update-MgUserOnlineMeetingRegistrationCustomQuestion -UserId $userId -OnlineMeetingId $onlineMeetingId -MeetingRegistrationQuestionId $meetingRegistrationQuestionId -BodyParameter $params
+Update-MgBetaUserOnlineMeetingRegistrationCustomQuestion -UserId $userId -OnlineMeetingId $onlineMeetingId -MeetingRegistrationQuestionId $meetingRegistrationQuestionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserOnlineMeetingRegistrationCustomQuestion Cmdlet.
+This example shows how to use the Update-MgBetaUserOnlineMeetingRegistrationCustomQuestion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserOwnedObject Cmdlet
+### Example 1: Using the Get-MgBetaUserOwnedObject Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserOwnedObject -UserId $userId
+Get-MgBetaUserOwnedObject -UserId $userId
 ```
-This example shows how to use the Get-MgUserOwnedObject Cmdlet.
+This example shows how to use the Get-MgBetaUserOwnedObject Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

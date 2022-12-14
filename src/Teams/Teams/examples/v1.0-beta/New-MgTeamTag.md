@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgTeamTag Cmdlet
+### Example 1: Using the New-MgBetaTeamTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "Finance"
 	Members = @(
@@ -12,7 +12,7 @@ $params = @{
 		}
 	)
 }
-New-MgTeamTag -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamTag -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamTag Cmdlet.
+This example shows how to use the New-MgBetaTeamTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

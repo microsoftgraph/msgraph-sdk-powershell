@@ -1,16 +1,16 @@
-### Example 1: Using the Get-MgUserMailFolderMessageRule Cmdlet
+### Example 1: Using the Get-MgBetaUserMailFolderMessageRule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId
+Get-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId
 ```
-This example shows how to use the Get-MgUserMailFolderMessageRule Cmdlet.
+This example shows how to use the Get-MgBetaUserMailFolderMessageRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserMailFolderMessageRule Cmdlet
+### Example 2: Using the Get-MgBetaUserMailFolderMessageRule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId
+Get-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId
 ```
-This example shows how to use the Get-MgUserMailFolderMessageRule Cmdlet.
+This example shows how to use the Get-MgBetaUserMailFolderMessageRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

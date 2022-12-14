@@ -1,11 +1,11 @@
-### Example 1: Using the Invoke-MgUploadIdentityApiConnectorClientCertificate Cmdlet
+### Example 1: Using the Invoke-MgBetaUploadIdentityApiConnectorClientCertificate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
 	Password = "<password>"
 }
-Invoke-MgUploadIdentityApiConnectorClientCertificate -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+Invoke-MgBetaUploadIdentityApiConnectorClientCertificate -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgUploadIdentityApiConnectorClientCertificate Cmdlet.
+This example shows how to use the Invoke-MgBetaUploadIdentityApiConnectorClientCertificate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

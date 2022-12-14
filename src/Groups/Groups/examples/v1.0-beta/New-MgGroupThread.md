@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgGroupThread Cmdlet
+### Example 1: Using the New-MgBetaGroupThread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	Topic = "New Conversation Thread Topic"
 	Posts = @(
@@ -20,7 +20,7 @@ $params = @{
 		}
 	)
 }
-New-MgGroupThread -GroupId $groupId -BodyParameter $params
+New-MgBetaGroupThread -GroupId $groupId -BodyParameter $params
 ```
-This example shows how to use the New-MgGroupThread Cmdlet.
+This example shows how to use the New-MgBetaGroupThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

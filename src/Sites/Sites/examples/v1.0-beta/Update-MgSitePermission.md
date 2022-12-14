@@ -1,12 +1,12 @@
-### Example 1: Using the Update-MgSitePermission Cmdlet
+### Example 1: Using the Update-MgBetaSitePermission Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	Roles = @(
 		"read"
 	)
 }
-Update-MgSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
+Update-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgSitePermission Cmdlet.
+This example shows how to use the Update-MgBetaSitePermission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

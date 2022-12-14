@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgReportSecurityAttackSimulationRepeatOffender Cmdlet
+### Example 1: Using the Get-MgBetaReportSecurityAttackSimulationRepeatOffender Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportSecurityAttackSimulationRepeatOffender
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportSecurityAttackSimulationRepeatOffender
 ```
-This example shows how to use the Get-MgReportSecurityAttackSimulationRepeatOffender Cmdlet.
+This example shows how to use the Get-MgBetaReportSecurityAttackSimulationRepeatOffender Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

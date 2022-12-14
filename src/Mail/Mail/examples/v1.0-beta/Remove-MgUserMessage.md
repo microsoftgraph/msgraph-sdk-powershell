@@ -1,16 +1,16 @@
-### Example 1: Using the Remove-MgUserMessage Cmdlet
+### Example 1: Using the Remove-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Remove-MgUserMessage -UserId $userId -MessageId $messageId
+Remove-MgBetaUserMessage -UserId $userId -MessageId $messageId
 ```
-This example shows how to use the Remove-MgUserMessage Cmdlet.
+This example shows how to use the Remove-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Remove-MgUserMessage Cmdlet
+### Example 2: Using the Remove-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Remove-MgUserMessage -UserId $userId -MessageId $messageId
+Remove-MgBetaUserMessage -UserId $userId -MessageId $messageId
 ```
-This example shows how to use the Remove-MgUserMessage Cmdlet.
+This example shows how to use the Remove-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

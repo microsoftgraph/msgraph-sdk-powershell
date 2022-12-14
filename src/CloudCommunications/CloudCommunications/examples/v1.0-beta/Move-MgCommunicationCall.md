@@ -1,6 +1,6 @@
-### Example 1: Using the Move-MgCommunicationCall Cmdlet
+### Example 1: Using the Move-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	TransferTarget = @{
 		EndpointType = "default"
@@ -15,13 +15,13 @@ $params = @{
 		Region = "region-value"
 	}
 }
-Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Move-MgCommunicationCall Cmdlet.
+This example shows how to use the Move-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Move-MgCommunicationCall Cmdlet
+### Example 2: Using the Move-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	TransferTarget = @{
 		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
@@ -40,13 +40,13 @@ $params = @{
 		ReplacesCallId = "e5d39592-99bd-4db8-bca8-30fb894ec51d"
 	}
 }
-Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Move-MgCommunicationCall Cmdlet.
+This example shows how to use the Move-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Move-MgCommunicationCall Cmdlet
+### Example 3: Using the Move-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	TransferTarget = @{
 		EndpointType = "default"
@@ -60,13 +60,13 @@ $params = @{
 		Region = "region-value"
 	}
 }
-Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Move-MgCommunicationCall Cmdlet.
+This example shows how to use the Move-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Move-MgCommunicationCall Cmdlet
+### Example 4: Using the Move-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	TransferTarget = @{
 		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
@@ -83,13 +83,13 @@ $params = @{
 		ReplacesCallId = "e5d39592-99bd-4db8-bca8-30fb894ec51d"
 	}
 }
-Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Move-MgCommunicationCall Cmdlet.
+This example shows how to use the Move-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the Move-MgCommunicationCall Cmdlet
+### Example 5: Using the Move-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	TransferTarget = @{
 		EndpointType = "default"
@@ -113,7 +113,7 @@ $params = @{
 	LanguageId = "languageId-value"
 	Region = "region-value"
 }
-Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Move-MgCommunicationCall Cmdlet.
+This example shows how to use the Move-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

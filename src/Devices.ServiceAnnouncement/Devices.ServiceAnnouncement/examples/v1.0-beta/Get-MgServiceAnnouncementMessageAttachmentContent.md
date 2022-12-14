@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgServiceAnnouncementMessageAttachmentContent Cmdlet
+### Example 1: Using the Get-MgBetaServiceAnnouncementMessageAttachmentContent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementMessageAttachmentContent -ServiceUpdateMessageId $serviceUpdateMessageId -ServiceAnnouncementAttachmentId $serviceAnnouncementAttachmentId
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Get-MgBetaServiceAnnouncementMessageAttachmentContent -ServiceUpdateMessageId $serviceUpdateMessageId -ServiceAnnouncementAttachmentId $serviceAnnouncementAttachmentId
 ```
-This example shows how to use the Get-MgServiceAnnouncementMessageAttachmentContent Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementMessageAttachmentContent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgServiceAnnouncementMessageAttachmentContent Cmdlet
+### Example 2: Using the Get-MgBetaServiceAnnouncementMessageAttachmentContent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementMessageAttachmentContent -ServiceUpdateMessageId $serviceUpdateMessageId -ServiceAnnouncementAttachmentId $serviceAnnouncementAttachmentId -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+Get-MgBetaServiceAnnouncementMessageAttachmentContent -ServiceUpdateMessageId $serviceUpdateMessageId -ServiceAnnouncementAttachmentId $serviceAnnouncementAttachmentId -OutFile $outFileId
 ```
-This example shows how to use the Get-MgServiceAnnouncementMessageAttachmentContent Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementMessageAttachmentContent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgCommunicationPresence Cmdlet
+### Example 1: Using the Get-MgBetaCommunicationPresence Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationPresence -PresenceId $presenceId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationPresence -PresenceId $presenceId
 ```
-This example shows how to use the Get-MgCommunicationPresence Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationPresence Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

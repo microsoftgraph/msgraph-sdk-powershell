@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgBookingBusinessAppointment Cmdlet
+### Example 1: Using the Update-MgBetaBookingBusinessAppointment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
 	"@odata.type" = "#microsoft.graph.bookingAppointment"
 	End = @{
@@ -19,7 +19,7 @@ $params = @{
 		TimeZone = "UTC"
 	}
 }
-Update-MgBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BookingAppointmentId $bookingAppointmentId -BodyParameter $params
+Update-MgBetaBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BookingAppointmentId $bookingAppointmentId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBookingBusinessAppointment Cmdlet.
+This example shows how to use the Update-MgBetaBookingBusinessAppointment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

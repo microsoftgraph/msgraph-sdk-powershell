@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgWindowsUpdatesDeployment Cmdlet
+### Example 1: Using the New-MgBetaWindowsUpdatesDeployment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	"@odata.type" = "#microsoft.graph.windowsUpdates.deployment"
 	Content = @{
@@ -24,7 +24,7 @@ $params = @{
 		}
 	}
 }
-New-MgWindowsUpdatesDeployment -BodyParameter $params
+New-MgBetaWindowsUpdatesDeployment -BodyParameter $params
 ```
-This example shows how to use the New-MgWindowsUpdatesDeployment Cmdlet.
+This example shows how to use the New-MgBetaWindowsUpdatesDeployment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

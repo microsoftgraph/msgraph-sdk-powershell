@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgServicePrincipalDelegatedPermissionClassification Cmdlet
+### Example 1: Using the Remove-MgBetaServicePrincipalDelegatedPermissionClassification Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId -DelegatedPermissionClassificationId $delegatedPermissionClassificationId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId -DelegatedPermissionClassificationId $delegatedPermissionClassificationId
 ```
-This example shows how to use the Remove-MgServicePrincipalDelegatedPermissionClassification Cmdlet.
+This example shows how to use the Remove-MgBetaServicePrincipalDelegatedPermissionClassification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

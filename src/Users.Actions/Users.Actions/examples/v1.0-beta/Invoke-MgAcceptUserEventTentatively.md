@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgAcceptUserEventTentatively Cmdlet
+### Example 1: Using the Invoke-MgBetaAcceptUserEventTentatively Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Comment = "I may not be able to make this week. How about next week?"
 	SendResponse = $true
@@ -16,7 +16,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Invoke-MgAcceptUserEventTentatively -UserId $userId -EventId $eventId -BodyParameter $params
+Invoke-MgBetaAcceptUserEventTentatively -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgAcceptUserEventTentatively Cmdlet.
+This example shows how to use the Invoke-MgBetaAcceptUserEventTentatively Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
+### Example 1: Using the New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
 	"@odata.type" = "#microsoft.graph.cloudPcOnPremisesConnection"
 	DisplayName = "test-canary-02"
@@ -14,7 +14,7 @@ $params = @{
 	VirtualNetworkId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c585ad47/resourceGroups/CustomerRG/providers/Microsoft.Network/virtualNetworks/canary01-MyVNET"
 	SubnetId = "/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c585ad47/resourceGroups/CustomerRG/providers/Microsoft.Network/virtualNetworks/canary01-MyVNET/subnets/canary01-Subnet"
 }
-New-MgDeviceManagementVirtualEndpointOnPremisesConnection -BodyParameter $params
+New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection -BodyParameter $params
 ```
-This example shows how to use the New-MgDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
+This example shows how to use the New-MgBetaDeviceManagementVirtualEndpointOnPremisesConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

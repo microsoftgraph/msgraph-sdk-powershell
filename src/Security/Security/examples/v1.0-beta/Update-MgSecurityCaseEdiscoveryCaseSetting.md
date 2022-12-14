@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgSecurityCaseEdiscoveryCaseSetting Cmdlet
+### Example 1: Using the Update-MgBetaSecurityCaseEdiscoveryCaseSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	"@odata.type" = "#microsoft.graph.security.ediscoveryCaseSettings"
 	RedundancyDetection = @{
@@ -13,7 +13,7 @@ $params = @{
 		"@odata.type" = "microsoft.graph.security.ocrSettings"
 	}
 }
-Update-MgSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+Update-MgBetaSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 ```
-This example shows how to use the Update-MgSecurityCaseEdiscoveryCaseSetting Cmdlet.
+This example shows how to use the Update-MgBetaSecurityCaseEdiscoveryCaseSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

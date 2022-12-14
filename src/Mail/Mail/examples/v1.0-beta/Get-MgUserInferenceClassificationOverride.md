@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserInferenceClassificationOverride Cmdlet
+### Example 1: Using the Get-MgBetaUserInferenceClassificationOverride Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserInferenceClassificationOverride -UserId $userId
+Get-MgBetaUserInferenceClassificationOverride -UserId $userId
 ```
-This example shows how to use the Get-MgUserInferenceClassificationOverride Cmdlet.
+This example shows how to use the Get-MgBetaUserInferenceClassificationOverride Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

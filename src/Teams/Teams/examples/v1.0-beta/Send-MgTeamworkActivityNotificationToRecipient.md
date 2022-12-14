@@ -1,6 +1,6 @@
-### Example 1: Using the Send-MgTeamworkActivityNotificationToRecipient Cmdlet
+### Example 1: Using the Send-MgBetaTeamworkActivityNotificationToRecipient Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Topic = @{
 		Source = "entityUrl"
@@ -31,13 +31,13 @@ $params = @{
 		}
 	)
 }
-Send-MgTeamworkActivityNotificationToRecipient -BodyParameter $params
+Send-MgBetaTeamworkActivityNotificationToRecipient -BodyParameter $params
 ```
-This example shows how to use the Send-MgTeamworkActivityNotificationToRecipient Cmdlet.
+This example shows how to use the Send-MgBetaTeamworkActivityNotificationToRecipient Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Send-MgTeamworkActivityNotificationToRecipient Cmdlet
+### Example 2: Using the Send-MgBetaTeamworkActivityNotificationToRecipient Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Topic = @{
 		Source = "text"
@@ -69,7 +69,7 @@ $params = @{
 		}
 	)
 }
-Send-MgTeamworkActivityNotificationToRecipient -BodyParameter $params
+Send-MgBetaTeamworkActivityNotificationToRecipient -BodyParameter $params
 ```
-This example shows how to use the Send-MgTeamworkActivityNotificationToRecipient Cmdlet.
+This example shows how to use the Send-MgBetaTeamworkActivityNotificationToRecipient Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

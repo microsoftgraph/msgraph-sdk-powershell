@@ -1,16 +1,16 @@
-### Example 1: Using the Get-MgUserProfile Cmdlet
+### Example 1: Using the Get-MgBetaUserProfile Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfile -UserId $userId
+Get-MgBetaUserProfile -UserId $userId
 ```
-This example shows how to use the Get-MgUserProfile Cmdlet.
+This example shows how to use the Get-MgBetaUserProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserProfile Cmdlet
+### Example 2: Using the Get-MgBetaUserProfile Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfile -UserId $userId -ExpandProperty "names(`$select=first,last),skills(`$select=displayName)" 
+Get-MgBetaUserProfile -UserId $userId -ExpandProperty "names(`$select=first,last),skills(`$select=displayName)" 
 ```
-This example shows how to use the Get-MgUserProfile Cmdlet.
+This example shows how to use the Get-MgBetaUserProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

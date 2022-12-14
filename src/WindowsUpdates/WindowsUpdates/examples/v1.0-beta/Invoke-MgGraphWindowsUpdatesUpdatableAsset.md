@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgGraphWindowsUpdatesUpdatableAsset Cmdlet
+### Example 1: Using the Invoke-MgBetaGraphWindowsUpdatesUpdatableAsset Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	UpdateCategory = "feature"
 	MemberEntityType = "#microsoft.graph.windowsUpdates.azureADDevice"
@@ -10,7 +10,7 @@ $params = @{
 		"String"
 	)
 }
-Invoke-MgGraphWindowsUpdatesUpdatableAsset -BodyParameter $params
+Invoke-MgBetaGraphWindowsUpdatesUpdatableAsset -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgGraphWindowsUpdatesUpdatableAsset Cmdlet.
+This example shows how to use the Invoke-MgBetaGraphWindowsUpdatesUpdatableAsset Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgCommunicationCallRecordSession Cmdlet
+### Example 1: Using the Get-MgBetaCommunicationCallRecordSession Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecordSession -CallRecordId $callRecordId -ExpandProperty "segments" 
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallRecordSession -CallRecordId $callRecordId -ExpandProperty "segments" 
 ```
-This example shows how to use the Get-MgCommunicationCallRecordSession Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallRecordSession Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgCommunicationCallRecordSession Cmdlet
+### Example 2: Using the Get-MgBetaCommunicationCallRecordSession Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecordSession -CallRecordId $callRecordId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallRecordSession -CallRecordId $callRecordId
 ```
-This example shows how to use the Get-MgCommunicationCallRecordSession Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallRecordSession Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

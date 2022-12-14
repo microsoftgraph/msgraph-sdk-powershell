@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserFollowedSite Cmdlet
+### Example 1: Using the Get-MgBetaUserFollowedSite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 # A UPN can also be used as -UserId.
-Get-MgUserFollowedSite -UserId $userId
+Get-MgBetaUserFollowedSite -UserId $userId
 ```
-This example shows how to use the Get-MgUserFollowedSite Cmdlet.
+This example shows how to use the Get-MgBetaUserFollowedSite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

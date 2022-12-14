@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgPrintConnector Cmdlet
+### Example 1: Using the Update-MgBetaPrintConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 $params = @{
 	DisplayName = "ConnectorName"
 	FullyQualifiedDomainName = "CONNECTOR-MACHINE"
@@ -12,7 +12,7 @@ $params = @{
 		AltitudeInMeters = 3
 	}
 }
-Update-MgPrintConnector -PrintConnectorId $printConnectorId -BodyParameter $params
+Update-MgBetaPrintConnector -PrintConnectorId $printConnectorId -BodyParameter $params
 ```
-This example shows how to use the Update-MgPrintConnector Cmdlet.
+This example shows how to use the Update-MgBetaPrintConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

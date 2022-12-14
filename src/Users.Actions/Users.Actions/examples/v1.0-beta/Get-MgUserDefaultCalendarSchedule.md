@@ -1,6 +1,6 @@
-### Example 1: Using the Get-MgUserDefaultCalendarSchedule Cmdlet
+### Example 1: Using the Get-MgBetaUserDefaultCalendarSchedule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Schedules = @(
 		"adelev@contoso.onmicrosoft.com"
@@ -17,7 +17,7 @@ $params = @{
 	AvailabilityViewInterval = 60
 }
 # A UPN can also be used as -UserId.
-Get-MgUserDefaultCalendarSchedule -UserId $userId -BodyParameter $params
+Get-MgBetaUserDefaultCalendarSchedule -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Get-MgUserDefaultCalendarSchedule Cmdlet.
+This example shows how to use the Get-MgBetaUserDefaultCalendarSchedule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

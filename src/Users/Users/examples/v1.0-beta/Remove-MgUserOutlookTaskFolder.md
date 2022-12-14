@@ -1,8 +1,8 @@
-### Example 1: Using the Remove-MgUserOutlookTaskFolder Cmdlet
+### Example 1: Using the Remove-MgBetaUserOutlookTaskFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Remove-MgUserOutlookTaskFolder -UserId $userId -OutlookTaskFolderId $outlookTaskFolderId
+Remove-MgBetaUserOutlookTaskFolder -UserId $userId -OutlookTaskFolderId $outlookTaskFolderId
 ```
-This example shows how to use the Remove-MgUserOutlookTaskFolder Cmdlet.
+This example shows how to use the Remove-MgBetaUserOutlookTaskFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

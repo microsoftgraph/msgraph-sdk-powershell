@@ -1,16 +1,16 @@
-### Example 1: Using the Get-MgUserProfilePhone Cmdlet
+### Example 1: Using the Get-MgBetaUserProfilePhone Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfilePhone -UserId $userId -ItemPhoneId $itemPhoneId
+Get-MgBetaUserProfilePhone -UserId $userId -ItemPhoneId $itemPhoneId
 ```
-This example shows how to use the Get-MgUserProfilePhone Cmdlet.
+This example shows how to use the Get-MgBetaUserProfilePhone Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserProfilePhone Cmdlet
+### Example 2: Using the Get-MgBetaUserProfilePhone Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfilePhone -UserId $userId
+Get-MgBetaUserProfilePhone -UserId $userId
 ```
-This example shows how to use the Get-MgUserProfilePhone Cmdlet.
+This example shows how to use the Get-MgBetaUserProfilePhone Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

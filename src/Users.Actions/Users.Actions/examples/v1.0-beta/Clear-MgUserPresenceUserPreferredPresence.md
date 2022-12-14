@@ -1,9 +1,9 @@
-### Example 1: Using the Clear-MgUserPresenceUserPreferredPresence Cmdlet
+### Example 1: Using the Clear-MgBetaUserPresenceUserPreferredPresence Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 }
-Clear-MgUserPresenceUserPreferredPresence -UserId $userId -BodyParameter $params
+Clear-MgBetaUserPresenceUserPreferredPresence -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Clear-MgUserPresenceUserPreferredPresence Cmdlet.
+This example shows how to use the Clear-MgBetaUserPresenceUserPreferredPresence Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

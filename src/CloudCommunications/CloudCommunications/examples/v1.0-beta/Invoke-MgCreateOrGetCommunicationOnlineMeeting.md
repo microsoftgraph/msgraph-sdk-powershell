@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Users.Actions
+```powershell
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	StartDateTime = [System.DateTime]::Parse("2020-02-06T01:49:21.3524945+00:00")
@@ -22,8 +23,9 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgCreateOrGetUserOnlineMeeting -UserId $userId -BodyParameter $params
+Invoke-MgBetaCreateOrGetUserOnlineMeeting -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgCreateOrGetCommunicationOnlineMeeting Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Invoke-MgBetaCreateOrGetCommunicationOnlineMeeting Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -1,6 +1,6 @@
-### Example 1: Using the Set-MgGroupLicense Cmdlet
+### Example 1: Using the Set-MgBetaGroupLicense Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	AddLicenses = @(
 		@{
@@ -20,13 +20,13 @@ $params = @{
 	RemoveLicenses = @(
 	)
 }
-Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
+Set-MgBetaGroupLicense -GroupId $groupId -BodyParameter $params
 ```
-This example shows how to use the Set-MgGroupLicense Cmdlet.
+This example shows how to use the Set-MgBetaGroupLicense Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Set-MgGroupLicense Cmdlet
+### Example 2: Using the Set-MgBetaGroupLicense Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	AddLicenses = @(
 	)
@@ -35,7 +35,7 @@ $params = @{
 		"b05e124f-c7cc-45a0-a6aa-8cf78c946968"
 	)
 }
-Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
+Set-MgBetaGroupLicense -GroupId $groupId -BodyParameter $params
 ```
-This example shows how to use the Set-MgGroupLicense Cmdlet.
+This example shows how to use the Set-MgBetaGroupLicense Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

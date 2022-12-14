@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserProfileProject Cmdlet
+### Example 1: Using the New-MgBetaUserProfileProject Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	Categories = @(
 		"Branding"
@@ -24,7 +24,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfileProject -UserId $userId -BodyParameter $params
+New-MgBetaUserProfileProject -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserProfileProject Cmdlet.
+This example shows how to use the New-MgBetaUserProfileProject Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

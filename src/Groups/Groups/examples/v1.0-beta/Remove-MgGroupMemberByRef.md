@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgGroupMemberByRef Cmdlet
+### Example 1: Using the Remove-MgBetaGroupMemberByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Remove-MgGroupMemberByRef -GroupId $groupId -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.Groups
+Remove-MgBetaGroupMemberByRef -GroupId $groupId -DirectoryObjectId $directoryObjectId
 ```
-This example shows how to use the Remove-MgGroupMemberByRef Cmdlet.
+This example shows how to use the Remove-MgBetaGroupMemberByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

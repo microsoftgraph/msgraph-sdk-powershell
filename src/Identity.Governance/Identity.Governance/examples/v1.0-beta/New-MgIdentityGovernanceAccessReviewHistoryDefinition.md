@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgIdentityGovernanceAccessReviewHistoryDefinition Cmdlet
+### Example 1: Using the New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Last quarter's group reviews April 2021"
 	Decisions = @(
@@ -39,7 +39,7 @@ $params = @{
 		}
 	)
 }
-New-MgIdentityGovernanceAccessReviewHistoryDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityGovernanceAccessReviewHistoryDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

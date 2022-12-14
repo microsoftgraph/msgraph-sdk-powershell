@@ -1,30 +1,30 @@
-### Example 1: Using the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet
+### Example 1: Using the Add-MgBetaSiteListContentTypeCopyFromContentTypeHub Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	ContentTypeId = "String"
 }
-Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
+Add-MgBetaSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
-This example shows how to use the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+This example shows how to use the Add-MgBetaSiteListContentTypeCopyFromContentTypeHub Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet
+### Example 2: Using the Add-MgBetaSiteListContentTypeCopyFromContentTypeHub Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	ContentTypeId = "String"
 }
-Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
+Add-MgBetaSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
-This example shows how to use the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+This example shows how to use the Add-MgBetaSiteListContentTypeCopyFromContentTypeHub Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet
+### Example 3: Using the Add-MgBetaSiteListContentTypeCopyFromContentTypeHub Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	ContentTypeId = "0x0101"
 }
-Add-MgSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
+Add-MgBetaSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
-This example shows how to use the Add-MgSiteListContentTypeCopyFromContentTypeHub Cmdlet.
+This example shows how to use the Add-MgBetaSiteListContentTypeCopyFromContentTypeHub Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

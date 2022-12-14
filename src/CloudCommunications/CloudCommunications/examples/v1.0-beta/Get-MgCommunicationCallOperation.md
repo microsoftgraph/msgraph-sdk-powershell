@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgCommunicationCallOperation Cmdlet
+### Example 1: Using the Get-MgBetaCommunicationCallOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallOperation -CallId $callId -CommsOperationId $commsOperationId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaCommunicationCallOperation -CallId $callId -CommsOperationId $commsOperationId
 ```
-This example shows how to use the Get-MgCommunicationCallOperation Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

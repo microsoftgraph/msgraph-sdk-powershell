@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance
 ```
-This example shows how to use the Get-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantAggregatedPolicyCompliance Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

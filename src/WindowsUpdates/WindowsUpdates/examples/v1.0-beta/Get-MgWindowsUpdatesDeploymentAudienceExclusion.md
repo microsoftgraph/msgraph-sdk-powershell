@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgWindowsUpdatesDeploymentAudienceExclusion Cmdlet
+### Example 1: Using the Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
-Get-MgWindowsUpdatesDeploymentAudienceExclusion -DeploymentId $deploymentId
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
+Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion -DeploymentId $deploymentId
 ```
-This example shows how to use the Get-MgWindowsUpdatesDeploymentAudienceExclusion Cmdlet.
+This example shows how to use the Get-MgBetaWindowsUpdatesDeploymentAudienceExclusion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

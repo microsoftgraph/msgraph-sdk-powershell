@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserActivityStatistics Cmdlet
+### Example 1: Using the Get-MgBetaUserActivityStatistics Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserActivityStatistics -UserId $userId
+Get-MgBetaUserActivityStatistics -UserId $userId
 ```
-This example shows how to use the Get-MgUserActivityStatistics Cmdlet.
+This example shows how to use the Get-MgBetaUserActivityStatistics Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

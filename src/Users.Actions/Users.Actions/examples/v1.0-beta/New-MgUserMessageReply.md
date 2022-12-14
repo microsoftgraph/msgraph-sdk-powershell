@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserMessageReply Cmdlet
+### Example 1: Using the New-MgBetaUserMessageReply Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Message = @{
 		ToRecipients = @(
@@ -21,7 +21,7 @@ $params = @{
 	Comment = "Samantha, Randi, would you name the group if the project is approved, please?"
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessageReply -UserId $userId -MessageId $messageId -BodyParameter $params
+New-MgBetaUserMessageReply -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserMessageReply Cmdlet.
+This example shows how to use the New-MgBetaUserMessageReply Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

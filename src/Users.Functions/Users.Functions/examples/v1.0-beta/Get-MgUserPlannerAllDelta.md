@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserPlannerAllDelta Cmdlet
+### Example 1: Using the Get-MgBetaUserPlannerAllDelta Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Functions
+Import-Module Microsoft.Graph.Beta.Users.Functions
 # A UPN can also be used as -UserId.
-Get-MgUserPlannerAllDelta -UserId $userId
+Get-MgBetaUserPlannerAllDelta -UserId $userId
 ```
-This example shows how to use the Get-MgUserPlannerAllDelta Cmdlet.
+This example shows how to use the Get-MgBetaUserPlannerAllDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Sites
+```powershell
+Import-Module Microsoft.Graph.Beta.Sites
 
 $params = @{
 	SourceFile = @{
@@ -12,8 +13,9 @@ $params = @{
 	DestinationFileName = "newname.txt"
 }
 
-Copy-MgSiteContentTypeToDefaultContentLocation -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
+Copy-MgBetaSiteContentTypeToDefaultContentLocation -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
 ```
-This example shows how to use the Copy-MgGroupDriveListContentTypeToDefaultContentLocation Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Copy-MgBetaGroupDriveListContentTypeToDefaultContentLocation Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgCreateOrGetUserOnlineMeeting Cmdlet
+### Example 1: Using the Invoke-MgBetaCreateOrGetUserOnlineMeeting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	StartDateTime = [System.DateTime]::Parse("2020-02-06T01:49:21.3524945+00:00")
 	EndDateTime = [System.DateTime]::Parse("2020-02-06T02:19:21.3524945+00:00")
@@ -21,13 +21,13 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Invoke-MgCreateOrGetUserOnlineMeeting -UserId $userId -BodyParameter $params
+Invoke-MgBetaCreateOrGetUserOnlineMeeting -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgCreateOrGetUserOnlineMeeting Cmdlet.
+This example shows how to use the Invoke-MgBetaCreateOrGetUserOnlineMeeting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Invoke-MgCreateOrGetUserOnlineMeeting Cmdlet
+### Example 2: Using the Invoke-MgBetaCreateOrGetUserOnlineMeeting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	ChatInfo = @{
 		ThreadId = "19:7ebda77322dd4505ac4dedb5b67df076@thread.tacv2"
@@ -50,7 +50,7 @@ $params = @{
 	Subject = "Create a meeting with customId provided"
 }
 # A UPN can also be used as -UserId.
-Invoke-MgCreateOrGetUserOnlineMeeting -UserId $userId -BodyParameter $params
+Invoke-MgBetaCreateOrGetUserOnlineMeeting -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgCreateOrGetUserOnlineMeeting Cmdlet.
+This example shows how to use the Invoke-MgBetaCreateOrGetUserOnlineMeeting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

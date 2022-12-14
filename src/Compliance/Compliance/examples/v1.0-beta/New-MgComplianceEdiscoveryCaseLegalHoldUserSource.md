@@ -1,11 +1,11 @@
-### Example 1: Using the New-MgComplianceEdiscoveryCaseLegalHoldUserSource Cmdlet
+### Example 1: Using the New-MgBetaComplianceEdiscoveryCaseLegalHoldUserSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	Email = "adelev@contoso.com"
 	IncludedSources = "mailbox"
 }
-New-MgComplianceEdiscoveryCaseLegalHoldUserSource -CaseId $caseId -LegalHoldId $legalHoldId -BodyParameter $params
+New-MgBetaComplianceEdiscoveryCaseLegalHoldUserSource -CaseId $caseId -LegalHoldId $legalHoldId -BodyParameter $params
 ```
-This example shows how to use the New-MgComplianceEdiscoveryCaseLegalHoldUserSource Cmdlet.
+This example shows how to use the New-MgBetaComplianceEdiscoveryCaseLegalHoldUserSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

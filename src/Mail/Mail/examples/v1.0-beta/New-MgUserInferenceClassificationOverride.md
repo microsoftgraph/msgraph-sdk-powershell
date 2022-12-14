@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserInferenceClassificationOverride Cmdlet
+### Example 1: Using the New-MgBetaUserInferenceClassificationOverride Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	ClassifyAs = "focused"
 	SenderEmailAddress = @{
@@ -9,7 +9,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserInferenceClassificationOverride -UserId $userId -BodyParameter $params
+New-MgBetaUserInferenceClassificationOverride -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserInferenceClassificationOverride Cmdlet.
+This example shows how to use the New-MgBetaUserInferenceClassificationOverride Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
-### Example 1: Using the Restore-MgDirectoryDeletedItem Cmdlet
+### Example 1: Using the Restore-MgBetaDirectoryDeletedItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Restore-MgDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Restore-MgBetaDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
 ```
-This example shows how to use the Restore-MgDirectoryDeletedItem Cmdlet.
+This example shows how to use the Restore-MgBetaDirectoryDeletedItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

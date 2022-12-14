@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSecurityAction Cmdlet
+### Example 1: Using the New-MgBetaSecurityAction Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Name = "BlockIp"
 	ActionReason = "Test"
@@ -15,7 +15,7 @@ $params = @{
 		Vendor = "Microsoft"
 	}
 }
-New-MgSecurityAction -BodyParameter $params
+New-MgBetaSecurityAction -BodyParameter $params
 ```
-This example shows how to use the New-MgSecurityAction Cmdlet.
+This example shows how to use the New-MgBetaSecurityAction Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

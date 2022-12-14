@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgIdentityGovernanceLifecycleWorkflowNewVersion Cmdlet
+### Example 1: Using the New-MgBetaIdentityGovernanceLifecycleWorkflowNewVersion Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	Workflow = @{
 		Description = "Configure new hire tasks for onboarding employees on their first day"
@@ -41,7 +41,7 @@ $params = @{
 		)
 	}
 }
-New-MgIdentityGovernanceLifecycleWorkflowNewVersion -WorkflowId $workflowId -BodyParameter $params
+New-MgBetaIdentityGovernanceLifecycleWorkflowNewVersion -WorkflowId $workflowId -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityGovernanceLifecycleWorkflowNewVersion Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceLifecycleWorkflowNewVersion Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

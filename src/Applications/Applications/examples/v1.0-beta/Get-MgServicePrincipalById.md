@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.DirectoryObjects
+```powershell
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 
 $params = @{
 	Ids = @(
@@ -16,8 +17,9 @@ $params = @{
 	)
 }
 
-Get-MgDirectoryObjectById -BodyParameter $params
+Get-MgBetaDirectoryObjectById -BodyParameter $params
 ```
-This example shows how to use the Get-MgServicePrincipalById Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaServicePrincipalById Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

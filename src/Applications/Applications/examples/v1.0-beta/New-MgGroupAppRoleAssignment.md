@@ -7,20 +7,20 @@ $appRoleAssignment = @{
   "appRoleId"= "00000000-0000-0000-0000-000000000000"
   }
 
-New-MgGroupAppRoleAssignment -GroupId 'f07a8d78-f18c-4c02-b339-9ebace025122' -BodyParameter $appRoleAssignment | 
+New-MgBetaGroupAppRoleAssignment -GroupId 'f07a8d78-f18c-4c02-b339-9ebace025122' -BodyParameter $appRoleAssignment | 
   Format-List
 
 AppRoleId            : 00000000-0000-0000-0000-000000000000
 CreatedDateTime      : 8/19/2021 11:25:25 AM
 DeletedDateTime      :
-Id                   : eI168IzxAkyzOZ66zgJRIqVVeeA1CVFKmaBn-MGn0Bw
+Id                   : eI168IzxAkyzOZ66zgJRIqVVeeA1CVFKmaBn-MgBetan0Bw
 PrincipalDisplayName : All Employees
 PrincipalId          : f07a8d78-f18c-4c02-b339-9ebace025122
 PrincipalType        : Group
 ResourceDisplayName  : Office 365 SharePoint Online
 ResourceId           : 1c48f923-4fbb-4d37-b772-4d577eefec9e
 AdditionalProperties : {[@odata.context, https://graph.microsoft.com/v1.0/$metadata#groups('f07a8d78-f18c-4c02-b339-9ebace025122')/appRoleAssignments/$entity], [@odata.id, https://graph.microsoft.com/v2/fb625e04-52aa-42da-
-                       b10d-14f1195d665f/directoryObjects/$/Microsoft.DirectoryServices.Group('f07a8d78-f18c-4c02-b339-9ebace025122')/appRoleAssignments/eI168IzxAkyzOZ66zgJRIqVVeeA1CVFKmaBn-MGn0Bw]}
+                       b10d-14f1195d665f/directoryObjects/$/Microsoft.DirectoryServices.Group('f07a8d78-f18c-4c02-b339-9ebace025122')/appRoleAssignments/eI168IzxAkyzOZ66zgJRIqVVeeA1CVFKmaBn-MgBetan0Bw]}
 ```
 
 In this example, the first command defines the `$appRoleAssignment` variable that defines the following:

@@ -1,8 +1,8 @@
-### Example 1: Using the Remove-MgUserEvent Cmdlet
+### Example 1: Using the Remove-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Remove-MgUserEvent -UserId $userId -EventId $eventId
+Remove-MgBetaUserEvent -UserId $userId -EventId $eventId
 ```
-This example shows how to use the Remove-MgUserEvent Cmdlet.
+This example shows how to use the Remove-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

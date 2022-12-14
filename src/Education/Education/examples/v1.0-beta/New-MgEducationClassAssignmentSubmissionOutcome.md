@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgEducationClassAssignmentSubmissionOutcome Cmdlet
+### Example 1: Using the New-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationFeedbackResourceOutcome"
 	FeedbackResource = @{
@@ -8,7 +8,7 @@ $params = @{
 		DisplayName = "Document1.docx"
 	}
 }
-New-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+New-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
-This example shows how to use the New-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

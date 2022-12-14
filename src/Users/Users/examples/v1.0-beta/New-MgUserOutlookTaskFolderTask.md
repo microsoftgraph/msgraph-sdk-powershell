@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserOutlookTaskFolderTask Cmdlet
+### Example 1: Using the New-MgBetaUserOutlookTaskFolderTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	Subject = "Shop for dinner"
 	StartDateTime = @{
@@ -13,7 +13,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserOutlookTaskFolderTask -UserId $userId -OutlookTaskFolderId $outlookTaskFolderId -BodyParameter $params
+New-MgBetaUserOutlookTaskFolderTask -UserId $userId -OutlookTaskFolderId $outlookTaskFolderId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserOutlookTaskFolderTask Cmdlet.
+This example shows how to use the New-MgBetaUserOutlookTaskFolderTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

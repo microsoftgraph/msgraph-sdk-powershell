@@ -1,11 +1,11 @@
-### Example 1: Using the Get-MgUserOnenoteNotebookFromWebUrl Cmdlet
+### Example 1: Using the Get-MgBetaUserOnenoteNotebookFromWebUrl Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	WebUrl = "webUrl value"
 }
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteNotebookFromWebUrl -UserId $userId -BodyParameter $params
+Get-MgBetaUserOnenoteNotebookFromWebUrl -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Get-MgUserOnenoteNotebookFromWebUrl Cmdlet.
+This example shows how to use the Get-MgBetaUserOnenoteNotebookFromWebUrl Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

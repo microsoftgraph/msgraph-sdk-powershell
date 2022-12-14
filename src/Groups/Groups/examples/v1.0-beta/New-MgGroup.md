@@ -1,7 +1,7 @@
 ### Example 1: Create a new group
 
 ```powershell
-New-MgGroup -DisplayName 'Test Group' -MailEnabled:$False  -MailNickName 'testgroup' -SecurityEnabled
+New-MgBetaGroup -DisplayName 'Test Group' -MailEnabled:$False  -MailNickName 'testgroup' -SecurityEnabled
 
 Id                                   DisplayName Description GroupTypes
 --                                   ----------- ----------- ----------

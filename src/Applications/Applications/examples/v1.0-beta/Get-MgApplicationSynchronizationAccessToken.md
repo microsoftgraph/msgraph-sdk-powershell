@@ -1,6 +1,6 @@
-### Example 1: Using the Get-MgApplicationSynchronizationAccessToken Cmdlet
+### Example 1: Using the Get-MgBetaApplicationSynchronizationAccessToken Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	Credentials = @(
 		@{
@@ -8,7 +8,7 @@ $params = @{
 		}
 	)
 }
-Get-MgApplicationSynchronizationAccessToken -ApplicationId $applicationId -BodyParameter $params
+Get-MgBetaApplicationSynchronizationAccessToken -ApplicationId $applicationId -BodyParameter $params
 ```
-This example shows how to use the Get-MgApplicationSynchronizationAccessToken Cmdlet.
+This example shows how to use the Get-MgBetaApplicationSynchronizationAccessToken Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

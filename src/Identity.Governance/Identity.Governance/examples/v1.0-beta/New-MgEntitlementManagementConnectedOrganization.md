@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgEntitlementManagementConnectedOrganization Cmdlet
+### Example 1: Using the New-MgBetaEntitlementManagementConnectedOrganization Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Connected organization name"
 	Description = "Connected organization description"
@@ -13,7 +13,7 @@ $params = @{
 	)
 	State = "proposed"
 }
-New-MgEntitlementManagementConnectedOrganization -BodyParameter $params
+New-MgBetaEntitlementManagementConnectedOrganization -BodyParameter $params
 ```
-This example shows how to use the New-MgEntitlementManagementConnectedOrganization Cmdlet.
+This example shows how to use the New-MgBetaEntitlementManagementConnectedOrganization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

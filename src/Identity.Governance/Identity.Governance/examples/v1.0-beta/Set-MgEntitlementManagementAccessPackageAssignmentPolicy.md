@@ -1,6 +1,6 @@
-### Example 1: Using the Set-MgEntitlementManagementAccessPackageAssignmentPolicy Cmdlet
+### Example 1: Using the Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	Id = "4540a08f-8ab5-43f6-a923-015275799197"
 	DisplayName = "policy with custom access package workflow extension"
@@ -17,13 +17,13 @@ $params = @{
 	CustomExtensionHandlers = @(
 	)
 }
-Set-MgEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageAssignmentPolicyId $accessPackageAssignmentPolicyId -BodyParameter $params
+Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageAssignmentPolicyId $accessPackageAssignmentPolicyId -BodyParameter $params
 ```
-This example shows how to use the Set-MgEntitlementManagementAccessPackageAssignmentPolicy Cmdlet.
+This example shows how to use the Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Set-MgEntitlementManagementAccessPackageAssignmentPolicy Cmdlet
+### Example 2: Using the Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	Id = "b2eba9a1-b357-42ee-83a8-336522ed6cbf"
 	AccessPackageId = "4c02f928-7752-49aa-8fc8-e286d973a965"
@@ -97,7 +97,7 @@ $params = @{
 		}
 	)
 }
-Set-MgEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageAssignmentPolicyId $accessPackageAssignmentPolicyId -BodyParameter $params
+Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageAssignmentPolicyId $accessPackageAssignmentPolicyId -BodyParameter $params
 ```
-This example shows how to use the Set-MgEntitlementManagementAccessPackageAssignmentPolicy Cmdlet.
+This example shows how to use the Set-MgBetaEntitlementManagementAccessPackageAssignmentPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

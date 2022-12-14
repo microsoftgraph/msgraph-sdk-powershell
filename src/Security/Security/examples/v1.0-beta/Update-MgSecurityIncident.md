@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgSecurityIncident Cmdlet
+### Example 1: Using the Update-MgBetaSecurityIncident Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Classification = "TruePositive"
 	Determination = "MultiStagedAttack"
@@ -8,7 +8,7 @@ $params = @{
 		"Demo"
 	)
 }
-Update-MgSecurityIncident -IncidentId $incidentId -BodyParameter $params
+Update-MgBetaSecurityIncident -IncidentId $incidentId -BodyParameter $params
 ```
-This example shows how to use the Update-MgSecurityIncident Cmdlet.
+This example shows how to use the Update-MgBetaSecurityIncident Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

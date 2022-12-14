@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserProfileNote Cmdlet
+### Example 1: Using the New-MgBetaUserProfileNote Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	Detail = @{
 		ContentType = "text"
@@ -9,7 +9,7 @@ $params = @{
 	DisplayName = "About Me"
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfileNote -UserId $userId -BodyParameter $params
+New-MgBetaUserProfileNote -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserProfileNote Cmdlet.
+This example shows how to use the New-MgBetaUserProfileNote Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

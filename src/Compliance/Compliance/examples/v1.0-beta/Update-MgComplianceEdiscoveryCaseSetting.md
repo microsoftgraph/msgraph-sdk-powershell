@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgComplianceEdiscoveryCaseSetting Cmdlet
+### Example 1: Using the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	RedundancyDetection = @{
 		IsEnabled = $false
@@ -19,13 +19,13 @@ $params = @{
 		MaxImageSize = 12000
 	}
 }
-Update-MgComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
+Update-MgBetaComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
 ```
-This example shows how to use the Update-MgComplianceEdiscoveryCaseSetting Cmdlet.
+This example shows how to use the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgComplianceEdiscoveryCaseSetting Cmdlet
+### Example 2: Using the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	RedundancyDetection = @{
 		IsEnabled = $false
@@ -44,7 +44,7 @@ $params = @{
 		MaxImageSize = 12000
 	}
 }
-Update-MgComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
+Update-MgBetaComplianceEdiscoveryCaseSetting -CaseId $caseId -BodyParameter $params
 ```
-This example shows how to use the Update-MgComplianceEdiscoveryCaseSetting Cmdlet.
+This example shows how to use the Update-MgBetaComplianceEdiscoveryCaseSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

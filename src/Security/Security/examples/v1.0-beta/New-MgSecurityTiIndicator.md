@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSecurityTiIndicator Cmdlet
+### Example 1: Using the New-MgBetaSecurityTiIndicator Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Action = "alert"
 	ActivityGroupNames = @(
@@ -22,7 +22,7 @@ $params = @{
 	ThreatType = "WatchList"
 	TlpLevel = "green"
 }
-New-MgSecurityTiIndicator -BodyParameter $params
+New-MgBetaSecurityTiIndicator -BodyParameter $params
 ```
-This example shows how to use the New-MgSecurityTiIndicator Cmdlet.
+This example shows how to use the New-MgBetaSecurityTiIndicator Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

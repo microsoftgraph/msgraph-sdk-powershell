@@ -1,10 +1,10 @@
-### Example 1: Using the Update-MgIdentityUserFlowAttribute Cmdlet
+### Example 1: Using the Update-MgBetaIdentityUserFlowAttribute Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Description = "Your new hobby"
 }
-Update-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId -BodyParameter $params
+Update-MgBetaIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId -BodyParameter $params
 ```
-This example shows how to use the Update-MgIdentityUserFlowAttribute Cmdlet.
+This example shows how to use the Update-MgBetaIdentityUserFlowAttribute Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

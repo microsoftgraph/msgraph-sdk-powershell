@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgSearchBookmark Cmdlet
+### Example 1: Using the Remove-MgBetaSearchBookmark Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Remove-MgSearchBookmark -BookmarkId $bookmarkId
+Import-Module Microsoft.Graph.Beta.Search
+Remove-MgBetaSearchBookmark -BookmarkId $bookmarkId
 ```
-This example shows how to use the Remove-MgSearchBookmark Cmdlet.
+This example shows how to use the Remove-MgBetaSearchBookmark Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
 ### Example 1: Create an access package policy
 
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 $allowedRequestors = @(@{
   "@odata.type" = '#microsoft.graph.singleUser'
   "isBackup" = $false
@@ -23,7 +23,7 @@ $requestApprovalSettings = @{
   "approvalStages"= '[]'
   }
 
-New-MgEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageId 'bc041fda-b3ba-41fc-b911-ca95f7aac656' -DisplayName 'Specific users' -Description 'Specific users can request assignment'  -DurationInDays 30 -RequestorSettings $requestorSettings -RequestApprovalSettings $requestApprovalSettings
+New-MgBetaEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageId 'bc041fda-b3ba-41fc-b911-ca95f7aac656' -DisplayName 'Specific users' -Description 'Specific users can request assignment'  -DurationInDays 30 -RequestorSettings $requestorSettings -RequestApprovalSettings $requestApprovalSettings
 
 AccessPackage           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage
 AccessPackageCatalog    : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageCatalog

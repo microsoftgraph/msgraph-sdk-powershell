@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgBookingBusinessService Cmdlet
+### Example 1: Using the Remove-MgBetaBookingBusinessService Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Remove-MgBookingBusinessService -BookingBusinessId $bookingBusinessId -BookingServiceId $bookingServiceId
+Import-Module Microsoft.Graph.Beta.Bookings
+Remove-MgBetaBookingBusinessService -BookingBusinessId $bookingBusinessId -BookingServiceId $bookingServiceId
 ```
-This example shows how to use the Remove-MgBookingBusinessService Cmdlet.
+This example shows how to use the Remove-MgBetaBookingBusinessService Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

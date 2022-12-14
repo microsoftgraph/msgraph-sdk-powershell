@@ -1,8 +1,8 @@
-### Example 1: Using the Complete-MgUserOutlookTask Cmdlet
+### Example 1: Using the Complete-MgBetaUserOutlookTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 # A UPN can also be used as -UserId.
-Complete-MgUserOutlookTask -UserId $userId -OutlookTaskId $outlookTaskId
+Complete-MgBetaUserOutlookTask -UserId $userId -OutlookTaskId $outlookTaskId
 ```
-This example shows how to use the Complete-MgUserOutlookTask Cmdlet.
+This example shows how to use the Complete-MgBetaUserOutlookTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

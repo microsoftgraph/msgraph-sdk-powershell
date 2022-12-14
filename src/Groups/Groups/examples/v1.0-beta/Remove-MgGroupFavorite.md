@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgGroupFavorite Cmdlet
+### Example 1: Using the Remove-MgBetaGroupFavorite Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Remove-MgGroupFavorite -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Remove-MgBetaGroupFavorite -GroupId $groupId
 ```
-This example shows how to use the Remove-MgGroupFavorite Cmdlet.
+This example shows how to use the Remove-MgBetaGroupFavorite Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

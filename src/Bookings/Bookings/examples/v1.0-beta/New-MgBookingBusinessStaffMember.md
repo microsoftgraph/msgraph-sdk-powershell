@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgBookingBusinessStaffMember Cmdlet
+### Example 1: Using the New-MgBetaBookingBusinessStaffMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
 	"@odata.type" = "#microsoft.graph.bookingStaffMember"
 	ColorIndex = 1
@@ -80,7 +80,7 @@ $params = @{
 	)
 	IsEmailNotificationEnabled = $false
 }
-New-MgBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId -BodyParameter $params
+New-MgBetaBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId -BodyParameter $params
 ```
-This example shows how to use the New-MgBookingBusinessStaffMember Cmdlet.
+This example shows how to use the New-MgBetaBookingBusinessStaffMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

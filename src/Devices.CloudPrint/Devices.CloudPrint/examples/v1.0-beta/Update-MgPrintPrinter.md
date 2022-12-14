@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgPrintPrinter Cmdlet
+### Example 1: Using the Update-MgBetaPrintPrinter Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 $params = @{
 	Name = "PrinterName"
 	Location = @{
@@ -9,7 +9,7 @@ $params = @{
 		AltitudeInMeters = 3
 	}
 }
-Update-MgPrintPrinter -PrinterId $printerId -BodyParameter $params
+Update-MgBetaPrintPrinter -PrinterId $printerId -BodyParameter $params
 ```
-This example shows how to use the Update-MgPrintPrinter Cmdlet.
+This example shows how to use the Update-MgBetaPrintPrinter Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

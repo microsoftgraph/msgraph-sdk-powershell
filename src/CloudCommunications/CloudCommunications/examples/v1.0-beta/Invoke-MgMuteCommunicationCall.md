@@ -1,10 +1,10 @@
-### Example 1: Using the Invoke-MgMuteCommunicationCall Cmdlet
+### Example 1: Using the Invoke-MgBetaMuteCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	ClientContext = "clientContext-value"
 }
-Invoke-MgMuteCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaMuteCommunicationCall -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgMuteCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaMuteCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

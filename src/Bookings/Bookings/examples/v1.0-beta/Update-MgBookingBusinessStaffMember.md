@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgBookingBusinessStaffMember Cmdlet
+### Example 1: Using the Update-MgBetaBookingBusinessStaffMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
 	WorkingHours = @(
 		@{
@@ -65,7 +65,7 @@ $params = @{
 		}
 	)
 }
-Update-MgBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId -BookingStaffMemberId $bookingStaffMemberId -BodyParameter $params
+Update-MgBetaBookingBusinessStaffMember -BookingBusinessId $bookingBusinessId -BookingStaffMemberId $bookingStaffMemberId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBookingBusinessStaffMember Cmdlet.
+This example shows how to use the Update-MgBetaBookingBusinessStaffMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

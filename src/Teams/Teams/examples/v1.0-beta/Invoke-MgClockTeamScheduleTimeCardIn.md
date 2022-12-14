@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgClockTeamScheduleTimeCardIn Cmdlet
+### Example 1: Using the Invoke-MgBetaClockTeamScheduleTimeCardIn Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	AtAprovedLocation = $true
 	Notes = @{
@@ -8,7 +8,7 @@ $params = @{
 		Content = "clock in notes"
 	}
 }
-Invoke-MgClockTeamScheduleTimeCardIn -TeamId $teamId -BodyParameter $params
+Invoke-MgBetaClockTeamScheduleTimeCardIn -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgClockTeamScheduleTimeCardIn Cmdlet.
+This example shows how to use the Invoke-MgBetaClockTeamScheduleTimeCardIn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

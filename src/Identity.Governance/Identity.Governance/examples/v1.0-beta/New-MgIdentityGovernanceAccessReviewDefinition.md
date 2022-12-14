@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 1: Using the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Review employee access to LinkedIn"
 	DescriptionForAdmins = "Review employee access to LinkedIn"
@@ -63,13 +63,13 @@ $params = @{
 		}
 	}
 }
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 2: Using the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Group Multi-stage Access Review"
 	DescriptionForAdmins = "New scheduled access review"
@@ -132,13 +132,13 @@ $params = @{
 		DecisionHistoriesForReviewersEnabled = $true
 	}
 }
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 3: Using the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Review inactive guests on teams"
 	DescriptionForAdmins = "Control guest user access to our teams."
@@ -188,13 +188,13 @@ $params = @{
 		AutoApplyDecisionsEnabled = $true
 	}
 }
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 4: Using the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Test create"
 	DescriptionForAdmins = "New scheduled access review"
@@ -234,13 +234,13 @@ $params = @{
 		)
 	}
 }
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet
+### Example 5: Using the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Test create"
 	DescriptionForAdmins = "New scheduled access review"
@@ -276,7 +276,7 @@ $params = @{
 		}
 	}
 }
-New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

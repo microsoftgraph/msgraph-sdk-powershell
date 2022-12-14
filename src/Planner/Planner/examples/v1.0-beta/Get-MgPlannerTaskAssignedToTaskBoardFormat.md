@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgPlannerTaskAssignedToTaskBoardFormat Cmdlet
+### Example 1: Using the Get-MgBetaPlannerTaskAssignedToTaskBoardFormat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
-Get-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId
+Import-Module Microsoft.Graph.Beta.Planner
+Get-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId
 ```
-This example shows how to use the Get-MgPlannerTaskAssignedToTaskBoardFormat Cmdlet.
+This example shows how to use the Get-MgBetaPlannerTaskAssignedToTaskBoardFormat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

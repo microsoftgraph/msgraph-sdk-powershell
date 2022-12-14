@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgUserSettingShiftPreference Cmdlet
+### Example 1: Using the Get-MgBetaUserSettingShiftPreference Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
-Get-MgUserSettingShiftPreference -UserId $userId
+Import-Module Microsoft.Graph.Beta.Users
+Get-MgBetaUserSettingShiftPreference -UserId $userId
 ```
-This example shows how to use the Get-MgUserSettingShiftPreference Cmdlet.
+This example shows how to use the Get-MgBetaUserSettingShiftPreference Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

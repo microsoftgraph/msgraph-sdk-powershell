@@ -1,42 +1,42 @@
-### Example 1: Using the Get-MgDevice Cmdlet
+### Example 1: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice -DeviceId $deviceId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice -DeviceId $deviceId
 ```
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgDevice Cmdlet
+### Example 2: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice -DeviceId $deviceId -Property "id,extensionAttributes" 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice -DeviceId $deviceId -Property "id,extensionAttributes" 
 ```
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgDevice Cmdlet
+### Example 3: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice -Filter "extensionAttributes/extensionAttribute1 eq 'BYOD-Device'" -CountVariable CountVar -ConsistencyLevel eventual 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice -Filter "extensionAttributes/extensionAttribute1 eq 'BYOD-Device'" -CountVariable CountVar -ConsistencyLevel eventual 
 ```
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Get-MgDevice Cmdlet
+### Example 4: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice
 ```
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the Get-MgDevice Cmdlet
+### Example 5: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice -Property "id,extensionAttributes" 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice -Property "id,extensionAttributes" 
 ```
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 6: Using the Get-MgDevice Cmdlet
+### Example 6: Using the Get-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDevice -Filter "startswith(displayName, 'a')" -CountVariable CountVar -Top 1 -Sort "displayName" -ConsistencyLevel eventual 
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDevice -Filter "startswith(displayName, 'a')" -CountVariable CountVar -Top 1 -Sort "displayName" -ConsistencyLevel eventual 
 ```
-This example shows how to use the Get-MgDevice Cmdlet.
+This example shows how to use the Get-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgPolicyTokenLifetimePolicy Cmdlet
+### Example 1: Using the Remove-MgBetaPolicyTokenLifetimePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId
 ```
-This example shows how to use the Remove-MgPolicyTokenLifetimePolicy Cmdlet.
+This example shows how to use the Remove-MgBetaPolicyTokenLifetimePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

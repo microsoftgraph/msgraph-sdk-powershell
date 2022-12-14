@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgDevice Cmdlet
+### Example 1: Using the New-MgBetaDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	AccountEnabled = $true
 	AlternativeSecurityIds = @(
@@ -15,7 +15,7 @@ $params = @{
 	DeviceMetadata = "deviceMetadata-value"
 	DeviceVersion = 99
 }
-New-MgDevice -BodyParameter $params
+New-MgBetaDevice -BodyParameter $params
 ```
-This example shows how to use the New-MgDevice Cmdlet.
+This example shows how to use the New-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

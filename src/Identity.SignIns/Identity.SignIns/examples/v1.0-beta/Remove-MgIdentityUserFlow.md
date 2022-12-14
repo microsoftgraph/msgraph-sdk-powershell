@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgIdentityUserFlow Cmdlet
+### Example 1: Using the Remove-MgBetaIdentityUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgIdentityUserFlow -IdentityUserFlowId $identityUserFlowId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Remove-MgBetaIdentityUserFlow -IdentityUserFlowId $identityUserFlowId
 ```
-This example shows how to use the Remove-MgIdentityUserFlow Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
 ### Example 1: Get members of a group
 
 ```powershell
-Get-MgGroupMember -GroupId '7b7be3ab-d2b3-441c-8111-2e89b8493fff'
+Get-MgBetaGroupMember -GroupId '7b7be3ab-d2b3-441c-8111-2e89b8493fff'
 
 Id                                   DeletedDateTime
 --                                   ---------------

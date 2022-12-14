@@ -1,11 +1,11 @@
-### Example 1: Using the New-MgTenantRelationshipManagedTenantTag Cmdlet
+### Example 1: Using the New-MgBetaTenantRelationshipManagedTenantTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
+Import-Module Microsoft.Graph.Beta.ManagedTenants
 $params = @{
 	DisplayName = "Support"
 	Description = "Tenants that have purchased extended support"
 }
-New-MgTenantRelationshipManagedTenantTag -BodyParameter $params
+New-MgBetaTenantRelationshipManagedTenantTag -BodyParameter $params
 ```
-This example shows how to use the New-MgTenantRelationshipManagedTenantTag Cmdlet.
+This example shows how to use the New-MgBetaTenantRelationshipManagedTenantTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

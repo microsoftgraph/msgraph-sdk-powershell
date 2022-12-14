@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet
+### Example 1: Using the New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
 	"@odata.type" = "#microsoft.graph.cloudPcProvisioningPolicy"
 	Description = "Description value"
@@ -18,7 +18,7 @@ $params = @{
 		Language = "en-US"
 	}
 }
-New-MgDeviceManagementVirtualEndpointProvisioningPolicy -BodyParameter $params
+New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet.
+This example shows how to use the New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

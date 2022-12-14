@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgTeamworkWorkforceIntegration Cmdlet
+### Example 1: Using the Update-MgBetaTeamworkWorkforceIntegration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "displayName-value"
 	ApiVersion = 99
@@ -12,7 +12,7 @@ $params = @{
 	Url = "url-value"
 	Supports = "supports-value"
 }
-Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
+Update-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
 ```
-This example shows how to use the Update-MgTeamworkWorkforceIntegration Cmdlet.
+This example shows how to use the Update-MgBetaTeamworkWorkforceIntegration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

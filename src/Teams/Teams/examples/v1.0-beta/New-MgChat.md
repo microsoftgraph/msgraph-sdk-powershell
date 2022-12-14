@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgChat Cmdlet
+### Example 1: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "group"
 	Topic = "Group chat title"
@@ -28,13 +28,13 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgChat Cmdlet
+### Example 2: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "group"
 	Topic = "Group chat title"
@@ -62,13 +62,13 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgChat Cmdlet
+### Example 3: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "group"
 	Topic = "Group chat title"
@@ -96,13 +96,13 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgChat Cmdlet
+### Example 4: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "oneOnOne"
 	Members = @(
@@ -123,13 +123,13 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the New-MgChat Cmdlet
+### Example 5: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "oneOnOne"
 	Members = @(
@@ -149,13 +149,13 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 6: Using the New-MgChat Cmdlet
+### Example 6: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "oneOnOne"
 	Members = @(
@@ -175,13 +175,13 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 7: Using the New-MgChat Cmdlet
+### Example 7: Using the New-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	ChatType = "oneOnOne"
 	Members = @(
@@ -206,7 +206,7 @@ $params = @{
 		}
 	)
 }
-New-MgChat -BodyParameter $params
+New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

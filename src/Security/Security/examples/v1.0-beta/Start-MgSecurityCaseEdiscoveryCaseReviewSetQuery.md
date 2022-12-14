@@ -1,7 +1,7 @@
-### Example 1: Using the Start-MgSecurityCaseEdiscoveryCaseReviewSetQuery Cmdlet
+### Example 1: Using the Start-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Start-MgSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -EdiscoveryReviewSetQueryId $ediscoveryReviewSetQueryId
+Import-Module Microsoft.Graph.Beta.Security
+Start-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -EdiscoveryReviewSetQueryId $ediscoveryReviewSetQueryId
 ```
-This example shows how to use the Start-MgSecurityCaseEdiscoveryCaseReviewSetQuery Cmdlet.
+This example shows how to use the Start-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

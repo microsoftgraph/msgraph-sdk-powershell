@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgSiteContentType Cmdlet
+### Example 1: Using the Update-MgBetaSiteContentType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	Name = "updatedCt"
 	DocumentSet = @{
@@ -43,7 +43,7 @@ $params = @{
 		)
 	}
 }
-Update-MgSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
+Update-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
 ```
-This example shows how to use the Update-MgSiteContentType Cmdlet.
+This example shows how to use the Update-MgBetaSiteContentType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

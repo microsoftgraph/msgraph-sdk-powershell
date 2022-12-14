@@ -1,12 +1,12 @@
-### Example 1: Using the Set-MgUserPresenceUserPreferredPresence Cmdlet
+### Example 1: Using the Set-MgBetaUserPresenceUserPreferredPresence Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Availability = "DoNotDisturb"
 	Activity = "DoNotDisturb"
 	ExpirationDuration = "PT8H"
 }
-Set-MgUserPresenceUserPreferredPresence -UserId $userId -BodyParameter $params
+Set-MgBetaUserPresenceUserPreferredPresence -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Set-MgUserPresenceUserPreferredPresence Cmdlet.
+This example shows how to use the Set-MgBetaUserPresenceUserPreferredPresence Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

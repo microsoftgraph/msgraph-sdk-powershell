@@ -1,8 +1,8 @@
-### Example 1: Using the Remove-MgUserMailFolder Cmdlet
+### Example 1: Using the Remove-MgBetaUserMailFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Remove-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId
+Remove-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 ```
-This example shows how to use the Remove-MgUserMailFolder Cmdlet.
+This example shows how to use the Remove-MgBetaUserMailFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

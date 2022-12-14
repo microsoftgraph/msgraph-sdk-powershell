@@ -1,12 +1,12 @@
-### Example 1: Using the New-MgTeamScheduleTimeOffReason Cmdlet
+### Example 1: Using the New-MgBetaTeamScheduleTimeOffReason Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "Vacation"
 	IconType = "plane"
 	IsActive = $true
 }
-New-MgTeamScheduleTimeOffReason -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamScheduleTimeOffReason -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamScheduleTimeOffReason Cmdlet.
+This example shows how to use the New-MgBetaTeamScheduleTimeOffReason Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

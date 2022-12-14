@@ -1,10 +1,10 @@
-### Example 1: Using the Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	IsEnabled = $false
 }
-Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy -BodyParameter $params
+Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy -BodyParameter $params
 ```
-This example shows how to use the Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

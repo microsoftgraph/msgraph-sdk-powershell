@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgEducationMeRubric Cmdlet
+### Example 1: Using the New-MgBetaEducationMeRubric Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	DisplayName = "Example Credit Rubric"
 	Description = @{
@@ -66,13 +66,13 @@ $params = @{
 		}
 	)
 }
-New-MgEducationMeRubric -BodyParameter $params
+New-MgBetaEducationMeRubric -BodyParameter $params
 ```
-This example shows how to use the New-MgEducationMeRubric Cmdlet.
+This example shows how to use the New-MgBetaEducationMeRubric Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgEducationMeRubric Cmdlet
+### Example 2: Using the New-MgBetaEducationMeRubric Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	DisplayName = "Example Points Rubric"
 	Description = @{
@@ -151,7 +151,7 @@ $params = @{
 		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
 	}
 }
-New-MgEducationMeRubric -BodyParameter $params
+New-MgBetaEducationMeRubric -BodyParameter $params
 ```
-This example shows how to use the New-MgEducationMeRubric Cmdlet.
+This example shows how to use the New-MgBetaEducationMeRubric Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

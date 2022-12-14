@@ -1,9 +1,9 @@
-### Example 1: Using the Set-MgEducationClassAssignmentUpFeedbackResourceFolder Cmdlet
+### Example 1: Using the Set-MgBetaEducationClassAssignmentUpFeedbackResourceFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 }
-Set-MgEducationClassAssignmentUpFeedbackResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+Set-MgBetaEducationClassAssignmentUpFeedbackResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
-This example shows how to use the Set-MgEducationClassAssignmentUpFeedbackResourceFolder Cmdlet.
+This example shows how to use the Set-MgBetaEducationClassAssignmentUpFeedbackResourceFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

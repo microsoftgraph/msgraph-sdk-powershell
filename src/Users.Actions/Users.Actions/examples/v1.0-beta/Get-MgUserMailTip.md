@@ -1,6 +1,6 @@
-### Example 1: Using the Get-MgUserMailTip Cmdlet
+### Example 1: Using the Get-MgBetaUserMailTip Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	EmailAddresses = @(
 		"danas@contoso.onmicrosoft.com"
@@ -9,7 +9,7 @@ $params = @{
 	MailTipsOptions = "automaticReplies, mailboxFullStatus"
 }
 # A UPN can also be used as -UserId.
-Get-MgUserMailTip -UserId $userId -BodyParameter $params
+Get-MgBetaUserMailTip -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Get-MgUserMailTip Cmdlet.
+This example shows how to use the Get-MgBetaUserMailTip Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

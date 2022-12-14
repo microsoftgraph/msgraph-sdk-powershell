@@ -1,35 +1,35 @@
-### Example 1: Using the Get-MgChat Cmdlet
+### Example 1: Using the Get-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChat -ChatId $chatId -ExpandProperty "members" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChat -ChatId $chatId -ExpandProperty "members" 
 ```
-This example shows how to use the Get-MgChat Cmdlet.
+This example shows how to use the Get-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgChat Cmdlet
+### Example 2: Using the Get-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChat -ChatId $chatId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChat -ChatId $chatId
 ```
-This example shows how to use the Get-MgChat Cmdlet.
+This example shows how to use the Get-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgChat Cmdlet
+### Example 3: Using the Get-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChat -ChatId $chatId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChat -ChatId $chatId
 ```
-This example shows how to use the Get-MgChat Cmdlet.
+This example shows how to use the Get-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Get-MgChat Cmdlet
+### Example 4: Using the Get-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChat -ExpandProperty "lastMessagePreview" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChat -ExpandProperty "lastMessagePreview" 
 ```
-This example shows how to use the Get-MgChat Cmdlet.
+This example shows how to use the Get-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the Get-MgChat Cmdlet
+### Example 5: Using the Get-MgBetaChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChat -Sort "lastMessagePreview/createdDateTime desc" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChat -Sort "lastMessagePreview/createdDateTime desc" 
 ```
-This example shows how to use the Get-MgChat Cmdlet.
+This example shows how to use the Get-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

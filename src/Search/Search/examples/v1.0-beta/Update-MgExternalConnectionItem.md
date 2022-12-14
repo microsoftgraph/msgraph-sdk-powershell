@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgExternalConnectionItem Cmdlet
+### Example 1: Using the Update-MgBetaExternalConnectionItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
+Import-Module Microsoft.Graph.Beta.Search
 $params = @{
 	Acl = @(
 		@{
@@ -10,7 +10,7 @@ $params = @{
 		}
 	)
 }
-Update-MgExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId -BodyParameter $params
+Update-MgBetaExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId -BodyParameter $params
 ```
-This example shows how to use the Update-MgExternalConnectionItem Cmdlet.
+This example shows how to use the Update-MgBetaExternalConnectionItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

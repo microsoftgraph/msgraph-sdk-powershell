@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgServicePrincipalHomeRealmDiscoveryPolicy Cmdlet
+### Example 1: Using the Get-MgBetaServicePrincipalHomeRealmDiscoveryPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalHomeRealmDiscoveryPolicy -ServicePrincipalId $servicePrincipalId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalHomeRealmDiscoveryPolicy -ServicePrincipalId $servicePrincipalId
 ```
-This example shows how to use the Get-MgServicePrincipalHomeRealmDiscoveryPolicy Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalHomeRealmDiscoveryPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

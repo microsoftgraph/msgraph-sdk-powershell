@@ -1,7 +1,7 @@
 ### Example 1: Get a list of administrative units
 
 ```powershell
-Get-MgDirectoryAdministrativeUnit
+Get-MgBetaDirectoryAdministrativeUnit
 
 DeletedDateTime Id                                   Description DisplayName    Visibility
 --------------- --                                   ----------- -----------    ----------

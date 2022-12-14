@@ -4,7 +4,7 @@
 $PasswordProfile = @{
   Password = 'xWwvJ]6NMw+bWH-d'
   }
-New-MgUser -DisplayName 'Rene Magi' -PasswordProfile $PasswordProfile -AccountEnabled -MailNickName 'ReneMagi' -UserPrincipalName 'ReneMagi@contoso.com'
+New-MgBetaUser -DisplayName 'Rene Magi' -PasswordProfile $PasswordProfile -AccountEnabled -MailNickName 'ReneMagi' -UserPrincipalName 'ReneMagi@contoso.com'
 
 Id                                   DisplayName Mail UserPrincipalName                    UserType
 --                                   ----------- ---- -----------------                    --------

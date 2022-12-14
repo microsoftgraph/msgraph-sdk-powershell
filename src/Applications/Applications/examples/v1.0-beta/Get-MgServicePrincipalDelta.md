@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgServicePrincipalDelta Cmdlet
+### Example 1: Using the Get-MgBetaServicePrincipalDelta Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalDelta
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaServicePrincipalDelta
 ```
-This example shows how to use the Get-MgServicePrincipalDelta Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

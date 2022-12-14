@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgWindowsUpdatesDeploymentAudienceById Cmdlet
+### Example 1: Using the Update-MgBetaWindowsUpdatesDeploymentAudienceById Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	MemberEntityType = "String"
 	AddMembers = @(
@@ -16,7 +16,7 @@ $params = @{
 		"String"
 	)
 }
-Update-MgWindowsUpdatesDeploymentAudienceById -DeploymentId $deploymentId -BodyParameter $params
+Update-MgBetaWindowsUpdatesDeploymentAudienceById -DeploymentId $deploymentId -BodyParameter $params
 ```
-This example shows how to use the Update-MgWindowsUpdatesDeploymentAudienceById Cmdlet.
+This example shows how to use the Update-MgBetaWindowsUpdatesDeploymentAudienceById Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

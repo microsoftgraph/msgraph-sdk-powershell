@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgPrivilegedAccessRoleSetting Cmdlet
+### Example 1: Using the Update-MgBetaPrivilegedAccessRoleSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	AdminEligibleSettings = @(
 		@{
@@ -9,7 +9,7 @@ $params = @{
 		}
 	)
 }
-Update-MgPrivilegedAccessRoleSetting -PrivilegedAccessId $privilegedAccessId -GovernanceRoleSettingId $governanceRoleSettingId -BodyParameter $params
+Update-MgBetaPrivilegedAccessRoleSetting -PrivilegedAccessId $privilegedAccessId -GovernanceRoleSettingId $governanceRoleSettingId -BodyParameter $params
 ```
-This example shows how to use the Update-MgPrivilegedAccessRoleSetting Cmdlet.
+This example shows how to use the Update-MgBetaPrivilegedAccessRoleSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

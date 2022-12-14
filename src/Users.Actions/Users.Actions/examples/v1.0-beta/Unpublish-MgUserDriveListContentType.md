@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Sites
+```powershell
+Import-Module Microsoft.Graph.Beta.Sites
 
-Unpublish-MgSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
+Unpublish-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
 ```
-This example shows how to use the Unpublish-MgUserDriveListContentType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Unpublish-MgBetaUserDriveListContentType Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

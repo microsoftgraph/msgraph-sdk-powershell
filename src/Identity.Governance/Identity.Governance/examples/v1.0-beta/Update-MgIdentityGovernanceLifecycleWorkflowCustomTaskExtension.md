@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet
+### Example 1: Using the Update-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Grant manager access to mailbox and OneDrive"
 	Description = "Grant manager access to mailbox and OneDrive"
@@ -24,7 +24,7 @@ $params = @{
 		TimeoutDuration = "PT20M"
 	}
 }
-Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension -CustomTaskExtensionId $customTaskExtensionId -BodyParameter $params
+Update-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension -CustomTaskExtensionId $customTaskExtensionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet.
+This example shows how to use the Update-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

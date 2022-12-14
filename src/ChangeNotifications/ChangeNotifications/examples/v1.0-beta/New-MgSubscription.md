@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSubscription Cmdlet
+### Example 1: Using the New-MgBetaSubscription Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ChangeNotifications
+Import-Module Microsoft.Graph.Beta.ChangeNotifications
 $params = @{
 	ChangeType = "created"
 	NotificationUrl = "https://webhook.azurewebsites.net/api/send/myNotifyClient"
@@ -9,7 +9,7 @@ $params = @{
 	ClientState = "secretClientValue"
 	LatestSupportedTlsVersion = "v1_2"
 }
-New-MgSubscription -BodyParameter $params
+New-MgBetaSubscription -BodyParameter $params
 ```
-This example shows how to use the New-MgSubscription Cmdlet.
+This example shows how to use the New-MgBetaSubscription Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

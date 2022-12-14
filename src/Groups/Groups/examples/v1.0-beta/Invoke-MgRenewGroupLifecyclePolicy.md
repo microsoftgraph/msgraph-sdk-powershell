@@ -1,10 +1,10 @@
-### Example 1: Using the Invoke-MgRenewGroupLifecyclePolicy Cmdlet
+### Example 1: Using the Invoke-MgBetaRenewGroupLifecyclePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	GroupId = "ffffffff-ffff-ffff-ffff-ffffffffffff"
 }
-Invoke-MgRenewGroupLifecyclePolicy -BodyParameter $params
+Invoke-MgBetaRenewGroupLifecyclePolicy -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgRenewGroupLifecyclePolicy Cmdlet.
+This example shows how to use the Invoke-MgBetaRenewGroupLifecyclePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

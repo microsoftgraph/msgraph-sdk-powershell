@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgServicePrincipalPasswordSingleSignOnCredentials Cmdlet
+### Example 1: Using the Update-MgBetaServicePrincipalPasswordSingleSignOnCredentials Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	Id = "5793aa3b-cca9-4794-679a240f8b58"
 	Credentials = @(
@@ -16,7 +16,7 @@ $params = @{
 		}
 	)
 }
-Update-MgServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId $servicePrincipalId -BodyParameter $params
+Update-MgBetaServicePrincipalPasswordSingleSignOnCredentials -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
-This example shows how to use the Update-MgServicePrincipalPasswordSingleSignOnCredentials Cmdlet.
+This example shows how to use the Update-MgBetaServicePrincipalPasswordSingleSignOnCredentials Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

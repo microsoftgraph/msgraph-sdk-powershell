@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSecurityTriggerTypeRetentionEventType Cmdlet
+### Example 1: Using the New-MgBetaSecurityTriggerTypeRetentionEventType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	"@odata.type" = "#microsoft.graph.security.retentionEventType"
 	DisplayName = "String"
@@ -9,7 +9,7 @@ $params = @{
 		"@odata.type" = "microsoft.graph.identitySet"
 	}
 }
-New-MgSecurityTriggerTypeRetentionEventType -BodyParameter $params
+New-MgBetaSecurityTriggerTypeRetentionEventType -BodyParameter $params
 ```
-This example shows how to use the New-MgSecurityTriggerTypeRetentionEventType Cmdlet.
+This example shows how to use the New-MgBetaSecurityTriggerTypeRetentionEventType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

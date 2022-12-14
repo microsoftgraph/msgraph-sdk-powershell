@@ -1,7 +1,7 @@
 ### Example 1: Create a new application
 
 ```powershell
-New-MgApplication -DisplayName 'New app' | 
+New-MgBetaApplication -DisplayName 'New app' | 
   Format-List Id, DisplayName, AppId, SignInAudience, PublisherDomain
 
 Id              : 0f0aec7b-ac5b-4f89-9fac-e9044ba5a309

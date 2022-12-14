@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgRecordCommunicationCallResponse Cmdlet
+### Example 1: Using the Invoke-MgBetaRecordCommunicationCallResponse Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	BargeInAllowed = $true
 	ClientContext = "d45324c1-fcb5-430a-902c-f20af696537c"
@@ -19,7 +19,7 @@ $params = @{
 		"*"
 	)
 }
-Invoke-MgRecordCommunicationCallResponse -CallId $callId -BodyParameter $params
+Invoke-MgBetaRecordCommunicationCallResponse -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgRecordCommunicationCallResponse Cmdlet.
+This example shows how to use the Invoke-MgBetaRecordCommunicationCallResponse Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

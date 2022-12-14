@@ -1,8 +1,8 @@
-### Example 1: Using the Remove-MgUserProfileEmail Cmdlet
+### Example 1: Using the Remove-MgBetaUserProfileEmail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Remove-MgUserProfileEmail -UserId $userId -ItemEmailId $itemEmailId
+Remove-MgBetaUserProfileEmail -UserId $userId -ItemEmailId $itemEmailId
 ```
-This example shows how to use the Remove-MgUserProfileEmail Cmdlet.
+This example shows how to use the Remove-MgBetaUserProfileEmail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

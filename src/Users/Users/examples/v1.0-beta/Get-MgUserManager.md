@@ -1,7 +1,7 @@
 ### Example 1: Get a user's manager
 
 ```powershell
-Get-MgUserManager -UserId '0ec3a5e8-b4b6-4678-90ff-ce786055065f'
+Get-MgBetaUserManager -UserId '0ec3a5e8-b4b6-4678-90ff-ce786055065f'
 
 Id                                   DeletedDateTime
 --                                   ---------------

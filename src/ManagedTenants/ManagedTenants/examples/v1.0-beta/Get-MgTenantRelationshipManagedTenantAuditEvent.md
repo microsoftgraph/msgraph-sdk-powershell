@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantAuditEvent Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantAuditEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantAuditEvent -AuditEventId $auditEventId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantAuditEvent -AuditEventId $auditEventId
 ```
-This example shows how to use the Get-MgTenantRelationshipManagedTenantAuditEvent Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantAuditEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

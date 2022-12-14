@@ -1,21 +1,21 @@
-### Example 1: Using the Get-MgChatPinnedMessage Cmdlet
+### Example 1: Using the Get-MgBetaChatPinnedMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatPinnedMessage -ChatId $chatId -ExpandProperty "message"  -OutFile $outFileId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatPinnedMessage -ChatId $chatId -ExpandProperty "message"  -OutFile $outFileId
 ```
-This example shows how to use the Get-MgChatPinnedMessage Cmdlet.
+This example shows how to use the Get-MgBetaChatPinnedMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgChatPinnedMessage Cmdlet
+### Example 2: Using the Get-MgBetaChatPinnedMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatPinnedMessage -ChatId $chatId -ExpandProperty "message" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatPinnedMessage -ChatId $chatId -ExpandProperty "message" 
 ```
-This example shows how to use the Get-MgChatPinnedMessage Cmdlet.
+This example shows how to use the Get-MgBetaChatPinnedMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgChatPinnedMessage Cmdlet
+### Example 3: Using the Get-MgBetaChatPinnedMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatPinnedMessage -ChatId $chatId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatPinnedMessage -ChatId $chatId
 ```
-This example shows how to use the Get-MgChatPinnedMessage Cmdlet.
+This example shows how to use the Get-MgBetaChatPinnedMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

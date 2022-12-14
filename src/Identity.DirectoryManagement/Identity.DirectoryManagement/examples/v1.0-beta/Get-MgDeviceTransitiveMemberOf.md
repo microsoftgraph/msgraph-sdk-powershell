@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgDeviceTransitiveMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaDeviceTransitiveMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDeviceTransitiveMemberOf -DeviceId $deviceId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+Get-MgBetaDeviceTransitiveMemberOf -DeviceId $deviceId
 ```
-This example shows how to use the Get-MgDeviceTransitiveMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaDeviceTransitiveMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

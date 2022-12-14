@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgTeamIncomingChannel Cmdlet
+### Example 1: Using the Get-MgBetaTeamIncomingChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamIncomingChannel -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamIncomingChannel -TeamId $teamId
 ```
-This example shows how to use the Get-MgTeamIncomingChannel Cmdlet.
+This example shows how to use the Get-MgBetaTeamIncomingChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgComplianceEdiscoveryCaseLegalHold Cmdlet
+### Example 1: Using the New-MgBetaComplianceEdiscoveryCaseLegalHold Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	"@odata.type" = "#microsoft.graph.ediscovery.legalHold"
 	Description = "String"
@@ -15,7 +15,7 @@ $params = @{
 	)
 	DisplayName = "String"
 }
-New-MgComplianceEdiscoveryCaseLegalHold -CaseId $caseId -BodyParameter $params
+New-MgBetaComplianceEdiscoveryCaseLegalHold -CaseId $caseId -BodyParameter $params
 ```
-This example shows how to use the New-MgComplianceEdiscoveryCaseLegalHold Cmdlet.
+This example shows how to use the New-MgBetaComplianceEdiscoveryCaseLegalHold Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

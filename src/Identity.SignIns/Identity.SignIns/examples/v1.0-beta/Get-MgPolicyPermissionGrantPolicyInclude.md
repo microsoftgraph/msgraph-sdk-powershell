@@ -1,8 +1,8 @@
 ### Example 1: Get a permission grant policy include by ID 
 
 ```powershell
-Connect-MgGraph -Scopes "Policy.Read.PermissionGrant" 
-Get-MgPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId "microsoft-all-application-permissions" | fl  
+Connect-MgBetaGraph -Scopes "Policy.Read.PermissionGrant" 
+Get-MgBetaPolicyPermissionGrantPolicyInclude -PermissionGrantPolicyId "microsoft-all-application-permissions" | fl  
 
 CertifiedClientApplicationsOnly             : False
 ClientApplicationIds                        : {all}

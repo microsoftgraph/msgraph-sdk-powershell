@@ -1,7 +1,7 @@
 ### Example 1: Get a list of directory objects that were created by a user
 
 ```powershell
-Get-MgUserCreatedObject -UserId '7162fba5-6647-47a0-9d69-5837795f32e7'
+Get-MgBetaUserCreatedObject -UserId '7162fba5-6647-47a0-9d69-5837795f32e7'
 
 Id                                   DeletedDateTime
 --                                   ---------------

@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgOnPremisePublishingProfileConnectorGroupApplication Cmdlet
+### Example 1: Using the Get-MgBetaOnPremisePublishingProfileConnectorGroupApplication Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgOnPremisePublishingProfileConnectorGroupApplication -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorGroupId $connectorGroupId
+Import-Module Microsoft.Graph.Beta.Applications
+Get-MgBetaOnPremisePublishingProfileConnectorGroupApplication -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -ConnectorGroupId $connectorGroupId
 ```
-This example shows how to use the Get-MgOnPremisePublishingProfileConnectorGroupApplication Cmdlet.
+This example shows how to use the Get-MgBetaOnPremisePublishingProfileConnectorGroupApplication Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

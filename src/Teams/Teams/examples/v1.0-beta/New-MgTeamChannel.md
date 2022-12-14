@@ -1,31 +1,31 @@
-### Example 1: Using the New-MgTeamChannel Cmdlet
+### Example 1: Using the New-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	"@microsoft.graph.channelCreationMode" = "migration"
 	DisplayName = "Import_150958_99z"
 	Description = "Import_150958_99z"
 	CreatedDateTime = [System.DateTime]::Parse("2020-03-14T11:22:17.067Z")
 }
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamChannel -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannel Cmdlet.
+This example shows how to use the New-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgTeamChannel Cmdlet
+### Example 2: Using the New-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "Architecture Discussion"
 	Description = "This channel is where we debate all future architecture plans"
 	MembershipType = "standard"
 }
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamChannel -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannel Cmdlet.
+This example shows how to use the New-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgTeamChannel Cmdlet
+### Example 3: Using the New-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "TestChannelModeration"
 	Description = "Test channel moderation."
@@ -37,13 +37,13 @@ $params = @{
 		AllowNewMessageFromConnectors = $true
 	}
 }
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamChannel -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannel Cmdlet.
+This example shows how to use the New-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgTeamChannel Cmdlet
+### Example 4: Using the New-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	"@odata.type" = "#Microsoft.Graph.channel"
 	MembershipType = "private"
@@ -59,13 +59,13 @@ $params = @{
 		}
 	)
 }
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamChannel -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannel Cmdlet.
+This example shows how to use the New-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the New-MgTeamChannel Cmdlet
+### Example 5: Using the New-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	"@odata.type" = "#Microsoft.Graph.channel"
 	MembershipType = "private"
@@ -81,13 +81,13 @@ $params = @{
 		}
 	)
 }
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamChannel -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannel Cmdlet.
+This example shows how to use the New-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 6: Using the New-MgTeamChannel Cmdlet
+### Example 6: Using the New-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "My First Shared Channel"
 	Description = "This is my first shared channel"
@@ -102,7 +102,7 @@ $params = @{
 		}
 	)
 }
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamChannel -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannel Cmdlet.
+This example shows how to use the New-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

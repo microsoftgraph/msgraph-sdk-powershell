@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserTodoListTask Cmdlet
+### Example 1: Using the New-MgBetaUserTodoListTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	Title = "A new task"
 	Categories = @(
@@ -15,7 +15,7 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-New-MgUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId -BodyParameter $params
+New-MgBetaUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserTodoListTask Cmdlet.
+This example shows how to use the New-MgBetaUserTodoListTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

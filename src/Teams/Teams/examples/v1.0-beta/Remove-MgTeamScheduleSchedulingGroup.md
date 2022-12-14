@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgTeamScheduleSchedulingGroup Cmdlet
+### Example 1: Using the Remove-MgBetaTeamScheduleSchedulingGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgTeamScheduleSchedulingGroup -TeamId $teamId -SchedulingGroupId $schedulingGroupId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaTeamScheduleSchedulingGroup -TeamId $teamId -SchedulingGroupId $schedulingGroupId
 ```
-This example shows how to use the Remove-MgTeamScheduleSchedulingGroup Cmdlet.
+This example shows how to use the Remove-MgBetaTeamScheduleSchedulingGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

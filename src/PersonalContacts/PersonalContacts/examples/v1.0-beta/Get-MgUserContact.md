@@ -1,16 +1,16 @@
-### Example 1: Using the Get-MgUserContact Cmdlet
+### Example 1: Using the Get-MgBetaUserContact Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.PersonalContacts
+Import-Module Microsoft.Graph.Beta.PersonalContacts
 # A UPN can also be used as -UserId.
-Get-MgUserContact -UserId $userId -ContactId $contactId
+Get-MgBetaUserContact -UserId $userId -ContactId $contactId
 ```
-This example shows how to use the Get-MgUserContact Cmdlet.
+This example shows how to use the Get-MgBetaUserContact Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserContact Cmdlet
+### Example 2: Using the Get-MgBetaUserContact Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.PersonalContacts
+Import-Module Microsoft.Graph.Beta.PersonalContacts
 # A UPN can also be used as -UserId.
-Get-MgUserContact -UserId $userId -Property "displayName,emailAddresses" 
+Get-MgBetaUserContact -UserId $userId -Property "displayName,emailAddresses" 
 ```
-This example shows how to use the Get-MgUserContact Cmdlet.
+This example shows how to use the Get-MgBetaUserContact Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgGroupConversation Cmdlet
+### Example 1: Using the New-MgBetaGroupConversation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	Topic = "New head count"
 	Threads = @(
@@ -24,13 +24,13 @@ $params = @{
 		}
 	)
 }
-New-MgGroupConversation -GroupId $groupId -BodyParameter $params
+New-MgBetaGroupConversation -GroupId $groupId -BodyParameter $params
 ```
-This example shows how to use the New-MgGroupConversation Cmdlet.
+This example shows how to use the New-MgBetaGroupConversation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgGroupConversation Cmdlet
+### Example 2: Using the New-MgBetaGroupConversation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	Topic = "Does anyone have a second?"
 	Threads = @(
@@ -59,7 +59,7 @@ $params = @{
 		}
 	)
 }
-New-MgGroupConversation -GroupId $groupId -BodyParameter $params
+New-MgBetaGroupConversation -GroupId $groupId -BodyParameter $params
 ```
-This example shows how to use the New-MgGroupConversation Cmdlet.
+This example shows how to use the New-MgBetaGroupConversation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgExtractInformationProtectionPolicyLabel Cmdlet
+### Example 1: Using the Invoke-MgBetaExtractInformationProtectionPolicyLabel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	ContentInfo = @{
 		"@odata.type" = "#microsoft.graph.contentInfo"
@@ -49,7 +49,7 @@ $params = @{
 		)
 	}
 }
-Invoke-MgExtractInformationProtectionPolicyLabel -BodyParameter $params
+Invoke-MgBetaExtractInformationProtectionPolicyLabel -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgExtractInformationProtectionPolicyLabel Cmdlet.
+This example shows how to use the Invoke-MgBetaExtractInformationProtectionPolicyLabel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

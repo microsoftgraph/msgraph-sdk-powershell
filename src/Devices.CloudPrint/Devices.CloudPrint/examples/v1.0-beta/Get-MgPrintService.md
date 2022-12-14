@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgPrintService Cmdlet
+### Example 1: Using the Get-MgBetaPrintService Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintService -PrintServiceId $printServiceId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintService -PrintServiceId $printServiceId
 ```
-This example shows how to use the Get-MgPrintService Cmdlet.
+This example shows how to use the Get-MgBetaPrintService Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgPrintService Cmdlet
+### Example 2: Using the Get-MgBetaPrintService Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintService
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintService
 ```
-This example shows how to use the Get-MgPrintService Cmdlet.
+This example shows how to use the Get-MgBetaPrintService Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgIdentityApiConnector Cmdlet
+### Example 1: Using the New-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "Test API"
 	TargetUrl = "https://someapi.com/api"
@@ -10,13 +10,13 @@ $params = @{
 		Password = "<PASSWORD>"
 	}
 }
-New-MgIdentityApiConnector -BodyParameter $params
+New-MgBetaIdentityApiConnector -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityApiConnector Cmdlet.
+This example shows how to use the New-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgIdentityApiConnector Cmdlet
+### Example 2: Using the New-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "Test API"
 	TargetUrl = "https://someotherapi.com/api"
@@ -26,13 +26,13 @@ $params = @{
 		Password = "<password>"
 	}
 }
-New-MgIdentityApiConnector -BodyParameter $params
+New-MgBetaIdentityApiConnector -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityApiConnector Cmdlet.
+This example shows how to use the New-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgIdentityApiConnector Cmdlet
+### Example 3: Using the New-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "Test API"
 	TargetUrl = "https://someotherapi.com/api"
@@ -42,7 +42,7 @@ $params = @{
 		Password = "<password>"
 	}
 }
-New-MgIdentityApiConnector -BodyParameter $params
+New-MgBetaIdentityApiConnector -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityApiConnector Cmdlet.
+This example shows how to use the New-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

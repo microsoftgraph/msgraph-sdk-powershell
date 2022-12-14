@@ -1,12 +1,12 @@
 ### Example 1: Create a new access package resource request
 
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All', 'Group.ReadWrite.All'
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All', 'Group.ReadWrite.All'
 $accessPackageResource = @{
   "originSystem" = "AadGroup "
   OriginId= "b5cd9d19-91c0-4622-93e2-537ad8a0b3ad"
   }
-New-MgEntitlementManagementAccessPackageResourceRequest -CatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -RequestType "AdminAdd" -AccessPackageResource $accessPackageResource
+New-MgBetaEntitlementManagementAccessPackageResourceRequest -CatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -RequestType "AdminAdd" -AccessPackageResource $accessPackageResource
 
 AccessPackageResource : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageResource
 CatalogId             : 54152ecb-c65d-47f2-8a4d-ba2732de0a7b

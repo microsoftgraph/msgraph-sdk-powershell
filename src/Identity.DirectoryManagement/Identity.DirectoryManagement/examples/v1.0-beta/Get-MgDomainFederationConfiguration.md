@@ -1,7 +1,7 @@
 ### Example 1: Get the federation settings for a federated domain
 
 ```powershell
-Get-MgDomainFederationConfiguration -DomainId 'contoso.com' -InternalDomainFederationId '2a8ce608-bb34-473f-9e0f-f373ee4cbc5a' | Format-List  
+Get-MgBetaDomainFederationConfiguration -DomainId 'contoso.com' -InternalDomainFederationId '2a8ce608-bb34-473f-9e0f-f373ee4cbc5a' | Format-List  
 
 ActiveSignInUri                       : https://sts.deverett.info/adfs/services/trust/2005/usernamemixed 
 DisplayName                           : Contoso 

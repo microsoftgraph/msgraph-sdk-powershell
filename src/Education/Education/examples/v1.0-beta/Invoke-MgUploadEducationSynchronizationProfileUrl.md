@@ -1,7 +1,7 @@
-### Example 1: Using the Invoke-MgUploadEducationSynchronizationProfileUrl Cmdlet
+### Example 1: Using the Invoke-MgBetaUploadEducationSynchronizationProfileUrl Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Invoke-MgUploadEducationSynchronizationProfileUrl -EducationSynchronizationProfileId $educationSynchronizationProfileId
+Import-Module Microsoft.Graph.Beta.Education
+Invoke-MgBetaUploadEducationSynchronizationProfileUrl -EducationSynchronizationProfileId $educationSynchronizationProfileId
 ```
-This example shows how to use the Invoke-MgUploadEducationSynchronizationProfileUrl Cmdlet.
+This example shows how to use the Invoke-MgBetaUploadEducationSynchronizationProfileUrl Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

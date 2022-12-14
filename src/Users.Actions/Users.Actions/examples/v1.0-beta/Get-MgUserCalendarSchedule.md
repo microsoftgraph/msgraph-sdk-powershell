@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Users.Actions
+```powershell
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	Schedules = @(
@@ -19,8 +20,9 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Get-MgUserDefaultCalendarSchedule -UserId $userId -BodyParameter $params
+Get-MgBetaUserDefaultCalendarSchedule -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Get-MgUserCalendarSchedule Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaUserCalendarSchedule Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

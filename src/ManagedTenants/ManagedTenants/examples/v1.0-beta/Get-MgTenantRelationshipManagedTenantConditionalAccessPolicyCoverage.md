@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage -ConditionalAccessPolicyCoverageId $conditionalAccessPolicyCoverageId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage -ConditionalAccessPolicyCoverageId $conditionalAccessPolicyCoverageId
 ```
-This example shows how to use the Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage
 ```
-This example shows how to use the Get-MgTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantConditionalAccessPolicyCoverage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

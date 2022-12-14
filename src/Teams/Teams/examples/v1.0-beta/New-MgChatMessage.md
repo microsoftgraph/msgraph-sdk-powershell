@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgChatMessage Cmdlet
+### Example 1: Using the New-MgBetaChatMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Body = @{
 		ContentType = "html"
@@ -18,19 +18,19 @@ $params = @{
 		}
 	)
 }
-New-MgChatMessage -ChatId $chatId -BodyParameter $params
+New-MgBetaChatMessage -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgChatMessage Cmdlet.
+This example shows how to use the New-MgBetaChatMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgChatMessage Cmdlet
+### Example 2: Using the New-MgBetaChatMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Body = @{
 		Content = "Hello world"
 	}
 }
-New-MgChatMessage -ChatId $chatId -BodyParameter $params
+New-MgBetaChatMessage -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgChatMessage Cmdlet.
+This example shows how to use the New-MgBetaChatMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

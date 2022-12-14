@@ -1,11 +1,11 @@
-### Example 1: Using the Update-MgOrganizationBranding Cmdlet
+### Example 1: Using the Update-MgBetaOrganizationBranding Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	SignInPageText = "Default"
 	UsernameHintText = "DefaultHint"
 }
-Update-MgOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
+Update-MgBetaOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
 ```
-This example shows how to use the Update-MgOrganizationBranding Cmdlet.
+This example shows how to use the Update-MgBetaOrganizationBranding Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgPrintConnector Cmdlet
+### Example 1: Using the Get-MgBetaPrintConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintConnector -PrintConnectorId $printConnectorId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintConnector -PrintConnectorId $printConnectorId
 ```
-This example shows how to use the Get-MgPrintConnector Cmdlet.
+This example shows how to use the Get-MgBetaPrintConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgPrintConnector Cmdlet
+### Example 2: Using the Get-MgBetaPrintConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintConnector
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintConnector
 ```
-This example shows how to use the Get-MgPrintConnector Cmdlet.
+This example shows how to use the Get-MgBetaPrintConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

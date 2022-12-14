@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSitePage Cmdlet
+### Example 1: Using the New-MgBetaSitePage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	Name = "Events.aspx"
 	Title = "Team Events"
@@ -25,7 +25,7 @@ $params = @{
 		}
 	)
 }
-New-MgSitePage -SiteId $siteId -BodyParameter $params
+New-MgBetaSitePage -SiteId $siteId -BodyParameter $params
 ```
-This example shows how to use the New-MgSitePage Cmdlet.
+This example shows how to use the New-MgBetaSitePage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgDirectoryFederationConfiguration Cmdlet
+### Example 1: Using the New-MgBetaDirectoryFederationConfiguration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	"@odata.type" = "microsoft.graph.samlOrWsFedExternalDomainFederation"
 	IssuerUri = "https://contoso.com/issuerUri"
@@ -16,7 +16,7 @@ $params = @{
 	)
 	SigningCertificate = "MIIDADCCAeigAwIBAgIQEX41y8r6"
 }
-New-MgDirectoryFederationConfiguration -BodyParameter $params
+New-MgBetaDirectoryFederationConfiguration -BodyParameter $params
 ```
-This example shows how to use the New-MgDirectoryFederationConfiguration Cmdlet.
+This example shows how to use the New-MgBetaDirectoryFederationConfiguration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

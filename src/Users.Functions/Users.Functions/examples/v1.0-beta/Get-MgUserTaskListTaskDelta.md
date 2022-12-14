@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserTaskListTaskDelta Cmdlet
+### Example 1: Using the Get-MgBetaUserTaskListTaskDelta Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Functions
+Import-Module Microsoft.Graph.Beta.Users.Functions
 # A UPN can also be used as -UserId.
-Get-MgUserTaskListTaskDelta -UserId $userId -BaseTaskListId $baseTaskListId
+Get-MgBetaUserTaskListTaskDelta -UserId $userId -BaseTaskListId $baseTaskListId
 ```
-This example shows how to use the Get-MgUserTaskListTaskDelta Cmdlet.
+This example shows how to use the Get-MgBetaUserTaskListTaskDelta Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

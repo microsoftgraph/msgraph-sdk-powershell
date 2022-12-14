@@ -1,10 +1,10 @@
-### Example 1: Using the Update-MgTeamTag Cmdlet
+### Example 1: Using the Update-MgBetaTeamTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "Finance"
 }
-Update-MgTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
+Update-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
 ```
-This example shows how to use the Update-MgTeamTag Cmdlet.
+This example shows how to use the Update-MgBetaTeamTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantManagementAction Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantManagementAction Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagementAction -ManagementActionId $managementActionId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagementAction -ManagementActionId $managementActionId
 ```
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagementAction Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagementAction Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantManagementAction Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantManagementAction Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantManagementAction
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantManagementAction
 ```
-This example shows how to use the Get-MgTenantRelationshipManagedTenantManagementAction Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantManagementAction Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgGroupThreadPostExtension Cmdlet
+### Example 1: Using the Update-MgBetaGroupThreadPostExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	"@odata.type" = "#microsoft.outlookServices.openTypeExtension"
 	ExtensionName = "Com.Contoso.Estimate"
@@ -13,7 +13,7 @@ $params = @{
 		"Add family"
 	)
 }
-Update-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId -BodyParameter $params
+Update-MgBetaGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgGroupThreadPostExtension Cmdlet.
+This example shows how to use the Update-MgBetaGroupThreadPostExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

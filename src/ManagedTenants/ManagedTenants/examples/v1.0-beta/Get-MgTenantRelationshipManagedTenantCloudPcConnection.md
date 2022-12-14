@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantCloudPcConnection Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantCloudPcConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantCloudPcConnection -CloudPcConnectionId $cloudPcConnectionId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantCloudPcConnection -CloudPcConnectionId $cloudPcConnectionId
 ```
-This example shows how to use the Get-MgTenantRelationshipManagedTenantCloudPcConnection Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantCloudPcConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantCloudPcConnection Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantCloudPcConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantCloudPcConnection
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantCloudPcConnection
 ```
-This example shows how to use the Get-MgTenantRelationshipManagedTenantCloudPcConnection Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantCloudPcConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

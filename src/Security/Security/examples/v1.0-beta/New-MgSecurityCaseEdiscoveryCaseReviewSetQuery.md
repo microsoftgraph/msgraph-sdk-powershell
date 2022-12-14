@@ -1,11 +1,11 @@
-### Example 1: Using the New-MgSecurityCaseEdiscoveryCaseReviewSetQuery Cmdlet
+### Example 1: Using the New-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	DisplayName = "My Query 1"
 	ContentQuery = "(Author="edison")"
 }
-New-MgSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -BodyParameter $params
+New-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -BodyParameter $params
 ```
-This example shows how to use the New-MgSecurityCaseEdiscoveryCaseReviewSetQuery Cmdlet.
+This example shows how to use the New-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgUserOnlineMeetingTranscript Cmdlet
+### Example 1: Using the Get-MgBetaUserOnlineMeetingTranscript Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgUserOnlineMeetingTranscript -UserId $userId -OnlineMeetingId $onlineMeetingId -CallTranscriptId $callTranscriptId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaUserOnlineMeetingTranscript -UserId $userId -OnlineMeetingId $onlineMeetingId -CallTranscriptId $callTranscriptId
 ```
-This example shows how to use the Get-MgUserOnlineMeetingTranscript Cmdlet.
+This example shows how to use the Get-MgBetaUserOnlineMeetingTranscript Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserOnlineMeetingTranscript Cmdlet
+### Example 2: Using the Get-MgBetaUserOnlineMeetingTranscript Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgUserOnlineMeetingTranscript -UserId $userId -OnlineMeetingId $onlineMeetingId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaUserOnlineMeetingTranscript -UserId $userId -OnlineMeetingId $onlineMeetingId
 ```
-This example shows how to use the Get-MgUserOnlineMeetingTranscript Cmdlet.
+This example shows how to use the Get-MgBetaUserOnlineMeetingTranscript Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgChatMember Cmdlet
+### Example 1: Using the New-MgBetaChatMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
 	"User@odata.bind" = "https://graph.microsoft.com/beta/users/jacob@contoso.com"
@@ -9,13 +9,13 @@ $params = @{
 		"owner"
 	)
 }
-New-MgChatMember -ChatId $chatId -BodyParameter $params
+New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgChatMember Cmdlet
+### Example 2: Using the New-MgBetaChatMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
 	"User@odata.bind" = "https://graph.microsoft.com/beta/users/8b081ef6-4792-4def-b2c9-c363a1bf41d5"
@@ -24,13 +24,13 @@ $params = @{
 		"owner"
 	)
 }
-New-MgChatMember -ChatId $chatId -BodyParameter $params
+New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgChatMember Cmdlet
+### Example 3: Using the New-MgBetaChatMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
 	"User@odata.bind" = "https://graph.microsoft.com/beta/users/8b081ef6-4792-4def-b2c9-c363a1bf41d5"
@@ -38,13 +38,13 @@ $params = @{
 		"owner"
 	)
 }
-New-MgChatMember -ChatId $chatId -BodyParameter $params
+New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgChatMember Cmdlet
+### Example 4: Using the New-MgBetaChatMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
 	"User@odata.bind" = "https://graph.microsoft.com/beta/users/8b081ef6-4792-4def-b2c9-c363a1bf41d5"
@@ -53,7 +53,7 @@ $params = @{
 		"owner"
 	)
 }
-New-MgChatMember -ChatId $chatId -BodyParameter $params
+New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

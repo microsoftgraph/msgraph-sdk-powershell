@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgBookingBusinessAppointment Cmdlet
+### Example 1: Using the New-MgBetaBookingBusinessAppointment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
 	"@odata.type" = "#microsoft.graph.bookingAppointment"
 	CustomerEmailAddress = "jordanm@contoso.com"
@@ -145,7 +145,7 @@ $params = @{
 		}
 	)
 }
-New-MgBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BodyParameter $params
+New-MgBetaBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BodyParameter $params
 ```
-This example shows how to use the New-MgBookingBusinessAppointment Cmdlet.
+This example shows how to use the New-MgBetaBookingBusinessAppointment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

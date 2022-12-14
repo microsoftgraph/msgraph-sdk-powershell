@@ -1,21 +1,21 @@
-### Example 1: Using the Get-MgGroupThread Cmdlet
+### Example 1: Using the Get-MgBetaGroupThread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
 ```
-This example shows how to use the Get-MgGroupThread Cmdlet.
+This example shows how to use the Get-MgBetaGroupThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgGroupThread Cmdlet
+### Example 2: Using the Get-MgBetaGroupThread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
 ```
-This example shows how to use the Get-MgGroupThread Cmdlet.
+This example shows how to use the Get-MgBetaGroupThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgGroupThread Cmdlet
+### Example 3: Using the Get-MgBetaGroupThread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupThread -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupThread -GroupId $groupId
 ```
-This example shows how to use the Get-MgGroupThread Cmdlet.
+This example shows how to use the Get-MgBetaGroupThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgUserEvent Cmdlet
+### Example 1: Using the Update-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	OriginalStartTimeZone = "originalStartTimeZone-value"
 	OriginalEndTimeZone = "originalEndTimeZone-value"
@@ -20,7 +20,7 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-Update-MgUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
+Update-MgBetaUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserEvent Cmdlet.
+This example shows how to use the Update-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

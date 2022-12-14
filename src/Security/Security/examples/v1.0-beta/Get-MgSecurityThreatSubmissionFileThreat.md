@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgSecurityThreatSubmissionFileThreat Cmdlet
+### Example 1: Using the Get-MgBetaSecurityThreatSubmissionFileThreat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityThreatSubmissionFileThreat -FileThreatSubmissionId $fileThreatSubmissionId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityThreatSubmissionFileThreat -FileThreatSubmissionId $fileThreatSubmissionId
 ```
-This example shows how to use the Get-MgSecurityThreatSubmissionFileThreat Cmdlet.
+This example shows how to use the Get-MgBetaSecurityThreatSubmissionFileThreat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgSecurityThreatSubmissionFileThreat Cmdlet
+### Example 2: Using the Get-MgBetaSecurityThreatSubmissionFileThreat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityThreatSubmissionFileThreat
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityThreatSubmissionFileThreat
 ```
-This example shows how to use the Get-MgSecurityThreatSubmissionFileThreat Cmdlet.
+This example shows how to use the Get-MgBetaSecurityThreatSubmissionFileThreat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

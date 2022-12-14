@@ -1,6 +1,6 @@
-### Example 1: Using the Confirm-MgDirectoryObjectMemberGroup Cmdlet
+### Example 1: Using the Confirm-MgBetaDirectoryObjectMemberGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DirectoryObjects
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 $params = @{
 	GroupIds = @(
 		"f448435d-3ca7-4073-8152-a1fd73c0fd09"
@@ -10,7 +10,7 @@ $params = @{
 		"c9103f26-f3cf-4004-a611-2a14e81b8f79"
 	)
 }
-Confirm-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
+Confirm-MgBetaDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
-This example shows how to use the Confirm-MgDirectoryObjectMemberGroup Cmdlet.
+This example shows how to use the Confirm-MgBetaDirectoryObjectMemberGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

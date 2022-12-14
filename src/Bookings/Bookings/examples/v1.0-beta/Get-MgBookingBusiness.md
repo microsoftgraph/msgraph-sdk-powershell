@@ -1,21 +1,21 @@
-### Example 1: Using the Get-MgBookingBusiness Cmdlet
+### Example 1: Using the Get-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingBusiness -BookingBusinessId $bookingBusinessId
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingBusiness -BookingBusinessId $bookingBusinessId
 ```
-This example shows how to use the Get-MgBookingBusiness Cmdlet.
+This example shows how to use the Get-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBookingBusiness Cmdlet
+### Example 2: Using the Get-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingBusiness
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingBusiness
 ```
-This example shows how to use the Get-MgBookingBusiness Cmdlet.
+This example shows how to use the Get-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBookingBusiness Cmdlet
+### Example 3: Using the Get-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Get-MgBookingBusiness -Query "Adventure" 
+Import-Module Microsoft.Graph.Beta.Bookings
+Get-MgBetaBookingBusiness -Query "Adventure" 
 ```
-This example shows how to use the Get-MgBookingBusiness Cmdlet.
+This example shows how to use the Get-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

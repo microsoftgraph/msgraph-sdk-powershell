@@ -1,6 +1,6 @@
-### Example 1: Using the Test-MgUserSecurityInformationProtectionSensitivityLabelApplication Cmdlet
+### Example 1: Using the Test-MgBetaUserSecurityInformationProtectionSensitivityLabelApplication Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	ContentInfo = @{
 		"@odata.type" = "#microsoft.graph.security.contentInfo"
@@ -64,7 +64,7 @@ $params = @{
 		)
 	}
 }
-Test-MgUserSecurityInformationProtectionSensitivityLabelApplication -UserId $userId -BodyParameter $params
+Test-MgBetaUserSecurityInformationProtectionSensitivityLabelApplication -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Test-MgUserSecurityInformationProtectionSensitivityLabelApplication Cmdlet.
+This example shows how to use the Test-MgBetaUserSecurityInformationProtectionSensitivityLabelApplication Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

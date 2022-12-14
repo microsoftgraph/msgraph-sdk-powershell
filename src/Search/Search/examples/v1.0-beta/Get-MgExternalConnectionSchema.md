@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgExternalConnectionSchema Cmdlet
+### Example 1: Using the Get-MgBetaExternalConnectionSchema Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgExternalConnectionSchema -ExternalConnectionId $externalConnectionId
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaExternalConnectionSchema -ExternalConnectionId $externalConnectionId
 ```
-This example shows how to use the Get-MgExternalConnectionSchema Cmdlet.
+This example shows how to use the Get-MgBetaExternalConnectionSchema Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

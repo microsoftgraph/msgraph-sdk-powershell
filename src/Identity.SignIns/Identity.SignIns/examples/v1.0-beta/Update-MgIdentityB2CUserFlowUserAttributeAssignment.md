@@ -1,10 +1,10 @@
-### Example 1: Using the Update-MgIdentityB2CUserFlowUserAttributeAssignment Cmdlet
+### Example 1: Using the Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	UserInputType = "textBox"
 }
-Update-MgIdentityB2CUserFlowUserAttributeAssignment -B2cIdentityUserFlowId $b2cIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId -BodyParameter $params
+Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment -B2cIdentityUserFlowId $b2cIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId -BodyParameter $params
 ```
-This example shows how to use the Update-MgIdentityB2CUserFlowUserAttributeAssignment Cmdlet.
+This example shows how to use the Update-MgBetaIdentityB2CUserFlowUserAttributeAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

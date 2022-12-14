@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgChatPermissionGrant Cmdlet
+### Example 1: Using the Get-MgBetaChatPermissionGrant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatPermissionGrant -ChatId $chatId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatPermissionGrant -ChatId $chatId
 ```
-This example shows how to use the Get-MgChatPermissionGrant Cmdlet.
+This example shows how to use the Get-MgBetaChatPermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,8 +1,8 @@
 ### Example 1: Get the identity governance settings
 
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementSetting
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementSetting
 
 Id        DaysUntilExternalUserDeletedAfterBlocked ExternalUserLifecycleAction
 --        ---------------------------------------- ---------------------------

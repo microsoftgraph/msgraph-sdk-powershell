@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgTeamScheduleShift Cmdlet
+### Example 1: Using the New-MgBetaTeamScheduleShift Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Id = "SHFT_577b75d2-a927-48c0-a5d1-dc984894e7b8"
 	UserId = "c5d0c76b-80c4-481c-be50-923cd8d680a1"
@@ -38,7 +38,7 @@ $params = @{
 		)
 	}
 }
-New-MgTeamScheduleShift -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamScheduleShift -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamScheduleShift Cmdlet.
+This example shows how to use the New-MgBetaTeamScheduleShift Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

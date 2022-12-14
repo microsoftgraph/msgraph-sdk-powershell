@@ -1,6 +1,6 @@
-### Example 1: Using the Add-MgTeamMember Cmdlet
+### Example 1: Using the Add-MgBetaTeamMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Values = @(
 		@{
@@ -18,13 +18,13 @@ $params = @{
 		}
 	)
 }
-Add-MgTeamMember -TeamId $teamId -BodyParameter $params
+Add-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the Add-MgTeamMember Cmdlet.
+This example shows how to use the Add-MgBetaTeamMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Add-MgTeamMember Cmdlet
+### Example 2: Using the Add-MgBetaTeamMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Values = @(
 		@{
@@ -42,13 +42,13 @@ $params = @{
 		}
 	)
 }
-Add-MgTeamMember -TeamId $teamId -BodyParameter $params
+Add-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the Add-MgTeamMember Cmdlet.
+This example shows how to use the Add-MgBetaTeamMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Add-MgTeamMember Cmdlet
+### Example 3: Using the Add-MgBetaTeamMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Values = @(
 		@{
@@ -66,7 +66,7 @@ $params = @{
 		}
 	)
 }
-Add-MgTeamMember -TeamId $teamId -BodyParameter $params
+Add-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the Add-MgTeamMember Cmdlet.
+This example shows how to use the Add-MgBetaTeamMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

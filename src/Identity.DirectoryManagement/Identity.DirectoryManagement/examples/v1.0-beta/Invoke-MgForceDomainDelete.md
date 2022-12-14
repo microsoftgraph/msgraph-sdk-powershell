@@ -1,10 +1,10 @@
-### Example 1: Using the Invoke-MgForceDomainDelete Cmdlet
+### Example 1: Using the Invoke-MgBetaForceDomainDelete Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	DisableUserAccounts = $true
 }
-Invoke-MgForceDomainDelete -DomainId $domainId -BodyParameter $params
+Invoke-MgBetaForceDomainDelete -DomainId $domainId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgForceDomainDelete Cmdlet.
+This example shows how to use the Invoke-MgBetaForceDomainDelete Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

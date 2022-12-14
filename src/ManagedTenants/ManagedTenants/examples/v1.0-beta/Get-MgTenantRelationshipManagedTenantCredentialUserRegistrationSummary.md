@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet
+### Example 1: Using the Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary -CredentialUserRegistrationsSummaryId $credentialUserRegistrationsSummaryId
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary -CredentialUserRegistrationsSummaryId $credentialUserRegistrationsSummaryId
 ```
-This example shows how to use the Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet
+### Example 2: Using the Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.ManagedTenants
-Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary
+Import-Module Microsoft.Graph.Beta.ManagedTenants
+Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
 ```
-This example shows how to use the Get-MgTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet.
+This example shows how to use the Get-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

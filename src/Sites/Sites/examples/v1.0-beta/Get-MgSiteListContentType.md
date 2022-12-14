@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgSiteListContentType Cmdlet
+### Example 1: Using the Get-MgBetaSiteListContentType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteListContentType -SiteId $siteId -ListId $listId
+Import-Module Microsoft.Graph.Beta.Sites
+Get-MgBetaSiteListContentType -SiteId $siteId -ListId $listId
 ```
-This example shows how to use the Get-MgSiteListContentType Cmdlet.
+This example shows how to use the Get-MgBetaSiteListContentType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

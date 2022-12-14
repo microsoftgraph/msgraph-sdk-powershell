@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgEducationClassAssignment Cmdlet
+### Example 1: Using the Remove-MgBetaEducationClassAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Remove-MgEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+Import-Module Microsoft.Graph.Beta.Education
+Remove-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```
-This example shows how to use the Remove-MgEducationClassAssignment Cmdlet.
+This example shows how to use the Remove-MgBetaEducationClassAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

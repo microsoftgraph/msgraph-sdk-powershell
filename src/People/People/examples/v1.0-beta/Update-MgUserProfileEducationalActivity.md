@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgUserProfileEducationalActivity Cmdlet
+### Example 1: Using the Update-MgBetaUserProfileEducationalActivity Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	Institution = @{
 		Location = @{
@@ -15,7 +15,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Update-MgUserProfileEducationalActivity -UserId $userId -EducationalActivityId $educationalActivityId -BodyParameter $params
+Update-MgBetaUserProfileEducationalActivity -UserId $userId -EducationalActivityId $educationalActivityId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserProfileEducationalActivity Cmdlet.
+This example shows how to use the Update-MgBetaUserProfileEducationalActivity Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

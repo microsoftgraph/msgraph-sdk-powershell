@@ -1,12 +1,12 @@
-### Example 1: Using the New-MgUserProfilePhone Cmdlet
+### Example 1: Using the New-MgBetaUserProfilePhone Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	DisplayName = "Car Phone"
 	Number = "+7 499 342 22 13"
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfilePhone -UserId $userId -BodyParameter $params
+New-MgBetaUserProfilePhone -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserProfilePhone Cmdlet.
+This example shows how to use the New-MgBetaUserProfilePhone Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

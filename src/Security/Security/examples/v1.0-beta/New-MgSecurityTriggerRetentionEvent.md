@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSecurityTriggerRetentionEvent Cmdlet
+### Example 1: Using the New-MgBetaSecurityTriggerRetentionEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	"@odata.type" = "#microsoft.graph.security.retentionEvent"
 	DisplayName = "String"
@@ -24,7 +24,7 @@ $params = @{
 	}
 	LastStatusUpdateDateTime = [System.DateTime]::Parse("String (timestamp)")
 }
-New-MgSecurityTriggerRetentionEvent -BodyParameter $params
+New-MgBetaSecurityTriggerRetentionEvent -BodyParameter $params
 ```
-This example shows how to use the New-MgSecurityTriggerRetentionEvent Cmdlet.
+This example shows how to use the New-MgBetaSecurityTriggerRetentionEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

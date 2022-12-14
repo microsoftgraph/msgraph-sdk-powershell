@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserTodoListTaskAttachmentUploadSession Cmdlet
+### Example 1: Using the New-MgBetaUserTodoListTaskAttachmentUploadSession Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	AttachmentInfo = @{
 		AttachmentType = "file"
@@ -9,7 +9,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserTodoListTaskAttachmentUploadSession -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
+New-MgBetaUserTodoListTaskAttachmentUploadSession -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserTodoListTaskAttachmentUploadSession Cmdlet.
+This example shows how to use the New-MgBetaUserTodoListTaskAttachmentUploadSession Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet
+### Example 1: Using the New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	ApplyHoldToSource = $true
 	DataSource = @{
@@ -8,20 +8,20 @@ $params = @{
 		Email = "adelev@contoso.com"
 	}
 }
-New-MgComplianceEdiscoveryCaseNoncustodialDataSource -CaseId $caseId -BodyParameter $params
+New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -CaseId $caseId -BodyParameter $params
 ```
-This example shows how to use the New-MgComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet.
+This example shows how to use the New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet
+### Example 2: Using the New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	ApplyHoldToSource = $false
 	DataSource = @{
 		"@odata.type" = "microsoft.graph.ediscovery.siteSource"
 	}
 }
-New-MgComplianceEdiscoveryCaseNoncustodialDataSource -CaseId $caseId -BodyParameter $params
+New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -CaseId $caseId -BodyParameter $params
 ```
-This example shows how to use the New-MgComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet.
+This example shows how to use the New-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

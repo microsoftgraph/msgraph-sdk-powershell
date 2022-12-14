@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgPrintOperation Cmdlet
+### Example 1: Using the Get-MgBetaPrintOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintOperation -PrintOperationId $printOperationId
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+Get-MgBetaPrintOperation -PrintOperationId $printOperationId
 ```
-This example shows how to use the Get-MgPrintOperation Cmdlet.
+This example shows how to use the Get-MgBetaPrintOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

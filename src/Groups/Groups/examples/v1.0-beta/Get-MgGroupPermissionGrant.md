@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgGroupPermissionGrant Cmdlet
+### Example 1: Using the Get-MgBetaGroupPermissionGrant Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupPermissionGrant -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupPermissionGrant -GroupId $groupId
 ```
-This example shows how to use the Get-MgGroupPermissionGrant Cmdlet.
+This example shows how to use the Get-MgBetaGroupPermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

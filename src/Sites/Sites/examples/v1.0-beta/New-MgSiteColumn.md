@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSiteColumn Cmdlet
+### Example 1: Using the New-MgBetaSiteColumn Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	Description = "test"
 	EnforceUniqueValues = $false
@@ -14,7 +14,7 @@ $params = @{
 		MaxLength = 255
 	}
 }
-New-MgSiteColumn -SiteId $siteId -BodyParameter $params
+New-MgBetaSiteColumn -SiteId $siteId -BodyParameter $params
 ```
-This example shows how to use the New-MgSiteColumn Cmdlet.
+This example shows how to use the New-MgBetaSiteColumn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

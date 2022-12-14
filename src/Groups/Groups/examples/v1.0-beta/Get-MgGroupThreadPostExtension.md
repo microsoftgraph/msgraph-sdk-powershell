@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgGroupThreadPostExtension Cmdlet
+### Example 1: Using the Get-MgBetaGroupThreadPostExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId
 ```
-This example shows how to use the Get-MgGroupThreadPostExtension Cmdlet.
+This example shows how to use the Get-MgBetaGroupThreadPostExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

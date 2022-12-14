@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSchemaExtension Cmdlet
+### Example 1: Using the New-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
 $params = @{
 	Id = "graphlearn_courses"
 	Description = "Graph Learn training courses extensions"
@@ -22,13 +22,13 @@ $params = @{
 		}
 	)
 }
-New-MgSchemaExtension -BodyParameter $params
+New-MgBetaSchemaExtension -BodyParameter $params
 ```
-This example shows how to use the New-MgSchemaExtension Cmdlet.
+This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgSchemaExtension Cmdlet
+### Example 2: Using the New-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
 $params = @{
 	Id = "courses"
 	Description = "Graph Learn training courses extensions"
@@ -50,13 +50,13 @@ $params = @{
 		}
 	)
 }
-New-MgSchemaExtension -BodyParameter $params
+New-MgBetaSchemaExtension -BodyParameter $params
 ```
-This example shows how to use the New-MgSchemaExtension Cmdlet.
+This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgSchemaExtension Cmdlet
+### Example 3: Using the New-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
 $params = @{
 	Id = "courses"
 	Description = "Graph Learn training courses extensions"
@@ -79,7 +79,7 @@ $params = @{
 		}
 	)
 }
-New-MgSchemaExtension -BodyParameter $params
+New-MgBetaSchemaExtension -BodyParameter $params
 ```
-This example shows how to use the New-MgSchemaExtension Cmdlet.
+This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

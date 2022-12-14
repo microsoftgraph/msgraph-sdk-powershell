@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgPlace Cmdlet
+### Example 1: Using the Update-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	"@odata.type" = "microsoft.graph.room"
 	Nickname = "Conf Room"
@@ -9,13 +9,13 @@ $params = @{
 	Capacity = 
 	IsWheelChairAccessible = $false
 }
-Update-MgPlace -PlaceId $placeId -BodyParameter $params
+Update-MgBetaPlace -PlaceId $placeId -BodyParameter $params
 ```
-This example shows how to use the Update-MgPlace Cmdlet.
+This example shows how to use the Update-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgPlace Cmdlet
+### Example 2: Using the Update-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	"@odata.type" = "microsoft.graph.roomList"
 	DisplayName = "Building 1"
@@ -35,13 +35,13 @@ $params = @{
 		AltitudeAccuracy = $null
 	}
 }
-Update-MgPlace -PlaceId $placeId -BodyParameter $params
+Update-MgBetaPlace -PlaceId $placeId -BodyParameter $params
 ```
-This example shows how to use the Update-MgPlace Cmdlet.
+This example shows how to use the Update-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Update-MgPlace Cmdlet
+### Example 3: Using the Update-MgBetaPlace Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	"@odata.type" = "microsoft.graph.workspace"
 	Nickname = "Conf Room"
@@ -50,7 +50,7 @@ $params = @{
 	Capacity = 
 	IsWheelChairAccessible = $false
 }
-Update-MgPlace -PlaceId $placeId -BodyParameter $params
+Update-MgBetaPlace -PlaceId $placeId -BodyParameter $params
 ```
-This example shows how to use the Update-MgPlace Cmdlet.
+This example shows how to use the Update-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,8 +1,8 @@
-### Example 1: Using the Remove-MgUserProfileLanguage Cmdlet
+### Example 1: Using the Remove-MgBetaUserProfileLanguage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Remove-MgUserProfileLanguage -UserId $userId -LanguageProficiencyId $languageProficiencyId
+Remove-MgBetaUserProfileLanguage -UserId $userId -LanguageProficiencyId $languageProficiencyId
 ```
-This example shows how to use the Remove-MgUserProfileLanguage Cmdlet.
+This example shows how to use the Remove-MgBetaUserProfileLanguage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserProfileWebAccount Cmdlet
+### Example 1: Using the New-MgBetaUserProfileWebAccount Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	Description = "My Github contributions!"
 	UserId = "innocenty.popov"
@@ -10,7 +10,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfileWebAccount -UserId $userId -BodyParameter $params
+New-MgBetaUserProfileWebAccount -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserProfileWebAccount Cmdlet.
+This example shows how to use the New-MgBetaUserProfileWebAccount Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

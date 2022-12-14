@@ -1,6 +1,6 @@
-### Example 1: Using the Remove-MgWindowsUpdatesUpdatableAssetMember Cmdlet
+### Example 1: Using the Remove-MgBetaWindowsUpdatesUpdatableAssetMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	Assets = @(
 		@{
@@ -9,7 +9,7 @@ $params = @{
 		}
 	)
 }
-Remove-MgWindowsUpdatesUpdatableAssetMember -UpdatableAssetId $updatableAssetId -BodyParameter $params
+Remove-MgBetaWindowsUpdatesUpdatableAssetMember -UpdatableAssetId $updatableAssetId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgWindowsUpdatesUpdatableAssetMember Cmdlet.
+This example shows how to use the Remove-MgBetaWindowsUpdatesUpdatableAssetMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

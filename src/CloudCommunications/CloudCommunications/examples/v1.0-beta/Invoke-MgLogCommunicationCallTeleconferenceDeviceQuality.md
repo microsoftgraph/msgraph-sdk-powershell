@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality Cmdlet
+### Example 1: Using the Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Quality = @{
 		"@odata.type" = "#microsoft.graph.teleconferenceDeviceQuality"
@@ -85,7 +85,7 @@ $params = @{
 		)
 	}
 }
-Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality -BodyParameter $params
+Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgLogCommunicationCallTeleconferenceDeviceQuality Cmdlet.
+This example shows how to use the Invoke-MgBetaLogCommunicationCallTeleconferenceDeviceQuality Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

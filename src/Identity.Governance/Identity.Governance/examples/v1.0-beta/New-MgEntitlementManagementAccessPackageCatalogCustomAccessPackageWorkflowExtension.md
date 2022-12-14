@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet
+### Example 1: Using the New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "test_action_0124"
 	Description = "this is for graph testing only"
@@ -15,7 +15,7 @@ $params = @{
 		ResourceId = "f604bd15-f785-4309-ad7c-6fad18ddb6cb"
 	}
 }
-New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension -AccessPackageCatalogId $accessPackageCatalogId -BodyParameter $params
+New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension -AccessPackageCatalogId $accessPackageCatalogId -BodyParameter $params
 ```
-This example shows how to use the New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet.
+This example shows how to use the New-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

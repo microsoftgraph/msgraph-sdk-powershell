@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserMailFolderMessageRule Cmdlet
+### Example 1: Using the New-MgBetaUserMailFolderMessageRule Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	DisplayName = "From partner"
 	Sequence = 2
@@ -23,7 +23,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+New-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserMailFolderMessageRule Cmdlet.
+This example shows how to use the New-MgBetaUserMailFolderMessageRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

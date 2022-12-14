@@ -1,13 +1,15 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.DirectoryObjects
+```powershell
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 
 $params = @{
 	SecurityEnabledOnly = $true
 }
 
-Get-MgDirectoryObjectMemberObject -DirectoryObjectId $directoryObjectId -BodyParameter $params
+Get-MgBetaDirectoryObjectMemberObject -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
-This example shows how to use the Get-MgServicePrincipalMemberObject Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaServicePrincipalMemberObject Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserRegisteredDevice Cmdlet
+### Example 1: Using the Get-MgBetaUserRegisteredDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserRegisteredDevice -UserId $userId
+Get-MgBetaUserRegisteredDevice -UserId $userId
 ```
-This example shows how to use the Get-MgUserRegisteredDevice Cmdlet.
+This example shows how to use the Get-MgBetaUserRegisteredDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

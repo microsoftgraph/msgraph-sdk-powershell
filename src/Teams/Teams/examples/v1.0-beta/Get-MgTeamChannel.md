@@ -1,35 +1,35 @@
-### Example 1: Using the Get-MgTeamChannel Cmdlet
+### Example 1: Using the Get-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannel -TeamId $teamId -ChannelId $channelId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamChannel -TeamId $teamId -ChannelId $channelId
 ```
-This example shows how to use the Get-MgTeamChannel Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgTeamChannel Cmdlet
+### Example 2: Using the Get-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannel -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamChannel -TeamId $teamId
 ```
-This example shows how to use the Get-MgTeamChannel Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgTeamChannel Cmdlet
+### Example 3: Using the Get-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannel -TeamId $teamId -Filter "membershipType eq 'shared'" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamChannel -TeamId $teamId -Filter "membershipType eq 'shared'" 
 ```
-This example shows how to use the Get-MgTeamChannel Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Get-MgTeamChannel Cmdlet
+### Example 4: Using the Get-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannel -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamChannel -TeamId $teamId
 ```
-This example shows how to use the Get-MgTeamChannel Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the Get-MgTeamChannel Cmdlet
+### Example 5: Using the Get-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannel -TeamId $teamId -Filter "membershipType eq 'private'" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamChannel -TeamId $teamId -Filter "membershipType eq 'private'" 
 ```
-This example shows how to use the Get-MgTeamChannel Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

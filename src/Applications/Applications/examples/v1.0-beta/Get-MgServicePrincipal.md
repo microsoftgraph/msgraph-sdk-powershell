@@ -1,8 +1,8 @@
 ### Example 1: Get all service principals from the directory
 
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgServicePrincipal
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaServicePrincipal
 
 Id             : 304ae362-7953-4d08-8e15-aeece4d01017c
 DisplayName    : IC3 Gateway TestClone
@@ -19,13 +19,13 @@ This example retrieves all service principals from the directory.
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 2: Get the service principal by display name
 
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgServicePrincipal -Filter "DisplayName eq 'Power BI Service'" | 
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaServicePrincipal -Filter "DisplayName eq 'Power BI Service'" | 
   Format-List Id, DisplayName,AppId, SignInAudience
 
 Id             : 9518fb8f-8d9e-4aae-be20-d398f9cc59ac
@@ -38,13 +38,13 @@ This example gets the service principal by display name.
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 3: Get a count of the service principals
 
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgServicePrincipal -ConsistencyLevel eventual -Count spCount
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaServicePrincipal -ConsistencyLevel eventual -Count spCount
 
 Id                                   DisplayName                                                    AppId                                SignInAudience                     PublisherName
 --                                   -----------                                                    -----                                --------------                     -------------
@@ -58,13 +58,13 @@ This example returns a list of all the service principals. $spCount variable con
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 4: Use -Filter and -Top to get five service principals with a display name that starts with 'a' including a count of returned objects
 
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgServicePrincipal -ConsistencyLevel eventual -Count spCount -Filter "startsWith(DisplayName, 'a')" -Top 5
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaServicePrincipal -ConsistencyLevel eventual -Count spCount -Filter "startsWith(DisplayName, 'a')" -Top 5
 
 Id                                   DisplayName                       AppId                                SignInAudience      PublisherName
 --                                   -----------                       -----                                --------------      -------------
@@ -79,13 +79,13 @@ This example filters service principals whose display name starts with 'a' and c
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 5: Use -Search to get service principals with display names that contain the letters 'Team' including a count of returned objects
 
 ```powershell
-Connect-MgGraph -Scopes 'Application.Read.All'
-Get-MgServicePrincipal -ConsistencyLevel eventual -Count spCount -Search '"DisplayName:Team"'
+Connect-MgBetaGraph -Scopes 'Application.Read.All'
+Get-MgBetaServicePrincipal -ConsistencyLevel eventual -Count spCount -Search '"DisplayName:Team"'
 
 Id                                   DisplayName                                                 AppId                                SignInAudience                     PublisherName
 --                                   -----------                                                 -----                                --------------                     -------------
@@ -102,4 +102,4 @@ This example returns all service principals whose display name contains the word
 
 To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.

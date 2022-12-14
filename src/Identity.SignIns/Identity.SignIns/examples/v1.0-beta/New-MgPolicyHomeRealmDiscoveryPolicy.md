@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgPolicyHomeRealmDiscoveryPolicy Cmdlet
+### Example 1: Using the New-MgBetaPolicyHomeRealmDiscoveryPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Definition = @(
 		"definition-value"
@@ -8,7 +8,7 @@ $params = @{
 	DisplayName = "displayName-value"
 	IsOrganizationDefault = $true
 }
-New-MgPolicyHomeRealmDiscoveryPolicy -BodyParameter $params
+New-MgBetaPolicyHomeRealmDiscoveryPolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgPolicyHomeRealmDiscoveryPolicy Cmdlet.
+This example shows how to use the New-MgBetaPolicyHomeRealmDiscoveryPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

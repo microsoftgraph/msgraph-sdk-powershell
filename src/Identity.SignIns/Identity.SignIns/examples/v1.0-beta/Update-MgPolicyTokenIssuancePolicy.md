@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgPolicyTokenIssuancePolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyTokenIssuancePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Definition = @(
 		"definition-value"
@@ -8,7 +8,7 @@ $params = @{
 	DisplayName = "displayName-value"
 	IsOrganizationDefault = $true
 }
-Update-MgPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId -BodyParameter $params
+Update-MgBetaPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId -BodyParameter $params
 ```
-This example shows how to use the Update-MgPolicyTokenIssuancePolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyTokenIssuancePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

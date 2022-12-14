@@ -1,16 +1,16 @@
-### Example 1: Using the Get-MgUserMailFolderChildFolder Cmdlet
+### Example 1: Using the Get-MgBetaUserMailFolderChildFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
+Get-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
 ```
-This example shows how to use the Get-MgUserMailFolderChildFolder Cmdlet.
+This example shows how to use the Get-MgBetaUserMailFolderChildFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserMailFolderChildFolder Cmdlet
+### Example 2: Using the Get-MgBetaUserMailFolderChildFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
+Get-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
 ```
-This example shows how to use the Get-MgUserMailFolderChildFolder Cmdlet.
+This example shows how to use the Get-MgBetaUserMailFolderChildFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

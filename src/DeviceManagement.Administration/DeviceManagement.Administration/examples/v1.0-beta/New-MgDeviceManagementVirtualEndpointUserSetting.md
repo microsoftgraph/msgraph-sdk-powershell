@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgDeviceManagementVirtualEndpointUserSetting Cmdlet
+### Example 1: Using the New-MgBetaDeviceManagementVirtualEndpointUserSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Administration
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Administration
 $params = @{
 	"@odata.type" = "#microsoft.graph.cloudPcUserSetting"
 	DisplayName = "Example"
@@ -11,7 +11,7 @@ $params = @{
 		UserRestoreEnabled = $true
 	}
 }
-New-MgDeviceManagementVirtualEndpointUserSetting -BodyParameter $params
+New-MgBetaDeviceManagementVirtualEndpointUserSetting -BodyParameter $params
 ```
-This example shows how to use the New-MgDeviceManagementVirtualEndpointUserSetting Cmdlet.
+This example shows how to use the New-MgBetaDeviceManagementVirtualEndpointUserSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

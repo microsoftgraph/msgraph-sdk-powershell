@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgOrganizationSettingProfileCardProperty Cmdlet
+### Example 1: Using the Update-MgBetaOrganizationSettingProfileCardProperty Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	Annotations = @(
 		@{
@@ -13,7 +13,7 @@ $params = @{
 		}
 	)
 }
-Update-MgOrganizationSettingProfileCardProperty -OrganizationId $organizationId -ProfileCardPropertyId $profileCardPropertyId -BodyParameter $params
+Update-MgBetaOrganizationSettingProfileCardProperty -OrganizationId $organizationId -ProfileCardPropertyId $profileCardPropertyId -BodyParameter $params
 ```
-This example shows how to use the Update-MgOrganizationSettingProfileCardProperty Cmdlet.
+This example shows how to use the Update-MgBetaOrganizationSettingProfileCardProperty Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

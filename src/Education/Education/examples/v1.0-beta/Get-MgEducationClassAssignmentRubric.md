@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgEducationClassAssignmentRubric Cmdlet
+### Example 1: Using the Get-MgBetaEducationClassAssignmentRubric Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationClassAssignmentRubric -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationClassAssignmentRubric -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```
-This example shows how to use the Get-MgEducationClassAssignmentRubric Cmdlet.
+This example shows how to use the Get-MgBetaEducationClassAssignmentRubric Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

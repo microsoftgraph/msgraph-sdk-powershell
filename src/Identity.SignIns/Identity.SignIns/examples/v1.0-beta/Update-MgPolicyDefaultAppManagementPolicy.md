@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgPolicyDefaultAppManagementPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyDefaultAppManagementPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	IsEnabled = $true
 	ApplicationRestrictions = @{
@@ -40,7 +40,7 @@ $params = @{
 		)
 	}
 }
-Update-MgPolicyDefaultAppManagementPolicy -BodyParameter $params
+Update-MgBetaPolicyDefaultAppManagementPolicy -BodyParameter $params
 ```
-This example shows how to use the Update-MgPolicyDefaultAppManagementPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyDefaultAppManagementPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

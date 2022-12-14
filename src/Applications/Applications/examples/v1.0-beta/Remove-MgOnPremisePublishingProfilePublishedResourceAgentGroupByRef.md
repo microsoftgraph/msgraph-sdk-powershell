@@ -1,14 +1,14 @@
-### Example 1: Using the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet
+### Example 1: Using the Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -OnPremisesAgentGroupId $onPremisesAgentGroupId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -OnPremisesAgentGroupId $onPremisesAgentGroupId
 ```
-This example shows how to use the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet.
+This example shows how to use the Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet
+### Example 2: Using the Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -OnPremisesAgentGroupId $onPremisesAgentGroupId
+Import-Module Microsoft.Graph.Beta.Applications
+Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef -OnPremisesPublishingProfileId $onPremisesPublishingProfileId -PublishedResourceId $publishedResourceId -OnPremisesAgentGroupId $onPremisesAgentGroupId
 ```
-This example shows how to use the Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet.
+This example shows how to use the Remove-MgBetaOnPremisePublishingProfilePublishedResourceAgentGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

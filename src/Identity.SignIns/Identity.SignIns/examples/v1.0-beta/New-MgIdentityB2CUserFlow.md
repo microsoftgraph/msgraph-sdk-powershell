@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgIdentityB2CUserFlow Cmdlet
+### Example 1: Using the New-MgBetaIdentityB2CUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Id = "UserFlowWithAPIConnector"
 	UserFlowType = "signUpOrSignIn"
@@ -14,13 +14,13 @@ $params = @{
 		}
 	}
 }
-New-MgIdentityB2CUserFlow -BodyParameter $params
+New-MgBetaIdentityB2CUserFlow -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityB2CUserFlow Cmdlet.
+This example shows how to use the New-MgBetaIdentityB2CUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgIdentityB2CUserFlow Cmdlet
+### Example 2: Using the New-MgBetaIdentityB2CUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Id = "Customer"
 	UserFlowType = "signUpOrSignIn"
@@ -31,19 +31,19 @@ $params = @{
 		}
 	)
 }
-New-MgIdentityB2CUserFlow -BodyParameter $params
+New-MgBetaIdentityB2CUserFlow -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityB2CUserFlow Cmdlet.
+This example shows how to use the New-MgBetaIdentityB2CUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgIdentityB2CUserFlow Cmdlet
+### Example 3: Using the New-MgBetaIdentityB2CUserFlow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	Id = "Customer"
 	UserFlowType = "signUpOrSignIn"
 	UserFlowTypeVersion = 3
 }
-New-MgIdentityB2CUserFlow -BodyParameter $params
+New-MgBetaIdentityB2CUserFlow -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityB2CUserFlow Cmdlet.
+This example shows how to use the New-MgBetaIdentityB2CUserFlow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgEducationClassAssignment Cmdlet
+### Example 1: Using the New-MgBetaEducationClassAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	DueDateTime = [System.DateTime]::Parse("2021-09-07T00:00:00Z")
 	DisplayName = "Reading test 09.03 #4"
@@ -18,7 +18,7 @@ $params = @{
 	Status = "draft"
 	AllowStudentsToAddResourcesToSubmission = $true
 }
-New-MgEducationClassAssignment -EducationClassId $educationClassId -BodyParameter $params
+New-MgBetaEducationClassAssignment -EducationClassId $educationClassId -BodyParameter $params
 ```
-This example shows how to use the New-MgEducationClassAssignment Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

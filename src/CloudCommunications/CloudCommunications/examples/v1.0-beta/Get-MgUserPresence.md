@@ -1,15 +1,15 @@
-### Example 1: Using the Get-MgUserPresence Cmdlet
+### Example 1: Using the Get-MgBetaUserPresence Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgUserPresence -UserId $userId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Get-MgBetaUserPresence -UserId $userId
 ```
-This example shows how to use the Get-MgUserPresence Cmdlet.
+This example shows how to use the Get-MgBetaUserPresence Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserPresence Cmdlet
+### Example 2: Using the Get-MgBetaUserPresence Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 # A UPN can also be used as -UserId.
-Get-MgUserPresence -UserId $userId
+Get-MgBetaUserPresence -UserId $userId
 ```
-This example shows how to use the Get-MgUserPresence Cmdlet.
+This example shows how to use the Get-MgBetaUserPresence Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

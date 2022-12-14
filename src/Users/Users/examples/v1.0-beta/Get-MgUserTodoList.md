@@ -1,16 +1,16 @@
-### Example 1: Using the Get-MgUserTodoList Cmdlet
+### Example 1: Using the Get-MgBetaUserTodoList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoList -UserId $userId
+Get-MgBetaUserTodoList -UserId $userId
 ```
-This example shows how to use the Get-MgUserTodoList Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserTodoList Cmdlet
+### Example 2: Using the Get-MgBetaUserTodoList Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId
+Get-MgBetaUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId
 ```
-This example shows how to use the Get-MgUserTodoList Cmdlet.
+This example shows how to use the Get-MgBetaUserTodoList Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

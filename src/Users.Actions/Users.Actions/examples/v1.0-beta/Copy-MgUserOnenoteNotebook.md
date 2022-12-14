@@ -1,12 +1,12 @@
-### Example 1: Using the Copy-MgUserOnenoteNotebook Cmdlet
+### Example 1: Using the Copy-MgBetaUserOnenoteNotebook Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	GroupId = "groupId-value"
 	RenameAs = "renameAs-value"
 }
 # A UPN can also be used as -UserId.
-Copy-MgUserOnenoteNotebook -UserId $userId -NotebookId $notebookId -BodyParameter $params
+Copy-MgBetaUserOnenoteNotebook -UserId $userId -NotebookId $notebookId -BodyParameter $params
 ```
-This example shows how to use the Copy-MgUserOnenoteNotebook Cmdlet.
+This example shows how to use the Copy-MgBetaUserOnenoteNotebook Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

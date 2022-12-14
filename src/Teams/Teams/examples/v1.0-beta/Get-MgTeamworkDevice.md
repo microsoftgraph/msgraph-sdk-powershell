@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgTeamworkDevice Cmdlet
+### Example 1: Using the Get-MgBetaTeamworkDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkDevice -TeamworkDeviceId $teamworkDeviceId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkDevice -TeamworkDeviceId $teamworkDeviceId
 ```
-This example shows how to use the Get-MgTeamworkDevice Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgTeamworkDevice Cmdlet
+### Example 2: Using the Get-MgBetaTeamworkDevice Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkDevice
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkDevice
 ```
-This example shows how to use the Get-MgTeamworkDevice Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

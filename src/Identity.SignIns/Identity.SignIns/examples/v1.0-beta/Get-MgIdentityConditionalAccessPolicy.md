@@ -1,8 +1,8 @@
 ### Example 1: Get a list of all conditional access policies in Azure AD.
 
 ```powershell
-Connect-MgGraph -Scopes 'Policy.Read.All'
-Get-MgIdentityConditionalAccessPolicy |Format-List
+Connect-MgBetaGraph -Scopes 'Policy.Read.All'
+Get-MgBetaIdentityConditionalAccessPolicy |Format-List
 
 Conditions           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessConditionSet
 CreatedDateTime      : 1/13/2022 6:35:35 AM
@@ -32,8 +32,8 @@ This example retrieves all the conditional access policies in Azure AD.
 ### Example 2: Get a conditional access policy by Id
 
 ```powershell
-Connect-MgGraph -Scopes 'Policy.Read.All'
-Get-MgIdentityConditionalAccessPolicy -ConditionalAccessPolicyId '5e7615b8-dbe4-4cc1-810c-26adb77a3518' | 
+Connect-MgBetaGraph -Scopes 'Policy.Read.All'
+Get-MgBetaIdentityConditionalAccessPolicy -ConditionalAccessPolicyId '5e7615b8-dbe4-4cc1-810c-26adb77a3518' | 
   Format-List
 
 Conditions           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphConditionalAccessConditionSet

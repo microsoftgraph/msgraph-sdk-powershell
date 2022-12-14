@@ -5,7 +5,7 @@ $GroupUpdate= @{
   "Description"= "This is a test group"
   "DisplayName"= "Test Group 1"
 
-Update-MgGroup -GroupId '74a7bfca-7fbc-4a67-b4bb-3ef115b114f1' 
+Update-MgBetaGroup -GroupId '74a7bfca-7fbc-4a67-b4bb-3ef115b114f1' 
   -BodyParameter $GroupUpdate
 ```
 

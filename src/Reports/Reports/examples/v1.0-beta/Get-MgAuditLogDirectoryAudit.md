@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgAuditLogDirectoryAudit Cmdlet
+### Example 1: Using the Get-MgBetaAuditLogDirectoryAudit Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogDirectoryAudit -DirectoryAuditId $directoryAuditId
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaAuditLogDirectoryAudit -DirectoryAuditId $directoryAuditId
 ```
-This example shows how to use the Get-MgAuditLogDirectoryAudit Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogDirectoryAudit Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgAuditLogDirectoryAudit Cmdlet
+### Example 2: Using the Get-MgBetaAuditLogDirectoryAudit Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogDirectoryAudit
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaAuditLogDirectoryAudit
 ```
-This example shows how to use the Get-MgAuditLogDirectoryAudit Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogDirectoryAudit Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

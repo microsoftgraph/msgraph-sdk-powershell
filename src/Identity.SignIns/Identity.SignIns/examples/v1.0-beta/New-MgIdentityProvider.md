@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgIdentityProvider Cmdlet
+### Example 1: Using the New-MgBetaIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	"@odata.type" = "microsoft.graph.appleManagedIdentityProvider"
 	DisplayName = "Sign in with Apple"
@@ -9,13 +9,13 @@ $params = @{
 	KeyId = "99P6D879C4"
 	CertificateData = "******"
 }
-New-MgIdentityProvider -BodyParameter $params
+New-MgBetaIdentityProvider -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityProvider Cmdlet.
+This example shows how to use the New-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgIdentityProvider Cmdlet
+### Example 2: Using the New-MgBetaIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	"@odata.type" = "microsoft.graph.identityProvider"
 	Name = "Login with Amazon"
@@ -23,13 +23,13 @@ $params = @{
 	ClientId = "56433757-cadd-4135-8431-2c9e3fd68ae8"
 	ClientSecret = "000000000000"
 }
-New-MgIdentityProvider -BodyParameter $params
+New-MgBetaIdentityProvider -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityProvider Cmdlet.
+This example shows how to use the New-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgIdentityProvider Cmdlet
+### Example 3: Using the New-MgBetaIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	"@odata.type" = "microsoft.graph.openIdConnectIdentityProvider"
 	DisplayName = "Login with the Contoso identity provider"
@@ -41,13 +41,13 @@ $params = @{
 	ResponseType = "code"
 	Scope = "openid"
 }
-New-MgIdentityProvider -BodyParameter $params
+New-MgBetaIdentityProvider -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityProvider Cmdlet.
+This example shows how to use the New-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgIdentityProvider Cmdlet
+### Example 4: Using the New-MgBetaIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	"@odata.type" = "microsoft.graph.openIdConnectProvider"
 	Name = "Login with the Contoso identity provider"
@@ -60,13 +60,13 @@ $params = @{
 	ResponseType = "code"
 	Scope = "openid"
 }
-New-MgIdentityProvider -BodyParameter $params
+New-MgBetaIdentityProvider -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityProvider Cmdlet.
+This example shows how to use the New-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the New-MgIdentityProvider Cmdlet
+### Example 5: Using the New-MgBetaIdentityProvider Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	"@odata.type" = "microsoft.graph.socialIdentityProvider"
 	DisplayName = "Login with Amazon"
@@ -74,7 +74,7 @@ $params = @{
 	ClientId = "56433757-cadd-4135-8431-2c9e3fd68ae8"
 	ClientSecret = "000000000000"
 }
-New-MgIdentityProvider -BodyParameter $params
+New-MgBetaIdentityProvider -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityProvider Cmdlet.
+This example shows how to use the New-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

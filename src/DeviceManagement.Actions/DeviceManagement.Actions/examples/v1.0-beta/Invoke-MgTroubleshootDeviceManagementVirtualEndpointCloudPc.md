@@ -1,7 +1,7 @@
-### Example 1: Using the Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc Cmdlet
+### Example 1: Using the Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
-Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
+Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc -CloudPCId $cloudPCId
 ```
-This example shows how to use the Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc Cmdlet.
+This example shows how to use the Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

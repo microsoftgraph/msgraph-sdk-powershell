@@ -1,7 +1,7 @@
 ### Example 1: Get subscribed SKUs
 
 ```powershell
-Get-MgSubscribedSKU | Format-List
+Get-MgBetaSubscribedSKU | Format-List
 
 AppliesTo            : User
 CapabilityStatus     : Enabled

@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Identity.Governance
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 
 $params = @{
 	Decision = "Approve"
@@ -8,8 +9,9 @@ $params = @{
 	ResourceId = "a5c51e59-3fcd-4a37-87a1-835c0c21488a"
 }
 
-Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -BodyParameter $params
+Invoke-MgBetaBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Invoke-MgBetaBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

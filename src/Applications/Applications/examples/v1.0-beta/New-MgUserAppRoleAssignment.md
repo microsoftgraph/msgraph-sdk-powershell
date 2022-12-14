@@ -1,7 +1,7 @@
 ### Example 1: Assign a user an application role
 
 ```powershell
-New-MgUserAppRoleAssignment -Userid '8a7c50d3-fcbd-4727-a889-8ab232dfea01' `
+New-MgBetaUserAppRoleAssignment -Userid '8a7c50d3-fcbd-4727-a889-8ab232dfea01' `
   -PrincipalId '8a7c50d3-fcbd-4727-a889-8ab232dfea01' `
   -ResourceId '0873169c-9595-4664-9d02-499b49846ff1'  `
   -AppRoleID '00000000-0000-0000-0000-000000000000' |

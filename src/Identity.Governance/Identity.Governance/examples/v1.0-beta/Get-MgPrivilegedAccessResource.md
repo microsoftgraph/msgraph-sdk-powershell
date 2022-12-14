@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgPrivilegedAccessResource Cmdlet
+### Example 1: Using the Get-MgBetaPrivilegedAccessResource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgPrivilegedAccessResource -PrivilegedAccessId $privilegedAccessId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+Get-MgBetaPrivilegedAccessResource -PrivilegedAccessId $privilegedAccessId
 ```
-This example shows how to use the Get-MgPrivilegedAccessResource Cmdlet.
+This example shows how to use the Get-MgBetaPrivilegedAccessResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgGroupRejectedSender Cmdlet
+### Example 1: Using the Get-MgBetaGroupRejectedSender Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupRejectedSender -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupRejectedSender -GroupId $groupId
 ```
-This example shows how to use the Get-MgGroupRejectedSender Cmdlet.
+This example shows how to use the Get-MgBetaGroupRejectedSender Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

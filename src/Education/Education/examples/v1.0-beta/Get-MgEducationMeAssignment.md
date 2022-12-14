@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgEducationMeAssignment Cmdlet
+### Example 1: Using the Get-MgBetaEducationMeAssignment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationMeAssignment
+Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationMeAssignment
 ```
-This example shows how to use the Get-MgEducationMeAssignment Cmdlet.
+This example shows how to use the Get-MgBetaEducationMeAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

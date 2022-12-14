@@ -1,6 +1,6 @@
-### Example 1: Using the Confirm-MgUserMemberGroup Cmdlet
+### Example 1: Using the Confirm-MgBetaUserMemberGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	GroupIds = @(
 		"fee2c45b-915a-4a64-b130-f4eb9e75525e"
@@ -8,7 +8,7 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-Confirm-MgUserMemberGroup -UserId $userId -BodyParameter $params
+Confirm-MgBetaUserMemberGroup -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Confirm-MgUserMemberGroup Cmdlet.
+This example shows how to use the Confirm-MgBetaUserMemberGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

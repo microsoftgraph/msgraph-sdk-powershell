@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgTeamScheduleTimeOff Cmdlet
+### Example 1: Using the New-MgBetaTeamScheduleTimeOff Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	UserId = "c5d0c76b-80c4-481c-be50-923cd8d680a1"
 	SharedTimeOff = @{
@@ -16,7 +16,7 @@ $params = @{
 		Theme = "pink"
 	}
 }
-New-MgTeamScheduleTimeOff -TeamId $teamId -BodyParameter $params
+New-MgBetaTeamScheduleTimeOff -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamScheduleTimeOff Cmdlet.
+This example shows how to use the New-MgBetaTeamScheduleTimeOff Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

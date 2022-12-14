@@ -1,7 +1,7 @@
 ### Example 1: Get all application role assignments for a service principal
 
 ```powershell
-Get-MgServicePrincipalAppRoleAssignment -ServicePrincipalId '0bdb123d-b8a7-4cc9-8cc2-bd17bad06f61' |  Format-List
+Get-MgBetaServicePrincipalAppRoleAssignment -ServicePrincipalId '0bdb123d-b8a7-4cc9-8cc2-bd17bad06f61' |  Format-List
 
 AppRoleId            : 00000000-0000-0000-0000-000000000000
 CreatedDateTime      : 8/31/2021 2:01:28 PM

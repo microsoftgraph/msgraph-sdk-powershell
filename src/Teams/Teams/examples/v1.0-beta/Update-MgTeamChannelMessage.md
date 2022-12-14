@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgTeamChannelMessage Cmdlet
+### Example 1: Using the Update-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	PolicyViolation = @{
 		PolicyTip = @{
@@ -14,13 +14,13 @@ $params = @{
 		DlpAction = "BlockAccess"
 	}
 }
-Update-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
+Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgTeamChannelMessage Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgTeamChannelMessage Cmdlet
+### Example 2: Using the Update-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	MessageType = "message"
 	Subject = $null
@@ -48,13 +48,13 @@ $params = @{
 	Reactions = @(
 	)
 }
-Update-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
+Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgTeamChannelMessage Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Update-MgTeamChannelMessage Cmdlet
+### Example 3: Using the Update-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	MessageType = "message"
 	DeletedDateTime = $null
@@ -115,13 +115,13 @@ $params = @{
 	Reactions = @(
 	)
 }
-Update-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
+Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgTeamChannelMessage Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Update-MgTeamChannelMessage Cmdlet
+### Example 4: Using the Update-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	MessageType = "message"
 	Subject = $null
@@ -212,13 +212,13 @@ $params = @{
 	Reactions = @(
 	)
 }
-Update-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
+Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgTeamChannelMessage Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the Update-MgTeamChannelMessage Cmdlet
+### Example 5: Using the Update-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	MessageType = "message"
 	Subject = $null
@@ -413,7 +413,7 @@ $params = @{
 		}
 	)
 }
-Update-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
+Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgTeamChannelMessage Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgBookingBusinessCustomer Cmdlet
+### Example 1: Using the New-MgBetaBookingBusinessCustomer Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
+Import-Module Microsoft.Graph.Beta.Bookings
 $params = @{
 	DisplayName = "Joni Sherman"
 	EmailAddress = "jonis@relecloud.com"
@@ -35,7 +35,7 @@ $params = @{
 		}
 	)
 }
-New-MgBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BodyParameter $params
+New-MgBetaBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BodyParameter $params
 ```
-This example shows how to use the New-MgBookingBusinessCustomer Cmdlet.
+This example shows how to use the New-MgBetaBookingBusinessCustomer Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

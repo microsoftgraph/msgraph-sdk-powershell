@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgSecurityAlert Cmdlet
+### Example 1: Using the Get-MgBetaSecurityAlert Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityAlert -AlertId $alertId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityAlert -AlertId $alertId
 ```
-This example shows how to use the Get-MgSecurityAlert Cmdlet.
+This example shows how to use the Get-MgBetaSecurityAlert Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgSecurityAlert Cmdlet
+### Example 2: Using the Get-MgBetaSecurityAlert Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityAlert
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityAlert
 ```
-This example shows how to use the Get-MgSecurityAlert Cmdlet.
+This example shows how to use the Get-MgBetaSecurityAlert Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

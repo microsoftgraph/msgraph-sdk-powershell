@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgUserTeamworkInstalledAppChat Cmdlet
+### Example 1: Using the Get-MgBetaUserTeamworkInstalledAppChat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserTeamworkInstalledAppChat -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserTeamworkInstalledAppChat -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
 ```
-This example shows how to use the Get-MgUserTeamworkInstalledAppChat Cmdlet.
+This example shows how to use the Get-MgBetaUserTeamworkInstalledAppChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

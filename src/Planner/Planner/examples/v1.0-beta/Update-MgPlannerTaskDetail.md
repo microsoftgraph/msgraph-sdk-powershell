@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgPlannerTaskDetail Cmdlet
+### Example 1: Using the Update-MgBetaPlannerTaskDetail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	PreviewType = "noPreview"
 	References = @{
@@ -29,7 +29,7 @@ $params = @{
 		"A93c93c5-10a6-4167-9551-8bafa09967a7" = $null
 	}
 }
-Update-MgPlannerTaskDetail -PlannerTaskId $plannerTaskId -BodyParameter $params
+Update-MgBetaPlannerTaskDetail -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
-This example shows how to use the Update-MgPlannerTaskDetail Cmdlet.
+This example shows how to use the Update-MgBetaPlannerTaskDetail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

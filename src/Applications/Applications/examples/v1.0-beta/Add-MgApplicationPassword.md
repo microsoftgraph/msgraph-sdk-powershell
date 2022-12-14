@@ -2,7 +2,7 @@
 
 ```powershell
 
-Connect-MgGraph -Scopes 'Application.ReadWrite.All'
+Connect-MgBetaGraph -Scopes 'Application.ReadWrite.All'
 
 $appObjectId = 'eaf1e531-0d58-4874-babe-b9a9f436e6c3'
 
@@ -11,7 +11,7 @@ $passwordCred = @{
    endDateTime = (Get-Date).AddMonths(6)
 }
 
-$secret = Add-MgApplicationPassword -applicationId $appObjectId -PasswordCredential $passwordCred
+$secret = Add-MgBetaApplicationPassword -applicationId $appObjectId -PasswordCredential $passwordCred
 $secret | Format-List
 
 CustomKeyIdentifier  :
@@ -31,7 +31,7 @@ Add a password to an application that expires in six months from the current dat
 
 ```powershell
 
-Connect-MgGraph -Scopes 'Application.ReadWrite.All'
+Connect-MgBetaGraph -Scopes 'Application.ReadWrite.All'
 
 $appObjectId = 'eaf1e531-0d58-4874-babe-b9a9f436e6c3'
 
@@ -44,7 +44,7 @@ $passwordCred = @{
    endDateTime = $endDate
 }
 
-$secret = Add-MgApplicationPassword -applicationId $appObjectId -PasswordCredential $passwordCred
+$secret = Add-MgBetaApplicationPassword -applicationId $appObjectId -PasswordCredential $passwordCred
 $secret | Format-List
 
 CustomKeyIdentifier  :

@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgWindowsUpdatesDeployment Cmdlet
+### Example 1: Using the Update-MgBetaWindowsUpdatesDeployment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	"@odata.type" = "#microsoft.graph.windowsUpdates.deployment"
 	State = @{
@@ -8,13 +8,13 @@ $params = @{
 		RequestedValue = "paused"
 	}
 }
-Update-MgWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
+Update-MgBetaWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
 ```
-This example shows how to use the Update-MgWindowsUpdatesDeployment Cmdlet.
+This example shows how to use the Update-MgBetaWindowsUpdatesDeployment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgWindowsUpdatesDeployment Cmdlet
+### Example 2: Using the Update-MgBetaWindowsUpdatesDeployment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.WindowsUpdates
+Import-Module Microsoft.Graph.Beta.WindowsUpdates
 $params = @{
 	"@odata.type" = "#microsoft.graph.windowsUpdates.deployment"
 	Settings = @{
@@ -30,7 +30,7 @@ $params = @{
 		}
 	}
 }
-Update-MgWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
+Update-MgBetaWindowsUpdatesDeployment -DeploymentId $deploymentId -BodyParameter $params
 ```
-This example shows how to use the Update-MgWindowsUpdatesDeployment Cmdlet.
+This example shows how to use the Update-MgBetaWindowsUpdatesDeployment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

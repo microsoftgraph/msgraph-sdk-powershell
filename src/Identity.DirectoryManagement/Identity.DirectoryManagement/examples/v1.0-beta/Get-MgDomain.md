@@ -1,7 +1,7 @@
 ### Example 1: Get a list of domaim objects
 
 ```powershell
-Get-MgDomain | Format-List
+Get-MgBetaDomain | Format-List
 
 AuthenticationType               : Managed
 AvailabilityStatus               :

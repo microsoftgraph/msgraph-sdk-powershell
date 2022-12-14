@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Users.Actions
+```powershell
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	GroupId = "groupId-value"
@@ -8,8 +9,9 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Copy-MgUserOnenoteNotebook -UserId $userId -NotebookId $notebookId -BodyParameter $params
+Copy-MgBetaUserOnenoteNotebook -UserId $userId -NotebookId $notebookId -BodyParameter $params
 ```
-This example shows how to use the Copy-MgGroupOnenoteNotebook Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Copy-MgBetaGroupOnenoteNotebook Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

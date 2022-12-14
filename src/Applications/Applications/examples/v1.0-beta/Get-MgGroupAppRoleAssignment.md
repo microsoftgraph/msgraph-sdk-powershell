@@ -1,7 +1,7 @@
 ### Example 1: Get appRoleAssignments granted to a group
 
 ```powershell
-Get-MgGroupAppRoleAssignment -GroupId '2692d278-8323-4094-b286-e0ffce5e54a5' |
+Get-MgBetaGroupAppRoleAssignment -GroupId '2692d278-8323-4094-b286-e0ffce5e54a5' |
   Format-List
 
 AppRoleId            : 00000000-0000-0000-0000-000000000000

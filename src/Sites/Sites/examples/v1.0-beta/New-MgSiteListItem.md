@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSiteListItem Cmdlet
+### Example 1: Using the New-MgBetaSiteListItem Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	Fields = @{
 		Title = "Widget"
@@ -8,7 +8,7 @@ $params = @{
 		Weight = 
 	}
 }
-New-MgSiteListItem -SiteId $siteId -ListId $listId -BodyParameter $params
+New-MgBetaSiteListItem -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
-This example shows how to use the New-MgSiteListItem Cmdlet.
+This example shows how to use the New-MgBetaSiteListItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

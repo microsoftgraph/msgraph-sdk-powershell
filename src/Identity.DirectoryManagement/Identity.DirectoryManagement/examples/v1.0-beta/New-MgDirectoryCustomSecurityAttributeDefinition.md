@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet
+### Example 1: Using the New-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	AttributeSet = "Engineering"
 	Description = "Active projects for user"
@@ -25,13 +25,13 @@ $params = @{
 		}
 	)
 }
-New-MgDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
+New-MgBetaDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet.
+This example shows how to use the New-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet
+### Example 2: Using the New-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	AttributeSet = "Engineering"
 	Description = "Target completion date"
@@ -42,13 +42,13 @@ $params = @{
 	Type = "String"
 	UsePreDefinedValuesOnly = $false
 }
-New-MgDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
+New-MgBetaDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet.
+This example shows how to use the New-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet
+### Example 3: Using the New-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 $params = @{
 	AttributeSet = "Engineering"
 	Description = "Active projects for user"
@@ -59,7 +59,7 @@ $params = @{
 	Type = "String"
 	UsePreDefinedValuesOnly = $true
 }
-New-MgDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
+New-MgBetaDirectoryCustomSecurityAttributeDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgDirectoryCustomSecurityAttributeDefinition Cmdlet.
+This example shows how to use the New-MgBetaDirectoryCustomSecurityAttributeDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

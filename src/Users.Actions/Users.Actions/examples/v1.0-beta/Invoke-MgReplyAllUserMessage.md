@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgReplyAllUserMessage Cmdlet
+### Example 1: Using the Invoke-MgBetaReplyAllUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Message = @{
 		Attachments = @(
@@ -14,7 +14,7 @@ $params = @{
 	Comment = "Please take a look at the attached guidelines before you decide on the name."
 }
 # A UPN can also be used as -UserId.
-Invoke-MgReplyAllUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+Invoke-MgBetaReplyAllUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgReplyAllUserMessage Cmdlet.
+This example shows how to use the Invoke-MgBetaReplyAllUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

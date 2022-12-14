@@ -1,6 +1,7 @@
 ### Example 1: Check group memberships for a directory object
 
-```powershellImport-Module Microsoft.Graph.DirectoryObjects
+```powershell
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 
 $params = @{
 	GroupIds = @(
@@ -12,14 +13,16 @@ $params = @{
 	)
 }
 
-Confirm-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
+Confirm-MgBetaDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
-This example shows how to use the Confirm-MgOrganizationMemberGroup Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Confirm-MgBetaOrganizationMemberGroup Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Check group memberships for the signed-in user
 
-```powershellImport-Module Microsoft.Graph.Users.Actions
+```powershell
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	GroupIds = @(
@@ -29,8 +32,9 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Confirm-MgUserMemberGroup -UserId $userId -BodyParameter $params
+Confirm-MgBetaUserMemberGroup -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Confirm-MgOrganizationMemberGroup Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Confirm-MgBetaOrganizationMemberGroup Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

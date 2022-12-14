@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgTranslateUserExchangeId Cmdlet
+### Example 1: Using the Invoke-MgBetaTranslateUserExchangeId Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	InputIds = @(
 		"{rest-formatted-id-1}"
@@ -10,7 +10,7 @@ $params = @{
 	TargetIdType = "restImmutableEntryId"
 }
 # A UPN can also be used as -UserId.
-Invoke-MgTranslateUserExchangeId -UserId $userId -BodyParameter $params
+Invoke-MgBetaTranslateUserExchangeId -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgTranslateUserExchangeId Cmdlet.
+This example shows how to use the Invoke-MgBetaTranslateUserExchangeId Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

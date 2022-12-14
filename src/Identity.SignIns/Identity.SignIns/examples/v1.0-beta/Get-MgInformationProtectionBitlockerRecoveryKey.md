@@ -1,28 +1,28 @@
-### Example 1: Using the Get-MgInformationProtectionBitlockerRecoveryKey Cmdlet
+### Example 1: Using the Get-MgBetaInformationProtectionBitlockerRecoveryKey Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgInformationProtectionBitlockerRecoveryKey
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaInformationProtectionBitlockerRecoveryKey
 ```
-This example shows how to use the Get-MgInformationProtectionBitlockerRecoveryKey Cmdlet.
+This example shows how to use the Get-MgBetaInformationProtectionBitlockerRecoveryKey Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgInformationProtectionBitlockerRecoveryKey Cmdlet
+### Example 2: Using the Get-MgBetaInformationProtectionBitlockerRecoveryKey Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgInformationProtectionBitlockerRecoveryKey -Filter "deviceId eq '1ab40ab2-32a8-4b00-b6b5-ba724e407de9'" 
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaInformationProtectionBitlockerRecoveryKey -Filter "deviceId eq '1ab40ab2-32a8-4b00-b6b5-ba724e407de9'" 
 ```
-This example shows how to use the Get-MgInformationProtectionBitlockerRecoveryKey Cmdlet.
+This example shows how to use the Get-MgBetaInformationProtectionBitlockerRecoveryKey Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgInformationProtectionBitlockerRecoveryKey Cmdlet
+### Example 3: Using the Get-MgBetaInformationProtectionBitlockerRecoveryKey Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgInformationProtectionBitlockerRecoveryKey -BitlockerRecoveryKeyId $bitlockerRecoveryKeyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaInformationProtectionBitlockerRecoveryKey -BitlockerRecoveryKeyId $bitlockerRecoveryKeyId
 ```
-This example shows how to use the Get-MgInformationProtectionBitlockerRecoveryKey Cmdlet.
+This example shows how to use the Get-MgBetaInformationProtectionBitlockerRecoveryKey Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Get-MgInformationProtectionBitlockerRecoveryKey Cmdlet
+### Example 4: Using the Get-MgBetaInformationProtectionBitlockerRecoveryKey Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgInformationProtectionBitlockerRecoveryKey -BitlockerRecoveryKeyId $bitlockerRecoveryKeyId -Property "key" 
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaInformationProtectionBitlockerRecoveryKey -BitlockerRecoveryKeyId $bitlockerRecoveryKeyId -Property "key" 
 ```
-This example shows how to use the Get-MgInformationProtectionBitlockerRecoveryKey Cmdlet.
+This example shows how to use the Get-MgBetaInformationProtectionBitlockerRecoveryKey Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

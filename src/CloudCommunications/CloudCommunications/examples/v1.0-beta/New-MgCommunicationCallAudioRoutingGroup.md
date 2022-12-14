@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgCommunicationCallAudioRoutingGroup Cmdlet
+### Example 1: Using the New-MgBetaCommunicationCallAudioRoutingGroup Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Id = "oneToOne"
 	RoutingMode = "oneToOne"
@@ -11,7 +11,7 @@ $params = @{
 		"550fae72-d251-43ec-868c-373732c2704f"
 	)
 }
-New-MgCommunicationCallAudioRoutingGroup -CallId $callId -BodyParameter $params
+New-MgBetaCommunicationCallAudioRoutingGroup -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the New-MgCommunicationCallAudioRoutingGroup Cmdlet.
+This example shows how to use the New-MgBetaCommunicationCallAudioRoutingGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
-### Example 1: Using the Complete-MgTeamMigration Cmdlet
+### Example 1: Using the Complete-MgBetaTeamMigration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Complete-MgTeamMigration -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Complete-MgBetaTeamMigration -TeamId $teamId
 ```
-This example shows how to use the Complete-MgTeamMigration Cmdlet.
+This example shows how to use the Complete-MgBetaTeamMigration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
 ### Example 1: Create a country named location
 
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
 $params = @{
 "@odata.type" = "#microsoft.graph.countryNamedLocation"
@@ -13,7 +13,7 @@ CountriesAndRegions = @(
 IncludeUnknownCountriesAndRegions = $true
 }
 
-New-MgIdentityConditionalAccessNamedLocation -BodyParameter $params
+New-MgBetaIdentityConditionalAccessNamedLocation -BodyParameter $params
 
 Id                                   CreatedDateTime      DisplayName                                       ModifiedDateTime
 --                                   ---------------      -----------                                       ----------------
@@ -25,7 +25,7 @@ This example creates a country named location.
 ### Example 2: Create an ip named location
 
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
 $params = @{
 "@odata.type" = "#microsoft.graph.ipNamedLocation"
@@ -43,7 +43,7 @@ IpRanges = @(
 )
 }
 
-New-MgIdentityConditionalAccessNamedLocation -BodyParameter $params
+New-MgBetaIdentityConditionalAccessNamedLocation -BodyParameter $params
 
 Id                                   CreatedDateTime      DisplayName                 ModifiedDateTime
 --                                   ---------------      -----------                 ----------------

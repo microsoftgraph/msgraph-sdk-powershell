@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgTeamChannelMember Cmdlet
+### Example 1: Using the Remove-MgBetaTeamChannelMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -ConversationMemberId $conversationMemberId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -ConversationMemberId $conversationMemberId
 ```
-This example shows how to use the Remove-MgTeamChannelMember Cmdlet.
+This example shows how to use the Remove-MgBetaTeamChannelMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

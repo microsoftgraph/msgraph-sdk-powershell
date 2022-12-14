@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgComplianceEdiscoveryCaseSourceCollection Cmdlet
+### Example 1: Using the Remove-MgBetaComplianceEdiscoveryCaseSourceCollection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Remove-MgComplianceEdiscoveryCaseSourceCollection -CaseId $caseId -SourceCollectionId $sourceCollectionId
+Import-Module Microsoft.Graph.Beta.Compliance
+Remove-MgBetaComplianceEdiscoveryCaseSourceCollection -CaseId $caseId -SourceCollectionId $sourceCollectionId
 ```
-This example shows how to use the Remove-MgComplianceEdiscoveryCaseSourceCollection Cmdlet.
+This example shows how to use the Remove-MgBetaComplianceEdiscoveryCaseSourceCollection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

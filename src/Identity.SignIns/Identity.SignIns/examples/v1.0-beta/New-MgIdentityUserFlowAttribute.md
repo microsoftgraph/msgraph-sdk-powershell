@@ -1,12 +1,12 @@
-### Example 1: Using the New-MgIdentityUserFlowAttribute Cmdlet
+### Example 1: Using the New-MgBetaIdentityUserFlowAttribute Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "Hobby"
 	Description = "Your hobby"
 	DataType = "string"
 }
-New-MgIdentityUserFlowAttribute -BodyParameter $params
+New-MgBetaIdentityUserFlowAttribute -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityUserFlowAttribute Cmdlet.
+This example shows how to use the New-MgBetaIdentityUserFlowAttribute Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

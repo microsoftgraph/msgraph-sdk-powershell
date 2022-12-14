@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgUserSettingRegionalAndLanguageSetting Cmdlet
+### Example 1: Using the Update-MgBetaUserSettingRegionalAndLanguageSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	AuthoringLanguages = @(
 		@{
@@ -15,7 +15,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Update-MgUserSettingRegionalAndLanguageSetting -UserId $userId -BodyParameter $params
+Update-MgBetaUserSettingRegionalAndLanguageSetting -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserSettingRegionalAndLanguageSetting Cmdlet.
+This example shows how to use the Update-MgBetaUserSettingRegionalAndLanguageSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

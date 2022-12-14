@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserCalendar Cmdlet
+### Example 1: Using the Get-MgBetaUserCalendar Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserCalendar -UserId $userId
+Get-MgBetaUserCalendar -UserId $userId
 ```
-This example shows how to use the Get-MgUserCalendar Cmdlet.
+This example shows how to use the Get-MgBetaUserCalendar Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

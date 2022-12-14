@@ -1,6 +1,6 @@
-### Example 1: Using the Test-MgInformationProtectionPolicyLabelRemoval Cmdlet
+### Example 1: Using the Test-MgBetaInformationProtectionPolicyLabelRemoval Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	ContentInfo = @{
 		"@odata.type" = "#microsoft.graph.contentInfo"
@@ -53,7 +53,7 @@ $params = @{
 		IsDowngradeJustified = $true
 	}
 }
-Test-MgInformationProtectionPolicyLabelRemoval -BodyParameter $params
+Test-MgBetaInformationProtectionPolicyLabelRemoval -BodyParameter $params
 ```
-This example shows how to use the Test-MgInformationProtectionPolicyLabelRemoval Cmdlet.
+This example shows how to use the Test-MgBetaInformationProtectionPolicyLabelRemoval Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

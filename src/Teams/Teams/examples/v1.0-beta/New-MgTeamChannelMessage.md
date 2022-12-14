@@ -1,30 +1,30 @@
-### Example 1: Using the New-MgTeamChannelMessage Cmdlet
+### Example 1: Using the New-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Body = @{
 		Content = "Hello World"
 	}
 }
-New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgTeamChannelMessage Cmdlet
+### Example 2: Using the New-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Body = @{
 		Content = "Hello World"
 	}
 }
-New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgTeamChannelMessage Cmdlet
+### Example 3: Using the New-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Subject = $null
 	Body = @{
@@ -56,13 +56,13 @@ $params = @{
 		}
 	)
 }
-New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgTeamChannelMessage Cmdlet
+### Example 4: Using the New-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Body = @{
 		ContentType = "html"
@@ -82,13 +82,13 @@ $params = @{
 		}
 	)
 }
-New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the New-MgTeamChannelMessage Cmdlet
+### Example 5: Using the New-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Subject = $null
 	Body = @{
@@ -119,13 +119,13 @@ $params = @{
 		}
 	)
 }
-New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 6: Using the New-MgTeamChannelMessage Cmdlet
+### Example 6: Using the New-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Body = @{
 		ContentType = "html"
@@ -140,13 +140,13 @@ $params = @{
 		}
 	)
 }
-New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 7: Using the New-MgTeamChannelMessage Cmdlet
+### Example 7: Using the New-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Subject = $null
 	Body = @{
@@ -255,13 +255,13 @@ $params = @{
 		}
 	)
 }
-New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 8: Using the New-MgTeamChannelMessage Cmdlet
+### Example 8: Using the New-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Body = @{
 		ContentType = "html"
@@ -281,13 +281,13 @@ $params = @{
 		}
 	)
 }
-New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 9: Using the New-MgTeamChannelMessage Cmdlet
+### Example 9: Using the New-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Body = @{
 		ContentType = "html"
@@ -306,13 +306,13 @@ $params = @{
 		}
 	)
 }
-New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 10: Using the New-MgTeamChannelMessage Cmdlet
+### Example 10: Using the New-MgBetaTeamChannelMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Body = @{
 		ContentType = "html"
@@ -334,7 +334,7 @@ $params = @{
 	Reactions = @(
 	)
 }
-New-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the New-MgTeamChannelMessage Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

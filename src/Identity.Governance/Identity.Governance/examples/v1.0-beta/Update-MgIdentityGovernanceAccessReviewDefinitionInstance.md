@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgIdentityGovernanceAccessReviewDefinitionInstance Cmdlet
+### Example 1: Using the Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	Scope = @{
 		"@odata.type" = "#microsoft.graph.principalResourceMembershipsScope"
@@ -41,7 +41,7 @@ $params = @{
 		}
 	)
 }
-Update-MgIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -BodyParameter $params
+Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -BodyParameter $params
 ```
-This example shows how to use the Update-MgIdentityGovernanceAccessReviewDefinitionInstance Cmdlet.
+This example shows how to use the Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

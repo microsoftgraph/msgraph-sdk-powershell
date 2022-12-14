@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgUserAuthenticationOperation Cmdlet
+### Example 1: Using the Get-MgBetaUserAuthenticationOperation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgUserAuthenticationOperation -UserId $userId -LongRunningOperationId $longRunningOperationId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaUserAuthenticationOperation -UserId $userId -LongRunningOperationId $longRunningOperationId
 ```
-This example shows how to use the Get-MgUserAuthenticationOperation Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

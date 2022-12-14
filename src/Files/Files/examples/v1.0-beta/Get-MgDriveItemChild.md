@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgDriveItemChild Cmdlet
+### Example 1: Using the Get-MgBetaDriveItemChild Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Files
-Get-MgDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
+Import-Module Microsoft.Graph.Beta.Files
+Get-MgBetaDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
 ```
-This example shows how to use the Get-MgDriveItemChild Cmdlet.
+This example shows how to use the Get-MgBetaDriveItemChild Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

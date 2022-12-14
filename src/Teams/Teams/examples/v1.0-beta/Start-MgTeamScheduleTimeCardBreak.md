@@ -1,6 +1,6 @@
-### Example 1: Using the Start-MgTeamScheduleTimeCardBreak Cmdlet
+### Example 1: Using the Start-MgBetaTeamScheduleTimeCardBreak Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	AtAprovedLocation = $true
 	Notes = @{
@@ -8,7 +8,7 @@ $params = @{
 		Content = "start break smaple notes"
 	}
 }
-Start-MgTeamScheduleTimeCardBreak -TeamId $teamId -TimeCardId $timeCardId -BodyParameter $params
+Start-MgBetaTeamScheduleTimeCardBreak -TeamId $teamId -TimeCardId $timeCardId -BodyParameter $params
 ```
-This example shows how to use the Start-MgTeamScheduleTimeCardBreak Cmdlet.
+This example shows how to use the Start-MgBetaTeamScheduleTimeCardBreak Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

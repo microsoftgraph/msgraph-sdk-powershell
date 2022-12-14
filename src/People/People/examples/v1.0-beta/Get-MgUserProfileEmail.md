@@ -1,15 +1,15 @@
-### Example 1: Using the Get-MgUserProfileEmail Cmdlet
+### Example 1: Using the Get-MgBetaUserProfileEmail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Get-MgUserProfileEmail -UserId $userId
+Get-MgBetaUserProfileEmail -UserId $userId
 ```
-This example shows how to use the Get-MgUserProfileEmail Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileEmail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserProfileEmail Cmdlet
+### Example 2: Using the Get-MgBetaUserProfileEmail Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
-Get-MgUserProfileEmail -UserId $userId -ItemEmailId $itemEmailId
+Import-Module Microsoft.Graph.Beta.People
+Get-MgBetaUserProfileEmail -UserId $userId -ItemEmailId $itemEmailId
 ```
-This example shows how to use the Get-MgUserProfileEmail Cmdlet.
+This example shows how to use the Get-MgBetaUserProfileEmail Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

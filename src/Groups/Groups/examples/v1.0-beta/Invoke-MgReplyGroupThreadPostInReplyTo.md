@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Groups
+```powershell
+Import-Module Microsoft.Graph.Beta.Groups
 
 $params = @{
 	Post = @{
@@ -55,8 +56,9 @@ $params = @{
 	}
 }
 
-Invoke-MgReplyGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
+Invoke-MgBetaReplyGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgReplyGroupThreadPostInReplyTo Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Invoke-MgBetaReplyGroupThreadPostInReplyTo Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

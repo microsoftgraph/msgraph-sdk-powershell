@@ -1,10 +1,10 @@
-### Example 1: Using the Update-MgPlannerTaskBucketTaskBoardFormat Cmdlet
+### Example 1: Using the Update-MgBetaPlannerTaskBucketTaskBoardFormat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	OrderHint = "A6673H Ejkl!"
 }
-Update-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
+Update-MgBetaPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
-This example shows how to use the Update-MgPlannerTaskBucketTaskBoardFormat Cmdlet.
+This example shows how to use the Update-MgBetaPlannerTaskBucketTaskBoardFormat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

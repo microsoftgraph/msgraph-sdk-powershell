@@ -1,6 +1,6 @@
-### Example 1: Using the Initialize-MgIdentityGovernanceLifecycleWorkflow Cmdlet
+### Example 1: Using the Initialize-MgBetaIdentityGovernanceLifecycleWorkflow Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	Subjects = @(
 		@{
@@ -11,7 +11,7 @@ $params = @{
 		}
 	)
 }
-Initialize-MgIdentityGovernanceLifecycleWorkflow -WorkflowId $workflowId -BodyParameter $params
+Initialize-MgBetaIdentityGovernanceLifecycleWorkflow -WorkflowId $workflowId -BodyParameter $params
 ```
-This example shows how to use the Initialize-MgIdentityGovernanceLifecycleWorkflow Cmdlet.
+This example shows how to use the Initialize-MgBetaIdentityGovernanceLifecycleWorkflow Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

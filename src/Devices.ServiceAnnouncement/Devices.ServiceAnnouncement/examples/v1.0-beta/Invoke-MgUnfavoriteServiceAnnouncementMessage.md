@@ -1,13 +1,13 @@
-### Example 1: Using the Invoke-MgUnfavoriteServiceAnnouncementMessage Cmdlet
+### Example 1: Using the Invoke-MgBetaUnfavoriteServiceAnnouncementMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 $params = @{
 	MessageIds = @(
 		"MC172851"
 		"MC167983"
 	)
 }
-Invoke-MgUnfavoriteServiceAnnouncementMessage -BodyParameter $params
+Invoke-MgBetaUnfavoriteServiceAnnouncementMessage -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgUnfavoriteServiceAnnouncementMessage Cmdlet.
+This example shows how to use the Invoke-MgBetaUnfavoriteServiceAnnouncementMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

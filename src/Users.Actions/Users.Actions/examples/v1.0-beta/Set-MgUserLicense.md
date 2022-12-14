@@ -3,9 +3,9 @@
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-$EmsSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
+$EmsSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
 
-Set-MgUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses @{SkuId = $EmsSku.SkuId} -RemoveLicenses @()
+Set-MgBetaUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses @{SkuId = $EmsSku.SkuId} -RemoveLicenses @()
 
 Id                                   DisplayName   Mail UserPrincipalName                     UserType
 --                                   -----------   ---- -----------------                     --------
@@ -19,14 +19,14 @@ This example assigns a license from the **EMSPREMIUM** (ENTERPRISE MOBILITY + SE
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-$EmsSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
-$FlowSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'FLOW_FREE'
+$EmsSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
+$FlowSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'FLOW_FREE'
 $addLicenses = @(
   @{SkuId = $EmsSku.SkuId},
   @{SkuId = $FlowSku.SkuId}
   )
 
-Set-MgUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
+Set-MgBetaUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
 
 Id                                   DisplayName   Mail UserPrincipalName                     UserType
 --                                   -----------   ---- -----------------                     --------
@@ -40,7 +40,7 @@ This example assigns **EMSPREMIUM** and **FLOW_FREE** licenses to the user **389
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-$EmsSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
+$EmsSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
 $disabledPlans = $EmsSku.ServicePlans | where ServicePlanName -in ("MFA_PREMIUM", "INTUNE_A") | Select -ExpandProperty ServicePlanId
 $addLicenses = @(
   @{SkuId = $EmsSku.SkuId
@@ -48,7 +48,7 @@ $addLicenses = @(
   }
   )
 
-Set-MgUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
+Set-MgBetaUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
 
 Id                                   DisplayName   Mail UserPrincipalName                     UserType
 --                                   -----------   ---- -----------------                     --------
@@ -62,8 +62,8 @@ This example assigns **EMSPREMIUM** license with the **MFA_PREMIUM** and **INTUN
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-$EmsSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
-$userLicense = Get-MgUserLicenseDetail -UserId "38955658-c844-4f59-9430-6519430ac89b"
+$EmsSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
+$userLicense = Get-MgBetaUserLicenseDetail -UserId "38955658-c844-4f59-9430-6519430ac89b"
 
 $userDisabledPlans = $userLicense.ServicePlans |
   Where ProvisioningStatus -eq "Disabled" |
@@ -81,7 +81,7 @@ $addLicenses = @(
   }
   )
 
-Set-MgUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
+Set-MgBetaUserLicense -UserId '38955658-c844-4f59-9430-6519430ac89b' -AddLicenses $addLicenses -RemoveLicenses @()
 
 Id                                   DisplayName   Mail UserPrincipalName                     UserType
 --                                   -----------   ---- -----------------                     --------
@@ -95,10 +95,10 @@ This example updates the **EMSPREMIUM** license assigned to the user to add **AA
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-Select-MgProfile -Name Beta
-$mgUser = Get-MgUser -UserId '38955658-c844-4f59-9430-6519430ac89b'
+Select-MgBetaProfile -Name Beta
+$mgUser = Get-MgBetaUser -UserId '38955658-c844-4f59-9430-6519430ac89b'
 
-Set-MgUserLicense -UserId "82f51c98-7221-442f-8329-3faf9fe022f1" -AddLicenses $mgUser.AssignedLicenses -RemoveLicenses @()
+Set-MgBetaUserLicense -UserId "82f51c98-7221-442f-8329-3faf9fe022f1" -AddLicenses $mgUser.AssignedLicenses -RemoveLicenses @()
 
 
 Id                                   DisplayName    Mail UserPrincipalName                      UserType
@@ -113,9 +113,9 @@ This examples copies the license assignment of user **38955658-c844-4f59-9430-65
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-$EmsSku = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
+$EmsSku = Get-MgBetaSubscribedSku -All | Where SkuPartNumber -eq 'EMSPREMIUM'
 
-Set-MgUserLicense -UserId "38955658-c844-4f59-9430-6519430ac89b" -AddLicenses @() -RemoveLicenses @($EmsSku.SkuId)
+Set-MgBetaUserLicense -UserId "38955658-c844-4f59-9430-6519430ac89b" -AddLicenses @() -RemoveLicenses @($EmsSku.SkuId)
 
 Id                                   DisplayName   Mail UserPrincipalName                     UserType
 --                                   -----------   ---- -----------------                     --------

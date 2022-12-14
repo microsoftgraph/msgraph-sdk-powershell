@@ -1,16 +1,16 @@
-### Example 1: Using the Get-MgUserAuthenticationPhoneMethod Cmdlet
+### Example 1: Using the Get-MgBetaUserAuthenticationPhoneMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId
+Get-MgBetaUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId
 ```
-This example shows how to use the Get-MgUserAuthenticationPhoneMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationPhoneMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserAuthenticationPhoneMethod Cmdlet
+### Example 2: Using the Get-MgBetaUserAuthenticationPhoneMethod Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationPhoneMethod -UserId $userId
+Get-MgBetaUserAuthenticationPhoneMethod -UserId $userId
 ```
-This example shows how to use the Get-MgUserAuthenticationPhoneMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationPhoneMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

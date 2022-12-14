@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserMessageAttachmentUploadSession Cmdlet
+### Example 1: Using the New-MgBetaUserMessageAttachmentUploadSession Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	AttachmentItem = @{
 		AttachmentType = "file"
@@ -11,13 +11,13 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
+New-MgBetaUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserMessageAttachmentUploadSession Cmdlet.
+This example shows how to use the New-MgBetaUserMessageAttachmentUploadSession Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgUserMessageAttachmentUploadSession Cmdlet
+### Example 2: Using the New-MgBetaUserMessageAttachmentUploadSession Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	AttachmentItem = @{
 		AttachmentType = "file"
@@ -26,7 +26,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
+New-MgBetaUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserMessageAttachmentUploadSession Cmdlet.
+This example shows how to use the New-MgBetaUserMessageAttachmentUploadSession Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

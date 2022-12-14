@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgUserPlanner Cmdlet
+### Example 1: Using the Update-MgBetaUserPlanner Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	FavoritePlanReferences = @{
 		Jd8S5gOaFk2S8aWCIAJz42QAAxtD = @{
@@ -19,7 +19,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Update-MgUserPlanner -UserId $userId -BodyParameter $params
+Update-MgBetaUserPlanner -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserPlanner Cmdlet.
+This example shows how to use the Update-MgBetaUserPlanner Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

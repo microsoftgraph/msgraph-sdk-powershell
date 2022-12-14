@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgTeamworkDeletedTeam Cmdlet
+### Example 1: Using the Get-MgBetaTeamworkDeletedTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamworkDeletedTeam
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamworkDeletedTeam
 ```
-This example shows how to use the Get-MgTeamworkDeletedTeam Cmdlet.
+This example shows how to use the Get-MgBetaTeamworkDeletedTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

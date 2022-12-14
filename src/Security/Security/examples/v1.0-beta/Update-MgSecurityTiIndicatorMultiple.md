@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgSecurityTiIndicatorMultiple Cmdlet
+### Example 1: Using the Update-MgBetaSecurityTiIndicatorMultiple Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Value = @(
 		@{
@@ -13,7 +13,7 @@ $params = @{
 		}
 	)
 }
-Update-MgSecurityTiIndicatorMultiple -BodyParameter $params
+Update-MgBetaSecurityTiIndicatorMultiple -BodyParameter $params
 ```
-This example shows how to use the Update-MgSecurityTiIndicatorMultiple Cmdlet.
+This example shows how to use the Update-MgBetaSecurityTiIndicatorMultiple Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgReplyGroupThreadPost Cmdlet
+### Example 1: Using the Invoke-MgBetaReplyGroupThreadPost Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	Post = @{
 		Body = @{
@@ -22,13 +22,13 @@ $params = @{
 		)
 	}
 }
-Invoke-MgReplyGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
+Invoke-MgBetaReplyGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgReplyGroupThreadPost Cmdlet.
+This example shows how to use the Invoke-MgBetaReplyGroupThreadPost Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Invoke-MgReplyGroupThreadPost Cmdlet
+### Example 2: Using the Invoke-MgBetaReplyGroupThreadPost Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	Post = @{
 		Body = @{
@@ -81,7 +81,7 @@ $params = @{
 		)
 	}
 }
-Invoke-MgReplyGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
+Invoke-MgBetaReplyGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgReplyGroupThreadPost Cmdlet.
+This example shows how to use the Invoke-MgBetaReplyGroupThreadPost Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
-### Example 1: Using the Invoke-MgArchiveTeam Cmdlet
+### Example 1: Using the Invoke-MgBetaArchiveTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Invoke-MgArchiveTeam -TeamId $teamId
+Import-Module Microsoft.Graph.Beta.Teams
+Invoke-MgBetaArchiveTeam -TeamId $teamId
 ```
-This example shows how to use the Invoke-MgArchiveTeam Cmdlet.
+This example shows how to use the Invoke-MgBetaArchiveTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,20 +1,20 @@
-### Example 1: Using the Invoke-MgRejectCommunicationCall Cmdlet
+### Example 1: Using the Invoke-MgBetaRejectCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Reason = "none"
 }
-Invoke-MgRejectCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaRejectCommunicationCall -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgRejectCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaRejectCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Invoke-MgRejectCommunicationCall Cmdlet
+### Example 2: Using the Invoke-MgBetaRejectCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Reason = "busy"
 }
-Invoke-MgRejectCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaRejectCommunicationCall -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgRejectCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaRejectCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

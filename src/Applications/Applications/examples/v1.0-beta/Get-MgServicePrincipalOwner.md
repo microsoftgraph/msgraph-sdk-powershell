@@ -1,7 +1,7 @@
 ### Example 1: List the owners of a service principal
 
 ```powershell
-Get-MgServicePrincipalOwner -ServicePrincipalId '1c48f923-4fbb-4d37-b772-4d577eefec9e'
+Get-MgBetaServicePrincipalOwner -ServicePrincipalId '1c48f923-4fbb-4d37-b772-4d577eefec9e'
 
 Id                                   DeletedDateTime
 --                                   ---------------

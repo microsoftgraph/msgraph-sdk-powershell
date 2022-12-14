@@ -1,6 +1,6 @@
-### Example 1: Using the Copy-MgSiteContentTypeToDefaultContentLocation Cmdlet
+### Example 1: Using the Copy-MgBetaSiteContentTypeToDefaultContentLocation Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	SourceFile = @{
 		SharepointIds = @{
@@ -10,7 +10,7 @@ $params = @{
 	}
 	DestinationFileName = "newname.txt"
 }
-Copy-MgSiteContentTypeToDefaultContentLocation -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
+Copy-MgBetaSiteContentTypeToDefaultContentLocation -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
 ```
-This example shows how to use the Copy-MgSiteContentTypeToDefaultContentLocation Cmdlet.
+This example shows how to use the Copy-MgBetaSiteContentTypeToDefaultContentLocation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

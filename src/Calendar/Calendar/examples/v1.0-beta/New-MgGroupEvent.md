@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgGroupEvent Cmdlet
+### Example 1: Using the New-MgBetaGroupEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	Subject = "Let's go for lunch"
 	Body = @{
@@ -28,7 +28,7 @@ $params = @{
 		}
 	)
 }
-New-MgGroupEvent -GroupId $groupId -BodyParameter $params
+New-MgBetaGroupEvent -GroupId $groupId -BodyParameter $params
 ```
-This example shows how to use the New-MgGroupEvent Cmdlet.
+This example shows how to use the New-MgBetaGroupEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

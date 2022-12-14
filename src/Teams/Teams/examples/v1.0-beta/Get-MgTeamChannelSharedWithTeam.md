@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgTeamChannelSharedWithTeam Cmdlet
+### Example 1: Using the Get-MgBetaTeamChannelSharedWithTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
 ```
-This example shows how to use the Get-MgTeamChannelSharedWithTeam Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannelSharedWithTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgTeamChannelSharedWithTeam Cmdlet
+### Example 2: Using the Get-MgBetaTeamChannelSharedWithTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId
 ```
-This example shows how to use the Get-MgTeamChannelSharedWithTeam Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannelSharedWithTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

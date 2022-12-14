@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgAnswerCommunicationCall Cmdlet
+### Example 1: Using the Invoke-MgBetaAnswerCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	CallbackUri = "https://bot.contoso.com/api/calls"
 	AcceptedModalities = @(
@@ -11,13 +11,13 @@ $params = @{
 		Blob = "<Media Session Configuration Blob>"
 	}
 }
-Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgAnswerCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaAnswerCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Invoke-MgAnswerCommunicationCall Cmdlet
+### Example 2: Using the Invoke-MgBetaAnswerCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	CallbackUri = "callbackUri-value"
 	MediaConfig = @{
@@ -33,7 +33,7 @@ $params = @{
 	}
 	ParticipantCapacity = 200
 }
-Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgAnswerCommunicationCall Cmdlet.
+This example shows how to use the Invoke-MgBetaAnswerCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

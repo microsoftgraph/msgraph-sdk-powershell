@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgIdentityApiConnector Cmdlet
+### Example 1: Using the Update-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	DisplayName = "New Test API"
 	TargetUrl = "https://otherapi.com/api/endpoint"
@@ -10,13 +10,13 @@ $params = @{
 		Password = "<NEW_PASSWORD>"
 	}
 }
-Update-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
-This example shows how to use the Update-MgIdentityApiConnector Cmdlet.
+This example shows how to use the Update-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgIdentityApiConnector Cmdlet
+### Example 2: Using the Update-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	AuthenticationConfiguration = @{
 		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
@@ -24,13 +24,13 @@ $params = @{
 		Password = "secret"
 	}
 }
-Update-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
-This example shows how to use the Update-MgIdentityApiConnector Cmdlet.
+This example shows how to use the Update-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Update-MgIdentityApiConnector Cmdlet
+### Example 3: Using the Update-MgBetaIdentityApiConnector Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	AuthenticationConfiguration = @{
 		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
@@ -38,7 +38,7 @@ $params = @{
 		Password = "secret"
 	}
 }
-Update-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
-This example shows how to use the Update-MgIdentityApiConnector Cmdlet.
+This example shows how to use the Update-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

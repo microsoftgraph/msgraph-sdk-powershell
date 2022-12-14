@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Users.Actions
+```powershell
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	Id = "id-value"
@@ -9,8 +10,9 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Copy-MgUserOnenoteSectionToNotebook -UserId $userId -OnenoteSectionId $onenoteSectionId -BodyParameter $params
+Copy-MgBetaUserOnenoteSectionToNotebook -UserId $userId -OnenoteSectionId $onenoteSectionId -BodyParameter $params
 ```
-This example shows how to use the Copy-MgSiteOnenoteSectionToNotebook Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Copy-MgBetaSiteOnenoteSectionToNotebook Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

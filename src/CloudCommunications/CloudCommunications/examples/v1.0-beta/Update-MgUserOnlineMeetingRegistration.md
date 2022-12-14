@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgUserOnlineMeetingRegistration Cmdlet
+### Example 1: Using the Update-MgBetaUserOnlineMeetingRegistration Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	Subject = "Microsoft Ignite: Day 1"
 	StartDateTime = [System.DateTime]::Parse("2021-11-02T08:00:00-08:00")
@@ -17,7 +17,7 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-Update-MgUserOnlineMeetingRegistration -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
+Update-MgBetaUserOnlineMeetingRegistration -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserOnlineMeetingRegistration Cmdlet.
+This example shows how to use the Update-MgBetaUserOnlineMeetingRegistration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

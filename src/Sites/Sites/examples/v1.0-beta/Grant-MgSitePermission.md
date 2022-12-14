@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Files
+```powershell
+Import-Module Microsoft.Graph.Beta.Files
 
 $params = @{
 	Recipients = @(
@@ -16,8 +17,9 @@ $params = @{
 	)
 }
 
-Grant-MgSharePermission -SharedDriveItemId $sharedDriveItemId -BodyParameter $params
+Grant-MgBetaSharePermission -SharedDriveItemId $sharedDriveItemId -BodyParameter $params
 ```
-This example shows how to use the Grant-MgSitePermission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Grant-MgBetaSitePermission Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

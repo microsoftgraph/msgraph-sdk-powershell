@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgIdentityGovernanceTermOfUseAgreement Cmdlet
+### Example 1: Using the New-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	DisplayName = "Contoso ToU for guest users"
 	IsViewingBeforeAcceptanceRequired = $true
@@ -15,7 +15,7 @@ $params = @{
 		}
 	)
 }
-New-MgIdentityGovernanceTermOfUseAgreement -BodyParameter $params
+New-MgBetaIdentityGovernanceTermOfUseAgreement -BodyParameter $params
 ```
-This example shows how to use the New-MgIdentityGovernanceTermOfUseAgreement Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceTermOfUseAgreement Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

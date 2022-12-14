@@ -1,11 +1,11 @@
-### Example 1: Using the Update-MgUserProfilePosition Cmdlet
+### Example 1: Using the Update-MgBetaUserProfilePosition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	IsCurrent = $true
 }
 # A UPN can also be used as -UserId.
-Update-MgUserProfilePosition -UserId $userId -WorkPositionId $workPositionId -BodyParameter $params
+Update-MgBetaUserProfilePosition -UserId $userId -WorkPositionId $workPositionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserProfilePosition Cmdlet.
+This example shows how to use the Update-MgBetaUserProfilePosition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

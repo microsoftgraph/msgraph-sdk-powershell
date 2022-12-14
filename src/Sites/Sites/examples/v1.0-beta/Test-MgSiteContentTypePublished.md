@@ -1,7 +1,7 @@
-### Example 1: Using the Test-MgSiteContentTypePublished Cmdlet
+### Example 1: Using the Test-MgBetaSiteContentTypePublished Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
-Test-MgSiteContentTypePublished -SiteId $siteId -ContentTypeId $contentTypeId
+Import-Module Microsoft.Graph.Beta.Sites
+Test-MgBetaSiteContentTypePublished -SiteId $siteId -ContentTypeId $contentTypeId
 ```
-This example shows how to use the Test-MgSiteContentTypePublished Cmdlet.
+This example shows how to use the Test-MgBetaSiteContentTypePublished Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

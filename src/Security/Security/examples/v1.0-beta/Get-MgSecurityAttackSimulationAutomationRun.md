@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgSecurityAttackSimulationAutomationRun Cmdlet
+### Example 1: Using the Get-MgBetaSecurityAttackSimulationAutomationRun Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityAttackSimulationAutomationRun -SimulationAutomationId $simulationAutomationId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityAttackSimulationAutomationRun -SimulationAutomationId $simulationAutomationId
 ```
-This example shows how to use the Get-MgSecurityAttackSimulationAutomationRun Cmdlet.
+This example shows how to use the Get-MgBetaSecurityAttackSimulationAutomationRun Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

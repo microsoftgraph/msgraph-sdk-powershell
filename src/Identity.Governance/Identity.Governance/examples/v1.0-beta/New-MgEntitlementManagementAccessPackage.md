@@ -1,8 +1,8 @@
 ### Example 1: Create an access package
 
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-New-MgEntitlementManagementAccessPackage -CatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b'  -DisplayName 'Marketing Campaign' | Format-list
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+New-MgBetaEntitlementManagementAccessPackage -CatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b'  -DisplayName 'Marketing Campaign' | Format-list
 
 AccessPackageAssignmentPolicies :
 AccessPackageCatalog            : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageCatalog

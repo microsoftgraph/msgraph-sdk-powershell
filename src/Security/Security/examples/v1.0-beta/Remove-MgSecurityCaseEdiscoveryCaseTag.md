@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgSecurityCaseEdiscoveryCaseTag Cmdlet
+### Example 1: Using the Remove-MgBetaSecurityCaseEdiscoveryCaseTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Remove-MgSecurityCaseEdiscoveryCaseTag -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewTagId $ediscoveryReviewTagId
+Import-Module Microsoft.Graph.Beta.Security
+Remove-MgBetaSecurityCaseEdiscoveryCaseTag -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewTagId $ediscoveryReviewTagId
 ```
-This example shows how to use the Remove-MgSecurityCaseEdiscoveryCaseTag Cmdlet.
+This example shows how to use the Remove-MgBetaSecurityCaseEdiscoveryCaseTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

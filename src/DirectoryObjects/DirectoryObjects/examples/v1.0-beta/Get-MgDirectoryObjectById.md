@@ -1,6 +1,6 @@
-### Example 1: Using the Get-MgDirectoryObjectById Cmdlet
+### Example 1: Using the Get-MgBetaDirectoryObjectById Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DirectoryObjects
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 $params = @{
 	Ids = @(
 		"84b80893-8749-40a3-97b7-68513b600544"
@@ -14,7 +14,7 @@ $params = @{
 		"device"
 	)
 }
-Get-MgDirectoryObjectById -BodyParameter $params
+Get-MgBetaDirectoryObjectById -BodyParameter $params
 ```
-This example shows how to use the Get-MgDirectoryObjectById Cmdlet.
+This example shows how to use the Get-MgBetaDirectoryObjectById Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

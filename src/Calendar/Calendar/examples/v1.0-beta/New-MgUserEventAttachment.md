@@ -1,19 +1,19 @@
-### Example 1: Using the New-MgUserEventAttachment Cmdlet
+### Example 1: Using the New-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	"@odata.type" = "#microsoft.graph.fileAttachment"
 	Name = "menu.txt"
 	ContentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk="
 }
 # A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserEventAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgUserEventAttachment Cmdlet
+### Example 2: Using the New-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	"@odata.type" = "#microsoft.graph.itemAttachment"
 	Name = "Holiday event"
@@ -23,13 +23,13 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserEventAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgUserEventAttachment Cmdlet
+### Example 3: Using the New-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"
 	Name = "name-value"
@@ -38,13 +38,13 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserEventAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgUserEventAttachment Cmdlet
+### Example 4: Using the New-MgBetaUserEventAttachment Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	"@odata.type" = "#microsoft.graph.referenceAttachment"
 	Name = "Personal pictures"
@@ -54,7 +54,7 @@ $params = @{
 	IsFolder = "True"
 }
 # A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserEventAttachment Cmdlet.
+This example shows how to use the New-MgBetaUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

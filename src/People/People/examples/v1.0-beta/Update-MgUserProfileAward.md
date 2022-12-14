@@ -1,11 +1,11 @@
-### Example 1: Using the Update-MgUserProfileAward Cmdlet
+### Example 1: Using the Update-MgBetaUserProfileAward Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	IssuingAuthority = "International Association of Branding Management"
 	ThumbnailUrl = "https://iabm.io/sdhdfhsdhshsd.jpg"
 }
-Update-MgUserProfileAward -UserId $userId -PersonAwardId $personAwardId -BodyParameter $params
+Update-MgBetaUserProfileAward -UserId $userId -PersonAwardId $personAwardId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserProfileAward Cmdlet.
+This example shows how to use the Update-MgBetaUserProfileAward Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

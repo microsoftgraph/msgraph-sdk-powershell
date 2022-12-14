@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgGroupEventExtension Cmdlet
+### Example 1: Using the New-MgBetaGroupEventExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	"@odata.type" = "microsoft.graph.openTypeExtension"
 	ExtensionName = "Com.Contoso.Deal"
@@ -8,7 +8,7 @@ $params = @{
 	DealValue = 
 	ExpirationDate = "2015-07-03T13:04:00.000Z"
 }
-New-MgGroupEventExtension -GroupId $groupId -EventId $eventId -BodyParameter $params
+New-MgBetaGroupEventExtension -GroupId $groupId -EventId $eventId -BodyParameter $params
 ```
-This example shows how to use the New-MgGroupEventExtension Cmdlet.
+This example shows how to use the New-MgBetaGroupEventExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

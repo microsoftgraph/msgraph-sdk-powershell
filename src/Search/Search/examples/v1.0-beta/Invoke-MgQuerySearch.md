@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgQuerySearch Cmdlet
+### Example 1: Using the Invoke-MgBetaQuerySearch Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
+Import-Module Microsoft.Graph.Beta.Search
 $params = @{
 	Requests = @(
 		@{
@@ -22,7 +22,7 @@ $params = @{
 		}
 	)
 }
-Invoke-MgQuerySearch -BodyParameter $params
+Invoke-MgBetaQuerySearch -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgQuerySearch Cmdlet.
+This example shows how to use the Invoke-MgBetaQuerySearch Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

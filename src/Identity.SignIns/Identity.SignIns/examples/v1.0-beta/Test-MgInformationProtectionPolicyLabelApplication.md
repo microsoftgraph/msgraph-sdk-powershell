@@ -1,6 +1,6 @@
-### Example 1: Using the Test-MgInformationProtectionPolicyLabelApplication Cmdlet
+### Example 1: Using the Test-MgBetaInformationProtectionPolicyLabelApplication Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	ContentInfo = @{
 		"@odata.type" = "#microsoft.graph.contentInfo"
@@ -60,7 +60,7 @@ $params = @{
 		)
 	}
 }
-Test-MgInformationProtectionPolicyLabelApplication -BodyParameter $params
+Test-MgBetaInformationProtectionPolicyLabelApplication -BodyParameter $params
 ```
-This example shows how to use the Test-MgInformationProtectionPolicyLabelApplication Cmdlet.
+This example shows how to use the Test-MgBetaInformationProtectionPolicyLabelApplication Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

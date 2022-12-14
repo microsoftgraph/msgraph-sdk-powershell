@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgTeam Cmdlet
+### Example 1: Using the Update-MgBetaTeam Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	IsMembershipLimitedToOwners = $true
 	MemberSettings = @{
@@ -18,7 +18,7 @@ $params = @{
 		ShowInTeamsSearchAndSuggestions = $true
 	}
 }
-Update-MgTeam -TeamId $teamId -BodyParameter $params
+Update-MgBetaTeam -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the Update-MgTeam Cmdlet.
+This example shows how to use the Update-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

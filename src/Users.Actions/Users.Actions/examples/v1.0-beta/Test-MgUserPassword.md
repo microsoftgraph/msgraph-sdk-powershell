@@ -1,10 +1,10 @@
-### Example 1: Using the Test-MgUserPassword Cmdlet
+### Example 1: Using the Test-MgBetaUserPassword Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Password = "1234567890"
 }
-Test-MgUserPassword -BodyParameter $params
+Test-MgBetaUserPassword -BodyParameter $params
 ```
-This example shows how to use the Test-MgUserPassword Cmdlet.
+This example shows how to use the Test-MgBetaUserPassword Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

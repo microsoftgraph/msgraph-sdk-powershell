@@ -1,6 +1,6 @@
-### Example 1: Using the Set-MgDeviceManagementVirtualEndpointUserSetting Cmdlet
+### Example 1: Using the Set-MgBetaDeviceManagementVirtualEndpointUserSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
 $params = @{
 	Assignments = @(
 		@{
@@ -12,7 +12,7 @@ $params = @{
 		}
 	)
 }
-Set-MgDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId $cloudPcUserSettingId -BodyParameter $params
+Set-MgBetaDeviceManagementVirtualEndpointUserSetting -CloudPcUserSettingId $cloudPcUserSettingId -BodyParameter $params
 ```
-This example shows how to use the Set-MgDeviceManagementVirtualEndpointUserSetting Cmdlet.
+This example shows how to use the Set-MgBetaDeviceManagementVirtualEndpointUserSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

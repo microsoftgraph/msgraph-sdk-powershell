@@ -1,6 +1,7 @@
 ### Example 1: Reply in JSON format to an existing message
 
-```powershellImport-Module Microsoft.Graph.Users.Actions
+```powershell
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 $params = @{
 	Message = @{
@@ -23,8 +24,9 @@ $params = @{
 }
 
 # A UPN can also be used as -UserId.
-Invoke-MgReplyUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+Invoke-MgBetaReplyUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgReplyUserMailFolderChildFolderMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Invoke-MgBetaReplyUserMailFolderChildFolderMessage Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

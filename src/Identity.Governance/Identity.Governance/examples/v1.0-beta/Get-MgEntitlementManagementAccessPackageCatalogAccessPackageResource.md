@@ -1,8 +1,8 @@
 ### Example 1: Get catalog resources by catalog id
 
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' | Format-List
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' | Format-List
 
 AccessPackageResourceEnvironment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageResourceEnvironment
 AccessPackageResourceRoles       :
@@ -42,8 +42,8 @@ This example returns all access package catalog resources for the specified cata
 ### Example 2: Use -Filter to get all catalog resources with the display name 'Marketing resources'
 
 ```powershell
-Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
-Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -Filter "DisplayName eq 'Marketing resources'" | Format-List
+Connect-MgBetaGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -Filter "DisplayName eq 'Marketing resources'" | Format-List
 
 AccessPackageResourceEnvironment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageResourceEnvironment
 AccessPackageResourceRoles       :

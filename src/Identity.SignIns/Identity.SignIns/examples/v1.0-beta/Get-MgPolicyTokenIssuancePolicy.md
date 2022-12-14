@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgPolicyTokenIssuancePolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyTokenIssuancePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId
 ```
-This example shows how to use the Get-MgPolicyTokenIssuancePolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyTokenIssuancePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgPolicyTokenIssuancePolicy Cmdlet
+### Example 2: Using the Get-MgBetaPolicyTokenIssuancePolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyTokenIssuancePolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyTokenIssuancePolicy
 ```
-This example shows how to use the Get-MgPolicyTokenIssuancePolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyTokenIssuancePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,8 +1,8 @@
-### Example 1: Using the Remove-MgUserProfileEducationalActivity Cmdlet
+### Example 1: Using the Remove-MgBetaUserProfileEducationalActivity Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Remove-MgUserProfileEducationalActivity -UserId $userId -EducationalActivityId $educationalActivityId
+Remove-MgBetaUserProfileEducationalActivity -UserId $userId -EducationalActivityId $educationalActivityId
 ```
-This example shows how to use the Remove-MgUserProfileEducationalActivity Cmdlet.
+This example shows how to use the Remove-MgBetaUserProfileEducationalActivity Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgComplianceEdiscoveryCaseLegalHoldSiteSource Cmdlet
+### Example 1: Using the Get-MgBetaComplianceEdiscoveryCaseLegalHoldSiteSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Get-MgComplianceEdiscoveryCaseLegalHoldSiteSource -CaseId $caseId -LegalHoldId $legalHoldId
+Import-Module Microsoft.Graph.Beta.Compliance
+Get-MgBetaComplianceEdiscoveryCaseLegalHoldSiteSource -CaseId $caseId -LegalHoldId $legalHoldId
 ```
-This example shows how to use the Get-MgComplianceEdiscoveryCaseLegalHoldSiteSource Cmdlet.
+This example shows how to use the Get-MgBetaComplianceEdiscoveryCaseLegalHoldSiteSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

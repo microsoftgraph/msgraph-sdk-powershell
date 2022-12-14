@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet
+### Example 1: Using the Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 $params = @{
 	"@odata.type" = "#microsoft.graph.accessReviewStage"
 	Reviewers = @(
@@ -20,7 +20,7 @@ $params = @{
 		}
 	)
 }
-Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -BodyParameter $params
+Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet.
+This example shows how to use the Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

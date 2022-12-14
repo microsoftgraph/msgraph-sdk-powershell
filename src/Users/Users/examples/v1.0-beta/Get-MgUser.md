@@ -2,7 +2,7 @@
 
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -All | Format-List  ID, DisplayName, Mail, UserPrincipalName
+Get-MgBetaUser -All | Format-List  ID, DisplayName, Mail, UserPrincipalName
 
 Id                : e4e2b110-8d4f-434f-a990-7cd63e23aed6
 DisplayName       : Kristi Laar
@@ -25,7 +25,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -UserId 'e4e2b110-8d4f-434f-a990-7cd63e23aed6' | 
+Get-MgBetaUser -UserId 'e4e2b110-8d4f-434f-a990-7cd63e23aed6' | 
   Format-List  ID, DisplayName, Mail, UserPrincipalName
 
 Id                : e4e2b110-8d4f-434f-a990-7cd63e23aed6
@@ -44,7 +44,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -Count userCount -ConsistencyLevel eventual
+Get-MgBetaUser -Count userCount -ConsistencyLevel eventual
 
 Id                                   DisplayName              Mail                           UserPrincipalName        
 --                                   -----------              ----                           -----------------               
@@ -67,7 +67,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -ConsistencyLevel eventual -Count userCount -Filter "startsWith(DisplayName, 'a')" -Top 1
+Get-MgBetaUser -ConsistencyLevel eventual -Count userCount -Filter "startsWith(DisplayName, 'a')" -Top 1
 
 Id                                   DisplayName   Mail                               UserPrincipalName                  UserType
 --                                   -----------   ----                               -----------------                  --------
@@ -84,7 +84,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -ConsistencyLevel eventual -Count userCount -Search '"DisplayName:Conf"'
+Get-MgBetaUser -ConsistencyLevel eventual -Count userCount -Search '"DisplayName:Conf"'
 
 Id                                   DisplayName       Mail                UserPrincipalName                   
 --                                   -----------       ----                -----------------                             
@@ -105,7 +105,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 
 ```powershell
 Connect-MgGraph -Scopes 'User.Read.All'
-Get-MgUser -ConsistencyLevel eventual -Count userCount -Filter "startsWith(DisplayName, 'Conf')" -OrderBy UserPrincipalName
+Get-MgBetaUser -ConsistencyLevel eventual -Count userCount -Filter "startsWith(DisplayName, 'Conf')" -OrderBy UserPrincipalName
 
 Id                                   DisplayName       Mail                UserPrincipalName                   
 --                                   -----------       ----                -----------------                   

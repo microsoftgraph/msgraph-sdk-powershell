@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgSnoozeUserEventReminder Cmdlet
+### Example 1: Using the Invoke-MgBetaSnoozeUserEventReminder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	NewReminderTime = @{
 		DateTime = "2016-10-19T10:37:00Z"
@@ -8,7 +8,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Invoke-MgSnoozeUserEventReminder -UserId $userId -EventId $eventId -BodyParameter $params
+Invoke-MgBetaSnoozeUserEventReminder -UserId $userId -EventId $eventId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgSnoozeUserEventReminder Cmdlet.
+This example shows how to use the Invoke-MgBetaSnoozeUserEventReminder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

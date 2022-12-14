@@ -1,7 +1,7 @@
 ### Example 1: Get a user's direct reports
 
 ```powershell
-Get-MgUserDirectReport -UserId '075b32dd-edb7-47cf-89ef-f3f733683a3f'
+Get-MgBetaUserDirectReport -UserId '075b32dd-edb7-47cf-89ef-f3f733683a3f'
 
 Id                                   DeletedDateTime
 --                                   ---------------

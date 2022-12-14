@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgForwardUserMessage Cmdlet
+### Example 1: Using the Invoke-MgBetaForwardUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Message = @{
 		IsDeliveryReceiptRequested = $true
@@ -16,7 +16,7 @@ $params = @{
 	Comment = "Dana, just want to make sure you get this."
 }
 # A UPN can also be used as -UserId.
-Invoke-MgForwardUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+Invoke-MgBetaForwardUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgForwardUserMessage Cmdlet.
+This example shows how to use the Invoke-MgBetaForwardUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

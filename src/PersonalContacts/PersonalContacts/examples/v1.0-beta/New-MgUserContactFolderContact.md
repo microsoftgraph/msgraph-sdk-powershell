@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserContactFolderContact Cmdlet
+### Example 1: Using the New-MgBetaUserContactFolderContact Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.PersonalContacts
+Import-Module Microsoft.Graph.Beta.PersonalContacts
 $params = @{
 	ParentFolderId = "parentFolderId-value"
 	Birthday = [System.DateTime]::Parse("2016-10-19T10:37:00Z")
@@ -10,7 +10,7 @@ $params = @{
 	Initials = "initials-value"
 }
 # A UPN can also be used as -UserId.
-New-MgUserContactFolderContact -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
+New-MgBetaUserContactFolderContact -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserContactFolderContact Cmdlet.
+This example shows how to use the New-MgBetaUserContactFolderContact Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,7 +1,7 @@
-### Example 1: Using the Invoke-MgFunctionServicePrincipalSynchronizationJobSchema Cmdlet
+### Example 1: Using the Invoke-MgBetaFunctionServicePrincipalSynchronizationJobSchema Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
-Invoke-MgFunctionServicePrincipalSynchronizationJobSchema -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
+Import-Module Microsoft.Graph.Beta.Applications
+Invoke-MgBetaFunctionServicePrincipalSynchronizationJobSchema -ServicePrincipalId $servicePrincipalId -SynchronizationJobId $synchronizationJobId
 ```
-This example shows how to use the Invoke-MgFunctionServicePrincipalSynchronizationJobSchema Cmdlet.
+This example shows how to use the Invoke-MgBetaFunctionServicePrincipalSynchronizationJobSchema Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

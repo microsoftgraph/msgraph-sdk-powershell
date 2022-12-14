@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgUserTodoListTask Cmdlet
+### Example 1: Using the Update-MgBetaUserTodoListTask Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users
+Import-Module Microsoft.Graph.Beta.Users
 $params = @{
 	DueDateTime = @{
 		DateTime = "2020-07-25T16:00:00"
@@ -8,7 +8,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Update-MgUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
+Update-MgBetaUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserTodoListTask Cmdlet.
+This example shows how to use the Update-MgBetaUserTodoListTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

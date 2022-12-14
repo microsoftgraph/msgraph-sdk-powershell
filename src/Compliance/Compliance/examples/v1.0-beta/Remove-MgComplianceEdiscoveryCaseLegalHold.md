@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgComplianceEdiscoveryCaseLegalHold Cmdlet
+### Example 1: Using the Remove-MgBetaComplianceEdiscoveryCaseLegalHold Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
-Remove-MgComplianceEdiscoveryCaseLegalHold -CaseId $caseId -LegalHoldId $legalHoldId
+Import-Module Microsoft.Graph.Beta.Compliance
+Remove-MgBetaComplianceEdiscoveryCaseLegalHold -CaseId $caseId -LegalHoldId $legalHoldId
 ```
-This example shows how to use the Remove-MgComplianceEdiscoveryCaseLegalHold Cmdlet.
+This example shows how to use the Remove-MgBetaComplianceEdiscoveryCaseLegalHold Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

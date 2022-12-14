@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgUserContact Cmdlet
+### Example 1: Using the Update-MgBetaUserContact Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.PersonalContacts
+Import-Module Microsoft.Graph.Beta.PersonalContacts
 $params = @{
 	EmailAddresses = @(
 		@{
@@ -17,7 +17,7 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-Update-MgUserContact -UserId $userId -ContactId $contactId -BodyParameter $params
+Update-MgBetaUserContact -UserId $userId -ContactId $contactId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserContact Cmdlet.
+This example shows how to use the Update-MgBetaUserContact Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

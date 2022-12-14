@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserMessageExtension Cmdlet
+### Example 1: Using the Get-MgBetaUserMessageExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgUserMessageExtension -UserId $userId -MessageId $messageId -ExtensionId $extensionId
+Get-MgBetaUserMessageExtension -UserId $userId -MessageId $messageId -ExtensionId $extensionId
 ```
-This example shows how to use the Get-MgUserMessageExtension Cmdlet.
+This example shows how to use the Get-MgBetaUserMessageExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

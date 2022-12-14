@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgPolicyCrossTenantAccessPolicy Cmdlet
+### Example 1: Using the Get-MgBetaPolicyCrossTenantAccessPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyCrossTenantAccessPolicy
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+Get-MgBetaPolicyCrossTenantAccessPolicy
 ```
-This example shows how to use the Get-MgPolicyCrossTenantAccessPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyCrossTenantAccessPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

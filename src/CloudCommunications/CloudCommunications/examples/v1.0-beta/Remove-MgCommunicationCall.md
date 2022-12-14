@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgCommunicationCall Cmdlet
+### Example 1: Using the Remove-MgBetaCommunicationCall Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Remove-MgCommunicationCall -CallId $callId
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+Remove-MgBetaCommunicationCall -CallId $callId
 ```
-This example shows how to use the Remove-MgCommunicationCall Cmdlet.
+This example shows how to use the Remove-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,8 +1,8 @@
-### Example 1: Using the Get-MgUserPlanner Cmdlet
+### Example 1: Using the Get-MgBetaUserPlanner Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 # A UPN can also be used as -UserId.
-Get-MgUserPlanner -UserId $userId
+Get-MgBetaUserPlanner -UserId $userId
 ```
-This example shows how to use the Get-MgUserPlanner Cmdlet.
+This example shows how to use the Get-MgBetaUserPlanner Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

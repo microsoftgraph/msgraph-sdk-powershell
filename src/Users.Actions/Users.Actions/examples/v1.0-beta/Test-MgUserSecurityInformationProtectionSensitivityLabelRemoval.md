@@ -1,6 +1,6 @@
-### Example 1: Using the Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval Cmdlet
+### Example 1: Using the Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	ContentInfo = @{
 		"@odata.type" = "#microsoft.graph.security.contentInfo"
@@ -46,7 +46,7 @@ $params = @{
 		IsDowngradeJustified = $true
 	}
 }
-Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval -UserId $userId -BodyParameter $params
+Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval Cmdlet.
+This example shows how to use the Test-MgBetaUserSecurityInformationProtectionSensitivityLabelRemoval Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,12 +1,12 @@
-### Example 1: Using the New-MgUserProfileAnniversary Cmdlet
+### Example 1: Using the New-MgBetaUserProfileAnniversary Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	Type = "birthday"
 	Date = "1980-01-08"
 }
 # A UPN can also be used as -UserId.
-New-MgUserProfileAnniversary -UserId $userId -BodyParameter $params
+New-MgBetaUserProfileAnniversary -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserProfileAnniversary Cmdlet.
+This example shows how to use the New-MgBetaUserProfileAnniversary Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

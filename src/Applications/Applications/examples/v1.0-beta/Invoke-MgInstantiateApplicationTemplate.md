@@ -1,10 +1,10 @@
-### Example 1: Using the Invoke-MgInstantiateApplicationTemplate Cmdlet
+### Example 1: Using the Invoke-MgBetaInstantiateApplicationTemplate Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	DisplayName = "testProperties"
 }
-Invoke-MgInstantiateApplicationTemplate -ApplicationTemplateId $applicationTemplateId -BodyParameter $params
+Invoke-MgBetaInstantiateApplicationTemplate -ApplicationTemplateId $applicationTemplateId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgInstantiateApplicationTemplate Cmdlet.
+This example shows how to use the Invoke-MgBetaInstantiateApplicationTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

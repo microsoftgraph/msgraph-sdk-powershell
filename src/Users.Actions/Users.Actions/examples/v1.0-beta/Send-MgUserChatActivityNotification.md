@@ -1,6 +1,7 @@
 ### Example 1: Notify a user about a task created in a chat
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	Topic = @{
@@ -23,14 +24,16 @@ $params = @{
 	)
 }
 
-Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
+Send-MgBetaChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the Send-MgUserChatActivityNotification Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Send-MgBetaUserChatActivityNotification Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Notify a user about an approval needed in a chat message
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	Topic = @{
@@ -53,14 +56,16 @@ $params = @{
 	)
 }
 
-Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
+Send-MgBetaChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the Send-MgUserChatActivityNotification Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Send-MgBetaUserChatActivityNotification Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Notify a user about an approval needed in a chat message using user principal name
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	Topic = @{
@@ -83,14 +88,16 @@ $params = @{
 	)
 }
 
-Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
+Send-MgBetaChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the Send-MgUserChatActivityNotification Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Send-MgBetaUserChatActivityNotification Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Notify a user about an event in relation to a chat
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	Topic = @{
@@ -114,8 +121,9 @@ $params = @{
 	)
 }
 
-Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
+Send-MgBetaChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the Send-MgUserChatActivityNotification Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Send-MgBetaUserChatActivityNotification Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

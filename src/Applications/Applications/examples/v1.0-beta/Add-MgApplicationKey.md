@@ -1,6 +1,6 @@
-### Example 1: Using the Add-MgApplicationKey Cmdlet
+### Example 1: Using the Add-MgBetaApplicationKey Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	KeyCredential = @{
 		Type = "AsymmetricX509Cert"
@@ -10,13 +10,13 @@ $params = @{
 	PasswordCredential = $null
 	Proof = "eyJ0eXAiOiJ..."
 }
-Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
+Add-MgBetaApplicationKey -ApplicationId $applicationId -BodyParameter $params
 ```
-This example shows how to use the Add-MgApplicationKey Cmdlet.
+This example shows how to use the Add-MgBetaApplicationKey Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Add-MgApplicationKey Cmdlet
+### Example 2: Using the Add-MgBetaApplicationKey Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Applications
+Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	KeyCredential = @{
 		Type = "X509CertAndPassword"
@@ -28,7 +28,7 @@ $params = @{
 	}
 	Proof = "eyJ0eXAiOiJ..."
 }
-Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
+Add-MgBetaApplicationKey -ApplicationId $applicationId -BodyParameter $params
 ```
-This example shows how to use the Add-MgApplicationKey Cmdlet.
+This example shows how to use the Add-MgBetaApplicationKey Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserEvent Cmdlet
+### Example 1: Using the New-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	Subject = "Plan summer company picnic"
 	Body = @{
@@ -60,13 +60,13 @@ $params = @{
 	AllowNewTimeProposals = $true
 }
 # A UPN can also be used as -UserId.
-New-MgUserEvent -UserId $userId -BodyParameter $params
+New-MgBetaUserEvent -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserEvent Cmdlet.
+This example shows how to use the New-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgUserEvent Cmdlet
+### Example 2: Using the New-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	Subject = "Let's go for lunch"
 	Body = @{
@@ -97,13 +97,13 @@ $params = @{
 	TransactionId = "7E163156-7762-4BEB-A1C6-729EA81755A7"
 }
 # A UPN can also be used as -UserId.
-New-MgUserEvent -UserId $userId -BodyParameter $params
+New-MgBetaUserEvent -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserEvent Cmdlet.
+This example shows how to use the New-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgUserEvent Cmdlet
+### Example 3: Using the New-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	Subject = "Let's go for lunch"
 	Body = @{
@@ -135,13 +135,13 @@ $params = @{
 	OnlineMeetingProvider = "teamsForBusiness"
 }
 # A UPN can also be used as -UserId.
-New-MgUserEvent -UserId $userId -BodyParameter $params
+New-MgBetaUserEvent -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserEvent Cmdlet.
+This example shows how to use the New-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgUserEvent Cmdlet
+### Example 4: Using the New-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	Subject = "Let's go for lunch"
 	Body = @{
@@ -181,13 +181,13 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-New-MgUserEvent -UserId $userId -BodyParameter $params
+New-MgBetaUserEvent -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserEvent Cmdlet.
+This example shows how to use the New-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the New-MgUserEvent Cmdlet
+### Example 5: Using the New-MgBetaUserEvent Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	Subject = "Let's go for lunch"
 	Body = @{
@@ -230,7 +230,7 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-New-MgUserEvent -UserId $userId -BodyParameter $params
+New-MgBetaUserEvent -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserEvent Cmdlet.
+This example shows how to use the New-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

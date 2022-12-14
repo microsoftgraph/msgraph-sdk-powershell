@@ -1,18 +1,18 @@
-### Example 1: Using the New-MgUserMailFolderChildFolder Cmdlet
+### Example 1: Using the New-MgBetaUserMailFolderChildFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	DisplayName = "displayName-value"
 	IsHidden = $true
 }
 # A UPN can also be used as -UserId.
-New-MgUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+New-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserMailFolderChildFolder Cmdlet.
+This example shows how to use the New-MgBetaUserMailFolderChildFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgUserMailFolderChildFolder Cmdlet
+### Example 2: Using the New-MgBetaUserMailFolderChildFolder Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	"@odata.type" = "microsoft.graph.mailSearchFolder"
 	DisplayName = "Weekly digests"
@@ -23,7 +23,7 @@ $params = @{
 	FilterQuery = "contains(subject, 'weekly digest')"
 }
 # A UPN can also be used as -UserId.
-New-MgUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+New-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserMailFolderChildFolder Cmdlet.
+This example shows how to use the New-MgBetaUserMailFolderChildFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

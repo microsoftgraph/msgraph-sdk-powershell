@@ -1,6 +1,6 @@
-### Example 1: Using the Send-MgChatActivityNotification Cmdlet
+### Example 1: Using the Send-MgBetaChatActivityNotification Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Topic = @{
 		Source = "entityUrl"
@@ -21,13 +21,13 @@ $params = @{
 		}
 	)
 }
-Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
+Send-MgBetaChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the Send-MgChatActivityNotification Cmdlet.
+This example shows how to use the Send-MgBetaChatActivityNotification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Send-MgChatActivityNotification Cmdlet
+### Example 2: Using the Send-MgBetaChatActivityNotification Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Topic = @{
 		Source = "entityUrl"
@@ -48,13 +48,13 @@ $params = @{
 		}
 	)
 }
-Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
+Send-MgBetaChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the Send-MgChatActivityNotification Cmdlet.
+This example shows how to use the Send-MgBetaChatActivityNotification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Send-MgChatActivityNotification Cmdlet
+### Example 3: Using the Send-MgBetaChatActivityNotification Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Topic = @{
 		Source = "text"
@@ -76,13 +76,13 @@ $params = @{
 		}
 	)
 }
-Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
+Send-MgBetaChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the Send-MgChatActivityNotification Cmdlet.
+This example shows how to use the Send-MgBetaChatActivityNotification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Send-MgChatActivityNotification Cmdlet
+### Example 4: Using the Send-MgBetaChatActivityNotification Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Topic = @{
 		Source = "entityUrl"
@@ -103,13 +103,13 @@ $params = @{
 		}
 	)
 }
-Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
+Send-MgBetaChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the Send-MgChatActivityNotification Cmdlet.
+This example shows how to use the Send-MgBetaChatActivityNotification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the Send-MgChatActivityNotification Cmdlet
+### Example 5: Using the Send-MgBetaChatActivityNotification Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	Topic = @{
 		Source = "entityUrl"
@@ -130,7 +130,7 @@ $params = @{
 		}
 	)
 }
-Send-MgChatActivityNotification -ChatId $chatId -BodyParameter $params
+Send-MgBetaChatActivityNotification -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the Send-MgChatActivityNotification Cmdlet.
+This example shows how to use the Send-MgBetaChatActivityNotification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

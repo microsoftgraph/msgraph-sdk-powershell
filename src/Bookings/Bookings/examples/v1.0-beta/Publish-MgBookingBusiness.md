@@ -1,7 +1,7 @@
-### Example 1: Using the Publish-MgBookingBusiness Cmdlet
+### Example 1: Using the Publish-MgBetaBookingBusiness Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-Publish-MgBookingBusiness -BookingBusinessId $bookingBusinessId
+Import-Module Microsoft.Graph.Beta.Bookings
+Publish-MgBetaBookingBusiness -BookingBusinessId $bookingBusinessId
 ```
-This example shows how to use the Publish-MgBookingBusiness Cmdlet.
+This example shows how to use the Publish-MgBetaBookingBusiness Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

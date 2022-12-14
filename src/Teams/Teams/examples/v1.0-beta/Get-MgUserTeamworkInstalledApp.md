@@ -1,35 +1,35 @@
-### Example 1: Using the Get-MgUserTeamworkInstalledApp Cmdlet
+### Example 1: Using the Get-MgBetaUserTeamworkInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserTeamworkInstalledApp -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserTeamworkInstalledApp -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
 ```
-This example shows how to use the Get-MgUserTeamworkInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaUserTeamworkInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgUserTeamworkInstalledApp Cmdlet
+### Example 2: Using the Get-MgBetaUserTeamworkInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserTeamworkInstalledApp -UserId $userId
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserTeamworkInstalledApp -UserId $userId
 ```
-This example shows how to use the Get-MgUserTeamworkInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaUserTeamworkInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgUserTeamworkInstalledApp Cmdlet
+### Example 3: Using the Get-MgBetaUserTeamworkInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserTeamworkInstalledApp -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId -ExpandProperty "teamsAppDefinition" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserTeamworkInstalledApp -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId -ExpandProperty "teamsAppDefinition" 
 ```
-This example shows how to use the Get-MgUserTeamworkInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaUserTeamworkInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Get-MgUserTeamworkInstalledApp Cmdlet
+### Example 4: Using the Get-MgBetaUserTeamworkInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserTeamworkInstalledApp -UserId $userId -ExpandProperty "teamsAppDefinition(`$expand=bot)" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserTeamworkInstalledApp -UserId $userId -ExpandProperty "teamsAppDefinition(`$expand=bot)" 
 ```
-This example shows how to use the Get-MgUserTeamworkInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaUserTeamworkInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the Get-MgUserTeamworkInstalledApp Cmdlet
+### Example 5: Using the Get-MgBetaUserTeamworkInstalledApp Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgUserTeamworkInstalledApp -UserId $userId -ExpandProperty "teamsApp,teamsAppDefinition" -Filter "teamsApp/externalId eq 'cf1ba4c7-f94e-4d80-ba90-5594b641a8ee'" 
+Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaUserTeamworkInstalledApp -UserId $userId -ExpandProperty "teamsApp,teamsAppDefinition" -Filter "teamsApp/externalId eq 'cf1ba4c7-f94e-4d80-ba90-5594b641a8ee'" 
 ```
-This example shows how to use the Get-MgUserTeamworkInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaUserTeamworkInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

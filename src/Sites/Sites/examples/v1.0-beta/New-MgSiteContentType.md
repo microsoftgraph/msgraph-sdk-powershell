@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSiteContentType Cmdlet
+### Example 1: Using the New-MgBetaSiteContentType Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Sites
+Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
 	Name = "docSet"
 	Description = "custom docset"
@@ -10,7 +10,7 @@ $params = @{
 	}
 	Group = "Document Set Content Types"
 }
-New-MgSiteContentType -SiteId $siteId -BodyParameter $params
+New-MgBetaSiteContentType -SiteId $siteId -BodyParameter $params
 ```
-This example shows how to use the New-MgSiteContentType Cmdlet.
+This example shows how to use the New-MgBetaSiteContentType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

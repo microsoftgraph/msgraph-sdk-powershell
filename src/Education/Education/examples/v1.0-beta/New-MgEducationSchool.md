@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgEducationSchool Cmdlet
+### Example 1: Using the New-MgBetaEducationSchool Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	DisplayName = "Fabrikam High School"
 	Description = "Magnate school for the arts. Los Angeles School District"
@@ -21,7 +21,7 @@ $params = @{
 	ExternalId = "10002"
 	Phone = "+1 (253) 555-0102"
 }
-New-MgEducationSchool -BodyParameter $params
+New-MgBetaEducationSchool -BodyParameter $params
 ```
-This example shows how to use the New-MgEducationSchool Cmdlet.
+This example shows how to use the New-MgBetaEducationSchool Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

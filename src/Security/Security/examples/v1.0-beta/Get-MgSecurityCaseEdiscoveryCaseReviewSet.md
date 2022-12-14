@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgSecurityCaseEdiscoveryCaseReviewSet Cmdlet
+### Example 1: Using the Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId
 ```
-This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseReviewSet Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgSecurityCaseEdiscoveryCaseReviewSet Cmdlet
+### Example 2: Using the Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId $ediscoveryCaseId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId $ediscoveryCaseId
 ```
-This example shows how to use the Get-MgSecurityCaseEdiscoveryCaseReviewSet Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

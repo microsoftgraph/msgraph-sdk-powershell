@@ -1,6 +1,6 @@
-### Example 1: Using the Submit-MgSecurityTiIndicator Cmdlet
+### Example 1: Using the Submit-MgBetaSecurityTiIndicator Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Value = @(
 		@{
@@ -45,7 +45,7 @@ $params = @{
 		}
 	)
 }
-Submit-MgSecurityTiIndicator -BodyParameter $params
+Submit-MgBetaSecurityTiIndicator -BodyParameter $params
 ```
-This example shows how to use the Submit-MgSecurityTiIndicator Cmdlet.
+This example shows how to use the Submit-MgBetaSecurityTiIndicator Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

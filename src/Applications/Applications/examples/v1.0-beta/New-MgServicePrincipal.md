@@ -4,7 +4,7 @@
 $ServicePrincipalID=@{
   "AppId" = "fc876dd1-6bcb-4304-b9b6-18ddf1526b62"
   }
-New-MgServicePrincipal -BodyParameter $ServicePrincipalId | 
+New-MgBetaServicePrincipal -BodyParameter $ServicePrincipalId | 
   Format-List id, DisplayName, AppId, SignInAudience
 
 Id             : ac483a5f-f291-4499-8a62-058547724579

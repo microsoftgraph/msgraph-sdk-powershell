@@ -1,7 +1,7 @@
 ### Example 1: Require MFA to access Exchange Online outside of trusted locations
 
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
 
 $params = @{
@@ -39,7 +39,7 @@ $params = @{
    }
 }
 
-New-MgIdentityConditionalAccessPolicy -BodyParameter $params
+New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 
 Id                                   CreatedDateTime      Description DisplayName                ModifiedDateTime State
 --                                   ---------------      ----------- -----------                ---------------- -----
@@ -51,7 +51,7 @@ This example shows a request to require multi-factor authentication for access t
 ### Example 2: Block access to Exchange Online from non-trusted regions
 
 ```powershell
-Connect-MgGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
+Connect-MgBetaGraph -Scopes 'Policy.ReadWrite.ConditionalAccess'
 
 $params = @{
   DisplayName = "Block access to EXO non-trusted regions."
@@ -84,7 +84,7 @@ $params = @{
     }
   }
 
-New-MgIdentityConditionalAccessPolicy -BodyParameter $params
+New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 
 Id                                   CreatedDateTime       Description DisplayName                              ModifiedDateTime State
 --                                   ---------------       ----------- -----------                              ---------------- -----

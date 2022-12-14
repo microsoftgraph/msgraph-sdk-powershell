@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgEducationClass Cmdlet
+### Example 1: Using the New-MgBetaEducationClass Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	Description = "Health Level 1"
 	ClassCode = "Health 501"
@@ -10,7 +10,7 @@ $params = @{
 	ExternalSource = "sis"
 	MailNickname = "fineartschool.net"
 }
-New-MgEducationClass -BodyParameter $params
+New-MgBetaEducationClass -BodyParameter $params
 ```
-This example shows how to use the New-MgEducationClass Cmdlet.
+This example shows how to use the New-MgBetaEducationClass Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,8 +1,8 @@
-### Example 1: Using the Remove-MgUserProfilePosition Cmdlet
+### Example 1: Using the Remove-MgBetaUserProfilePosition Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 # A UPN can also be used as -UserId.
-Remove-MgUserProfilePosition -UserId $userId -WorkPositionId $workPositionId
+Remove-MgBetaUserProfilePosition -UserId $userId -WorkPositionId $workPositionId
 ```
-This example shows how to use the Remove-MgUserProfilePosition Cmdlet.
+This example shows how to use the Remove-MgBetaUserProfilePosition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

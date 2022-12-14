@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgGroupTransitiveMemberOf Cmdlet
+### Example 1: Using the Get-MgBetaGroupTransitiveMemberOf Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupTransitiveMemberOf -GroupId $groupId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupTransitiveMemberOf -GroupId $groupId
 ```
-This example shows how to use the Get-MgGroupTransitiveMemberOf Cmdlet.
+This example shows how to use the Get-MgBetaGroupTransitiveMemberOf Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

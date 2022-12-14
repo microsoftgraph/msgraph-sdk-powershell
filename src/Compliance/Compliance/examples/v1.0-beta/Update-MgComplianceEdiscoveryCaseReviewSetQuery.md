@@ -1,10 +1,10 @@
-### Example 1: Using the Update-MgComplianceEdiscoveryCaseReviewSetQuery Cmdlet
+### Example 1: Using the Update-MgBetaComplianceEdiscoveryCaseReviewSetQuery Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	DisplayName = "My Query 1 - Renamed"
 }
-Update-MgComplianceEdiscoveryCaseReviewSetQuery -CaseId $caseId -ReviewSetId $reviewSetId -ReviewSetQueryId $reviewSetQueryId -BodyParameter $params
+Update-MgBetaComplianceEdiscoveryCaseReviewSetQuery -CaseId $caseId -ReviewSetId $reviewSetId -ReviewSetQueryId $reviewSetQueryId -BodyParameter $params
 ```
-This example shows how to use the Update-MgComplianceEdiscoveryCaseReviewSetQuery Cmdlet.
+This example shows how to use the Update-MgBetaComplianceEdiscoveryCaseReviewSetQuery Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSecurityCaseEdiscoveryCaseSearch Cmdlet
+### Example 1: Using the New-MgBetaSecurityCaseEdiscoveryCaseSearch Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	DisplayName = "My search 2"
 	Description = "My first search"
@@ -14,7 +14,7 @@ $params = @{
 		"https://graph.microsoft.com/beta/security/cases/ediscoveryCases/b0073e4e-4184-41c6-9eb7-8c8cc3e2288b/noncustodialdatasources/35393639323133394345384344303043"
 	)
 }
-New-MgSecurityCaseEdiscoveryCaseSearch -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+New-MgBetaSecurityCaseEdiscoveryCaseSearch -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 ```
-This example shows how to use the New-MgSecurityCaseEdiscoveryCaseSearch Cmdlet.
+This example shows how to use the New-MgBetaSecurityCaseEdiscoveryCaseSearch Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

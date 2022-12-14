@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgUserMessage Cmdlet
+### Example 1: Using the New-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	Subject = "Did you see last night's game?"
 	Importance = "Low"
@@ -17,13 +17,13 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessage -UserId $userId -BodyParameter $params
+New-MgBetaUserMessage -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserMessage Cmdlet.
+This example shows how to use the New-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgUserMessage Cmdlet
+### Example 2: Using the New-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	Subject = "9/8/2018: concert"
 	Body = @{
@@ -49,13 +49,13 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessage -UserId $userId -BodyParameter $params
+New-MgBetaUserMessage -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserMessage Cmdlet.
+This example shows how to use the New-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgUserMessage Cmdlet
+### Example 3: Using the New-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	Subject = "Party planning"
 	ToRecipients = @(
@@ -76,13 +76,13 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessage -UserId $userId -BodyParameter $params
+New-MgBetaUserMessage -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserMessage Cmdlet.
+This example shows how to use the New-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgUserMessage Cmdlet
+### Example 4: Using the New-MgBetaUserMessage Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Mail
+Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	Subject = "Annual review"
 	Body = @{
@@ -107,7 +107,7 @@ $params = @{
 	)
 }
 # A UPN can also be used as -UserId.
-New-MgUserMessage -UserId $userId -BodyParameter $params
+New-MgBetaUserMessage -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgUserMessage Cmdlet.
+This example shows how to use the New-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

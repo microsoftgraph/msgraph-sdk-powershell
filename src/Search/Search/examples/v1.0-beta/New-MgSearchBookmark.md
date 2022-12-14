@@ -1,6 +1,6 @@
-### Example 1: Using the New-MgSearchBookmark Cmdlet
+### Example 1: Using the New-MgBetaSearchBookmark Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
+Import-Module Microsoft.Graph.Beta.Search
 $params = @{
 	DisplayName = "Contoso Install Site"
 	WebUrl = "http://www.contoso.com/"
@@ -29,7 +29,7 @@ $params = @{
 	)
 	State = "published"
 }
-New-MgSearchBookmark -BodyParameter $params
+New-MgBetaSearchBookmark -BodyParameter $params
 ```
-This example shows how to use the New-MgSearchBookmark Cmdlet.
+This example shows how to use the New-MgBetaSearchBookmark Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

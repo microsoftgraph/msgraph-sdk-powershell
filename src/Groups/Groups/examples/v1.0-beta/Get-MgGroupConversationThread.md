@@ -1,7 +1,7 @@
-### Example 1: Using the Get-MgGroupConversationThread Cmdlet
+### Example 1: Using the Get-MgBetaGroupConversationThread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
-Get-MgGroupConversationThread -GroupId $groupId -ConversationId $conversationId
+Import-Module Microsoft.Graph.Beta.Groups
+Get-MgBetaGroupConversationThread -GroupId $groupId -ConversationId $conversationId
 ```
-This example shows how to use the Get-MgGroupConversationThread Cmdlet.
+This example shows how to use the Get-MgBetaGroupConversationThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,12 +1,12 @@
-### Example 1: Using the New-MgSecurityCaseEdiscoveryCaseCustodianSiteSource Cmdlet
+### Example 1: Using the New-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	Site = @{
 		WebUrl = "https://m365x809305.sharepoint.com/sites/Retail"
 	}
 }
-New-MgSecurityCaseEdiscoveryCaseCustodianSiteSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId -BodyParameter $params
+New-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId -BodyParameter $params
 ```
-This example shows how to use the New-MgSecurityCaseEdiscoveryCaseCustodianSiteSource Cmdlet.
+This example shows how to use the New-MgBetaSecurityCaseEdiscoveryCaseCustodianSiteSource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

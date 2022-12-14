@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.DirectoryObjects
+```powershell
+Import-Module Microsoft.Graph.Beta.DirectoryObjects
 
 $params = @{
 	EntityType = "Group"
@@ -9,8 +10,9 @@ $params = @{
 	OnBehalfOfUserId = "onBehalfOfUserId-value"
 }
 
-Test-MgDirectoryObjectProperty -BodyParameter $params
+Test-MgBetaDirectoryObjectProperty -BodyParameter $params
 ```
-This example shows how to use the Test-MgDirectoryRoleTemplateProperty Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Test-MgBetaDirectoryRoleTemplateProperty Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

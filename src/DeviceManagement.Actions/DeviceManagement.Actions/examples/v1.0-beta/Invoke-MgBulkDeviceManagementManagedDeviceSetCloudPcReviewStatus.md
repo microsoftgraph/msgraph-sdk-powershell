@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus Cmdlet
+### Example 1: Using the Invoke-MgBetaBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.DeviceManagement.Actions
+Import-Module Microsoft.Graph.Beta.DeviceManagement.Actions
 $params = @{
 	ManagedDeviceIds = @(
 		"30d0e128-de93-41dc-89ec-33d84bb662a0"
@@ -12,7 +12,7 @@ $params = @{
 		AzureStorageAccountId = "/subscriptions/f68bd846-16ad-4b51-a7c6-c84944a3367c/resourceGroups/Review/providers/Microsoft.Storage/storageAccounts/snapshotsUnderReview"
 	}
 }
-Invoke-MgBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus -BodyParameter $params
+Invoke-MgBetaBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus Cmdlet.
+This example shows how to use the Invoke-MgBetaBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

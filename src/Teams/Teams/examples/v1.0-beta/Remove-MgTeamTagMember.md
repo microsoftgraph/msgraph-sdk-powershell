@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgTeamTagMember Cmdlet
+### Example 1: Using the Remove-MgBetaTeamTagMember Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -TeamworkTagMemberId $teamworkTagMemberId
+Import-Module Microsoft.Graph.Beta.Teams
+Remove-MgBetaTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -TeamworkTagMemberId $teamworkTagMemberId
 ```
-This example shows how to use the Remove-MgTeamTagMember Cmdlet.
+This example shows how to use the Remove-MgBetaTeamTagMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

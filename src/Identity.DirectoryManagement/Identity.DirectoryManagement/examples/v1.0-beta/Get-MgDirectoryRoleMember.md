@@ -1,7 +1,7 @@
 ### Example 1: Get member from directory roles
 
 ```powershell
-Get-MgDirectoryRoleMember -DirectoryRoleId 'c6bb44c1-73cc-48a1-a73c-b6a977084948'
+Get-MgBetaDirectoryRoleMember -DirectoryRoleId 'c6bb44c1-73cc-48a1-a73c-b6a977084948'
 
 Id                                   DeletedDateTime
 --                                   ---------------

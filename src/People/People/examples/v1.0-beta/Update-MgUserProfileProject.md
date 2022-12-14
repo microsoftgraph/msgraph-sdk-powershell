@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgUserProfileProject Cmdlet
+### Example 1: Using the Update-MgBetaUserProfileProject Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.People
+Import-Module Microsoft.Graph.Beta.People
 $params = @{
 	AllowedAudiences = "organization"
 	Client = @{
@@ -9,7 +9,7 @@ $params = @{
 	}
 }
 # A UPN can also be used as -UserId.
-Update-MgUserProfileProject -UserId $userId -ProjectParticipationId $projectParticipationId -BodyParameter $params
+Update-MgBetaUserProfileProject -UserId $userId -ProjectParticipationId $projectParticipationId -BodyParameter $params
 ```
-This example shows how to use the Update-MgUserProfileProject Cmdlet.
+This example shows how to use the Update-MgBetaUserProfileProject Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

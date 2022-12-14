@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgSearchBookmark Cmdlet
+### Example 1: Using the Get-MgBetaSearchBookmark Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgSearchBookmark -BookmarkId $bookmarkId
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaSearchBookmark -BookmarkId $bookmarkId
 ```
-This example shows how to use the Get-MgSearchBookmark Cmdlet.
+This example shows how to use the Get-MgBetaSearchBookmark Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgSearchBookmark Cmdlet
+### Example 2: Using the Get-MgBetaSearchBookmark Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Get-MgSearchBookmark
+Import-Module Microsoft.Graph.Beta.Search
+Get-MgBetaSearchBookmark
 ```
-This example shows how to use the Get-MgSearchBookmark Cmdlet.
+This example shows how to use the Get-MgBetaSearchBookmark Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

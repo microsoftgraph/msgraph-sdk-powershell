@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgForwardGroupThreadPost Cmdlet
+### Example 1: Using the Invoke-MgBetaForwardGroupThreadPost Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	Comment = "comment-value"
 	ToRecipients = @(
@@ -12,7 +12,7 @@ $params = @{
 		}
 	)
 }
-Invoke-MgForwardGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
+Invoke-MgBetaForwardGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgForwardGroupThreadPost Cmdlet.
+This example shows how to use the Invoke-MgBetaForwardGroupThreadPost Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the Invoke-MgPlayCommunicationCallPrompt Cmdlet
+### Example 1: Using the Invoke-MgBetaPlayCommunicationCallPrompt Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	ClientContext = "d45324c1-fcb5-430a-902c-f20af696537c"
 	Prompts = @(
@@ -15,7 +15,7 @@ $params = @{
 	)
 	Loop = $false
 }
-Invoke-MgPlayCommunicationCallPrompt -CallId $callId -BodyParameter $params
+Invoke-MgBetaPlayCommunicationCallPrompt -CallId $callId -BodyParameter $params
 ```
-This example shows how to use the Invoke-MgPlayCommunicationCallPrompt Cmdlet.
+This example shows how to use the Invoke-MgBetaPlayCommunicationCallPrompt Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

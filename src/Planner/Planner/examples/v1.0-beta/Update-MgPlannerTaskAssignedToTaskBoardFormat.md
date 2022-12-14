@@ -1,12 +1,12 @@
-### Example 1: Using the Update-MgPlannerTaskAssignedToTaskBoardFormat Cmdlet
+### Example 1: Using the Update-MgBetaPlannerTaskAssignedToTaskBoardFormat Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Planner
+Import-Module Microsoft.Graph.Beta.Planner
 $params = @{
 	OrderHintsByAssignee = @{
 		"Aaa27244-1db4-476a-a5cb-004607466324" = "8566473P 957764Jk!"
 	}
 }
-Update-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
+Update-MgBetaPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
-This example shows how to use the Update-MgPlannerTaskAssignedToTaskBoardFormat Cmdlet.
+This example shows how to use the Update-MgBetaPlannerTaskAssignedToTaskBoardFormat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

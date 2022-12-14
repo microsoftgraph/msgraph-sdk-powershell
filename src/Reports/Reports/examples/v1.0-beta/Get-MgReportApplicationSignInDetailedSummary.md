@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgReportApplicationSignInDetailedSummary Cmdlet
+### Example 1: Using the Get-MgBetaReportApplicationSignInDetailedSummary Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportApplicationSignInDetailedSummary -ApplicationSignInDetailedSummaryId $applicationSignInDetailedSummaryId
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportApplicationSignInDetailedSummary -ApplicationSignInDetailedSummaryId $applicationSignInDetailedSummaryId
 ```
-This example shows how to use the Get-MgReportApplicationSignInDetailedSummary Cmdlet.
+This example shows how to use the Get-MgBetaReportApplicationSignInDetailedSummary Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgReportApplicationSignInDetailedSummary Cmdlet
+### Example 2: Using the Get-MgBetaReportApplicationSignInDetailedSummary Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportApplicationSignInDetailedSummary
+Import-Module Microsoft.Graph.Beta.Reports
+Get-MgBetaReportApplicationSignInDetailedSummary
 ```
-This example shows how to use the Get-MgReportApplicationSignInDetailedSummary Cmdlet.
+This example shows how to use the Get-MgBetaReportApplicationSignInDetailedSummary Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

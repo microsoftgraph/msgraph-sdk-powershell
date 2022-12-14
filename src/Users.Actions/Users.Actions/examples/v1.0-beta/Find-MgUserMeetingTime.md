@@ -1,6 +1,6 @@
-### Example 1: Using the Find-MgUserMeetingTime Cmdlet
+### Example 1: Using the Find-MgBetaUserMeetingTime Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+Import-Module Microsoft.Graph.Beta.Users.Actions
 $params = @{
 	Attendees = @(
 		@{
@@ -42,7 +42,7 @@ $params = @{
 	MinimumAttendeePercentage = "100"
 }
 # A UPN can also be used as -UserId.
-Find-MgUserMeetingTime -UserId $userId -BodyParameter $params
+Find-MgBetaUserMeetingTime -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the Find-MgUserMeetingTime Cmdlet.
+This example shows how to use the Find-MgBetaUserMeetingTime Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

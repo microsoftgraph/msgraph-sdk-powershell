@@ -1,10 +1,10 @@
-### Example 1: Using the Update-MgEducationClassAssignmentSetting Cmdlet
+### Example 1: Using the Update-MgBetaEducationClassAssignmentSetting Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Education
+Import-Module Microsoft.Graph.Beta.Education
 $params = @{
 	SubmissionAnimationDisabled = $true
 }
-Update-MgEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
+Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 ```
-This example shows how to use the Update-MgEducationClassAssignmentSetting Cmdlet.
+This example shows how to use the Update-MgBetaEducationClassAssignmentSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

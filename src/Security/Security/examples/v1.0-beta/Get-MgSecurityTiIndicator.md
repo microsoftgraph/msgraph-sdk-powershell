@@ -1,14 +1,14 @@
-### Example 1: Using the Get-MgSecurityTiIndicator Cmdlet
+### Example 1: Using the Get-MgBetaSecurityTiIndicator Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityTiIndicator -TiIndicatorId $tiIndicatorId
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityTiIndicator -TiIndicatorId $tiIndicatorId
 ```
-This example shows how to use the Get-MgSecurityTiIndicator Cmdlet.
+This example shows how to use the Get-MgBetaSecurityTiIndicator Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgSecurityTiIndicator Cmdlet
+### Example 2: Using the Get-MgBetaSecurityTiIndicator Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecurityTiIndicator
+Import-Module Microsoft.Graph.Beta.Security
+Get-MgBetaSecurityTiIndicator
 ```
-This example shows how to use the Get-MgSecurityTiIndicator Cmdlet.
+This example shows how to use the Get-MgBetaSecurityTiIndicator Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

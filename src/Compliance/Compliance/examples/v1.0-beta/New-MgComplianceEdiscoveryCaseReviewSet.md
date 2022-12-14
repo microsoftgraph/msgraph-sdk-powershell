@@ -1,10 +1,10 @@
-### Example 1: Using the New-MgComplianceEdiscoveryCaseReviewSet Cmdlet
+### Example 1: Using the New-MgBetaComplianceEdiscoveryCaseReviewSet Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Compliance
+Import-Module Microsoft.Graph.Beta.Compliance
 $params = @{
 	DisplayName = "My Reviewset 3"
 }
-New-MgComplianceEdiscoveryCaseReviewSet -CaseId $caseId -BodyParameter $params
+New-MgBetaComplianceEdiscoveryCaseReviewSet -CaseId $caseId -BodyParameter $params
 ```
-This example shows how to use the New-MgComplianceEdiscoveryCaseReviewSet Cmdlet.
+This example shows how to use the New-MgBetaComplianceEdiscoveryCaseReviewSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

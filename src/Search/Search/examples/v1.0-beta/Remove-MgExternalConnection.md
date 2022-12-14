@@ -1,7 +1,7 @@
-### Example 1: Using the Remove-MgExternalConnection Cmdlet
+### Example 1: Using the Remove-MgBetaExternalConnection Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Search
-Remove-MgExternalConnection -ExternalConnectionId $externalConnectionId
+Import-Module Microsoft.Graph.Beta.Search
+Remove-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId
 ```
-This example shows how to use the Remove-MgExternalConnection Cmdlet.
+This example shows how to use the Remove-MgBetaExternalConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

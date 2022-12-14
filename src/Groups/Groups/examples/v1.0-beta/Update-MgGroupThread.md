@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgGroupThread Cmdlet
+### Example 1: Using the Update-MgBetaGroupThread Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Groups
+Import-Module Microsoft.Graph.Beta.Groups
 $params = @{
 	OriginalStartTimeZone = "originalStartTimeZone-value"
 	OriginalEndTimeZone = "originalEndTimeZone-value"
@@ -8,7 +8,7 @@ $params = @{
 	ReminderMinutesBeforeStart = 
 	IsReminderOn = $true
 }
-Update-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
+Update-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
 ```
-This example shows how to use the Update-MgGroupThread Cmdlet.
+This example shows how to use the Update-MgBetaGroupThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

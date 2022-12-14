@@ -1,6 +1,6 @@
-### Example 1: Using the Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag Cmdlet
+### Example 1: Using the Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryTag Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Security
+Import-Module Microsoft.Graph.Beta.Security
 $params = @{
 	TagsToAdd = @(
 		@{
@@ -8,7 +8,7 @@ $params = @{
 		}
 	)
 }
-Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -EdiscoveryReviewSetQueryId $ediscoveryReviewSetQueryId -BodyParameter $params
+Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryTag -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -EdiscoveryReviewSetQueryId $ediscoveryReviewSetQueryId -BodyParameter $params
 ```
-This example shows how to use the Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag Cmdlet.
+This example shows how to use the Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

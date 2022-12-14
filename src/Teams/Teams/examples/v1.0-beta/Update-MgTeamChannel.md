@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgTeamChannel Cmdlet
+### Example 1: Using the Update-MgBetaTeamChannel Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 $params = @{
 	DisplayName = "UpdateChannelModeration"
 	Description = "Update channel moderation."
@@ -11,7 +11,7 @@ $params = @{
 		AllowNewMessageFromConnectors = $true
 	}
 }
-Update-MgTeamChannel -TeamId $teamId -ChannelId $channelId -BodyParameter $params
+Update-MgBetaTeamChannel -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
-This example shows how to use the Update-MgTeamChannel Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

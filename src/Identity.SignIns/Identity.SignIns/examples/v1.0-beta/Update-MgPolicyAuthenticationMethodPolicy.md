@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgPolicyAuthenticationMethodPolicy Cmdlet
+### Example 1: Using the Update-MgBetaPolicyAuthenticationMethodPolicy Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
 	RegistrationEnforcement = @{
 		AuthenticationMethodsRegistrationCampaign = @{
@@ -18,7 +18,7 @@ $params = @{
 		}
 	}
 }
-Update-MgPolicyAuthenticationMethodPolicy -BodyParameter $params
+Update-MgBetaPolicyAuthenticationMethodPolicy -BodyParameter $params
 ```
-This example shows how to use the Update-MgPolicyAuthenticationMethodPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyAuthenticationMethodPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,6 +1,6 @@
-### Example 1: Using the Update-MgSchemaExtension Cmdlet
+### Example 1: Using the Update-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
 $params = @{
 	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
 	Properties = @(
@@ -22,13 +22,13 @@ $params = @{
 		}
 	)
 }
-Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
+Update-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgSchemaExtension Cmdlet.
+This example shows how to use the Update-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgSchemaExtension Cmdlet
+### Example 2: Using the Update-MgBetaSchemaExtension Cmdlet
 ```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
 $params = @{
 	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
 	Properties = @(
@@ -50,7 +50,7 @@ $params = @{
 		}
 	)
 }
-Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
+Update-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgSchemaExtension Cmdlet.
+This example shows how to use the Update-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

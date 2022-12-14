@@ -1,10 +1,12 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Users.Actions
+```powershell
+Import-Module Microsoft.Graph.Beta.Users.Actions
 
 # A UPN can also be used as -UserId.
-New-MgUserMessageReply -UserId $userId -MessageId $messageId
+New-MgBetaUserMessageReply -UserId $userId -MessageId $messageId
 ```
-This example shows how to use the New-MgUserMailFolderChildFolderMessageReply Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaUserMailFolderChildFolderMessageReply Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
