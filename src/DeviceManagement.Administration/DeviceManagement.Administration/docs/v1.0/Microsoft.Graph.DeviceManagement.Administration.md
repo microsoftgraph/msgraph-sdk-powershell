@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: c81c26be-0144-4022-a4fe-b62128c54ad4
+Module Guid: 504ec205-a4db-4901-aaab-b933db81d3d5
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -13,6 +13,9 @@ Microsoft Graph PowerShell Cmdlets
 ## Microsoft.Graph.DeviceManagement.Administration Cmdlets
 ### [Get-MgDeviceManagementApplePushNotificationCertificate](Get-MgDeviceManagementApplePushNotificationCertificate.md)
 Apple push notification certificate.
+
+### [Get-MgDeviceManagementAuditEvent](Get-MgDeviceManagementAuditEvent.md)
+The Audit Events
 
 ### [Get-MgDeviceManagementComplianceManagementPartner](Get-MgDeviceManagementComplianceManagementPartner.md)
 The list of Compliance Management Partners configured by the tenant.
@@ -62,6 +65,9 @@ Navigation link to the terms and conditions that are assigned.
 ### [Get-MgDeviceManagementTermAndConditionAssignment](Get-MgDeviceManagementTermAndConditionAssignment.md)
 The list of assignments for this T&C policy.
 
+### [New-MgDeviceManagementAuditEvent](New-MgDeviceManagementAuditEvent.md)
+Create new navigation property to auditEvents for deviceManagement
+
 ### [New-MgDeviceManagementComplianceManagementPartner](New-MgDeviceManagementComplianceManagementPartner.md)
 Create new navigation property to complianceManagementPartners for deviceManagement
 
@@ -107,6 +113,9 @@ Create new navigation property to assignments for deviceManagement
 ### [Remove-MgDeviceManagementApplePushNotificationCertificate](Remove-MgDeviceManagementApplePushNotificationCertificate.md)
 Delete navigation property applePushNotificationCertificate for deviceManagement
 
+### [Remove-MgDeviceManagementAuditEvent](Remove-MgDeviceManagementAuditEvent.md)
+Delete navigation property auditEvents for deviceManagement
+
 ### [Remove-MgDeviceManagementComplianceManagementPartner](Remove-MgDeviceManagementComplianceManagementPartner.md)
 Delete navigation property complianceManagementPartners for deviceManagement
 
@@ -151,6 +160,9 @@ Delete navigation property assignments for deviceManagement
 
 ### [Update-MgDeviceManagementApplePushNotificationCertificate](Update-MgDeviceManagementApplePushNotificationCertificate.md)
 Update the navigation property applePushNotificationCertificate in deviceManagement
+
+### [Update-MgDeviceManagementAuditEvent](Update-MgDeviceManagementAuditEvent.md)
+Update the navigation property auditEvents in deviceManagement
 
 ### [Update-MgDeviceManagementComplianceManagementPartner](Update-MgDeviceManagementComplianceManagementPartner.md)
 Update the navigation property complianceManagementPartners in deviceManagement

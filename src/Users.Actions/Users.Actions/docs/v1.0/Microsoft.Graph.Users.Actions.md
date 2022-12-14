@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: c3c09d2d-df47-4136-bc57-3d9e0f143ab7
+Module Guid: 4bf63061-7c8d-48a3-9409-6aa1db92615e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -184,6 +184,9 @@ Grant users access to a link represented by a [permission][].
 ### [Grant-MgUserDriveRootPermission](Grant-MgUserDriveRootPermission.md)
 Grant users access to a link represented by a [permission][].
 
+### [Hide-MgUserChatForUser](Hide-MgUserChatForUser.md)
+Hide a chat for a user.
+
 ### [Invoke-MgAcceptUserEvent](Invoke-MgAcceptUserEvent.md)
 Accept the specified event in a user calendar.
 
@@ -281,6 +284,9 @@ When using MIME format:\n- Provide the applicable Internet message headers and t
 This method saves the message in the **Sent Items** folder.
 Alternatively, create a draft to forward a message, and send it later.
 
+### [Invoke-MgGraphUserChat](Invoke-MgGraphUserChat.md)
+Unhide a chat for a user.
+
 ### [Invoke-MgInviteUserDriveItem](Invoke-MgInviteUserDriveItem.md)
 Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
 
@@ -294,6 +300,12 @@ Also see Identify and resolve license assignment problems for a group in Azure A
 
 ### [Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser](Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser.md)
 Logout shared Apple device active user
+
+### [Invoke-MgMarkUserChatReadForUser](Invoke-MgMarkUserChatReadForUser.md)
+Mark a chat as read for a user.
+
+### [Invoke-MgMarkUserChatUnreadForUser](Invoke-MgMarkUserChatUnreadForUser.md)
+Mark a chat as unread for a user.
 
 ### [Invoke-MgPreviewUserDriveItem](Invoke-MgPreviewUserDriveItem.md)
 Invoke action preview
@@ -577,7 +589,7 @@ Reset passcode
 Reboot device
 
 ### [Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
-Restore a recently deleted application, group, servicePrincipal, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.

@@ -125,7 +125,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryIndexOperation1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryIndexOperation
 
 ## NOTES
 

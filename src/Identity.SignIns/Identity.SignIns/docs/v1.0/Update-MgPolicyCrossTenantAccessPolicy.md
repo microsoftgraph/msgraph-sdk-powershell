@@ -14,7 +14,7 @@ Update the properties of a cross-tenant access policy.
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgPolicyCrossTenantAccessPolicy [-AdditionalProperties <Hashtable>]
+Update-MgPolicyCrossTenantAccessPolicy [-AdditionalProperties <Hashtable>] [-AllowedCloudEndpoints <String[]>]
  [-Default <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-Partners <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -51,6 +51,21 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowedCloudEndpoints
+.
+
+```yaml
+Type: System.String[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -245,6 +260,7 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicy>: crossTenantAccessPolicy
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AllowedCloudEndpoints <String[]>]`: 
   - `[Default <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault>]`: crossTenantAccessPolicyConfigurationDefault
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.

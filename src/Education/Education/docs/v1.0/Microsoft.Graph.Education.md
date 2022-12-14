@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: 504a5f49-d3e6-4e82-b405-8a4e5af4f8a4
+Module Guid: 8325acfb-9fef-4a9f-bd1f-d1c3fa85414c
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -314,7 +314,10 @@ You can create the following types of assignment resources: Every resource has a
 Create new navigation property to submissions for education
 
 ### [New-MgEducationClassAssignmentSubmissionOutcome](New-MgEducationClassAssignmentSubmissionOutcome.md)
-Create new navigation property to outcomes for education
+Create a new feedback resource for a submission.
+Only a teacher can perform this operation.
+To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
+If the file doesn't exist or isn't in that folder, the `POST` request will fail.
 
 ### [New-MgEducationClassAssignmentSubmissionResource](New-MgEducationClassAssignmentSubmissionResource.md)
 Add an educationSubmissionResource to a submission resource list.
@@ -349,7 +352,10 @@ You can create the following types of assignment resources: Every resource has a
 Create new navigation property to submissions for education
 
 ### [New-MgEducationMeAssignmentSubmissionOutcome](New-MgEducationMeAssignmentSubmissionOutcome.md)
-Create new navigation property to outcomes for education
+Create a new feedback resource for a submission.
+Only a teacher can perform this operation.
+To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
+If the file doesn't exist or isn't in that folder, the `POST` request will fail.
 
 ### [New-MgEducationMeAssignmentSubmissionResource](New-MgEducationMeAssignmentSubmissionResource.md)
 Add an educationSubmissionResource to a submission resource list.
@@ -393,7 +399,10 @@ You can create the following types of assignment resources: Every resource has a
 Create new navigation property to submissions for education
 
 ### [New-MgEducationUserAssignmentSubmissionOutcome](New-MgEducationUserAssignmentSubmissionOutcome.md)
-Create new navigation property to outcomes for education
+Create a new feedback resource for a submission.
+Only a teacher can perform this operation.
+To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
+If the file doesn't exist or isn't in that folder, the `POST` request will fail.
 
 ### [New-MgEducationUserAssignmentSubmissionResource](New-MgEducationUserAssignmentSubmissionResource.md)
 Add an educationSubmissionResource to a submission resource list.
@@ -566,6 +575,10 @@ Trigger the creation of the SharePoint resource folder where all file-based reso
 Note that files must be located in this folder in order to be added as resources.
 Only a student in the class can determine what files to upload in a given submission-level resource folder.
 
+### [Set-MgEducationClassAssignmentUpFeedbackResourceFolder](Set-MgEducationClassAssignmentUpFeedbackResourceFolder.md)
+Create a SharePoint folder to upload feedback files for a given educationSubmission.
+The teacher determines the resources to upload in the feedback resources folder of a submission.
+
 ### [Set-MgEducationClassAssignmentUpResourceFolder](Set-MgEducationClassAssignmentUpResourceFolder.md)
 Create a SharePoint folder to upload files for a given educationAssignment.
 The teacher determines the resources to upload in the assignment's folder.
@@ -578,6 +591,10 @@ Trigger the creation of the SharePoint resource folder where all file-based reso
 Note that files must be located in this folder in order to be added as resources.
 Only a student in the class can determine what files to upload in a given submission-level resource folder.
 
+### [Set-MgEducationMeAssignmentUpFeedbackResourceFolder](Set-MgEducationMeAssignmentUpFeedbackResourceFolder.md)
+Create a SharePoint folder to upload feedback files for a given educationSubmission.
+The teacher determines the resources to upload in the feedback resources folder of a submission.
+
 ### [Set-MgEducationMeAssignmentUpResourceFolder](Set-MgEducationMeAssignmentUpResourceFolder.md)
 Create a SharePoint folder to upload files for a given educationAssignment.
 The teacher determines the resources to upload in the assignment's folder.
@@ -589,6 +606,10 @@ Update the ref of navigation property rubric in education
 Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission.
 Note that files must be located in this folder in order to be added as resources.
 Only a student in the class can determine what files to upload in a given submission-level resource folder.
+
+### [Set-MgEducationUserAssignmentUpFeedbackResourceFolder](Set-MgEducationUserAssignmentUpFeedbackResourceFolder.md)
+Create a SharePoint folder to upload feedback files for a given educationSubmission.
+The teacher determines the resources to upload in the feedback resources folder of a submission.
 
 ### [Set-MgEducationUserAssignmentUpResourceFolder](Set-MgEducationUserAssignmentUpResourceFolder.md)
 Create a SharePoint folder to upload files for a given educationAssignment.
@@ -682,6 +703,9 @@ Update education
 
 ### [Update-MgEducationSchool](Update-MgEducationSchool.md)
 Update the navigation property schools in education
+
+### [Update-MgEducationSchoolAdministrativeUnit](Update-MgEducationSchoolAdministrativeUnit.md)
+Update the navigation property administrativeUnit in education
 
 ### [Update-MgEducationUser](Update-MgEducationUser.md)
 Update the navigation property users in education

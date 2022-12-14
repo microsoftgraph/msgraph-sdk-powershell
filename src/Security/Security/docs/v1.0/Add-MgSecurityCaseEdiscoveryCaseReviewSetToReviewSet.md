@@ -265,7 +265,7 @@ BODYPARAMETER <IPathsZszldxSecurityCasesEdiscoverycasesEdiscoverycaseIdReviewset
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AddToReviewSetOperation <IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation1>]`: ediscoveryAddToReviewSetOperation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Action <String>]`: 
+      - `[Action <String>]`: caseAction
       - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -303,7 +303,7 @@ BODYPARAMETER <IPathsZszldxSecurityCasesEdiscoverycasesEdiscoverycaseIdReviewset
     - `[DataSourceScopes <String>]`: dataSourceScopes
     - `[LastEstimateStatisticsOperation <IMicrosoftGraphSecurityEdiscoveryEstimateOperation1>]`: ediscoveryEstimateOperation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Action <String>]`: 
+      - `[Action <String>]`: caseAction
       - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -318,7 +318,7 @@ BODYPARAMETER <IPathsZszldxSecurityCasesEdiscoverycasesEdiscoverycaseIdReviewset
       - `[SiteCount <Int32?>]`: The number of mailboxes that had search hits.
       - `[UnindexedItemCount <Int64?>]`: The estimated count of unindexed items for the collection.
       - `[UnindexedItemsSize <Int64?>]`: The estimated size of unindexed items for the collection.
-    - `[NoncustodialSources <IMicrosoftGraphSecurityEdiscoveryNoncustodialDataSource1[]>]`: noncustodialDataSource sources that are included in the eDiscovery search
+    - `[NoncustodialSources <IMicrosoftGraphSecurityEdiscoveryNoncustodialDataSource[]>]`: noncustodialDataSource sources that are included in the eDiscovery search
       - `[CreatedDateTime <DateTime?>]`: Created date and time of the dataSourceContainer entity.
       - `[DisplayName <String>]`: Display name of the dataSourceContainer entity.
       - `[HoldStatus <String>]`: dataSourceHoldStatus
@@ -327,9 +327,9 @@ BODYPARAMETER <IPathsZszldxSecurityCasesEdiscoverycasesEdiscoverycaseIdReviewset
       - `[Status <String>]`: dataSourceContainerStatus
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[DataSource <IMicrosoftGraphSecurityDataSource>]`: dataSource
-      - `[LastIndexOperation <IMicrosoftGraphSecurityEdiscoveryIndexOperation1>]`: ediscoveryIndexOperation
+      - `[LastIndexOperation <IMicrosoftGraphSecurityEdiscoveryIndexOperation>]`: ediscoveryIndexOperation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Action <String>]`: 
+        - `[Action <String>]`: caseAction
         - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -401,7 +401,7 @@ SEARCH <IMicrosoftGraphSecurityEdiscoverySearch1>: ediscoverySearch
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AddToReviewSetOperation <IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation1>]`: ediscoveryAddToReviewSetOperation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Action <String>]`: 
+    - `[Action <String>]`: caseAction
     - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -439,7 +439,7 @@ SEARCH <IMicrosoftGraphSecurityEdiscoverySearch1>: ediscoverySearch
   - `[DataSourceScopes <String>]`: dataSourceScopes
   - `[LastEstimateStatisticsOperation <IMicrosoftGraphSecurityEdiscoveryEstimateOperation1>]`: ediscoveryEstimateOperation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Action <String>]`: 
+    - `[Action <String>]`: caseAction
     - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -454,7 +454,7 @@ SEARCH <IMicrosoftGraphSecurityEdiscoverySearch1>: ediscoverySearch
     - `[SiteCount <Int32?>]`: The number of mailboxes that had search hits.
     - `[UnindexedItemCount <Int64?>]`: The estimated count of unindexed items for the collection.
     - `[UnindexedItemsSize <Int64?>]`: The estimated size of unindexed items for the collection.
-  - `[NoncustodialSources <IMicrosoftGraphSecurityEdiscoveryNoncustodialDataSource1[]>]`: noncustodialDataSource sources that are included in the eDiscovery search
+  - `[NoncustodialSources <IMicrosoftGraphSecurityEdiscoveryNoncustodialDataSource[]>]`: noncustodialDataSource sources that are included in the eDiscovery search
     - `[CreatedDateTime <DateTime?>]`: Created date and time of the dataSourceContainer entity.
     - `[DisplayName <String>]`: Display name of the dataSourceContainer entity.
     - `[HoldStatus <String>]`: dataSourceHoldStatus
@@ -463,9 +463,9 @@ SEARCH <IMicrosoftGraphSecurityEdiscoverySearch1>: ediscoverySearch
     - `[Status <String>]`: dataSourceContainerStatus
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DataSource <IMicrosoftGraphSecurityDataSource>]`: dataSource
-    - `[LastIndexOperation <IMicrosoftGraphSecurityEdiscoveryIndexOperation1>]`: ediscoveryIndexOperation
+    - `[LastIndexOperation <IMicrosoftGraphSecurityEdiscoveryIndexOperation>]`: ediscoveryIndexOperation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Action <String>]`: 
+      - `[Action <String>]`: caseAction
       - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.

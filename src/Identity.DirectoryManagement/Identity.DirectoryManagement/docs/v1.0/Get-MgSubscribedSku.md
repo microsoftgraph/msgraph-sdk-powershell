@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSubscribedSku
 
 ## SYNOPSIS
-Get entity from subscribedSkus by key
+Get a specific commercial subscription that an organization has acquired.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Get-MgSubscribedSku -InputObject <IIdentityDirectoryManagementIdentity> [-Proper
 ```
 
 ## DESCRIPTION
-Get entity from subscribedSkus by key
+Get a specific commercial subscription that an organization has acquired.
 
 ## EXAMPLES
 
@@ -217,6 +217,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
+  - `[OnPremisesDirectorySynchronizationId <String>]`: key: id of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization

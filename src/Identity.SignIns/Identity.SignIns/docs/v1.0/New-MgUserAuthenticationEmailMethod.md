@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserAuthenticationEmailMethod
 
 ## SYNOPSIS
-Create new navigation property to emailMethods for users
+Set a user's emailAuthenticationMethod object.
+Email authentication is a self-service password reset method.
+A user may only have one email authentication method.
 
 ## SYNTAX
 
@@ -38,7 +40,9 @@ New-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to emailMethods for users
+Set a user's emailAuthenticationMethod object.
+Email authentication is a self-service password reset method.
+A user may only have one email authentication method.
 
 ## EXAMPLES
 

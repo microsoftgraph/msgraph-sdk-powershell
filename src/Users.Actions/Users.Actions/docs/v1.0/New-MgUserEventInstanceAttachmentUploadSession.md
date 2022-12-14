@@ -59,6 +59,48 @@ The following are the steps to attach a file to an Outlook item using an upload 
 
 ## EXAMPLES
 
+### Example 1: Create an upload session to add a large attachment to a draft message
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+$params = @{
+	AttachmentItem = @{
+		AttachmentType = "file"
+		Name = "flower"
+		Size = 3483322
+	}
+}
+
+# A UPN can also be used as -UserId.
+New-MgUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserEventInstanceAttachmentUploadSession Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Create an upload session to add a large in-line attachment to a draft message
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+$params = @{
+	AttachmentItem = @{
+		AttachmentType = "file"
+		Name = "scenary"
+		Size = 7208534
+		IsInline = $true
+		ContentId = "my_inline_picture"
+	}
+}
+
+# A UPN can also be used as -UserId.
+New-MgUserMessageAttachmentUploadSession -UserId $userId -MessageId $messageId -BodyParameter $params
+```
+
+This example shows how to use the New-MgUserEventInstanceAttachmentUploadSession Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -247,8 +289,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

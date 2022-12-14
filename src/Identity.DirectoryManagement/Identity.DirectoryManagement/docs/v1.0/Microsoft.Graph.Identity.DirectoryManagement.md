@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 97454772-2908-461c-b3a5-2f32b26493fb
+Module Guid: 7f47b15e-5961-4e82-b64d-89b1994e12a7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -382,7 +382,7 @@ This function is transitive.
 **Note:** Only users and role-enabled groups can be members of directory roles.
 
 ### [Get-MgSubscribedSku](Get-MgSubscribedSku.md)
-Get entity from subscribedSkus by key
+Get a specific commercial subscription that an organization has acquired.
 
 ### [Get-MgUserScopedRoleMemberOf](Get-MgUserScopedRoleMemberOf.md)
 Get scopedRoleMemberOf from users
@@ -560,7 +560,7 @@ Delete entity from subscribedSkus
 Delete navigation property scopedRoleMemberOf for users
 
 ### [Restore-MgDirectoryDeletedItem](Restore-MgDirectoryDeletedItem.md)
-Restore a recently deleted application, group, servicePrincipal, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.

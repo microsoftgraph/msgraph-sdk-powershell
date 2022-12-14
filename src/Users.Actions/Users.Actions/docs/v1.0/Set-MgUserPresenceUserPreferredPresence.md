@@ -55,6 +55,20 @@ For more details, see presence sessions and time-out and expiration.
 
 ## EXAMPLES
 
+### Example 1: Using the Set-MgUserPresenceUserPreferredPresence Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+$params = @{
+	Availability = "DoNotDisturb"
+	Activity = "DoNotDisturb"
+	ExpirationDuration = "PT8H"
+}
+Set-MgUserPresenceUserPreferredPresence -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the Set-MgUserPresenceUserPreferredPresence Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -Activity
@@ -243,8 +257,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

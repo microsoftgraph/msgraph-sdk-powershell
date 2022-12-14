@@ -45,6 +45,34 @@ Get the free/busy availability information for a collection of users, distributi
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+$params = @{
+	Schedules = @(
+		"adelev@contoso.onmicrosoft.com"
+		"meganb@contoso.onmicrosoft.com"
+	)
+	StartTime = @{
+		DateTime = "2019-03-15T09:00:00"
+		TimeZone = "Pacific Standard Time"
+	}
+	EndTime = @{
+		DateTime = "2019-03-15T18:00:00"
+		TimeZone = "Pacific Standard Time"
+	}
+	AvailabilityViewInterval = 60
+}
+
+# A UPN can also be used as -UserId.
+Get-MgUserDefaultCalendarSchedule -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the Get-MgUserCalendarSchedule Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -259,8 +287,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage
