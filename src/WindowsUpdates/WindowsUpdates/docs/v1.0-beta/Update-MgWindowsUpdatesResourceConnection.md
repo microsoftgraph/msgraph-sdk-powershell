@@ -1,11 +1,11 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.WindowsUpdates
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.windowsupdates/update-mgwindowsupdatesresourceconnection
+Module Name: Microsoft.Graph.Beta.WindowsUpdates
+online version: https://docs.microsoft.com/en-us/powershell/module/Microsoft.Graph.windowsupdates/update-mgwindowsupdatesresourceconnection
 schema: 2.0.0
 ---
 
-# Update-MgWindowsUpdatesResourceConnection
+# Update-MgBetaWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
 Update the navigation property resourceConnections in admin
@@ -14,27 +14,27 @@ Update the navigation property resourceConnections in admin
 
 ### UpdateExpanded (Default)
 ```
-Update-MgWindowsUpdatesResourceConnection -ResourceConnectionId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaWindowsUpdatesResourceConnection -ResourceConnectionId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-State <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgWindowsUpdatesResourceConnection -ResourceConnectionId <String>
+Update-MgBetaWindowsUpdatesResourceConnection -ResourceConnectionId <String>
  -BodyParameter <IMicrosoftGraphWindowsUpdatesResourceConnection> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity>
+Update-MgBetaWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity>
  -BodyParameter <IMicrosoftGraphWindowsUpdatesResourceConnection> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity>
+Update-MgBetaWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-State <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -66,7 +66,7 @@ resourceConnection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -98,7 +98,7 @@ Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+Type: Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
@@ -190,9 +190,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphWindowsUpdatesResourceConnection
 
-### Microsoft.Graph.PowerShell.Models.IWindowsUpdatesIdentity
+### Microsoft.Graph.Beta.PowerShell.Models.IWindowsUpdatesIdentity
 
 ## OUTPUTS
 
@@ -202,7 +202,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Update-MgWuResourceConnection
+### Update-MgBetaWuResourceConnection
 
 COMPLEX PARAMETER PROPERTIES
 
