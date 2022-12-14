@@ -215,24 +215,24 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths11Bo6VdDevicemanagementDevicemanagementscriptsDevicemanagementscriptIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeviceManagementScriptAssignments <IMicrosoftGraphDeviceManagementScriptAssignment[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
   - `[DeviceManagementScriptGroupAssignments <IMicrosoftGraphDeviceManagementScriptGroupAssignment[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[TargetGroupId <String>]`: The Id of the Azure Active Directory group we are targeting the script to.
 
 DEVICEMANAGEMENTSCRIPTASSIGNMENTS <IMicrosoftGraphDeviceManagementScriptAssignment[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
     - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
 DEVICEMANAGEMENTSCRIPTGROUPASSIGNMENTS <IMicrosoftGraphDeviceManagementScriptGroupAssignment[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[TargetGroupId <String>]`: The Id of the Azure Active Directory group we are targeting the script to.
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
@@ -260,6 +260,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
   - `[DeviceManagementExchangeConnectorId <String>]`: key: id of deviceManagementExchangeConnector
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
+  - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript

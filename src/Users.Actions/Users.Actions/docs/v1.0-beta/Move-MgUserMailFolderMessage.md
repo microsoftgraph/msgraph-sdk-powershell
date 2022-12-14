@@ -45,6 +45,22 @@ This creates a new copy of the message in the destination folder and removes the
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+$params = @{
+	DestinationId = "deleteditems"
+}
+
+# A UPN can also be used as -UserId.
+Move-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+```
+
+This example shows how to use the Move-MgUserMailFolderMessage Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -216,8 +232,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

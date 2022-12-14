@@ -214,7 +214,6 @@ BODYPARAMETER <IPaths1EzienbUsersUserIdInformationprotectionDatalosspreventionpo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[EvaluationInput <IMicrosoftGraphDlpEvaluationInput>]`: dlpEvaluationInput
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AccessScope <String>]`: accessScope
     - `[CurrentLabel <IMicrosoftGraphCurrentLabel>]`: currentLabel
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ApplicationMode <String>]`: applicationMode
@@ -233,7 +232,6 @@ BODYPARAMETER <IPaths1EzienbUsersUserIdInformationprotectionDatalosspreventionpo
 
 EVALUATIONINPUT <IMicrosoftGraphDlpEvaluationInput>: dlpEvaluationInput
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AccessScope <String>]`: accessScope
   - `[CurrentLabel <IMicrosoftGraphCurrentLabel>]`: currentLabel
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ApplicationMode <String>]`: applicationMode
@@ -251,8 +249,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

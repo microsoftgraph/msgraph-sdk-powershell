@@ -146,7 +146,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -303,15 +304,15 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphDirectoryRole>: directoryRole
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Description <String>]`: The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
   - `[DisplayName <String>]`: The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
   - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[RoleTemplateId <String>]`: The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
   - `[ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>]`: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
     - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
     - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
@@ -339,6 +340,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
+  - `[OnPremisesDirectorySynchronizationId <String>]`: key: id of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
@@ -355,11 +357,11 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 MEMBERS <IMicrosoftGraphDirectoryObject[]>: Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 SCOPEDMEMBERS <IMicrosoftGraphScopedRoleMembership[]>: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
   - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
   - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity

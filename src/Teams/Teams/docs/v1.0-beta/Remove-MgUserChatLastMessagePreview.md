@@ -12,13 +12,13 @@ Delete navigation property lastMessagePreview for users
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgUserChatLastMessagePreview -ChatId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgUserChatLastMessagePreview -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

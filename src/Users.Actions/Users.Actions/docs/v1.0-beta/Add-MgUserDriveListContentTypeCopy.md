@@ -43,6 +43,21 @@ Add a copy of a [content type][contentType] from a [site][site] to a [list][list
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Sites
+
+$params = @{
+	ContentType = "https://graph.microsoft.com/v1.0/sites/{site-id}/contentTypes/0x0101"
+}
+
+Add-MgSiteListContentTypeCopy -SiteId $siteId -ListId $listId -BodyParameter $params
+```
+
+This example shows how to use the Add-MgUserDriveListContentTypeCopy Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -199,8 +214,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

@@ -48,7 +48,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowDeletedIdentitiesDataRemoval
-Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.
+Reserved for future use.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -231,7 +231,7 @@ BODYPARAMETER <IMicrosoftGraphExternalIdentitiesPolicy>: externalIdentitiesPolic
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AllowDeletedIdentitiesDataRemoval <Boolean?>]`: Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.
+  - `[AllowDeletedIdentitiesDataRemoval <Boolean?>]`: Reserved for future use.
   - `[AllowExternalIdentitiesToLeave <Boolean?>]`: Defines whether external users can leave the guest tenant. If set to false, self-service controls are disabled, and the admin of the guest tenant must manually remove the external user from the guest tenant. When the external user leaves the tenant, their data in the guest tenant is first soft-deleted then permanently deleted in 30 days.
 
 ## RELATED LINKS

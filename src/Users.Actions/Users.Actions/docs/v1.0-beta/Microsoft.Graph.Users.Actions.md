@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: c3c09d2d-df47-4136-bc57-3d9e0f143ab7
+Module Guid: 4bf63061-7c8d-48a3-9409-6aa1db92615e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -449,6 +449,9 @@ Unhide a chat for a user.
 ### [Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink](Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink.md)
 Invoke action hasPayloadLinks
 
+### [Invoke-MgInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgInitiateUserManagedDeviceMobileDeviceManagementKeyRecovery.md)
+Perform MDM key recovery and TPM attestation
+
 ### [Invoke-MgInvalidateUserRefreshToken](Invoke-MgInvalidateUserRefreshToken.md)
 Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the **refreshTokensValidFromDateTime** user property to the current date-time.
 Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.
@@ -562,6 +565,9 @@ Reprovision a Cloud PC with an Intune managed device ID.
 ### [Invoke-MgRetireUserManagedDevice](Invoke-MgRetireUserManagedDevice.md)
 Retire a device
 
+### [Invoke-MgRetryUserCloudPcPartnerAgentInstallation](Invoke-MgRetryUserCloudPcPartnerAgentInstallation.md)
+Invoke action retryPartnerAgentInstallation
+
 ### [Invoke-MgRotateUserManagedDeviceBitLockerKey](Invoke-MgRotateUserManagedDeviceBitLockerKey.md)
 Rotate BitLockerKeys
 
@@ -658,12 +664,6 @@ Invoke action moveDevicesToOU
 ### [Move-MgUserMessage](Move-MgUserMessage.md)
 Move a message to another folder within the specified user's mailbox.
 This creates a new copy of the message in the destination folder and removes the original message.
-
-### [Move-MgUserTaskAlltask](Move-MgUserTaskAlltask.md)
-Move a baseTask object from one baseTaskList to another.
-
-### [Move-MgUserTaskListTask](Move-MgUserTaskListTask.md)
-Move a baseTask object from one baseTaskList to another.
 
 ### [New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration](New-MgUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration.md)
 Invoke action createEnrollmentNotificationConfiguration
@@ -927,7 +927,7 @@ Reboot a specific Cloud PC.
 Reboot device
 
 ### [Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Restore-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
-Restore a recently deleted application, group, servicePrincipal, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.
@@ -1096,6 +1096,9 @@ The action moves the event to the Deleted Items folder.
 The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID.
 An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed.
 You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
+
+### [Stop-MgUserManagedDeviceRemoteHelpSession](Stop-MgUserManagedDeviceRemoteHelpSession.md)
+Remote help - End ACS session, Pubsub session and delete Remote help session
 
 ### [Stop-MgUserPendingAccessReviewInstance](Stop-MgUserPendingAccessReviewInstance.md)
 Stop a currently active accessReviewInstance.

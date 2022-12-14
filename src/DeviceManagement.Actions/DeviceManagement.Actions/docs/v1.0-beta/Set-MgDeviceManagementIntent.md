@@ -194,7 +194,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphDeviceManagementIntentAssignment[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -203,7 +203,7 @@ ASSIGNMENTS <IMicrosoftGraphDeviceManagementIntentAssignment[]>: .
 BODYPARAMETER <IPathsPuxi5DevicemanagementIntentsDevicemanagementintentIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphDeviceManagementIntentAssignment[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
@@ -234,6 +234,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
   - `[DeviceManagementExchangeConnectorId <String>]`: key: id of deviceManagementExchangeConnector
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
+  - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript

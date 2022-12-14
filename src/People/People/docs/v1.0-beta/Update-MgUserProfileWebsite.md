@@ -187,7 +187,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -445,7 +446,7 @@ BODYPARAMETER <IMicrosoftGraphPersonWebsite>: personWebsite
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Categories <String[]>]`: Contains categories a user has associated with the website (for example, personal, recipes).
   - `[Description <String>]`: Contains a description of the website.
   - `[DisplayName <String>]`: Contains a friendly name for the website.

@@ -208,7 +208,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -496,7 +497,7 @@ BODYPARAMETER <IMicrosoftGraphPersonCertification>: personCertification
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CertificationId <String>]`: The referenceable identifier for the certification.
   - `[Description <String>]`: Description of the certification.
   - `[DisplayName <String>]`: Title of the certification.

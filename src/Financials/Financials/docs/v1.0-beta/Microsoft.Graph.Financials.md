@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Financials
-Module Guid: da500e46-15c7-447d-b8dd-e03d8b47d8c4
+Module Guid: f2dc9810-b008-4123-a4d4-f3dc60361771
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials
 Help Version: 1.0.0.0
 Locale: en-US
@@ -971,9 +971,6 @@ Update the navigation property shipmentMethod in financials
 ### [Update-MgFinancialCompanyCustomerPaymentJournal](Update-MgFinancialCompanyCustomerPaymentJournal.md)
 Update the navigation property customerPaymentJournals in financials
 
-### [Update-MgFinancialCompanyCustomerPaymentJournalAccount](Update-MgFinancialCompanyCustomerPaymentJournalAccount.md)
-Update the navigation property account in financials
-
 ### [Update-MgFinancialCompanyCustomerPaymentJournalCustomerPayment](Update-MgFinancialCompanyCustomerPaymentJournalCustomerPayment.md)
 Update the navigation property customerPayments in financials
 
@@ -1013,9 +1010,6 @@ Update the navigation property employees in financials
 ### [Update-MgFinancialCompanyEmployeePicture](Update-MgFinancialCompanyEmployeePicture.md)
 Update the navigation property picture in financials
 
-### [Update-MgFinancialCompanyGeneralLedgerEntryAccount](Update-MgFinancialCompanyGeneralLedgerEntryAccount.md)
-Update the navigation property account in financials
-
 ### [Update-MgFinancialCompanyInformation](Update-MgFinancialCompanyInformation.md)
 Update the navigation property companyInformation in financials
 
@@ -1031,14 +1025,8 @@ Update the navigation property picture in financials
 ### [Update-MgFinancialCompanyJournal](Update-MgFinancialCompanyJournal.md)
 Update the navigation property journals in financials
 
-### [Update-MgFinancialCompanyJournalAccount](Update-MgFinancialCompanyJournalAccount.md)
-Update the navigation property account in financials
-
 ### [Update-MgFinancialCompanyJournalLine](Update-MgFinancialCompanyJournalLine.md)
 Update the navigation property journalLines in financials
-
-### [Update-MgFinancialCompanyJournalLineAccount](Update-MgFinancialCompanyJournalLineAccount.md)
-Update the navigation property account in financials
 
 ### [Update-MgFinancialCompanyPaymentMethod](Update-MgFinancialCompanyPaymentMethod.md)
 Update the navigation property paymentMethods in financials
@@ -1057,9 +1045,6 @@ Update the navigation property currency in financials
 
 ### [Update-MgFinancialCompanyPurchaseInvoiceLine](Update-MgFinancialCompanyPurchaseInvoiceLine.md)
 Update the navigation property purchaseInvoiceLines in financials
-
-### [Update-MgFinancialCompanyPurchaseInvoiceLineAccount](Update-MgFinancialCompanyPurchaseInvoiceLineAccount.md)
-Update the navigation property account in financials
 
 ### [Update-MgFinancialCompanyPurchaseInvoiceLineItem](Update-MgFinancialCompanyPurchaseInvoiceLineItem.md)
 Update the navigation property item in financials
@@ -1112,9 +1097,6 @@ Update the navigation property shipmentMethod in financials
 ### [Update-MgFinancialCompanySaleCreditMemoLine](Update-MgFinancialCompanySaleCreditMemoLine.md)
 Update the navigation property salesCreditMemoLines in financials
 
-### [Update-MgFinancialCompanySaleCreditMemoLineAccount](Update-MgFinancialCompanySaleCreditMemoLineAccount.md)
-Update the navigation property account in financials
-
 ### [Update-MgFinancialCompanySaleCreditMemoLineItem](Update-MgFinancialCompanySaleCreditMemoLineItem.md)
 Update the navigation property item in financials
 
@@ -1129,9 +1111,6 @@ Update the navigation property paymentTerm in financials
 
 ### [Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine](Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLine.md)
 Update the navigation property salesCreditMemoLines in financials
-
-### [Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineAccount](Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineAccount.md)
-Update the navigation property account in financials
 
 ### [Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItem](Update-MgFinancialCompanySaleCreditMemoSaleCreditMemoLineItem.md)
 Update the navigation property item in financials
@@ -1168,9 +1147,6 @@ Update the navigation property shipmentMethod in financials
 
 ### [Update-MgFinancialCompanySaleInvoiceLine](Update-MgFinancialCompanySaleInvoiceLine.md)
 Update the navigation property salesInvoiceLines in financials
-
-### [Update-MgFinancialCompanySaleInvoiceLineAccount](Update-MgFinancialCompanySaleInvoiceLineAccount.md)
-Update the navigation property account in financials
 
 ### [Update-MgFinancialCompanySaleInvoiceLineItem](Update-MgFinancialCompanySaleInvoiceLineItem.md)
 Update the navigation property item in financials
@@ -1214,9 +1190,6 @@ Update the navigation property shipmentMethod in financials
 ### [Update-MgFinancialCompanySaleOrderLine](Update-MgFinancialCompanySaleOrderLine.md)
 Update the navigation property salesOrderLines in financials
 
-### [Update-MgFinancialCompanySaleOrderLineAccount](Update-MgFinancialCompanySaleOrderLineAccount.md)
-Update the navigation property account in financials
-
 ### [Update-MgFinancialCompanySaleOrderLineItem](Update-MgFinancialCompanySaleOrderLineItem.md)
 Update the navigation property item in financials
 
@@ -1255,9 +1228,6 @@ Update the navigation property shipmentMethod in financials
 
 ### [Update-MgFinancialCompanySaleQuoteLine](Update-MgFinancialCompanySaleQuoteLine.md)
 Update the navigation property salesQuoteLines in financials
-
-### [Update-MgFinancialCompanySaleQuoteLineAccount](Update-MgFinancialCompanySaleQuoteLineAccount.md)
-Update the navigation property account in financials
 
 ### [Update-MgFinancialCompanySaleQuoteLineItem](Update-MgFinancialCompanySaleQuoteLineItem.md)
 Update the navigation property item in financials

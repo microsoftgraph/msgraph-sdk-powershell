@@ -124,7 +124,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -254,7 +255,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCallTranscript>: callTranscript
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Content <Byte[]>]`: A field representing the content of the transcript. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. Read-only.
 

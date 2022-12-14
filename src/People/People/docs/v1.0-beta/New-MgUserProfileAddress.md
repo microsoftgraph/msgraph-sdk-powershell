@@ -198,7 +198,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -396,7 +397,7 @@ BODYPARAMETER <IMicrosoftGraphItemAddress>: itemAddress
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Detail <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.

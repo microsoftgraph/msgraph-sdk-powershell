@@ -12,13 +12,13 @@ Delete navigation property staffMembers for bookingBusinesses
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgBookingBusinessStaffMember -BookingBusinessId <String> -BookingStaffMemberId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -45,7 +45,7 @@ key: id of bookingBusiness
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -60,7 +60,7 @@ key: id of bookingStaffMember
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -91,7 +91,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -177,6 +177,9 @@ INPUTOBJECT <IBookingsIdentity>: Identity Parameter
   - `[BookingServiceId <String>]`: key: id of bookingService
   - `[BookingStaffMemberBaseId <String>]`: key: id of bookingStaffMemberBase
   - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
+  - `[BusinessScenarioId <String>]`: key: id of businessScenario
+  - `[BusinessScenarioTaskId <String>]`: key: id of businessScenarioTask
+  - `[PlannerPlanConfigurationLocalizationId <String>]`: key: id of plannerPlanConfigurationLocalization
 
 ## RELATED LINKS
 

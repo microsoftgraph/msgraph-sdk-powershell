@@ -231,7 +231,7 @@ BODYPARAMETER <IPaths1Acen0GDevicemanagementTemplatesDevicemanagementtemplateIdM
   - `[DisplayName <String>]`: 
   - `[RoleScopeTagIds <String[]>]`: 
   - `[SettingsDelta <IMicrosoftGraphDeviceManagementSettingInstance[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DefinitionId <String>]`: The ID of the setting definition for this instance
     - `[ValueJson <String>]`: JSON representation of the value
 
@@ -260,6 +260,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
   - `[DeviceManagementExchangeConnectorId <String>]`: key: id of deviceManagementExchangeConnector
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
+  - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript
@@ -288,7 +289,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[ZebraFotaDeploymentId <String>]`: key: id of zebraFotaDeployment
 
 SETTINGSDELTA <IMicrosoftGraphDeviceManagementSettingInstance[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DefinitionId <String>]`: The ID of the setting definition for this instance
   - `[ValueJson <String>]`: JSON representation of the value
 

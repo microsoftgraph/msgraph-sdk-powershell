@@ -101,7 +101,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -262,9 +263,9 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSynchronizationSchema>: synchronizationSchema
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Directories <IMicrosoftGraphDirectoryDefinition[]>]`: Contains the collection of directories and all of their objects.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
     - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
@@ -338,7 +339,7 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationSchema>: synchronizationSchema
   - `[Version <String>]`: The version of the schema, updated automatically with every schema change.
 
 DIRECTORIES <IMicrosoftGraphDirectoryDefinition[]>: Contains the collection of directories and all of their objects.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
   - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.

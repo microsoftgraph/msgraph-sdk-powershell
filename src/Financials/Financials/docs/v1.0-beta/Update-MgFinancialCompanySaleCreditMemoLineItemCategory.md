@@ -122,7 +122,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -252,7 +253,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphItemCategory>: itemCategory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Code <String>]`: 
   - `[DisplayName <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: c6bea60a-6062-4b9f-8ab5-028d4626e924
+Module Guid: 8818bd08-77c2-4c0a-80d1-6a465fd53c78
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -306,14 +306,14 @@ Invoke function getRecentNotebooks
 The owners of the group who can be users or service principals.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
-Supports $expand including nested $select.
+Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ### [Get-MgGroupOwnerByRef](Get-MgGroupOwnerByRef.md)
 The owners of the group who can be users or service principals.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
-Supports $expand including nested $select.
+Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ### [Get-MgGroupPermissionGrant](Get-MgGroupPermissionGrant.md)

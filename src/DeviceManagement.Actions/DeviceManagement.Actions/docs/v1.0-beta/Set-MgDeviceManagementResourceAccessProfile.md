@@ -181,7 +181,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNMENTS <IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Intent <DeviceManagementResourceAccessProfileIntent?>]`: The administrator intent for the assignment of the profile.
   - `[SourceId <String>]`: The identifier of the source of the assignment.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -192,7 +192,7 @@ ASSIGNMENTS <IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]>: 
 BODYPARAMETER <IPaths16HigzcDevicemanagementResourceaccessprofilesDevicemanagementresourceaccessprofilebaseIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphDeviceManagementResourceAccessProfileAssignment[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Intent <DeviceManagementResourceAccessProfileIntent?>]`: The administrator intent for the assignment of the profile.
     - `[SourceId <String>]`: The identifier of the source of the assignment.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -225,6 +225,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
   - `[DeviceManagementExchangeConnectorId <String>]`: key: id of deviceManagementExchangeConnector
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
+  - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript

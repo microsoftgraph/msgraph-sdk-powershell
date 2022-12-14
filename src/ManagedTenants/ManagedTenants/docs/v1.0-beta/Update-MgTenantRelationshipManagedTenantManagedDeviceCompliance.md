@@ -123,7 +123,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -442,7 +443,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsManagedDeviceCompliance>: managedDeviceCompliance
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ComplianceStatus <String>]`: Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
   - `[DeviceType <String>]`: Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
   - `[InGracePeriodUntilDateTime <DateTime?>]`: The date and time when the grace period will expire. Optional. Read-only.
@@ -469,13 +470,22 @@ INPUTOBJECT <IManagedTenantsIdentity>: Identity Parameter
   - `[DeviceCompliancePolicySettingStateSummaryId <String>]`: key: id of deviceCompliancePolicySettingStateSummary
   - `[ManagedDeviceComplianceId <String>]`: key: id of managedDeviceCompliance
   - `[ManagedDeviceComplianceTrendId <String>]`: key: id of managedDeviceComplianceTrend
+  - `[ManagedTenantAlertId <String>]`: key: id of managedTenantAlert
+  - `[ManagedTenantAlertLogId <String>]`: key: id of managedTenantAlertLog
+  - `[ManagedTenantAlertRuleDefinitionId <String>]`: key: id of managedTenantAlertRuleDefinition
+  - `[ManagedTenantAlertRuleId <String>]`: key: id of managedTenantAlertRule
+  - `[ManagedTenantApiNotificationId <String>]`: key: id of managedTenantApiNotification
+  - `[ManagedTenantEmailNotificationId <String>]`: key: id of managedTenantEmailNotification
+  - `[ManagedTenantTicketingEndpointId <String>]`: key: id of managedTenantTicketingEndpoint
   - `[ManagementActionId <String>]`: key: id of managementAction
   - `[ManagementActionTenantDeploymentStatusId <String>]`: key: id of managementActionTenantDeploymentStatus
   - `[ManagementIntentId <String>]`: key: id of managementIntent
   - `[ManagementTemplateCollectionId <String>]`: key: id of managementTemplateCollection
+  - `[ManagementTemplateCollectionTenantSummaryId <String>]`: key: id of managementTemplateCollectionTenantSummary
   - `[ManagementTemplateId <String>]`: key: id of managementTemplate
   - `[ManagementTemplateStepDeploymentId <String>]`: key: id of managementTemplateStepDeployment
   - `[ManagementTemplateStepId <String>]`: key: id of managementTemplateStep
+  - `[ManagementTemplateStepTenantSummaryId <String>]`: key: id of managementTemplateStepTenantSummary
   - `[ManagementTemplateStepVersionId <String>]`: key: id of managementTemplateStepVersion
   - `[MyRoleTenantId <String>]`: key: tenantId of myRole
   - `[TenantCustomizedInformationId <String>]`: key: id of tenantCustomizedInformation

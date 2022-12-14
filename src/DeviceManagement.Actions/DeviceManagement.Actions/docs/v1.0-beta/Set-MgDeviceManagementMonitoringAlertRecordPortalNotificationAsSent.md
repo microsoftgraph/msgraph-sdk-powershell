@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent
 
 ## SYNOPSIS
-Invoke action setPortalNotificationAsSent
+Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent
 ```
 
 ## DESCRIPTION
-Invoke action setPortalNotificationAsSent
+Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
 
 ## EXAMPLES
 
@@ -153,6 +153,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
   - `[DeviceManagementExchangeConnectorId <String>]`: key: id of deviceManagementExchangeConnector
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
+  - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript

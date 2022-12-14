@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTask
 
 ## SYNOPSIS
-The related lifecycle workflow task.
+The related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTask -InputObject <IIdentityG
 ```
 
 ## DESCRIPTION
-The related lifecycle workflow task.
+The related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
 
 ## EXAMPLES
 

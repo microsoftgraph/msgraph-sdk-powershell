@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: c593fdca-3b9b-4c0b-884b-d345e82befac
+Module Guid: 2057764a-cc69-4320-b165-bb8e79614fb8
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -81,6 +81,9 @@ Report the current state of how many users in your organization are registered f
 
 ### [Get-MgReportCredentialUserRegistrationDetail](Get-MgReportCredentialUserRegistrationDetail.md)
 Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+
+### [Get-MgReportDailyPrintUsage](Get-MgReportDailyPrintUsage.md)
+Get dailyPrintUsage from reports
 
 ### [Get-MgReportDailyPrintUsageByPrinter](Get-MgReportDailyPrintUsageByPrinter.md)
 Get dailyPrintUsageByPrinter from reports

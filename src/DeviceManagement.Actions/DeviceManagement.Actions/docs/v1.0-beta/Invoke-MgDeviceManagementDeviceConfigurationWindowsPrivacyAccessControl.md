@@ -199,7 +199,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPathsB12D8ODevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphWindowsprivacyaccesscontrolsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[WindowsPrivacyAccessControls <IMicrosoftGraphWindowsPrivacyDataAccessControlItem[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AccessLevel <WindowsPrivacyDataAccessLevel?>]`: Determine the access level to specific Windows privacy data category.
     - `[AppDisplayName <String>]`: The Package Family Name of a Windows app. When set, the access level applies to the specified application.
     - `[AppPackageFamilyName <String>]`: The Package Family Name of a Windows app. When set, the access level applies to the specified application.
@@ -230,6 +230,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
   - `[DeviceManagementExchangeConnectorId <String>]`: key: id of deviceManagementExchangeConnector
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
+  - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript
@@ -258,7 +259,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[ZebraFotaDeploymentId <String>]`: key: id of zebraFotaDeployment
 
 WINDOWSPRIVACYACCESSCONTROLS <IMicrosoftGraphWindowsPrivacyDataAccessControlItem[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AccessLevel <WindowsPrivacyDataAccessLevel?>]`: Determine the access level to specific Windows privacy data category.
   - `[AppDisplayName <String>]`: The Package Family Name of a Windows app. When set, the access level applies to the specified application.
   - `[AppPackageFamilyName <String>]`: The Package Family Name of a Windows app. When set, the access level applies to the specified application.

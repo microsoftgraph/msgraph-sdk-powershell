@@ -183,10 +183,10 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IPaths13I2FdeDevicemanagementCompliancepoliciesDevicemanagementcompliancepolicyIdMicrosoftGraphSetscheduledactionsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ScheduledActions <IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[RuleName <String>]`: Name of the rule which this scheduled action applies to.
     - `[ScheduledActionConfigurations <IMicrosoftGraphDeviceManagementComplianceActionItem[]>]`: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ActionType <DeviceManagementComplianceActionType?>]`: Scheduled Action Type Enum
       - `[GracePeriodHours <Int32?>]`: Number of hours to wait till the action will be enforced. Valid values 0 to 8760
       - `[NotificationMessageCcList <String[]>]`: A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
@@ -217,6 +217,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
   - `[DeviceManagementExchangeConnectorId <String>]`: key: id of deviceManagementExchangeConnector
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
+  - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript
@@ -245,10 +246,10 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[ZebraFotaDeploymentId <String>]`: key: id of zebraFotaDeployment
 
 SCHEDULEDACTIONS <IMicrosoftGraphDeviceManagementComplianceScheduledActionForRule[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[RuleName <String>]`: Name of the rule which this scheduled action applies to.
   - `[ScheduledActionConfigurations <IMicrosoftGraphDeviceManagementComplianceActionItem[]>]`: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ActionType <DeviceManagementComplianceActionType?>]`: Scheduled Action Type Enum
     - `[GracePeriodHours <Int32?>]`: Number of hours to wait till the action will be enforced. Valid values 0 to 8760
     - `[NotificationMessageCcList <String[]>]`: A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.

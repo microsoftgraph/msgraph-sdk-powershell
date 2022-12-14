@@ -21,8 +21,9 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicy -CloudPcProvisioningP
  [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>] [-GracePeriodInHours <Int32>]
  [-Id <String>] [-ImageDisplayName <String>] [-ImageId <String>] [-ImageType <String>] [-LocalAdminEnabled]
  [-ManagedBy <String>] [-MicrosoftManagedDesktop <IMicrosoftGraphMicrosoftManagedDesktop>]
- [-OnPremisesConnectionId <String>] [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OnPremisesConnectionId <String>] [-ProvisioningType <String>]
+ [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -49,8 +50,9 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicy
  [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>] [-GracePeriodInHours <Int32>]
  [-Id <String>] [-ImageDisplayName <String>] [-ImageId <String>] [-ImageType <String>] [-LocalAdminEnabled]
  [-ManagedBy <String>] [-MicrosoftManagedDesktop <IMicrosoftGraphMicrosoftManagedDesktop>]
- [-OnPremisesConnectionId <String>] [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OnPremisesConnectionId <String>] [-ProvisioningType <String>]
+ [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -400,6 +402,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProvisioningType
+cloudPcProvisioningType
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WindowsSettings
 cloudPcWindowsSettings
 To construct, please use Get-Help -Online and see NOTES section for WINDOWSSETTINGS properties and create a hash table.
@@ -488,6 +505,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcProvisioningPolicy>: cloudPcProvisioningPol
   - `[DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>]`: cloudPcDomainJoinConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[OnPremisesConnectionId <String>]`: The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
+    - `[RegionGroup <String>]`: cloudPcRegionGroup
     - `[RegionName <String>]`: The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
     - `[Type <String>]`: cloudPcDomainJoinType
   - `[GracePeriodInHours <Int32?>]`: The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
@@ -501,6 +519,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcProvisioningPolicy>: cloudPcProvisioningPol
     - `[Profile <String>]`: The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
     - `[Type <String>]`: microsoftManagedDesktopType
   - `[OnPremisesConnectionId <String>]`: The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
+  - `[ProvisioningType <String>]`: cloudPcProvisioningType
   - `[WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>]`: cloudPcWindowsSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Language <String>]`: The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).
@@ -508,6 +527,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcProvisioningPolicy>: cloudPcProvisioningPol
 DOMAINJOINCONFIGURATION <IMicrosoftGraphCloudPcDomainJoinConfiguration>: cloudPcDomainJoinConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[OnPremisesConnectionId <String>]`: The Azure network connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.
+  - `[RegionGroup <String>]`: cloudPcRegionGroup
   - `[RegionName <String>]`: The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
   - `[Type <String>]`: cloudPcDomainJoinType
 
@@ -524,6 +544,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CloudPcProvisioningPolicyAssignmentId <String>]`: key: id of cloudPcProvisioningPolicyAssignment
   - `[CloudPcProvisioningPolicyId <String>]`: key: id of cloudPcProvisioningPolicy
   - `[CloudPcServicePlanId <String>]`: key: id of cloudPcServicePlan
+  - `[CloudPcSharedUseServicePlanId <String>]`: key: id of cloudPcSharedUseServicePlan
   - `[CloudPcSnapshotId <String>]`: key: id of cloudPcSnapshot
   - `[CloudPcSupportedRegionId <String>]`: key: id of cloudPcSupportedRegion
   - `[CloudPcUserSettingAssignmentId <String>]`: key: id of cloudPcUserSettingAssignment

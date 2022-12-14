@@ -9,6 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a single chat (without its messages).
+This method supports federation.
+To access a chat, at least one chat member must belong to the tenant the request initiated from.
 
 ## SYNTAX
 
@@ -32,6 +34,8 @@ Get-MgChat -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Property
 
 ## DESCRIPTION
 Retrieve a single chat (without its messages).
+This method supports federation.
+To access a chat, at least one chat member must belong to the tenant the request initiated from.
 
 ## EXAMPLES
 

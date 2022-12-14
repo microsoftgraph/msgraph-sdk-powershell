@@ -199,7 +199,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -459,7 +460,7 @@ BODYPARAMETER <IMicrosoftGraphEducationalActivity>: educationalActivity
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CompletionMonthYear <DateTime?>]`: The month and year the user graduated or completed the activity.
   - `[EndMonthYear <DateTime?>]`: The month and year the user completed the educational activity referenced.
   - `[Institution <IMicrosoftGraphInstitutionData>]`: institutionData

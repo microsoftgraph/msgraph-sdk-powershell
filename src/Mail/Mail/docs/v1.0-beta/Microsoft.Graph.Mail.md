@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: c9a69a65-d2c7-4fc7-b808-1383435929fb
+Module Guid: 6dd54432-f738-4ddb-95a3-0b484a31ab73
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -152,8 +152,9 @@ If you intend a new folder to be hidden, you must set the **isHidden** property 
 Use this API to create a new Message in a mailfolder.
 
 ### [New-MgUserMailFolderChildFolderMessageAttachment](New-MgUserMailFolderChildFolderMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgUserMailFolderChildFolderMessageExtension](New-MgUserMailFolderChildFolderMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -183,8 +184,9 @@ Create new navigation property to singleValueExtendedProperties for users
 Use this API to create a new Message in a mailfolder.
 
 ### [New-MgUserMailFolderMessageAttachment](New-MgUserMailFolderMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgUserMailFolderMessageExtension](New-MgUserMailFolderMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -217,8 +219,9 @@ See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgUserMessageAttachment](New-MgUserMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgUserMessageExtension](New-MgUserMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.

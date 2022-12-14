@@ -12,14 +12,14 @@ Invoke function search
 
 ## SYNTAX
 
-### Search1 (Default)
+### Search (Default)
 ```
 Search-MgUserDriveItem -DriveId <String> -DriveItemId <String> -Q <String> -UserId <String> [-Count]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
  [-Top <Int32>] [<CommonParameters>]
 ```
 
-### SearchViaIdentity1
+### SearchViaIdentity
 ```
 Search-MgUserDriveItem -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
@@ -53,7 +53,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Search1
+Parameter Sets: Search
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ key: id of driveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Search1
+Parameter Sets: Search
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: SearchViaIdentity1
+Parameter Sets: SearchViaIdentity
 Aliases:
 
 Required: True
@@ -129,7 +129,7 @@ Usage: q='{q}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Search1
+Parameter Sets: Search
 Aliases:
 
 Required: True
@@ -204,7 +204,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Search1
+Parameter Sets: Search
 Aliases:
 
 Required: True
@@ -237,7 +237,6 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

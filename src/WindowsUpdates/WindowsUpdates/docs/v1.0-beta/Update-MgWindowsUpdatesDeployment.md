@@ -186,7 +186,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -337,19 +338,19 @@ To create the parameters described below, construct a hash table containing the 
 
 AUDIENCE <IMicrosoftGraphWindowsUpdatesDeploymentAudience>: deploymentAudience
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to include in the audience.
 
 BODYPARAMETER <IMicrosoftGraphWindowsUpdatesDeployment>: deployment
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Audience <IMicrosoftGraphWindowsUpdatesDeploymentAudience>]`: deploymentAudience
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Exclusions <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to exclude from the audience.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Members <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: Specifies the assets to include in the audience.
   - `[Content <IMicrosoftGraphWindowsUpdatesDeployableContent>]`: deployableContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

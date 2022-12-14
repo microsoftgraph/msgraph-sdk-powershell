@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be item insights or people insights.
+The type of settings can be contact insights, item insights, or people insights.
 To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ## SYNTAX
@@ -42,7 +42,7 @@ Update-MgOrganizationSettingItemInsight -InputObject <IIdentityDirectoryManageme
 
 ## DESCRIPTION
 Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be item insights or people insights.
+The type of settings can be contact insights, item insights, or people insights.
 To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ## EXAMPLES
@@ -110,7 +110,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -242,7 +243,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphInsightsSettings>: insightsSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisabledForGroup <String>]`: The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
   - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
 
@@ -266,6 +267,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
+  - `[OnPremisesDirectorySynchronizationId <String>]`: key: id of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization

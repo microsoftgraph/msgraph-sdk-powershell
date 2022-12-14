@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 97454772-2908-461c-b3a5-2f32b26493fb
+Module Guid: 7f47b15e-5961-4e82-b64d-89b1994e12a7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -382,6 +382,9 @@ Get impactedResources from directory
 ### [Get-MgDirectoryInboundSharedUserProfile](Get-MgDirectoryInboundSharedUserProfile.md)
 Get inboundSharedUserProfiles from directory
 
+### [Get-MgDirectoryOnPremisSynchronization](Get-MgDirectoryOnPremisSynchronization.md)
+Get onPremisesSynchronization from directory
+
 ### [Get-MgDirectoryOutboundSharedUserProfile](Get-MgDirectoryOutboundSharedUserProfile.md)
 Get outboundSharedUserProfiles from directory
 
@@ -524,8 +527,14 @@ A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
+### [Get-MgOrganizationBrandingCustomCss](Get-MgOrganizationBrandingCustomCss.md)
+Get customCSS for the navigation property branding from organization
+
 ### [Get-MgOrganizationBrandingFavicon](Get-MgOrganizationBrandingFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+
+### [Get-MgOrganizationBrandingHeaderLogo](Get-MgOrganizationBrandingHeaderLogo.md)
+Get headerLogo for the navigation property branding from organization
 
 ### [Get-MgOrganizationBrandingLocalization](Get-MgOrganizationBrandingLocalization.md)
 Add different branding based on a locale.
@@ -540,8 +549,14 @@ A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
+### [Get-MgOrganizationBrandingLocalizationCustomCss](Get-MgOrganizationBrandingLocalizationCustomCss.md)
+Get customCSS for the navigation property localizations from organization
+
 ### [Get-MgOrganizationBrandingLocalizationFavicon](Get-MgOrganizationBrandingLocalizationFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+
+### [Get-MgOrganizationBrandingLocalizationHeaderLogo](Get-MgOrganizationBrandingLocalizationHeaderLogo.md)
+Get headerLogo for the navigation property localizations from organization
 
 ### [Get-MgOrganizationBrandingLocalizationSquareLogo](Get-MgOrganizationBrandingLocalizationSquareLogo.md)
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
@@ -586,7 +601,7 @@ This operation does not return microsoftApplicationDataAccessSettings.
 To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
 
 ### [Get-MgOrganizationSettingContactInsight](Get-MgOrganizationSettingContactInsight.md)
-Get contactInsights from organization
+Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
 
 ### [Get-MgOrganizationSettingItemInsight](Get-MgOrganizationSettingItemInsight.md)
 Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
@@ -738,6 +753,9 @@ Create new navigation property to impactedResources for directory
 
 ### [New-MgDirectoryInboundSharedUserProfile](New-MgDirectoryInboundSharedUserProfile.md)
 Create new navigation property to inboundSharedUserProfiles for directory
+
+### [New-MgDirectoryOnPremisSynchronization](New-MgDirectoryOnPremisSynchronization.md)
+Create new navigation property to onPremisesSynchronization for directory
 
 ### [New-MgDirectoryOutboundSharedUserProfile](New-MgDirectoryOutboundSharedUserProfile.md)
 Create new navigation property to outboundSharedUserProfiles for directory
@@ -898,6 +916,9 @@ Delete navigation property inboundSharedUserProfiles for directory
 ### [Remove-MgDirectoryInboundSharedUserProfilePersonalData](Remove-MgDirectoryInboundSharedUserProfilePersonalData.md)
 Invoke action removePersonalData
 
+### [Remove-MgDirectoryOnPremisSynchronization](Remove-MgDirectoryOnPremisSynchronization.md)
+Delete navigation property onPremisesSynchronization for directory
+
 ### [Remove-MgDirectoryOutboundSharedUserProfile](Remove-MgDirectoryOutboundSharedUserProfile.md)
 Delete navigation property outboundSharedUserProfiles for directory
 
@@ -987,7 +1008,7 @@ Delete entity from subscribedSkus
 Delete navigation property scopedRoleMemberOf for users
 
 ### [Restore-MgDirectoryDeletedItem](Restore-MgDirectoryDeletedItem.md)
-Restore a recently deleted application, group, servicePrincipal, or user object from deleted items.
+Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.
@@ -1003,8 +1024,14 @@ A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
+### [Set-MgOrganizationBrandingCustomCss](Set-MgOrganizationBrandingCustomCss.md)
+Update customCSS for the navigation property branding in organization
+
 ### [Set-MgOrganizationBrandingFavicon](Set-MgOrganizationBrandingFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+
+### [Set-MgOrganizationBrandingHeaderLogo](Set-MgOrganizationBrandingHeaderLogo.md)
+Update headerLogo for the navigation property branding in organization
 
 ### [Set-MgOrganizationBrandingLocalizationBackgroundImage](Set-MgOrganizationBrandingLocalizationBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -1016,8 +1043,14 @@ A banner version of your company logo that appears on the sign-in page.
 The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
+### [Set-MgOrganizationBrandingLocalizationCustomCss](Set-MgOrganizationBrandingLocalizationCustomCss.md)
+Update customCSS for the navigation property localizations in organization
+
 ### [Set-MgOrganizationBrandingLocalizationFavicon](Set-MgOrganizationBrandingLocalizationFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+
+### [Set-MgOrganizationBrandingLocalizationHeaderLogo](Set-MgOrganizationBrandingLocalizationHeaderLogo.md)
+Update headerLogo for the navigation property localizations in organization
 
 ### [Set-MgOrganizationBrandingLocalizationSquareLogo](Set-MgOrganizationBrandingLocalizationSquareLogo.md)
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
@@ -1227,6 +1260,9 @@ Update the navigation property impactedResources in directory
 ### [Update-MgDirectoryInboundSharedUserProfile](Update-MgDirectoryInboundSharedUserProfile.md)
 Update the navigation property inboundSharedUserProfiles in directory
 
+### [Update-MgDirectoryOnPremisSynchronization](Update-MgDirectoryOnPremisSynchronization.md)
+Update the navigation property onPremisesSynchronization in directory
+
 ### [Update-MgDirectoryOutboundSharedUserProfile](Update-MgDirectoryOutboundSharedUserProfile.md)
 Update the navigation property outboundSharedUserProfiles in directory
 
@@ -1290,11 +1326,13 @@ Update the navigation property extensions in organization
 Update the navigation property settings in organization
 
 ### [Update-MgOrganizationSettingContactInsight](Update-MgOrganizationSettingContactInsight.md)
-Update the navigation property contactInsights in organization
+Update the privacy settings to display or return the specified type of insights in an organization.
+The type of settings can be contact insights, item insights, or people insights.
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ### [Update-MgOrganizationSettingItemInsight](Update-MgOrganizationSettingItemInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be item insights or people insights.
+The type of settings can be contact insights, item insights, or people insights.
 To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ### [Update-MgOrganizationSettingMicrosoftApplicationDataAccess](Update-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
@@ -1302,7 +1340,7 @@ Update the settings in a microsoftApplicationDataAccessSettings object that spec
 
 ### [Update-MgOrganizationSettingPersonInsight](Update-MgOrganizationSettingPersonInsight.md)
 Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be item insights or people insights.
+The type of settings can be contact insights, item insights, or people insights.
 To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
 
 ### [Update-MgOrganizationSettingProfileCardProperty](Update-MgOrganizationSettingProfileCardProperty.md)

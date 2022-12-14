@@ -124,7 +124,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -314,7 +315,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphCommand>: command
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppServiceName <String>]`: 
   - `[Error <String>]`: 
   - `[PackageFamilyName <String>]`: 
@@ -324,7 +325,7 @@ BODYPARAMETER <IMicrosoftGraphCommand>: command
   - `[PostBackUri <String>]`: 
   - `[Responsepayload <IMicrosoftGraphPayloadResponse>]`: payloadResponse
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Status <String>]`: 
   - `[Type <String>]`: 
 
@@ -348,6 +349,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
+  - `[OnPremisesDirectorySynchronizationId <String>]`: key: id of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization

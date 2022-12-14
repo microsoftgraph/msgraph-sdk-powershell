@@ -45,6 +45,37 @@ This function is transitive.
 
 ## EXAMPLES
 
+### Example 1: Check group memberships for a directory object
+```powershell
+Import-Module Microsoft.Graph.DirectoryObjects
+
+$params = @{
+	SecurityEnabledOnly = $false
+}
+
+Get-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
+```
+
+This example shows how to use the Get-MgContactMemberGroup Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Check group memberships for the signed-in user
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+$params = @{
+	SecurityEnabledOnly = $true
+}
+
+# A UPN can also be used as -UserId.
+Get-MgUserMemberGroup -UserId $userId -BodyParameter $params
+```
+
+This example shows how to use the Get-MgContactMemberGroup Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -201,6 +232,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
+  - `[OnPremisesDirectorySynchronizationId <String>]`: key: id of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization

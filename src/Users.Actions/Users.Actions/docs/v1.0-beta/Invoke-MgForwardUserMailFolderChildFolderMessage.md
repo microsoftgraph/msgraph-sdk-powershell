@@ -59,6 +59,30 @@ Alternatively, create a draft to forward a message, and send it later.
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+$params = @{
+	Comment = "comment-value"
+	ToRecipients = @(
+		@{
+			EmailAddress = @{
+				Name = "name-value"
+				Address = "address-value"
+			}
+		}
+	)
+}
+
+# A UPN can also be used as -UserId.
+Invoke-MgForwardUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+```
+
+This example shows how to use the Invoke-MgForwardUserMailFolderChildFolderMessage Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -373,8 +397,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

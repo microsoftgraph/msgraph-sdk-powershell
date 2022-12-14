@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: e6a3188f-5cb9-45cf-9d61-7310136f477d
+Module Guid: bf0d07bf-16bd-4740-820e-0a2e6b49d735
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -159,7 +159,7 @@ Supports $expand.
 Directory objects that are owned by the user.
 Read-only.
 Nullable.
-Supports $expand.
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgUserPhoto](Get-MgUserPhoto.md)
 The user's profile photo.

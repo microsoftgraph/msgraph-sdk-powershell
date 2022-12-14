@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgOrganizationSettingContactInsight
 
 ## SYNOPSIS
-Get contactInsights from organization
+Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
 
 ## SYNTAX
 
@@ -25,9 +25,18 @@ Get-MgOrganizationSettingContactInsight -InputObject <IIdentityDirectoryManageme
 ```
 
 ## DESCRIPTION
-Get contactInsights from organization
+Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
 
 ## EXAMPLES
+
+### Example 1: Using the Get-MgOrganizationSettingContactInsight Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+Get-MgOrganizationSettingContactInsight -OrganizationId $organizationId
+```
+
+This example shows how to use the Get-MgOrganizationSettingContactInsight Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ## PARAMETERS
 
@@ -132,6 +141,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
+  - `[OnPremisesDirectorySynchronizationId <String>]`: key: id of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization

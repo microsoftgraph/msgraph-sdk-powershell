@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: c81c26be-0144-4022-a4fe-b62128c54ad4
+Module Guid: 504ec205-a4db-4901-aaab-b933db81d3d5
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -234,6 +234,9 @@ Cloud PC audit event.
 ### [Get-MgDeviceManagementVirtualEndpointCloudPC](Get-MgDeviceManagementVirtualEndpointCloudPC.md)
 Cloud managed virtual desktops.
 
+### [Get-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Get-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
+Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
+
 ### [Get-MgDeviceManagementVirtualEndpointDeviceImage](Get-MgDeviceManagementVirtualEndpointDeviceImage.md)
 The image resource on Cloud PC.
 
@@ -260,13 +263,16 @@ Returned only on $expand.
 See an example of getting the assignments relationship.
 
 ### [Get-MgDeviceManagementVirtualEndpointReport](Get-MgDeviceManagementVirtualEndpointReport.md)
-Get reports from deviceManagement
+Cloud PC related reports.
 
 ### [Get-MgDeviceManagementVirtualEndpointReportExportJob](Get-MgDeviceManagementVirtualEndpointReportExportJob.md)
-Get exportJobs from deviceManagement
+The export jobs created for downloading reports.
 
 ### [Get-MgDeviceManagementVirtualEndpointServicePlan](Get-MgDeviceManagementVirtualEndpointServicePlan.md)
 Cloud PC service plans.
+
+### [Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan](Get-MgDeviceManagementVirtualEndpointSharedUseServicePlan.md)
+Get sharedUseServicePlans from deviceManagement
 
 ### [Get-MgDeviceManagementVirtualEndpointSnapshot](Get-MgDeviceManagementVirtualEndpointSnapshot.md)
 Cloud PC snapshots.
@@ -425,7 +431,7 @@ Create a new cloudPcProvisioningPolicy object.
 Create new navigation property to assignments for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointReportExportJob](New-MgDeviceManagementVirtualEndpointReportExportJob.md)
-Create new navigation property to exportJobs for deviceManagement
+Create a new cloudPcExportJob object.
 
 ### [New-MgDeviceManagementVirtualEndpointServicePlan](New-MgDeviceManagementVirtualEndpointServicePlan.md)
 Create new navigation property to servicePlans for deviceManagement
@@ -582,6 +588,9 @@ Delete navigation property groupAssignments for deviceManagement
 
 ### [Remove-MgDeviceManagementUserPfxCertificate](Remove-MgDeviceManagementUserPfxCertificate.md)
 Delete navigation property userPfxCertificates for deviceManagement
+
+### [Remove-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Remove-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
+Delete navigation property crossCloudGovernmentOrganizationMapping for deviceManagement
 
 ### [Remove-MgDeviceManagementVirtualEndpointDeviceImage](Remove-MgDeviceManagementVirtualEndpointDeviceImage.md)
 Delete navigation property deviceImages for deviceManagement
@@ -768,6 +777,9 @@ Update the navigation property groupAssignments in deviceManagement
 
 ### [Update-MgDeviceManagementUserPfxCertificate](Update-MgDeviceManagementUserPfxCertificate.md)
 Update the navigation property userPfxCertificates in deviceManagement
+
+### [Update-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Update-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
+Update the navigation property crossCloudGovernmentOrganizationMapping in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointDeviceImage](Update-MgDeviceManagementVirtualEndpointDeviceImage.md)
 Update the navigation property deviceImages in deviceManagement

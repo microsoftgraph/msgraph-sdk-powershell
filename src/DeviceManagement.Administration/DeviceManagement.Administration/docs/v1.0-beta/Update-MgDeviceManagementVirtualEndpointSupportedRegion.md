@@ -15,8 +15,8 @@ Update the navigation property supportedRegions in deviceManagement
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceManagementVirtualEndpointSupportedRegion -CloudPcSupportedRegionId <String>
- [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-RegionStatus <String>]
- [-SupportedSolution <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-RegionGroup <String>]
+ [-RegionStatus <String>] [-SupportedSolution <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -34,8 +34,8 @@ Update-MgDeviceManagementVirtualEndpointSupportedRegion -InputObject <IDeviceMan
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceManagementVirtualEndpointSupportedRegion -InputObject <IDeviceManagementAdministrationIdentity>
- [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-RegionStatus <String>]
- [-SupportedSolution <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-RegionGroup <String>]
+ [-RegionStatus <String>] [-SupportedSolution <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -154,6 +154,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RegionGroup
+cloudPcRegionGroup
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RegionStatus
 cloudPcSupportedRegionStatus
 
@@ -241,6 +256,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcSupportedRegion>: cloudPcSupportedRegion
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The name for the supported region. Read-only.
+  - `[RegionGroup <String>]`: cloudPcRegionGroup
   - `[RegionStatus <String>]`: cloudPcSupportedRegionStatus
   - `[SupportedSolution <String>]`: cloudPcManagementService
 
@@ -257,6 +273,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CloudPcProvisioningPolicyAssignmentId <String>]`: key: id of cloudPcProvisioningPolicyAssignment
   - `[CloudPcProvisioningPolicyId <String>]`: key: id of cloudPcProvisioningPolicy
   - `[CloudPcServicePlanId <String>]`: key: id of cloudPcServicePlan
+  - `[CloudPcSharedUseServicePlanId <String>]`: key: id of cloudPcSharedUseServicePlan
   - `[CloudPcSnapshotId <String>]`: key: id of cloudPcSnapshot
   - `[CloudPcSupportedRegionId <String>]`: key: id of cloudPcSupportedRegion
   - `[CloudPcUserSettingAssignmentId <String>]`: key: id of cloudPcUserSettingAssignment

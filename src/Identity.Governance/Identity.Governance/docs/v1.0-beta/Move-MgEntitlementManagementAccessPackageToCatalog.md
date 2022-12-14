@@ -8,7 +8,8 @@ schema: 2.0.0
 # Move-MgEntitlementManagementAccessPackageToCatalog
 
 ## SYNOPSIS
-Invoke action moveToCatalog
+In Azure AD entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
+The resources in the access package must be present in the target catalog.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Move-MgEntitlementManagementAccessPackageToCatalog -InputObject <IIdentityGovern
 ```
 
 ## DESCRIPTION
-Invoke action moveToCatalog
+In Azure AD entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
+The resources in the access package must be present in the target catalog.
 
 ## EXAMPLES
 

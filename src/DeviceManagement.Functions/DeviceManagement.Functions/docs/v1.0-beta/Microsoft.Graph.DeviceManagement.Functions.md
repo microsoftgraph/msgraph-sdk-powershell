@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-Module Guid: 3c3aee24-7939-4a4c-9699-982a8996886a
+Module Guid: 89e505b7-b426-40ac-9e7a-9399f0ac100a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -140,11 +140,23 @@ Invoke function getCloudPcConnectivityHistory
 ### [Get-MgDeviceManagementVirtualEndpointCloudPcLaunchInfo](Get-MgDeviceManagementVirtualEndpointCloudPcLaunchInfo.md)
 Invoke function getCloudPcLaunchInfo
 
+### [Get-MgDeviceManagementVirtualEndpointCloudPcShiftWorkCloudPcAccessState](Get-MgDeviceManagementVirtualEndpointCloudPcShiftWorkCloudPcAccessState.md)
+Invoke function getShiftWorkCloudPcAccessState
+
+### [Get-MgDeviceManagementVirtualEndpointCloudPcSupportedCloudPcRemoteAction](Get-MgDeviceManagementVirtualEndpointCloudPcSupportedCloudPcRemoteAction.md)
+Invoke function getSupportedCloudPcRemoteActions
+
 ### [Get-MgDeviceManagementVirtualEndpointDeviceImageSourceImage](Get-MgDeviceManagementVirtualEndpointDeviceImageSourceImage.md)
 Invoke function getSourceImages
 
 ### [Get-MgDeviceManagementVirtualEndpointEffectivePermission](Get-MgDeviceManagementVirtualEndpointEffectivePermission.md)
 Invoke function getEffectivePermissions
+
+### [Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionLatency](Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionLatency.md)
+Invoke function getRealTimeRemoteConnectionLatency
+
+### [Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionStatus](Get-MgDeviceManagementVirtualEndpointReportRealTimeRemoteConnectionStatus.md)
+Invoke function getRealTimeRemoteConnectionStatus
 
 ### [Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount](Get-MgDeviceManagementVirtualEndpointSnapshotStorageAccount.md)
 Invoke function getStorageAccounts
@@ -165,7 +177,7 @@ Invoke function hasCustomRoleScopeTag
 Download Apple push notification certificate signing request
 
 ### [Invoke-MgExperienceDeviceManagement](Invoke-MgExperienceDeviceManagement.md)
-Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+Invoke function userExperienceAnalyticsSummarizedDeviceScopes
 
 ### [Invoke-MgGraphDeviceManagement](Invoke-MgGraphDeviceManagement.md)
 Invoke function scopedForResource
@@ -175,9 +187,6 @@ Invoke function areGlobalScriptsAvailable
 
 ### [Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice](Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice.md)
 Invoke function summarizeDevicePerformanceDevices
-
-### [Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRegressionSummaryDeviceRegressionPerformance](Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRegressionSummaryDeviceRegressionPerformance.md)
-Invoke function summarizeDeviceRegressionPerformance
 
 ### [Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRemoteConnectionDeviceRemoteConnection](Invoke-MgSummarizeDeviceManagementUserExperienceAnalyticRemoteConnectionDeviceRemoteConnection.md)
 Invoke function summarizeDeviceRemoteConnection

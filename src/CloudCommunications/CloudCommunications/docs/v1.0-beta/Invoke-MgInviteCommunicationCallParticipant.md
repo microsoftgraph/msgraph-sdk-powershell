@@ -8,11 +8,8 @@ schema: 2.0.0
 # Invoke-MgInviteCommunicationCallParticipant
 
 ## SYNOPSIS
-Delete a specific participant in a call.
-In some situations, it is appropriate for an application to remove a participant from an active call.
-This action can be done before or after the participant answers the call.
-When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
-When an invited participant is removed, any outstanding add participant request is canceled.
+Invite participants to the active call.
+For more information about how to handle operations, see commsOperation.
 
 ## SYNTAX
 
@@ -45,11 +42,8 @@ Invoke-MgInviteCommunicationCallParticipant -InputObject <ICloudCommunicationsId
 ```
 
 ## DESCRIPTION
-Delete a specific participant in a call.
-In some situations, it is appropriate for an application to remove a participant from an active call.
-This action can be done before or after the participant answers the call.
-When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
-When an invited participant is removed, any outstanding add participant request is canceled.
+Invite participants to the active call.
+For more information about how to handle operations, see commsOperation.
 
 ## EXAMPLES
 
@@ -399,7 +393,7 @@ BODYPARAMETER <IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphI
   - `[ClientContext <String>]`: 
   - `[Participants <IMicrosoftGraphInvitationParticipantInfo1[]>]`: 
     - `[EndpointType <String>]`: endpointType
-    - `[Hidden <Boolean?>]`: 
+    - `[Hidden <Boolean?>]`: Optional. Whether to hide the participant from the roster.
     - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -409,7 +403,7 @@ BODYPARAMETER <IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphI
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[ParticipantId <String>]`: Optional. The ID of the target participant.
-    - `[RemoveFromDefaultAudioRoutingGroup <Boolean?>]`: 
+    - `[RemoveFromDefaultAudioRoutingGroup <Boolean?>]`: Optional. Whether to remove them from the main mixer.
     - `[ReplacesCallId <String>]`: Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
@@ -430,7 +424,7 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
 
 PARTICIPANTS <IMicrosoftGraphInvitationParticipantInfo1[]>: .
   - `[EndpointType <String>]`: endpointType
-  - `[Hidden <Boolean?>]`: 
+  - `[Hidden <Boolean?>]`: Optional. Whether to hide the participant from the roster.
   - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -440,7 +434,7 @@ PARTICIPANTS <IMicrosoftGraphInvitationParticipantInfo1[]>: .
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[ParticipantId <String>]`: Optional. The ID of the target participant.
-  - `[RemoveFromDefaultAudioRoutingGroup <Boolean?>]`: 
+  - `[RemoveFromDefaultAudioRoutingGroup <Boolean?>]`: Optional. Whether to remove them from the main mixer.
   - `[ReplacesCallId <String>]`: Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
 
 ## RELATED LINKS

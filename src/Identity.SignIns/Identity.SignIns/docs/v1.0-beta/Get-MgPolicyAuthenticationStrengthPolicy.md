@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAuthenticationStrengthPolicy
 
 ## SYNOPSIS
-Get authenticationStrengthPolicies from policies
+The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgPolicyAuthenticationStrengthPolicy -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Get authenticationStrengthPolicies from policies
+The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
 
 ## EXAMPLES
 

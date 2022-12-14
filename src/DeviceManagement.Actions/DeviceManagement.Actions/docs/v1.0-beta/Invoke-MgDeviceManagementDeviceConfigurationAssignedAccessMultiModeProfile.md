@@ -197,7 +197,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSIGNEDACCESSMULTIMODEPROFILES <IMicrosoftGraphWindowsAssignedAccessProfile[]>: .
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppUserModelIds <String[]>]`: These are the only Windows Store Apps that will be available to launch from the Start menu.
   - `[DesktopAppPaths <String[]>]`: These are the paths of the Desktop Apps that will be available on the Start menu and the only apps the user will be able to launch.
   - `[ProfileName <String>]`: This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
@@ -208,7 +208,7 @@ ASSIGNEDACCESSMULTIMODEPROFILES <IMicrosoftGraphWindowsAssignedAccessProfile[]>:
 BODYPARAMETER <IPathsJifkymDevicemanagementDeviceconfigurationsDeviceconfigurationIdMicrosoftGraphAssignedaccessmultimodeprofilesPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AssignedAccessMultiModeProfiles <IMicrosoftGraphWindowsAssignedAccessProfile[]>]`: 
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AppUserModelIds <String[]>]`: These are the only Windows Store Apps that will be available to launch from the Start menu.
     - `[DesktopAppPaths <String[]>]`: These are the paths of the Desktop Apps that will be available on the Start menu and the only apps the user will be able to launch.
     - `[ProfileName <String>]`: This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
@@ -241,6 +241,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
   - `[DeviceManagementExchangeConnectorId <String>]`: key: id of deviceManagementExchangeConnector
   - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
+  - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
   - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
   - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
   - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript

@@ -22,10 +22,12 @@ New-MgOrganizationBrandingLocalization -OrganizationId <String> [-AdditionalProp
  [-BackgroundColor <String>] [-BackgroundImageInputFile <String>] [-BackgroundImageRelativeUrl <String>]
  [-BannerLogoInputFile <String>] [-BannerLogoRelativeUrl <String>] [-CdnList <String[]>]
  [-CustomAccountResetCredentialsUrl <String>] [-CustomCannotAccessYourAccountText <String>]
- [-CustomCannotAccessYourAccountUrl <String>] [-CustomForgotMyPasswordText <String>]
- [-CustomPrivacyAndCookiesText <String>] [-CustomPrivacyAndCookiesUrl <String>]
- [-CustomResetItNowText <String>] [-CustomTermsOfUseText <String>] [-CustomTermsOfUseUrl <String>]
- [-FaviconInputFile <String>] [-FaviconRelativeUrl <String>] [-HeaderBackgroundColor <String>] [-Id <String>]
+ [-CustomCannotAccessYourAccountUrl <String>] [-CustomCssInputFile <String>] [-CustomCssRelativeUrl <String>]
+ [-CustomForgotMyPasswordText <String>] [-CustomPrivacyAndCookiesText <String>]
+ [-CustomPrivacyAndCookiesUrl <String>] [-CustomResetItNowText <String>] [-CustomTermsOfUseText <String>]
+ [-CustomTermsOfUseUrl <String>] [-FaviconInputFile <String>] [-FaviconRelativeUrl <String>]
+ [-HeaderBackgroundColor <String>] [-HeaderLogoInputFile <String>] [-HeaderLogoRelativeUrl <String>]
+ [-Id <String>] [-LoginPageLayoutConfiguration <IMicrosoftGraphLoginPageLayoutConfiguration>]
  [-LoginPageTextVisibilitySettings <IMicrosoftGraphLoginPageTextVisibilitySettings>]
  [-SignInPageText <String>] [-SquareLogoDarkInputFile <String>] [-SquareLogoDarkRelativeUrl <String>]
  [-SquareLogoInputFile <String>] [-SquareLogoRelativeUrl <String>] [-UsernameHintText <String>] [-Confirm]
@@ -51,10 +53,12 @@ New-MgOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManagemen
  [-BackgroundImageRelativeUrl <String>] [-BannerLogoInputFile <String>] [-BannerLogoRelativeUrl <String>]
  [-CdnList <String[]>] [-CustomAccountResetCredentialsUrl <String>]
  [-CustomCannotAccessYourAccountText <String>] [-CustomCannotAccessYourAccountUrl <String>]
- [-CustomForgotMyPasswordText <String>] [-CustomPrivacyAndCookiesText <String>]
- [-CustomPrivacyAndCookiesUrl <String>] [-CustomResetItNowText <String>] [-CustomTermsOfUseText <String>]
- [-CustomTermsOfUseUrl <String>] [-FaviconInputFile <String>] [-FaviconRelativeUrl <String>]
- [-HeaderBackgroundColor <String>] [-Id <String>]
+ [-CustomCssInputFile <String>] [-CustomCssRelativeUrl <String>] [-CustomForgotMyPasswordText <String>]
+ [-CustomPrivacyAndCookiesText <String>] [-CustomPrivacyAndCookiesUrl <String>]
+ [-CustomResetItNowText <String>] [-CustomTermsOfUseText <String>] [-CustomTermsOfUseUrl <String>]
+ [-FaviconInputFile <String>] [-FaviconRelativeUrl <String>] [-HeaderBackgroundColor <String>]
+ [-HeaderLogoInputFile <String>] [-HeaderLogoRelativeUrl <String>] [-Id <String>]
+ [-LoginPageLayoutConfiguration <IMicrosoftGraphLoginPageLayoutConfiguration>]
  [-LoginPageTextVisibilitySettings <IMicrosoftGraphLoginPageTextVisibilitySettings>]
  [-SignInPageText <String>] [-SquareLogoDarkInputFile <String>] [-SquareLogoDarkRelativeUrl <String>]
  [-SquareLogoInputFile <String>] [-SquareLogoRelativeUrl <String>] [-UsernameHintText <String>] [-Confirm]
@@ -266,6 +270,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CustomCssInputFile
+Input File for CustomCss (.)
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomCssRelativeUrl
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CustomForgotMyPasswordText
 A string to replace the default 'Forgot my password' hyperlink text on the sign-in form.
 This text must be in Unicode format and not exceed 256 characters.
@@ -409,8 +443,39 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
+### -HeaderLogoInputFile
+Input File for HeaderLogo (.)
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HeaderLogoRelativeUrl
 .
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -437,6 +502,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -LoginPageLayoutConfiguration
+loginPageLayoutConfiguration
+To construct, please use Get-Help -Online and see NOTES section for LOGINPAGELAYOUTCONFIGURATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLoginPageLayoutConfiguration
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -643,6 +724,7 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
   - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
   - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
+  - `[OnPremisesDirectorySynchronizationId <String>]`: key: id of onPremisesDirectorySynchronization
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: key: id of organizationalBrandingLocalization
@@ -657,6 +739,12 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[TenantReferenceTenantId <String>]`: key: tenantId of tenantReference
   - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
+
+LOGINPAGELAYOUTCONFIGURATION <IMicrosoftGraphLoginPageLayoutConfiguration>: loginPageLayoutConfiguration
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[IsFooterShown <Boolean?>]`: 
+  - `[IsHeaderShown <Boolean?>]`: 
+  - `[LayoutTemplateType <String>]`: layoutTemplateType
 
 LOGINPAGETEXTVISIBILITYSETTINGS <IMicrosoftGraphLoginPageTextVisibilitySettings>: loginPageTextVisibilitySettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

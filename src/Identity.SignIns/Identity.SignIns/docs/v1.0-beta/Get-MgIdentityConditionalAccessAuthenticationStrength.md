@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityConditionalAccessAuthenticationStrength
 
 ## SYNOPSIS
-Get authenticationStrengths from identity
+Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgIdentityConditionalAccessAuthenticationStrength [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Get authenticationStrengths from identity
+Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
 
 ## EXAMPLES
 

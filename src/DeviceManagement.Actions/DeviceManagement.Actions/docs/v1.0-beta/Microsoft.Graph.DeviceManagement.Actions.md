@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: 488ea4d2-2d4b-4aa3-9edd-3e764d57a0e7
+Module Guid: 4d897fff-617b-47f4-bda7-98a5a71c5d9b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -109,6 +109,9 @@ Invoke action getHealthMetrics
 ### [Get-MgDeviceManagementCertificateConnectorDetailHealthMetricTimeSeries](Get-MgDeviceManagementCertificateConnectorDetailHealthMetricTimeSeries.md)
 Invoke action getHealthMetricTimeSeries
 
+### [Get-MgDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire](Get-MgDeviceManagementDeviceCompliancePolicyNoncompliantDeviceToRetire.md)
+Invoke action getNoncompliantDevicesToRetire
+
 ### [Get-MgDeviceManagementDeviceConfigurationTargetedUserAndDevice](Get-MgDeviceManagementDeviceConfigurationTargetedUserAndDevice.md)
 Invoke action getTargetedUsersAndDevices
 
@@ -208,6 +211,9 @@ Invoke action getDeviceManagementIntentSettingsReport
 ### [Get-MgDeviceManagementReportDeviceNonComplianceReport](Get-MgDeviceManagementReportDeviceNonComplianceReport.md)
 Invoke action getDeviceNonComplianceReport
 
+### [Get-MgDeviceManagementReportEncryptionReportForDevice](Get-MgDeviceManagementReportEncryptionReportForDevice.md)
+Invoke action getEncryptionReportForDevices
+
 ### [Get-MgDeviceManagementReportEnrollmentConfigurationPolicyByDevice](Get-MgDeviceManagementReportEnrollmentConfigurationPolicyByDevice.md)
 Invoke action getEnrollmentConfigurationPoliciesByDevice
 
@@ -228,6 +234,12 @@ Invoke action getHistoricalReport
 
 ### [Get-MgDeviceManagementReportMalwareSummaryReport](Get-MgDeviceManagementReportMalwareSummaryReport.md)
 Invoke action getMalwareSummaryReport
+
+### [Get-MgDeviceManagementReportMobileApplicationManagementAppConfigurationReport](Get-MgDeviceManagementReportMobileApplicationManagementAppConfigurationReport.md)
+Invoke action getMobileApplicationManagementAppConfigurationReport
+
+### [Get-MgDeviceManagementReportMobileApplicationManagementAppRegistrationSummaryReport](Get-MgDeviceManagementReportMobileApplicationManagementAppRegistrationSummaryReport.md)
+Invoke action getMobileApplicationManagementAppRegistrationSummaryReport
 
 ### [Get-MgDeviceManagementReportNoncompliantDeviceAndSettingReport](Get-MgDeviceManagementReportNoncompliantDeviceAndSettingReport.md)
 Invoke action getNoncompliantDevicesAndSettingsReport
@@ -285,6 +297,15 @@ Invoke action getZebraFotaDeploymentReport
 
 ### [Get-MgDeviceManagementRoleScopeTagRoleScopeTagById](Get-MgDeviceManagementRoleScopeTagRoleScopeTagById.md)
 Invoke action getRoleScopeTagsById
+
+### [Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport](Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport.md)
+Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
+
+### [Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport](Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport.md)
+Get the remote connection history records of a Cloud PC during a given period.
+
+### [Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport](Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport.md)
+Get the total aggregated remote connection usage of a Cloud PC during a given time span.
 
 ### [Import-MgDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentityAppleDeviceIdentityList](Import-MgDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentityAppleDeviceIdentityList.md)
 Invoke action importAppleDeviceIdentityList
@@ -365,6 +386,12 @@ Invoke action downloadAppDiagnostics
 ### [Invoke-MgDownloadDeviceManagementManagedDeviceAppDiagnostic](Invoke-MgDownloadDeviceManagementManagedDeviceAppDiagnostic.md)
 Invoke action downloadAppDiagnostics
 
+### [Invoke-MgEnrollDeviceManagementComanagedDeviceNowAction](Invoke-MgEnrollDeviceManagementComanagedDeviceNowAction.md)
+Trigger comanagement enrollment action on ConfigurationManager client
+
+### [Invoke-MgEnrollDeviceManagementManagedDeviceNowAction](Invoke-MgEnrollDeviceManagementManagedDeviceNowAction.md)
+Trigger comanagement enrollment action on ConfigurationManager client
+
 ### [Invoke-MgExecuteDeviceManagementComanagedDeviceAction](Invoke-MgExecuteDeviceManagementComanagedDeviceAction.md)
 Invoke action executeAction
 
@@ -395,6 +422,12 @@ Invoke action hasPayloadLinks
 ### [Invoke-MgHasDeviceManagementZebraFotaConnectorActiveDeployment](Invoke-MgHasDeviceManagementZebraFotaConnectorActiveDeployment.md)
 Invoke action hasActiveDeployments
 
+### [Invoke-MgInitiateDeviceManagementComanagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgInitiateDeviceManagementComanagedDeviceMobileDeviceManagementKeyRecovery.md)
+Perform MDM key recovery and TPM attestation
+
+### [Invoke-MgInitiateDeviceManagementManagedDeviceMobileDeviceManagementKeyRecovery](Invoke-MgInitiateDeviceManagementManagedDeviceMobileDeviceManagementKeyRecovery.md)
+Perform MDM key recovery and TPM attestation
+
 ### [Invoke-MgLogoutDeviceManagementComanagedDeviceSharedAppleDeviceActiveUser](Invoke-MgLogoutDeviceManagementComanagedDeviceSharedAppleDeviceActiveUser.md)
 Logout shared Apple device active user
 
@@ -422,6 +455,9 @@ Invoke action reenable
 ### [Invoke-MgReenableDeviceManagementManagedDevice](Invoke-MgReenableDeviceManagementManagedDevice.md)
 Invoke action reenable
 
+### [Invoke-MgReorderDeviceManagementConfigurationPolicy](Invoke-MgReorderDeviceManagementConfigurationPolicy.md)
+Invoke action reorder
+
 ### [Invoke-MgReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgReprovisionDeviceManagementComanagedDeviceCloudPc.md)
 Reprovision a Cloud PC with an Intune managed device ID.
 
@@ -436,6 +472,9 @@ Retire a device
 
 ### [Invoke-MgRetireDeviceManagementManagedDevice](Invoke-MgRetireDeviceManagementManagedDevice.md)
 Retire a device
+
+### [Invoke-MgRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation](Invoke-MgRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation.md)
+Invoke action retryPartnerAgentInstallation
 
 ### [Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage](Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage.md)
 Reupload a cloudPcDeviceImage object that failed to upload.
@@ -463,6 +502,9 @@ Invoke action scheduleActionsForRules
 
 ### [Invoke-MgShareDeviceManagementDepOnboardingSettingForSchoolDataSyncService](Invoke-MgShareDeviceManagementDepOnboardingSettingForSchoolDataSyncService.md)
 Invoke action shareForSchoolDataSyncService
+
+### [Invoke-MgTerminateDeviceManagementPartner](Invoke-MgTerminateDeviceManagementPartner.md)
+Invoke action terminate
 
 ### [Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc](Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc.md)
 Troubleshoot a specific Cloud PC.
@@ -745,7 +787,7 @@ After the review is completed, use this API again to set the Cloud PC back to a 
 Set device name of the device.
 
 ### [Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent](Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent.md)
-Invoke action setPortalNotificationAsSent
+Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
 
 ### [Set-MgDeviceManagementResourceAccessProfile](Set-MgDeviceManagementResourceAccessProfile.md)
 Invoke action assign
@@ -801,6 +843,12 @@ Invoke action triggerDeviceScopeAction
 ### [Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck](Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck.md)
 Run health checks on the cloudPcOnPremisesConnection object.
 This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+
+### [Stop-MgDeviceManagementComanagedDeviceRemoteHelpSession](Stop-MgDeviceManagementComanagedDeviceRemoteHelpSession.md)
+Remote help - End ACS session, Pubsub session and delete Remote help session
+
+### [Stop-MgDeviceManagementManagedDeviceRemoteHelpSession](Stop-MgDeviceManagementManagedDeviceRemoteHelpSession.md)
+Remote help - End ACS session, Pubsub session and delete Remote help session
 
 ### [Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod](Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod.md)
 End the grace period for a specific Cloud PC.

@@ -13,13 +13,13 @@ The teacher determines the resources to upload in the feedback resources folder 
 
 ## SYNTAX
 
-### Set (Default)
+### Set1 (Default)
 ```
 Set-MgEducationClassAssignmentUpFeedbackResourceFolder -EducationAssignmentId <String>
  -EducationClassId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### SetViaIdentity1
 ```
 Set-MgEducationClassAssignmentUpFeedbackResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -31,6 +31,17 @@ The teacher determines the resources to upload in the feedback resources folder 
 
 ## EXAMPLES
 
+### Example 1: Using the Set-MgEducationClassAssignmentUpFeedbackResourceFolder Cmdlet
+```powershell
+Import-Module Microsoft.Graph.Education
+$params = @{
+}
+Set-MgEducationClassAssignmentUpFeedbackResourceFolder -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+```
+
+This example shows how to use the Set-MgEducationClassAssignmentUpFeedbackResourceFolder Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -EducationAssignmentId
@@ -38,7 +49,7 @@ key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Set
+Parameter Sets: Set1
 Aliases:
 
 Required: True
@@ -53,7 +64,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Set
+Parameter Sets: Set1
 Aliases:
 
 Required: True
@@ -69,7 +80,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: SetViaIdentity
+Parameter Sets: SetViaIdentity1
 Aliases:
 
 Required: True

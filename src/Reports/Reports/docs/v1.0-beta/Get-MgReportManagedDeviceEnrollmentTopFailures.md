@@ -132,6 +132,7 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
+  - `[PrintUsageId <String>]`: key: id of printUsage
   - `[PrinterId <String>]`: Usage: printerId='{printerId}'
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[SignInId <String>]`: key: id of signIn

@@ -113,7 +113,8 @@ Accept wildcard characters: False
 ```
 
 ### -AllowUserConsentForRiskyApps
-.
+Indicates whether user consent for risky apps is allowed.
+We recommend to keep this as false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -128,8 +129,8 @@ Accept wildcard characters: False
 ```
 
 ### -BlockMsolPowerShell
-To disable the use of MSOL PowerShell set this property to true.
-This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell.
+To disable the use of the MSOnline PowerShell module set this property to true.
+This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module.
 This does not affect Azure AD Connect or Microsoft Graph.
 
 ```yaml
@@ -364,16 +365,16 @@ BODYPARAMETER <IMicrosoftGraphAuthorizationPolicy1>: authorizationPolicy
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowEmailVerifiedUsersToJoinOrganization <Boolean?>]`: Indicates whether a user can join the tenant by email validation.
   - `[AllowInvitesFrom <String>]`: allowInvitesFrom
-  - `[AllowUserConsentForRiskyApps <Boolean?>]`: 
+  - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
   - `[AllowedToUseSspr <Boolean?>]`: Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
-  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
   - `[DefaultUserRoleOverrides <IMicrosoftGraphDefaultUserRoleOverride[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[IsDefault <Boolean?>]`: 
     - `[RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]`: 
       - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource.
-      - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective.
+      - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
       - `[ExcludedResourceActions <String[]>]`: 
   - `[DefaultUserRolePermissions <IMicrosoftGraphDefaultUserRolePermissions1>]`: defaultUserRolePermissions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -390,7 +391,7 @@ DEFAULTUSERROLEOVERRIDES <IMicrosoftGraphDefaultUserRoleOverride[]>: .
   - `[IsDefault <Boolean?>]`: 
   - `[RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]`: 
     - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource.
-    - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective.
+    - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective. Not supported for custom roles.
     - `[ExcludedResourceActions <String[]>]`: 
 
 DEFAULTUSERROLEPERMISSIONS <IMicrosoftGraphDefaultUserRolePermissions1>: defaultUserRolePermissions

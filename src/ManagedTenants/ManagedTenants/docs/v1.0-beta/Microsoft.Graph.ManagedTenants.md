@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.ManagedTenants
-Module Guid: d70837bc-dfed-46f0-b3e5-f325cccb664c
+Module Guid: 2c14c8a2-4769-44d0-a476-2d053ed0f8f5
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,6 +16,39 @@ The collection of tenants associated with the managing entity.
 
 ### [Get-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance](Get-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
 Aggregate view of device compliance policies across managed tenants.
+
+### [Get-MgTenantRelationshipManagedTenantAlert](Get-MgTenantRelationshipManagedTenantAlert.md)
+Get managedTenantAlerts from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantAlertApiNotification](Get-MgTenantRelationshipManagedTenantAlertApiNotification.md)
+Get apiNotifications from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantAlertEmailNotification](Get-MgTenantRelationshipManagedTenantAlertEmailNotification.md)
+Get emailNotifications from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantAlertLog](Get-MgTenantRelationshipManagedTenantAlertLog.md)
+Get managedTenantAlertLogs from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantAlertLogAlert](Get-MgTenantRelationshipManagedTenantAlertLogAlert.md)
+Get alert from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantAlertRule](Get-MgTenantRelationshipManagedTenantAlertRule.md)
+Get managedTenantAlertRules from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantAlertRuleAlert](Get-MgTenantRelationshipManagedTenantAlertRuleAlert.md)
+Get alerts from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantAlertRuleDefinition](Get-MgTenantRelationshipManagedTenantAlertRuleDefinition.md)
+Get managedTenantAlertRuleDefinitions from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule](Get-MgTenantRelationshipManagedTenantAlertRuleDefinitionAlertRule.md)
+Get alertRules from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantApiNotification](Get-MgTenantRelationshipManagedTenantApiNotification.md)
+Get managedTenantApiNotifications from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantApiNotificationAlert](Get-MgTenantRelationshipManagedTenantApiNotificationAlert.md)
+Get alert from tenantRelationships
 
 ### [Get-MgTenantRelationshipManagedTenantAuditEvent](Get-MgTenantRelationshipManagedTenantAuditEvent.md)
 The collection of audit events across managed tenants.
@@ -44,6 +77,12 @@ The collection tenant level detailed information across managed tenants.
 ### [Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Summary information for device compliance policy setting states across managed tenants.
 
+### [Get-MgTenantRelationshipManagedTenantEmailNotification](Get-MgTenantRelationshipManagedTenantEmailNotification.md)
+Get managedTenantEmailNotifications from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantEmailNotificationAlert](Get-MgTenantRelationshipManagedTenantEmailNotificationAlert.md)
+Get alert from tenantRelationships
+
 ### [Get-MgTenantRelationshipManagedTenantGroup](Get-MgTenantRelationshipManagedTenantGroup.md)
 The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
 
@@ -71,6 +110,9 @@ Get managementTemplateCollections from tenantRelationships
 ### [Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionManagementTemplate](Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionManagementTemplate.md)
 Get managementTemplates from tenantRelationships
 
+### [Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Get-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+Get managementTemplateCollectionTenantSummaries from tenantRelationships
+
 ### [Get-MgTenantRelationshipManagedTenantManagementTemplateStep](Get-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
 Get managementTemplateSteps from tenantRelationships
 
@@ -79,6 +121,9 @@ Get acceptedVersion from tenantRelationships
 
 ### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepManagementTemplate](Get-MgTenantRelationshipManagedTenantManagementTemplateStepManagementTemplate.md)
 Get managementTemplate from tenantRelationships
+
+### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Get-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+Get managementTemplateStepTenantSummaries from tenantRelationships
 
 ### [Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](Get-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Get versions from tenantRelationships
@@ -101,6 +146,9 @@ The collection of role assignments to a signed-in user for a managed tenant.
 ### [Get-MgTenantRelationshipManagedTenantTag](Get-MgTenantRelationshipManagedTenantTag.md)
 The collection of tenant tags across managed tenants.
 
+### [Get-MgTenantRelationshipManagedTenantTicketingEndpoint](Get-MgTenantRelationshipManagedTenantTicketingEndpoint.md)
+Get managedTenantTicketingEndpoints from tenantRelationships
+
 ### [Get-MgTenantRelationshipManagedTenantWindowDeviceMalwareState](Get-MgTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
 The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
 
@@ -112,6 +160,21 @@ Create new navigation property to tenants for tenantRelationships
 
 ### [New-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance](New-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
 Create new navigation property to aggregatedPolicyCompliances for tenantRelationships
+
+### [New-MgTenantRelationshipManagedTenantAlert](New-MgTenantRelationshipManagedTenantAlert.md)
+Create new navigation property to managedTenantAlerts for tenantRelationships
+
+### [New-MgTenantRelationshipManagedTenantAlertLog](New-MgTenantRelationshipManagedTenantAlertLog.md)
+Create new navigation property to managedTenantAlertLogs for tenantRelationships
+
+### [New-MgTenantRelationshipManagedTenantAlertRule](New-MgTenantRelationshipManagedTenantAlertRule.md)
+Create new navigation property to managedTenantAlertRules for tenantRelationships
+
+### [New-MgTenantRelationshipManagedTenantAlertRuleDefinition](New-MgTenantRelationshipManagedTenantAlertRuleDefinition.md)
+Create new navigation property to managedTenantAlertRuleDefinitions for tenantRelationships
+
+### [New-MgTenantRelationshipManagedTenantApiNotification](New-MgTenantRelationshipManagedTenantApiNotification.md)
+Create new navigation property to managedTenantApiNotifications for tenantRelationships
 
 ### [New-MgTenantRelationshipManagedTenantAuditEvent](New-MgTenantRelationshipManagedTenantAuditEvent.md)
 Create new navigation property to auditEvents for tenantRelationships
@@ -140,6 +203,9 @@ Create new navigation property to tenantsDetailedInformation for tenantRelations
 ### [New-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](New-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
 
+### [New-MgTenantRelationshipManagedTenantEmailNotification](New-MgTenantRelationshipManagedTenantEmailNotification.md)
+Create new navigation property to managedTenantEmailNotifications for tenantRelationships
+
 ### [New-MgTenantRelationshipManagedTenantGroup](New-MgTenantRelationshipManagedTenantGroup.md)
 Create new navigation property to tenantGroups for tenantRelationships
 
@@ -164,8 +230,14 @@ Create new navigation property to managementTemplates for tenantRelationships
 ### [New-MgTenantRelationshipManagedTenantManagementTemplateCollection](New-MgTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Create new navigation property to managementTemplateCollections for tenantRelationships
 
+### [New-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](New-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+Create new navigation property to managementTemplateCollectionTenantSummaries for tenantRelationships
+
 ### [New-MgTenantRelationshipManagedTenantManagementTemplateStep](New-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
 Create new navigation property to managementTemplateSteps for tenantRelationships
+
+### [New-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](New-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+Create new navigation property to managementTemplateStepTenantSummaries for tenantRelationships
 
 ### [New-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](New-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Create new navigation property to managementTemplateStepVersions for tenantRelationships
@@ -179,6 +251,9 @@ Create new navigation property to myRoles for tenantRelationships
 ### [New-MgTenantRelationshipManagedTenantTag](New-MgTenantRelationshipManagedTenantTag.md)
 Create a new tenantTag object.
 
+### [New-MgTenantRelationshipManagedTenantTicketingEndpoint](New-MgTenantRelationshipManagedTenantTicketingEndpoint.md)
+Create new navigation property to managedTenantTicketingEndpoints for tenantRelationships
+
 ### [New-MgTenantRelationshipManagedTenantWindowDeviceMalwareState](New-MgTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
 Create new navigation property to windowsDeviceMalwareStates for tenantRelationships
 
@@ -190,6 +265,21 @@ Delete navigation property tenants for tenantRelationships
 
 ### [Remove-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance](Remove-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
 Delete navigation property aggregatedPolicyCompliances for tenantRelationships
+
+### [Remove-MgTenantRelationshipManagedTenantAlert](Remove-MgTenantRelationshipManagedTenantAlert.md)
+Delete navigation property managedTenantAlerts for tenantRelationships
+
+### [Remove-MgTenantRelationshipManagedTenantAlertLog](Remove-MgTenantRelationshipManagedTenantAlertLog.md)
+Delete navigation property managedTenantAlertLogs for tenantRelationships
+
+### [Remove-MgTenantRelationshipManagedTenantAlertRule](Remove-MgTenantRelationshipManagedTenantAlertRule.md)
+Delete navigation property managedTenantAlertRules for tenantRelationships
+
+### [Remove-MgTenantRelationshipManagedTenantAlertRuleDefinition](Remove-MgTenantRelationshipManagedTenantAlertRuleDefinition.md)
+Delete navigation property managedTenantAlertRuleDefinitions for tenantRelationships
+
+### [Remove-MgTenantRelationshipManagedTenantApiNotification](Remove-MgTenantRelationshipManagedTenantApiNotification.md)
+Delete navigation property managedTenantApiNotifications for tenantRelationships
 
 ### [Remove-MgTenantRelationshipManagedTenantAuditEvent](Remove-MgTenantRelationshipManagedTenantAuditEvent.md)
 Delete navigation property auditEvents for tenantRelationships
@@ -218,6 +308,9 @@ Delete navigation property tenantsDetailedInformation for tenantRelationships
 ### [Remove-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Remove-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Delete navigation property deviceCompliancePolicySettingStateSummaries for tenantRelationships
 
+### [Remove-MgTenantRelationshipManagedTenantEmailNotification](Remove-MgTenantRelationshipManagedTenantEmailNotification.md)
+Delete navigation property managedTenantEmailNotifications for tenantRelationships
+
 ### [Remove-MgTenantRelationshipManagedTenantGroup](Remove-MgTenantRelationshipManagedTenantGroup.md)
 Delete navigation property tenantGroups for tenantRelationships
 
@@ -242,8 +335,14 @@ Delete navigation property managementTemplates for tenantRelationships
 ### [Remove-MgTenantRelationshipManagedTenantManagementTemplateCollection](Remove-MgTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Delete navigation property managementTemplateCollections for tenantRelationships
 
+### [Remove-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Remove-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+Delete navigation property managementTemplateCollectionTenantSummaries for tenantRelationships
+
 ### [Remove-MgTenantRelationshipManagedTenantManagementTemplateStep](Remove-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
 Delete navigation property managementTemplateSteps for tenantRelationships
+
+### [Remove-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Remove-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+Delete navigation property managementTemplateStepTenantSummaries for tenantRelationships
 
 ### [Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](Remove-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Delete navigation property managementTemplateStepVersions for tenantRelationships
@@ -257,6 +356,9 @@ Delete navigation property myRoles for tenantRelationships
 ### [Remove-MgTenantRelationshipManagedTenantTag](Remove-MgTenantRelationshipManagedTenantTag.md)
 Delete navigation property tenantTags for tenantRelationships
 
+### [Remove-MgTenantRelationshipManagedTenantTicketingEndpoint](Remove-MgTenantRelationshipManagedTenantTicketingEndpoint.md)
+Delete navigation property managedTenantTicketingEndpoints for tenantRelationships
+
 ### [Remove-MgTenantRelationshipManagedTenantWindowDeviceMalwareState](Remove-MgTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
 Delete navigation property windowsDeviceMalwareStates for tenantRelationships
 
@@ -268,6 +370,21 @@ Update the navigation property tenants in tenantRelationships
 
 ### [Update-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance](Update-MgTenantRelationshipManagedTenantAggregatedPolicyCompliance.md)
 Update the navigation property aggregatedPolicyCompliances in tenantRelationships
+
+### [Update-MgTenantRelationshipManagedTenantAlert](Update-MgTenantRelationshipManagedTenantAlert.md)
+Update the navigation property managedTenantAlerts in tenantRelationships
+
+### [Update-MgTenantRelationshipManagedTenantAlertLog](Update-MgTenantRelationshipManagedTenantAlertLog.md)
+Update the navigation property managedTenantAlertLogs in tenantRelationships
+
+### [Update-MgTenantRelationshipManagedTenantAlertRule](Update-MgTenantRelationshipManagedTenantAlertRule.md)
+Update the navigation property managedTenantAlertRules in tenantRelationships
+
+### [Update-MgTenantRelationshipManagedTenantAlertRuleDefinition](Update-MgTenantRelationshipManagedTenantAlertRuleDefinition.md)
+Update the navigation property managedTenantAlertRuleDefinitions in tenantRelationships
+
+### [Update-MgTenantRelationshipManagedTenantApiNotification](Update-MgTenantRelationshipManagedTenantApiNotification.md)
+Update the navigation property managedTenantApiNotifications in tenantRelationships
 
 ### [Update-MgTenantRelationshipManagedTenantAuditEvent](Update-MgTenantRelationshipManagedTenantAuditEvent.md)
 Update the navigation property auditEvents in tenantRelationships
@@ -296,6 +413,9 @@ Update the navigation property tenantsDetailedInformation in tenantRelationships
 ### [Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Update the navigation property deviceCompliancePolicySettingStateSummaries in tenantRelationships
 
+### [Update-MgTenantRelationshipManagedTenantEmailNotification](Update-MgTenantRelationshipManagedTenantEmailNotification.md)
+Update the navigation property managedTenantEmailNotifications in tenantRelationships
+
 ### [Update-MgTenantRelationshipManagedTenantGroup](Update-MgTenantRelationshipManagedTenantGroup.md)
 Update the navigation property tenantGroups in tenantRelationships
 
@@ -320,8 +440,14 @@ Update the navigation property managementTemplates in tenantRelationships
 ### [Update-MgTenantRelationshipManagedTenantManagementTemplateCollection](Update-MgTenantRelationshipManagedTenantManagementTemplateCollection.md)
 Update the navigation property managementTemplateCollections in tenantRelationships
 
+### [Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary](Update-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary.md)
+Update the navigation property managementTemplateCollectionTenantSummaries in tenantRelationships
+
 ### [Update-MgTenantRelationshipManagedTenantManagementTemplateStep](Update-MgTenantRelationshipManagedTenantManagementTemplateStep.md)
 Update the navigation property managementTemplateSteps in tenantRelationships
+
+### [Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary](Update-MgTenantRelationshipManagedTenantManagementTemplateStepTenantSummary.md)
+Update the navigation property managementTemplateStepTenantSummaries in tenantRelationships
 
 ### [Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion](Update-MgTenantRelationshipManagedTenantManagementTemplateStepVersion.md)
 Update the navigation property managementTemplateStepVersions in tenantRelationships
@@ -334,6 +460,9 @@ Update the navigation property myRoles in tenantRelationships
 
 ### [Update-MgTenantRelationshipManagedTenantTag](Update-MgTenantRelationshipManagedTenantTag.md)
 Update the navigation property tenantTags in tenantRelationships
+
+### [Update-MgTenantRelationshipManagedTenantTicketingEndpoint](Update-MgTenantRelationshipManagedTenantTicketingEndpoint.md)
+Update the navigation property managedTenantTicketingEndpoints in tenantRelationships
 
 ### [Update-MgTenantRelationshipManagedTenantWindowDeviceMalwareState](Update-MgTenantRelationshipManagedTenantWindowDeviceMalwareState.md)
 Update the navigation property windowsDeviceMalwareStates in tenantRelationships

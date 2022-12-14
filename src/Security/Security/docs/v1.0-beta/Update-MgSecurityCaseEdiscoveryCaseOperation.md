@@ -50,7 +50,7 @@ Update the navigation property operations in security
 ## PARAMETERS
 
 ### -Action
-.
+caseAction
 
 ```yaml
 Type: System.String
@@ -320,7 +320,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphSecurityCaseOperation>: caseOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Action <String>]`: 
+  - `[Action <String>]`: caseAction
   - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

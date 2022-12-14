@@ -47,6 +47,19 @@ Update the navigation property tenantTags in tenantRelationships
 
 ## EXAMPLES
 
+### Example 1: Using the Update-MgTenantRelationshipManagedTenantTag Cmdlet
+```powershell
+Import-Module Microsoft.Graph.ManagedTenants
+$params = @{
+	DisplayName = "Onboarding"
+	Description = "Tenants that we are currently onboarding"
+}
+Update-MgTenantRelationshipManagedTenantTag -TenantTagId $tenantTagId -BodyParameter $params
+```
+
+This example shows how to use the Update-MgTenantRelationshipManagedTenantTag Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -166,7 +179,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique identifier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -332,7 +346,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphManagedTenantsTenantTag>: tenantTag
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedByUserId <String>]`: The identifier for the account that created the tenant tag. Required. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the tenant tag was created. Required. Read-only.
   - `[DeletedDateTime <DateTime?>]`: The date and time when the tenant tag was deleted. Required. Read-only.
@@ -354,13 +368,22 @@ INPUTOBJECT <IManagedTenantsIdentity>: Identity Parameter
   - `[DeviceCompliancePolicySettingStateSummaryId <String>]`: key: id of deviceCompliancePolicySettingStateSummary
   - `[ManagedDeviceComplianceId <String>]`: key: id of managedDeviceCompliance
   - `[ManagedDeviceComplianceTrendId <String>]`: key: id of managedDeviceComplianceTrend
+  - `[ManagedTenantAlertId <String>]`: key: id of managedTenantAlert
+  - `[ManagedTenantAlertLogId <String>]`: key: id of managedTenantAlertLog
+  - `[ManagedTenantAlertRuleDefinitionId <String>]`: key: id of managedTenantAlertRuleDefinition
+  - `[ManagedTenantAlertRuleId <String>]`: key: id of managedTenantAlertRule
+  - `[ManagedTenantApiNotificationId <String>]`: key: id of managedTenantApiNotification
+  - `[ManagedTenantEmailNotificationId <String>]`: key: id of managedTenantEmailNotification
+  - `[ManagedTenantTicketingEndpointId <String>]`: key: id of managedTenantTicketingEndpoint
   - `[ManagementActionId <String>]`: key: id of managementAction
   - `[ManagementActionTenantDeploymentStatusId <String>]`: key: id of managementActionTenantDeploymentStatus
   - `[ManagementIntentId <String>]`: key: id of managementIntent
   - `[ManagementTemplateCollectionId <String>]`: key: id of managementTemplateCollection
+  - `[ManagementTemplateCollectionTenantSummaryId <String>]`: key: id of managementTemplateCollectionTenantSummary
   - `[ManagementTemplateId <String>]`: key: id of managementTemplate
   - `[ManagementTemplateStepDeploymentId <String>]`: key: id of managementTemplateStepDeployment
   - `[ManagementTemplateStepId <String>]`: key: id of managementTemplateStep
+  - `[ManagementTemplateStepTenantSummaryId <String>]`: key: id of managementTemplateStepTenantSummary
   - `[ManagementTemplateStepVersionId <String>]`: key: id of managementTemplateStepVersion
   - `[MyRoleTenantId <String>]`: key: tenantId of myRole
   - `[TenantCustomizedInformationId <String>]`: key: id of tenantCustomizedInformation

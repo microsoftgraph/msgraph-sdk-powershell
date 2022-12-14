@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: 9c2caa19-ac9f-4067-b12d-ec2b6b309b88
+Module Guid: ed5ceb7e-fe7d-4f92-9b92-5d46d4e78311
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -25,7 +25,7 @@ Returns the plannerPlans owned by the group.
 Retrieve a list of plannerBucket objects contained by a plannerPlan object.
 
 ### [Get-MgGroupPlannerPlanDetail](Get-MgGroupPlannerPlanDetail.md)
-Retrieve the properties and relationships of **plannerplandetails** object.
+Retrieve the properties and relationships of a **plannerPlanDetails** object.
 
 ### [Get-MgGroupPlannerPlanTask](Get-MgGroupPlannerPlanTask.md)
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
@@ -39,7 +39,7 @@ Nullable.
 Returns a collection of the specified buckets
 
 ### [Get-MgPlannerBucketTask](Get-MgPlannerBucketTask.md)
-Retrieve a list of **plannerTask** objects associated to a plannerBucket object.
+Retrieve a list of plannerTask objects associated to a plannerBucket object.
 
 ### [Get-MgPlannerPlan](Get-MgPlannerPlan.md)
 Read-only.
@@ -50,7 +50,7 @@ Returns a collection of the specified plans
 Retrieve a list of plannerBucket objects contained by a plannerPlan object.
 
 ### [Get-MgPlannerPlanDetail](Get-MgPlannerPlanDetail.md)
-Retrieve the properties and relationships of **plannerplandetails** object.
+Retrieve the properties and relationships of a **plannerPlanDetails** object.
 
 ### [Get-MgPlannerPlanTask](Get-MgPlannerPlanTask.md)
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
@@ -109,7 +109,7 @@ Returns the plannerPlans contained by the plannerRosters the user is a member.
 Retrieve a list of **plannertask** objects assigned to a User.
 
 ### [New-MgPlannerBucket](New-MgPlannerBucket.md)
-Use this API to create a new **plannerBucket**.
+Create a new plannerBucket object.
 
 ### [New-MgPlannerPlan](New-MgPlannerPlan.md)
 Create a new **plannerPlan**.
@@ -184,7 +184,7 @@ Update the properties of **plannerAssignedToTaskBoardTaskFormat** object.
 Update the properties of **plannerBucketTaskBoardTaskFormat** object.
 
 ### [Update-MgPlannerTaskDetail](Update-MgPlannerTaskDetail.md)
-Update the properties of **plannertaskdetails** object.
+Update the properties of **plannerTaskDetails** object.
 
 ### [Update-MgPlannerTaskProgressTaskBoardFormat](Update-MgPlannerTaskProgressTaskBoardFormat.md)
 Update the properties of **plannerProgressTaskBoardTaskFormat** object.

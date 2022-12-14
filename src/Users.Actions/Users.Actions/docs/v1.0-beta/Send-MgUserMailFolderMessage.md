@@ -35,6 +35,18 @@ Alternatively, send a new message in a single operation.
 
 ## EXAMPLES
 
+### Example 1: Send an existing draft message
+```powershell
+Import-Module Microsoft.Graph.Users.Actions
+
+# A UPN can also be used as -UserId.
+Send-MgUserMessage -UserId $userId -MessageId $messageId
+```
+
+This example shows how to use the Send-MgUserMailFolderMessage Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -InputObject
@@ -169,8 +181,6 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage

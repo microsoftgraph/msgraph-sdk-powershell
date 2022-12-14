@@ -158,7 +158,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -476,7 +477,7 @@ BODYPARAMETER <IMicrosoftGraphLanguageProficiency>: languageProficiency
   - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String[]>]`: 
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: Contains the long-form name for the language.
   - `[Proficiency <String>]`: languageProficiencyLevel
   - `[Reading <String>]`: languageProficiencyLevel

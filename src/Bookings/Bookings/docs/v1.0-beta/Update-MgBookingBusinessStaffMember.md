@@ -12,33 +12,33 @@ Update the navigation property staffMembers in bookingBusinesses
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgBookingBusinessStaffMember -BookingBusinessId <String> -BookingStaffMemberId <String>
  [-AdditionalProperties <Hashtable>] [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>]
  [-DisplayName <String>] [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled]
- [-Role <String>] [-TimeZone <String>] [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Role <String>] [-TimeZone <String>] [-UseBusinessHours]
+ [-WorkingHours <IMicrosoftGraphBookingWorkHours1[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgBookingBusinessStaffMember -BookingBusinessId <String> -BookingStaffMemberId <String>
  -BodyParameter <IMicrosoftGraphBookingStaffMember> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity>
  -BodyParameter <IMicrosoftGraphBookingStaffMember> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
  [-AvailabilityIsAffectedByPersonalCalendar] [-ColorIndex <Int32>] [-DisplayName <String>]
  [-EmailAddress <String>] [-Id <String>] [-IsEmailNotificationEnabled] [-Role <String>] [-TimeZone <String>]
- [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [-UseBusinessHours] [-WorkingHours <IMicrosoftGraphBookingWorkHours1[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -127,7 +127,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -142,7 +142,7 @@ True means that if the staff member is a Microsoft 365 user, the Bookings API wo
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -158,7 +158,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingStaffMember
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -173,7 +173,7 @@ key: id of bookingBusiness
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -188,7 +188,7 @@ key: id of bookingStaffMember
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -204,7 +204,7 @@ The color corresponds to the color palette in the Staff details page in the Book
 
 ```yaml
 Type: System.Int32
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -219,7 +219,7 @@ A name for the derived entity, which interfaces with customers.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -234,7 +234,7 @@ The email address of the person.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -250,7 +250,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -266,7 +266,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -281,7 +281,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -311,7 +311,7 @@ bookingStaffRole
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -327,7 +327,7 @@ For a list of possible values, see dateTimeTimeZone.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -343,7 +343,7 @@ False means the availability is determined by the staff member's workingHours pr
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -359,8 +359,8 @@ By default, they are initialized to be the same as the businessHours property of
 To construct, please use Get-Help -Online and see NOTES section for WORKINGHOURS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingWorkHours[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingWorkHours1[]
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -434,9 +434,9 @@ BODYPARAMETER <IMicrosoftGraphBookingStaffMember>: Represents a staff member who
   - `[Role <String>]`: bookingStaffRole
   - `[TimeZone <String>]`: The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
   - `[UseBusinessHours <Boolean?>]`: True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
-  - `[WorkingHours <IMicrosoftGraphBookingWorkHours[]>]`: The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+  - `[WorkingHours <IMicrosoftGraphBookingWorkHours1[]>]`: The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
     - `[Day <String>]`: dayOfWeek
-    - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot[]>]`: A list of start/end times during a day.
+    - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot1[]>]`: A list of start/end times during a day.
       - `[End <String>]`: The time of the day when work stops. For example, 17:00:00.0000000.
       - `[Start <String>]`: The time of the day when work starts. For example, 08:00:00.0000000.
 
@@ -450,10 +450,13 @@ INPUTOBJECT <IBookingsIdentity>: Identity Parameter
   - `[BookingServiceId <String>]`: key: id of bookingService
   - `[BookingStaffMemberBaseId <String>]`: key: id of bookingStaffMemberBase
   - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
+  - `[BusinessScenarioId <String>]`: key: id of businessScenario
+  - `[BusinessScenarioTaskId <String>]`: key: id of businessScenarioTask
+  - `[PlannerPlanConfigurationLocalizationId <String>]`: key: id of plannerPlanConfigurationLocalization
 
-WORKINGHOURS <IMicrosoftGraphBookingWorkHours[]>: The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+WORKINGHOURS <IMicrosoftGraphBookingWorkHours1[]>: The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
   - `[Day <String>]`: dayOfWeek
-  - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot[]>]`: A list of start/end times during a day.
+  - `[TimeSlots <IMicrosoftGraphBookingWorkTimeSlot1[]>]`: A list of start/end times during a day.
     - `[End <String>]`: The time of the day when work stops. For example, 17:00:00.0000000.
     - `[Start <String>]`: The time of the day when work starts. For example, 08:00:00.0000000.
 

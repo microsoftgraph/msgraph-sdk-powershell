@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Functions
-Module Guid: c77326ab-e141-458a-881b-71634bf6ac01
+Module Guid: 94797c2d-5732-4c2f-87f7-4b20a85d53f6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -46,6 +46,12 @@ Invoke function getCloudPcConnectivityHistory
 
 ### [Get-MgUserCloudPcLaunchInfo](Get-MgUserCloudPcLaunchInfo.md)
 Invoke function getCloudPcLaunchInfo
+
+### [Get-MgUserCloudPcShiftWorkCloudPcAccessState](Get-MgUserCloudPcShiftWorkCloudPcAccessState.md)
+Invoke function getShiftWorkCloudPcAccessState
+
+### [Get-MgUserCloudPcSupportedCloudPcRemoteAction](Get-MgUserCloudPcSupportedCloudPcRemoteAction.md)
+Invoke function getSupportedCloudPcRemoteActions
 
 ### [Get-MgUserContactDelta](Get-MgUserContactDelta.md)
 Get a set of contacts that have been added, deleted, or updated in a specified folder.
@@ -193,15 +199,6 @@ This allows you to maintain and synchronize a local store of a user's messages w
 Invoke function getRecentNotebooks
 
 ### [Get-MgUserPlannerAllDelta](Get-MgUserPlannerAllDelta.md)
-Invoke function delta
-
-### [Get-MgUserTaskAlltaskDelta](Get-MgUserTaskAlltaskDelta.md)
-Invoke function delta
-
-### [Get-MgUserTaskListDelta](Get-MgUserTaskListDelta.md)
-Invoke function delta
-
-### [Get-MgUserTaskListTaskDelta](Get-MgUserTaskListTaskDelta.md)
 Invoke function delta
 
 ### [Get-MgUserTodoListDelta](Get-MgUserTodoListDelta.md)

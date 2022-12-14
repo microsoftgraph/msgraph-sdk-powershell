@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointReportExportJob
 
 ## SYNOPSIS
-Get exportJobs from deviceManagement
+The export jobs created for downloading reports.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementVirtualEndpointReportExportJob -InputObject <IDeviceManage
 ```
 
 ## DESCRIPTION
-Get exportJobs from deviceManagement
+The export jobs created for downloading reports.
 
 ## EXAMPLES
 
@@ -253,6 +253,7 @@ INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
   - `[CloudPcProvisioningPolicyAssignmentId <String>]`: key: id of cloudPcProvisioningPolicyAssignment
   - `[CloudPcProvisioningPolicyId <String>]`: key: id of cloudPcProvisioningPolicy
   - `[CloudPcServicePlanId <String>]`: key: id of cloudPcServicePlan
+  - `[CloudPcSharedUseServicePlanId <String>]`: key: id of cloudPcSharedUseServicePlan
   - `[CloudPcSnapshotId <String>]`: key: id of cloudPcSnapshot
   - `[CloudPcSupportedRegionId <String>]`: key: id of cloudPcSupportedRegion
   - `[CloudPcUserSettingAssignmentId <String>]`: key: id of cloudPcUserSettingAssignment

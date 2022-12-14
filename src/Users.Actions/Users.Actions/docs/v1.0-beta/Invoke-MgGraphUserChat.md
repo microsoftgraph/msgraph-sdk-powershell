@@ -12,28 +12,28 @@ Unhide a chat for a user.
 
 ## SYNTAX
 
-### GraphExpanded (Default)
+### GraphExpanded1 (Default)
 ```
 Invoke-MgGraphUserChat -ChatId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-TenantId <String>] [-User <IMicrosoftGraphTeamworkUserIdentity>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Graph
+### Graph1
 ```
 Invoke-MgGraphUserChat -ChatId <String> -UserId <String>
  -BodyParameter <IPathsFqm7NdUsersUserIdChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GraphViaIdentity
+### GraphViaIdentity1
 ```
 Invoke-MgGraphUserChat -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsFqm7NdUsersUserIdChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GraphViaIdentityExpanded
+### GraphViaIdentityExpanded1
 ```
 Invoke-MgGraphUserChat -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-TenantId <String>] [-User <IMicrosoftGraphTeamworkUserIdentity>] [-PassThru] [-Confirm] [-WhatIf]
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: GraphExpanded, GraphViaIdentityExpanded
+Parameter Sets: GraphExpanded1, GraphViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -68,7 +68,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsFqm7NdUsersUserIdChatsChatIdMicrosoftGraphUnhideforuserPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Graph, GraphViaIdentity
+Parameter Sets: Graph1, GraphViaIdentity1
 Aliases:
 
 Required: True
@@ -83,7 +83,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Graph, GraphExpanded
+Parameter Sets: Graph1, GraphExpanded1
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: GraphViaIdentity, GraphViaIdentityExpanded
+Parameter Sets: GraphViaIdentity1, GraphViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: GraphExpanded, GraphViaIdentityExpanded
+Parameter Sets: GraphExpanded1, GraphViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -145,7 +145,7 @@ To construct, please use Get-Help -Online and see NOTES section for USER propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity
-Parameter Sets: GraphExpanded, GraphViaIdentityExpanded
+Parameter Sets: GraphExpanded1, GraphViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -160,7 +160,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Graph, GraphExpanded
+Parameter Sets: Graph1, GraphExpanded1
 Aliases:
 
 Required: True
@@ -230,15 +230,13 @@ BODYPARAMETER <IPathsFqm7NdUsersUserIdChatsChatIdMicrosoftGraphUnhideforuserPost
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
-    - `[UserIdentityType <String>]`: teamworkUserIdentityType
+    - `[UserIdentityType <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[BaseTaskId <String>]`: key: id of baseTask
-  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageId <String>]`: key: id of chatMessage
@@ -284,7 +282,7 @@ USER <IMicrosoftGraphTeamworkUserIdentity>: teamworkUserIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
-  - `[UserIdentityType <String>]`: teamworkUserIdentityType
+  - `[UserIdentityType <String>]`: 
 
 ## RELATED LINKS
 
