@@ -19,12 +19,12 @@ Update-MgEducationUser -EducationUserId <String> [-AccountEnabled] [-AdditionalP
  [-Assignments <IMicrosoftGraphEducationAssignment1[]>] [-BusinessPhones <String[]>]
  [-Classes <IMicrosoftGraphEducationClass1[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-Department <String>] [-DisplayName <String>] [-ExternalSource <String>] [-ExternalSourceDetail <String>]
- [-GivenName <String>] [-Id <String>] [-Mail <String>] [-MailingAddress <IMicrosoftGraphPhysicalAddress1>]
+ [-GivenName <String>] [-Id <String>] [-Mail <String>] [-MailingAddress <IMicrosoftGraphPhysicalAddress>]
  [-MailNickname <String>] [-MiddleName <String>] [-MobilePhone <String>] [-OfficeLocation <String>]
  [-OnPremisesInfo <IMicrosoftGraphEducationOnPremisesInfo>] [-PasswordPolicies <String>]
  [-PasswordProfile <IMicrosoftGraphPasswordProfile>] [-PreferredLanguage <String>] [-PrimaryRole <String>]
  [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>] [-RefreshTokensValidFromDateTime <DateTime>]
- [-RelatedContacts <IMicrosoftGraphRelatedContact1[]>] [-ResidenceAddress <IMicrosoftGraphPhysicalAddress1>]
+ [-RelatedContacts <IMicrosoftGraphRelatedContact[]>] [-ResidenceAddress <IMicrosoftGraphPhysicalAddress>]
  [-Rubrics <IMicrosoftGraphEducationRubric[]>] [-Schools <IMicrosoftGraphEducationSchool1[]>]
  [-ShowInAddressList] [-Student <IMicrosoftGraphEducationStudent>] [-Surname <String>]
  [-TaughtClasses <IMicrosoftGraphEducationClass1[]>] [-Teacher <IMicrosoftGraphEducationTeacher>]
@@ -51,12 +51,12 @@ Update-MgEducationUser -InputObject <IEducationIdentity> [-AccountEnabled] [-Add
  [-Assignments <IMicrosoftGraphEducationAssignment1[]>] [-BusinessPhones <String[]>]
  [-Classes <IMicrosoftGraphEducationClass1[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-Department <String>] [-DisplayName <String>] [-ExternalSource <String>] [-ExternalSourceDetail <String>]
- [-GivenName <String>] [-Id <String>] [-Mail <String>] [-MailingAddress <IMicrosoftGraphPhysicalAddress1>]
+ [-GivenName <String>] [-Id <String>] [-Mail <String>] [-MailingAddress <IMicrosoftGraphPhysicalAddress>]
  [-MailNickname <String>] [-MiddleName <String>] [-MobilePhone <String>] [-OfficeLocation <String>]
  [-OnPremisesInfo <IMicrosoftGraphEducationOnPremisesInfo>] [-PasswordPolicies <String>]
  [-PasswordProfile <IMicrosoftGraphPasswordProfile>] [-PreferredLanguage <String>] [-PrimaryRole <String>]
  [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>] [-RefreshTokensValidFromDateTime <DateTime>]
- [-RelatedContacts <IMicrosoftGraphRelatedContact1[]>] [-ResidenceAddress <IMicrosoftGraphPhysicalAddress1>]
+ [-RelatedContacts <IMicrosoftGraphRelatedContact[]>] [-ResidenceAddress <IMicrosoftGraphPhysicalAddress>]
  [-Rubrics <IMicrosoftGraphEducationRubric[]>] [-Schools <IMicrosoftGraphEducationSchool1[]>]
  [-ShowInAddressList] [-Student <IMicrosoftGraphEducationStudent>] [-Surname <String>]
  [-TaughtClasses <IMicrosoftGraphEducationClass1[]>] [-Teacher <IMicrosoftGraphEducationTeacher>]
@@ -383,7 +383,7 @@ physicalAddress
 To construct, please use Get-Help -Online and see NOTES section for MAILINGADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -590,7 +590,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for RELATEDCONTACTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRelatedContact1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRelatedContact[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -606,7 +606,7 @@ physicalAddress
 To construct, please use Get-Help -Online and see NOTES section for RESIDENCEADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -1085,7 +1085,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
         - `[PrincipalType <String>]`: The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
         - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
         - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
-      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
         - `[DisplayName <String>]`: The display name of the label. Read-only.
         - `[LabelId <String>]`: The unique identifier of the label.
       - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -1154,7 +1154,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[IsReminderOn <Boolean?>]`: 
           - `[Location <IMicrosoftGraphLocation>]`: location
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+            - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[City <String>]`: The city.
               - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -1383,7 +1383,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                   - `[Type <Int32?>]`: For internal use only
                 - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
                 - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-                - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+                - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
                 - `[DeviceMetadata <String>]`: For internal use only. Set to null.
                 - `[DeviceVersion <Int32?>]`: For internal use only.
                 - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -1610,7 +1610,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AssistantName <String>]`: The name of the contact's assistant.
               - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-              - `[BusinessAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+              - `[BusinessAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
               - `[BusinessHomePage <String>]`: The business home page of the contact.
               - `[BusinessPhones <String[]>]`: The contact's business phone numbers.
               - `[Children <String[]>]`: The names of the contact's children.
@@ -1622,7 +1622,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[FileAs <String>]`: The name the contact is filed under.
               - `[Generation <String>]`: The contact's generation.
               - `[GivenName <String>]`: The contact's given name.
-              - `[HomeAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+              - `[HomeAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
               - `[HomePhones <String[]>]`: The contact's home phone numbers.
               - `[ImAddresses <String[]>]`: 
               - `[Initials <String>]`: 
@@ -1633,7 +1633,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
               - `[NickName <String>]`: 
               - `[OfficeLocation <String>]`: 
-              - `[OtherAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+              - `[OtherAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
               - `[ParentFolderId <String>]`: 
               - `[PersonalNotes <String>]`: 
               - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
@@ -1959,7 +1959,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                     - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                       - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                      - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                      - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                       - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                       - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
                       - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -2489,7 +2489,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[Href <String>]`: The url of the link.
+                    - `[Href <String>]`: The URL of the link.
                   - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -3336,7 +3336,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                   - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                    - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                    - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                   - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                   - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -3631,7 +3631,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
       - `[ExternalSource <String>]`: 
       - `[ExternalSourceDetail <String>]`: The name of the external source this resources was generated from.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+      - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[AdministrativeUnit <IMicrosoftGraphAdministrativeUnit1>]`: administrativeUnit
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -3669,7 +3669,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
   - `[GivenName <String>]`: The given name (first name) of the user. Supports $filter.
   - `[Mail <String>]`: The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
   - `[MailNickname <String>]`: The mail alias for the user. This property must be specified when a user is created. Supports $filter.
-  - `[MailingAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+  - `[MailingAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
   - `[MiddleName <String>]`: The middle name of the user.
   - `[MobilePhone <String>]`: The primary cellular telephone number for the user.
   - `[OfficeLocation <String>]`: 
@@ -3682,13 +3682,13 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
   - `[PrimaryRole <String>]`: 
   - `[ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]`: The plans that are provisioned for the user. Read-only. Not nullable.
   - `[RefreshTokensValidFromDateTime <DateTime?>]`: 
-  - `[RelatedContacts <IMicrosoftGraphRelatedContact1[]>]`: Related records associated with the user. Read-only.
+  - `[RelatedContacts <IMicrosoftGraphRelatedContact[]>]`: Related records associated with the user. Read-only.
     - `[AccessConsent <Boolean?>]`: Indicates whether the user has been consented to access student data.
     - `[DisplayName <String>]`: Name of the contact. Required.
     - `[EmailAddress <String>]`: Primary email address of the contact. Required.
     - `[MobilePhone <String>]`: Mobile phone number of the contact.
     - `[Relationship <String>]`: contactRelationship
-  - `[ResidenceAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+  - `[ResidenceAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
   - `[Rubrics <IMicrosoftGraphEducationRubric[]>]`: When set, the grading rubric attached to the assignment.
   - `[Schools <IMicrosoftGraphEducationSchool1[]>]`: Schools to which the user belongs. Nullable.
   - `[ShowInAddressList <Boolean?>]`: True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
@@ -3837,7 +3837,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
       - `[PrincipalType <String>]`: The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
       - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
       - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
-    - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+    - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
       - `[DisplayName <String>]`: The display name of the label. Read-only.
       - `[LabelId <String>]`: The unique identifier of the label.
     - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -3908,7 +3908,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
         - `[IsReminderOn <Boolean?>]`: 
         - `[Location <IMicrosoftGraphLocation>]`: location
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+          - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[City <String>]`: The city.
             - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -4141,7 +4141,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
                 - `[Type <Int32?>]`: For internal use only
               - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
               - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-              - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+              - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
               - `[DeviceMetadata <String>]`: For internal use only. Set to null.
               - `[DeviceVersion <Int32?>]`: For internal use only.
               - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -4368,7 +4368,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AssistantName <String>]`: The name of the contact's assistant.
             - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            - `[BusinessAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+            - `[BusinessAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
             - `[BusinessHomePage <String>]`: The business home page of the contact.
             - `[BusinessPhones <String[]>]`: The contact's business phone numbers.
             - `[Children <String[]>]`: The names of the contact's children.
@@ -4380,7 +4380,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
             - `[FileAs <String>]`: The name the contact is filed under.
             - `[Generation <String>]`: The contact's generation.
             - `[GivenName <String>]`: The contact's given name.
-            - `[HomeAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+            - `[HomeAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
             - `[HomePhones <String[]>]`: The contact's home phone numbers.
             - `[ImAddresses <String[]>]`: 
             - `[Initials <String>]`: 
@@ -4391,7 +4391,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
             - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
             - `[NickName <String>]`: 
             - `[OfficeLocation <String>]`: 
-            - `[OtherAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+            - `[OtherAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
             - `[ParentFolderId <String>]`: 
             - `[PersonalNotes <String>]`: 
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
@@ -4717,7 +4717,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
                   - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                     - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                    - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                    - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                     - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                     - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
                     - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -5247,7 +5247,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Href <String>]`: The url of the link.
+                  - `[Href <String>]`: The URL of the link.
                 - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -6094,7 +6094,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -6398,7 +6398,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
     - `[GivenName <String>]`: The given name (first name) of the user. Supports $filter.
     - `[Mail <String>]`: The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
     - `[MailNickname <String>]`: The mail alias for the user. This property must be specified when a user is created. Supports $filter.
-    - `[MailingAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+    - `[MailingAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
     - `[MiddleName <String>]`: The middle name of the user.
     - `[MobilePhone <String>]`: The primary cellular telephone number for the user.
     - `[OfficeLocation <String>]`: 
@@ -6411,13 +6411,13 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
     - `[PrimaryRole <String>]`: 
     - `[ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]`: The plans that are provisioned for the user. Read-only. Not nullable.
     - `[RefreshTokensValidFromDateTime <DateTime?>]`: 
-    - `[RelatedContacts <IMicrosoftGraphRelatedContact1[]>]`: Related records associated with the user. Read-only.
+    - `[RelatedContacts <IMicrosoftGraphRelatedContact[]>]`: Related records associated with the user. Read-only.
       - `[AccessConsent <Boolean?>]`: Indicates whether the user has been consented to access student data.
       - `[DisplayName <String>]`: Name of the contact. Required.
       - `[EmailAddress <String>]`: Primary email address of the contact. Required.
       - `[MobilePhone <String>]`: Mobile phone number of the contact.
       - `[Relationship <String>]`: contactRelationship
-    - `[ResidenceAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+    - `[ResidenceAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
     - `[Rubrics <IMicrosoftGraphEducationRubric[]>]`: When set, the grading rubric attached to the assignment.
     - `[Schools <IMicrosoftGraphEducationSchool1[]>]`: Schools to which the user belongs. Nullable.
       - `[Description <String>]`: Organization description.
@@ -6425,7 +6425,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
       - `[ExternalSource <String>]`: 
       - `[ExternalSourceDetail <String>]`: The name of the external source this resources was generated from.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+      - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[AdministrativeUnit <IMicrosoftGraphAdministrativeUnit1>]`: administrativeUnit
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -6499,7 +6499,7 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
   - `[EducationUserId <String>]`: key: id of educationUser
 
-MAILINGADDRESS <IMicrosoftGraphPhysicalAddress1>: physicalAddress
+MAILINGADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -6522,14 +6522,14 @@ PROVISIONEDPLANS <IMicrosoftGraphProvisionedPlan[]>: The plans that are provisio
   - `[ProvisioningStatus <String>]`: For example, 'Success'.
   - `[Service <String>]`: The name of the service; for example, 'AccessControlS2S'
 
-RELATEDCONTACTS <IMicrosoftGraphRelatedContact1[]>: Related records associated with the user. Read-only.
+RELATEDCONTACTS <IMicrosoftGraphRelatedContact[]>: Related records associated with the user. Read-only.
   - `[AccessConsent <Boolean?>]`: Indicates whether the user has been consented to access student data.
   - `[DisplayName <String>]`: Name of the contact. Required.
   - `[EmailAddress <String>]`: Primary email address of the contact. Required.
   - `[MobilePhone <String>]`: Mobile phone number of the contact.
   - `[Relationship <String>]`: contactRelationship
 
-RESIDENCEADDRESS <IMicrosoftGraphPhysicalAddress1>: physicalAddress
+RESIDENCEADDRESS <IMicrosoftGraphPhysicalAddress>: physicalAddress
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -6574,7 +6574,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
   - `[ExternalSource <String>]`: 
   - `[ExternalSourceDetail <String>]`: The name of the external source this resources was generated from.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+  - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -6722,7 +6722,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
         - `[PrincipalType <String>]`: The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
         - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
         - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
-      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
         - `[DisplayName <String>]`: The display name of the label. Read-only.
         - `[LabelId <String>]`: The unique identifier of the label.
       - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -6792,7 +6792,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[IsReminderOn <Boolean?>]`: 
           - `[Location <IMicrosoftGraphLocation>]`: location
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+            - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
             - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Accuracy <Double?>]`: The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
@@ -7019,7 +7019,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                   - `[Type <Int32?>]`: For internal use only
                 - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
                 - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-                - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+                - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
                 - `[DeviceMetadata <String>]`: For internal use only. Set to null.
                 - `[DeviceVersion <Int32?>]`: For internal use only.
                 - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -7246,7 +7246,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AssistantName <String>]`: The name of the contact's assistant.
               - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-              - `[BusinessAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+              - `[BusinessAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
               - `[BusinessHomePage <String>]`: The business home page of the contact.
               - `[BusinessPhones <String[]>]`: The contact's business phone numbers.
               - `[Children <String[]>]`: The names of the contact's children.
@@ -7258,7 +7258,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[FileAs <String>]`: The name the contact is filed under.
               - `[Generation <String>]`: The contact's generation.
               - `[GivenName <String>]`: The contact's given name.
-              - `[HomeAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+              - `[HomeAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
               - `[HomePhones <String[]>]`: The contact's home phone numbers.
               - `[ImAddresses <String[]>]`: 
               - `[Initials <String>]`: 
@@ -7269,7 +7269,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
               - `[NickName <String>]`: 
               - `[OfficeLocation <String>]`: 
-              - `[OtherAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+              - `[OtherAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
               - `[ParentFolderId <String>]`: 
               - `[PersonalNotes <String>]`: 
               - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
@@ -7595,7 +7595,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                     - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                       - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                      - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                      - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                       - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                       - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
                       - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -8125,7 +8125,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[Href <String>]`: The url of the link.
+                    - `[Href <String>]`: The URL of the link.
                   - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -8972,7 +8972,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                   - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                    - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                    - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                   - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                   - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -9272,7 +9272,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
       - `[GivenName <String>]`: The given name (first name) of the user. Supports $filter.
       - `[Mail <String>]`: The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
       - `[MailNickname <String>]`: The mail alias for the user. This property must be specified when a user is created. Supports $filter.
-      - `[MailingAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+      - `[MailingAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[MiddleName <String>]`: The middle name of the user.
       - `[MobilePhone <String>]`: The primary cellular telephone number for the user.
       - `[OfficeLocation <String>]`: 
@@ -9285,13 +9285,13 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
       - `[PrimaryRole <String>]`: 
       - `[ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]`: The plans that are provisioned for the user. Read-only. Not nullable.
       - `[RefreshTokensValidFromDateTime <DateTime?>]`: 
-      - `[RelatedContacts <IMicrosoftGraphRelatedContact1[]>]`: Related records associated with the user. Read-only.
+      - `[RelatedContacts <IMicrosoftGraphRelatedContact[]>]`: Related records associated with the user. Read-only.
         - `[AccessConsent <Boolean?>]`: Indicates whether the user has been consented to access student data.
         - `[DisplayName <String>]`: Name of the contact. Required.
         - `[EmailAddress <String>]`: Primary email address of the contact. Required.
         - `[MobilePhone <String>]`: Mobile phone number of the contact.
         - `[Relationship <String>]`: contactRelationship
-      - `[ResidenceAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+      - `[ResidenceAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[Rubrics <IMicrosoftGraphEducationRubric[]>]`: When set, the grading rubric attached to the assignment.
       - `[Schools <IMicrosoftGraphEducationSchool1[]>]`: Schools to which the user belongs. Nullable.
       - `[ShowInAddressList <Boolean?>]`: True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
@@ -9468,7 +9468,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
       - `[PrincipalType <String>]`: The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
       - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
       - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
-    - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+    - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
       - `[DisplayName <String>]`: The display name of the label. Read-only.
       - `[LabelId <String>]`: The unique identifier of the label.
     - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -9539,7 +9539,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
         - `[IsReminderOn <Boolean?>]`: 
         - `[Location <IMicrosoftGraphLocation>]`: location
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+          - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[City <String>]`: The city.
             - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -9772,7 +9772,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
                 - `[Type <Int32?>]`: For internal use only
               - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
               - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-              - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+              - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
               - `[DeviceMetadata <String>]`: For internal use only. Set to null.
               - `[DeviceVersion <Int32?>]`: For internal use only.
               - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -9999,7 +9999,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AssistantName <String>]`: The name of the contact's assistant.
             - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            - `[BusinessAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+            - `[BusinessAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
             - `[BusinessHomePage <String>]`: The business home page of the contact.
             - `[BusinessPhones <String[]>]`: The contact's business phone numbers.
             - `[Children <String[]>]`: The names of the contact's children.
@@ -10011,7 +10011,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
             - `[FileAs <String>]`: The name the contact is filed under.
             - `[Generation <String>]`: The contact's generation.
             - `[GivenName <String>]`: The contact's given name.
-            - `[HomeAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+            - `[HomeAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
             - `[HomePhones <String[]>]`: The contact's home phone numbers.
             - `[ImAddresses <String[]>]`: 
             - `[Initials <String>]`: 
@@ -10022,7 +10022,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
             - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
             - `[NickName <String>]`: 
             - `[OfficeLocation <String>]`: 
-            - `[OtherAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+            - `[OtherAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
             - `[ParentFolderId <String>]`: 
             - `[PersonalNotes <String>]`: 
             - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
@@ -10348,7 +10348,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
                   - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                     - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                    - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                    - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                     - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                     - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
                     - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -10878,7 +10878,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Href <String>]`: The url of the link.
+                  - `[Href <String>]`: The URL of the link.
                 - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -11725,7 +11725,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -12029,7 +12029,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
     - `[GivenName <String>]`: The given name (first name) of the user. Supports $filter.
     - `[Mail <String>]`: The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
     - `[MailNickname <String>]`: The mail alias for the user. This property must be specified when a user is created. Supports $filter.
-    - `[MailingAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+    - `[MailingAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
     - `[MiddleName <String>]`: The middle name of the user.
     - `[MobilePhone <String>]`: The primary cellular telephone number for the user.
     - `[OfficeLocation <String>]`: 
@@ -12042,13 +12042,13 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
     - `[PrimaryRole <String>]`: 
     - `[ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]`: The plans that are provisioned for the user. Read-only. Not nullable.
     - `[RefreshTokensValidFromDateTime <DateTime?>]`: 
-    - `[RelatedContacts <IMicrosoftGraphRelatedContact1[]>]`: Related records associated with the user. Read-only.
+    - `[RelatedContacts <IMicrosoftGraphRelatedContact[]>]`: Related records associated with the user. Read-only.
       - `[AccessConsent <Boolean?>]`: Indicates whether the user has been consented to access student data.
       - `[DisplayName <String>]`: Name of the contact. Required.
       - `[EmailAddress <String>]`: Primary email address of the contact. Required.
       - `[MobilePhone <String>]`: Mobile phone number of the contact.
       - `[Relationship <String>]`: contactRelationship
-    - `[ResidenceAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+    - `[ResidenceAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
     - `[Rubrics <IMicrosoftGraphEducationRubric[]>]`: When set, the grading rubric attached to the assignment.
     - `[Schools <IMicrosoftGraphEducationSchool1[]>]`: Schools to which the user belongs. Nullable.
       - `[Description <String>]`: Organization description.
@@ -12056,7 +12056,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
       - `[ExternalSource <String>]`: 
       - `[ExternalSourceDetail <String>]`: The name of the external source this resources was generated from.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+      - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[AdministrativeUnit <IMicrosoftGraphAdministrativeUnit1>]`: administrativeUnit
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -12220,7 +12220,7 @@ USER <IMicrosoftGraphUser1>: user
           - `[Type <Int32?>]`: For internal use only
         - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
         - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+        - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
         - `[DeviceMetadata <String>]`: For internal use only. Set to null.
         - `[DeviceVersion <Int32?>]`: For internal use only.
         - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -12348,7 +12348,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[IsReminderOn <Boolean?>]`: 
       - `[Location <IMicrosoftGraphLocation>]`: location
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+        - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[City <String>]`: The city.
           - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
@@ -12610,7 +12610,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AssistantName <String>]`: The name of the contact's assistant.
       - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-      - `[BusinessAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+      - `[BusinessAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[BusinessHomePage <String>]`: The business home page of the contact.
       - `[BusinessPhones <String[]>]`: The contact's business phone numbers.
       - `[Children <String[]>]`: The names of the contact's children.
@@ -12622,7 +12622,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[FileAs <String>]`: The name the contact is filed under.
       - `[Generation <String>]`: The contact's generation.
       - `[GivenName <String>]`: The contact's given name.
-      - `[HomeAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+      - `[HomeAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[HomePhones <String[]>]`: The contact's home phone numbers.
       - `[ImAddresses <String[]>]`: 
       - `[Initials <String>]`: 
@@ -12633,7 +12633,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       - `[NickName <String>]`: 
       - `[OfficeLocation <String>]`: 
-      - `[OtherAddress <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
+      - `[OtherAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[ParentFolderId <String>]`: 
       - `[PersonalNotes <String>]`: 
       - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
@@ -12958,7 +12958,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
         - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
         - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
         - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -13522,7 +13522,7 @@ USER <IMicrosoftGraphUser1>: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Href <String>]`: The url of the link.
+            - `[Href <String>]`: The URL of the link.
           - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
         - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -13723,7 +13723,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
       - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
         - `[DisplayName <String>]`: The display name of the label. Read-only.
         - `[LabelId <String>]`: The unique identifier of the label.
       - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -13850,7 +13850,7 @@ USER <IMicrosoftGraphUser1>: user
               - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
               - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
               - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z

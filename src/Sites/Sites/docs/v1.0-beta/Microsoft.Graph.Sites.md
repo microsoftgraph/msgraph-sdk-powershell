@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: 9687ec4e-62c0-459e-bbbe-51b49ea10c05
+Module Guid: 35fa73e9-665f-4670-8046-4a68196ffc13
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -152,6 +152,27 @@ The collection of long running operations for the site.
 
 ### [Get-MgGroupSitePage](Get-MgGroupSitePage.md)
 The collection of pages in the SitePages list in this site.
+
+### [Get-MgGroupSitePageCanvaLayout](Get-MgGroupSitePageCanvaLayout.md)
+Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section
+
+### [Get-MgGroupSitePageCanvaLayoutHorizontalSection](Get-MgGroupSitePageCanvaLayoutHorizontalSection.md)
+Collection of horizontal sections on the SharePoint page.
+
+### [Get-MgGroupSitePageCanvaLayoutHorizontalSectionColumn](Get-MgGroupSitePageCanvaLayoutHorizontalSectionColumn.md)
+The set of vertical columns in this section.
+
+### [Get-MgGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart](Get-MgGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
+The collection of WebParts in this column.
+
+### [Get-MgGroupSitePageCanvaLayoutVerticalSection](Get-MgGroupSitePageCanvaLayoutVerticalSection.md)
+Read the properties and relationships of a verticalSection object.
+
+### [Get-MgGroupSitePageCanvaLayoutVerticalSectionWebpart](Get-MgGroupSitePageCanvaLayoutVerticalSectionWebpart.md)
+The set of web parts in this section.
+
+### [Get-MgGroupSitePageWebPart](Get-MgGroupSitePageWebPart.md)
+Collection of webparts on the SharePoint page
 
 ### [Get-MgGroupSitePermission](Get-MgGroupSitePermission.md)
 The permissions associated with the site.
@@ -326,6 +347,39 @@ The location can be user notebooks on Microsoft 365, group notebooks, or SharePo
 ### [Get-MgSitePage](Get-MgSitePage.md)
 The collection of pages in the SitePages list in this site.
 
+### [Get-MgSitePageCanvaLayout](Get-MgSitePageCanvaLayout.md)
+Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section
+
+### [Get-MgSitePageCanvaLayoutHorizontalSection](Get-MgSitePageCanvaLayoutHorizontalSection.md)
+Collection of horizontal sections on the SharePoint page.
+
+### [Get-MgSitePageCanvaLayoutHorizontalSectionColumn](Get-MgSitePageCanvaLayoutHorizontalSectionColumn.md)
+The set of vertical columns in this section.
+
+### [Get-MgSitePageCanvaLayoutHorizontalSectionColumnWebpart](Get-MgSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
+The collection of WebParts in this column.
+
+### [Get-MgSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart](Get-MgSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart.md)
+Invoke action getPositionOfWebPart
+
+### [Get-MgSitePageCanvaLayoutVerticalSection](Get-MgSitePageCanvaLayoutVerticalSection.md)
+Read the properties and relationships of a verticalSection object.
+
+### [Get-MgSitePageCanvaLayoutVerticalSectionWebpart](Get-MgSitePageCanvaLayoutVerticalSectionWebpart.md)
+The set of web parts in this section.
+
+### [Get-MgSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart](Get-MgSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart.md)
+Invoke action getPositionOfWebPart
+
+### [Get-MgSitePageWebPart](Get-MgSitePageWebPart.md)
+Collection of webparts on the SharePoint page
+
+### [Get-MgSitePageWebPartByPosition](Get-MgSitePageWebPartByPosition.md)
+Invoke action getWebPartsByPosition
+
+### [Get-MgSitePageWebPartPositionOfWebPart](Get-MgSitePageWebPartPositionOfWebPart.md)
+Invoke action getPositionOfWebPart
+
 ### [Get-MgSitePermission](Get-MgSitePermission.md)
 The permissions associated with the site.
 Nullable.
@@ -444,6 +498,21 @@ Create new navigation property to operations for groups
 ### [New-MgGroupSitePage](New-MgGroupSitePage.md)
 Create a new [sitePage][] in the site pages [list][] in a [site][].
 
+### [New-MgGroupSitePageCanvaLayoutHorizontalSection](New-MgGroupSitePageCanvaLayoutHorizontalSection.md)
+Create new navigation property to horizontalSections for groups
+
+### [New-MgGroupSitePageCanvaLayoutHorizontalSectionColumn](New-MgGroupSitePageCanvaLayoutHorizontalSectionColumn.md)
+Create new navigation property to columns for groups
+
+### [New-MgGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart](New-MgGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
+Create new navigation property to webparts for groups
+
+### [New-MgGroupSitePageCanvaLayoutVerticalSectionWebpart](New-MgGroupSitePageCanvaLayoutVerticalSectionWebpart.md)
+Create new navigation property to webparts for groups
+
+### [New-MgGroupSitePageWebPart](New-MgGroupSitePageWebPart.md)
+Create new navigation property to webParts for groups
+
 ### [New-MgGroupSitePermission](New-MgGroupSitePermission.md)
 Create a new permission object on a site.
 
@@ -535,6 +604,21 @@ Create new navigation property to subscriptions for sites
 
 ### [New-MgSitePage](New-MgSitePage.md)
 Create a new [sitePage][] in the site pages [list][] in a [site][].
+
+### [New-MgSitePageCanvaLayoutHorizontalSection](New-MgSitePageCanvaLayoutHorizontalSection.md)
+Create new navigation property to horizontalSections for sites
+
+### [New-MgSitePageCanvaLayoutHorizontalSectionColumn](New-MgSitePageCanvaLayoutHorizontalSectionColumn.md)
+Create new navigation property to columns for sites
+
+### [New-MgSitePageCanvaLayoutHorizontalSectionColumnWebpart](New-MgSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
+Create new navigation property to webparts for sites
+
+### [New-MgSitePageCanvaLayoutVerticalSectionWebpart](New-MgSitePageCanvaLayoutVerticalSectionWebpart.md)
+Create new navigation property to webparts for sites
+
+### [New-MgSitePageWebPart](New-MgSitePageWebPart.md)
+Create new navigation property to webParts for sites
 
 ### [New-MgSitePermission](New-MgSitePermission.md)
 Create a new permission object on a site.
@@ -641,6 +725,27 @@ Delete navigation property operations for groups
 ### [Remove-MgGroupSitePage](Remove-MgGroupSitePage.md)
 Delete navigation property pages for groups
 
+### [Remove-MgGroupSitePageCanvaLayout](Remove-MgGroupSitePageCanvaLayout.md)
+Delete navigation property canvasLayout for groups
+
+### [Remove-MgGroupSitePageCanvaLayoutHorizontalSection](Remove-MgGroupSitePageCanvaLayoutHorizontalSection.md)
+Delete navigation property horizontalSections for groups
+
+### [Remove-MgGroupSitePageCanvaLayoutHorizontalSectionColumn](Remove-MgGroupSitePageCanvaLayoutHorizontalSectionColumn.md)
+Delete navigation property columns for groups
+
+### [Remove-MgGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart](Remove-MgGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
+Delete navigation property webparts for groups
+
+### [Remove-MgGroupSitePageCanvaLayoutVerticalSection](Remove-MgGroupSitePageCanvaLayoutVerticalSection.md)
+Delete navigation property verticalSection for groups
+
+### [Remove-MgGroupSitePageCanvaLayoutVerticalSectionWebpart](Remove-MgGroupSitePageCanvaLayoutVerticalSectionWebpart.md)
+Delete navigation property webparts for groups
+
+### [Remove-MgGroupSitePageWebPart](Remove-MgGroupSitePageWebPart.md)
+Delete navigation property webParts for groups
+
 ### [Remove-MgGroupSitePermission](Remove-MgGroupSitePermission.md)
 Delete navigation property permissions for groups
 
@@ -736,6 +841,27 @@ Delete navigation property subscriptions for sites
 
 ### [Remove-MgSitePage](Remove-MgSitePage.md)
 Delete navigation property pages for sites
+
+### [Remove-MgSitePageCanvaLayout](Remove-MgSitePageCanvaLayout.md)
+Delete navigation property canvasLayout for sites
+
+### [Remove-MgSitePageCanvaLayoutHorizontalSection](Remove-MgSitePageCanvaLayoutHorizontalSection.md)
+Delete navigation property horizontalSections for sites
+
+### [Remove-MgSitePageCanvaLayoutHorizontalSectionColumn](Remove-MgSitePageCanvaLayoutHorizontalSectionColumn.md)
+Delete navigation property columns for sites
+
+### [Remove-MgSitePageCanvaLayoutHorizontalSectionColumnWebpart](Remove-MgSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
+Delete navigation property webparts for sites
+
+### [Remove-MgSitePageCanvaLayoutVerticalSection](Remove-MgSitePageCanvaLayoutVerticalSection.md)
+Delete navigation property verticalSection for sites
+
+### [Remove-MgSitePageCanvaLayoutVerticalSectionWebpart](Remove-MgSitePageCanvaLayoutVerticalSectionWebpart.md)
+Delete navigation property webparts for sites
+
+### [Remove-MgSitePageWebPart](Remove-MgSitePageWebPart.md)
+Delete navigation property webParts for sites
 
 ### [Remove-MgSitePermission](Remove-MgSitePermission.md)
 Delete navigation property permissions for sites
@@ -866,6 +992,27 @@ Update the navigation property operations in groups
 ### [Update-MgGroupSitePage](Update-MgGroupSitePage.md)
 Update the navigation property pages in groups
 
+### [Update-MgGroupSitePageCanvaLayout](Update-MgGroupSitePageCanvaLayout.md)
+Update the navigation property canvasLayout in groups
+
+### [Update-MgGroupSitePageCanvaLayoutHorizontalSection](Update-MgGroupSitePageCanvaLayoutHorizontalSection.md)
+Update the navigation property horizontalSections in groups
+
+### [Update-MgGroupSitePageCanvaLayoutHorizontalSectionColumn](Update-MgGroupSitePageCanvaLayoutHorizontalSectionColumn.md)
+Update the navigation property columns in groups
+
+### [Update-MgGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart](Update-MgGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
+Update the navigation property webparts in groups
+
+### [Update-MgGroupSitePageCanvaLayoutVerticalSection](Update-MgGroupSitePageCanvaLayoutVerticalSection.md)
+Update the navigation property verticalSection in groups
+
+### [Update-MgGroupSitePageCanvaLayoutVerticalSectionWebpart](Update-MgGroupSitePageCanvaLayoutVerticalSectionWebpart.md)
+Update the navigation property webparts in groups
+
+### [Update-MgGroupSitePageWebPart](Update-MgGroupSitePageWebPart.md)
+Update the navigation property webParts in groups
+
 ### [Update-MgGroupSitePermission](Update-MgGroupSitePermission.md)
 Update the navigation property permissions in groups
 
@@ -967,6 +1114,27 @@ Invoke action onenotePatchContent
 
 ### [Update-MgSitePage](Update-MgSitePage.md)
 Update the navigation property pages in sites
+
+### [Update-MgSitePageCanvaLayout](Update-MgSitePageCanvaLayout.md)
+Update the navigation property canvasLayout in sites
+
+### [Update-MgSitePageCanvaLayoutHorizontalSection](Update-MgSitePageCanvaLayoutHorizontalSection.md)
+Update the navigation property horizontalSections in sites
+
+### [Update-MgSitePageCanvaLayoutHorizontalSectionColumn](Update-MgSitePageCanvaLayoutHorizontalSectionColumn.md)
+Update the navigation property columns in sites
+
+### [Update-MgSitePageCanvaLayoutHorizontalSectionColumnWebpart](Update-MgSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
+Update the navigation property webparts in sites
+
+### [Update-MgSitePageCanvaLayoutVerticalSection](Update-MgSitePageCanvaLayoutVerticalSection.md)
+Update the navigation property verticalSection in sites
+
+### [Update-MgSitePageCanvaLayoutVerticalSectionWebpart](Update-MgSitePageCanvaLayoutVerticalSectionWebpart.md)
+Update the navigation property webparts in sites
+
+### [Update-MgSitePageWebPart](Update-MgSitePageWebPart.md)
+Update the navigation property webParts in sites
 
 ### [Update-MgSitePermission](Update-MgSitePermission.md)
 Update the navigation property permissions in sites

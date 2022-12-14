@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgExtractSecurityInformationProtectionSensitivityLabelContentLabel
 
 ## SYNOPSIS
-Invoke action extractContentLabel
+Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label.
+The contentInfo input is resolved to informationProtectionContentLabel.
 
 ## SYNTAX
 
@@ -26,7 +27,8 @@ Invoke-MgExtractSecurityInformationProtectionSensitivityLabelContentLabel
 ```
 
 ## DESCRIPTION
-Invoke action extractContentLabel
+Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label.
+The contentInfo input is resolved to informationProtectionContentLabel.
 
 ## EXAMPLES
 

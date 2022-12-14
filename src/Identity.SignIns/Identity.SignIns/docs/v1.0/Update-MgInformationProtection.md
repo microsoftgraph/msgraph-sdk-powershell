@@ -15,13 +15,13 @@ Update informationProtection
 ### UpdateExpanded1 (Default)
 ```
 Update-MgInformationProtection [-AdditionalProperties <Hashtable>] [-Bitlocker <IMicrosoftGraphBitlocker>]
- [-Id <String>] [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ThreatAssessmentRequests <IMicrosoftGraphThreatAssessmentRequest[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgInformationProtection -BodyParameter <IMicrosoftGraphInformationProtection1> [-PassThru] [-Confirm]
+Update-MgInformationProtection -BodyParameter <IMicrosoftGraphInformationProtection> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ informationProtection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
 Parameter Sets: Update1
 Aliases:
 
@@ -76,22 +76,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Id
-The unique idenfier for an entity.
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -162,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
 
 ## OUTPUTS
 
@@ -187,9 +171,8 @@ BITLOCKER <IMicrosoftGraphBitlocker>: bitlocker
     - `[Key <String>]`: The BitLocker recovery key. Returned only on $select. Not nullable.
     - `[VolumeType <String>]`: volumeType
 
-BODYPARAMETER <IMicrosoftGraphInformationProtection1>: informationProtection
+BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Bitlocker <IMicrosoftGraphBitlocker>]`: bitlocker
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.

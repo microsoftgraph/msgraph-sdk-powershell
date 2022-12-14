@@ -12,7 +12,7 @@ The collection of columns that are required by this content type
 
 ## SYNTAX
 
-### List1 (Default)
+### List (Default)
 ```
 Get-MgGroupSiteListContentTypeColumnLink -ContentTypeId <String> -GroupId <String> -ListId <String>
  -SiteId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
@@ -44,7 +44,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -74,7 +74,7 @@ key: id of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get1, List
 Aliases:
 
 Required: True
@@ -90,7 +90,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -120,7 +120,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -135,7 +135,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get1, List
 Aliases:
 
 Required: True
@@ -166,7 +166,7 @@ key: id of list
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get1, List
 Aliases:
 
 Required: True
@@ -181,7 +181,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -211,7 +211,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -226,7 +226,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get1, List
 Aliases:
 
 Required: True
@@ -241,7 +241,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -256,7 +256,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -271,7 +271,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -312,6 +312,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[GroupId1 <String>]`: key: id of group
+  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
@@ -337,6 +339,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[TermId1 <String>]`: key: id of term
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
+  - `[WebPartId <String>]`: key: id of webPart
 
 ## RELATED LINKS
 

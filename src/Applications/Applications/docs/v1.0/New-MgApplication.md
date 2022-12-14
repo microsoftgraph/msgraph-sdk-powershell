@@ -696,7 +696,9 @@ The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMi
 See more in the table.
 The value of this object also limits the number of permissions an app can request.
 For more information, see Limits on requested permissions per app.
-Supports $filter (eq, ne, not).
+The value for this property has implications on other app object properties.
+As a result, if you change this property, you may need to change other properties first.
+For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
 
 ```yaml
 Type: System.String
@@ -1041,7 +1043,7 @@ BODYPARAMETER <IMicrosoftGraphApplication1>: application
     - `[ResourceAppId <String>]`: The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
   - `[SamlMetadataUrl <String>]`: The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
   - `[ServiceManagementReference <String>]`: References application or service contact information from a Service or Asset Management database. Nullable.
-  - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. Supports $filter (eq, ne, not).
+  - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
   - `[Spa <IMicrosoftGraphSpaApplication>]`: spaApplication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RedirectUris <String[]>]`: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.

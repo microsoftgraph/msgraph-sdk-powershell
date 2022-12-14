@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgOrganizationBrandingLocalizationHeaderLogo
 
 ## SYNOPSIS
-Get headerLogo for the navigation property localizations from organization
+A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgOrganizationBrandingLocalizationHeaderLogo -InputObject <IIdentityDirector
 ```
 
 ## DESCRIPTION
-Get headerLogo for the navigation property localizations from organization
+A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ## EXAMPLES
 

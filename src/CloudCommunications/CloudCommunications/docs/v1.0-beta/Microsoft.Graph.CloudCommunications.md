@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 07e39c0b-febe-4565-b232-20e6560727b9
+Module Guid: 8e3c6532-f1a8-4994-bf6a-8985549a357e
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -366,6 +366,9 @@ Read-only.
 
 ### [Set-MgCommunicationPresence](Set-MgCommunicationPresence.md)
 Set the availability and activity status in a presence session of an application for a user.
+
+### [Set-MgCommunicationPresenceStatusMessage](Set-MgCommunicationPresenceStatusMessage.md)
+Invoke action setStatusMessage
 
 ### [Set-MgCommunicationPresenceUserPreferredPresence](Set-MgCommunicationPresenceUserPreferredPresence.md)
 Set the preferred availability and activity status for a user.

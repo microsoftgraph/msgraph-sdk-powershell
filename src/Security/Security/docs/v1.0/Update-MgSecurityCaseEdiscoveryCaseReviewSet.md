@@ -23,14 +23,14 @@ Update-MgSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId <String> -Ediscov
 ### Update1
 ```
 Update-MgSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId <String> -EdiscoveryReviewSetId <String>
- -BodyParameter <IMicrosoftGraphSecurityEdiscoveryReviewSet1> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphSecurityEdiscoveryReviewSet> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgSecurityCaseEdiscoveryCaseReviewSet -InputObject <ISecurityIdentity>
- -BodyParameter <IMicrosoftGraphSecurityEdiscoveryReviewSet1> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphSecurityEdiscoveryReviewSet> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ ediscoveryReviewSet
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryReviewSet1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryReviewSet
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -255,7 +255,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryReviewSet1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryReviewSet
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
 
@@ -272,7 +272,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryReviewSet1>: ediscoveryReviewSet
+BODYPARAMETER <IMicrosoftGraphSecurityEdiscoveryReviewSet>: ediscoveryReviewSet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -25,7 +25,7 @@ Update-MgInformationProtection [-AdditionalProperties <Hashtable>] [-Bitlocker <
 
 ### Update
 ```
-Update-MgInformationProtection -BodyParameter <IMicrosoftGraphInformationProtection> [-PassThru] [-Confirm]
+Update-MgInformationProtection -BodyParameter <IMicrosoftGraphInformationProtection1> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -72,7 +72,7 @@ informationProtection
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection1
 Parameter Sets: Update
 Aliases:
 
@@ -230,7 +230,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInformationProtection1
 
 ## OUTPUTS
 
@@ -255,7 +255,7 @@ BITLOCKER <IMicrosoftGraphBitlocker>: bitlocker
     - `[Key <String>]`: The BitLocker recovery key. Returned only on $select. Not nullable.
     - `[VolumeType <String>]`: volumeType
 
-BODYPARAMETER <IMicrosoftGraphInformationProtection>: informationProtection
+BODYPARAMETER <IMicrosoftGraphInformationProtection1>: informationProtection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Bitlocker <IMicrosoftGraphBitlocker>]`: bitlocker

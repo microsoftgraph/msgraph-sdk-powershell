@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 4bf63061-7c8d-48a3-9409-6aa1db92615e
+Module Guid: 858d0128-7086-4d5d-b326-c605e352a9a4
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -348,24 +348,24 @@ Alternatively, create a draft to reply-all to a message and send it later.
 
 ### [Invoke-MgReplyUserMailFolderChildFolderMessage](Invoke-MgReplyUserMailFolderChildFolderMessage.md)
 Reply to the sender of a message using either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
+When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter.
+Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 This method saves the message in the **Sent Items** folder.
 Alternatively, create a draft to reply to an existing message and send it later.
 
 ### [Invoke-MgReplyUserMailFolderMessage](Invoke-MgReplyUserMailFolderMessage.md)
 Reply to the sender of a message using either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
+When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter.
+Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 This method saves the message in the **Sent Items** folder.
 Alternatively, create a draft to reply to an existing message and send it later.
 
 ### [Invoke-MgReplyUserMessage](Invoke-MgReplyUserMessage.md)
 Reply to the sender of a message using either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
+When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter.
+Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 This method saves the message in the **Sent Items** folder.
 Alternatively, create a draft to reply to an existing message and send it later.

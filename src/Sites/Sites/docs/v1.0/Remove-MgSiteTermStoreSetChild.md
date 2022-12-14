@@ -12,19 +12,19 @@ Delete navigation property children for sites
 
 ## SYNTAX
 
-### Delete3 (Default)
+### Delete (Default)
 ```
 Remove-MgSiteTermStoreSetChild -SetId <String> -SiteId <String> -TermId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete
+### Delete1
 ```
 Remove-MgSiteTermStoreSetChild -SetId <String> -SiteId <String> -StoreId <String> -TermId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Delete1
+### Delete2
 ```
 Remove-MgSiteTermStoreSetChild -SetId <String> -SiteId <String> -StoreId <String> -TermId <String>
  -TermId1 <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -42,7 +42,7 @@ Remove-MgSiteTermStoreSetChild -InputObject <ISitesIdentity> [-IfMatch <String>]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity3
+### DeleteViaIdentity2
 ```
 Remove-MgSiteTermStoreSetChild -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -76,7 +76,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1, DeleteViaIdentity3
+Parameter Sets: DeleteViaIdentity, DeleteViaIdentity1, DeleteViaIdentity2
 Aliases:
 
 Required: True
@@ -106,7 +106,7 @@ key: id of set
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1, Delete3
+Parameter Sets: Delete, Delete1, Delete2
 Aliases:
 
 Required: True
@@ -121,7 +121,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1, Delete3
+Parameter Sets: Delete, Delete1, Delete2
 Aliases:
 
 Required: True
@@ -136,7 +136,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1
+Parameter Sets: Delete1, Delete2
 Aliases:
 
 Required: True
@@ -151,7 +151,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete, Delete1, Delete3
+Parameter Sets: Delete, Delete1, Delete2
 Aliases:
 
 Required: True
@@ -166,7 +166,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete2
 Aliases:
 
 Required: True
@@ -238,6 +238,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[GroupId1 <String>]`: key: id of group
+  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
@@ -263,6 +265,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[TermId1 <String>]`: key: id of term
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
+  - `[WebPartId <String>]`: key: id of webPart
 
 ## RELATED LINKS
 

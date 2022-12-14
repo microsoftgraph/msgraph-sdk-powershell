@@ -276,7 +276,8 @@ Accept wildcard characters: False
 ```
 
 ### -CustomCssInputFile
-Input File for CustomCss (.)
+Input File for CustomCss (CSS styling that appears on the sign-in page.
+The allowed format is .css format only and not larger than 25 KB.)
 
 ```yaml
 Type: System.String
@@ -291,7 +292,8 @@ Accept wildcard characters: False
 ```
 
 ### -CustomCssRelativeUrl
-.
+A relative URL for the customCSS property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -449,7 +451,9 @@ Accept wildcard characters: False
 ```
 
 ### -HeaderLogoInputFile
-Input File for HeaderLogo (.)
+Input File for HeaderLogo (A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.)
 
 ```yaml
 Type: System.String
@@ -464,7 +468,8 @@ Accept wildcard characters: False
 ```
 
 ### -HeaderLogoRelativeUrl
-.
+A relative URL for the headerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -777,8 +782,8 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
 
 LOGINPAGELAYOUTCONFIGURATION <IMicrosoftGraphLoginPageLayoutConfiguration>: loginPageLayoutConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[IsFooterShown <Boolean?>]`: 
-  - `[IsHeaderShown <Boolean?>]`: 
+  - `[IsFooterShown <Boolean?>]`: Option to show the footer on the sign-in page.
+  - `[IsHeaderShown <Boolean?>]`: Option to show the header on the sign-in page.
   - `[LayoutTemplateType <String>]`: layoutTemplateType
 
 LOGINPAGETEXTVISIBILITYSETTINGS <IMicrosoftGraphLoginPageTextVisibilitySettings>: loginPageTextVisibilitySettings

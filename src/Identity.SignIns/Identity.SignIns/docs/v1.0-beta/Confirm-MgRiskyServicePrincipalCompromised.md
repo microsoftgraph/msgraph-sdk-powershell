@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Confirm one or more riskyServicePrincipal objects as compromised.
 This action sets the targeted service principal account's risk level to `high`.
-When the risk level of the service principal is confirmed as compromised, the service principal object is disabled and its **disabledByMicrosoftStatus** property is updated.
 
 ## SYNTAX
 
@@ -30,7 +29,6 @@ Confirm-MgRiskyServicePrincipalCompromised
 ## DESCRIPTION
 Confirm one or more riskyServicePrincipal objects as compromised.
 This action sets the targeted service principal account's risk level to `high`.
-When the risk level of the service principal is confirmed as compromised, the service principal object is disabled and its **disabledByMicrosoftStatus** property is updated.
 
 ## EXAMPLES
 

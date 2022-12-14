@@ -12,13 +12,13 @@ Delete navigation property children for sites
 
 ## SYNTAX
 
-### Delete2 (Default)
+### Delete3 (Default)
 ```
 Remove-MgSiteTermStoreSetChild -SetId <String> -SiteId <String> -TermId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity2
+### DeleteViaIdentity3
 ```
 Remove-MgSiteTermStoreSetChild -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: DeleteViaIdentity2
+Parameter Sets: DeleteViaIdentity3
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of set
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2
+Parameter Sets: Delete3
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2
+Parameter Sets: Delete3
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2
+Parameter Sets: Delete3
 Aliases:
 
 Required: True
@@ -184,6 +184,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[GroupId1 <String>]`: key: id of group
+  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
@@ -209,6 +211,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[TermId1 <String>]`: key: id of term
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
+  - `[WebPartId <String>]`: key: id of webPart
 
 ## RELATED LINKS
 

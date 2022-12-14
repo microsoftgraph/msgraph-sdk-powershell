@@ -18,12 +18,12 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicy -CloudPcProvisioningP
  [-AdditionalProperties <Hashtable>] [-AlternateResourceUrl <String>]
  [-Assignments <IMicrosoftGraphCloudPcProvisioningPolicyAssignment[]>] [-CloudPcGroupDisplayName <String>]
  [-Description <String>] [-DisplayName <String>]
- [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>] [-GracePeriodInHours <Int32>]
- [-Id <String>] [-ImageDisplayName <String>] [-ImageId <String>] [-ImageType <String>] [-LocalAdminEnabled]
- [-ManagedBy <String>] [-MicrosoftManagedDesktop <IMicrosoftGraphMicrosoftManagedDesktop>]
- [-OnPremisesConnectionId <String>] [-ProvisioningType <String>]
- [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>] [-EnableSingleSignOn]
+ [-GracePeriodInHours <Int32>] [-Id <String>] [-ImageDisplayName <String>] [-ImageId <String>]
+ [-ImageType <String>] [-LocalAdminEnabled] [-ManagedBy <String>]
+ [-MicrosoftManagedDesktop <IMicrosoftGraphMicrosoftManagedDesktop>] [-OnPremisesConnectionId <String>]
+ [-ProvisioningType <String>] [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -47,12 +47,12 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicy
  -InputObject <IDeviceManagementAdministrationIdentity> [-AdditionalProperties <Hashtable>]
  [-AlternateResourceUrl <String>] [-Assignments <IMicrosoftGraphCloudPcProvisioningPolicyAssignment[]>]
  [-CloudPcGroupDisplayName <String>] [-Description <String>] [-DisplayName <String>]
- [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>] [-GracePeriodInHours <Int32>]
- [-Id <String>] [-ImageDisplayName <String>] [-ImageId <String>] [-ImageType <String>] [-LocalAdminEnabled]
- [-ManagedBy <String>] [-MicrosoftManagedDesktop <IMicrosoftGraphMicrosoftManagedDesktop>]
- [-OnPremisesConnectionId <String>] [-ProvisioningType <String>]
- [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>] [-EnableSingleSignOn]
+ [-GracePeriodInHours <Int32>] [-Id <String>] [-ImageDisplayName <String>] [-ImageId <String>]
+ [-ImageType <String>] [-LocalAdminEnabled] [-ManagedBy <String>]
+ [-MicrosoftManagedDesktop <IMicrosoftGraphMicrosoftManagedDesktop>] [-OnPremisesConnectionId <String>]
+ [-ProvisioningType <String>] [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -216,6 +216,21 @@ To construct, please use Get-Help -Online and see NOTES section for DOMAINJOINCO
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcDomainJoinConfiguration
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableSingleSignOn
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -508,6 +523,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcProvisioningPolicy>: cloudPcProvisioningPol
     - `[RegionGroup <String>]`: cloudPcRegionGroup
     - `[RegionName <String>]`: The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
     - `[Type <String>]`: cloudPcDomainJoinType
+  - `[EnableSingleSignOn <Boolean?>]`: 
   - `[GracePeriodInHours <Int32?>]`: The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
   - `[ImageDisplayName <String>]`: The display name for the OS image you’re provisioning.
   - `[ImageId <String>]`: The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.

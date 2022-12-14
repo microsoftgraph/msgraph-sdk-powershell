@@ -121,8 +121,8 @@ Accept wildcard characters: False
 ```
 
 ### -OrderHint
-Hint used to order tasks in the Bucket view of the Task Board.
-The format is defined as outlined here.
+Hint used to order tasks in the bucket view of the task board.
+For details about the supported format, see Using order hints in Planner.
 
 ```yaml
 Type: System.String
@@ -222,7 +222,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>: plannerBucketTaskBoardTaskFormat
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
 
 INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[GroupId <String>]`: key: id of group

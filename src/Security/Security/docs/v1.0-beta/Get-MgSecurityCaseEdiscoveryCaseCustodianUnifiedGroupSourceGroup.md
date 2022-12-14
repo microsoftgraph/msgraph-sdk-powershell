@@ -132,7 +132,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroup
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGroup1
 
 ## NOTES
 

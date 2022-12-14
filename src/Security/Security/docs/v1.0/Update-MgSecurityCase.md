@@ -15,13 +15,13 @@ Update the navigation property cases in security
 ### UpdateExpanded1 (Default)
 ```
 Update-MgSecurityCase [-AdditionalProperties <Hashtable>]
- [-EdiscoveryCases <IMicrosoftGraphSecurityEdiscoveryCase1[]>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-EdiscoveryCases <IMicrosoftGraphSecurityEdiscoveryCase[]>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgSecurityCase -BodyParameter <IMicrosoftGraphSecurityCasesRoot1> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgSecurityCase -BodyParameter <IMicrosoftGraphSecurityCasesRoot> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ casesRoot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityCasesRoot1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityCasesRoot
 Parameter Sets: Update1
 Aliases:
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for EDISCOVERYCASES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCase1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityEdiscoveryCase[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -146,7 +146,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityCasesRoot1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityCasesRoot
 
 ## OUTPUTS
 
@@ -161,10 +161,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
+BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot>: casesRoot
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[EdiscoveryCases <IMicrosoftGraphSecurityEdiscoveryCase1[]>]`: 
+  - `[EdiscoveryCases <IMicrosoftGraphSecurityEdiscoveryCase[]>]`: 
     - `[CreatedDateTime <DateTime?>]`: 
     - `[Description <String>]`: 
     - `[DisplayName <String>]`: 
@@ -181,7 +181,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ClosedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[ClosedDateTime <DateTime?>]`: The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Custodians <IMicrosoftGraphSecurityEdiscoveryCustodian1[]>]`: Returns a list of case ediscoveryCustodian objects for this case.
+    - `[Custodians <IMicrosoftGraphSecurityEdiscoveryCustodian[]>]`: Returns a list of case ediscoveryCustodian objects for this case.
       - `[CreatedDateTime <DateTime?>]`: Created date and time of the dataSourceContainer entity.
       - `[DisplayName <String>]`: Display name of the dataSourceContainer entity.
       - `[HoldStatus <String>]`: dataSourceHoldStatus
@@ -205,7 +205,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
           - `[Subcode <Int32?>]`: The result sub-code.
         - `[Status <String>]`: caseOperationStatus
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[SiteSources <IMicrosoftGraphSecuritySiteSource1[]>]`: Data source entity for SharePoint sites associated with the custodian.
+      - `[SiteSources <IMicrosoftGraphSecuritySiteSource[]>]`: Data source entity for SharePoint sites associated with the custodian.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
         - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -322,7 +322,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
                     - `[Type <Int32?>]`: For internal use only
                   - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
                   - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-                  - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+                  - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
                   - `[DeviceMetadata <String>]`: For internal use only. Set to null.
                   - `[DeviceVersion <Int32?>]`: For internal use only.
                   - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -1053,7 +1053,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
                 - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                   - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                  - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                  - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                   - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                   - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
                   - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -1669,14 +1669,14 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
                 - `[AllowGiphy <Boolean?>]`: If set to true, enables Giphy use.
                 - `[AllowStickersAndMemes <Boolean?>]`: If set to true, enables users to include stickers and memes.
                 - `[GiphyContentRating <String>]`: giphyRatingType
-              - `[Group <IMicrosoftGraphGroup1>]`: group
+              - `[Group <IMicrosoftGraphGroup>]`: group
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
                 - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
                 - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-                - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+                - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
                   - `[DisplayName <String>]`: The display name of the label. Read-only.
                   - `[LabelId <String>]`: The unique identifier of the label.
                 - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -1780,7 +1780,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                        - `[Href <String>]`: The url of the link.
+                        - `[Href <String>]`: The URL of the link.
                       - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -1892,7 +1892,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
                         - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
                           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                          - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                          - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                         - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                         - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                         - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -2774,13 +2774,13 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
             - `[LanguageTags <String[]>]`: List of languages for the term store.
             - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
           - `[TermStores <IMicrosoftGraphTermStore[]>]`: The collection of termStores under this site.
-      - `[UnifiedGroupSources <IMicrosoftGraphSecurityUnifiedGroupSource1[]>]`: Data source entity for groups associated with the custodian.
+      - `[UnifiedGroupSources <IMicrosoftGraphSecurityUnifiedGroupSource[]>]`: Data source entity for groups associated with the custodian.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
         - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
         - `[HoldStatus <String>]`: dataSourceHoldStatus
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Group <IMicrosoftGraphGroup1>]`: group
+        - `[Group <IMicrosoftGraphGroup>]`: group
         - `[IncludedSources <String>]`: sourceType
       - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2817,7 +2817,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
       - `[PercentProgress <Int32?>]`: The progress of the operation.
       - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
       - `[Status <String>]`: caseOperationStatus
-    - `[ReviewSets <IMicrosoftGraphSecurityEdiscoveryReviewSet1[]>]`: Returns a list of eDiscoveryReviewSet objects in the case.
+    - `[ReviewSets <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>]`: Returns a list of eDiscoveryReviewSet objects in the case.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: 
       - `[DisplayName <String>]`: 
@@ -2831,7 +2831,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[LastModifiedDateTime <DateTime?>]`: 
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Searches <IMicrosoftGraphSecurityEdiscoverySearch1[]>]`: Returns a list of eDiscoverySearch objects associated with this case.
+    - `[Searches <IMicrosoftGraphSecurityEdiscoverySearch[]>]`: Returns a list of eDiscoverySearch objects associated with this case.
       - `[ContentQuery <String>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: 
@@ -2840,7 +2840,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[LastModifiedDateTime <DateTime?>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[AddToReviewSetOperation <IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation1>]`: ediscoveryAddToReviewSetOperation
+      - `[AddToReviewSetOperation <IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation>]`: ediscoveryAddToReviewSetOperation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Action <String>]`: caseAction
         - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
@@ -2850,12 +2850,12 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
         - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
         - `[Status <String>]`: caseOperationStatus
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[ReviewSet <IMicrosoftGraphSecurityEdiscoveryReviewSet1>]`: ediscoveryReviewSet
-        - `[Search <IMicrosoftGraphSecurityEdiscoverySearch1>]`: ediscoverySearch
+        - `[ReviewSet <IMicrosoftGraphSecurityEdiscoveryReviewSet>]`: ediscoveryReviewSet
+        - `[Search <IMicrosoftGraphSecurityEdiscoverySearch>]`: ediscoverySearch
       - `[AdditionalSources <IMicrosoftGraphSecurityDataSource[]>]`: Adds an additional source to the eDiscovery search.
       - `[CustodianSources <IMicrosoftGraphSecurityDataSource[]>]`: Custodian sources that are included in the eDiscovery search.
       - `[DataSourceScopes <String>]`: dataSourceScopes
-      - `[LastEstimateStatisticsOperation <IMicrosoftGraphSecurityEdiscoveryEstimateOperation1>]`: ediscoveryEstimateOperation
+      - `[LastEstimateStatisticsOperation <IMicrosoftGraphSecurityEdiscoveryEstimateOperation>]`: ediscoveryEstimateOperation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Action <String>]`: caseAction
         - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
@@ -2868,7 +2868,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
         - `[IndexedItemCount <Int64?>]`: The estimated count of items for the search that matched the content query.
         - `[IndexedItemsSize <Int64?>]`: The estimated size of items for the search that matched the content query.
         - `[MailboxCount <Int32?>]`: The number of mailboxes that had search hits.
-        - `[Search <IMicrosoftGraphSecurityEdiscoverySearch1>]`: ediscoverySearch
+        - `[Search <IMicrosoftGraphSecurityEdiscoverySearch>]`: ediscoverySearch
         - `[SiteCount <Int32?>]`: The number of mailboxes that had search hits.
         - `[UnindexedItemCount <Int64?>]`: The estimated count of unindexed items for the collection.
         - `[UnindexedItemsSize <Int64?>]`: The estimated size of unindexed items for the collection.
@@ -2903,7 +2903,7 @@ BODYPARAMETER <IMicrosoftGraphSecurityCasesRoot1>: casesRoot
       - `[ChildTags <IMicrosoftGraphSecurityEdiscoveryReviewTag1[]>]`: Returns the tags that are a child of a tag.
       - `[Parent <IMicrosoftGraphSecurityEdiscoveryReviewTag1>]`: ediscoveryReviewTag
 
-EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
+EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase[]>: .
   - `[CreatedDateTime <DateTime?>]`: 
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: 
@@ -2920,7 +2920,7 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ClosedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[ClosedDateTime <DateTime?>]`: The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Custodians <IMicrosoftGraphSecurityEdiscoveryCustodian1[]>]`: Returns a list of case ediscoveryCustodian objects for this case.
+  - `[Custodians <IMicrosoftGraphSecurityEdiscoveryCustodian[]>]`: Returns a list of case ediscoveryCustodian objects for this case.
     - `[CreatedDateTime <DateTime?>]`: Created date and time of the dataSourceContainer entity.
     - `[DisplayName <String>]`: Display name of the dataSourceContainer entity.
     - `[HoldStatus <String>]`: dataSourceHoldStatus
@@ -2944,7 +2944,7 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
         - `[Subcode <Int32?>]`: The result sub-code.
       - `[Status <String>]`: caseOperationStatus
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[SiteSources <IMicrosoftGraphSecuritySiteSource1[]>]`: Data source entity for SharePoint sites associated with the custodian.
+    - `[SiteSources <IMicrosoftGraphSecuritySiteSource[]>]`: Data source entity for SharePoint sites associated with the custodian.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
       - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -3061,7 +3061,7 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
                   - `[Type <Int32?>]`: For internal use only
                 - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
                 - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-                - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+                - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
                 - `[DeviceMetadata <String>]`: For internal use only. Set to null.
                 - `[DeviceVersion <Int32?>]`: For internal use only.
                 - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -3792,7 +3792,7 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
               - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                 - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                 - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
                 - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -4408,14 +4408,14 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
               - `[AllowGiphy <Boolean?>]`: If set to true, enables Giphy use.
               - `[AllowStickersAndMemes <Boolean?>]`: If set to true, enables users to include stickers and memes.
               - `[GiphyContentRating <String>]`: giphyRatingType
-            - `[Group <IMicrosoftGraphGroup1>]`: group
+            - `[Group <IMicrosoftGraphGroup>]`: group
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
               - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
               - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-              - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+              - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
                 - `[DisplayName <String>]`: The display name of the label. Read-only.
                 - `[LabelId <String>]`: The unique identifier of the label.
               - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -4519,7 +4519,7 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[Href <String>]`: The url of the link.
+                      - `[Href <String>]`: The URL of the link.
                     - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                   - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -4631,7 +4631,7 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
                       - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                        - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                        - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                       - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                       - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                       - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -5513,13 +5513,13 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
           - `[LanguageTags <String[]>]`: List of languages for the term store.
           - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
         - `[TermStores <IMicrosoftGraphTermStore[]>]`: The collection of termStores under this site.
-    - `[UnifiedGroupSources <IMicrosoftGraphSecurityUnifiedGroupSource1[]>]`: Data source entity for groups associated with the custodian.
+    - `[UnifiedGroupSources <IMicrosoftGraphSecurityUnifiedGroupSource[]>]`: Data source entity for groups associated with the custodian.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
       - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
       - `[HoldStatus <String>]`: dataSourceHoldStatus
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Group <IMicrosoftGraphGroup1>]`: group
+      - `[Group <IMicrosoftGraphGroup>]`: group
       - `[IncludedSources <String>]`: sourceType
     - `[UserSources <IMicrosoftGraphSecurityUserSource[]>]`: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -5556,7 +5556,7 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
     - `[PercentProgress <Int32?>]`: The progress of the operation.
     - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
     - `[Status <String>]`: caseOperationStatus
-  - `[ReviewSets <IMicrosoftGraphSecurityEdiscoveryReviewSet1[]>]`: Returns a list of eDiscoveryReviewSet objects in the case.
+  - `[ReviewSets <IMicrosoftGraphSecurityEdiscoveryReviewSet[]>]`: Returns a list of eDiscoveryReviewSet objects in the case.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: 
     - `[DisplayName <String>]`: 
@@ -5570,7 +5570,7 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[LastModifiedDateTime <DateTime?>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Searches <IMicrosoftGraphSecurityEdiscoverySearch1[]>]`: Returns a list of eDiscoverySearch objects associated with this case.
+  - `[Searches <IMicrosoftGraphSecurityEdiscoverySearch[]>]`: Returns a list of eDiscoverySearch objects associated with this case.
     - `[ContentQuery <String>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: 
@@ -5579,7 +5579,7 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[LastModifiedDateTime <DateTime?>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[AddToReviewSetOperation <IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation1>]`: ediscoveryAddToReviewSetOperation
+    - `[AddToReviewSetOperation <IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation>]`: ediscoveryAddToReviewSetOperation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Action <String>]`: caseAction
       - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
@@ -5589,12 +5589,12 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
       - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
       - `[Status <String>]`: caseOperationStatus
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[ReviewSet <IMicrosoftGraphSecurityEdiscoveryReviewSet1>]`: ediscoveryReviewSet
-      - `[Search <IMicrosoftGraphSecurityEdiscoverySearch1>]`: ediscoverySearch
+      - `[ReviewSet <IMicrosoftGraphSecurityEdiscoveryReviewSet>]`: ediscoveryReviewSet
+      - `[Search <IMicrosoftGraphSecurityEdiscoverySearch>]`: ediscoverySearch
     - `[AdditionalSources <IMicrosoftGraphSecurityDataSource[]>]`: Adds an additional source to the eDiscovery search.
     - `[CustodianSources <IMicrosoftGraphSecurityDataSource[]>]`: Custodian sources that are included in the eDiscovery search.
     - `[DataSourceScopes <String>]`: dataSourceScopes
-    - `[LastEstimateStatisticsOperation <IMicrosoftGraphSecurityEdiscoveryEstimateOperation1>]`: ediscoveryEstimateOperation
+    - `[LastEstimateStatisticsOperation <IMicrosoftGraphSecurityEdiscoveryEstimateOperation>]`: ediscoveryEstimateOperation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Action <String>]`: caseAction
       - `[CompletedDateTime <DateTime?>]`: The date and time the operation was completed.
@@ -5607,7 +5607,7 @@ EDISCOVERYCASES <IMicrosoftGraphSecurityEdiscoveryCase1[]>: .
       - `[IndexedItemCount <Int64?>]`: The estimated count of items for the search that matched the content query.
       - `[IndexedItemsSize <Int64?>]`: The estimated size of items for the search that matched the content query.
       - `[MailboxCount <Int32?>]`: The number of mailboxes that had search hits.
-      - `[Search <IMicrosoftGraphSecurityEdiscoverySearch1>]`: ediscoverySearch
+      - `[Search <IMicrosoftGraphSecurityEdiscoverySearch>]`: ediscoverySearch
       - `[SiteCount <Int32?>]`: The number of mailboxes that had search hits.
       - `[UnindexedItemCount <Int64?>]`: The estimated count of unindexed items for the collection.
       - `[UnindexedItemsSize <Int64?>]`: The estimated size of unindexed items for the collection.

@@ -1652,9 +1652,9 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
-          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
-            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
             - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -1775,11 +1775,11 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
         - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
         - `[OSVersion <String>]`: cloudPcOperatingSystem
         - `[OnPremisesConnectionName <String>]`: The Azure network connection that is applied during the provisioning of Cloud PCs.
-        - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: 
+        - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: The results of every partner agent's installation status on Cloud PC.
           - `[InstallStatus <String>]`: cloudPcPartnerAgentInstallStatus
-          - `[IsThirdPartyPartner <Boolean?>]`: 
+          - `[IsThirdPartyPartner <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
           - `[PartnerAgentName <String>]`: cloudPcPartnerAgentName
-          - `[Retriable <Boolean?>]`: 
+          - `[Retriable <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
         - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
         - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
         - `[ProvisioningType <String>]`: cloudPcProvisioningType
@@ -2282,7 +2282,7 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
           - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-            - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+            - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
             - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
             - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
             - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -2379,7 +2379,7 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Href <String>]`: The url of the link.
+                - `[Href <String>]`: The URL of the link.
               - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
             - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2466,14 +2466,60 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
           - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-          - `[PageLayoutType <String>]`: 
-          - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-          - `[Title <String>]`: 
-          - `[WebParts <IMicrosoftGraphWebPart[]>]`: 
-            - `[Data <IMicrosoftGraphSitePageData>]`: sitePageData
+          - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
+                  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
+              - `[Emphasis <String>]`: sectionEmphasisType
+              - `[Layout <String>]`: horizontalSectionLayoutType
+            - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Type <String>]`: A unique identifier specifying the webPart type. Read-only.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Emphasis <String>]`: sectionEmphasisType
+              - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
+          - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+          - `[PageLayout <String>]`: pageLayoutType
+          - `[PromotionKind <String>]`: pagePromotionType
+          - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
+          - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[CommentCount <Int32?>]`: Count of comments.
+            - `[LikeCount <Int32?>]`: Count of likes.
+            - `[ShareCount <Int32?>]`: Count of shares.
+          - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
+          - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
+          - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
+          - `[Title <String>]`: Title of the sitePage.
+          - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[AlternativeText <String>]`: Alternative text on the title area.
+            - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
+            - `[ImageWebUrl <String>]`: URL of the image in the title area.
+            - `[Layout <String>]`: titleAreaLayoutType
+            - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+                - `[Key <String>]`: Key of the meta data.
+                - `[Value <String>]`: Value of the meta data.
+              - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
+                - `[Key <String>]`: Key of the metadata.
+                - `[Value <IMicrosoftGraphJson>]`: Json
+              - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
+              - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+              - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+              - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
+            - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
+            - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
+            - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
+            - `[TextAboveTitle <String>]`: The text above title line.
+            - `[TextAlignment <String>]`: titleAreaTextAlignmentType
+          - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
         - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
@@ -2831,7 +2877,7 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -4073,6 +4119,11 @@ ALLCHANNELS <IMicrosoftGraphChannel[]>: List of channels either hosted in or sha
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[IsOutOfOffice <Boolean?>]`: True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
           - `[Message <String>]`: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+        - `[StatusMessage <IMicrosoftGraphPresenceStatusMessage>]`: presenceStatusMessage
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+          - `[Message <IMicrosoftGraphItemBody>]`: itemBody
+          - `[PublishedDateTime <DateTime?>]`: 
       - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -6178,9 +6229,9 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
-            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
               - `[Actions <String>]`: chatMessageActions
-              - `[ModifiedDateTime <DateTime?>]`: 
+              - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
               - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -6301,11 +6352,11 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
           - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
           - `[OSVersion <String>]`: cloudPcOperatingSystem
           - `[OnPremisesConnectionName <String>]`: The Azure network connection that is applied during the provisioning of Cloud PCs.
-          - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: 
+          - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: The results of every partner agent's installation status on Cloud PC.
             - `[InstallStatus <String>]`: cloudPcPartnerAgentInstallStatus
-            - `[IsThirdPartyPartner <Boolean?>]`: 
+            - `[IsThirdPartyPartner <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
             - `[PartnerAgentName <String>]`: cloudPcPartnerAgentName
-            - `[Retriable <Boolean?>]`: 
+            - `[Retriable <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
           - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
           - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
           - `[ProvisioningType <String>]`: cloudPcProvisioningType
@@ -6808,7 +6859,7 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
             - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-              - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+              - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
               - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
               - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -6905,7 +6956,7 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Href <String>]`: The url of the link.
+                  - `[Href <String>]`: The URL of the link.
                 - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -6992,14 +7043,60 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-            - `[PageLayoutType <String>]`: 
-            - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-            - `[Title <String>]`: 
-            - `[WebParts <IMicrosoftGraphWebPart[]>]`: 
-              - `[Data <IMicrosoftGraphSitePageData>]`: sitePageData
+            - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
+                  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                  - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
+                    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                  - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
+                - `[Emphasis <String>]`: sectionEmphasisType
+                - `[Layout <String>]`: horizontalSectionLayoutType
+              - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Type <String>]`: A unique identifier specifying the webPart type. Read-only.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Emphasis <String>]`: sectionEmphasisType
+                - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
+            - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+            - `[PageLayout <String>]`: pageLayoutType
+            - `[PromotionKind <String>]`: pagePromotionType
+            - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
+            - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[CommentCount <Int32?>]`: Count of comments.
+              - `[LikeCount <Int32?>]`: Count of likes.
+              - `[ShareCount <Int32?>]`: Count of shares.
+            - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
+            - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
+            - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
+            - `[Title <String>]`: Title of the sitePage.
+            - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[AlternativeText <String>]`: Alternative text on the title area.
+              - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
+              - `[ImageWebUrl <String>]`: URL of the image in the title area.
+              - `[Layout <String>]`: titleAreaLayoutType
+              - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+                  - `[Key <String>]`: Key of the meta data.
+                  - `[Value <String>]`: Value of the meta data.
+                - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
+                  - `[Key <String>]`: Key of the metadata.
+                  - `[Value <IMicrosoftGraphJson>]`: Json
+                - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
+                - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+                - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+                - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
+              - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
+              - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
+              - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
+              - `[TextAboveTitle <String>]`: The text above title line.
+              - `[TextAlignment <String>]`: titleAreaTextAlignmentType
+            - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
           - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
@@ -7357,7 +7454,7 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
                   - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                    - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                    - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                   - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                   - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -8362,6 +8459,11 @@ BODYPARAMETER <IMicrosoftGraphTeam>: team
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[IsOutOfOffice <Boolean?>]`: True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
             - `[Message <String>]`: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+          - `[StatusMessage <IMicrosoftGraphPresenceStatusMessage>]`: presenceStatusMessage
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+            - `[Message <IMicrosoftGraphItemBody>]`: itemBody
+            - `[PublishedDateTime <DateTime?>]`: 
         - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -10698,9 +10800,9 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
-          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
-            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
             - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -10821,11 +10923,11 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
         - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
         - `[OSVersion <String>]`: cloudPcOperatingSystem
         - `[OnPremisesConnectionName <String>]`: The Azure network connection that is applied during the provisioning of Cloud PCs.
-        - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: 
+        - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: The results of every partner agent's installation status on Cloud PC.
           - `[InstallStatus <String>]`: cloudPcPartnerAgentInstallStatus
-          - `[IsThirdPartyPartner <Boolean?>]`: 
+          - `[IsThirdPartyPartner <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
           - `[PartnerAgentName <String>]`: cloudPcPartnerAgentName
-          - `[Retriable <Boolean?>]`: 
+          - `[Retriable <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
         - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
         - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
         - `[ProvisioningType <String>]`: cloudPcProvisioningType
@@ -11328,7 +11430,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
           - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-            - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+            - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
             - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
             - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
             - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -11425,7 +11527,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Href <String>]`: The url of the link.
+                - `[Href <String>]`: The URL of the link.
               - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
             - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -11512,14 +11614,60 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
           - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-          - `[PageLayoutType <String>]`: 
-          - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-          - `[Title <String>]`: 
-          - `[WebParts <IMicrosoftGraphWebPart[]>]`: 
-            - `[Data <IMicrosoftGraphSitePageData>]`: sitePageData
+          - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
+                  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
+              - `[Emphasis <String>]`: sectionEmphasisType
+              - `[Layout <String>]`: horizontalSectionLayoutType
+            - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Type <String>]`: A unique identifier specifying the webPart type. Read-only.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Emphasis <String>]`: sectionEmphasisType
+              - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
+          - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+          - `[PageLayout <String>]`: pageLayoutType
+          - `[PromotionKind <String>]`: pagePromotionType
+          - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
+          - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[CommentCount <Int32?>]`: Count of comments.
+            - `[LikeCount <Int32?>]`: Count of likes.
+            - `[ShareCount <Int32?>]`: Count of shares.
+          - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
+          - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
+          - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
+          - `[Title <String>]`: Title of the sitePage.
+          - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[AlternativeText <String>]`: Alternative text on the title area.
+            - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
+            - `[ImageWebUrl <String>]`: URL of the image in the title area.
+            - `[Layout <String>]`: titleAreaLayoutType
+            - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+                - `[Key <String>]`: Key of the meta data.
+                - `[Value <String>]`: Value of the meta data.
+              - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
+                - `[Key <String>]`: Key of the metadata.
+                - `[Value <IMicrosoftGraphJson>]`: Json
+              - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
+              - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+              - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+              - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
+            - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
+            - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
+            - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
+            - `[TextAboveTitle <String>]`: The text above title line.
+            - `[TextAlignment <String>]`: titleAreaTextAlignmentType
+          - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
         - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
@@ -11877,7 +12025,7 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -13119,6 +13267,11 @@ CHANNELS <IMicrosoftGraphChannel[]>: The collection of channels and messages ass
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[IsOutOfOffice <Boolean?>]`: True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
           - `[Message <String>]`: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+        - `[StatusMessage <IMicrosoftGraphPresenceStatusMessage>]`: presenceStatusMessage
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+          - `[Message <IMicrosoftGraphItemBody>]`: itemBody
+          - `[PublishedDateTime <DateTime?>]`: 
       - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -15294,9 +15447,9 @@ GROUP <IMicrosoftGraphGroup1>: group
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
-          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
-            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
             - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -15417,11 +15570,11 @@ GROUP <IMicrosoftGraphGroup1>: group
         - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
         - `[OSVersion <String>]`: cloudPcOperatingSystem
         - `[OnPremisesConnectionName <String>]`: The Azure network connection that is applied during the provisioning of Cloud PCs.
-        - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: 
+        - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: The results of every partner agent's installation status on Cloud PC.
           - `[InstallStatus <String>]`: cloudPcPartnerAgentInstallStatus
-          - `[IsThirdPartyPartner <Boolean?>]`: 
+          - `[IsThirdPartyPartner <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
           - `[PartnerAgentName <String>]`: cloudPcPartnerAgentName
-          - `[Retriable <Boolean?>]`: 
+          - `[Retriable <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
         - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
         - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
         - `[ProvisioningType <String>]`: cloudPcProvisioningType
@@ -15900,7 +16053,7 @@ GROUP <IMicrosoftGraphGroup1>: group
                 - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                   - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                  - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                  - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                   - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                   - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
                   - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -16430,7 +16583,7 @@ GROUP <IMicrosoftGraphGroup1>: group
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Href <String>]`: The url of the link.
+                - `[Href <String>]`: The URL of the link.
               - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
             - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -16517,14 +16670,60 @@ GROUP <IMicrosoftGraphGroup1>: group
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
           - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-          - `[PageLayoutType <String>]`: 
-          - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-          - `[Title <String>]`: 
-          - `[WebParts <IMicrosoftGraphWebPart[]>]`: 
-            - `[Data <IMicrosoftGraphSitePageData>]`: sitePageData
+          - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
+                  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
+              - `[Emphasis <String>]`: sectionEmphasisType
+              - `[Layout <String>]`: horizontalSectionLayoutType
+            - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Type <String>]`: A unique identifier specifying the webPart type. Read-only.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Emphasis <String>]`: sectionEmphasisType
+              - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
+          - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+          - `[PageLayout <String>]`: pageLayoutType
+          - `[PromotionKind <String>]`: pagePromotionType
+          - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
+          - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[CommentCount <Int32?>]`: Count of comments.
+            - `[LikeCount <Int32?>]`: Count of likes.
+            - `[ShareCount <Int32?>]`: Count of shares.
+          - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
+          - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
+          - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
+          - `[Title <String>]`: Title of the sitePage.
+          - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[AlternativeText <String>]`: Alternative text on the title area.
+            - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
+            - `[ImageWebUrl <String>]`: URL of the image in the title area.
+            - `[Layout <String>]`: titleAreaLayoutType
+            - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+                - `[Key <String>]`: Key of the meta data.
+                - `[Value <String>]`: Value of the meta data.
+              - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
+                - `[Key <String>]`: Key of the metadata.
+                - `[Value <IMicrosoftGraphJson>]`: Json
+              - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
+              - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+              - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+              - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
+            - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
+            - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
+            - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
+            - `[TextAboveTitle <String>]`: The text above title line.
+            - `[TextAlignment <String>]`: titleAreaTextAlignmentType
+          - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
         - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
         - `[Root <IMicrosoftGraphRoot>]`: root
         - `[Settings <IMicrosoftGraphSiteSettings>]`: siteSettings
@@ -17854,7 +18053,7 @@ GROUP <IMicrosoftGraphGroup1>: group
               - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
               - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
               - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -17965,6 +18164,11 @@ GROUP <IMicrosoftGraphGroup1>: group
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[IsOutOfOffice <Boolean?>]`: True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
           - `[Message <String>]`: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+        - `[StatusMessage <IMicrosoftGraphPresenceStatusMessage>]`: presenceStatusMessage
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+          - `[Message <IMicrosoftGraphItemBody>]`: itemBody
+          - `[PublishedDateTime <DateTime?>]`: 
       - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -19759,9 +19963,9 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
-          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
-            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
             - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -19882,11 +20086,11 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
         - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
         - `[OSVersion <String>]`: cloudPcOperatingSystem
         - `[OnPremisesConnectionName <String>]`: The Azure network connection that is applied during the provisioning of Cloud PCs.
-        - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: 
+        - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: The results of every partner agent's installation status on Cloud PC.
           - `[InstallStatus <String>]`: cloudPcPartnerAgentInstallStatus
-          - `[IsThirdPartyPartner <Boolean?>]`: 
+          - `[IsThirdPartyPartner <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
           - `[PartnerAgentName <String>]`: cloudPcPartnerAgentName
-          - `[Retriable <Boolean?>]`: 
+          - `[Retriable <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
         - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
         - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
         - `[ProvisioningType <String>]`: cloudPcProvisioningType
@@ -20389,7 +20593,7 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
           - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-            - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+            - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
             - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
             - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
             - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -20486,7 +20690,7 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Href <String>]`: The url of the link.
+                - `[Href <String>]`: The URL of the link.
               - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
             - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -20573,14 +20777,60 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
           - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-          - `[PageLayoutType <String>]`: 
-          - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-          - `[Title <String>]`: 
-          - `[WebParts <IMicrosoftGraphWebPart[]>]`: 
-            - `[Data <IMicrosoftGraphSitePageData>]`: sitePageData
+          - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
+                  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
+              - `[Emphasis <String>]`: sectionEmphasisType
+              - `[Layout <String>]`: horizontalSectionLayoutType
+            - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Type <String>]`: A unique identifier specifying the webPart type. Read-only.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Emphasis <String>]`: sectionEmphasisType
+              - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
+          - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+          - `[PageLayout <String>]`: pageLayoutType
+          - `[PromotionKind <String>]`: pagePromotionType
+          - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
+          - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[CommentCount <Int32?>]`: Count of comments.
+            - `[LikeCount <Int32?>]`: Count of likes.
+            - `[ShareCount <Int32?>]`: Count of shares.
+          - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
+          - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
+          - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
+          - `[Title <String>]`: Title of the sitePage.
+          - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[AlternativeText <String>]`: Alternative text on the title area.
+            - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
+            - `[ImageWebUrl <String>]`: URL of the image in the title area.
+            - `[Layout <String>]`: titleAreaLayoutType
+            - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+                - `[Key <String>]`: Key of the meta data.
+                - `[Value <String>]`: Value of the meta data.
+              - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
+                - `[Key <String>]`: Key of the metadata.
+                - `[Value <IMicrosoftGraphJson>]`: Json
+              - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
+              - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+              - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+              - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
+            - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
+            - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
+            - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
+            - `[TextAboveTitle <String>]`: The text above title line.
+            - `[TextAlignment <String>]`: titleAreaTextAlignmentType
+          - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
         - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
@@ -20938,7 +21188,7 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -22180,6 +22430,11 @@ INCOMINGCHANNELS <IMicrosoftGraphChannel[]>: List of channels shared with the te
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[IsOutOfOffice <Boolean?>]`: True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
           - `[Message <String>]`: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+        - `[StatusMessage <IMicrosoftGraphPresenceStatusMessage>]`: presenceStatusMessage
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+          - `[Message <IMicrosoftGraphItemBody>]`: itemBody
+          - `[PublishedDateTime <DateTime?>]`: 
       - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -24390,9 +24645,9 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             - `[Id <String>]`: Unique identifier for the identity.
-      - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+      - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
         - `[Actions <String>]`: chatMessageActions
-        - `[ModifiedDateTime <DateTime?>]`: 
+        - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
         - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -24513,11 +24768,11 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
     - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
     - `[OSVersion <String>]`: cloudPcOperatingSystem
     - `[OnPremisesConnectionName <String>]`: The Azure network connection that is applied during the provisioning of Cloud PCs.
-    - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: 
+    - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: The results of every partner agent's installation status on Cloud PC.
       - `[InstallStatus <String>]`: cloudPcPartnerAgentInstallStatus
-      - `[IsThirdPartyPartner <Boolean?>]`: 
+      - `[IsThirdPartyPartner <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
       - `[PartnerAgentName <String>]`: cloudPcPartnerAgentName
-      - `[Retriable <Boolean?>]`: 
+      - `[Retriable <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
     - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
     - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
     - `[ProvisioningType <String>]`: cloudPcProvisioningType
@@ -24989,7 +25244,7 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
         - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
           - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -25561,7 +25816,7 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Href <String>]`: The url of the link.
+            - `[Href <String>]`: The URL of the link.
           - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
         - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -25648,14 +25903,60 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
       - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-      - `[PageLayoutType <String>]`: 
-      - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-      - `[Title <String>]`: 
-      - `[WebParts <IMicrosoftGraphWebPart[]>]`: 
-        - `[Data <IMicrosoftGraphSitePageData>]`: sitePageData
+      - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
+          - `[Emphasis <String>]`: sectionEmphasisType
+          - `[Layout <String>]`: horizontalSectionLayoutType
+        - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Type <String>]`: A unique identifier specifying the webPart type. Read-only.
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[Emphasis <String>]`: sectionEmphasisType
+          - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
+      - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+      - `[PageLayout <String>]`: pageLayoutType
+      - `[PromotionKind <String>]`: pagePromotionType
+      - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
+      - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[CommentCount <Int32?>]`: Count of comments.
+        - `[LikeCount <Int32?>]`: Count of likes.
+        - `[ShareCount <Int32?>]`: Count of shares.
+      - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
+      - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
+      - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
+      - `[Title <String>]`: Title of the sitePage.
+      - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[AlternativeText <String>]`: Alternative text on the title area.
+        - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
+        - `[ImageWebUrl <String>]`: URL of the image in the title area.
+        - `[Layout <String>]`: titleAreaLayoutType
+        - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+            - `[Key <String>]`: Key of the meta data.
+            - `[Value <String>]`: Value of the meta data.
+          - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
+            - `[Key <String>]`: Key of the metadata.
+            - `[Value <IMicrosoftGraphJson>]`: Json
+          - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
+          - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+          - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+          - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
+        - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
+        - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
+        - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
+        - `[TextAboveTitle <String>]`: The text above title line.
+        - `[TextAlignment <String>]`: titleAreaTextAlignmentType
+      - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
     - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
     - `[Root <IMicrosoftGraphRoot>]`: root
     - `[Settings <IMicrosoftGraphSiteSettings>]`: siteSettings
@@ -25977,7 +26278,7 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
             - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-              - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
             - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
             - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -27247,6 +27548,11 @@ OWNERS <IMicrosoftGraphUser1[]>: The list of this team's owners. Currently, when
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsOutOfOffice <Boolean?>]`: True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
       - `[Message <String>]`: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+    - `[StatusMessage <IMicrosoftGraphPresenceStatusMessage>]`: presenceStatusMessage
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+      - `[Message <IMicrosoftGraphItemBody>]`: itemBody
+      - `[PublishedDateTime <DateTime?>]`: 
   - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -28938,9 +29244,9 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
-          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
-            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
             - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -29061,11 +29367,11 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
         - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
         - `[OSVersion <String>]`: cloudPcOperatingSystem
         - `[OnPremisesConnectionName <String>]`: The Azure network connection that is applied during the provisioning of Cloud PCs.
-        - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: 
+        - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: The results of every partner agent's installation status on Cloud PC.
           - `[InstallStatus <String>]`: cloudPcPartnerAgentInstallStatus
-          - `[IsThirdPartyPartner <Boolean?>]`: 
+          - `[IsThirdPartyPartner <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
           - `[PartnerAgentName <String>]`: cloudPcPartnerAgentName
-          - `[Retriable <Boolean?>]`: 
+          - `[Retriable <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
         - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
         - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
         - `[ProvisioningType <String>]`: cloudPcProvisioningType
@@ -29568,7 +29874,7 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
           - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-            - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+            - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
             - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
             - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
             - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -29665,7 +29971,7 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Href <String>]`: The url of the link.
+                - `[Href <String>]`: The URL of the link.
               - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
             - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -29752,14 +30058,60 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
           - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-          - `[PageLayoutType <String>]`: 
-          - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-          - `[Title <String>]`: 
-          - `[WebParts <IMicrosoftGraphWebPart[]>]`: 
-            - `[Data <IMicrosoftGraphSitePageData>]`: sitePageData
+          - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
+                  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
+              - `[Emphasis <String>]`: sectionEmphasisType
+              - `[Layout <String>]`: horizontalSectionLayoutType
+            - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Type <String>]`: A unique identifier specifying the webPart type. Read-only.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Emphasis <String>]`: sectionEmphasisType
+              - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
+          - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+          - `[PageLayout <String>]`: pageLayoutType
+          - `[PromotionKind <String>]`: pagePromotionType
+          - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
+          - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[CommentCount <Int32?>]`: Count of comments.
+            - `[LikeCount <Int32?>]`: Count of likes.
+            - `[ShareCount <Int32?>]`: Count of shares.
+          - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
+          - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
+          - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
+          - `[Title <String>]`: Title of the sitePage.
+          - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[AlternativeText <String>]`: Alternative text on the title area.
+            - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
+            - `[ImageWebUrl <String>]`: URL of the image in the title area.
+            - `[Layout <String>]`: titleAreaLayoutType
+            - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+                - `[Key <String>]`: Key of the meta data.
+                - `[Value <String>]`: Value of the meta data.
+              - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
+                - `[Key <String>]`: Key of the metadata.
+                - `[Value <IMicrosoftGraphJson>]`: Json
+              - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
+              - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+              - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+              - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
+            - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
+            - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
+            - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
+            - `[TextAboveTitle <String>]`: The text above title line.
+            - `[TextAlignment <String>]`: titleAreaTextAlignmentType
+          - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
         - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
@@ -30117,7 +30469,7 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -31359,6 +31711,11 @@ PRIMARYCHANNEL <IMicrosoftGraphChannel>: channel
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[IsOutOfOffice <Boolean?>]`: True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
           - `[Message <String>]`: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+        - `[StatusMessage <IMicrosoftGraphPresenceStatusMessage>]`: presenceStatusMessage
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+          - `[Message <IMicrosoftGraphItemBody>]`: itemBody
+          - `[PublishedDateTime <DateTime?>]`: 
       - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -33658,9 +34015,9 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
-              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
                 - `[Actions <String>]`: chatMessageActions
-                - `[ModifiedDateTime <DateTime?>]`: 
+                - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
                 - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -33781,11 +34138,11 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
             - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
             - `[OSVersion <String>]`: cloudPcOperatingSystem
             - `[OnPremisesConnectionName <String>]`: The Azure network connection that is applied during the provisioning of Cloud PCs.
-            - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: 
+            - `[PartnerAgentInstallResults <IMicrosoftGraphCloudPcPartnerAgentInstallResult[]>]`: The results of every partner agent's installation status on Cloud PC.
               - `[InstallStatus <String>]`: cloudPcPartnerAgentInstallStatus
-              - `[IsThirdPartyPartner <Boolean?>]`: 
+              - `[IsThirdPartyPartner <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
               - `[PartnerAgentName <String>]`: cloudPcPartnerAgentName
-              - `[Retriable <Boolean?>]`: 
+              - `[Retriable <Boolean?>]`: Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
             - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
             - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
             - `[ProvisioningType <String>]`: cloudPcProvisioningType
@@ -34288,7 +34645,7 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
               - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                 - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                 - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the ID of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the ID of the service principal corresponding to the app. Read-only.
                 - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -34385,7 +34742,7 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[Href <String>]`: The url of the link.
+                    - `[Href <String>]`: The URL of the link.
                   - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -34472,14 +34829,60 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-              - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
-              - `[PageLayoutType <String>]`: 
-              - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-              - `[Title <String>]`: 
-              - `[WebParts <IMicrosoftGraphWebPart[]>]`: 
-                - `[Data <IMicrosoftGraphSitePageData>]`: sitePageData
+              - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
+                  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                  - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
+                    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                    - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
+                      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                    - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
+                  - `[Emphasis <String>]`: sectionEmphasisType
+                  - `[Layout <String>]`: horizontalSectionLayoutType
+                - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Type <String>]`: A unique identifier specifying the webPart type. Read-only.
+                  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                  - `[Emphasis <String>]`: sectionEmphasisType
+                  - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
+              - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+              - `[PageLayout <String>]`: pageLayoutType
+              - `[PromotionKind <String>]`: pagePromotionType
+              - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
+              - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[CommentCount <Int32?>]`: Count of comments.
+                - `[LikeCount <Int32?>]`: Count of likes.
+                - `[ShareCount <Int32?>]`: Count of shares.
+              - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
+              - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
+              - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
+              - `[Title <String>]`: Title of the sitePage.
+              - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[AlternativeText <String>]`: Alternative text on the title area.
+                - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
+                - `[ImageWebUrl <String>]`: URL of the image in the title area.
+                - `[Layout <String>]`: titleAreaLayoutType
+                - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+                    - `[Key <String>]`: Key of the meta data.
+                    - `[Value <String>]`: Value of the meta data.
+                  - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
+                    - `[Key <String>]`: Key of the metadata.
+                    - `[Value <IMicrosoftGraphJson>]`: Json
+                  - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
+                  - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+                  - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+                  - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
+                - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
+                - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
+                - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
+                - `[TextAboveTitle <String>]`: The text above title line.
+                - `[TextAlignment <String>]`: titleAreaTextAlignmentType
+              - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
             - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
@@ -34837,7 +35240,7 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
                     - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                      - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                      - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                     - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                     - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                     - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -35842,6 +36245,11 @@ TEMPLATEDEFINITION <IMicrosoftGraphTeamTemplateDefinition>: teamTemplateDefiniti
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[IsOutOfOffice <Boolean?>]`: True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
               - `[Message <String>]`: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+            - `[StatusMessage <IMicrosoftGraphPresenceStatusMessage>]`: presenceStatusMessage
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
+              - `[Message <IMicrosoftGraphItemBody>]`: itemBody
+              - `[PublishedDateTime <DateTime?>]`: 
           - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 

@@ -268,7 +268,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySiteSource1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySiteSource
 
 ## NOTES
 

@@ -21,7 +21,7 @@ Update-MgDeviceManagementVirtualEndpointOnPremisesConnection -CloudPcOnPremisesC
  [-HealthCheckStatusDetails <IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails>] [-Id <String>] [-InUse]
  [-ManagedBy <String>] [-OrganizationalUnit <String>] [-ResourceGroupId <String>] [-SubnetId <String>]
  [-SubscriptionId <String>] [-SubscriptionName <String>] [-Type <String>] [-VirtualNetworkId <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-VirtualNetworkLocation <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -48,7 +48,7 @@ Update-MgDeviceManagementVirtualEndpointOnPremisesConnection
  [-HealthCheckStatusDetails <IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails>] [-Id <String>] [-InUse]
  [-ManagedBy <String>] [-OrganizationalUnit <String>] [-ResourceGroupId <String>] [-SubnetId <String>]
  [-SubscriptionId <String>] [-SubscriptionName <String>] [-Type <String>] [-VirtualNetworkId <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-VirtualNetworkLocation <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -428,6 +428,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -VirtualNetworkLocation
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -511,6 +526,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcOnPremisesConnection>: cloudPcOnPremisesCon
   - `[SubscriptionName <String>]`: The name of the target Azure subscription. Read-only.
   - `[Type <String>]`: cloudPcOnPremisesConnectionType
   - `[VirtualNetworkId <String>]`: The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
+  - `[VirtualNetworkLocation <String>]`: 
 
 HEALTHCHECKSTATUSDETAILS <IMicrosoftGraphCloudPcOnPremisesConnectionStatusDetails>: cloudPcOnPremisesConnectionStatusDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

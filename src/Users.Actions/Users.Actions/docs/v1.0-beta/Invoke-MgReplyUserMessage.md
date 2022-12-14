@@ -9,8 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reply to the sender of a message using either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
+When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter.
+Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 This method saves the message in the **Sent Items** folder.
 Alternatively, create a draft to reply to a message, and send it later.
@@ -45,8 +45,8 @@ Invoke-MgReplyUserMessage -InputObject <IUsersActionsIdentity> [-AdditionalPrope
 
 ## DESCRIPTION
 Reply to the sender of a message using either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
+When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter.
+Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 This method saves the message in the **Sent Items** folder.
 Alternatively, create a draft to reply to a message, and send it later.
