@@ -15,7 +15,7 @@ Update the properties of the cloudPcOrganizationSettings object in a tenant.
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceManagementVirtualEndpointOrganizationSetting [-AdditionalProperties <Hashtable>]
- [-EnableMemAutoEnroll] [-Id <String>] [-OSVersion <String>] [-UserAccountType <String>]
+ [-EnableMemAutoEnroll] [-EnableSingleSignOn] [-Id <String>] [-OSVersion <String>] [-UserAccountType <String>]
  [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -86,6 +86,21 @@ Accept wildcard characters: False
 ### -EnableMemAutoEnroll
 Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM).
 The default value is false.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableSingleSignOn
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -231,6 +246,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcOrganizationSettings>: cloudPcOrganizationS
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[EnableMemAutoEnroll <Boolean?>]`: Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
+  - `[EnableSingleSignOn <Boolean?>]`: 
   - `[OSVersion <String>]`: cloudPcOperatingSystem
   - `[UserAccountType <String>]`: cloudPcUserAccountType
   - `[WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>]`: cloudPcWindowsSettings

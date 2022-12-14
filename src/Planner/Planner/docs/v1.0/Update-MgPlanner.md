@@ -225,7 +225,7 @@ BODYPARAMETER <IMicrosoftGraphPlanner1>: planner
       - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+        - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
       - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
       - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -332,7 +332,7 @@ BUCKETS <IMicrosoftGraphPlannerBucket[]>: Read-only. Nullable. Returns a collect
     - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+      - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
     - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
     - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -395,7 +395,7 @@ PLANS <IMicrosoftGraphPlannerPlan[]>: Read-only. Nullable. Returns a collection 
       - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+        - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
       - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
       - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -493,7 +493,7 @@ TASKS <IMicrosoftGraphPlannerTask[]>: Read-only. Nullable. Returns a collection 
   - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+    - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
   - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
   - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

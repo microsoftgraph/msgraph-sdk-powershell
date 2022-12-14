@@ -17,7 +17,7 @@ Update print
 Update-MgPrint [-AdditionalProperties <Hashtable>] [-Connectors <IMicrosoftGraphPrintConnector1[]>]
  [-Operations <IMicrosoftGraphPrintOperation[]>] [-Printers <IMicrosoftGraphPrinter[]>]
  [-Services <IMicrosoftGraphPrintService[]>] [-Settings <IMicrosoftGraphPrintSettings>]
- [-Shares <IMicrosoftGraphPrinterShare1[]>] [-TaskDefinitions <IMicrosoftGraphPrintTaskDefinition[]>]
+ [-Shares <IMicrosoftGraphPrinterShare1[]>] [-TaskDefinitions <IMicrosoftGraphPrintTaskDefinition1[]>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -180,7 +180,7 @@ List of abstract definition for a task that can be triggered when various events
 To construct, please use Get-Help -Online and see NOTES section for TASKDEFINITIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1[]
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -380,7 +380,7 @@ BODYPARAMETER <IMicrosoftGraphPrint>: print
         - `[State <String>]`: 
       - `[Tasks <IMicrosoftGraphPrintTask1[]>]`: A list of printTasks that were triggered by this print job.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+        - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
@@ -396,10 +396,10 @@ BODYPARAMETER <IMicrosoftGraphPrint>: print
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
           - `[State <String>]`: printTaskProcessingState
-        - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
+        - `[Trigger <IMicrosoftGraphPrintTaskTrigger1>]`: printTaskTrigger
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+          - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
           - `[Event <String>]`: printEvent
     - `[Location <IMicrosoftGraphPrinterLocation1>]`: printerLocation
     - `[Manufacturer <String>]`: The manufacturer of the printer/printerShare.
@@ -444,7 +444,7 @@ BODYPARAMETER <IMicrosoftGraphPrint>: print
           - `[PrincipalType <String>]`: The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
           - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
           - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
-        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
           - `[DisplayName <String>]`: The display name of the label. Read-only.
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -755,7 +755,7 @@ BODYPARAMETER <IMicrosoftGraphPrint>: print
                     - `[Type <Int32?>]`: For internal use only
                   - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
                   - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-                  - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+                  - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
                   - `[DeviceMetadata <String>]`: For internal use only. Set to null.
                   - `[DeviceVersion <Int32?>]`: For internal use only.
                   - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -1331,7 +1331,7 @@ BODYPARAMETER <IMicrosoftGraphPrint>: print
                       - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                         - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                         - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                         - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
                         - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -1861,7 +1861,7 @@ BODYPARAMETER <IMicrosoftGraphPrint>: print
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[Href <String>]`: The url of the link.
+                      - `[Href <String>]`: The URL of the link.
                     - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                   - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2708,7 +2708,7 @@ BODYPARAMETER <IMicrosoftGraphPrint>: print
                     - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                      - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                      - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                     - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                     - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                     - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -2998,7 +2998,7 @@ BODYPARAMETER <IMicrosoftGraphPrint>: print
       - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
       - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
       - `[Printer <IMicrosoftGraphPrinter>]`: printer
-    - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger[]>]`: A list of task triggers that are associated with the printer.
+    - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger1[]>]`: A list of task triggers that are associated with the printer.
   - `[Services <IMicrosoftGraphPrintService[]>]`: The list of available Universal Print service endpoints.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Endpoints <IMicrosoftGraphPrintServiceEndpoint1[]>]`: Endpoints that can be used to access the service. Read-only. Nullable.
@@ -3009,7 +3009,7 @@ BODYPARAMETER <IMicrosoftGraphPrint>: print
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DocumentConversionEnabled <Boolean?>]`: Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.
   - `[Shares <IMicrosoftGraphPrinterShare1[]>]`: The list of printer shares registered in the tenant.
-  - `[TaskDefinitions <IMicrosoftGraphPrintTaskDefinition[]>]`: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
+  - `[TaskDefinitions <IMicrosoftGraphPrintTaskDefinition1[]>]`: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
 
 CONNECTORS <IMicrosoftGraphPrintConnector1[]>: The list of available print connectors.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -3149,7 +3149,7 @@ PRINTERS <IMicrosoftGraphPrinter[]>: The list of printers registered in the tena
       - `[State <String>]`: 
     - `[Tasks <IMicrosoftGraphPrintTask1[]>]`: A list of printTasks that were triggered by this print job.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+      - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
@@ -3165,10 +3165,10 @@ PRINTERS <IMicrosoftGraphPrinter[]>: The list of printers registered in the tena
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
         - `[State <String>]`: printTaskProcessingState
-      - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
+      - `[Trigger <IMicrosoftGraphPrintTaskTrigger1>]`: printTaskTrigger
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+        - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
         - `[Event <String>]`: printEvent
   - `[Location <IMicrosoftGraphPrinterLocation1>]`: printerLocation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3238,7 +3238,7 @@ PRINTERS <IMicrosoftGraphPrinter[]>: The list of printers registered in the tena
         - `[PrincipalType <String>]`: The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
         - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
         - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
-      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
         - `[DisplayName <String>]`: The display name of the label. Read-only.
         - `[LabelId <String>]`: The unique identifier of the label.
       - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -3549,7 +3549,7 @@ PRINTERS <IMicrosoftGraphPrinter[]>: The list of printers registered in the tena
                   - `[Type <Int32?>]`: For internal use only
                 - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
                 - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-                - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+                - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
                 - `[DeviceMetadata <String>]`: For internal use only. Set to null.
                 - `[DeviceVersion <Int32?>]`: For internal use only.
                 - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -4125,7 +4125,7 @@ PRINTERS <IMicrosoftGraphPrinter[]>: The list of printers registered in the tena
                     - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                       - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                      - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                      - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                       - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                       - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
                       - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -4655,7 +4655,7 @@ PRINTERS <IMicrosoftGraphPrinter[]>: The list of printers registered in the tena
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[Href <String>]`: The url of the link.
+                    - `[Href <String>]`: The URL of the link.
                   - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -5502,7 +5502,7 @@ PRINTERS <IMicrosoftGraphPrinter[]>: The list of printers registered in the tena
                   - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                    - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                    - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                   - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                   - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                   - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -5792,7 +5792,7 @@ PRINTERS <IMicrosoftGraphPrinter[]>: The list of printers registered in the tena
     - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
     - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
     - `[Printer <IMicrosoftGraphPrinter>]`: printer
-  - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger[]>]`: A list of task triggers that are associated with the printer.
+  - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger1[]>]`: A list of task triggers that are associated with the printer.
 
 SERVICES <IMicrosoftGraphPrintService[]>: The list of available Universal Print service endpoints.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -5908,7 +5908,7 @@ SHARES <IMicrosoftGraphPrinterShare1[]>: The list of printer shares registered i
       - `[State <String>]`: 
     - `[Tasks <IMicrosoftGraphPrintTask1[]>]`: A list of printTasks that were triggered by this print job.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+      - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
@@ -5924,10 +5924,10 @@ SHARES <IMicrosoftGraphPrinterShare1[]>: The list of printer shares registered i
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
         - `[State <String>]`: printTaskProcessingState
-      - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
+      - `[Trigger <IMicrosoftGraphPrintTaskTrigger1>]`: printTaskTrigger
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+        - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
         - `[Event <String>]`: printEvent
   - `[Location <IMicrosoftGraphPrinterLocation1>]`: printerLocation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5974,7 +5974,7 @@ SHARES <IMicrosoftGraphPrinterShare1[]>: The list of printer shares registered i
       - `[PrincipalType <String>]`: The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
       - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
       - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
-    - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+    - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
       - `[DisplayName <String>]`: The display name of the label. Read-only.
       - `[LabelId <String>]`: The unique identifier of the label.
     - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -6285,7 +6285,7 @@ SHARES <IMicrosoftGraphPrinterShare1[]>: The list of printer shares registered i
                 - `[Type <Int32?>]`: For internal use only
               - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
               - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-              - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+              - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
               - `[DeviceMetadata <String>]`: For internal use only. Set to null.
               - `[DeviceVersion <Int32?>]`: For internal use only.
               - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -6861,7 +6861,7 @@ SHARES <IMicrosoftGraphPrinterShare1[]>: The list of printer shares registered i
                   - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
                     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                     - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-                    - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+                    - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
                     - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
                     - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
                     - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -7391,7 +7391,7 @@ SHARES <IMicrosoftGraphPrinterShare1[]>: The list of printer shares registered i
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Href <String>]`: The url of the link.
+                  - `[Href <String>]`: The URL of the link.
                 - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in the notebook. Read-only. Nullable.
                 - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -8238,7 +8238,7 @@ SHARES <IMicrosoftGraphPrinterShare1[]>: The list of printer shares registered i
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat1>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -8552,9 +8552,9 @@ SHARES <IMicrosoftGraphPrinterShare1[]>: The list of printer shares registered i
     - `[LastSeenDateTime <DateTime?>]`: The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
     - `[RegisteredDateTime <DateTime?>]`: The DateTimeOffset when the printer was registered. Read-only.
     - `[Shares <IMicrosoftGraphPrinterShare1[]>]`: The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
-    - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger[]>]`: A list of task triggers that are associated with the printer.
+    - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger1[]>]`: A list of task triggers that are associated with the printer.
 
-TASKDEFINITIONS <IMicrosoftGraphPrintTaskDefinition[]>: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
+TASKDEFINITIONS <IMicrosoftGraphPrintTaskDefinition1[]>: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8565,16 +8565,16 @@ TASKDEFINITIONS <IMicrosoftGraphPrintTaskDefinition[]>: List of abstract definit
   - `[DisplayName <String>]`: The name of the printTaskDefinition.
   - `[Tasks <IMicrosoftGraphPrintTask1[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+    - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
     - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
     - `[Status <IMicrosoftGraphPrintTaskStatus>]`: printTaskStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
       - `[State <String>]`: printTaskProcessingState
-    - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
+    - `[Trigger <IMicrosoftGraphPrintTaskTrigger1>]`: printTaskTrigger
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+      - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
       - `[Event <String>]`: printEvent
 
 ## RELATED LINKS

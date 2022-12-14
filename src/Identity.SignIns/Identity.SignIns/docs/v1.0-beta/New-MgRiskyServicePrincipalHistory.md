@@ -16,7 +16,7 @@ Create new navigation property to history for identityProtection
 ```
 New-MgRiskyServicePrincipalHistory -RiskyServicePrincipalId <String> [-AccountEnabled]
  [-Activity <IMicrosoftGraphRiskServicePrincipalActivity>] [-AdditionalProperties <Hashtable>]
- [-AppId <String>] [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]
+ [-AppId <String>] [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem1[]>]
  [-Id <String>] [-InitiatedBy <String>] [-IsProcessing] [-RiskDetail <String>]
  [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
  [-ServicePrincipalId <String>] [-ServicePrincipalType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -25,20 +25,20 @@ New-MgRiskyServicePrincipalHistory -RiskyServicePrincipalId <String> [-AccountEn
 ### Create
 ```
 New-MgRiskyServicePrincipalHistory -RiskyServicePrincipalId <String>
- -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgRiskyServicePrincipalHistory -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphRiskyServicePrincipalHistoryItem1> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgRiskyServicePrincipalHistory -InputObject <IIdentitySignInsIdentity> [-AccountEnabled]
  [-Activity <IMicrosoftGraphRiskServicePrincipalActivity>] [-AdditionalProperties <Hashtable>]
- [-AppId <String>] [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]
+ [-AppId <String>] [-DisplayName <String>] [-History <IMicrosoftGraphRiskyServicePrincipalHistoryItem1[]>]
  [-Id <String>] [-InitiatedBy <String>] [-IsProcessing] [-RiskDetail <String>]
  [-RiskLastUpdatedDateTime <DateTime>] [-RiskLevel <String>] [-RiskState <String>]
  [-ServicePrincipalId <String>] [-ServicePrincipalType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -117,7 +117,7 @@ riskyServicePrincipalHistoryItem
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -148,7 +148,7 @@ Represents the risk history of Azure AD service principals.
 To construct, please use Get-Help -Online and see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem1[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -RiskDetail
-.
+riskDetail
 
 ```yaml
 Type: System.String
@@ -368,11 +368,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRiskyServicePrincipalHistoryItem1
 
 ## NOTES
 
@@ -385,17 +385,17 @@ To create the parameters described below, construct a hash table containing the 
 
 ACTIVITY <IMicrosoftGraphRiskServicePrincipalActivity>: riskServicePrincipalActivity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Detail <String>]`: 
+  - `[Detail <String>]`: riskDetail
   - `[RiskEventTypes <String[]>]`: 
 
-BODYPARAMETER <IMicrosoftGraphRiskyServicePrincipalHistoryItem>: riskyServicePrincipalHistoryItem
+BODYPARAMETER <IMicrosoftGraphRiskyServicePrincipalHistoryItem1>: riskyServicePrincipalHistoryItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false.
   - `[AppId <String>]`: The globally unique identifier for the associated application (its appId property), if any.
   - `[DisplayName <String>]`: The display name for the service principal.
-  - `[History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]`: Represents the risk history of Azure AD service principals.
+  - `[History <IMicrosoftGraphRiskyServicePrincipalHistoryItem1[]>]`: Represents the risk history of Azure AD service principals.
   - `[IsProcessing <Boolean?>]`: Indicates whether Azure AD is currently processing the service principal's risky state.
-  - `[RiskDetail <String>]`: 
+  - `[RiskDetail <String>]`: riskDetail
   - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
@@ -403,18 +403,18 @@ BODYPARAMETER <IMicrosoftGraphRiskyServicePrincipalHistoryItem>: riskyServicePri
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Activity <IMicrosoftGraphRiskServicePrincipalActivity>]`: riskServicePrincipalActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Detail <String>]`: 
+    - `[Detail <String>]`: riskDetail
     - `[RiskEventTypes <String[]>]`: 
   - `[InitiatedBy <String>]`: The identifier of the actor of the operation.
   - `[ServicePrincipalId <String>]`: The identifier of the service principal.
 
-HISTORY <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>: Represents the risk history of Azure AD service principals.
+HISTORY <IMicrosoftGraphRiskyServicePrincipalHistoryItem1[]>: Represents the risk history of Azure AD service principals.
   - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false.
   - `[AppId <String>]`: The globally unique identifier for the associated application (its appId property), if any.
   - `[DisplayName <String>]`: The display name for the service principal.
-  - `[History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]`: Represents the risk history of Azure AD service principals.
+  - `[History <IMicrosoftGraphRiskyServicePrincipalHistoryItem1[]>]`: Represents the risk history of Azure AD service principals.
   - `[IsProcessing <Boolean?>]`: Indicates whether Azure AD is currently processing the service principal's risky state.
-  - `[RiskDetail <String>]`: 
+  - `[RiskDetail <String>]`: riskDetail
   - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
@@ -422,7 +422,7 @@ HISTORY <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>: Represents the risk
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Activity <IMicrosoftGraphRiskServicePrincipalActivity>]`: riskServicePrincipalActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Detail <String>]`: 
+    - `[Detail <String>]`: riskDetail
     - `[RiskEventTypes <String[]>]`: 
   - `[InitiatedBy <String>]`: The identifier of the actor of the operation.
   - `[ServicePrincipalId <String>]`: The identifier of the service principal.

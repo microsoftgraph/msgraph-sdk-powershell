@@ -813,7 +813,9 @@ The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMi
 See more in the table.
 The value of this object also limits the number of permissions an app can request.
 For more information, see Limits on requested permissions per app.
-Supports $filter (eq, ne, not).
+The value for this property has implications on other app object properties.
+As a result, if you change this property, you may need to change other properties first.
+For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
 
 ```yaml
 Type: System.String
@@ -1301,7 +1303,7 @@ BODYPARAMETER <IMicrosoftGraphApplication>: application
     - `[CredentialsWithUsageVerify <Boolean?>]`: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
     - `[IsEnabled <Boolean?>]`: Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
     - `[TokenEncryptionKeyId <Boolean?>]`: Locks the tokenEncryptionKeyId property for modification on the service principal.
-  - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. Supports $filter (eq, ne, not).
+  - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
   - `[Spa <IMicrosoftGraphSpaApplication>]`: spaApplication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RedirectUris <String[]>]`: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
@@ -1700,7 +1702,7 @@ CONNECTORGROUP <IMicrosoftGraphConnectorGroup>: connectorGroup
       - `[CredentialsWithUsageVerify <Boolean?>]`: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
       - `[IsEnabled <Boolean?>]`: Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
       - `[TokenEncryptionKeyId <Boolean?>]`: Locks the tokenEncryptionKeyId property for modification on the service principal.
-    - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. Supports $filter (eq, ne, not).
+    - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
     - `[Spa <IMicrosoftGraphSpaApplication>]`: spaApplication
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[RedirectUris <String[]>]`: Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.

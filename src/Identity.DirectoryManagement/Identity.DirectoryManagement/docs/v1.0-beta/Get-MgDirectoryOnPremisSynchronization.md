@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryOnPremisSynchronization
 
 ## SYNOPSIS
-Get onPremisesSynchronization from directory
+A container for on-premises directory synchronization functionalities that are available for the organization.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDirectoryOnPremisSynchronization -InputObject <IIdentityDirectoryManagemen
 ```
 
 ## DESCRIPTION
-Get onPremisesSynchronization from directory
+A container for on-premises directory synchronization functionalities that are available for the organization.
 
 ## EXAMPLES
 

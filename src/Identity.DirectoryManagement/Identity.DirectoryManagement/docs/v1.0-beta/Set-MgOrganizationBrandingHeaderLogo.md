@@ -8,7 +8,9 @@ schema: 2.0.0
 # Set-MgOrganizationBrandingHeaderLogo
 
 ## SYNOPSIS
-Update headerLogo for the navigation property branding in organization
+A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Set-MgOrganizationBrandingHeaderLogo -InputObject <IIdentityDirectoryManagementI
 ```
 
 ## DESCRIPTION
-Update headerLogo for the navigation property branding in organization
+A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ## EXAMPLES
 

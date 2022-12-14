@@ -15,8 +15,8 @@ Create new navigation property to tasks for print
 ### CreateExpanded1 (Default)
 ```
 New-MgPrintTaskDefinitionTask -PrintTaskDefinitionId <String> [-AdditionalProperties <Hashtable>]
- [-Definition <IMicrosoftGraphPrintTaskDefinition1>] [-Id <String>] [-ParentUrl <String>]
- [-Status <IMicrosoftGraphPrintTaskStatus>] [-Trigger <IMicrosoftGraphPrintTaskTrigger1>] [-Confirm] [-WhatIf]
+ [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Id <String>] [-ParentUrl <String>]
+ [-Status <IMicrosoftGraphPrintTaskStatus>] [-Trigger <IMicrosoftGraphPrintTaskTrigger>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -35,8 +35,8 @@ New-MgPrintTaskDefinitionTask -InputObject <IDevicesCloudPrintIdentity>
 ### CreateViaIdentityExpanded1
 ```
 New-MgPrintTaskDefinitionTask -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
- [-Definition <IMicrosoftGraphPrintTaskDefinition1>] [-Id <String>] [-ParentUrl <String>]
- [-Status <IMicrosoftGraphPrintTaskStatus>] [-Trigger <IMicrosoftGraphPrintTaskTrigger1>] [-Confirm] [-WhatIf]
+ [-Definition <IMicrosoftGraphPrintTaskDefinition>] [-Id <String>] [-ParentUrl <String>]
+ [-Status <IMicrosoftGraphPrintTaskStatus>] [-Trigger <IMicrosoftGraphPrintTaskTrigger>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -83,7 +83,7 @@ printTaskDefinition
 To construct, please use Get-Help -Online and see NOTES section for DEFINITION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -179,7 +179,7 @@ printTaskTrigger
 To construct, please use Get-Help -Online and see NOTES section for TRIGGER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskTrigger1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskTrigger
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -246,7 +246,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphPrintTask>: printTask
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
+  - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
@@ -262,13 +262,13 @@ BODYPARAMETER <IMicrosoftGraphPrintTask>: printTask
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
     - `[State <String>]`: printTaskProcessingState
-  - `[Trigger <IMicrosoftGraphPrintTaskTrigger1>]`: printTaskTrigger
+  - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
+    - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
     - `[Event <String>]`: printEvent
 
-DEFINITION <IMicrosoftGraphPrintTaskDefinition1>: printTaskDefinition
+DEFINITION <IMicrosoftGraphPrintTaskDefinition>: printTaskDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
@@ -280,16 +280,16 @@ DEFINITION <IMicrosoftGraphPrintTaskDefinition1>: printTaskDefinition
   - `[DisplayName <String>]`: The name of the printTaskDefinition.
   - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
+    - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
     - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
     - `[Status <IMicrosoftGraphPrintTaskStatus>]`: printTaskStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
       - `[State <String>]`: printTaskProcessingState
-    - `[Trigger <IMicrosoftGraphPrintTaskTrigger1>]`: printTaskTrigger
+    - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
+      - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
       - `[Event <String>]`: printEvent
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
@@ -310,10 +310,10 @@ STATUS <IMicrosoftGraphPrintTaskStatus>: printTaskStatus
   - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
   - `[State <String>]`: printTaskProcessingState
 
-TRIGGER <IMicrosoftGraphPrintTaskTrigger1>: printTaskTrigger
+TRIGGER <IMicrosoftGraphPrintTaskTrigger>: printTaskTrigger
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
+  - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
@@ -325,13 +325,13 @@ TRIGGER <IMicrosoftGraphPrintTaskTrigger1>: printTaskTrigger
     - `[DisplayName <String>]`: The name of the printTaskDefinition.
     - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Definition <IMicrosoftGraphPrintTaskDefinition1>]`: printTaskDefinition
+      - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
       - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/beta/print/printers/{printerId}/jobs/{jobId}. Read-only.
       - `[Status <IMicrosoftGraphPrintTaskStatus>]`: printTaskStatus
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
         - `[State <String>]`: printTaskProcessingState
-      - `[Trigger <IMicrosoftGraphPrintTaskTrigger1>]`: printTaskTrigger
+      - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
   - `[Event <String>]`: printEvent
 
 ## RELATED LINKS

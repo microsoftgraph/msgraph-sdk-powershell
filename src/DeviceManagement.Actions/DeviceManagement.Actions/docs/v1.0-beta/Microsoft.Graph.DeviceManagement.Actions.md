@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: 4d897fff-617b-47f4-bda7-98a5a71c5d9b
+Module Guid: efe9dee6-145c-484e-947c-cbff6498c3cf
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -304,6 +304,9 @@ Get the daily aggregated remote connection reports, such as round trip time, ava
 ### [Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport](Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport.md)
 Get the remote connection history records of a Cloud PC during a given period.
 
+### [Get-MgDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport](Get-MgDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport.md)
+Invoke action getSharedUseLicenseUsageReport
+
 ### [Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport](Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport.md)
 Get the total aggregated remote connection usage of a Cloud PC during a given time span.
 
@@ -474,7 +477,8 @@ Retire a device
 Retire a device
 
 ### [Invoke-MgRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation](Invoke-MgRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation.md)
-Invoke action retryPartnerAgentInstallation
+Retry installation for the partner agents which failed to install on the Cloud PC.
+Service side will check which agent installation failed firstly and retry.
 
 ### [Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage](Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage.md)
 Reupload a cloudPcDeviceImage object that failed to upload.

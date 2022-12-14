@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityCasesRoot
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityCasesRoot1
 
 ## NOTES
 

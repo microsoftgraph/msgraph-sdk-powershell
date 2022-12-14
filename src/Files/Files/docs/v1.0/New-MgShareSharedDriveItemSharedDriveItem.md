@@ -559,7 +559,7 @@ BODYPARAMETER <IMicrosoftGraphSharedDriveItem>: sharedDriveItem
             - `[Type <Int32?>]`: For internal use only
           - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
           - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
           - `[DeviceMetadata <String>]`: For internal use only. Set to null.
           - `[DeviceVersion <Int32?>]`: For internal use only.
           - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -1290,7 +1290,7 @@ BODYPARAMETER <IMicrosoftGraphSharedDriveItem>: sharedDriveItem
         - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
           - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -1854,7 +1854,7 @@ BODYPARAMETER <IMicrosoftGraphSharedDriveItem>: sharedDriveItem
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Href <String>]`: The url of the link.
+              - `[Href <String>]`: The URL of the link.
             - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
           - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2055,7 +2055,7 @@ BODYPARAMETER <IMicrosoftGraphSharedDriveItem>: sharedDriveItem
         - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
           - `[DisplayName <String>]`: The display name of the label. Read-only.
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -2182,7 +2182,7 @@ BODYPARAMETER <IMicrosoftGraphSharedDriveItem>: sharedDriveItem
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -3149,7 +3149,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
           - `[Type <Int32?>]`: For internal use only
         - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
         - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+        - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
         - `[DeviceMetadata <String>]`: For internal use only. Set to null.
         - `[DeviceVersion <Int32?>]`: For internal use only.
         - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -3887,7 +3887,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
       - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
         - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
         - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
         - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -4451,7 +4451,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Href <String>]`: The url of the link.
+            - `[Href <String>]`: The URL of the link.
           - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
         - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -4652,7 +4652,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
       - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
       - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
         - `[DisplayName <String>]`: The display name of the label. Read-only.
         - `[LabelId <String>]`: The unique identifier of the label.
       - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -4779,7 +4779,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
               - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
               - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
               - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -5729,7 +5729,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem>: driveItem
             - `[Type <Int32?>]`: For internal use only
           - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
           - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
           - `[DeviceMetadata <String>]`: For internal use only. Set to null.
           - `[DeviceVersion <Int32?>]`: For internal use only.
           - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -6495,7 +6495,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem>: driveItem
         - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
           - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -6590,7 +6590,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem>: driveItem
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Href <String>]`: The url of the link.
+              - `[Href <String>]`: The URL of the link.
             - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
           - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -6826,7 +6826,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem>: driveItem
         - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
           - `[DisplayName <String>]`: The display name of the label. Read-only.
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -6953,7 +6953,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem>: driveItem
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -8298,7 +8298,7 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All driveItems contained in the sharing root
             - `[Type <Int32?>]`: For internal use only
           - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
           - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
           - `[DeviceMetadata <String>]`: For internal use only. Set to null.
           - `[DeviceVersion <Int32?>]`: For internal use only.
           - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -9064,7 +9064,7 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All driveItems contained in the sharing root
         - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
           - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -9159,7 +9159,7 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All driveItems contained in the sharing root
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Href <String>]`: The url of the link.
+              - `[Href <String>]`: The URL of the link.
             - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
           - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -9395,7 +9395,7 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All driveItems contained in the sharing root
         - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
           - `[DisplayName <String>]`: The display name of the label. Read-only.
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -9522,7 +9522,7 @@ ITEMS <IMicrosoftGraphDriveItem[]>: All driveItems contained in the sharing root
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -10867,7 +10867,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
           - `[Type <Int32?>]`: For internal use only
         - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
         - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+        - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
         - `[DeviceMetadata <String>]`: For internal use only. Set to null.
         - `[DeviceVersion <Int32?>]`: For internal use only.
         - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -11605,7 +11605,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
       - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+        - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
         - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
         - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
         - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -12169,7 +12169,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Href <String>]`: The url of the link.
+            - `[Href <String>]`: The URL of the link.
           - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
         - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -12370,7 +12370,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
       - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
       - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+      - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
         - `[DisplayName <String>]`: The display name of the label. Read-only.
         - `[LabelId <String>]`: The unique identifier of the label.
       - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -12497,7 +12497,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
               - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
               - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
               - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -13447,7 +13447,7 @@ LIST <IMicrosoftGraphList>: list
             - `[Type <Int32?>]`: For internal use only
           - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
           - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
           - `[DeviceMetadata <String>]`: For internal use only. Set to null.
           - `[DeviceVersion <Int32?>]`: For internal use only.
           - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -14178,7 +14178,7 @@ LIST <IMicrosoftGraphList>: list
         - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
           - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -14705,7 +14705,7 @@ LIST <IMicrosoftGraphList>: list
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Href <String>]`: The url of the link.
+              - `[Href <String>]`: The URL of the link.
             - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
           - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -14916,7 +14916,7 @@ LIST <IMicrosoftGraphList>: list
         - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
           - `[DisplayName <String>]`: The display name of the label. Read-only.
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -15043,7 +15043,7 @@ LIST <IMicrosoftGraphList>: list
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -16017,7 +16017,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
             - `[Type <Int32?>]`: For internal use only
           - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
           - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
           - `[DeviceMetadata <String>]`: For internal use only. Set to null.
           - `[DeviceVersion <Int32?>]`: For internal use only.
           - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -16705,7 +16705,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
           - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -17272,7 +17272,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Href <String>]`: The url of the link.
+              - `[Href <String>]`: The URL of the link.
             - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
           - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -17473,7 +17473,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
           - `[DisplayName <String>]`: The display name of the label. Read-only.
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -17600,7 +17600,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -18676,7 +18676,7 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
             - `[Type <Int32?>]`: For internal use only
           - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
           - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
           - `[DeviceMetadata <String>]`: For internal use only. Set to null.
           - `[DeviceVersion <Int32?>]`: For internal use only.
           - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -19442,7 +19442,7 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
         - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
           - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -19537,7 +19537,7 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Href <String>]`: The url of the link.
+              - `[Href <String>]`: The URL of the link.
             - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
           - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -19773,7 +19773,7 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
         - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
           - `[DisplayName <String>]`: The display name of the label. Read-only.
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -19900,7 +19900,7 @@ ROOT <IMicrosoftGraphDriveItem>: driveItem
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -21246,7 +21246,7 @@ SITE <IMicrosoftGraphSite>: site
             - `[Type <Int32?>]`: For internal use only
           - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
           - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
+          - `[DeviceId <String>]`: Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
           - `[DeviceMetadata <String>]`: For internal use only. Set to null.
           - `[DeviceVersion <Int32?>]`: For internal use only.
           - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -21977,7 +21977,7 @@ SITE <IMicrosoftGraphSite>: site
         - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
-          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
+          - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
           - `[ClientState <String>]`: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
           - `[CreatorId <String>]`: Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
           - `[EncryptionCertificate <String>]`: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
@@ -22600,7 +22600,7 @@ SITE <IMicrosoftGraphSite>: site
         - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
-        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
+        - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
           - `[DisplayName <String>]`: The display name of the label. Read-only.
           - `[LabelId <String>]`: The unique identifier of the label.
         - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
@@ -22704,7 +22704,7 @@ SITE <IMicrosoftGraphSite>: site
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[OneNoteClientUrl <IMicrosoftGraphExternalLink>]`: externalLink
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Href <String>]`: The url of the link.
+                - `[Href <String>]`: The URL of the link.
               - `[OneNoteWebUrl <IMicrosoftGraphExternalLink>]`: externalLink
             - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in the notebook. Read-only. Nullable.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -22816,7 +22816,7 @@ SITE <IMicrosoftGraphSite>: site
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-                  - `[OrderHint <String>]`: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+                  - `[OrderHint <String>]`: Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
                 - `[ChecklistItemCount <Int32?>]`: Number of checklist items that are present on the task.
                 - `[CompletedBy <IMicrosoftGraphIdentitySet>]`: identitySet
                 - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z

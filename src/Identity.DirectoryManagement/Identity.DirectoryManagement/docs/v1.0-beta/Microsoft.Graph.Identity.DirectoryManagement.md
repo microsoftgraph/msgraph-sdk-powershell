@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 7f47b15e-5961-4e82-b64d-89b1994e12a7
+Module Guid: 8d089dda-94a8-468b-a3b9-4a5314802b69
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -383,7 +383,7 @@ Get impactedResources from directory
 Get inboundSharedUserProfiles from directory
 
 ### [Get-MgDirectoryOnPremisSynchronization](Get-MgDirectoryOnPremisSynchronization.md)
-Get onPremisesSynchronization from directory
+A container for on-premises directory synchronization functionalities that are available for the organization.
 
 ### [Get-MgDirectoryOutboundSharedUserProfile](Get-MgDirectoryOutboundSharedUserProfile.md)
 Get outboundSharedUserProfiles from directory
@@ -528,13 +528,16 @@ The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
 ### [Get-MgOrganizationBrandingCustomCss](Get-MgOrganizationBrandingCustomCss.md)
-Get customCSS for the navigation property branding from organization
+CSS styling that appears on the sign-in page.
+The allowed format is .css format only and not larger than 25 KB.
 
 ### [Get-MgOrganizationBrandingFavicon](Get-MgOrganizationBrandingFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Get-MgOrganizationBrandingHeaderLogo](Get-MgOrganizationBrandingHeaderLogo.md)
-Get headerLogo for the navigation property branding from organization
+A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ### [Get-MgOrganizationBrandingLocalization](Get-MgOrganizationBrandingLocalization.md)
 Add different branding based on a locale.
@@ -550,13 +553,16 @@ The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
 ### [Get-MgOrganizationBrandingLocalizationCustomCss](Get-MgOrganizationBrandingLocalizationCustomCss.md)
-Get customCSS for the navigation property localizations from organization
+CSS styling that appears on the sign-in page.
+The allowed format is .css format only and not larger than 25 KB.
 
 ### [Get-MgOrganizationBrandingLocalizationFavicon](Get-MgOrganizationBrandingLocalizationFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Get-MgOrganizationBrandingLocalizationHeaderLogo](Get-MgOrganizationBrandingLocalizationHeaderLogo.md)
-Get headerLogo for the navigation property localizations from organization
+A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ### [Get-MgOrganizationBrandingLocalizationSquareLogo](Get-MgOrganizationBrandingLocalizationSquareLogo.md)
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.
@@ -1025,13 +1031,16 @@ The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
 ### [Set-MgOrganizationBrandingCustomCss](Set-MgOrganizationBrandingCustomCss.md)
-Update customCSS for the navigation property branding in organization
+CSS styling that appears on the sign-in page.
+The allowed format is .css format only and not larger than 25 KB.
 
 ### [Set-MgOrganizationBrandingFavicon](Set-MgOrganizationBrandingFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Set-MgOrganizationBrandingHeaderLogo](Set-MgOrganizationBrandingHeaderLogo.md)
-Update headerLogo for the navigation property branding in organization
+A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ### [Set-MgOrganizationBrandingLocalizationBackgroundImage](Set-MgOrganizationBrandingLocalizationBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -1044,13 +1053,16 @@ The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
 We recommend using a transparent image with no padding around the logo.
 
 ### [Set-MgOrganizationBrandingLocalizationCustomCss](Set-MgOrganizationBrandingLocalizationCustomCss.md)
-Update customCSS for the navigation property localizations in organization
+CSS styling that appears on the sign-in page.
+The allowed format is .css format only and not larger than 25 KB.
 
 ### [Set-MgOrganizationBrandingLocalizationFavicon](Set-MgOrganizationBrandingLocalizationFavicon.md)
 A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Set-MgOrganizationBrandingLocalizationHeaderLogo](Set-MgOrganizationBrandingLocalizationHeaderLogo.md)
-Update headerLogo for the navigation property localizations in organization
+A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ### [Set-MgOrganizationBrandingLocalizationSquareLogo](Set-MgOrganizationBrandingLocalizationSquareLogo.md)
 A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment.

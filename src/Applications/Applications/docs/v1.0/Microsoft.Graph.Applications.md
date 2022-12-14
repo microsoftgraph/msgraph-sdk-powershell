@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: 0495599b-29dc-4963-b533-b66db030a2d0
+Module Guid: 0b516d7a-7854-437c-993c-2936f4281e05
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US

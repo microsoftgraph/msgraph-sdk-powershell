@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation
 
 ## SYNOPSIS
-Invoke action retryPartnerAgentInstallation
+Retry installation for the partner agents which failed to install on the Cloud PC.
+Service side will check which agent installation failed firstly and retry.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Invoke-MgRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation
 ```
 
 ## DESCRIPTION
-Invoke action retryPartnerAgentInstallation
+Retry installation for the partner agents which failed to install on the Cloud PC.
+Service side will check which agent installation failed firstly and retry.
 
 ## EXAMPLES
 

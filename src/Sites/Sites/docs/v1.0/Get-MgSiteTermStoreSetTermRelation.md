@@ -12,7 +12,7 @@ To indicate which terms are related to the current term as either pinned or reus
 
 ## SYNTAX
 
-### List2 (Default)
+### List (Default)
 ```
 Get-MgSiteTermStoreSetTermRelation -SetId <String> -SiteId <String> -TermId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
@@ -21,14 +21,14 @@ Get-MgSiteTermStoreSetTermRelation -SetId <String> -SiteId <String> -TermId <Str
 
 ### Get
 ```
-Get-MgSiteTermStoreSetTermRelation -RelationId <String> -SetId <String> -SiteId <String> -StoreId <String>
- -TermId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get2
-```
 Get-MgSiteTermStoreSetTermRelation -RelationId <String> -SetId <String> -SiteId <String> -TermId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+```
+
+### Get1
+```
+Get-MgSiteTermStoreSetTermRelation -RelationId <String> -SetId <String> -SiteId <String> -StoreId <String>
+ -TermId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -37,13 +37,13 @@ Get-MgSiteTermStoreSetTermRelation -InputObject <ISitesIdentity> [-ExpandPropert
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity1
 ```
 Get-MgSiteTermStoreSetTermRelation -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### List
+### List1
 ```
 Get-MgSiteTermStoreSetTermRelation -SetId <String> -SiteId <String> -StoreId <String> -TermId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
@@ -62,7 +62,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List2
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -78,7 +78,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List2
+Parameter Sets: List, List1
 Aliases: CV
 
 Required: False
@@ -108,7 +108,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List2
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -124,7 +124,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity2
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -139,7 +139,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List2
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -169,7 +169,7 @@ key: id of relation
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get2
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -184,7 +184,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List2
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -199,7 +199,7 @@ key: id of set
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get2, List, List2
+Parameter Sets: Get, Get1, List, List1
 Aliases:
 
 Required: True
@@ -214,7 +214,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get2, List, List2
+Parameter Sets: Get, Get1, List, List1
 Aliases:
 
 Required: True
@@ -229,7 +229,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List2
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -244,7 +244,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List2
+Parameter Sets: List, List1
 Aliases: OrderBy
 
 Required: False
@@ -259,7 +259,7 @@ key: id of store
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -274,7 +274,7 @@ key: id of term
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get2, List, List2
+Parameter Sets: Get, Get1, List, List1
 Aliases:
 
 Required: True
@@ -289,7 +289,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List2
+Parameter Sets: List, List1
 Aliases: Limit
 
 Required: False
@@ -308,7 +308,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreRelation1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTermStoreRelation
 
 ## NOTES
 
@@ -330,6 +330,8 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
   - `[GroupId <String>]`: key: id of group
   - `[GroupId1 <String>]`: key: id of group
+  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: key: id of list
@@ -355,6 +357,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[TermId1 <String>]`: key: id of term
   - `[Token <String>]`: Usage: token='{token}'
   - `[UserId <String>]`: key: id of user
+  - `[WebPartId <String>]`: key: id of webPart
 
 ## RELATED LINKS
 

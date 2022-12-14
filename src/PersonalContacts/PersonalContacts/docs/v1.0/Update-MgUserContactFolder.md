@@ -167,7 +167,8 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-.
+The unique idenfier for an entity.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -333,14 +334,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphContactFolder>: contactFolder
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ChildFolders <IMicrosoftGraphContactFolder[]>]`: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
   - `[Contacts <IMicrosoftGraphContact[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
     - `[Categories <String[]>]`: The categories associated with the item
     - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AssistantName <String>]`: The name of the contact's assistant.
     - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[BusinessAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
@@ -360,7 +361,7 @@ BODYPARAMETER <IMicrosoftGraphContactFolder>: contactFolder
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the contact. Read-only. Nullable.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[FileAs <String>]`: The name the contact is filed under.
     - `[Generation <String>]`: The contact's generation.
     - `[GivenName <String>]`: The contact's given name.
@@ -373,7 +374,7 @@ BODYPARAMETER <IMicrosoftGraphContactFolder>: contactFolder
     - `[MiddleName <String>]`: 
     - `[MobilePhone <String>]`: 
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Value <String[]>]`: A collection of property values.
     - `[NickName <String>]`: 
     - `[OfficeLocation <String>]`: 
@@ -382,12 +383,12 @@ BODYPARAMETER <IMicrosoftGraphContactFolder>: contactFolder
     - `[PersonalNotes <String>]`: 
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Height <Int32?>]`: The height of the photo. Read-only.
       - `[Width <Int32?>]`: The width of the photo. Read-only.
     - `[Profession <String>]`: 
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Value <String>]`: A property value.
     - `[SpouseName <String>]`: 
     - `[Surname <String>]`: 
@@ -401,14 +402,14 @@ BODYPARAMETER <IMicrosoftGraphContactFolder>: contactFolder
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
 
 CHILDFOLDERS <IMicrosoftGraphContactFolder[]>: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ChildFolders <IMicrosoftGraphContactFolder[]>]`: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
   - `[Contacts <IMicrosoftGraphContact[]>]`: The contacts in the folder. Navigation property. Read-only. Nullable.
     - `[Categories <String[]>]`: The categories associated with the item
     - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AssistantName <String>]`: The name of the contact's assistant.
     - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[BusinessAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
@@ -428,7 +429,7 @@ CHILDFOLDERS <IMicrosoftGraphContactFolder[]>: The collection of child folders i
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the contact. Read-only. Nullable.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[FileAs <String>]`: The name the contact is filed under.
     - `[Generation <String>]`: The contact's generation.
     - `[GivenName <String>]`: The contact's given name.
@@ -441,7 +442,7 @@ CHILDFOLDERS <IMicrosoftGraphContactFolder[]>: The collection of child folders i
     - `[MiddleName <String>]`: 
     - `[MobilePhone <String>]`: 
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Value <String[]>]`: A collection of property values.
     - `[NickName <String>]`: 
     - `[OfficeLocation <String>]`: 
@@ -450,12 +451,12 @@ CHILDFOLDERS <IMicrosoftGraphContactFolder[]>: The collection of child folders i
     - `[PersonalNotes <String>]`: 
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Height <Int32?>]`: The height of the photo. Read-only.
       - `[Width <Int32?>]`: The width of the photo. Read-only.
     - `[Profession <String>]`: 
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-      - `[Id <String>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Value <String>]`: A property value.
     - `[SpouseName <String>]`: 
     - `[Surname <String>]`: 
@@ -473,7 +474,7 @@ CONTACTS <IMicrosoftGraphContact[]>: The contacts in the folder. Navigation prop
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AssistantName <String>]`: The name of the contact's assistant.
   - `[Birthday <DateTime?>]`: The contact's birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[BusinessAddress <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
@@ -493,7 +494,7 @@ CONTACTS <IMicrosoftGraphContact[]>: The contacts in the folder. Navigation prop
     - `[Address <String>]`: The email address of the person or entity.
     - `[Name <String>]`: The display name of the person or entity.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the contact. Read-only. Nullable.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[FileAs <String>]`: The name the contact is filed under.
   - `[Generation <String>]`: The contact's generation.
   - `[GivenName <String>]`: The contact's given name.
@@ -506,7 +507,7 @@ CONTACTS <IMicrosoftGraphContact[]>: The contacts in the folder. Navigation prop
   - `[MiddleName <String>]`: 
   - `[MobilePhone <String>]`: 
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Value <String[]>]`: A collection of property values.
   - `[NickName <String>]`: 
   - `[OfficeLocation <String>]`: 
@@ -515,12 +516,12 @@ CONTACTS <IMicrosoftGraphContact[]>: The contacts in the folder. Navigation prop
   - `[PersonalNotes <String>]`: 
   - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Height <Int32?>]`: The height of the photo. Read-only.
     - `[Width <Int32?>]`: The width of the photo. Read-only.
   - `[Profession <String>]`: 
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-    - `[Id <String>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Value <String>]`: A property value.
   - `[SpouseName <String>]`: 
   - `[Surname <String>]`: 
@@ -539,11 +540,11 @@ INPUTOBJECT <IPersonalContactsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Value <String[]>]`: A collection of property values.
 
 SINGLEVALUEEXTENDEDPROPERTIES <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-  - `[Id <String>]`: 
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Value <String>]`: A property value.
 
 ## RELATED LINKS
