@@ -53,9 +53,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
-          links:
-            downloadApplePushNotificationCertificateSigningRequest:
-              operationId: deviceManagement.applePushNotificationCertificate.downloadApplePushNotificationCertificateSigningRequest
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -703,9 +700,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
-          links:
-            terminate:
-              operationId: deviceManagement.deviceManagementPartners.deviceManagementPartner.terminate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -926,9 +920,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
-          links:
-            sync:
-              operationId: deviceManagement.exchangeConnectors.deviceManagementExchangeConnector.sync
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1573,11 +1564,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
-          links:
-            beginOnboarding:
-              operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner.beginOnboarding
-            disconnect:
-              operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner.disconnect
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1978,11 +1964,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
-          links:
-            roleDefinition:
-              operationId: deviceManagement.RoleAssignments.GetRoleDefinition
-              parameters:
-                deviceAndAppManagementRoleAssignment-id: $request.path.deviceAndAppManagementRoleAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2187,11 +2168,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roleDefinition'
-          links:
-            roleAssignments:
-              operationId: deviceManagement.RoleDefinitions.ListRoleAssignments
-              parameters:
-                roleDefinition-id: $request.path.roleDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2417,12 +2393,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roleAssignment'
-          links:
-            roleDefinition:
-              operationId: deviceManagement.roleDefinitions.RoleAssignments.GetRoleDefinition
-              parameters:
-                roleDefinition-id: $request.path.roleDefinition-id
-                roleAssignment-id: $request.path.roleAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2556,12 +2526,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roleDefinition'
-          links:
-            roleAssignments:
-              operationId: deviceManagement.roleDefinitions.roleAssignments.RoleDefinition.ListRoleAssignments
-              parameters:
-                roleDefinition-id: $request.path.roleDefinition-id
-                roleAssignment-id: $request.path.roleAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2937,15 +2901,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
-          links:
-            acceptanceStatuses:
-              operationId: deviceManagement.TermsAndConditions.ListAcceptanceStatuses
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-            assignments:
-              operationId: deviceManagement.TermsAndConditions.ListAssignments
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3175,12 +3130,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
-          links:
-            termsAndConditions:
-              operationId: deviceManagement.termsAndConditions.AcceptanceStatuses.GetTermsAndConditions
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3320,17 +3269,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
-          links:
-            acceptanceStatuses:
-              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListAcceptanceStatuses
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
-            assignments:
-              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListAssignments
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

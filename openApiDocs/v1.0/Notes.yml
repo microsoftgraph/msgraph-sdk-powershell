@@ -64,31 +64,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenote'
-          links:
-            notebooks:
-              operationId: groups.Onenote.ListNotebooks
-              parameters:
-                group-id: $request.path.group-id
-            operations:
-              operationId: groups.Onenote.ListOperations
-              parameters:
-                group-id: $request.path.group-id
-            pages:
-              operationId: groups.Onenote.ListPages
-              parameters:
-                group-id: $request.path.group-id
-            resources:
-              operationId: groups.Onenote.ListResources
-              parameters:
-                group-id: $request.path.group-id
-            sectionGroups:
-              operationId: groups.Onenote.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-            sections:
-              operationId: groups.Onenote.ListSections
-              parameters:
-                group-id: $request.path.group-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -361,19 +336,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.Notebooks.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-            sections:
-              operationId: groups.onenote.Notebooks.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-            copyNotebook:
-              operationId: groups.group.onenote.notebooks.notebook.copyNotebook
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -678,31 +640,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.notebooks.SectionGroups.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: groups.onenote.notebooks.SectionGroups.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: groups.onenote.notebooks.SectionGroups.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: groups.onenote.notebooks.SectionGroups.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -870,19 +807,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.notebooks.sectionGroups.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: groups.onenote.notebooks.sectionGroups.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -965,31 +889,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.notebooks.sectionGroups.ParentSectionGroup.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: groups.onenote.notebooks.sectionGroups.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: groups.onenote.notebooks.sectionGroups.ParentSectionGroup.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: groups.onenote.notebooks.sectionGroups.ParentSectionGroup.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1198,35 +1097,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.notebooks.sectionGroups.SectionGroups.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            parentSectionGroup:
-              operationId: groups.onenote.notebooks.sectionGroups.SectionGroups.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sectionGroups:
-              operationId: groups.onenote.notebooks.sectionGroups.SectionGroups.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sections:
-              operationId: groups.onenote.notebooks.sectionGroups.SectionGroups.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1486,32 +1356,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: groups.onenote.notebooks.sectionGroups.Sections.ListPages
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: groups.onenote.notebooks.sectionGroups.Sections.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: groups.onenote.notebooks.sectionGroups.Sections.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: groups.group.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: groups.group.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1893,29 +1737,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.Pages.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.Pages.GetParentSection
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: groups.group.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: groups.group.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: groups.group.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2251,23 +2072,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.pages.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2365,31 +2169,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.pages.ParentSection.ListPages
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2480,21 +2259,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2585,35 +2349,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: groups.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2849,29 +2584,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: groups.onenote.notebooks.Sections.ListPages
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: groups.onenote.notebooks.Sections.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: groups.onenote.notebooks.Sections.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: groups.group.onenote.notebooks.notebook.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: groups.group.onenote.notebooks.notebook.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3213,27 +2925,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.notebooks.sections.Pages.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: groups.onenote.notebooks.sections.Pages.GetParentSection
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: groups.group.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: groups.group.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: groups.group.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3529,21 +3220,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.notebooks.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: groups.onenote.notebooks.sections.pages.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3633,28 +3309,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: groups.onenote.notebooks.sections.pages.ParentSection.ListPages
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: groups.onenote.notebooks.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: groups.onenote.notebooks.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3737,19 +3391,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.notebooks.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: groups.onenote.notebooks.sections.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3832,31 +3473,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.notebooks.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: groups.onenote.notebooks.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: groups.onenote.notebooks.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: groups.onenote.notebooks.sections.ParentSectionGroup.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4318,23 +3934,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.Pages.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: groups.onenote.Pages.GetParentSection
-              parameters:
-                group-id: $request.path.group-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: groups.group.onenote.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: groups.group.onenote.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: groups.group.onenote.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4550,17 +4149,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: groups.onenote.pages.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4634,22 +4222,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: groups.onenote.pages.ParentSection.ListPages
-              parameters:
-                group-id: $request.path.group-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: groups.onenote.pages.ParentSection.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: groups.onenote.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5166,27 +4738,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.SectionGroups.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: groups.onenote.SectionGroups.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: groups.onenote.SectionGroups.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: groups.onenote.SectionGroups.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5330,17 +4881,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.sectionGroups.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: groups.onenote.sectionGroups.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5415,27 +4955,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.sectionGroups.ParentSectionGroup.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: groups.onenote.sectionGroups.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: groups.onenote.sectionGroups.ParentSectionGroup.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: groups.onenote.sectionGroups.ParentSectionGroup.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5628,31 +5147,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.sectionGroups.SectionGroups.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            parentSectionGroup:
-              operationId: groups.onenote.sectionGroups.SectionGroups.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sectionGroups:
-              operationId: groups.onenote.sectionGroups.SectionGroups.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sections:
-              operationId: groups.onenote.sectionGroups.SectionGroups.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5888,29 +5382,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: groups.onenote.sectionGroups.Sections.ListPages
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: groups.onenote.sectionGroups.Sections.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: groups.onenote.sectionGroups.Sections.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: groups.group.onenote.sectionGroups.sectionGroup.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: groups.group.onenote.sectionGroups.sectionGroup.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6252,27 +5723,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.sectionGroups.sections.Pages.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: groups.onenote.sectionGroups.sections.Pages.GetParentSection
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: groups.group.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: groups.group.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: groups.group.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6568,21 +6018,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.sectionGroups.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: groups.onenote.sectionGroups.sections.pages.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6672,28 +6107,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: groups.onenote.sectionGroups.sections.pages.ParentSection.ListPages
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: groups.onenote.sectionGroups.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: groups.onenote.sectionGroups.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6776,19 +6189,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.sectionGroups.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: groups.onenote.sectionGroups.sections.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6871,31 +6271,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.sectionGroups.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: groups.onenote.sectionGroups.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: groups.onenote.sectionGroups.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: groups.onenote.sectionGroups.sections.ParentSectionGroup.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7103,26 +6478,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: groups.onenote.Sections.ListPages
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: groups.onenote.Sections.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: groups.onenote.Sections.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: groups.group.onenote.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: groups.group.onenote.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7424,25 +6779,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.sections.Pages.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: groups.onenote.sections.Pages.GetParentSection
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: groups.group.onenote.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: groups.group.onenote.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: groups.group.onenote.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7698,19 +7034,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: groups.onenote.sections.pages.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7792,25 +7115,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: groups.onenote.sections.pages.ParentSection.ListPages
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: groups.onenote.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: groups.onenote.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7885,17 +7189,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: groups.onenote.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: groups.onenote.sections.ParentNotebook.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7970,27 +7263,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: groups.onenote.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: groups.onenote.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: groups.onenote.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: groups.onenote.sections.ParentSectionGroup.ListSections
-              parameters:
-                group-id: $request.path.group-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8053,31 +7325,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenote'
-          links:
-            notebooks:
-              operationId: sites.Onenote.ListNotebooks
-              parameters:
-                site-id: $request.path.site-id
-            operations:
-              operationId: sites.Onenote.ListOperations
-              parameters:
-                site-id: $request.path.site-id
-            pages:
-              operationId: sites.Onenote.ListPages
-              parameters:
-                site-id: $request.path.site-id
-            resources:
-              operationId: sites.Onenote.ListResources
-              parameters:
-                site-id: $request.path.site-id
-            sectionGroups:
-              operationId: sites.Onenote.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-            sections:
-              operationId: sites.Onenote.ListSections
-              parameters:
-                site-id: $request.path.site-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8350,19 +7597,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.Notebooks.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-            sections:
-              operationId: sites.onenote.Notebooks.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-            copyNotebook:
-              operationId: sites.site.onenote.notebooks.notebook.copyNotebook
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8667,31 +7901,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.notebooks.SectionGroups.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: sites.onenote.notebooks.SectionGroups.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: sites.onenote.notebooks.SectionGroups.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: sites.onenote.notebooks.SectionGroups.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8859,19 +8068,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.notebooks.sectionGroups.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: sites.onenote.notebooks.sectionGroups.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8954,31 +8150,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.notebooks.sectionGroups.ParentSectionGroup.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: sites.onenote.notebooks.sectionGroups.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: sites.onenote.notebooks.sectionGroups.ParentSectionGroup.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: sites.onenote.notebooks.sectionGroups.ParentSectionGroup.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9187,35 +8358,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.notebooks.sectionGroups.SectionGroups.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            parentSectionGroup:
-              operationId: sites.onenote.notebooks.sectionGroups.SectionGroups.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sectionGroups:
-              operationId: sites.onenote.notebooks.sectionGroups.SectionGroups.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sections:
-              operationId: sites.onenote.notebooks.sectionGroups.SectionGroups.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9475,32 +8617,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: sites.onenote.notebooks.sectionGroups.Sections.ListPages
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: sites.onenote.notebooks.sectionGroups.Sections.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: sites.onenote.notebooks.sectionGroups.Sections.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: sites.site.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: sites.site.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9882,29 +8998,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.Pages.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.Pages.GetParentSection
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: sites.site.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: sites.site.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: sites.site.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10240,23 +9333,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.pages.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10354,31 +9430,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.pages.ParentSection.ListPages
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10469,21 +9520,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10574,35 +9610,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: sites.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10838,29 +9845,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: sites.onenote.notebooks.Sections.ListPages
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: sites.onenote.notebooks.Sections.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: sites.onenote.notebooks.Sections.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: sites.site.onenote.notebooks.notebook.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: sites.site.onenote.notebooks.notebook.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11202,27 +10186,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.notebooks.sections.Pages.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: sites.onenote.notebooks.sections.Pages.GetParentSection
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: sites.site.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: sites.site.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: sites.site.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11518,21 +10481,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.notebooks.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: sites.onenote.notebooks.sections.pages.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11622,28 +10570,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: sites.onenote.notebooks.sections.pages.ParentSection.ListPages
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: sites.onenote.notebooks.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: sites.onenote.notebooks.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11726,19 +10652,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.notebooks.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: sites.onenote.notebooks.sections.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11821,31 +10734,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.notebooks.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: sites.onenote.notebooks.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: sites.onenote.notebooks.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: sites.onenote.notebooks.sections.ParentSectionGroup.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12307,23 +11195,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.Pages.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: sites.onenote.Pages.GetParentSection
-              parameters:
-                site-id: $request.path.site-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: sites.site.onenote.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: sites.site.onenote.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: sites.site.onenote.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12539,17 +11410,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: sites.onenote.pages.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12623,22 +11483,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: sites.onenote.pages.ParentSection.ListPages
-              parameters:
-                site-id: $request.path.site-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: sites.onenote.pages.ParentSection.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: sites.onenote.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13155,27 +11999,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.SectionGroups.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: sites.onenote.SectionGroups.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: sites.onenote.SectionGroups.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: sites.onenote.SectionGroups.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13319,17 +12142,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.sectionGroups.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: sites.onenote.sectionGroups.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13404,27 +12216,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.sectionGroups.ParentSectionGroup.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: sites.onenote.sectionGroups.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: sites.onenote.sectionGroups.ParentSectionGroup.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: sites.onenote.sectionGroups.ParentSectionGroup.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13617,31 +12408,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.sectionGroups.SectionGroups.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            parentSectionGroup:
-              operationId: sites.onenote.sectionGroups.SectionGroups.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sectionGroups:
-              operationId: sites.onenote.sectionGroups.SectionGroups.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sections:
-              operationId: sites.onenote.sectionGroups.SectionGroups.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13877,29 +12643,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: sites.onenote.sectionGroups.Sections.ListPages
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: sites.onenote.sectionGroups.Sections.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: sites.onenote.sectionGroups.Sections.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: sites.site.onenote.sectionGroups.sectionGroup.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: sites.site.onenote.sectionGroups.sectionGroup.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14241,27 +12984,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.sectionGroups.sections.Pages.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: sites.onenote.sectionGroups.sections.Pages.GetParentSection
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: sites.site.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: sites.site.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: sites.site.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14557,21 +13279,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.sectionGroups.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: sites.onenote.sectionGroups.sections.pages.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14661,28 +13368,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: sites.onenote.sectionGroups.sections.pages.ParentSection.ListPages
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: sites.onenote.sectionGroups.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: sites.onenote.sectionGroups.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14765,19 +13450,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.sectionGroups.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: sites.onenote.sectionGroups.sections.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14860,31 +13532,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.sectionGroups.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: sites.onenote.sectionGroups.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: sites.onenote.sectionGroups.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: sites.onenote.sectionGroups.sections.ParentSectionGroup.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15092,26 +13739,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: sites.onenote.Sections.ListPages
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: sites.onenote.Sections.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: sites.onenote.Sections.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: sites.site.onenote.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: sites.site.onenote.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15413,25 +14040,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.sections.Pages.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: sites.onenote.sections.Pages.GetParentSection
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: sites.site.onenote.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: sites.site.onenote.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: sites.site.onenote.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15687,19 +14295,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: sites.onenote.sections.pages.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15781,25 +14376,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: sites.onenote.sections.pages.ParentSection.ListPages
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: sites.onenote.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: sites.onenote.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15874,17 +14450,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: sites.onenote.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: sites.onenote.sections.ParentNotebook.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15959,27 +14524,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: sites.onenote.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: sites.onenote.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: sites.onenote.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: sites.onenote.sections.ParentSectionGroup.ListSections
-              parameters:
-                site-id: $request.path.site-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16041,31 +14585,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenote'
-          links:
-            notebooks:
-              operationId: users.Onenote.ListNotebooks
-              parameters:
-                user-id: $request.path.user-id
-            operations:
-              operationId: users.Onenote.ListOperations
-              parameters:
-                user-id: $request.path.user-id
-            pages:
-              operationId: users.Onenote.ListPages
-              parameters:
-                user-id: $request.path.user-id
-            resources:
-              operationId: users.Onenote.ListResources
-              parameters:
-                user-id: $request.path.user-id
-            sectionGroups:
-              operationId: users.Onenote.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-            sections:
-              operationId: users.Onenote.ListSections
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16338,19 +14857,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.Notebooks.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-            sections:
-              operationId: users.onenote.Notebooks.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-            copyNotebook:
-              operationId: users.user.onenote.notebooks.notebook.copyNotebook
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16655,31 +15161,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: users.onenote.notebooks.SectionGroups.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: users.onenote.notebooks.SectionGroups.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: users.onenote.notebooks.SectionGroups.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: users.onenote.notebooks.SectionGroups.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16847,19 +15328,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.notebooks.sectionGroups.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: users.onenote.notebooks.sectionGroups.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16942,31 +15410,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: users.onenote.notebooks.sectionGroups.ParentSectionGroup.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: users.onenote.notebooks.sectionGroups.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: users.onenote.notebooks.sectionGroups.ParentSectionGroup.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: users.onenote.notebooks.sectionGroups.ParentSectionGroup.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17175,35 +15618,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: users.onenote.notebooks.sectionGroups.SectionGroups.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            parentSectionGroup:
-              operationId: users.onenote.notebooks.sectionGroups.SectionGroups.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sectionGroups:
-              operationId: users.onenote.notebooks.sectionGroups.SectionGroups.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sections:
-              operationId: users.onenote.notebooks.sectionGroups.SectionGroups.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17463,32 +15877,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: users.onenote.notebooks.sectionGroups.Sections.ListPages
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: users.onenote.notebooks.sectionGroups.Sections.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: users.onenote.notebooks.sectionGroups.Sections.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: users.user.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: users.user.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17870,29 +16258,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: users.onenote.notebooks.sectionGroups.sections.Pages.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: users.onenote.notebooks.sectionGroups.sections.Pages.GetParentSection
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: users.user.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: users.user.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: users.user.onenote.notebooks.notebook.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18228,23 +16593,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.notebooks.sectionGroups.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: users.onenote.notebooks.sectionGroups.sections.pages.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18342,31 +16690,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: users.onenote.notebooks.sectionGroups.sections.pages.ParentSection.ListPages
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: users.onenote.notebooks.sectionGroups.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: users.onenote.notebooks.sectionGroups.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18457,21 +16780,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.notebooks.sectionGroups.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: users.onenote.notebooks.sectionGroups.sections.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18562,35 +16870,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: users.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: users.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: users.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: users.onenote.notebooks.sectionGroups.sections.ParentSectionGroup.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18826,29 +17105,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: users.onenote.notebooks.Sections.ListPages
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: users.onenote.notebooks.Sections.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: users.onenote.notebooks.Sections.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: users.user.onenote.notebooks.notebook.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: users.user.onenote.notebooks.notebook.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19190,27 +17446,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: users.onenote.notebooks.sections.Pages.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: users.onenote.notebooks.sections.Pages.GetParentSection
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: users.user.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: users.user.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: users.user.onenote.notebooks.notebook.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19506,21 +17741,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.notebooks.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: users.onenote.notebooks.sections.pages.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19610,28 +17830,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: users.onenote.notebooks.sections.pages.ParentSection.ListPages
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: users.onenote.notebooks.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: users.onenote.notebooks.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19714,19 +17912,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.notebooks.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: users.onenote.notebooks.sections.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19809,31 +17994,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: users.onenote.notebooks.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: users.onenote.notebooks.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: users.onenote.notebooks.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: users.onenote.notebooks.sections.ParentSectionGroup.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                notebook-id: $request.path.notebook-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20295,23 +18455,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: users.onenote.Pages.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: users.onenote.Pages.GetParentSection
-              parameters:
-                user-id: $request.path.user-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: users.user.onenote.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: users.user.onenote.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: users.user.onenote.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20527,17 +18670,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: users.onenote.pages.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20611,22 +18743,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: users.onenote.pages.ParentSection.ListPages
-              parameters:
-                user-id: $request.path.user-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: users.onenote.pages.ParentSection.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: users.onenote.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21143,27 +19259,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: users.onenote.SectionGroups.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: users.onenote.SectionGroups.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: users.onenote.SectionGroups.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: users.onenote.SectionGroups.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21307,17 +19402,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.sectionGroups.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: users.onenote.sectionGroups.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21392,27 +19476,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: users.onenote.sectionGroups.ParentSectionGroup.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            parentSectionGroup:
-              operationId: users.onenote.sectionGroups.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sectionGroups:
-              operationId: users.onenote.sectionGroups.ParentSectionGroup.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-            sections:
-              operationId: users.onenote.sectionGroups.ParentSectionGroup.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21605,31 +19668,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: users.onenote.sectionGroups.SectionGroups.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            parentSectionGroup:
-              operationId: users.onenote.sectionGroups.SectionGroups.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sectionGroups:
-              operationId: users.onenote.sectionGroups.SectionGroups.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
-            sections:
-              operationId: users.onenote.sectionGroups.SectionGroups.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                sectionGroup-id1: $request.path.sectionGroup-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21865,29 +19903,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: users.onenote.sectionGroups.Sections.ListPages
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: users.onenote.sectionGroups.Sections.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: users.onenote.sectionGroups.Sections.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: users.user.onenote.sectionGroups.sectionGroup.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: users.user.onenote.sectionGroups.sectionGroup.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22229,27 +20244,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: users.onenote.sectionGroups.sections.Pages.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: users.onenote.sectionGroups.sections.Pages.GetParentSection
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: users.user.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: users.user.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: users.user.onenote.sectionGroups.sectionGroup.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22545,21 +20539,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.sectionGroups.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: users.onenote.sectionGroups.sections.pages.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22649,28 +20628,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: users.onenote.sectionGroups.sections.pages.ParentSection.ListPages
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: users.onenote.sectionGroups.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: users.onenote.sectionGroups.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22753,19 +20710,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.sectionGroups.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: users.onenote.sectionGroups.sections.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22848,31 +20792,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: users.onenote.sectionGroups.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: users.onenote.sectionGroups.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: users.onenote.sectionGroups.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: users.onenote.sectionGroups.sections.ParentSectionGroup.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                sectionGroup-id: $request.path.sectionGroup-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23080,26 +20999,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: users.onenote.Sections.ListPages
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentNotebook:
-              operationId: users.onenote.Sections.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: users.onenote.Sections.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            copyToNotebook:
-              operationId: users.user.onenote.sections.onenoteSection.copyToNotebook
-            copyToSectionGroup:
-              operationId: users.user.onenote.sections.onenoteSection.copyToSectionGroup
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23401,25 +21300,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
-          links:
-            parentNotebook:
-              operationId: users.onenote.sections.Pages.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSection:
-              operationId: users.onenote.sections.Pages.GetParentSection
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            copyToSection:
-              operationId: users.user.onenote.sections.onenoteSection.pages.onenotePage.copyToSection
-            onenotePatchContent:
-              operationId: users.user.onenote.sections.onenoteSection.pages.onenotePage.onenotePatchContent
-            preview:
-              operationId: users.user.onenote.sections.onenoteSection.pages.onenotePage.preview
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23675,19 +21555,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.sections.pages.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            sections:
-              operationId: users.onenote.sections.pages.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23769,25 +21636,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
-          links:
-            pages:
-              operationId: users.onenote.sections.pages.ParentSection.ListPages
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentNotebook:
-              operationId: users.onenote.sections.pages.ParentSection.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
-            parentSectionGroup:
-              operationId: users.onenote.sections.pages.ParentSection.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-                onenotePage-id: $request.path.onenotePage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23862,17 +21710,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
-          links:
-            sectionGroups:
-              operationId: users.onenote.sections.ParentNotebook.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: users.onenote.sections.ParentNotebook.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23947,27 +21784,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
-          links:
-            parentNotebook:
-              operationId: users.onenote.sections.ParentSectionGroup.GetParentNotebook
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            parentSectionGroup:
-              operationId: users.onenote.sections.ParentSectionGroup.GetParentSectionGroup
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sectionGroups:
-              operationId: users.onenote.sections.ParentSectionGroup.ListSectionGroups
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
-            sections:
-              operationId: users.onenote.sections.ParentSectionGroup.ListSections
-              parameters:
-                user-id: $request.path.user-id
-                onenoteSection-id: $request.path.onenoteSection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24448,7 +22264,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object

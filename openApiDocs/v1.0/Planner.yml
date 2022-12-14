@@ -55,11 +55,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerGroup'
-          links:
-            plans:
-              operationId: groups.Planner.ListPlans
-              parameters:
-                group-id: $request.path.group-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -304,22 +299,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-          links:
-            buckets:
-              operationId: groups.planner.Plans.ListBuckets
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-            details:
-              operationId: groups.planner.Plans.GetDetails
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-            tasks:
-              operationId: groups.planner.Plans.ListTasks
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -588,13 +567,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-          links:
-            tasks:
-              operationId: groups.planner.plans.Buckets.ListTasks
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -987,35 +959,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: groups.planner.plans.buckets.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: groups.planner.plans.buckets.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            details:
-              operationId: groups.planner.plans.buckets.Tasks.GetDetails
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: groups.planner.plans.buckets.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2272,31 +2215,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: groups.planner.plans.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: groups.planner.plans.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            details:
-              operationId: groups.planner.plans.Tasks.GetDetails
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: groups.planner.plans.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                group-id: $request.path.group-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3069,13 +2987,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.planner'
-          links:
-            buckets:
-              operationId: planner.ListBuckets
-            plans:
-              operationId: planner.ListPlans
-            tasks:
-              operationId: planner.ListTasks
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3248,11 +3159,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-          links:
-            tasks:
-              operationId: planner.Buckets.ListTasks
-              parameters:
-                plannerBucket-id: $request.path.plannerBucket-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3565,27 +3471,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: planner.buckets.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: planner.buckets.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            details:
-              operationId: planner.buckets.Tasks.GetDetails
-              parameters:
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: planner.buckets.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4369,19 +4254,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-          links:
-            buckets:
-              operationId: planner.Plans.ListBuckets
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-            details:
-              operationId: planner.Plans.GetDetails
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-            tasks:
-              operationId: planner.Plans.ListTasks
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4610,12 +4482,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-          links:
-            tasks:
-              operationId: planner.plans.Buckets.ListTasks
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4968,31 +4834,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: planner.plans.buckets.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: planner.plans.buckets.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            details:
-              operationId: planner.plans.buckets.Tasks.GetDetails
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: planner.plans.buckets.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6089,27 +5930,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: planner.plans.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: planner.plans.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            details:
-              operationId: planner.plans.Tasks.GetDetails
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: planner.plans.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6961,23 +6781,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: planner.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: planner.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                plannerTask-id: $request.path.plannerTask-id
-            details:
-              operationId: planner.Tasks.GetDetails
-              parameters:
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: planner.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7533,15 +7336,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerUser'
-          links:
-            plans:
-              operationId: users.Planner.ListPlans
-              parameters:
-                user-id: $request.path.user-id
-            tasks:
-              operationId: users.Planner.ListTasks
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7786,22 +7580,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlan'
-          links:
-            buckets:
-              operationId: users.planner.Plans.ListBuckets
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-            details:
-              operationId: users.planner.Plans.GetDetails
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-            tasks:
-              operationId: users.planner.Plans.ListTasks
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8070,13 +7848,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerBucket'
-          links:
-            tasks:
-              operationId: users.planner.plans.Buckets.ListTasks
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8469,35 +8240,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: users.planner.plans.buckets.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: users.planner.plans.buckets.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            details:
-              operationId: users.planner.plans.buckets.Tasks.GetDetails
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: users.planner.plans.buckets.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerBucket-id: $request.path.plannerBucket-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9754,31 +9496,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: users.planner.plans.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: users.planner.plans.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            details:
-              operationId: users.planner.plans.Tasks.GetDetails
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: users.planner.plans.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                user-id: $request.path.user-id
-                plannerPlan-id: $request.path.plannerPlan-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10763,27 +10480,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: users.planner.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                user-id: $request.path.user-id
-                plannerTask-id: $request.path.plannerTask-id
-            bucketTaskBoardFormat:
-              operationId: users.planner.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                user-id: $request.path.user-id
-                plannerTask-id: $request.path.plannerTask-id
-            details:
-              operationId: users.planner.Tasks.GetDetails
-              parameters:
-                user-id: $request.path.user-id
-                plannerTask-id: $request.path.plannerTask-id
-            progressTaskBoardFormat:
-              operationId: users.planner.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                user-id: $request.path.user-id
-                plannerTask-id: $request.path.plannerTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11613,7 +11309,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object

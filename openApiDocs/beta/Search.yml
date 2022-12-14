@@ -45,9 +45,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.external'
-          links:
-            connections:
-              operationId: external.ListConnections
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -263,27 +260,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
-          links:
-            groups:
-              operationId: external.Connections.ListGroups
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-            items:
-              operationId: external.Connections.ListItems
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-            operations:
-              operationId: external.Connections.ListOperations
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-            quota:
-              operationId: external.Connections.GetQuota
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-            schema:
-              operationId: external.Connections.GetSchema
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -507,12 +483,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
-          links:
-            members:
-              operationId: external.connections.Groups.ListMembers
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-                externalGroup-id: $request.path.externalGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1025,14 +995,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
-          links:
-            activities:
-              operationId: external.connections.Items.ListActivities
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-                externalItem-id: $request.path.externalItem-id
-            addActivities:
-              operationId: external.connections.externalConnection.items.externalItem.addActivities
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1294,13 +1256,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
-          links:
-            performedBy:
-              operationId: external.connections.items.Activities.GetPerformedGraphBPre
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-                externalItem-id: $request.path.externalItem-id
-                externalActivity-id: $request.path.externalActivity-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2011,15 +1966,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.searchEntity'
-          links:
-            acronyms:
-              operationId: search.ListAcronyms
-            bookmarks:
-              operationId: search.ListBookmarks
-            qnas:
-              operationId: search.ListQnas
-            query:
-              operationId: search.query
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

@@ -76,37 +76,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceAppManagement'
-          links:
-            managedEBooks:
-              operationId: deviceAppManagement.ListManagedEBooks
-            mobileAppCategories:
-              operationId: deviceAppManagement.ListMobileAppCategories
-            mobileAppConfigurations:
-              operationId: deviceAppManagement.ListMobileAppConfigurations
-            mobileApps:
-              operationId: deviceAppManagement.ListMobileApps
-            vppTokens:
-              operationId: deviceAppManagement.ListVppTokens
-            androidManagedAppProtections:
-              operationId: deviceAppManagement.ListAndroidManagedAppProtections
-            defaultManagedAppProtections:
-              operationId: deviceAppManagement.ListDefaultManagedAppProtections
-            iosManagedAppProtections:
-              operationId: deviceAppManagement.ListIosManagedAppProtections
-            managedAppPolicies:
-              operationId: deviceAppManagement.ListManagedAppPolicies
-            managedAppRegistrations:
-              operationId: deviceAppManagement.ListManagedAppRegistrations
-            managedAppStatuses:
-              operationId: deviceAppManagement.ListManagedAppStatuses
-            mdmWindowsInformationProtectionPolicies:
-              operationId: deviceAppManagement.ListMdmWindowsInformationProtectionPolicies
-            targetedManagedAppConfigurations:
-              operationId: deviceAppManagement.ListTargetedManagedAppConfigurations
-            windowsInformationProtectionPolicies:
-              operationId: deviceAppManagement.ListWindowsInformationProtectionPolicies
-            syncMicrosoftStoreForBusinessApps:
-              operationId: deviceAppManagement.syncMicrosoftStoreGraphFPreBusinessApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -432,19 +401,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.androidManagedAppProtection'
-          links:
-            assignments:
-              operationId: deviceAppManagement.AndroidManagedAppProtections.ListAssignments
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
-            apps:
-              operationId: deviceAppManagement.AndroidManagedAppProtections.ListApps
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
-            deploymentSummary:
-              operationId: deviceAppManagement.AndroidManagedAppProtections.GetDeploymentSummary
-              parameters:
-                androidManagedAppProtection-id: $request.path.androidManagedAppProtection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1146,15 +1102,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.defaultManagedAppProtection'
-          links:
-            apps:
-              operationId: deviceAppManagement.DefaultManagedAppProtections.ListApps
-              parameters:
-                defaultManagedAppProtection-id: $request.path.defaultManagedAppProtection-id
-            deploymentSummary:
-              operationId: deviceAppManagement.DefaultManagedAppProtections.GetDeploymentSummary
-              parameters:
-                defaultManagedAppProtection-id: $request.path.defaultManagedAppProtection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1844,19 +1791,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.iosManagedAppProtection'
-          links:
-            assignments:
-              operationId: deviceAppManagement.IosManagedAppProtections.ListAssignments
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
-            apps:
-              operationId: deviceAppManagement.IosManagedAppProtections.ListApps
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
-            deploymentSummary:
-              operationId: deviceAppManagement.IosManagedAppProtections.GetDeploymentSummary
-              parameters:
-                iosManagedAppProtection-id: $request.path.iosManagedAppProtection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2402,9 +2336,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-          links:
-            targetApps:
-              operationId: deviceAppManagement.managedAppPolicies.managedAppPolicy.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2684,19 +2615,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
-          links:
-            appliedPolicies:
-              operationId: deviceAppManagement.ManagedAppRegistrations.ListAppliedPolicies
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-            intendedPolicies:
-              operationId: deviceAppManagement.ManagedAppRegistrations.ListIntendedPolicies
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-            operations:
-              operationId: deviceAppManagement.ManagedAppRegistrations.ListOperations
-              parameters:
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2926,9 +2844,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-          links:
-            targetApps:
-              operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.appliedPolicies.managedAppPolicy.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3217,9 +3132,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
-          links:
-            targetApps:
-              operationId: deviceAppManagement.managedAppRegistrations.managedAppRegistration.intendedPolicies.managedAppPolicy.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3984,25 +3896,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedEBook'
-          links:
-            assignments:
-              operationId: deviceAppManagement.ManagedEBooks.ListAssignments
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            deviceStates:
-              operationId: deviceAppManagement.ManagedEBooks.ListDeviceStates
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            installSummary:
-              operationId: deviceAppManagement.ManagedEBooks.GetInstallSummary
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            userStateSummary:
-              operationId: deviceAppManagement.ManagedEBooks.ListUserStateSummary
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-            assign:
-              operationId: deviceAppManagement.managedEBooks.managedEBook.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4866,12 +4759,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userInstallStateSummary'
-          links:
-            deviceStates:
-              operationId: deviceAppManagement.managedEBooks.UserStateSummary.ListDeviceStates
-              parameters:
-                managedEBook-id: $request.path.managedEBook-id
-                userInstallStateSummary-id: $request.path.userInstallStateSummary-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5489,19 +5376,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mdmWindowsInformationProtectionPolicy'
-          links:
-            assignments:
-              operationId: deviceAppManagement.MdmWindowsInformationProtectionPolicies.ListAssignments
-              parameters:
-                mdmWindowsInformationProtectionPolicy-id: $request.path.mdmWindowsInformationProtectionPolicy-id
-            exemptAppLockerFiles:
-              operationId: deviceAppManagement.MdmWindowsInformationProtectionPolicies.ListExemptAppLockerFiles
-              parameters:
-                mdmWindowsInformationProtectionPolicy-id: $request.path.mdmWindowsInformationProtectionPolicy-id
-            protectedAppLockerFiles:
-              operationId: deviceAppManagement.MdmWindowsInformationProtectionPolicies.ListProtectedAppLockerFiles
-              parameters:
-                mdmWindowsInformationProtectionPolicy-id: $request.path.mdmWindowsInformationProtectionPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5935,29 +5809,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedDeviceMobileAppConfiguration'
-          links:
-            assignments:
-              operationId: deviceAppManagement.MobileAppConfigurations.ListAssignments
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            deviceStatuses:
-              operationId: deviceAppManagement.MobileAppConfigurations.ListDeviceStatuses
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            deviceStatusSummary:
-              operationId: deviceAppManagement.MobileAppConfigurations.GetDeviceStatusSummary
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            userStatuses:
-              operationId: deviceAppManagement.MobileAppConfigurations.ListUserStatuses
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            userStatusSummary:
-              operationId: deviceAppManagement.MobileAppConfigurations.GetUserStatusSummary
-              parameters:
-                managedDeviceMobileAppConfiguration-id: $request.path.managedDeviceMobileAppConfiguration-id
-            assign:
-              operationId: deviceAppManagement.mobileAppConfigurations.managedDeviceMobileAppConfiguration.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7184,17 +7035,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobileApp'
-          links:
-            assignments:
-              operationId: deviceAppManagement.MobileApps.ListAssignments
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-            categories:
-              operationId: deviceAppManagement.MobileApps.ListCategories
-              parameters:
-                mobileApp-id: $request.path.mobileApp-id
-            assign:
-              operationId: deviceAppManagement.mobileApps.mobileApp.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7828,23 +7668,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.targetedManagedAppConfiguration'
-          links:
-            apps:
-              operationId: deviceAppManagement.TargetedManagedAppConfigurations.ListApps
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-            assignments:
-              operationId: deviceAppManagement.TargetedManagedAppConfigurations.ListAssignments
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-            deploymentSummary:
-              operationId: deviceAppManagement.TargetedManagedAppConfigurations.GetDeploymentSummary
-              parameters:
-                targetedManagedAppConfiguration-id: $request.path.targetedManagedAppConfiguration-id
-            assign:
-              operationId: deviceAppManagement.targetedManagedAppConfigurations.targetedManagedAppConfiguration.assign
-            targetApps:
-              operationId: deviceAppManagement.targetedManagedAppConfigurations.targetedManagedAppConfiguration.targetApps
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8715,9 +8538,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.vppToken'
-          links:
-            syncLicenses:
-              operationId: deviceAppManagement.vppTokens.vppToken.syncLicenses
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9096,19 +8916,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsInformationProtectionPolicy'
-          links:
-            assignments:
-              operationId: deviceAppManagement.WindowsInformationProtectionPolicies.ListAssignments
-              parameters:
-                windowsInformationProtectionPolicy-id: $request.path.windowsInformationProtectionPolicy-id
-            exemptAppLockerFiles:
-              operationId: deviceAppManagement.WindowsInformationProtectionPolicies.ListExemptAppLockerFiles
-              parameters:
-                windowsInformationProtectionPolicy-id: $request.path.windowsInformationProtectionPolicy-id
-            protectedAppLockerFiles:
-              operationId: deviceAppManagement.WindowsInformationProtectionPolicies.ListProtectedAppLockerFiles
-              parameters:
-                windowsInformationProtectionPolicy-id: $request.path.windowsInformationProtectionPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9580,22 +9387,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedAppRegistration'
-          links:
-            appliedPolicies:
-              operationId: users.ManagedAppRegistrations.ListAppliedPolicies
-              parameters:
-                user-id: $request.path.user-id
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-            intendedPolicies:
-              operationId: users.ManagedAppRegistrations.ListIntendedPolicies
-              parameters:
-                user-id: $request.path.user-id
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
-            operations:
-              operationId: users.ManagedAppRegistrations.ListOperations
-              parameters:
-                user-id: $request.path.user-id
-                managedAppRegistration-id: $request.path.managedAppRegistration-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9980,63 +9771,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.managedDevice'
-          links:
-            deviceCompliancePolicyStates:
-              operationId: users.ManagedDevices.ListDeviceCompliancePolicyStates
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            deviceConfigurationStates:
-              operationId: users.ManagedDevices.ListDeviceConfigurationStates
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            deviceCategory:
-              operationId: users.ManagedDevices.GetDeviceCategory
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            users:
-              operationId: users.ManagedDevices.ListUsers
-              parameters:
-                user-id: $request.path.user-id
-                managedDevice-id: $request.path.managedDevice-id
-            bypassActivationLock:
-              operationId: users.user.managedDevices.managedDevice.bypassActivationLock
-            cleanWindowsDevice:
-              operationId: users.user.managedDevices.managedDevice.cleanWindowsDevice
-            deleteUserFromSharedAppleDevice:
-              operationId: users.user.managedDevices.managedDevice.deleteUserFromSharedAppleDevice
-            disableLostMode:
-              operationId: users.user.managedDevices.managedDevice.disableLostMode
-            locateDevice:
-              operationId: users.user.managedDevices.managedDevice.locateDevice
-            logoutSharedAppleDeviceActiveUser:
-              operationId: users.user.managedDevices.managedDevice.logoutSharedAppleDeviceActiveUser
-            rebootNow:
-              operationId: users.user.managedDevices.managedDevice.rebootNow
-            recoverPasscode:
-              operationId: users.user.managedDevices.managedDevice.recoverPasscode
-            remoteLock:
-              operationId: users.user.managedDevices.managedDevice.remoteLock
-            requestRemoteAssistance:
-              operationId: users.user.managedDevices.managedDevice.requestRemoteAssistance
-            resetPasscode:
-              operationId: users.user.managedDevices.managedDevice.resetPasscode
-            retire:
-              operationId: users.user.managedDevices.managedDevice.retire
-            shutDown:
-              operationId: users.user.managedDevices.managedDevice.shutDown
-            syncDevice:
-              operationId: users.user.managedDevices.managedDevice.syncDevice
-            updateWindowsDeviceAccount:
-              operationId: users.user.managedDevices.managedDevice.updateWindowsDeviceAccount
-            windowsDefenderScan:
-              operationId: users.user.managedDevices.managedDevice.windowsDefenderScan
-            windowsDefenderUpdateSignatures:
-              operationId: users.user.managedDevices.managedDevice.windowsDefenderUpdateSignatures
-            wipe:
-              operationId: users.user.managedDevices.managedDevice.wipe
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19764,7 +19498,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
             assignedLicenses:
               type: array
               items:
@@ -21373,7 +21107,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -22158,7 +21892,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -22593,7 +22327,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -24293,7 +24027,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object

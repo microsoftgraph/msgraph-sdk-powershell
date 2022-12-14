@@ -565,6 +565,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
+    "/print/reports/microsoft.graph.getTeamsTeamCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
     "/print/reports/microsoft.graph.getTeamsUserActivityCounts(period='{period}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"

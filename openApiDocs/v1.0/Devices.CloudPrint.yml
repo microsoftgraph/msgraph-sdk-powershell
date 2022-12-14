@@ -56,19 +56,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.print'
-          links:
-            connectors:
-              operationId: print.ListConnectors
-            operations:
-              operationId: print.ListOperations
-            printers:
-              operationId: print.ListPrinters
-            services:
-              operationId: print.ListServices
-            shares:
-              operationId: print.ListShares
-            taskDefinitions:
-              operationId: print.ListTaskDefinitions
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -688,25 +675,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printer'
-          links:
-            jobs:
-              operationId: print.Printers.ListJobs
-              parameters:
-                printer-id: $request.path.printer-id
-            connectors:
-              operationId: print.Printers.ListConnectors
-              parameters:
-                printer-id: $request.path.printer-id
-            shares:
-              operationId: print.Printers.ListShares
-              parameters:
-                printer-id: $request.path.printer-id
-            taskTriggers:
-              operationId: print.Printers.ListTaskTriggers
-              parameters:
-                printer-id: $request.path.printer-id
-            restoreFactoryDefaults:
-              operationId: print.printers.printer.restoreFactoryDefaults
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1121,27 +1089,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
-          links:
-            jobs:
-              operationId: print.printers.Shares.ListJobs
-              parameters:
-                printer-id: $request.path.printer-id
-                printerShare-id: $request.path.printerShare-id
-            allowedGroups:
-              operationId: print.printers.Shares.ListAllowedGroups
-              parameters:
-                printer-id: $request.path.printer-id
-                printerShare-id: $request.path.printerShare-id
-            allowedUsers:
-              operationId: print.printers.Shares.ListAllowedUsers
-              parameters:
-                printer-id: $request.path.printer-id
-                printerShare-id: $request.path.printerShare-id
-            printer:
-              operationId: print.printers.Shares.GetPrinter
-              parameters:
-                printer-id: $request.path.printer-id
-                printerShare-id: $request.path.printerShare-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1313,12 +1260,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
-          links:
-            definition:
-              operationId: print.printers.TaskTriggers.GetDefinition
-              parameters:
-                printer-id: $request.path.printer-id
-                printTaskTrigger-id: $request.path.printTaskTrigger-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1450,12 +1391,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-          links:
-            tasks:
-              operationId: print.printers.taskTriggers.Definition.ListTasks
-              parameters:
-                printer-id: $request.path.printer-id
-                printTaskTrigger-id: $request.path.printTaskTrigger-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1638,11 +1573,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printService'
-          links:
-            endpoints:
-              operationId: print.Services.ListEndpoints
-              parameters:
-                printService-id: $request.path.printService-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2126,23 +2056,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
-          links:
-            jobs:
-              operationId: print.Shares.ListJobs
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            allowedGroups:
-              operationId: print.Shares.ListAllowedGroups
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            allowedUsers:
-              operationId: print.Shares.ListAllowedUsers
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            printer:
-              operationId: print.Shares.GetPrinter
-              parameters:
-                printerShare-id: $request.path.printerShare-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3332,23 +3245,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printer'
-          links:
-            jobs:
-              operationId: print.shares.Printer.ListJobs
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            connectors:
-              operationId: print.shares.Printer.ListConnectors
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            shares:
-              operationId: print.shares.Printer.ListShares
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            taskTriggers:
-              operationId: print.shares.Printer.ListTaskTriggers
-              parameters:
-                printerShare-id: $request.path.printerShare-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3499,11 +3395,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-          links:
-            tasks:
-              operationId: print.TaskDefinitions.ListTasks
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3732,17 +3623,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTask'
-          links:
-            definition:
-              operationId: print.taskDefinitions.Tasks.GetDefinition
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-                printTask-id: $request.path.printTask-id
-            trigger:
-              operationId: print.taskDefinitions.Tasks.GetTrigger
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-                printTask-id: $request.path.printTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3874,12 +3754,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-          links:
-            tasks:
-              operationId: print.taskDefinitions.tasks.Definition.ListTasks
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-                printTask-id: $request.path.printTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3941,12 +3815,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
-          links:
-            definition:
-              operationId: print.taskDefinitions.tasks.Trigger.GetDefinition
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-                printTask-id: $request.path.printTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4359,7 +4227,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
             assignedLicenses:
               type: array
               items:
@@ -13707,7 +13575,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -15434,7 +15302,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -15747,7 +15615,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -16840,7 +16708,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object

@@ -630,229 +630,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
-          links:
-            appRoleAssignments:
-              operationId: users.ListAppRoleAssignments
-              parameters:
-                user-id: $request.path.user-id
-            createdObjects:
-              operationId: users.ListCreatedObjects
-              parameters:
-                user-id: $request.path.user-id
-            directReports:
-              operationId: users.ListDirectReports
-              parameters:
-                user-id: $request.path.user-id
-            licenseDetails:
-              operationId: users.ListLicenseDetails
-              parameters:
-                user-id: $request.path.user-id
-            manager:
-              operationId: users.GetManager
-              parameters:
-                user-id: $request.path.user-id
-            memberOf:
-              operationId: users.ListMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-            oauth2PermissionGrants:
-              operationId: users.ListOauth2PermissionGrants
-              parameters:
-                user-id: $request.path.user-id
-            ownedDevices:
-              operationId: users.ListOwnedDevices
-              parameters:
-                user-id: $request.path.user-id
-            ownedObjects:
-              operationId: users.ListOwnedObjects
-              parameters:
-                user-id: $request.path.user-id
-            registeredDevices:
-              operationId: users.ListRegisteredDevices
-              parameters:
-                user-id: $request.path.user-id
-            scopedRoleMemberOf:
-              operationId: users.ListScopedRoleMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-            transitiveMemberOf:
-              operationId: users.ListTransitiveMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-            calendar:
-              operationId: users.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-            calendarGroups:
-              operationId: users.ListCalendarGroups
-              parameters:
-                user-id: $request.path.user-id
-            calendars:
-              operationId: users.ListCalendars
-              parameters:
-                user-id: $request.path.user-id
-            calendarView:
-              operationId: users.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-            contactFolders:
-              operationId: users.ListContactFolders
-              parameters:
-                user-id: $request.path.user-id
-            contacts:
-              operationId: users.ListContacts
-              parameters:
-                user-id: $request.path.user-id
-            events:
-              operationId: users.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-            inferenceClassification:
-              operationId: users.GetInferenceClassification
-              parameters:
-                user-id: $request.path.user-id
-            mailFolders:
-              operationId: users.ListMailFolders
-              parameters:
-                user-id: $request.path.user-id
-            messages:
-              operationId: users.ListMessages
-              parameters:
-                user-id: $request.path.user-id
-            outlook:
-              operationId: users.GetOutlook
-              parameters:
-                user-id: $request.path.user-id
-            people:
-              operationId: users.ListPeople
-              parameters:
-                user-id: $request.path.user-id
-            drive:
-              operationId: users.GetDrive
-              parameters:
-                user-id: $request.path.user-id
-            drives:
-              operationId: users.ListDrives
-              parameters:
-                user-id: $request.path.user-id
-            followedSites:
-              operationId: users.ListFollowedSites
-              parameters:
-                user-id: $request.path.user-id
-            extensions:
-              operationId: users.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-            agreementAcceptances:
-              operationId: users.ListAgreementAcceptances
-              parameters:
-                user-id: $request.path.user-id
-            managedDevices:
-              operationId: users.ListManagedDevices
-              parameters:
-                user-id: $request.path.user-id
-            managedAppRegistrations:
-              operationId: users.ListManagedAppRegistrations
-              parameters:
-                user-id: $request.path.user-id
-            deviceManagementTroubleshootingEvents:
-              operationId: users.ListDeviceManagementTroubleshootingEvents
-              parameters:
-                user-id: $request.path.user-id
-            planner:
-              operationId: users.GetPlanner
-              parameters:
-                user-id: $request.path.user-id
-            insights:
-              operationId: users.GetInsights
-              parameters:
-                user-id: $request.path.user-id
-            settings:
-              operationId: users.GetSettings
-              parameters:
-                user-id: $request.path.user-id
-            onenote:
-              operationId: users.GetOnenote
-              parameters:
-                user-id: $request.path.user-id
-            photo:
-              operationId: users.GetPhoto
-              parameters:
-                user-id: $request.path.user-id
-            photos:
-              operationId: users.ListPhotos
-              parameters:
-                user-id: $request.path.user-id
-            activities:
-              operationId: users.ListActivities
-              parameters:
-                user-id: $request.path.user-id
-            onlineMeetings:
-              operationId: users.ListOnlineMeetings
-              parameters:
-                user-id: $request.path.user-id
-            presence:
-              operationId: users.GetPresence
-              parameters:
-                user-id: $request.path.user-id
-            authentication:
-              operationId: users.GetAuthentication
-              parameters:
-                user-id: $request.path.user-id
-            chats:
-              operationId: users.ListChats
-              parameters:
-                user-id: $request.path.user-id
-            joinedTeams:
-              operationId: users.ListJoinedTeams
-              parameters:
-                user-id: $request.path.user-id
-            teamwork:
-              operationId: users.GetTeamwork
-              parameters:
-                user-id: $request.path.user-id
-            todo:
-              operationId: users.GetTodo
-              parameters:
-                user-id: $request.path.user-id
-            assignLicense:
-              operationId: users.user.assignLicense
-            changePassword:
-              operationId: users.user.changePassword
-            checkMemberGroups:
-              operationId: users.user.checkMemberGroups
-            checkMemberObjects:
-              operationId: users.user.checkMemberObjects
-            exportPersonalData:
-              operationId: users.user.exportPersonalData
-            findMeetingTimes:
-              operationId: users.user.findMeetingTimes
-            getMailTips:
-              operationId: users.user.getMailTips
-            getManagedAppDiagnosticStatuses:
-              operationId: users.user.getManagedAppDiagnosticStatuses
-            getManagedAppPolicies:
-              operationId: users.user.getManagedAppPolicies
-            getMemberGroups:
-              operationId: users.user.getMemberGroups
-            getMemberObjects:
-              operationId: users.user.getMemberObjects
-            reminderView:
-              operationId: users.user.reminderView
-            removeAllDevicesFromManagement:
-              operationId: users.user.removeAllDevicesFromManagement
-            reprocessLicenseAssignment:
-              operationId: users.user.reprocessLicenseAssignment
-            restore:
-              operationId: users.user.restore
-            revokeSignInSessions:
-              operationId: users.user.revokeSignInSessions
-            sendMail:
-              operationId: users.user.sendMail
-            translateExchangeIds:
-              operationId: users.user.translateExchangeIds
-            wipeManagedAppRegistrationsByDeviceTag:
-              operationId: users.user.wipeManagedAppRegistrationsGraphBPreDeviceTag
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2131,15 +1908,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookUser'
-          links:
-            masterCategories:
-              operationId: users.Outlook.ListMasterCategories
-              parameters:
-                user-id: $request.path.user-id
-            supportedLanguages:
-              operationId: users.user.outlook.supportedLanguages
-            supportedTimeZones:
-              operationId: users.user.outlook.supportedTimeZones
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3161,11 +2929,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userSettings'
-          links:
-            shiftPreferences:
-              operationId: users.Settings.GetShiftPreferences
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3385,11 +3148,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todo'
-          links:
-            lists:
-              operationId: users.Todo.ListLists
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3630,17 +3388,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
-          links:
-            extensions:
-              operationId: users.todo.Lists.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-            tasks:
-              operationId: users.todo.Lists.ListTasks
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4242,37 +3989,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
-          links:
-            attachments:
-              operationId: users.todo.lists.Tasks.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            attachmentSessions:
-              operationId: users.todo.lists.Tasks.ListAttachmentSessions
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            checklistItems:
-              operationId: users.todo.lists.Tasks.ListChecklistItems
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            extensions:
-              operationId: users.todo.lists.Tasks.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            linkedResources:
-              operationId: users.todo.lists.Tasks.ListLinkedResources
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12771,7 +12487,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
             assignedLicenses:
               type: array
               items:
@@ -14331,7 +14047,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -15314,7 +15030,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -15708,7 +15424,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -17335,7 +17051,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object

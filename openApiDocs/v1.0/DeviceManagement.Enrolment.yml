@@ -244,15 +244,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
-          links:
-            assignments:
-              operationId: deviceManagement.DeviceEnrollmentConfigurations.ListAssignments
-              parameters:
-                deviceEnrollmentConfiguration-id: $request.path.deviceEnrollmentConfiguration-id
-            assign:
-              operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.assign
-            setPriority:
-              operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration.setPriority
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -942,13 +933,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
-          links:
-            assignUserToDevice:
-              operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.assignUserToDevice
-            unassignUserFromDevice:
-              operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.unassignUserFromDevice
-            updateDeviceProperties:
-              operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity.updateDeviceProperties
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1046,11 +1030,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roleManagement'
-          links:
-            directory:
-              operationId: roleManagement.GetDirectory
-            entitlementManagement:
-              operationId: roleManagement.GetEntitlementManagement
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1126,23 +1105,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.rbacApplication'
-          links:
-            roleAssignments:
-              operationId: roleManagement.Directory.ListRoleAssignments
-            roleDefinitions:
-              operationId: roleManagement.Directory.ListRoleDefinitions
-            roleAssignmentScheduleInstances:
-              operationId: roleManagement.Directory.ListRoleAssignmentScheduleInstances
-            roleAssignmentScheduleRequests:
-              operationId: roleManagement.Directory.ListRoleAssignmentScheduleRequests
-            roleAssignmentSchedules:
-              operationId: roleManagement.Directory.ListRoleAssignmentSchedules
-            roleEligibilityScheduleInstances:
-              operationId: roleManagement.Directory.ListRoleEligibilityScheduleInstances
-            roleEligibilityScheduleRequests:
-              operationId: roleManagement.Directory.ListRoleEligibilityScheduleRequests
-            roleEligibilitySchedules:
-              operationId: roleManagement.Directory.ListRoleEligibilitySchedules
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1353,23 +1315,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
-          links:
-            appScope:
-              operationId: roleManagement.directory.RoleAssignments.GetAppScope
-              parameters:
-                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
-            directoryScope:
-              operationId: roleManagement.directory.RoleAssignments.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
-            principal:
-              operationId: roleManagement.directory.RoleAssignments.GetPrincipal
-              parameters:
-                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
-            roleDefinition:
-              operationId: roleManagement.directory.RoleAssignments.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1690,11 +1635,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          links:
-            inheritsPermissionsFrom:
-              operationId: roleManagement.directory.roleAssignments.RoleDefinition.ListInheritsPermissionsFrom
-              parameters:
-                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1889,27 +1829,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
-          links:
-            appScope:
-              operationId: roleManagement.directory.RoleAssignmentScheduleInstances.GetAppScope
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            directoryScope:
-              operationId: roleManagement.directory.RoleAssignmentScheduleInstances.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            principal:
-              operationId: roleManagement.directory.RoleAssignmentScheduleInstances.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            roleDefinition:
-              operationId: roleManagement.directory.RoleAssignmentScheduleInstances.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            activatedUsing:
-              operationId: roleManagement.directory.RoleAssignmentScheduleInstances.GetActivatedUsing
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2029,23 +1948,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
-          links:
-            appScope:
-              operationId: roleManagement.directory.roleAssignmentScheduleInstances.ActivatedUsing.GetAppScope
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            directoryScope:
-              operationId: roleManagement.directory.roleAssignmentScheduleInstances.ActivatedUsing.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            principal:
-              operationId: roleManagement.directory.roleAssignmentScheduleInstances.ActivatedUsing.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            roleDefinition:
-              operationId: roleManagement.directory.roleAssignmentScheduleInstances.ActivatedUsing.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2375,33 +2277,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
-          links:
-            activatedUsing:
-              operationId: roleManagement.directory.RoleAssignmentScheduleRequests.GetActivatedUsing
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            appScope:
-              operationId: roleManagement.directory.RoleAssignmentScheduleRequests.GetAppScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            directoryScope:
-              operationId: roleManagement.directory.RoleAssignmentScheduleRequests.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            principal:
-              operationId: roleManagement.directory.RoleAssignmentScheduleRequests.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            roleDefinition:
-              operationId: roleManagement.directory.RoleAssignmentScheduleRequests.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            targetSchedule:
-              operationId: roleManagement.directory.RoleAssignmentScheduleRequests.GetTargetSchedule
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            cancel:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.unifiedRoleAssignmentScheduleRequest.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2523,23 +2398,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
-          links:
-            appScope:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.ActivatedUsing.GetAppScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            directoryScope:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.ActivatedUsing.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            principal:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.ActivatedUsing.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            roleDefinition:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.ActivatedUsing.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2779,11 +2637,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          links:
-            inheritsPermissionsFrom:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.RoleDefinition.ListInheritsPermissionsFrom
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2855,27 +2708,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
-          links:
-            appScope:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.TargetSchedule.GetAppScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            directoryScope:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.TargetSchedule.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            principal:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.TargetSchedule.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            roleDefinition:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.TargetSchedule.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            activatedUsing:
-              operationId: roleManagement.directory.roleAssignmentScheduleRequests.TargetSchedule.GetActivatedUsing
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3196,27 +3028,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
-          links:
-            appScope:
-              operationId: roleManagement.directory.RoleAssignmentSchedules.GetAppScope
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            directoryScope:
-              operationId: roleManagement.directory.RoleAssignmentSchedules.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            principal:
-              operationId: roleManagement.directory.RoleAssignmentSchedules.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            roleDefinition:
-              operationId: roleManagement.directory.RoleAssignmentSchedules.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            activatedUsing:
-              operationId: roleManagement.directory.RoleAssignmentSchedules.GetActivatedUsing
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3338,23 +3149,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
-          links:
-            appScope:
-              operationId: roleManagement.directory.roleAssignmentSchedules.ActivatedUsing.GetAppScope
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            directoryScope:
-              operationId: roleManagement.directory.roleAssignmentSchedules.ActivatedUsing.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            principal:
-              operationId: roleManagement.directory.roleAssignmentSchedules.ActivatedUsing.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            roleDefinition:
-              operationId: roleManagement.directory.roleAssignmentSchedules.ActivatedUsing.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3635,11 +3429,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          links:
-            inheritsPermissionsFrom:
-              operationId: roleManagement.directory.RoleDefinitions.ListInheritsPermissionsFrom
-              parameters:
-                unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3885,12 +3674,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          links:
-            inheritsPermissionsFrom:
-              operationId: roleManagement.directory.roleDefinitions.InheritsPermissionsFrom.ListInheritsPermissionsFrom
-              parameters:
-                unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
-                unifiedRoleDefinition-id1: $request.path.unifiedRoleDefinition-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4142,23 +3925,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
-          links:
-            appScope:
-              operationId: roleManagement.directory.RoleEligibilityScheduleInstances.GetAppScope
-              parameters:
-                unifiedRoleEligibilityScheduleInstance-id: $request.path.unifiedRoleEligibilityScheduleInstance-id
-            directoryScope:
-              operationId: roleManagement.directory.RoleEligibilityScheduleInstances.GetDirectoryScope
-              parameters:
-                unifiedRoleEligibilityScheduleInstance-id: $request.path.unifiedRoleEligibilityScheduleInstance-id
-            principal:
-              operationId: roleManagement.directory.RoleEligibilityScheduleInstances.GetPrincipal
-              parameters:
-                unifiedRoleEligibilityScheduleInstance-id: $request.path.unifiedRoleEligibilityScheduleInstance-id
-            roleDefinition:
-              operationId: roleManagement.directory.RoleEligibilityScheduleInstances.GetRoleDefinition
-              parameters:
-                unifiedRoleEligibilityScheduleInstance-id: $request.path.unifiedRoleEligibilityScheduleInstance-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4530,29 +4296,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
-          links:
-            appScope:
-              operationId: roleManagement.directory.RoleEligibilityScheduleRequests.GetAppScope
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            directoryScope:
-              operationId: roleManagement.directory.RoleEligibilityScheduleRequests.GetDirectoryScope
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            principal:
-              operationId: roleManagement.directory.RoleEligibilityScheduleRequests.GetPrincipal
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            roleDefinition:
-              operationId: roleManagement.directory.RoleEligibilityScheduleRequests.GetRoleDefinition
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            targetSchedule:
-              operationId: roleManagement.directory.RoleEligibilityScheduleRequests.GetTargetSchedule
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            cancel:
-              operationId: roleManagement.directory.roleEligibilityScheduleRequests.unifiedRoleEligibilityScheduleRequest.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4845,11 +4588,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          links:
-            inheritsPermissionsFrom:
-              operationId: roleManagement.directory.roleEligibilityScheduleRequests.RoleDefinition.ListInheritsPermissionsFrom
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4918,23 +4656,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
-          links:
-            appScope:
-              operationId: roleManagement.directory.roleEligibilityScheduleRequests.TargetSchedule.GetAppScope
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            directoryScope:
-              operationId: roleManagement.directory.roleEligibilityScheduleRequests.TargetSchedule.GetDirectoryScope
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            principal:
-              operationId: roleManagement.directory.roleEligibilityScheduleRequests.TargetSchedule.GetPrincipal
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            roleDefinition:
-              operationId: roleManagement.directory.roleEligibilityScheduleRequests.TargetSchedule.GetRoleDefinition
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5246,23 +4967,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
-          links:
-            appScope:
-              operationId: roleManagement.directory.RoleEligibilitySchedules.GetAppScope
-              parameters:
-                unifiedRoleEligibilitySchedule-id: $request.path.unifiedRoleEligibilitySchedule-id
-            directoryScope:
-              operationId: roleManagement.directory.RoleEligibilitySchedules.GetDirectoryScope
-              parameters:
-                unifiedRoleEligibilitySchedule-id: $request.path.unifiedRoleEligibilitySchedule-id
-            principal:
-              operationId: roleManagement.directory.RoleEligibilitySchedules.GetPrincipal
-              parameters:
-                unifiedRoleEligibilitySchedule-id: $request.path.unifiedRoleEligibilitySchedule-id
-            roleDefinition:
-              operationId: roleManagement.directory.RoleEligibilitySchedules.GetRoleDefinition
-              parameters:
-                unifiedRoleEligibilitySchedule-id: $request.path.unifiedRoleEligibilitySchedule-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5476,23 +5180,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.rbacApplication'
-          links:
-            roleAssignments:
-              operationId: roleManagement.EntitlementManagement.ListRoleAssignments
-            roleDefinitions:
-              operationId: roleManagement.EntitlementManagement.ListRoleDefinitions
-            roleAssignmentScheduleInstances:
-              operationId: roleManagement.EntitlementManagement.ListRoleAssignmentScheduleInstances
-            roleAssignmentScheduleRequests:
-              operationId: roleManagement.EntitlementManagement.ListRoleAssignmentScheduleRequests
-            roleAssignmentSchedules:
-              operationId: roleManagement.EntitlementManagement.ListRoleAssignmentSchedules
-            roleEligibilityScheduleInstances:
-              operationId: roleManagement.EntitlementManagement.ListRoleEligibilityScheduleInstances
-            roleEligibilityScheduleRequests:
-              operationId: roleManagement.EntitlementManagement.ListRoleEligibilityScheduleRequests
-            roleEligibilitySchedules:
-              operationId: roleManagement.EntitlementManagement.ListRoleEligibilitySchedules
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5703,23 +5390,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.RoleAssignments.GetAppScope
-              parameters:
-                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.RoleAssignments.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
-            principal:
-              operationId: roleManagement.entitlementManagement.RoleAssignments.GetPrincipal
-              parameters:
-                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.RoleAssignments.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6040,11 +5710,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          links:
-            inheritsPermissionsFrom:
-              operationId: roleManagement.entitlementManagement.roleAssignments.RoleDefinition.ListInheritsPermissionsFrom
-              parameters:
-                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6239,27 +5904,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleInstance'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleInstances.GetAppScope
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleInstances.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            principal:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleInstances.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleInstances.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            activatedUsing:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleInstances.GetActivatedUsing
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6379,23 +6023,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances.ActivatedUsing.GetAppScope
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances.ActivatedUsing.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            principal:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances.ActivatedUsing.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances.ActivatedUsing.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentScheduleInstance-id: $request.path.unifiedRoleAssignmentScheduleInstance-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6725,33 +6352,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentScheduleRequest'
-          links:
-            activatedUsing:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleRequests.GetActivatedUsing
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            appScope:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleRequests.GetAppScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleRequests.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            principal:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleRequests.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleRequests.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            targetSchedule:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentScheduleRequests.GetTargetSchedule
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            cancel:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.unifiedRoleAssignmentScheduleRequest.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6873,23 +6473,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.ActivatedUsing.GetAppScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.ActivatedUsing.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            principal:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.ActivatedUsing.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.ActivatedUsing.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7129,11 +6712,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          links:
-            inheritsPermissionsFrom:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.RoleDefinition.ListInheritsPermissionsFrom
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7205,27 +6783,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.TargetSchedule.GetAppScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.TargetSchedule.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            principal:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.TargetSchedule.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.TargetSchedule.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
-            activatedUsing:
-              operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests.TargetSchedule.GetActivatedUsing
-              parameters:
-                unifiedRoleAssignmentScheduleRequest-id: $request.path.unifiedRoleAssignmentScheduleRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7546,27 +7103,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignmentSchedule'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentSchedules.GetAppScope
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentSchedules.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            principal:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentSchedules.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentSchedules.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            activatedUsing:
-              operationId: roleManagement.entitlementManagement.RoleAssignmentSchedules.GetActivatedUsing
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7688,23 +7224,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.roleAssignmentSchedules.ActivatedUsing.GetAppScope
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.roleAssignmentSchedules.ActivatedUsing.GetDirectoryScope
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            principal:
-              operationId: roleManagement.entitlementManagement.roleAssignmentSchedules.ActivatedUsing.GetPrincipal
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.roleAssignmentSchedules.ActivatedUsing.GetRoleDefinition
-              parameters:
-                unifiedRoleAssignmentSchedule-id: $request.path.unifiedRoleAssignmentSchedule-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7985,11 +7504,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          links:
-            inheritsPermissionsFrom:
-              operationId: roleManagement.entitlementManagement.RoleDefinitions.ListInheritsPermissionsFrom
-              parameters:
-                unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8235,12 +7749,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          links:
-            inheritsPermissionsFrom:
-              operationId: roleManagement.entitlementManagement.roleDefinitions.InheritsPermissionsFrom.ListInheritsPermissionsFrom
-              parameters:
-                unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
-                unifiedRoleDefinition-id1: $request.path.unifiedRoleDefinition-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8492,23 +8000,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleInstance'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.RoleEligibilityScheduleInstances.GetAppScope
-              parameters:
-                unifiedRoleEligibilityScheduleInstance-id: $request.path.unifiedRoleEligibilityScheduleInstance-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.RoleEligibilityScheduleInstances.GetDirectoryScope
-              parameters:
-                unifiedRoleEligibilityScheduleInstance-id: $request.path.unifiedRoleEligibilityScheduleInstance-id
-            principal:
-              operationId: roleManagement.entitlementManagement.RoleEligibilityScheduleInstances.GetPrincipal
-              parameters:
-                unifiedRoleEligibilityScheduleInstance-id: $request.path.unifiedRoleEligibilityScheduleInstance-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.RoleEligibilityScheduleInstances.GetRoleDefinition
-              parameters:
-                unifiedRoleEligibilityScheduleInstance-id: $request.path.unifiedRoleEligibilityScheduleInstance-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8880,29 +8371,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilityScheduleRequest'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.RoleEligibilityScheduleRequests.GetAppScope
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.RoleEligibilityScheduleRequests.GetDirectoryScope
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            principal:
-              operationId: roleManagement.entitlementManagement.RoleEligibilityScheduleRequests.GetPrincipal
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.RoleEligibilityScheduleRequests.GetRoleDefinition
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            targetSchedule:
-              operationId: roleManagement.entitlementManagement.RoleEligibilityScheduleRequests.GetTargetSchedule
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            cancel:
-              operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests.unifiedRoleEligibilityScheduleRequest.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9195,11 +8663,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-          links:
-            inheritsPermissionsFrom:
-              operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests.RoleDefinition.ListInheritsPermissionsFrom
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9268,23 +8731,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests.TargetSchedule.GetAppScope
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests.TargetSchedule.GetDirectoryScope
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            principal:
-              operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests.TargetSchedule.GetPrincipal
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests.TargetSchedule.GetRoleDefinition
-              parameters:
-                unifiedRoleEligibilityScheduleRequest-id: $request.path.unifiedRoleEligibilityScheduleRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9596,23 +9042,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleEligibilitySchedule'
-          links:
-            appScope:
-              operationId: roleManagement.entitlementManagement.RoleEligibilitySchedules.GetAppScope
-              parameters:
-                unifiedRoleEligibilitySchedule-id: $request.path.unifiedRoleEligibilitySchedule-id
-            directoryScope:
-              operationId: roleManagement.entitlementManagement.RoleEligibilitySchedules.GetDirectoryScope
-              parameters:
-                unifiedRoleEligibilitySchedule-id: $request.path.unifiedRoleEligibilitySchedule-id
-            principal:
-              operationId: roleManagement.entitlementManagement.RoleEligibilitySchedules.GetPrincipal
-              parameters:
-                unifiedRoleEligibilitySchedule-id: $request.path.unifiedRoleEligibilitySchedule-id
-            roleDefinition:
-              operationId: roleManagement.entitlementManagement.RoleEligibilitySchedules.GetRoleDefinition
-              parameters:
-                unifiedRoleEligibilitySchedule-id: $request.path.unifiedRoleEligibilitySchedule-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

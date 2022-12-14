@@ -51,15 +51,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationRoot'
-          links:
-            classes:
-              operationId: education.ListClasses
-            me:
-              operationId: education.GetMe
-            schools:
-              operationId: education.ListSchools
-            users:
-              operationId: education.ListUsers
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -295,39 +286,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
-          links:
-            assignmentCategories:
-              operationId: education.Classes.ListAssignmentCategories
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentDefaults:
-              operationId: education.Classes.GetAssignmentDefaults
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignments:
-              operationId: education.Classes.ListAssignments
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentSettings:
-              operationId: education.Classes.GetAssignmentSettings
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            group:
-              operationId: education.Classes.GetGroup
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.Classes.ListMembers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            schools:
-              operationId: education.Classes.ListSchools
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            teachers:
-              operationId: education.Classes.ListTeachers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1073,33 +1031,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignment'
-          links:
-            categories:
-              operationId: education.classes.Assignments.ListCategories
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            resources:
-              operationId: education.classes.Assignments.ListResources
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            rubric:
-              operationId: education.classes.Assignments.GetRubric
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            submissions:
-              operationId: education.classes.Assignments.ListSubmissions
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            publish:
-              operationId: education.classes.educationClass.assignments.educationAssignment.publish
-            setUpFeedbackResourcesFolder:
-              operationId: education.classes.educationClass.assignments.educationAssignment.setUpFeedbackResourcesFolder
-            setUpResourcesFolder:
-              operationId: education.classes.educationClass.assignments.educationAssignment.setUpResourcesFolder
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2378,35 +2309,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmission'
-          links:
-            outcomes:
-              operationId: education.classes.assignments.Submissions.ListOutcomes
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            resources:
-              operationId: education.classes.assignments.Submissions.ListResources
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            submittedResources:
-              operationId: education.classes.assignments.Submissions.ListSubmittedResources
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            reassign:
-              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.reassign
-            return:
-              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.return
-            setUpResourcesFolder:
-              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
-            submit:
-              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.submit
-            unsubmit:
-              operationId: education.classes.educationClass.assignments.educationAssignment.submissions.educationSubmission.unsubmit
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4063,115 +3965,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.group'
-          links:
-            appRoleAssignments:
-              operationId: education.classes.Group.ListAppRoleAssignments
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            createdOnBehalfOf:
-              operationId: education.classes.Group.GetCreatedOnBehalfGraphOPre
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            memberOf:
-              operationId: education.classes.Group.ListMemberGraphOPre
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.classes.Group.ListMembers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            membersWithLicenseErrors:
-              operationId: education.classes.Group.ListMembersGraphWPreLicenseErrors
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            owners:
-              operationId: education.classes.Group.ListOwners
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            permissionGrants:
-              operationId: education.classes.Group.ListPermissionGrants
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            settings:
-              operationId: education.classes.Group.ListSettings
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            transitiveMemberOf:
-              operationId: education.classes.Group.ListTransitiveMemberGraphOPre
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            transitiveMembers:
-              operationId: education.classes.Group.ListTransitiveMembers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            acceptedSenders:
-              operationId: education.classes.Group.ListAcceptedSenders
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            calendar:
-              operationId: education.classes.Group.GetCalendar
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            calendarView:
-              operationId: education.classes.Group.ListCalendarView
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            conversations:
-              operationId: education.classes.Group.ListConversations
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            events:
-              operationId: education.classes.Group.ListEvents
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            rejectedSenders:
-              operationId: education.classes.Group.ListRejectedSenders
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            threads:
-              operationId: education.classes.Group.ListThreads
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            drive:
-              operationId: education.classes.Group.GetDrive
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            drives:
-              operationId: education.classes.Group.ListDrives
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            sites:
-              operationId: education.classes.Group.ListSites
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            extensions:
-              operationId: education.classes.Group.ListExtensions
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            groupLifecyclePolicies:
-              operationId: education.classes.Group.ListGroupLifecyclePolicies
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            planner:
-              operationId: education.classes.Group.GetPlanner
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            onenote:
-              operationId: education.classes.Group.GetOnenote
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            photo:
-              operationId: education.classes.Group.GetPhoto
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            photos:
-              operationId: education.classes.Group.ListPhotos
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            team:
-              operationId: education.classes.Group.GetTeam
-              parameters:
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4724,22 +4517,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
-          links:
-            administrativeUnit:
-              operationId: education.classes.Schools.GetAdministrativeUnit
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationSchool-id: $request.path.educationSchool-id
-            classes:
-              operationId: education.classes.Schools.ListClasses
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationSchool-id: $request.path.educationSchool-id
-            users:
-              operationId: education.classes.Schools.ListUsers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-                educationSchool-id: $request.path.educationSchool-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5285,19 +5062,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationUser'
-          links:
-            assignments:
-              operationId: education.Me.ListAssignments
-            rubrics:
-              operationId: education.Me.ListRubrics
-            classes:
-              operationId: education.Me.ListClasses
-            schools:
-              operationId: education.Me.ListSchools
-            taughtClasses:
-              operationId: education.Me.ListTaughtClasses
-            user:
-              operationId: education.Me.GetUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5572,29 +5336,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignment'
-          links:
-            categories:
-              operationId: education.me.Assignments.ListCategories
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-            resources:
-              operationId: education.me.Assignments.ListResources
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-            rubric:
-              operationId: education.me.Assignments.GetRubric
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-            submissions:
-              operationId: education.me.Assignments.ListSubmissions
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-            publish:
-              operationId: education.me.assignments.educationAssignment.publish
-            setUpFeedbackResourcesFolder:
-              operationId: education.me.assignments.educationAssignment.setUpFeedbackResourcesFolder
-            setUpResourcesFolder:
-              operationId: education.me.assignments.educationAssignment.setUpResourcesFolder
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6673,32 +6414,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmission'
-          links:
-            outcomes:
-              operationId: education.me.assignments.Submissions.ListOutcomes
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            resources:
-              operationId: education.me.assignments.Submissions.ListResources
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            submittedResources:
-              operationId: education.me.assignments.Submissions.ListSubmittedResources
-              parameters:
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            reassign:
-              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.reassign
-            return:
-              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.return
-            setUpResourcesFolder:
-              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
-            submit:
-              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.submit
-            unsubmit:
-              operationId: education.me.assignments.educationAssignment.submissions.educationSubmission.unsubmit
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8112,39 +7827,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
-          links:
-            assignmentCategories:
-              operationId: education.me.Classes.ListAssignmentCategories
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentDefaults:
-              operationId: education.me.Classes.GetAssignmentDefaults
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignments:
-              operationId: education.me.Classes.ListAssignments
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentSettings:
-              operationId: education.me.Classes.GetAssignmentSettings
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            group:
-              operationId: education.me.Classes.GetGroup
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.me.Classes.ListMembers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            schools:
-              operationId: education.me.Classes.ListSchools
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            teachers:
-              operationId: education.me.Classes.ListTeachers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8556,19 +8238,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
-          links:
-            administrativeUnit:
-              operationId: education.me.Schools.GetAdministrativeUnit
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            classes:
-              operationId: education.me.Schools.ListClasses
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            users:
-              operationId: education.me.Schools.ListUsers
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8761,39 +8430,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
-          links:
-            assignmentCategories:
-              operationId: education.me.TaughtClasses.ListAssignmentCategories
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentDefaults:
-              operationId: education.me.TaughtClasses.GetAssignmentDefaults
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignments:
-              operationId: education.me.TaughtClasses.ListAssignments
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            assignmentSettings:
-              operationId: education.me.TaughtClasses.GetAssignmentSettings
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            group:
-              operationId: education.me.TaughtClasses.GetGroup
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.me.TaughtClasses.ListMembers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            schools:
-              operationId: education.me.TaughtClasses.ListSchools
-              parameters:
-                educationClass-id: $request.path.educationClass-id
-            teachers:
-              operationId: education.me.TaughtClasses.ListTeachers
-              parameters:
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9004,99 +8640,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
-          links:
-            appRoleAssignments:
-              operationId: education.me.User.ListAppRoleAssignments
-            createdObjects:
-              operationId: education.me.User.ListCreatedObjects
-            directReports:
-              operationId: education.me.User.ListDirectReports
-            licenseDetails:
-              operationId: education.me.User.ListLicenseDetails
-            manager:
-              operationId: education.me.User.GetManager
-            memberOf:
-              operationId: education.me.User.ListMemberGraphOPre
-            oauth2PermissionGrants:
-              operationId: education.me.User.ListOauth2PermissionGrants
-            ownedDevices:
-              operationId: education.me.User.ListOwnedDevices
-            ownedObjects:
-              operationId: education.me.User.ListOwnedObjects
-            registeredDevices:
-              operationId: education.me.User.ListRegisteredDevices
-            scopedRoleMemberOf:
-              operationId: education.me.User.ListScopedRoleMemberGraphOPre
-            transitiveMemberOf:
-              operationId: education.me.User.ListTransitiveMemberGraphOPre
-            calendar:
-              operationId: education.me.User.GetCalendar
-            calendarGroups:
-              operationId: education.me.User.ListCalendarGroups
-            calendars:
-              operationId: education.me.User.ListCalendars
-            calendarView:
-              operationId: education.me.User.ListCalendarView
-            contactFolders:
-              operationId: education.me.User.ListContactFolders
-            contacts:
-              operationId: education.me.User.ListContacts
-            events:
-              operationId: education.me.User.ListEvents
-            inferenceClassification:
-              operationId: education.me.User.GetInferenceClassification
-            mailFolders:
-              operationId: education.me.User.ListMailFolders
-            messages:
-              operationId: education.me.User.ListMessages
-            outlook:
-              operationId: education.me.User.GetOutlook
-            people:
-              operationId: education.me.User.ListPeople
-            drive:
-              operationId: education.me.User.GetDrive
-            drives:
-              operationId: education.me.User.ListDrives
-            followedSites:
-              operationId: education.me.User.ListFollowedSites
-            extensions:
-              operationId: education.me.User.ListExtensions
-            agreementAcceptances:
-              operationId: education.me.User.ListAgreementAcceptances
-            managedDevices:
-              operationId: education.me.User.ListManagedDevices
-            managedAppRegistrations:
-              operationId: education.me.User.ListManagedAppRegistrations
-            deviceManagementTroubleshootingEvents:
-              operationId: education.me.User.ListDeviceManagementTroubleshootingEvents
-            planner:
-              operationId: education.me.User.GetPlanner
-            insights:
-              operationId: education.me.User.GetInsights
-            settings:
-              operationId: education.me.User.GetSettings
-            onenote:
-              operationId: education.me.User.GetOnenote
-            photo:
-              operationId: education.me.User.GetPhoto
-            photos:
-              operationId: education.me.User.ListPhotos
-            activities:
-              operationId: education.me.User.ListActivities
-            onlineMeetings:
-              operationId: education.me.User.ListOnlineMeetings
-            presence:
-              operationId: education.me.User.GetPresence
-            authentication:
-              operationId: education.me.User.GetAuthentication
-            chats:
-              operationId: education.me.User.ListChats
-            joinedTeams:
-              operationId: education.me.User.ListJoinedTeams
-            teamwork:
-              operationId: education.me.User.GetTeamwork
-            todo:
-              operationId: education.me.User.GetTodo
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9306,19 +8849,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
-          links:
-            administrativeUnit:
-              operationId: education.Schools.GetAdministrativeUnit
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            classes:
-              operationId: education.Schools.ListClasses
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            users:
-              operationId: education.Schools.ListUsers
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9435,19 +8965,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
-          links:
-            members:
-              operationId: education.schools.AdministrativeUnit.ListMembers
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            scopedRoleMembers:
-              operationId: education.schools.AdministrativeUnit.ListScopedRoleMembers
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
-            extensions:
-              operationId: education.schools.AdministrativeUnit.ListExtensions
-              parameters:
-                educationSchool-id: $request.path.educationSchool-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10484,31 +10001,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationUser'
-          links:
-            assignments:
-              operationId: education.Users.ListAssignments
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            rubrics:
-              operationId: education.Users.ListRubrics
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            classes:
-              operationId: education.Users.ListClasses
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            schools:
-              operationId: education.Users.ListSchools
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            taughtClasses:
-              operationId: education.Users.ListTaughtClasses
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            user:
-              operationId: education.Users.GetUser
-              parameters:
-                educationUser-id: $request.path.educationUser-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10825,33 +10317,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationAssignment'
-          links:
-            categories:
-              operationId: education.users.Assignments.ListCategories
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            resources:
-              operationId: education.users.Assignments.ListResources
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            rubric:
-              operationId: education.users.Assignments.GetRubric
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            submissions:
-              operationId: education.users.Assignments.ListSubmissions
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-            publish:
-              operationId: education.users.educationUser.assignments.educationAssignment.publish
-            setUpFeedbackResourcesFolder:
-              operationId: education.users.educationUser.assignments.educationAssignment.setUpFeedbackResourcesFolder
-            setUpResourcesFolder:
-              operationId: education.users.educationUser.assignments.educationAssignment.setUpResourcesFolder
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12130,35 +11595,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSubmission'
-          links:
-            outcomes:
-              operationId: education.users.assignments.Submissions.ListOutcomes
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            resources:
-              operationId: education.users.assignments.Submissions.ListResources
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            submittedResources:
-              operationId: education.users.assignments.Submissions.ListSubmittedResources
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationAssignment-id: $request.path.educationAssignment-id
-                educationSubmission-id: $request.path.educationSubmission-id
-            reassign:
-              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.reassign
-            return:
-              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.return
-            setUpResourcesFolder:
-              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.setUpResourcesFolder
-            submit:
-              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.submit
-            unsubmit:
-              operationId: education.users.educationUser.assignments.educationAssignment.submissions.educationSubmission.unsubmit
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13772,47 +13208,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
-          links:
-            assignmentCategories:
-              operationId: education.users.Classes.ListAssignmentCategories
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignmentDefaults:
-              operationId: education.users.Classes.GetAssignmentDefaults
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignments:
-              operationId: education.users.Classes.ListAssignments
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignmentSettings:
-              operationId: education.users.Classes.GetAssignmentSettings
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            group:
-              operationId: education.users.Classes.GetGroup
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.users.Classes.ListMembers
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            schools:
-              operationId: education.users.Classes.ListSchools
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            teachers:
-              operationId: education.users.Classes.ListTeachers
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14281,22 +13676,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationSchool'
-          links:
-            administrativeUnit:
-              operationId: education.users.Schools.GetAdministrativeUnit
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationSchool-id: $request.path.educationSchool-id
-            classes:
-              operationId: education.users.Schools.ListClasses
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationSchool-id: $request.path.educationSchool-id
-            users:
-              operationId: education.users.Schools.ListUsers
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationSchool-id: $request.path.educationSchool-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14505,47 +13884,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationClass'
-          links:
-            assignmentCategories:
-              operationId: education.users.TaughtClasses.ListAssignmentCategories
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignmentDefaults:
-              operationId: education.users.TaughtClasses.GetAssignmentDefaults
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignments:
-              operationId: education.users.TaughtClasses.ListAssignments
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            assignmentSettings:
-              operationId: education.users.TaughtClasses.GetAssignmentSettings
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            group:
-              operationId: education.users.TaughtClasses.GetGroup
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            members:
-              operationId: education.users.TaughtClasses.ListMembers
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            schools:
-              operationId: education.users.TaughtClasses.ListSchools
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
-            teachers:
-              operationId: education.users.TaughtClasses.ListTeachers
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-                educationClass-id: $request.path.educationClass-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14764,191 +14102,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
-          links:
-            appRoleAssignments:
-              operationId: education.users.User.ListAppRoleAssignments
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            createdObjects:
-              operationId: education.users.User.ListCreatedObjects
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            directReports:
-              operationId: education.users.User.ListDirectReports
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            licenseDetails:
-              operationId: education.users.User.ListLicenseDetails
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            manager:
-              operationId: education.users.User.GetManager
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            memberOf:
-              operationId: education.users.User.ListMemberGraphOPre
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            oauth2PermissionGrants:
-              operationId: education.users.User.ListOauth2PermissionGrants
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            ownedDevices:
-              operationId: education.users.User.ListOwnedDevices
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            ownedObjects:
-              operationId: education.users.User.ListOwnedObjects
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            registeredDevices:
-              operationId: education.users.User.ListRegisteredDevices
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            scopedRoleMemberOf:
-              operationId: education.users.User.ListScopedRoleMemberGraphOPre
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            transitiveMemberOf:
-              operationId: education.users.User.ListTransitiveMemberGraphOPre
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            calendar:
-              operationId: education.users.User.GetCalendar
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            calendarGroups:
-              operationId: education.users.User.ListCalendarGroups
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            calendars:
-              operationId: education.users.User.ListCalendars
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            calendarView:
-              operationId: education.users.User.ListCalendarView
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            contactFolders:
-              operationId: education.users.User.ListContactFolders
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            contacts:
-              operationId: education.users.User.ListContacts
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            events:
-              operationId: education.users.User.ListEvents
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            inferenceClassification:
-              operationId: education.users.User.GetInferenceClassification
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            mailFolders:
-              operationId: education.users.User.ListMailFolders
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            messages:
-              operationId: education.users.User.ListMessages
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            outlook:
-              operationId: education.users.User.GetOutlook
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            people:
-              operationId: education.users.User.ListPeople
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            drive:
-              operationId: education.users.User.GetDrive
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            drives:
-              operationId: education.users.User.ListDrives
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            followedSites:
-              operationId: education.users.User.ListFollowedSites
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            extensions:
-              operationId: education.users.User.ListExtensions
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            agreementAcceptances:
-              operationId: education.users.User.ListAgreementAcceptances
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            managedDevices:
-              operationId: education.users.User.ListManagedDevices
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            managedAppRegistrations:
-              operationId: education.users.User.ListManagedAppRegistrations
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            deviceManagementTroubleshootingEvents:
-              operationId: education.users.User.ListDeviceManagementTroubleshootingEvents
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            planner:
-              operationId: education.users.User.GetPlanner
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            insights:
-              operationId: education.users.User.GetInsights
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            settings:
-              operationId: education.users.User.GetSettings
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            onenote:
-              operationId: education.users.User.GetOnenote
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            photo:
-              operationId: education.users.User.GetPhoto
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            photos:
-              operationId: education.users.User.ListPhotos
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            activities:
-              operationId: education.users.User.ListActivities
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            onlineMeetings:
-              operationId: education.users.User.ListOnlineMeetings
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            presence:
-              operationId: education.users.User.GetPresence
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            authentication:
-              operationId: education.users.User.GetAuthentication
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            chats:
-              operationId: education.users.User.ListChats
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            joinedTeams:
-              operationId: education.users.User.ListJoinedTeams
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            teamwork:
-              operationId: education.users.User.GetTeamwork
-              parameters:
-                educationUser-id: $request.path.educationUser-id
-            todo:
-              operationId: education.users.User.GetTodo
-              parameters:
-                educationUser-id: $request.path.educationUser-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15556,7 +14709,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
             assignedLicenses:
               type: array
               items:
@@ -23995,7 +23148,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -25722,7 +24875,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -26035,7 +25188,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -27148,7 +26301,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object

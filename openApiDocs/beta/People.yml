@@ -55,11 +55,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userAnalytics'
-          links:
-            activityStatistics:
-              operationId: users.Analytics.ListActivityStatistics
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -633,83 +628,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.profile'
-          links:
-            account:
-              operationId: users.Profile.ListAccount
-              parameters:
-                user-id: $request.path.user-id
-            addresses:
-              operationId: users.Profile.ListAddresses
-              parameters:
-                user-id: $request.path.user-id
-            anniversaries:
-              operationId: users.Profile.ListAnniversaries
-              parameters:
-                user-id: $request.path.user-id
-            awards:
-              operationId: users.Profile.ListAwards
-              parameters:
-                user-id: $request.path.user-id
-            certifications:
-              operationId: users.Profile.ListCertifications
-              parameters:
-                user-id: $request.path.user-id
-            educationalActivities:
-              operationId: users.Profile.ListEducationalActivities
-              parameters:
-                user-id: $request.path.user-id
-            emails:
-              operationId: users.Profile.ListEmails
-              parameters:
-                user-id: $request.path.user-id
-            interests:
-              operationId: users.Profile.ListInterests
-              parameters:
-                user-id: $request.path.user-id
-            languages:
-              operationId: users.Profile.ListLanguages
-              parameters:
-                user-id: $request.path.user-id
-            names:
-              operationId: users.Profile.ListNames
-              parameters:
-                user-id: $request.path.user-id
-            notes:
-              operationId: users.Profile.ListNotes
-              parameters:
-                user-id: $request.path.user-id
-            patents:
-              operationId: users.Profile.ListPatents
-              parameters:
-                user-id: $request.path.user-id
-            phones:
-              operationId: users.Profile.ListPhones
-              parameters:
-                user-id: $request.path.user-id
-            positions:
-              operationId: users.Profile.ListPositions
-              parameters:
-                user-id: $request.path.user-id
-            projects:
-              operationId: users.Profile.ListProjects
-              parameters:
-                user-id: $request.path.user-id
-            publications:
-              operationId: users.Profile.ListPublications
-              parameters:
-                user-id: $request.path.user-id
-            skills:
-              operationId: users.Profile.ListSkills
-              parameters:
-                user-id: $request.path.user-id
-            webAccounts:
-              operationId: users.Profile.ListWebAccounts
-              parameters:
-                user-id: $request.path.user-id
-            websites:
-              operationId: users.Profile.ListWebsites
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

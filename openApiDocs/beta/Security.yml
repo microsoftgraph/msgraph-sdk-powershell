@@ -89,53 +89,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security'
-          links:
-            subjectRightsRequests:
-              operationId: security.ListSubjectRightsRequests
-            cases:
-              operationId: security.GetCases
-            informationProtection:
-              operationId: security.GetInformationProtection
-            alerts_v2:
-              operationId: security.ListAlerts_v2
-            incidents:
-              operationId: security.ListIncidents
-            attackSimulation:
-              operationId: security.GetAttackSimulation
-            labels:
-              operationId: security.GetLabels
-            triggers:
-              operationId: security.GetTriggers
-            triggerTypes:
-              operationId: security.GetTriggerTypes
-            threatSubmission:
-              operationId: security.GetThreatSubmission
-            alerts:
-              operationId: security.ListAlerts
-            cloudAppSecurityProfiles:
-              operationId: security.ListCloudAppSecurityProfiles
-            domainSecurityProfiles:
-              operationId: security.ListDomainSecurityProfiles
-            fileSecurityProfiles:
-              operationId: security.ListFileSecurityProfiles
-            hostSecurityProfiles:
-              operationId: security.ListHostSecurityProfiles
-            ipSecurityProfiles:
-              operationId: security.ListIpSecurityProfiles
-            providerTenantSettings:
-              operationId: security.ListProviderTenantSettings
-            secureScoreControlProfiles:
-              operationId: security.ListSecureScoreControlProfiles
-            secureScores:
-              operationId: security.ListSecureScores
-            securityActions:
-              operationId: security.ListSecurityActions
-            tiIndicators:
-              operationId: security.ListTiIndicators
-            userSecurityProfiles:
-              operationId: security.ListUserSecurityProfiles
-            runHuntingQuery:
-              operationId: security.runHuntingQuery
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -864,11 +817,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
-          links:
-            simulationAutomations:
-              operationId: security.AttackSimulation.ListSimulationAutomations
-            simulations:
-              operationId: security.AttackSimulation.ListSimulations
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1079,11 +1027,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
-          links:
-            runs:
-              operationId: security.attackSimulation.SimulationAutomations.ListRuns
-              parameters:
-                simulationAutomation-id: $request.path.simulationAutomation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1671,9 +1614,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
-          links:
-            ediscoveryCases:
-              operationId: security.Cases.ListEdiscoveryCases
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1915,43 +1855,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
-          links:
-            custodians:
-              operationId: security.cases.EdiscoveryCases.ListCustodians
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            legalHolds:
-              operationId: security.cases.EdiscoveryCases.ListLegalHolds
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            noncustodialDataSources:
-              operationId: security.cases.EdiscoveryCases.ListNoncustodialDataSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            operations:
-              operationId: security.cases.EdiscoveryCases.ListOperations
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            reviewSets:
-              operationId: security.cases.EdiscoveryCases.ListReviewSets
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            searches:
-              operationId: security.cases.EdiscoveryCases.ListSearches
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            settings:
-              operationId: security.cases.EdiscoveryCases.GetSettings
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            tags:
-              operationId: security.cases.EdiscoveryCases.ListTags
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-            close:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.close
-            reopen:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.reopen
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2216,37 +2119,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
-          links:
-            lastIndexOperation:
-              operationId: security.cases.ediscoveryCases.Custodians.GetLastIndexOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-            siteSources:
-              operationId: security.cases.ediscoveryCases.Custodians.ListSiteSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-            unifiedGroupSources:
-              operationId: security.cases.ediscoveryCases.Custodians.ListUnifiedGroupSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-            userSources:
-              operationId: security.cases.ediscoveryCases.Custodians.ListUserSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-            activate:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.custodians.ediscoveryCustodian.activate
-            applyHold:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.custodians.ediscoveryCustodian.applyHold
-            release:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.custodians.ediscoveryCustodian.release
-            removeHold:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.custodians.ediscoveryCustodian.removeHold
-            updateIndex:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.custodians.ediscoveryCustodian.updateIndex
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2756,13 +2628,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.siteSource'
-          links:
-            site:
-              operationId: security.cases.ediscoveryCases.custodians.SiteSources.GetSite
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2961,103 +2826,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.site'
-          links:
-            createdByUser:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetCreatedGraphBPreUser
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            lastModifiedByUser:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetLastModifiedGraphBPreUser
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            analytics:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetAnalytics
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            columns:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListColumns
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            contentTypes:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListContentTypes
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            drive:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetDrive
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            drives:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListDrives
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            externalColumns:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListExternalColumns
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            items:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListItems
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            lists:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListLists
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            operations:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListOperations
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            pages:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListPages
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            permissions:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListPermissions
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            sites:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.ListSites
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            termStore:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetTermStore
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
-            onenote:
-              operationId: security.cases.ediscoveryCases.custodians.siteSources.Site.GetOnenote
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                siteSource-id: $request.path.siteSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3269,13 +3037,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
-          links:
-            group:
-              operationId: security.cases.ediscoveryCases.custodians.UnifiedGroupSources.GetGroup
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3534,175 +3295,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.group'
-          links:
-            appRoleAssignments:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListAppRoleAssignments
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            createdOnBehalfOf:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetCreatedOnBehalfGraphOPre
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            endpoints:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListEndpoints
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            memberOf:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListMemberGraphOPre
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            members:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListMembers
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            membersWithLicenseErrors:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListMembersGraphWPreLicenseErrors
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            owners:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListOwners
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            permissionGrants:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListPermissionGrants
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            settings:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListSettings
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            transitiveMemberOf:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListTransitiveMemberGraphOPre
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            transitiveMembers:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListTransitiveMembers
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            acceptedSenders:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListAcceptedSenders
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            calendar:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetCalendar
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            calendarView:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListCalendarView
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            conversations:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListConversations
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            events:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListEvents
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            rejectedSenders:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListRejectedSenders
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            threads:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListThreads
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            drive:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetDrive
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            drives:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListDrives
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            sites:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListSites
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            extensions:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListExtensions
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            groupLifecyclePolicies:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListGroupLifecyclePolicies
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            planner:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetPlanner
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            onenote:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetOnenote
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            photo:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetPhoto
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            photos:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.ListPhotos
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
-            team:
-              operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources.Group.GetTeam
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryCustodian-id: $request.path.ediscoveryCustodian-id
-                unifiedGroupSource-id: $request.path.unifiedGroupSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4011,6 +3603,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
+      description: 'Start the process of applying hold on eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-applyhold?view=graph-rest-1.0
       operationId: security.cases.ediscoveryCases.custodians_applyHold
       parameters:
         - name: ediscoveryCase-id
@@ -4047,6 +3643,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
+      description: 'Start the process of removing hold from eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-removehold?view=graph-rest-1.0
       operationId: security.cases.ediscoveryCases.custodians_removeHold
       parameters:
         - name: ediscoveryCase-id
@@ -4286,17 +3886,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryHoldPolicy'
-          links:
-            siteSources:
-              operationId: security.cases.ediscoveryCases.LegalHolds.ListSiteSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-            userSources:
-              operationId: security.cases.ediscoveryCases.LegalHolds.ListUserSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4570,13 +4159,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.siteSource'
-          links:
-            site:
-              operationId: security.cases.ediscoveryCases.legalHolds.SiteSources.GetSite
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4775,103 +4357,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.site'
-          links:
-            createdByUser:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.GetCreatedGraphBPreUser
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            lastModifiedByUser:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.GetLastModifiedGraphBPreUser
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            analytics:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.GetAnalytics
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            columns:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.ListColumns
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            contentTypes:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.ListContentTypes
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            drive:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.GetDrive
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            drives:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.ListDrives
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            externalColumns:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.ListExternalColumns
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            items:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.ListItems
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            lists:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.ListLists
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            operations:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.ListOperations
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            pages:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.ListPages
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            permissions:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.ListPermissions
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            sites:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.ListSites
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            termStore:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.GetTermStore
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
-            onenote:
-              operationId: security.cases.ediscoveryCases.legalHolds.siteSources.Site.GetOnenote
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryHoldPolicy-id: $request.path.ediscoveryHoldPolicy-id
-                siteSource-id: $request.path.siteSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5411,25 +4896,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
-          links:
-            dataSource:
-              operationId: security.cases.ediscoveryCases.NoncustodialDataSources.GetDataSource
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryNoncustodialDataSource-id: $request.path.ediscoveryNoncustodialDataSource-id
-            lastIndexOperation:
-              operationId: security.cases.ediscoveryCases.NoncustodialDataSources.GetLastIndexOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryNoncustodialDataSource-id: $request.path.ediscoveryNoncustodialDataSource-id
-            applyHold:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.noncustodialDataSources.ediscoveryNoncustodialDataSource.applyHold
-            release:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.noncustodialDataSources.ediscoveryNoncustodialDataSource.release
-            removeHold:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.noncustodialDataSources.ediscoveryNoncustodialDataSource.removeHold
-            updateIndex:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.noncustodialDataSources.ediscoveryNoncustodialDataSource.updateIndex
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5835,6 +5301,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
+      description: 'Start the process of applying hold on eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-applyhold?view=graph-rest-1.0
       operationId: security.cases.ediscoveryCases.noncustodialDataSources_applyHold
       parameters:
         - name: ediscoveryCase-id
@@ -5871,6 +5341,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
+      description: 'Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-removehold?view=graph-rest-1.0
       operationId: security.cases.ediscoveryCases.noncustodialDataSources_removeHold
       parameters:
         - name: ediscoveryCase-id
@@ -6338,21 +5812,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
-          links:
-            files:
-              operationId: security.cases.ediscoveryCases.ReviewSets.ListFiles
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-            queries:
-              operationId: security.cases.ediscoveryCases.ReviewSets.ListQueries
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-            addToReviewSet:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.reviewSets.ediscoveryReviewSet.addToReviewSet
-            export:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.reviewSets.ediscoveryReviewSet.export
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6661,19 +6120,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryFile'
-          links:
-            custodian:
-              operationId: security.cases.ediscoveryCases.reviewSets.Files.GetCustodian
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-                ediscoveryFile-id: $request.path.ediscoveryFile-id
-            tags:
-              operationId: security.cases.ediscoveryCases.reviewSets.Files.ListTags
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-                ediscoveryFile-id: $request.path.ediscoveryFile-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6930,31 +6376,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
-          links:
-            lastIndexOperation:
-              operationId: security.cases.ediscoveryCases.reviewSets.files.Custodian.GetLastIndexOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-                ediscoveryFile-id: $request.path.ediscoveryFile-id
-            siteSources:
-              operationId: security.cases.ediscoveryCases.reviewSets.files.Custodian.ListSiteSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-                ediscoveryFile-id: $request.path.ediscoveryFile-id
-            unifiedGroupSources:
-              operationId: security.cases.ediscoveryCases.reviewSets.files.Custodian.ListUnifiedGroupSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-                ediscoveryFile-id: $request.path.ediscoveryFile-id
-            userSources:
-              operationId: security.cases.ediscoveryCases.reviewSets.files.Custodian.ListUserSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-                ediscoveryFile-id: $request.path.ediscoveryFile-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7229,21 +6650,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
-          links:
-            childTags:
-              operationId: security.cases.ediscoveryCases.reviewSets.files.Tags.ListChildTags
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-                ediscoveryFile-id: $request.path.ediscoveryFile-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
-            parent:
-              operationId: security.cases.ediscoveryCases.reviewSets.files.Tags.GetParent
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewSet-id: $request.path.ediscoveryReviewSet-id
-                ediscoveryFile-id: $request.path.ediscoveryFile-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7565,13 +6971,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
-          links:
-            applyTags:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.reviewSets.ediscoveryReviewSet.queries.ediscoveryReviewSetQuery.applyTags
-            export:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.reviewSets.ediscoveryReviewSet.queries.ediscoveryReviewSetQuery.export
-            run:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.reviewSets.ediscoveryReviewSet.queries.ediscoveryReviewSetQuery.run
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8121,36 +7520,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
-          links:
-            additionalSources:
-              operationId: security.cases.ediscoveryCases.Searches.ListAdditionalSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            addToReviewSetOperation:
-              operationId: security.cases.ediscoveryCases.Searches.GetAddToReviewSetOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            custodianSources:
-              operationId: security.cases.ediscoveryCases.Searches.ListCustodianSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            lastEstimateStatisticsOperation:
-              operationId: security.cases.ediscoveryCases.Searches.GetLastEstimateStatisticsOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            noncustodialSources:
-              operationId: security.cases.ediscoveryCases.Searches.ListNoncustodialSources
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            estimateStatistics:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.searches.ediscoverySearch.estimateStatistics
-            purgeData:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.searches.ediscoverySearch.purgeData
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8577,17 +7946,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryAddToReviewSetOperation'
-          links:
-            reviewSet:
-              operationId: security.cases.ediscoveryCases.searches.AddToReviewSetOperation.GetReviewSet
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-            search:
-              operationId: security.cases.ediscoveryCases.searches.AddToReviewSetOperation.GetSearch
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8824,12 +8182,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryEstimateOperation'
-          links:
-            search:
-              operationId: security.cases.ediscoveryCases.searches.LastEstimateStatisticsOperation.GetSearch
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9083,19 +8435,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
-          links:
-            dataSource:
-              operationId: security.cases.ediscoveryCases.searches.NoncustodialSources.GetDataSource
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-                ediscoveryNoncustodialDataSource-id: $request.path.ediscoveryNoncustodialDataSource-id
-            lastIndexOperation:
-              operationId: security.cases.ediscoveryCases.searches.NoncustodialSources.GetLastIndexOperation
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoverySearch-id: $request.path.ediscoverySearch-id
-                ediscoveryNoncustodialDataSource-id: $request.path.ediscoveryNoncustodialDataSource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9152,9 +8491,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
-          links:
-            resetToDefault:
-              operationId: security.cases.ediscoveryCases.ediscoveryCase.settings.resetToDefault
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9428,17 +8764,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
-          links:
-            childTags:
-              operationId: security.cases.ediscoveryCases.Tags.ListChildTags
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
-            parent:
-              operationId: security.cases.ediscoveryCases.Tags.GetParent
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9677,19 +9002,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
-          links:
-            childTags:
-              operationId: security.cases.ediscoveryCases.tags.ChildTags.ListChildTags
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
-                ediscoveryReviewTag-id1: $request.path.ediscoveryReviewTag-id1
-            parent:
-              operationId: security.cases.ediscoveryCases.tags.ChildTags.GetParent
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
-                ediscoveryReviewTag-id1: $request.path.ediscoveryReviewTag-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9757,17 +9069,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
-          links:
-            childTags:
-              operationId: security.cases.ediscoveryCases.tags.Parent.ListChildTags
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
-            parent:
-              operationId: security.cases.ediscoveryCases.tags.Parent.GetParent
-              parameters:
-                ediscoveryCase-id: $request.path.ediscoveryCase-id
-                ediscoveryReviewTag-id: $request.path.ediscoveryReviewTag-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10881,6 +10182,8 @@ paths:
                 - comments desc
                 - createdDateTime
                 - createdDateTime desc
+                - customTags
+                - customTags desc
                 - determination
                 - determination desc
                 - displayName
@@ -10895,8 +10198,6 @@ paths:
                 - severity desc
                 - status
                 - status desc
-                - tags
-                - tags desc
                 - tenantId
                 - tenantId desc
               type: string
@@ -10915,6 +10216,7 @@ paths:
                 - classification
                 - comments
                 - createdDateTime
+                - customTags
                 - determination
                 - displayName
                 - incidentWebUrl
@@ -10922,7 +10224,6 @@ paths:
                 - redirectIncidentId
                 - severity
                 - status
-                - tags
                 - tenantId
                 - alerts
               type: string
@@ -11001,6 +10302,7 @@ paths:
                 - classification
                 - comments
                 - createdDateTime
+                - customTags
                 - determination
                 - displayName
                 - incidentWebUrl
@@ -11008,7 +10310,6 @@ paths:
                 - redirectIncidentId
                 - severity
                 - status
-                - tags
                 - tenantId
                 - alerts
               type: string
@@ -11032,11 +10333,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.incident'
-          links:
-            alerts:
-              operationId: security.Incidents.ListAlerts
-              parameters:
-                incident-id: $request.path.incident-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11372,11 +10668,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.informationProtection'
-          links:
-            labelPolicySettings:
-              operationId: security.InformationProtection.GetLabelPolicySettings
-            sensitivityLabels:
-              operationId: security.InformationProtection.ListSensitivityLabels
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11672,11 +10963,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
-          links:
-            parent:
-              operationId: security.informationProtection.SensitivityLabels.GetParent
-              parameters:
-                sensitivityLabel-id: $request.path.sensitivityLabel-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11791,11 +11077,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
-          links:
-            parent:
-              operationId: security.informationProtection.sensitivityLabels.Parent.GetParent
-              parameters:
-                sensitivityLabel-id: $request.path.sensitivityLabel-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11857,6 +11138,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action evaluateApplication
+      description: 'Compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents. Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-sensitivitylabel-evaluateapplication?view=graph-rest-1.0
       operationId: security.informationProtection.sensitivityLabels_evaluateApplication
       requestBody:
         description: Action parameters
@@ -11900,6 +11185,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action evaluateClassificationResults
+      description: 'Use the classification results to compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.  To evaluate based on classification results, provide the contentInfo, which includes existing content metadata key-value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-sensitivitylabel-evaluateclassificationresults?view=graph-rest-1.0
       operationId: security.informationProtection.sensitivityLabels_evaluateClassificationResults
       requestBody:
         description: Action parameters
@@ -11945,6 +11234,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action evaluateRemoval
+      description: 'Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following: '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-sensitivitylabel-evaluateremoval?view=graph-rest-1.0
       operationId: security.informationProtection.sensitivityLabels_evaluateRemoval
       requestBody:
         description: Action parameters
@@ -11988,6 +11281,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action extractContentLabel
+      description: Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-sensitivitylabel-extractcontentlabel?view=graph-rest-1.0
       operationId: security.informationProtection.sensitivityLabels_extractContentLabel
       requestBody:
         description: Action parameters
@@ -12285,9 +11582,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.labelsRoot'
-          links:
-            retentionLabels:
-              operationId: security.Labels.ListRetentionLabels
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12525,15 +11819,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.retentionLabel'
-          links:
-            dispositionReviewStages:
-              operationId: security.labels.RetentionLabels.ListDispositionReviewStages
-              parameters:
-                retentionLabel-id: $request.path.retentionLabel-id
-            retentionEventType:
-              operationId: security.labels.RetentionLabels.GetRetentionEventType
-              parameters:
-                retentionLabel-id: $request.path.retentionLabel-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13792,9 +13077,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.securityAction'
-          links:
-            cancelSecurityAction:
-              operationId: security.securityActions.securityAction.cancelSecurityAction
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14106,19 +13388,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.subjectRightsRequest'
-          links:
-            notes:
-              operationId: security.SubjectRightsRequests.ListNotes
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            team:
-              operationId: security.SubjectRightsRequests.GetTeam
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            getFinalAttachment:
-              operationId: security.subjectRightsRequests.subjectRightsRequest.getFinalAttachment
-            getFinalReport:
-              operationId: security.subjectRightsRequests.subjectRightsRequest.getFinalReport
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14577,67 +13846,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
-          links:
-            allChannels:
-              operationId: security.subjectRightsRequests.Team.ListAllChannels
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            channels:
-              operationId: security.subjectRightsRequests.Team.ListChannels
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            group:
-              operationId: security.subjectRightsRequests.Team.GetGroup
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            incomingChannels:
-              operationId: security.subjectRightsRequests.Team.ListIncomingChannels
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            installedApps:
-              operationId: security.subjectRightsRequests.Team.ListInstalledApps
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            members:
-              operationId: security.subjectRightsRequests.Team.ListMembers
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            operations:
-              operationId: security.subjectRightsRequests.Team.ListOperations
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            owners:
-              operationId: security.subjectRightsRequests.Team.ListOwners
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            permissionGrants:
-              operationId: security.subjectRightsRequests.Team.ListPermissionGrants
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            photo:
-              operationId: security.subjectRightsRequests.Team.GetPhoto
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            primaryChannel:
-              operationId: security.subjectRightsRequests.Team.GetPrimaryChannel
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            tags:
-              operationId: security.subjectRightsRequests.Team.ListTags
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            template:
-              operationId: security.subjectRightsRequests.Team.GetTemplate
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            templateDefinition:
-              operationId: security.subjectRightsRequests.Team.GetTemplateDefinition
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
-            schedule:
-              operationId: security.subjectRightsRequests.Team.GetSchedule
-              parameters:
-                subjectRightsRequest-id: $request.path.subjectRightsRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14688,15 +13896,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.threatSubmissionRoot'
-          links:
-            emailThreats:
-              operationId: security.ThreatSubmission.ListEmailThreats
-            emailThreatSubmissionPolicies:
-              operationId: security.ThreatSubmission.ListEmailThreatSubmissionPolicies
-            fileThreats:
-              operationId: security.ThreatSubmission.ListFileThreats
-            urlThreats:
-              operationId: security.ThreatSubmission.ListUrlThreats
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16358,9 +15557,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.triggersRoot'
-          links:
-            retentionEvents:
-              operationId: security.Triggers.ListRetentionEvents
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16582,11 +15778,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
-          links:
-            retentionEventType:
-              operationId: security.triggers.RetentionEvents.GetRetentionEventType
-              parameters:
-                retentionEvent-id: $request.path.retentionEvent-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16739,9 +15930,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.triggerTypesRoot'
-          links:
-            retentionEventTypes:
-              operationId: security.TriggerTypes.ListRetentionEventTypes
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19004,6 +18192,11 @@ components:
               type: string
               description: Time when the incident was first created.
               format: date-time
+            customTags:
+              type: array
+              items:
+                type: string
+                nullable: true
             determination:
               $ref: '#/components/schemas/microsoft.graph.security.alertDetermination'
             displayName:
@@ -19027,12 +18220,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.alertSeverity'
             status:
               $ref: '#/components/schemas/microsoft.graph.security.incidentStatus'
-            tags:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: Array of custom tags associated with an incident.
             tenantId:
               type: string
               description: The Azure Active Directory tenant in which the alert was created.
@@ -21792,18 +20979,40 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
-            pageLayoutType:
-              type: string
-              nullable: true
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            promotionKind:
+              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            reactions:
+              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
+            showComments:
+              type: boolean
+              description: Determines whether or not to show comments at the bottom of the page.
+              nullable: true
+            showRecommendedPages:
+              type: boolean
+              description: Determines whether or not to show recommended pages at the bottom of the page.
+              nullable: true
+            thumbnailWebUrl:
+              type: string
+              description: Url of the sitePage's thumbnail image
+              nullable: true
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
+            titleArea:
+              $ref: '#/components/schemas/microsoft.graph.titleArea'
+            canvasLayout:
+              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
             webParts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: Collection of webparts on the SharePoint page
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permission:
@@ -25403,11 +24612,6 @@ components:
         - prevented
         - blocked
         - notFound
-        - active
-        - pendingApproval
-        - declined
-        - notRemediated
-        - running
         - unknownFutureValue
       type: string
     microsoft.graph.security.evidenceRole:
@@ -26210,7 +25414,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -26315,6 +25519,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
+    microsoft.graph.pagePromotionType:
+      title: pagePromotionType
+      enum:
+        - microsoftReserved
+        - page
+        - newsPost
+        - unknownFutureValue
+      type: string
     microsoft.graph.publicationFacet:
       title: publicationFacet
       type: object
@@ -26329,18 +25549,96 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.webPart:
-      title: webPart
+    microsoft.graph.reactionsFacet:
+      title: reactionsFacet
       type: object
       properties:
-        data:
-          $ref: '#/components/schemas/microsoft.graph.sitePageData'
-        type:
-          type: string
-          description: A unique identifier specifying the webPart type. Read-only.
+        commentCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of comments.
+          format: int32
+          nullable: true
+        likeCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of likes.
+          format: int32
+          nullable: true
+        shareCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of shares.
+          format: int32
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.titleArea:
+      title: titleArea
+      type: object
+      properties:
+        alternativeText:
+          type: string
+          description: Alternative text on the title area.
+          nullable: true
+        enableGradientEffect:
+          type: boolean
+          description: Indicates whether the title area has a gradient effect enabled.
+          nullable: true
+        imageWebUrl:
+          type: string
+          description: URL of the image in the title area.
+          nullable: true
+        layout:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
+        serverProcessedContent:
+          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
+        showAuthor:
+          type: boolean
+          description: Indicates whether the author should be shown in title area.
+          nullable: true
+        showPublishedDate:
+          type: boolean
+          description: Indicates whether the published date should be shown in title area.
+          nullable: true
+        showTextBlockAboveTitle:
+          type: boolean
+          description: Indicates whether the text block above title should be shown in title area.
+          nullable: true
+        textAboveTitle:
+          type: string
+          description: The text above title line.
+          nullable: true
+        textAlignment:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
+      additionalProperties:
+        type: object
+    microsoft.graph.canvasLayout:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: canvasLayout
+          type: object
+          properties:
+            horizontalSections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+              description: Collection of horizontal sections on the SharePoint page.
+              x-ms-navigationProperty: true
+            verticalSection:
+              $ref: '#/components/schemas/microsoft.graph.verticalSection'
+          additionalProperties:
+            type: object
+    microsoft.graph.webPart:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: webPart
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -27322,6 +26620,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             onBehalfOf:
@@ -27894,6 +27193,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
+              description: The results of every partner agent's installation status on Cloud PC.
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -30364,6 +29664,8 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -31907,11 +31209,92 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.sitePageData:
-      title: sitePageData
+    microsoft.graph.titleAreaLayoutType:
+      title: titleAreaLayoutType
+      enum:
+        - imageAndTitle
+        - plain
+        - colorBlock
+        - overlap
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serverProcessedContent:
+      title: serverProcessedContent
       type: object
+      properties:
+        componentDependencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+        customMetadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
+          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
+        htmlStrings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
+        imageSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+        searchablePlainTexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
       additionalProperties:
         type: object
+    microsoft.graph.titleAreaTextAlignmentType:
+      title: titleAreaTextAlignmentType
+      enum:
+        - left
+        - center
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            layout:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
+            columns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+              description: The set of vertical columns in this section.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.verticalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: verticalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The set of web parts in this section.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -32639,6 +32022,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
@@ -33034,11 +32418,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
           nullable: true
       additionalProperties:
         type: object
@@ -37154,6 +36540,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -38407,6 +37808,74 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.metaDataKeyStringPair:
+      title: metaDataKeyStringPair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the meta data.
+          nullable: true
+        value:
+          type: string
+          description: Value of the meta data.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.metaDataKeyValuePair:
+      title: metaDataKeyValuePair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the metadata.
+          nullable: true
+        value:
+          $ref: '#/components/schemas/microsoft.graph.Json'
+      additionalProperties:
+        type: object
+    microsoft.graph.sectionEmphasisType:
+      title: sectionEmphasisType
+      enum:
+        - none
+        - netural
+        - soft
+        - strong
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionLayoutType:
+      title: horizontalSectionLayoutType
+      enum:
+        - none
+        - oneColumn
+        - twoColumns
+        - threeColumns
+        - oneThirdLeftColumn
+        - oneThirdRightColumn
+        - fullWidth
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionColumn:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSectionColumn
+          type: object
+          properties:
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
+              format: int32
+              nullable: true
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The collection of WebParts in this column.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:
@@ -38419,7 +37888,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object
@@ -38680,7 +38149,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object

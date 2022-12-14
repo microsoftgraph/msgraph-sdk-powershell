@@ -274,27 +274,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.identityContainer'
-          links:
-            apiConnectors:
-              operationId: identity.ListApiConnectors
-            authenticationEventListeners:
-              operationId: identity.ListAuthenticationEventListeners
-            b2cUserFlows:
-              operationId: identity.ListB2cUserFlows
-            b2xUserFlows:
-              operationId: identity.ListB2xUserFlows
-            customAuthenticationExtensions:
-              operationId: identity.ListCustomAuthenticationExtensions
-            identityProviders:
-              operationId: identity.ListIdentityProviders
-            userFlowAttributes:
-              operationId: identity.ListUserFlowAttributes
-            userFlows:
-              operationId: identity.ListUserFlows
-            conditionalAccess:
-              operationId: identity.GetConditionalAccess
-            continuousAccessEvaluationPolicy:
-              operationId: identity.GetContinuousAccessEvaluationPolicy
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -463,9 +442,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.identityApiConnector'
-          links:
-            uploadClientCertificate:
-              operationId: identity.apiConnectors.identityApiConnector.uploadClientCertificate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -936,23 +912,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.b2cIdentityUserFlow'
-          links:
-            identityProviders:
-              operationId: identity.B2cUserFlows.ListIdentityProviders
-              parameters:
-                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
-            languages:
-              operationId: identity.B2cUserFlows.ListLanguages
-              parameters:
-                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
-            userAttributeAssignments:
-              operationId: identity.B2cUserFlows.ListUserAttributeAssignments
-              parameters:
-                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
-            userFlowIdentityProviders:
-              operationId: identity.B2cUserFlows.ListUserFlowIdentityProviders
-              parameters:
-                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1405,17 +1364,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
-          links:
-            defaultPages:
-              operationId: identity.b2cUserFlows.Languages.ListDefaultPages
-              parameters:
-                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
-                userFlowLanguageConfiguration-id: $request.path.userFlowLanguageConfiguration-id
-            overridesPages:
-              operationId: identity.b2cUserFlows.Languages.ListOverridesPages
-              parameters:
-                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
-                userFlowLanguageConfiguration-id: $request.path.userFlowLanguageConfiguration-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2386,12 +2334,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
-          links:
-            userAttribute:
-              operationId: identity.b2cUserFlows.UserAttributeAssignments.GetUserAttribute
-              parameters:
-                b2cIdentityUserFlow-id: $request.path.b2cIdentityUserFlow-id
-                identityUserFlowAttributeAssignment-id: $request.path.identityUserFlowAttributeAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2878,23 +2820,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.b2xIdentityUserFlow'
-          links:
-            identityProviders:
-              operationId: identity.B2xUserFlows.ListIdentityProviders
-              parameters:
-                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
-            languages:
-              operationId: identity.B2xUserFlows.ListLanguages
-              parameters:
-                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
-            userAttributeAssignments:
-              operationId: identity.B2xUserFlows.ListUserAttributeAssignments
-              parameters:
-                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
-            userFlowIdentityProviders:
-              operationId: identity.B2xUserFlows.ListUserFlowIdentityProviders
-              parameters:
-                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3278,17 +3203,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userFlowLanguageConfiguration'
-          links:
-            defaultPages:
-              operationId: identity.b2xUserFlows.Languages.ListDefaultPages
-              parameters:
-                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
-                userFlowLanguageConfiguration-id: $request.path.userFlowLanguageConfiguration-id
-            overridesPages:
-              operationId: identity.b2xUserFlows.Languages.ListOverridesPages
-              parameters:
-                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
-                userFlowLanguageConfiguration-id: $request.path.userFlowLanguageConfiguration-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4259,12 +4173,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
-          links:
-            userAttribute:
-              operationId: identity.b2xUserFlows.UserAttributeAssignments.GetUserAttribute
-              parameters:
-                b2xIdentityUserFlow-id: $request.path.b2xIdentityUserFlow-id
-                identityUserFlowAttributeAssignment-id: $request.path.identityUserFlowAttributeAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4687,17 +4595,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.conditionalAccessRoot'
-          links:
-            authenticationStrengths:
-              operationId: identity.ConditionalAccess.GetAuthenticationStrengths
-            authenticationContextClassReferences:
-              operationId: identity.ConditionalAccess.ListAuthenticationContextClassReferences
-            namedLocations:
-              operationId: identity.ConditionalAccess.ListNamedLocations
-            policies:
-              operationId: identity.ConditionalAccess.ListPolicies
-            templates:
-              operationId: identity.ConditionalAccess.ListTemplates
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4984,11 +4881,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationStrengthRoot'
-          links:
-            authenticationMethodModes:
-              operationId: identity.conditionalAccess.AuthenticationStrengths.ListAuthenticationMethodModes
-            policies:
-              operationId: identity.conditionalAccess.AuthenticationStrengths.ListPolicies
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5383,15 +5275,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
-          links:
-            combinationConfigurations:
-              operationId: identity.conditionalAccess.authenticationStrengths.Policies.ListCombinationConfigurations
-              parameters:
-                authenticationStrengthPolicy-id: $request.path.authenticationStrengthPolicy-id
-            updateAllowedCombinations:
-              operationId: identity.conditionalAccess.authenticationStrengths.policies.authenticationStrengthPolicy.updateAllowedCombinations
-            usage:
-              operationId: identity.conditionalAccess.authenticationStrengths.policies.authenticationStrengthPolicy.usage
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6635,9 +6518,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtension'
-          links:
-            validateAuthenticationConfiguration:
-              operationId: identity.customAuthenticationExtensions.customAuthenticationExtension.validateAuthenticationConfiguration
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7460,15 +7340,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.identityProtectionRoot'
-          links:
-            riskDetections:
-              operationId: identityProtection.ListRiskDetections
-            riskyServicePrincipals:
-              operationId: identityProtection.ListRiskyServicePrincipals
-            riskyUsers:
-              operationId: identityProtection.ListRiskyUsers
-            servicePrincipalRiskDetections:
-              operationId: identityProtection.ListServicePrincipalRiskDetections
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7928,11 +7799,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.riskyServicePrincipal'
-          links:
-            history:
-              operationId: identityProtection.RiskyServicePrincipals.ListHistory
-              parameters:
-                riskyServicePrincipal-id: $request.path.riskyServicePrincipal-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8197,12 +8063,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.riskyServicePrincipalHistoryItem'
-          links:
-            history:
-              operationId: identityProtection.riskyServicePrincipals.History.ListHistory
-              parameters:
-                riskyServicePrincipal-id: $request.path.riskyServicePrincipal-id
-                riskyServicePrincipalHistoryItem-id: $request.path.riskyServicePrincipalHistoryItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8280,7 +8140,7 @@ paths:
       tags:
         - identityProtection.Actions
       summary: Invoke action confirmCompromised
-      description: 'Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account''s risk level to `high`. When the risk level of the service principal is confirmed as compromised, the service principal object is disabled and its **disabledByMicrosoftStatus** property is updated.'
+      description: Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to `high`.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/riskyserviceprincipal-confirmcompromised?view=graph-rest-1.0
@@ -8504,11 +8364,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.riskyUser'
-          links:
-            history:
-              operationId: identityProtection.RiskyUsers.ListHistory
-              parameters:
-                riskyUser-id: $request.path.riskyUser-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8768,12 +8623,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.riskyUserHistoryItem'
-          links:
-            history:
-              operationId: identityProtection.riskyUsers.History.ListHistory
-              parameters:
-                riskyUser-id: $request.path.riskyUser-id
-                riskyUserHistoryItem-id: $request.path.riskyUserHistoryItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9515,27 +9364,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.informationProtection'
-          links:
-            bitlocker:
-              operationId: informationProtection.GetBitlocker
-            dataLossPreventionPolicies:
-              operationId: informationProtection.ListDataLossPreventionPolicies
-            sensitivityLabels:
-              operationId: informationProtection.ListSensitivityLabels
-            sensitivityPolicySettings:
-              operationId: informationProtection.GetSensitivityPolicySettings
-            policy:
-              operationId: informationProtection.GetPolicy
-            threatAssessmentRequests:
-              operationId: informationProtection.ListThreatAssessmentRequests
-            decryptBuffer:
-              operationId: informationProtection.decryptBuffer
-            encryptBuffer:
-              operationId: informationProtection.encryptBuffer
-            signDigest:
-              operationId: informationProtection.signDigest
-            verifySignature:
-              operationId: informationProtection.verifySignature
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9597,9 +9425,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bitlocker'
-          links:
-            recoveryKeys:
-              operationId: informationProtection.Bitlocker.ListRecoveryKeys
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10142,9 +9967,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
-          links:
-            labels:
-              operationId: informationProtection.Policy.ListLabels
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -10823,11 +10645,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
-          links:
-            sublabels:
-              operationId: informationProtection.SensitivityLabels.ListSublabels
-              parameters:
-                sensitivityLabel-id: $request.path.sensitivityLabel-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11087,12 +10904,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
-          links:
-            sublabels:
-              operationId: informationProtection.sensitivityLabels.Sublabels.ListSublabels
-              parameters:
-                sensitivityLabel-id: $request.path.sensitivityLabel-id
-                sensitivityLabel-id1: $request.path.sensitivityLabel-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11485,11 +11296,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
-          links:
-            results:
-              operationId: informationProtection.ThreatAssessmentRequests.ListResults
-              parameters:
-                threatAssessmentRequest-id: $request.path.threatAssessmentRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11953,11 +11759,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.invitation'
-          links:
-            invitedUser:
-              operationId: invitations.GetInvitedUser
-              parameters:
-                invitation-id: $request.path.invitation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12270,263 +12071,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
-          links:
-            analytics:
-              operationId: invitations.InvitedUser.GetAnalytics
-              parameters:
-                invitation-id: $request.path.invitation-id
-            cloudPCs:
-              operationId: invitations.InvitedUser.ListCloudPCs
-              parameters:
-                invitation-id: $request.path.invitation-id
-            usageRights:
-              operationId: invitations.InvitedUser.ListUsageRights
-              parameters:
-                invitation-id: $request.path.invitation-id
-            informationProtection:
-              operationId: invitations.InvitedUser.GetInformationProtection
-              parameters:
-                invitation-id: $request.path.invitation-id
-            appRoleAssignedResources:
-              operationId: invitations.InvitedUser.ListAppRoleAssignedResources
-              parameters:
-                invitation-id: $request.path.invitation-id
-            appRoleAssignments:
-              operationId: invitations.InvitedUser.ListAppRoleAssignments
-              parameters:
-                invitation-id: $request.path.invitation-id
-            createdObjects:
-              operationId: invitations.InvitedUser.ListCreatedObjects
-              parameters:
-                invitation-id: $request.path.invitation-id
-            directReports:
-              operationId: invitations.InvitedUser.ListDirectReports
-              parameters:
-                invitation-id: $request.path.invitation-id
-            licenseDetails:
-              operationId: invitations.InvitedUser.ListLicenseDetails
-              parameters:
-                invitation-id: $request.path.invitation-id
-            manager:
-              operationId: invitations.InvitedUser.GetManager
-              parameters:
-                invitation-id: $request.path.invitation-id
-            memberOf:
-              operationId: invitations.InvitedUser.ListMemberGraphOPre
-              parameters:
-                invitation-id: $request.path.invitation-id
-            oauth2PermissionGrants:
-              operationId: invitations.InvitedUser.ListOauth2PermissionGrants
-              parameters:
-                invitation-id: $request.path.invitation-id
-            ownedDevices:
-              operationId: invitations.InvitedUser.ListOwnedDevices
-              parameters:
-                invitation-id: $request.path.invitation-id
-            ownedObjects:
-              operationId: invitations.InvitedUser.ListOwnedObjects
-              parameters:
-                invitation-id: $request.path.invitation-id
-            registeredDevices:
-              operationId: invitations.InvitedUser.ListRegisteredDevices
-              parameters:
-                invitation-id: $request.path.invitation-id
-            scopedRoleMemberOf:
-              operationId: invitations.InvitedUser.ListScopedRoleMemberGraphOPre
-              parameters:
-                invitation-id: $request.path.invitation-id
-            transitiveMemberOf:
-              operationId: invitations.InvitedUser.ListTransitiveMemberGraphOPre
-              parameters:
-                invitation-id: $request.path.invitation-id
-            transitiveReports:
-              operationId: invitations.InvitedUser.ListTransitiveReports
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendar:
-              operationId: invitations.InvitedUser.GetCalendar
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendarGroups:
-              operationId: invitations.InvitedUser.ListCalendarGroups
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendars:
-              operationId: invitations.InvitedUser.ListCalendars
-              parameters:
-                invitation-id: $request.path.invitation-id
-            calendarView:
-              operationId: invitations.InvitedUser.ListCalendarView
-              parameters:
-                invitation-id: $request.path.invitation-id
-            contactFolders:
-              operationId: invitations.InvitedUser.ListContactFolders
-              parameters:
-                invitation-id: $request.path.invitation-id
-            contacts:
-              operationId: invitations.InvitedUser.ListContacts
-              parameters:
-                invitation-id: $request.path.invitation-id
-            events:
-              operationId: invitations.InvitedUser.ListEvents
-              parameters:
-                invitation-id: $request.path.invitation-id
-            inferenceClassification:
-              operationId: invitations.InvitedUser.GetInferenceClassification
-              parameters:
-                invitation-id: $request.path.invitation-id
-            joinedGroups:
-              operationId: invitations.InvitedUser.ListJoinedGroups
-              parameters:
-                invitation-id: $request.path.invitation-id
-            mailFolders:
-              operationId: invitations.InvitedUser.ListMailFolders
-              parameters:
-                invitation-id: $request.path.invitation-id
-            messages:
-              operationId: invitations.InvitedUser.ListMessages
-              parameters:
-                invitation-id: $request.path.invitation-id
-            outlook:
-              operationId: invitations.InvitedUser.GetOutlook
-              parameters:
-                invitation-id: $request.path.invitation-id
-            people:
-              operationId: invitations.InvitedUser.ListPeople
-              parameters:
-                invitation-id: $request.path.invitation-id
-            drive:
-              operationId: invitations.InvitedUser.GetDrive
-              parameters:
-                invitation-id: $request.path.invitation-id
-            drives:
-              operationId: invitations.InvitedUser.ListDrives
-              parameters:
-                invitation-id: $request.path.invitation-id
-            followedSites:
-              operationId: invitations.InvitedUser.ListFollowedSites
-              parameters:
-                invitation-id: $request.path.invitation-id
-            extensions:
-              operationId: invitations.InvitedUser.ListExtensions
-              parameters:
-                invitation-id: $request.path.invitation-id
-            appConsentRequestsForApproval:
-              operationId: invitations.InvitedUser.ListAppConsentRequestsGraphFPreApproval
-              parameters:
-                invitation-id: $request.path.invitation-id
-            approvals:
-              operationId: invitations.InvitedUser.ListApprovals
-              parameters:
-                invitation-id: $request.path.invitation-id
-            pendingAccessReviewInstances:
-              operationId: invitations.InvitedUser.ListPendingAccessReviewInstances
-              parameters:
-                invitation-id: $request.path.invitation-id
-            agreementAcceptances:
-              operationId: invitations.InvitedUser.ListAgreementAcceptances
-              parameters:
-                invitation-id: $request.path.invitation-id
-            security:
-              operationId: invitations.InvitedUser.GetSecurity
-              parameters:
-                invitation-id: $request.path.invitation-id
-            deviceEnrollmentConfigurations:
-              operationId: invitations.InvitedUser.ListDeviceEnrollmentConfigurations
-              parameters:
-                invitation-id: $request.path.invitation-id
-            managedDevices:
-              operationId: invitations.InvitedUser.ListManagedDevices
-              parameters:
-                invitation-id: $request.path.invitation-id
-            managedAppRegistrations:
-              operationId: invitations.InvitedUser.ListManagedAppRegistrations
-              parameters:
-                invitation-id: $request.path.invitation-id
-            windowsInformationProtectionDeviceRegistrations:
-              operationId: invitations.InvitedUser.ListWindowsInformationProtectionDeviceRegistrations
-              parameters:
-                invitation-id: $request.path.invitation-id
-            deviceManagementTroubleshootingEvents:
-              operationId: invitations.InvitedUser.ListDeviceManagementTroubleshootingEvents
-              parameters:
-                invitation-id: $request.path.invitation-id
-            mobileAppIntentAndStates:
-              operationId: invitations.InvitedUser.ListMobileAppIntentAndStates
-              parameters:
-                invitation-id: $request.path.invitation-id
-            mobileAppTroubleshootingEvents:
-              operationId: invitations.InvitedUser.ListMobileAppTroubleshootingEvents
-              parameters:
-                invitation-id: $request.path.invitation-id
-            notifications:
-              operationId: invitations.InvitedUser.ListNotifications
-              parameters:
-                invitation-id: $request.path.invitation-id
-            planner:
-              operationId: invitations.InvitedUser.GetPlanner
-              parameters:
-                invitation-id: $request.path.invitation-id
-            insights:
-              operationId: invitations.InvitedUser.GetInsights
-              parameters:
-                invitation-id: $request.path.invitation-id
-            settings:
-              operationId: invitations.InvitedUser.GetSettings
-              parameters:
-                invitation-id: $request.path.invitation-id
-            onenote:
-              operationId: invitations.InvitedUser.GetOnenote
-              parameters:
-                invitation-id: $request.path.invitation-id
-            photo:
-              operationId: invitations.InvitedUser.GetPhoto
-              parameters:
-                invitation-id: $request.path.invitation-id
-            photos:
-              operationId: invitations.InvitedUser.ListPhotos
-              parameters:
-                invitation-id: $request.path.invitation-id
-            profile:
-              operationId: invitations.InvitedUser.GetProfile
-              parameters:
-                invitation-id: $request.path.invitation-id
-            activities:
-              operationId: invitations.InvitedUser.ListActivities
-              parameters:
-                invitation-id: $request.path.invitation-id
-            devices:
-              operationId: invitations.InvitedUser.ListDevices
-              parameters:
-                invitation-id: $request.path.invitation-id
-            onlineMeetings:
-              operationId: invitations.InvitedUser.ListOnlineMeetings
-              parameters:
-                invitation-id: $request.path.invitation-id
-            presence:
-              operationId: invitations.InvitedUser.GetPresence
-              parameters:
-                invitation-id: $request.path.invitation-id
-            authentication:
-              operationId: invitations.InvitedUser.GetAuthentication
-              parameters:
-                invitation-id: $request.path.invitation-id
-            chats:
-              operationId: invitations.InvitedUser.ListChats
-              parameters:
-                invitation-id: $request.path.invitation-id
-            joinedTeams:
-              operationId: invitations.InvitedUser.ListJoinedTeams
-              parameters:
-                invitation-id: $request.path.invitation-id
-            teamwork:
-              operationId: invitations.InvitedUser.GetTeamwork
-              parameters:
-                invitation-id: $request.path.invitation-id
-            todo:
-              operationId: invitations.InvitedUser.GetTodo
-              parameters:
-                invitation-id: $request.path.invitation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13068,61 +12612,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.policyRoot'
-          links:
-            authenticationMethodsPolicy:
-              operationId: policies.GetAuthenticationMethodsPolicy
-            authenticationStrengthPolicies:
-              operationId: policies.ListAuthenticationStrengthPolicies
-            authenticationFlowsPolicy:
-              operationId: policies.GetAuthenticationFlowsPolicy
-            b2cAuthenticationMethodsPolicy:
-              operationId: policies.GetB2cAuthenticationMethodsPolicy
-            deviceRegistrationPolicy:
-              operationId: policies.GetDeviceRegistrationPolicy
-            activityBasedTimeoutPolicies:
-              operationId: policies.ListActivityBasedTimeoutPolicies
-            appManagementPolicies:
-              operationId: policies.ListAppManagementPolicies
-            authorizationPolicy:
-              operationId: policies.ListAuthorizationPolicy
-            claimsMappingPolicies:
-              operationId: policies.ListClaimsMappingPolicies
-            crossTenantAccessPolicy:
-              operationId: policies.GetCrossTenantAccessPolicy
-            defaultAppManagementPolicy:
-              operationId: policies.GetDefaultAppManagementPolicy
-            externalIdentitiesPolicy:
-              operationId: policies.GetExternalIdentitiesPolicy
-            homeRealmDiscoveryPolicies:
-              operationId: policies.ListHomeRealmDiscoveryPolicies
-            permissionGrantPolicies:
-              operationId: policies.ListPermissionGrantPolicies
-            servicePrincipalCreationPolicies:
-              operationId: policies.ListServicePrincipalCreationPolicies
-            tokenIssuancePolicies:
-              operationId: policies.ListTokenIssuancePolicies
-            tokenLifetimePolicies:
-              operationId: policies.ListTokenLifetimePolicies
-            featureRolloutPolicies:
-              operationId: policies.ListFeatureRolloutPolicies
-            accessReviewPolicy:
-              operationId: policies.GetAccessReviewPolicy
-            adminConsentRequestPolicy:
-              operationId: policies.GetAdminConsentRequestPolicy
-            directoryRoleAccessReviewPolicy:
-              operationId: policies.GetDirectoryRoleAccessReviewPolicy
-            conditionalAccessPolicies:
-              operationId: policies.ListConditionalAccessPolicies
-            identitySecurityDefaultsEnforcementPolicy:
-              operationId: policies.GetIdentitySecurityDefaultsEnforcementPolicy
-            mobileAppManagementPolicies:
-              operationId: policies.ListMobileAppManagementPolicies
-            mobileDeviceManagementPolicies:
-              operationId: policies.ListMobileDeviceManagementPolicies
-            roleManagementPolicies:
-              operationId: policies.ListRoleManagementPolicies
-            roleManagementPolicyAssignments:
-              operationId: policies.ListRoleManagementPolicyAssignments
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13391,11 +12880,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.activityBasedTimeoutPolicy'
-          links:
-            appliesTo:
-              operationId: policies.ActivityBasedTimeoutPolicies.ListAppliesTo
-              parameters:
-                activityBasedTimeoutPolicy-id: $request.path.activityBasedTimeoutPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13702,11 +13186,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
-          links:
-            appliesTo:
-              operationId: policies.AppManagementPolicies.ListAppliesTo
-              parameters:
-                appManagementPolicy-id: $request.path.appManagementPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14032,9 +13511,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodsPolicy'
-          links:
-            authenticationMethodConfigurations:
-              operationId: policies.AuthenticationMethodsPolicy.ListAuthenticationMethodConfigurations
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14433,15 +13909,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationStrengthPolicy'
-          links:
-            combinationConfigurations:
-              operationId: policies.AuthenticationStrengthPolicies.ListCombinationConfigurations
-              parameters:
-                authenticationStrengthPolicy-id: $request.path.authenticationStrengthPolicy-id
-            updateAllowedCombinations:
-              operationId: policies.authenticationStrengthPolicies.authenticationStrengthPolicy.updateAllowedCombinations
-            usage:
-              operationId: policies.authenticationStrengthPolicies.authenticationStrengthPolicy.usage
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15078,11 +14545,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authorizationPolicy'
-          links:
-            defaultUserRoleOverrides:
-              operationId: policies.AuthorizationPolicy.ListDefaultUserRoleOverrides
-              parameters:
-                authorizationPolicy-id: $request.path.authorizationPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15617,11 +15079,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-          links:
-            appliesTo:
-              operationId: policies.ClaimsMappingPolicies.ListAppliesTo
-              parameters:
-                claimsMappingPolicy-id: $request.path.claimsMappingPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15945,11 +15402,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicy'
-          links:
-            default:
-              operationId: policies.CrossTenantAccessPolicy.GetDefault
-            partners:
-              operationId: policies.CrossTenantAccessPolicy.ListPartners
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16042,9 +15494,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyConfigurationDefault'
-          links:
-            resetToSystemDefault:
-              operationId: policies.crossTenantAccessPolicy.default.resetToSystemDefault
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16792,11 +16241,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
-          links:
-            appliesTo:
-              operationId: policies.FeatureRolloutPolicies.ListAppliesTo
-              parameters:
-                featureRolloutPolicy-id: $request.path.featureRolloutPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17374,11 +16818,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-          links:
-            appliesTo:
-              operationId: policies.HomeRealmDiscoveryPolicies.ListAppliesTo
-              parameters:
-                homeRealmDiscoveryPolicy-id: $request.path.homeRealmDiscoveryPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17687,11 +17126,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
-          links:
-            includedGroups:
-              operationId: policies.MobileAppManagementPolicies.ListIncludedGroups
-              parameters:
-                mobilityManagementPolicy-id: $request.path.mobilityManagementPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18401,11 +17835,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mobilityManagementPolicy'
-          links:
-            includedGroups:
-              operationId: policies.MobileDeviceManagementPolicies.ListIncludedGroups
-              parameters:
-                mobilityManagementPolicy-id: $request.path.mobilityManagementPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19108,15 +18537,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.permissionGrantPolicy'
-          links:
-            excludes:
-              operationId: policies.PermissionGrantPolicies.ListExcludes
-              parameters:
-                permissionGrantPolicy-id: $request.path.permissionGrantPolicy-id
-            includes:
-              operationId: policies.PermissionGrantPolicies.ListIncludes
-              parameters:
-                permissionGrantPolicy-id: $request.path.permissionGrantPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19876,15 +19296,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
-          links:
-            effectiveRules:
-              operationId: policies.RoleManagementPolicies.ListEffectiveRules
-              parameters:
-                unifiedRoleManagementPolicy-id: $request.path.unifiedRoleManagementPolicy-id
-            rules:
-              operationId: policies.RoleManagementPolicies.ListRules
-              parameters:
-                unifiedRoleManagementPolicy-id: $request.path.unifiedRoleManagementPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20556,11 +19967,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicyAssignment'
-          links:
-            policy:
-              operationId: policies.RoleManagementPolicyAssignments.GetPolicy
-              parameters:
-                unifiedRoleManagementPolicyAssignment-id: $request.path.unifiedRoleManagementPolicyAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20675,15 +20081,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
-          links:
-            effectiveRules:
-              operationId: policies.roleManagementPolicyAssignments.Policy.ListEffectiveRules
-              parameters:
-                unifiedRoleManagementPolicyAssignment-id: $request.path.unifiedRoleManagementPolicyAssignment-id
-            rules:
-              operationId: policies.roleManagementPolicyAssignments.Policy.ListRules
-              parameters:
-                unifiedRoleManagementPolicyAssignment-id: $request.path.unifiedRoleManagementPolicyAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20837,15 +20234,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.servicePrincipalCreationPolicy'
-          links:
-            excludes:
-              operationId: policies.ServicePrincipalCreationPolicies.ListExcludes
-              parameters:
-                servicePrincipalCreationPolicy-id: $request.path.servicePrincipalCreationPolicy-id
-            includes:
-              operationId: policies.ServicePrincipalCreationPolicies.ListIncludes
-              parameters:
-                servicePrincipalCreationPolicy-id: $request.path.servicePrincipalCreationPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21547,11 +20935,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-          links:
-            appliesTo:
-              operationId: policies.TokenIssuancePolicies.ListAppliesTo
-              parameters:
-                tokenIssuancePolicy-id: $request.path.tokenIssuancePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21767,11 +21150,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-          links:
-            appliesTo:
-              operationId: policies.TokenLifetimePolicies.ListAppliesTo
-              parameters:
-                tokenLifetimePolicy-id: $request.path.tokenLifetimePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21869,11 +21247,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.trustFramework'
-          links:
-            keySets:
-              operationId: trustFramework.ListKeySets
-            policies:
-              operationId: trustFramework.ListPolicies
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22033,17 +21406,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.trustFrameworkKeySet'
-          links:
-            generateKey:
-              operationId: trustFramework.keySets.trustFrameworkKeySet.generateKey
-            getActiveKey:
-              operationId: trustFramework.keySets.trustFrameworkKeySet.getActiveKey
-            uploadCertificate:
-              operationId: trustFramework.keySets.trustFrameworkKeySet.uploadCertificate
-            uploadPkcs12:
-              operationId: trustFramework.keySets.trustFrameworkKeySet.uploadPkcs12
-            uploadSecret:
-              operationId: trustFramework.keySets.trustFrameworkKeySet.uploadSecret
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22629,51 +21991,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authentication'
-          links:
-            emailMethods:
-              operationId: users.Authentication.ListEmailMethods
-              parameters:
-                user-id: $request.path.user-id
-            fido2Methods:
-              operationId: users.Authentication.ListFido2Methods
-              parameters:
-                user-id: $request.path.user-id
-            methods:
-              operationId: users.Authentication.ListMethods
-              parameters:
-                user-id: $request.path.user-id
-            microsoftAuthenticatorMethods:
-              operationId: users.Authentication.ListMicrosoftAuthenticatorMethods
-              parameters:
-                user-id: $request.path.user-id
-            operations:
-              operationId: users.Authentication.ListOperations
-              parameters:
-                user-id: $request.path.user-id
-            passwordlessMicrosoftAuthenticatorMethods:
-              operationId: users.Authentication.ListPasswordlessMicrosoftAuthenticatorMethods
-              parameters:
-                user-id: $request.path.user-id
-            passwordMethods:
-              operationId: users.Authentication.ListPasswordMethods
-              parameters:
-                user-id: $request.path.user-id
-            phoneMethods:
-              operationId: users.Authentication.ListPhoneMethods
-              parameters:
-                user-id: $request.path.user-id
-            softwareOathMethods:
-              operationId: users.Authentication.ListSoftwareOathMethods
-              parameters:
-                user-id: $request.path.user-id
-            temporaryAccessPassMethods:
-              operationId: users.Authentication.ListTemporaryAccessPassMethods
-              parameters:
-                user-id: $request.path.user-id
-            windowsHelloForBusinessMethods:
-              operationId: users.Authentication.ListWindowsHelloGraphFPreBusinessMethods
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23312,13 +22629,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
-          links:
-            disableSmsSignIn:
-              operationId: users.user.authentication.methods.authenticationMethod.disableSmsSignIn
-            enableSmsSignIn:
-              operationId: users.user.authentication.methods.authenticationMethod.enableSmsSignIn
-            resetPassword:
-              operationId: users.user.authentication.methods.authenticationMethod.resetPassword
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23502,12 +22812,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
-          links:
-            device:
-              operationId: users.authentication.MicrosoftAuthenticatorMethods.GetDevice
-              parameters:
-                user-id: $request.path.user-id
-                microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23651,52 +22955,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.device'
-          links:
-            usageRights:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListUsageRights
-              parameters:
-                user-id: $request.path.user-id
-                microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
-            memberOf:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-                microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
-            registeredOwners:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListRegisteredOwners
-              parameters:
-                user-id: $request.path.user-id
-                microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
-            registeredUsers:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListRegisteredUsers
-              parameters:
-                user-id: $request.path.user-id
-                microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
-            transitiveMemberOf:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListTransitiveMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-                microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
-            extensions:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
-            commands:
-              operationId: users.authentication.microsoftAuthenticatorMethods.Device.ListCommands
-              parameters:
-                user-id: $request.path.user-id
-                microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
-            checkMemberGroups:
-              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.checkMemberGroups
-            checkMemberObjects:
-              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.checkMemberObjects
-            getMemberGroups:
-              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.getMemberGroups
-            getMemberObjects:
-              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.getMemberObjects
-            restore:
-              operationId: users.user.authentication.microsoftAuthenticatorMethods.microsoftAuthenticatorAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23982,13 +23240,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.command'
-          links:
-            responsepayload:
-              operationId: users.authentication.microsoftAuthenticatorMethods.device.Commands.GetResponsepayload
-              parameters:
-                user-id: $request.path.user-id
-                microsoftAuthenticatorAuthenticationMethod-id: $request.path.microsoftAuthenticatorAuthenticationMethod-id
-                command-id: $request.path.command-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25812,12 +25063,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod'
-          links:
-            device:
-              operationId: users.authentication.PasswordlessMicrosoftAuthenticatorMethods.GetDevice
-              parameters:
-                user-id: $request.path.user-id
-                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25960,52 +25205,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.device'
-          links:
-            usageRights:
-              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListUsageRights
-              parameters:
-                user-id: $request.path.user-id
-                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-            memberOf:
-              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-            registeredOwners:
-              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListRegisteredOwners
-              parameters:
-                user-id: $request.path.user-id
-                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-            registeredUsers:
-              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListRegisteredUsers
-              parameters:
-                user-id: $request.path.user-id
-                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-            transitiveMemberOf:
-              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListTransitiveMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-            extensions:
-              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-            commands:
-              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.Device.ListCommands
-              parameters:
-                user-id: $request.path.user-id
-                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-            checkMemberGroups:
-              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.checkMemberGroups
-            checkMemberObjects:
-              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.checkMemberObjects
-            getMemberGroups:
-              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.getMemberGroups
-            getMemberObjects:
-              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.getMemberObjects
-            restore:
-              operationId: users.user.authentication.passwordlessMicrosoftAuthenticatorMethods.passwordlessMicrosoftAuthenticatorAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26291,13 +25490,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.command'
-          links:
-            responsepayload:
-              operationId: users.authentication.passwordlessMicrosoftAuthenticatorMethods.device.Commands.GetResponsepayload
-              parameters:
-                user-id: $request.path.user-id
-                passwordlessMicrosoftAuthenticatorAuthenticationMethod-id: $request.path.passwordlessMicrosoftAuthenticatorAuthenticationMethod-id
-                command-id: $request.path.command-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28683,12 +27875,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
-          links:
-            device:
-              operationId: users.authentication.WindowsHelloGraphFPreBusinessMethods.GetDevice
-              parameters:
-                user-id: $request.path.user-id
-                windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28832,52 +28018,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.device'
-          links:
-            usageRights:
-              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListUsageRights
-              parameters:
-                user-id: $request.path.user-id
-                windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
-            memberOf:
-              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-                windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
-            registeredOwners:
-              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListRegisteredOwners
-              parameters:
-                user-id: $request.path.user-id
-                windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
-            registeredUsers:
-              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListRegisteredUsers
-              parameters:
-                user-id: $request.path.user-id
-                windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
-            transitiveMemberOf:
-              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListTransitiveMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-                windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
-            extensions:
-              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
-            commands:
-              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.Device.ListCommands
-              parameters:
-                user-id: $request.path.user-id
-                windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
-            checkMemberGroups:
-              operationId: users.user.authentication.windowsHelloGraphFPreBusinessMethods.windowsHelloGraphFPreBusinessAuthenticationMethod.device.checkMemberGroups
-            checkMemberObjects:
-              operationId: users.user.authentication.windowsHelloGraphFPreBusinessMethods.windowsHelloGraphFPreBusinessAuthenticationMethod.device.checkMemberObjects
-            getMemberGroups:
-              operationId: users.user.authentication.windowsHelloGraphFPreBusinessMethods.windowsHelloGraphFPreBusinessAuthenticationMethod.device.getMemberGroups
-            getMemberObjects:
-              operationId: users.user.authentication.windowsHelloGraphFPreBusinessMethods.windowsHelloGraphFPreBusinessAuthenticationMethod.device.getMemberObjects
-            restore:
-              operationId: users.user.authentication.windowsHelloGraphFPreBusinessMethods.windowsHelloGraphFPreBusinessAuthenticationMethod.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29163,13 +28303,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.command'
-          links:
-            responsepayload:
-              operationId: users.authentication.windowsHelloGraphFPreBusinessMethods.device.Commands.GetResponsepayload
-              parameters:
-                user-id: $request.path.user-id
-                windowsHelloForBusinessAuthenticationMethod-id: $request.path.windowsHelloForBusinessAuthenticationMethod-id
-                command-id: $request.path.command-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30667,39 +29800,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.informationProtection'
-          links:
-            bitlocker:
-              operationId: users.InformationProtection.GetBitlocker
-              parameters:
-                user-id: $request.path.user-id
-            dataLossPreventionPolicies:
-              operationId: users.InformationProtection.ListDataLossPreventionPolicies
-              parameters:
-                user-id: $request.path.user-id
-            sensitivityLabels:
-              operationId: users.InformationProtection.ListSensitivityLabels
-              parameters:
-                user-id: $request.path.user-id
-            sensitivityPolicySettings:
-              operationId: users.InformationProtection.GetSensitivityPolicySettings
-              parameters:
-                user-id: $request.path.user-id
-            policy:
-              operationId: users.InformationProtection.GetPolicy
-              parameters:
-                user-id: $request.path.user-id
-            threatAssessmentRequests:
-              operationId: users.InformationProtection.ListThreatAssessmentRequests
-              parameters:
-                user-id: $request.path.user-id
-            decryptBuffer:
-              operationId: users.user.informationProtection.decryptBuffer
-            encryptBuffer:
-              operationId: users.user.informationProtection.encryptBuffer
-            signDigest:
-              operationId: users.user.informationProtection.signDigest
-            verifySignature:
-              operationId: users.user.informationProtection.verifySignature
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30804,11 +29904,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bitlocker'
-          links:
-            recoveryKeys:
-              operationId: users.informationProtection.Bitlocker.ListRecoveryKeys
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -31231,11 +30326,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.informationProtectionPolicy'
-          links:
-            labels:
-              operationId: users.informationProtection.Policy.ListLabels
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -31798,12 +30888,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
-          links:
-            sublabels:
-              operationId: users.informationProtection.SensitivityLabels.ListSublabels
-              parameters:
-                user-id: $request.path.user-id
-                sensitivityLabel-id: $request.path.sensitivityLabel-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32103,13 +31187,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sensitivityLabel'
-          links:
-            sublabels:
-              operationId: users.informationProtection.sensitivityLabels.Sublabels.ListSublabels
-              parameters:
-                user-id: $request.path.user-id
-                sensitivityLabel-id: $request.path.sensitivityLabel-id
-                sensitivityLabel-id1: $request.path.sensitivityLabel-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32495,12 +31572,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.threatAssessmentRequest'
-          links:
-            results:
-              operationId: users.informationProtection.ThreatAssessmentRequests.ListResults
-              parameters:
-                user-id: $request.path.user-id
-                threatAssessmentRequest-id: $request.path.threatAssessmentRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33828,7 +32899,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
             riskEventType:
               type: string
-              description: 'The type of risk event detected. The possible values are:  investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, unknownFutureValue. Supports $filter (eq).'
+              description: 'The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.'
               nullable: true
             riskLevel:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
@@ -37694,6 +36765,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
+              description: The results of every partner agent's installation status on Cloud PC.
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -40747,6 +39819,8 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.chat:
@@ -43051,11 +42125,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
           nullable: true
       additionalProperties:
         type: object
@@ -44981,18 +44057,40 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
-            pageLayoutType:
-              type: string
-              nullable: true
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            promotionKind:
+              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            reactions:
+              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
+            showComments:
+              type: boolean
+              description: Determines whether or not to show comments at the bottom of the page.
+              nullable: true
+            showRecommendedPages:
+              type: boolean
+              description: Determines whether or not to show recommended pages at the bottom of the page.
+              nullable: true
+            thumbnailWebUrl:
+              type: string
+              description: Url of the sitePage's thumbnail image
+              nullable: true
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
+            titleArea:
+              $ref: '#/components/schemas/microsoft.graph.titleArea'
+            canvasLayout:
+              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
             webParts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: Collection of webparts on the SharePoint page
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permission:
@@ -48577,6 +47675,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatType:
       title: chatType
       enum:
@@ -48744,6 +47857,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             onBehalfOf:
@@ -51138,7 +50252,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -51673,18 +50787,112 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.webPart:
-      title: webPart
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
+    microsoft.graph.pagePromotionType:
+      title: pagePromotionType
+      enum:
+        - microsoftReserved
+        - page
+        - newsPost
+        - unknownFutureValue
+      type: string
+    microsoft.graph.reactionsFacet:
+      title: reactionsFacet
       type: object
       properties:
-        data:
-          $ref: '#/components/schemas/microsoft.graph.sitePageData'
-        type:
-          type: string
-          description: A unique identifier specifying the webPart type. Read-only.
+        commentCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of comments.
+          format: int32
+          nullable: true
+        likeCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of likes.
+          format: int32
+          nullable: true
+        shareCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of shares.
+          format: int32
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.titleArea:
+      title: titleArea
+      type: object
+      properties:
+        alternativeText:
+          type: string
+          description: Alternative text on the title area.
+          nullable: true
+        enableGradientEffect:
+          type: boolean
+          description: Indicates whether the title area has a gradient effect enabled.
+          nullable: true
+        imageWebUrl:
+          type: string
+          description: URL of the image in the title area.
+          nullable: true
+        layout:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
+        serverProcessedContent:
+          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
+        showAuthor:
+          type: boolean
+          description: Indicates whether the author should be shown in title area.
+          nullable: true
+        showPublishedDate:
+          type: boolean
+          description: Indicates whether the published date should be shown in title area.
+          nullable: true
+        showTextBlockAboveTitle:
+          type: boolean
+          description: Indicates whether the text block above title should be shown in title area.
+          nullable: true
+        textAboveTitle:
+          type: string
+          description: The text above title line.
+          nullable: true
+        textAlignment:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
+      additionalProperties:
+        type: object
+    microsoft.graph.canvasLayout:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: canvasLayout
+          type: object
+          properties:
+            horizontalSections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+              description: Collection of horizontal sections on the SharePoint page.
+              x-ms-navigationProperty: true
+            verticalSection:
+              $ref: '#/components/schemas/microsoft.graph.verticalSection'
+          additionalProperties:
+            type: object
+    microsoft.graph.webPart:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: webPart
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -53127,7 +52335,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -54052,6 +53260,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
@@ -56129,11 +55338,92 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.sitePageData:
-      title: sitePageData
+    microsoft.graph.titleAreaLayoutType:
+      title: titleAreaLayoutType
+      enum:
+        - imageAndTitle
+        - plain
+        - colorBlock
+        - overlap
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serverProcessedContent:
+      title: serverProcessedContent
       type: object
+      properties:
+        componentDependencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+        customMetadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
+          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
+        htmlStrings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
+        imageSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+        searchablePlainTexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
       additionalProperties:
         type: object
+    microsoft.graph.titleAreaTextAlignmentType:
+      title: titleAreaTextAlignmentType
+      enum:
+        - left
+        - center
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            layout:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
+            columns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+              description: The set of vertical columns in this section.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.verticalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: verticalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The set of web parts in this section.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -56955,7 +56245,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object
@@ -59199,6 +58489,74 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.metaDataKeyStringPair:
+      title: metaDataKeyStringPair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the meta data.
+          nullable: true
+        value:
+          type: string
+          description: Value of the meta data.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.metaDataKeyValuePair:
+      title: metaDataKeyValuePair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the metadata.
+          nullable: true
+        value:
+          $ref: '#/components/schemas/microsoft.graph.Json'
+      additionalProperties:
+        type: object
+    microsoft.graph.sectionEmphasisType:
+      title: sectionEmphasisType
+      enum:
+        - none
+        - netural
+        - soft
+        - strong
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionLayoutType:
+      title: horizontalSectionLayoutType
+      enum:
+        - none
+        - oneColumn
+        - twoColumns
+        - threeColumns
+        - oneThirdLeftColumn
+        - oneThirdRightColumn
+        - fullWidth
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionColumn:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSectionColumn
+          type: object
+          properties:
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
+              format: int32
+              nullable: true
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The collection of WebParts in this column.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:

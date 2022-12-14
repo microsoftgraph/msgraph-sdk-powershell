@@ -215,12 +215,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
-          links:
-            historyItems:
-              operationId: users.Activities.ListHistoryItems
-              parameters:
-                user-id: $request.path.user-id
-                userActivity-id: $request.path.userActivity-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -506,13 +500,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-          links:
-            activity:
-              operationId: users.activities.HistoryItems.GetActivity
-              parameters:
-                user-id: $request.path.user-id
-                userActivity-id: $request.path.userActivity-id
-                activityHistoryItem-id: $request.path.activityHistoryItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -679,13 +666,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
-          links:
-            historyItems:
-              operationId: users.activities.historyItems.Activity.ListHistoryItems
-              parameters:
-                user-id: $request.path.user-id
-                userActivity-id: $request.path.userActivity-id
-                activityHistoryItem-id: $request.path.activityHistoryItem-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
