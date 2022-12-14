@@ -51,15 +51,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.auditLogRoot'
-          links:
-            directoryAudits:
-              operationId: auditLogs.ListDirectoryAudits
-            directoryProvisioning:
-              operationId: auditLogs.ListDirectoryProvisioning
-            provisioning:
-              operationId: auditLogs.ListProvisioning
-            signIns:
-              operationId: auditLogs.ListSignIns
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1370,129 +1361,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementReports'
-          links:
-            cachedReportConfigurations:
-              operationId: deviceManagement.Reports.ListCachedReportConfigurations
-            exportJobs:
-              operationId: deviceManagement.Reports.ListExportJobs
-            getActiveMalwareReport:
-              operationId: deviceManagement.reports.getActiveMalwareReport
-            getActiveMalwareSummaryReport:
-              operationId: deviceManagement.reports.getActiveMalwareSummaryReport
-            getAllCertificatesReport:
-              operationId: deviceManagement.reports.getAllCertificatesReport
-            getAppsInstallSummaryReport:
-              operationId: deviceManagement.reports.getAppsInstallSummaryReport
-            getAppStatusOverviewReport:
-              operationId: deviceManagement.reports.getAppStatusOverviewReport
-            getCachedReport:
-              operationId: deviceManagement.reports.getCachedReport
-            getCertificatesReport:
-              operationId: deviceManagement.reports.getCertificatesReport
-            getCompliancePoliciesReportForDevice:
-              operationId: deviceManagement.reports.getCompliancePoliciesReportGraphFPreDevice
-            getCompliancePolicyDevicesReport:
-              operationId: deviceManagement.reports.getCompliancePolicyDevicesReport
-            getCompliancePolicyDeviceSummaryReport:
-              operationId: deviceManagement.reports.getCompliancePolicyDeviceSummaryReport
-            getCompliancePolicyNonComplianceReport:
-              operationId: deviceManagement.reports.getCompliancePolicyNonComplianceReport
-            getCompliancePolicyNonComplianceSummaryReport:
-              operationId: deviceManagement.reports.getCompliancePolicyNonComplianceSummaryReport
-            getComplianceSettingDetailsReport:
-              operationId: deviceManagement.reports.getComplianceSettingDetailsReport
-            getComplianceSettingNonComplianceReport:
-              operationId: deviceManagement.reports.getComplianceSettingNonComplianceReport
-            getComplianceSettingsReport:
-              operationId: deviceManagement.reports.getComplianceSettingsReport
-            getConfigManagerDevicePolicyStatusReport:
-              operationId: deviceManagement.reports.getConfigManagerDevicePolicyStatusReport
-            getConfigurationPoliciesReportForDevice:
-              operationId: deviceManagement.reports.getConfigurationPoliciesReportGraphFPreDevice
-            getConfigurationPolicyDevicesReport:
-              operationId: deviceManagement.reports.getConfigurationPolicyDevicesReport
-            getConfigurationPolicyDeviceSummaryReport:
-              operationId: deviceManagement.reports.getConfigurationPolicyDeviceSummaryReport
-            getConfigurationPolicyNonComplianceReport:
-              operationId: deviceManagement.reports.getConfigurationPolicyNonComplianceReport
-            getConfigurationPolicyNonComplianceSummaryReport:
-              operationId: deviceManagement.reports.getConfigurationPolicyNonComplianceSummaryReport
-            getConfigurationPolicySettingsDeviceSummaryReport:
-              operationId: deviceManagement.reports.getConfigurationPolicySettingsDeviceSummaryReport
-            getConfigurationSettingDetailsReport:
-              operationId: deviceManagement.reports.getConfigurationSettingDetailsReport
-            getConfigurationSettingNonComplianceReport:
-              operationId: deviceManagement.reports.getConfigurationSettingNonComplianceReport
-            getConfigurationSettingsReport:
-              operationId: deviceManagement.reports.getConfigurationSettingsReport
-            getDeviceConfigurationPolicySettingsSummaryReport:
-              operationId: deviceManagement.reports.getDeviceConfigurationPolicySettingsSummaryReport
-            getDeviceConfigurationPolicyStatusSummary:
-              operationId: deviceManagement.reports.getDeviceConfigurationPolicyStatusSummary
-            getDeviceInstallStatusReport:
-              operationId: deviceManagement.reports.getDeviceInstallStatusReport
-            getDeviceManagementIntentPerSettingContributingProfiles:
-              operationId: deviceManagement.reports.getDeviceManagementIntentPerSettingContributingProfiles
-            getDeviceManagementIntentSettingsReport:
-              operationId: deviceManagement.reports.getDeviceManagementIntentSettingsReport
-            getDeviceNonComplianceReport:
-              operationId: deviceManagement.reports.getDeviceNonComplianceReport
-            getEncryptionReportForDevices:
-              operationId: deviceManagement.reports.getEncryptionReportGraphFPreDevices
-            getEnrollmentConfigurationPoliciesByDevice:
-              operationId: deviceManagement.reports.getEnrollmentConfigurationPoliciesGraphBPreDevice
-            getFailedMobileAppsReport:
-              operationId: deviceManagement.reports.getFailedMobileAppsReport
-            getFailedMobileAppsSummaryReport:
-              operationId: deviceManagement.reports.getFailedMobileAppsSummaryReport
-            getGroupPolicySettingsDeviceSettingsReport:
-              operationId: deviceManagement.reports.getGroupPolicySettingsDeviceSettingsReport
-            getHistoricalReport:
-              operationId: deviceManagement.reports.getHistoricalReport
-            getMalwareSummaryReport:
-              operationId: deviceManagement.reports.getMalwareSummaryReport
-            getMobileApplicationManagementAppConfigurationReport:
-              operationId: deviceManagement.reports.getMobileApplicationManagementAppConfigurationReport
-            getMobileApplicationManagementAppRegistrationSummaryReport:
-              operationId: deviceManagement.reports.getMobileApplicationManagementAppRegistrationSummaryReport
-            getNoncompliantDevicesAndSettingsReport:
-              operationId: deviceManagement.reports.getNoncompliantDevicesAndSettingsReport
-            getPolicyNonComplianceMetadata:
-              operationId: deviceManagement.reports.getPolicyNonComplianceMetadata
-            getPolicyNonComplianceReport:
-              operationId: deviceManagement.reports.getPolicyNonComplianceReport
-            getPolicyNonComplianceSummaryReport:
-              operationId: deviceManagement.reports.getPolicyNonComplianceSummaryReport
-            getQuietTimePolicyUsersReport:
-              operationId: deviceManagement.reports.getQuietTimePolicyUsersReport
-            getQuietTimePolicyUserSummaryReport:
-              operationId: deviceManagement.reports.getQuietTimePolicyUserSummaryReport
-            getRelatedAppsStatusReport:
-              operationId: deviceManagement.reports.getRelatedAppsStatusReport
-            getRemoteAssistanceSessionsReport:
-              operationId: deviceManagement.reports.getRemoteAssistanceSessionsReport
-            getReportFilters:
-              operationId: deviceManagement.reports.getReportFilters
-            getSettingNonComplianceReport:
-              operationId: deviceManagement.reports.getSettingNonComplianceReport
-            getUnhealthyDefenderAgentsReport:
-              operationId: deviceManagement.reports.getUnhealthyDefenderAgentsReport
-            getUnhealthyFirewallReport:
-              operationId: deviceManagement.reports.getUnhealthyFirewallReport
-            getUnhealthyFirewallSummaryReport:
-              operationId: deviceManagement.reports.getUnhealthyFirewallSummaryReport
-            getUserInstallStatusReport:
-              operationId: deviceManagement.reports.getUserInstallStatusReport
-            getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport:
-              operationId: deviceManagement.reports.getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
-            getWindowsQualityUpdateAlertSummaryReport:
-              operationId: deviceManagement.reports.getWindowsQualityUpdateAlertSummaryReport
-            getWindowsUpdateAlertsPerPolicyPerDeviceReport:
-              operationId: deviceManagement.reports.getWindowsUpdateAlertsPerPolicyPerDeviceReport
-            getWindowsUpdateAlertSummaryReport:
-              operationId: deviceManagement.reports.getWindowsUpdateAlertSummaryReport
-            getZebraFotaDeploymentReport:
-              operationId: deviceManagement.reports.getZebraFotaDeploymentReport
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2038,237 +1906,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.reportRoot'
-          links:
-            applicationSignInDetailedSummary:
-              operationId: reports.ListApplicationSignInDetailedSummary
-            authenticationMethods:
-              operationId: reports.GetAuthenticationMethods
-            credentialUserRegistrationDetails:
-              operationId: reports.ListCredentialUserRegistrationDetails
-            userCredentialUsageDetails:
-              operationId: reports.ListUserCredentialUsageDetails
-            dailyPrintUsage:
-              operationId: reports.ListDailyPrintUsage
-            dailyPrintUsageByPrinter:
-              operationId: reports.ListDailyPrintUsageGraphBPrePrinter
-            dailyPrintUsageByUser:
-              operationId: reports.ListDailyPrintUsageGraphBPreUser
-            dailyPrintUsageSummariesByPrinter:
-              operationId: reports.ListDailyPrintUsageSummariesGraphBPrePrinter
-            dailyPrintUsageSummariesByUser:
-              operationId: reports.ListDailyPrintUsageSummariesGraphBPreUser
-            monthlyPrintUsageByPrinter:
-              operationId: reports.ListMonthlyPrintUsageGraphBPrePrinter
-            monthlyPrintUsageByUser:
-              operationId: reports.ListMonthlyPrintUsageGraphBPreUser
-            monthlyPrintUsageSummariesByPrinter:
-              operationId: reports.ListMonthlyPrintUsageSummariesGraphBPrePrinter
-            monthlyPrintUsageSummariesByUser:
-              operationId: reports.ListMonthlyPrintUsageSummariesGraphBPreUser
-            security:
-              operationId: reports.GetSecurity
-            deviceConfigurationDeviceActivity:
-              operationId: reports.deviceConfigurationDeviceActivity
-            deviceConfigurationUserActivity:
-              operationId: reports.deviceConfigurationUserActivity
-            getAttackSimulationRepeatOffenders:
-              operationId: reports.getAttackSimulationRepeatOffenders
-            getAttackSimulationSimulationUserCoverage:
-              operationId: reports.getAttackSimulationSimulationUserCoverage
-            getAttackSimulationTrainingUserCoverage:
-              operationId: reports.getAttackSimulationTrainingUserCoverage
-            getAzureADApplicationSignInSummary:
-              operationId: reports.getAzureADApplicationSignInSummary
-            getBrowserDistributionUserCounts:
-              operationId: reports.getBrowserDistributionUserCounts
-            getBrowserUserCounts:
-              operationId: reports.getBrowserUserCounts
-            getBrowserUserDetail:
-              operationId: reports.getBrowserUserDetail
-            getCredentialUsageSummary:
-              operationId: reports.getCredentialUsageSummary
-            getCredentialUserRegistrationCount:
-              operationId: reports.getCredentialUserRegistrationCount
-            getEmailActivityCounts:
-              operationId: reports.getEmailActivityCounts
-            getEmailActivityUserCounts:
-              operationId: reports.getEmailActivityUserCounts
-            getEmailActivityUserDetail:
-              operationId: reports.getEmailActivityUserDetail
-            getEmailAppUsageAppsUserCounts:
-              operationId: reports.getEmailAppUsageAppsUserCounts
-            getEmailAppUsageUserCounts:
-              operationId: reports.getEmailAppUsageUserCounts
-            getEmailAppUsageUserDetail:
-              operationId: reports.getEmailAppUsageUserDetail
-            getEmailAppUsageVersionsUserCounts:
-              operationId: reports.getEmailAppUsageVersionsUserCounts
-            getGroupArchivedPrintJobs:
-              operationId: reports.getGroupArchivedPrintJobs
-            getM365AppPlatformUserCounts:
-              operationId: reports.getM365AppPlatformUserCounts
-            getM365AppUserCounts:
-              operationId: reports.getM365AppUserCounts
-            getM365AppUserDetail:
-              operationId: reports.getM365AppUserDetail
-            getMailboxUsageDetail:
-              operationId: reports.getMailboxUsageDetail
-            getMailboxUsageMailboxCounts:
-              operationId: reports.getMailboxUsageMailboxCounts
-            getMailboxUsageQuotaStatusMailboxCounts:
-              operationId: reports.getMailboxUsageQuotaStatusMailboxCounts
-            getMailboxUsageStorage:
-              operationId: reports.getMailboxUsageStorage
-            getOffice365ActivationCounts:
-              operationId: reports.getOffice365ActivationCounts
-            getOffice365ActivationsUserCounts:
-              operationId: reports.getOffice365ActivationsUserCounts
-            getOffice365ActivationsUserDetail:
-              operationId: reports.getOffice365ActivationsUserDetail
-            getOffice365ActiveUserCounts:
-              operationId: reports.getOffice365ActiveUserCounts
-            getOffice365ActiveUserDetail:
-              operationId: reports.getOffice365ActiveUserDetail
-            getOffice365GroupsActivityCounts:
-              operationId: reports.getOffice365GroupsActivityCounts
-            getOffice365GroupsActivityDetail:
-              operationId: reports.getOffice365GroupsActivityDetail
-            getOffice365GroupsActivityFileCounts:
-              operationId: reports.getOffice365GroupsActivityFileCounts
-            getOffice365GroupsActivityGroupCounts:
-              operationId: reports.getOffice365GroupsActivityGroupCounts
-            getOffice365GroupsActivityStorage:
-              operationId: reports.getOffice365GroupsActivityStorage
-            getOffice365ServicesUserCounts:
-              operationId: reports.getOffice365ServicesUserCounts
-            getOneDriveActivityFileCounts:
-              operationId: reports.getOneDriveActivityFileCounts
-            getOneDriveActivityUserCounts:
-              operationId: reports.getOneDriveActivityUserCounts
-            getOneDriveActivityUserDetail:
-              operationId: reports.getOneDriveActivityUserDetail
-            getOneDriveUsageAccountCounts:
-              operationId: reports.getOneDriveUsageAccountCounts
-            getOneDriveUsageAccountDetail:
-              operationId: reports.getOneDriveUsageAccountDetail
-            getOneDriveUsageFileCounts:
-              operationId: reports.getOneDriveUsageFileCounts
-            getOneDriveUsageStorage:
-              operationId: reports.getOneDriveUsageStorage
-            getPrinterArchivedPrintJobs:
-              operationId: reports.getPrinterArchivedPrintJobs
-            getRelyingPartyDetailedSummary:
-              operationId: reports.getRelyingPartyDetailedSummary
-            getSharePointActivityFileCounts:
-              operationId: reports.getSharePointActivityFileCounts
-            getSharePointActivityPages:
-              operationId: reports.getSharePointActivityPages
-            getSharePointActivityUserCounts:
-              operationId: reports.getSharePointActivityUserCounts
-            getSharePointActivityUserDetail:
-              operationId: reports.getSharePointActivityUserDetail
-            getSharePointSiteUsageDetail:
-              operationId: reports.getSharePointSiteUsageDetail
-            getSharePointSiteUsageFileCounts:
-              operationId: reports.getSharePointSiteUsageFileCounts
-            getSharePointSiteUsagePages:
-              operationId: reports.getSharePointSiteUsagePages
-            getSharePointSiteUsageSiteCounts:
-              operationId: reports.getSharePointSiteUsageSiteCounts
-            getSharePointSiteUsageStorage:
-              operationId: reports.getSharePointSiteUsageStorage
-            getSkypeForBusinessActivityCounts:
-              operationId: reports.getSkypeGraphFPreBusinessActivityCounts
-            getSkypeForBusinessActivityUserCounts:
-              operationId: reports.getSkypeGraphFPreBusinessActivityUserCounts
-            getSkypeForBusinessActivityUserDetail:
-              operationId: reports.getSkypeGraphFPreBusinessActivityUserDetail
-            getSkypeForBusinessDeviceUsageDistributionUserCounts:
-              operationId: reports.getSkypeGraphFPreBusinessDeviceUsageDistributionUserCounts
-            getSkypeForBusinessDeviceUsageUserCounts:
-              operationId: reports.getSkypeGraphFPreBusinessDeviceUsageUserCounts
-            getSkypeForBusinessDeviceUsageUserDetail:
-              operationId: reports.getSkypeGraphFPreBusinessDeviceUsageUserDetail
-            getSkypeForBusinessOrganizerActivityCounts:
-              operationId: reports.getSkypeGraphFPreBusinessOrganizerActivityCounts
-            getSkypeForBusinessOrganizerActivityMinuteCounts:
-              operationId: reports.getSkypeGraphFPreBusinessOrganizerActivityMinuteCounts
-            getSkypeForBusinessOrganizerActivityUserCounts:
-              operationId: reports.getSkypeGraphFPreBusinessOrganizerActivityUserCounts
-            getSkypeForBusinessParticipantActivityCounts:
-              operationId: reports.getSkypeGraphFPreBusinessParticipantActivityCounts
-            getSkypeForBusinessParticipantActivityMinuteCounts:
-              operationId: reports.getSkypeGraphFPreBusinessParticipantActivityMinuteCounts
-            getSkypeForBusinessParticipantActivityUserCounts:
-              operationId: reports.getSkypeGraphFPreBusinessParticipantActivityUserCounts
-            getSkypeForBusinessPeerToPeerActivityCounts:
-              operationId: reports.getSkypeGraphFPreBusinessPeerToPeerActivityCounts
-            getSkypeForBusinessPeerToPeerActivityMinuteCounts:
-              operationId: reports.getSkypeGraphFPreBusinessPeerToPeerActivityMinuteCounts
-            getSkypeForBusinessPeerToPeerActivityUserCounts:
-              operationId: reports.getSkypeGraphFPreBusinessPeerToPeerActivityUserCounts
-            getTeamsDeviceUsageDistributionTotalUserCounts:
-              operationId: reports.getTeamsDeviceUsageDistributionTotalUserCounts
-            getTeamsDeviceUsageDistributionUserCounts:
-              operationId: reports.getTeamsDeviceUsageDistributionUserCounts
-            getTeamsDeviceUsageTotalUserCounts:
-              operationId: reports.getTeamsDeviceUsageTotalUserCounts
-            getTeamsDeviceUsageUserCounts:
-              operationId: reports.getTeamsDeviceUsageUserCounts
-            getTeamsDeviceUsageUserDetail:
-              operationId: reports.getTeamsDeviceUsageUserDetail
-            getTeamsTeamActivityCounts:
-              operationId: reports.getTeamsTeamActivityCounts
-            getTeamsTeamActivityDetail:
-              operationId: reports.getTeamsTeamActivityDetail
-            getTeamsTeamActivityDistributionCounts:
-              operationId: reports.getTeamsTeamActivityDistributionCounts
-            getTeamsUserActivityCounts:
-              operationId: reports.getTeamsUserActivityCounts
-            getTeamsUserActivityDistributionTotalUserCounts:
-              operationId: reports.getTeamsUserActivityDistributionTotalUserCounts
-            getTeamsUserActivityDistributionUserCounts:
-              operationId: reports.getTeamsUserActivityDistributionUserCounts
-            getTeamsUserActivityTotalCounts:
-              operationId: reports.getTeamsUserActivityTotalCounts
-            getTeamsUserActivityTotalDistributionCounts:
-              operationId: reports.getTeamsUserActivityTotalDistributionCounts
-            getTeamsUserActivityTotalUserCounts:
-              operationId: reports.getTeamsUserActivityTotalUserCounts
-            getTeamsUserActivityUserCounts:
-              operationId: reports.getTeamsUserActivityUserCounts
-            getTeamsUserActivityUserDetail:
-              operationId: reports.getTeamsUserActivityUserDetail
-            getUserArchivedPrintJobs:
-              operationId: reports.getUserArchivedPrintJobs
-            getYammerActivityCounts:
-              operationId: reports.getYammerActivityCounts
-            getYammerActivityUserCounts:
-              operationId: reports.getYammerActivityUserCounts
-            getYammerActivityUserDetail:
-              operationId: reports.getYammerActivityUserDetail
-            getYammerDeviceUsageDistributionUserCounts:
-              operationId: reports.getYammerDeviceUsageDistributionUserCounts
-            getYammerDeviceUsageUserCounts:
-              operationId: reports.getYammerDeviceUsageUserCounts
-            getYammerDeviceUsageUserDetail:
-              operationId: reports.getYammerDeviceUsageUserDetail
-            getYammerGroupsActivityCounts:
-              operationId: reports.getYammerGroupsActivityCounts
-            getYammerGroupsActivityDetail:
-              operationId: reports.getYammerGroupsActivityDetail
-            getYammerGroupsActivityGroupCounts:
-              operationId: reports.getYammerGroupsActivityGroupCounts
-            managedDeviceEnrollmentAbandonmentDetails:
-              operationId: reports.managedDeviceEnrollmentAbandonmentDetails
-            managedDeviceEnrollmentAbandonmentSummary:
-              operationId: reports.managedDeviceEnrollmentAbandonmentSummary
-            managedDeviceEnrollmentFailureDetails:
-              operationId: reports.managedDeviceEnrollmentFailureDetails
-            managedDeviceEnrollmentFailureTrends:
-              operationId: reports.managedDeviceEnrollmentFailureTrends
-            managedDeviceEnrollmentTopFailures:
-              operationId: reports.managedDeviceEnrollmentTopFailures
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2538,13 +2175,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRoot'
-          links:
-            userRegistrationDetails:
-              operationId: reports.AuthenticationMethods.ListUserRegistrationDetails
-            usersRegisteredByFeature:
-              operationId: reports.authenticationMethods.usersRegisteredGraphBPreFeature
-            usersRegisteredByMethod:
-              operationId: reports.authenticationMethods.usersRegisteredGraphBPreMethod
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5819,6 +5449,8 @@ paths:
                 - reportDate
                 - reportPeriod
                 - reportRefreshDate
+                - teamsChannelMessages
+                - teamsMeetingsOrganized
                 - yammerMessagesLiked
                 - yammerMessagesPosted
                 - yammerMessagesRead
@@ -5843,6 +5475,10 @@ paths:
                 - reportPeriod desc
                 - reportRefreshDate
                 - reportRefreshDate desc
+                - teamsChannelMessages
+                - teamsChannelMessages desc
+                - teamsMeetingsOrganized
+                - teamsMeetingsOrganized desc
                 - yammerMessagesLiked
                 - yammerMessagesLiked desc
                 - yammerMessagesPosted
@@ -5922,6 +5558,8 @@ paths:
                 - sharePointActiveFileCount
                 - sharePointSiteStorageUsedInBytes
                 - sharePointTotalFileCount
+                - teamsChannelMessagesCount
+                - teamsMeetingsOrganizedCount
                 - yammerLikedMessageCount
                 - yammerPostedMessageCount
                 - yammerReadMessageCount
@@ -5970,6 +5608,10 @@ paths:
                 - sharePointSiteStorageUsedInBytes desc
                 - sharePointTotalFileCount
                 - sharePointTotalFileCount desc
+                - teamsChannelMessagesCount
+                - teamsChannelMessagesCount desc
+                - teamsMeetingsOrganizedCount
+                - teamsMeetingsOrganizedCount desc
                 - yammerLikedMessageCount
                 - yammerLikedMessageCount desc
                 - yammerPostedMessageCount
@@ -6047,6 +5689,8 @@ paths:
                 - sharePointActiveFileCount
                 - sharePointSiteStorageUsedInBytes
                 - sharePointTotalFileCount
+                - teamsChannelMessagesCount
+                - teamsMeetingsOrganizedCount
                 - yammerLikedMessageCount
                 - yammerPostedMessageCount
                 - yammerReadMessageCount
@@ -6095,6 +5739,10 @@ paths:
                 - sharePointSiteStorageUsedInBytes desc
                 - sharePointTotalFileCount
                 - sharePointTotalFileCount desc
+                - teamsChannelMessagesCount
+                - teamsChannelMessagesCount desc
+                - teamsMeetingsOrganizedCount
+                - teamsMeetingsOrganizedCount desc
                 - yammerLikedMessageCount
                 - yammerLikedMessageCount desc
                 - yammerPostedMessageCount
@@ -8081,6 +7729,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsTeamCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsTeamCounts
+      operationId: reports_getTeamsTeamCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period=''{period}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getTeamsUserActivityCounts(period=''{period}'')':
     get:
       tags:
@@ -9990,13 +9668,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
-          links:
-            getAttackSimulationRepeatOffenders:
-              operationId: reports.security.getAttackSimulationRepeatOffenders
-            getAttackSimulationSimulationUserCoverage:
-              operationId: reports.security.getAttackSimulationSimulationUserCoverage
-            getAttackSimulationTrainingUserCoverage:
-              operationId: reports.security.getAttackSimulationTrainingUserCoverage
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10533,6 +10204,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationAppPolicyDetails'
+              description: Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
             authenticationContextClassReferences:
               type: array
               items:
@@ -11609,6 +11281,14 @@ components:
               description: The latest date of the content.
               format: date
               nullable: true
+            teamsChannelMessages:
+              type: integer
+              format: int64
+              nullable: true
+            teamsMeetingsOrganized:
+              type: integer
+              format: int64
+              nullable: true
             yammerMessagesLiked:
               type: integer
               description: The number of messages liked in Yammer groups.
@@ -11706,6 +11386,14 @@ components:
             sharePointTotalFileCount:
               type: integer
               description: The total number of files in SharePoint Group site.
+              format: int64
+              nullable: true
+            teamsChannelMessagesCount:
+              type: integer
+              format: int64
+              nullable: true
+            teamsMeetingsOrganizedCount:
+              type: integer
               format: int64
               nullable: true
             yammerLikedMessageCount:
@@ -12247,15 +11935,19 @@ components:
       properties:
         appVersion:
           type: string
+          description: The version of the client authentication app used during the authentication step.
           nullable: true
         clientApp:
           type: string
+          description: The name of the client authentication app used during the authentication step.
           nullable: true
         deviceId:
           type: string
+          description: ID of the device used during the authentication step.
           nullable: true
         operatingSystem:
           type: string
+          description: The operating system running on the device used for the authentication step.
           nullable: true
       additionalProperties:
         type: object
@@ -12269,6 +11961,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.authenticationAppEvaluation'
         policyName:
           type: string
+          description: The name of the policy enforced on the user's authentication app.
           nullable: true
         status:
           $ref: '#/components/schemas/microsoft.graph.authenticationAppPolicyStatus'

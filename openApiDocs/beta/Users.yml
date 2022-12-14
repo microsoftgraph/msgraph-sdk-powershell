@@ -734,329 +734,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
-          links:
-            analytics:
-              operationId: users.GetAnalytics
-              parameters:
-                user-id: $request.path.user-id
-            cloudPCs:
-              operationId: users.ListCloudPCs
-              parameters:
-                user-id: $request.path.user-id
-            usageRights:
-              operationId: users.ListUsageRights
-              parameters:
-                user-id: $request.path.user-id
-            informationProtection:
-              operationId: users.GetInformationProtection
-              parameters:
-                user-id: $request.path.user-id
-            appRoleAssignedResources:
-              operationId: users.ListAppRoleAssignedResources
-              parameters:
-                user-id: $request.path.user-id
-            appRoleAssignments:
-              operationId: users.ListAppRoleAssignments
-              parameters:
-                user-id: $request.path.user-id
-            createdObjects:
-              operationId: users.ListCreatedObjects
-              parameters:
-                user-id: $request.path.user-id
-            directReports:
-              operationId: users.ListDirectReports
-              parameters:
-                user-id: $request.path.user-id
-            licenseDetails:
-              operationId: users.ListLicenseDetails
-              parameters:
-                user-id: $request.path.user-id
-            manager:
-              operationId: users.GetManager
-              parameters:
-                user-id: $request.path.user-id
-            memberOf:
-              operationId: users.ListMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-            oauth2PermissionGrants:
-              operationId: users.ListOauth2PermissionGrants
-              parameters:
-                user-id: $request.path.user-id
-            ownedDevices:
-              operationId: users.ListOwnedDevices
-              parameters:
-                user-id: $request.path.user-id
-            ownedObjects:
-              operationId: users.ListOwnedObjects
-              parameters:
-                user-id: $request.path.user-id
-            registeredDevices:
-              operationId: users.ListRegisteredDevices
-              parameters:
-                user-id: $request.path.user-id
-            scopedRoleMemberOf:
-              operationId: users.ListScopedRoleMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-            transitiveMemberOf:
-              operationId: users.ListTransitiveMemberGraphOPre
-              parameters:
-                user-id: $request.path.user-id
-            transitiveReports:
-              operationId: users.ListTransitiveReports
-              parameters:
-                user-id: $request.path.user-id
-            calendar:
-              operationId: users.GetCalendar
-              parameters:
-                user-id: $request.path.user-id
-            calendarGroups:
-              operationId: users.ListCalendarGroups
-              parameters:
-                user-id: $request.path.user-id
-            calendars:
-              operationId: users.ListCalendars
-              parameters:
-                user-id: $request.path.user-id
-            calendarView:
-              operationId: users.ListCalendarView
-              parameters:
-                user-id: $request.path.user-id
-            contactFolders:
-              operationId: users.ListContactFolders
-              parameters:
-                user-id: $request.path.user-id
-            contacts:
-              operationId: users.ListContacts
-              parameters:
-                user-id: $request.path.user-id
-            events:
-              operationId: users.ListEvents
-              parameters:
-                user-id: $request.path.user-id
-            inferenceClassification:
-              operationId: users.GetInferenceClassification
-              parameters:
-                user-id: $request.path.user-id
-            joinedGroups:
-              operationId: users.ListJoinedGroups
-              parameters:
-                user-id: $request.path.user-id
-            mailFolders:
-              operationId: users.ListMailFolders
-              parameters:
-                user-id: $request.path.user-id
-            messages:
-              operationId: users.ListMessages
-              parameters:
-                user-id: $request.path.user-id
-            outlook:
-              operationId: users.GetOutlook
-              parameters:
-                user-id: $request.path.user-id
-            people:
-              operationId: users.ListPeople
-              parameters:
-                user-id: $request.path.user-id
-            drive:
-              operationId: users.GetDrive
-              parameters:
-                user-id: $request.path.user-id
-            drives:
-              operationId: users.ListDrives
-              parameters:
-                user-id: $request.path.user-id
-            followedSites:
-              operationId: users.ListFollowedSites
-              parameters:
-                user-id: $request.path.user-id
-            extensions:
-              operationId: users.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-            appConsentRequestsForApproval:
-              operationId: users.ListAppConsentRequestsGraphFPreApproval
-              parameters:
-                user-id: $request.path.user-id
-            approvals:
-              operationId: users.ListApprovals
-              parameters:
-                user-id: $request.path.user-id
-            pendingAccessReviewInstances:
-              operationId: users.ListPendingAccessReviewInstances
-              parameters:
-                user-id: $request.path.user-id
-            agreementAcceptances:
-              operationId: users.ListAgreementAcceptances
-              parameters:
-                user-id: $request.path.user-id
-            security:
-              operationId: users.GetSecurity
-              parameters:
-                user-id: $request.path.user-id
-            deviceEnrollmentConfigurations:
-              operationId: users.ListDeviceEnrollmentConfigurations
-              parameters:
-                user-id: $request.path.user-id
-            managedDevices:
-              operationId: users.ListManagedDevices
-              parameters:
-                user-id: $request.path.user-id
-            managedAppRegistrations:
-              operationId: users.ListManagedAppRegistrations
-              parameters:
-                user-id: $request.path.user-id
-            windowsInformationProtectionDeviceRegistrations:
-              operationId: users.ListWindowsInformationProtectionDeviceRegistrations
-              parameters:
-                user-id: $request.path.user-id
-            deviceManagementTroubleshootingEvents:
-              operationId: users.ListDeviceManagementTroubleshootingEvents
-              parameters:
-                user-id: $request.path.user-id
-            mobileAppIntentAndStates:
-              operationId: users.ListMobileAppIntentAndStates
-              parameters:
-                user-id: $request.path.user-id
-            mobileAppTroubleshootingEvents:
-              operationId: users.ListMobileAppTroubleshootingEvents
-              parameters:
-                user-id: $request.path.user-id
-            notifications:
-              operationId: users.ListNotifications
-              parameters:
-                user-id: $request.path.user-id
-            planner:
-              operationId: users.GetPlanner
-              parameters:
-                user-id: $request.path.user-id
-            insights:
-              operationId: users.GetInsights
-              parameters:
-                user-id: $request.path.user-id
-            settings:
-              operationId: users.GetSettings
-              parameters:
-                user-id: $request.path.user-id
-            onenote:
-              operationId: users.GetOnenote
-              parameters:
-                user-id: $request.path.user-id
-            photo:
-              operationId: users.GetPhoto
-              parameters:
-                user-id: $request.path.user-id
-            photos:
-              operationId: users.ListPhotos
-              parameters:
-                user-id: $request.path.user-id
-            profile:
-              operationId: users.GetProfile
-              parameters:
-                user-id: $request.path.user-id
-            activities:
-              operationId: users.ListActivities
-              parameters:
-                user-id: $request.path.user-id
-            devices:
-              operationId: users.ListDevices
-              parameters:
-                user-id: $request.path.user-id
-            onlineMeetings:
-              operationId: users.ListOnlineMeetings
-              parameters:
-                user-id: $request.path.user-id
-            presence:
-              operationId: users.GetPresence
-              parameters:
-                user-id: $request.path.user-id
-            authentication:
-              operationId: users.GetAuthentication
-              parameters:
-                user-id: $request.path.user-id
-            chats:
-              operationId: users.ListChats
-              parameters:
-                user-id: $request.path.user-id
-            joinedTeams:
-              operationId: users.ListJoinedTeams
-              parameters:
-                user-id: $request.path.user-id
-            teamwork:
-              operationId: users.GetTeamwork
-              parameters:
-                user-id: $request.path.user-id
-            todo:
-              operationId: users.GetTodo
-              parameters:
-                user-id: $request.path.user-id
-            activateServicePlan:
-              operationId: users.user.activateServicePlan
-            assignLicense:
-              operationId: users.user.assignLicense
-            changePassword:
-              operationId: users.user.changePassword
-            checkMemberGroups:
-              operationId: users.user.checkMemberGroups
-            checkMemberObjects:
-              operationId: users.user.checkMemberObjects
-            exportDeviceAndAppManagementData:
-              operationId: users.user.exportDeviceAndAppManagementData
-            exportPersonalData:
-              operationId: users.user.exportPersonalData
-            findMeetingTimes:
-              operationId: users.user.findMeetingTimes
-            findRoomLists:
-              operationId: users.user.findRoomLists
-            findRooms:
-              operationId: users.user.findRooms
-            getEffectiveDeviceEnrollmentConfigurations:
-              operationId: users.user.getEffectiveDeviceEnrollmentConfigurations
-            getLoggedOnManagedDevices:
-              operationId: users.user.getLoggedOnManagedDevices
-            getMailTips:
-              operationId: users.user.getMailTips
-            getManagedAppDiagnosticStatuses:
-              operationId: users.user.getManagedAppDiagnosticStatuses
-            getManagedAppPolicies:
-              operationId: users.user.getManagedAppPolicies
-            getManagedDevicesWithAppFailures:
-              operationId: users.user.getManagedDevicesGraphWPreAppFailures
-            getManagedDevicesWithFailedOrPendingApps:
-              operationId: users.user.getManagedDevicesGraphWPreFailedOrPendingApps
-            getMemberGroups:
-              operationId: users.user.getMemberGroups
-            getMemberObjects:
-              operationId: users.user.getMemberObjects
-            invalidateAllRefreshTokens:
-              operationId: users.user.invalidateAllRefreshTokens
-            isManagedAppUserBlocked:
-              operationId: users.user.isManagedAppUserBlocked
-            reminderView:
-              operationId: users.user.reminderView
-            removeAllDevicesFromManagement:
-              operationId: users.user.removeAllDevicesFromManagement
-            reprocessLicenseAssignment:
-              operationId: users.user.reprocessLicenseAssignment
-            restore:
-              operationId: users.user.restore
-            revokeSignInSessions:
-              operationId: users.user.revokeSignInSessions
-            sendMail:
-              operationId: users.user.sendMail
-            translateExchangeIds:
-              operationId: users.user.translateExchangeIds
-            unblockManagedApps:
-              operationId: users.user.unblockManagedApps
-            wipeAndBlockManagedApps:
-              operationId: users.user.wipeAndBlockManagedApps
-            wipeManagedAppRegistrationByDeviceTag:
-              operationId: users.user.wipeManagedAppRegistrationGraphBPreDeviceTag
-            wipeManagedAppRegistrationsByAzureAdDeviceId:
-              operationId: users.user.wipeManagedAppRegistrationsGraphBPreAzureAdDeviceId
-            wipeManagedAppRegistrationsByDeviceTag:
-              operationId: users.user.wipeManagedAppRegistrationsGraphBPreDeviceTag
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2597,27 +2274,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookUser'
-          links:
-            masterCategories:
-              operationId: users.Outlook.ListMasterCategories
-              parameters:
-                user-id: $request.path.user-id
-            taskFolders:
-              operationId: users.Outlook.ListTaskFolders
-              parameters:
-                user-id: $request.path.user-id
-            taskGroups:
-              operationId: users.Outlook.ListTaskGroups
-              parameters:
-                user-id: $request.path.user-id
-            tasks:
-              operationId: users.Outlook.ListTasks
-              parameters:
-                user-id: $request.path.user-id
-            supportedLanguages:
-              operationId: users.user.outlook.supportedLanguages
-            supportedTimeZones:
-              operationId: users.user.outlook.supportedTimeZones
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3000,22 +2656,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
-          links:
-            multiValueExtendedProperties:
-              operationId: users.outlook.TaskFolders.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-            singleValueExtendedProperties:
-              operationId: users.outlook.TaskFolders.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-            tasks:
-              operationId: users.outlook.TaskFolders.ListTasks
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -3953,27 +3593,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
-          links:
-            attachments:
-              operationId: users.outlook.taskFolders.Tasks.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-            multiValueExtendedProperties:
-              operationId: users.outlook.taskFolders.Tasks.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-            singleValueExtendedProperties:
-              operationId: users.outlook.taskFolders.Tasks.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-            complete:
-              operationId: users.user.outlook.taskFolders.outlookTaskFolder.tasks.outlookTask.complete
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -5226,12 +4845,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskGroup'
-          links:
-            taskFolders:
-              operationId: users.outlook.TaskGroups.ListTaskFolders
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -5511,25 +5124,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
-          links:
-            multiValueExtendedProperties:
-              operationId: users.outlook.taskGroups.TaskFolders.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-            singleValueExtendedProperties:
-              operationId: users.outlook.taskGroups.TaskFolders.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-            tasks:
-              operationId: users.outlook.taskGroups.TaskFolders.ListTasks
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -6587,30 +6181,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
-          links:
-            attachments:
-              operationId: users.outlook.taskGroups.taskFolders.Tasks.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-            multiValueExtendedProperties:
-              operationId: users.outlook.taskGroups.taskFolders.Tasks.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-            singleValueExtendedProperties:
-              operationId: users.outlook.taskGroups.taskFolders.Tasks.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTaskGroup-id: $request.path.outlookTaskGroup-id
-                outlookTaskFolder-id: $request.path.outlookTaskFolder-id
-                outlookTask-id: $request.path.outlookTask-id
-            complete:
-              operationId: users.user.outlook.taskGroups.outlookTaskGroup.taskFolders.outlookTaskFolder.tasks.outlookTask.complete
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -8055,24 +7625,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
-          links:
-            attachments:
-              operationId: users.outlook.Tasks.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                outlookTask-id: $request.path.outlookTask-id
-            multiValueExtendedProperties:
-              operationId: users.outlook.Tasks.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTask-id: $request.path.outlookTask-id
-            singleValueExtendedProperties:
-              operationId: users.outlook.Tasks.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                outlookTask-id: $request.path.outlookTask-id
-            complete:
-              operationId: users.user.outlook.tasks.outlookTask.complete
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -9842,23 +9394,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userSettings'
-          links:
-            itemInsights:
-              operationId: users.Settings.GetItemInsights
-              parameters:
-                user-id: $request.path.user-id
-            contactMergeSuggestions:
-              operationId: users.Settings.GetContactMergeSuggestions
-              parameters:
-                user-id: $request.path.user-id
-            regionalAndLanguageSettings:
-              operationId: users.Settings.GetRegionalAndLanguageSettings
-              parameters:
-                user-id: $request.path.user-id
-            shiftPreferences:
-              operationId: users.Settings.GetShiftPreferences
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10414,11 +9949,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todo'
-          links:
-            lists:
-              operationId: users.Todo.ListLists
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10659,17 +10189,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
-          links:
-            extensions:
-              operationId: users.todo.Lists.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-            tasks:
-              operationId: users.todo.Lists.ListTasks
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11271,37 +10790,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
-          links:
-            attachments:
-              operationId: users.todo.lists.Tasks.ListAttachments
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            attachmentSessions:
-              operationId: users.todo.lists.Tasks.ListAttachmentSessions
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            checklistItems:
-              operationId: users.todo.lists.Tasks.ListChecklistItems
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            extensions:
-              operationId: users.todo.lists.Tasks.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
-            linkedResources:
-              operationId: users.todo.lists.Tasks.ListLinkedResources
-              parameters:
-                user-id: $request.path.user-id
-                todoTaskList-id: $request.path.todoTaskList-id
-                todoTask-id: $request.path.todoTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15114,6 +14602,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
+              description: The results of every partner agent's installation status on Cloud PC.
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -18289,6 +17778,8 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -19412,11 +18903,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
           nullable: true
       additionalProperties:
         type: object
@@ -21257,18 +20750,40 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
-            pageLayoutType:
-              type: string
-              nullable: true
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            promotionKind:
+              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            reactions:
+              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
+            showComments:
+              type: boolean
+              description: Determines whether or not to show comments at the bottom of the page.
+              nullable: true
+            showRecommendedPages:
+              type: boolean
+              description: Determines whether or not to show recommended pages at the bottom of the page.
+              nullable: true
+            thumbnailWebUrl:
+              type: string
+              description: Url of the sitePage's thumbnail image
+              nullable: true
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
+            titleArea:
+              $ref: '#/components/schemas/microsoft.graph.titleArea'
+            canvasLayout:
+              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
             webParts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: Collection of webparts on the SharePoint page
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permission:
@@ -24849,6 +24364,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -25269,6 +24799,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             onBehalfOf:
@@ -27585,7 +27116,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -28120,18 +27651,112 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.webPart:
-      title: webPart
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
+    microsoft.graph.pagePromotionType:
+      title: pagePromotionType
+      enum:
+        - microsoftReserved
+        - page
+        - newsPost
+        - unknownFutureValue
+      type: string
+    microsoft.graph.reactionsFacet:
+      title: reactionsFacet
       type: object
       properties:
-        data:
-          $ref: '#/components/schemas/microsoft.graph.sitePageData'
-        type:
-          type: string
-          description: A unique identifier specifying the webPart type. Read-only.
+        commentCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of comments.
+          format: int32
+          nullable: true
+        likeCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of likes.
+          format: int32
+          nullable: true
+        shareCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of shares.
+          format: int32
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.titleArea:
+      title: titleArea
+      type: object
+      properties:
+        alternativeText:
+          type: string
+          description: Alternative text on the title area.
+          nullable: true
+        enableGradientEffect:
+          type: boolean
+          description: Indicates whether the title area has a gradient effect enabled.
+          nullable: true
+        imageWebUrl:
+          type: string
+          description: URL of the image in the title area.
+          nullable: true
+        layout:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
+        serverProcessedContent:
+          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
+        showAuthor:
+          type: boolean
+          description: Indicates whether the author should be shown in title area.
+          nullable: true
+        showPublishedDate:
+          type: boolean
+          description: Indicates whether the published date should be shown in title area.
+          nullable: true
+        showTextBlockAboveTitle:
+          type: boolean
+          description: Indicates whether the text block above title should be shown in title area.
+          nullable: true
+        textAboveTitle:
+          type: string
+          description: The text above title line.
+          nullable: true
+        textAlignment:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
+      additionalProperties:
+        type: object
+    microsoft.graph.canvasLayout:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: canvasLayout
+          type: object
+          properties:
+            horizontalSections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+              description: Collection of horizontal sections on the SharePoint page.
+              x-ms-navigationProperty: true
+            verticalSection:
+              $ref: '#/components/schemas/microsoft.graph.verticalSection'
+          additionalProperties:
+            type: object
+    microsoft.graph.webPart:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: webPart
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -29630,7 +29255,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -30513,6 +30138,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
@@ -32465,11 +32091,92 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.sitePageData:
-      title: sitePageData
+    microsoft.graph.titleAreaLayoutType:
+      title: titleAreaLayoutType
+      enum:
+        - imageAndTitle
+        - plain
+        - colorBlock
+        - overlap
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serverProcessedContent:
+      title: serverProcessedContent
       type: object
+      properties:
+        componentDependencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+        customMetadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
+          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
+        htmlStrings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
+        imageSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+        searchablePlainTexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
       additionalProperties:
         type: object
+    microsoft.graph.titleAreaTextAlignmentType:
+      title: titleAreaTextAlignmentType
+      enum:
+        - left
+        - center
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            layout:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
+            columns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+              description: The set of vertical columns in this section.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.verticalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: verticalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The set of web parts in this section.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -33265,7 +32972,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object
@@ -35399,6 +35106,74 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.metaDataKeyStringPair:
+      title: metaDataKeyStringPair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the meta data.
+          nullable: true
+        value:
+          type: string
+          description: Value of the meta data.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.metaDataKeyValuePair:
+      title: metaDataKeyValuePair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the metadata.
+          nullable: true
+        value:
+          $ref: '#/components/schemas/microsoft.graph.Json'
+      additionalProperties:
+        type: object
+    microsoft.graph.sectionEmphasisType:
+      title: sectionEmphasisType
+      enum:
+        - none
+        - netural
+        - soft
+        - strong
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionLayoutType:
+      title: horizontalSectionLayoutType
+      enum:
+        - none
+        - oneColumn
+        - twoColumns
+        - threeColumns
+        - oneThirdLeftColumn
+        - oneThirdRightColumn
+        - fullWidth
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionColumn:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSectionColumn
+          type: object
+          properties:
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
+              format: int32
+              nullable: true
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The collection of WebParts in this column.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:

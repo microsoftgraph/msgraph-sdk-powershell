@@ -257,6 +257,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
+    "/communications/presences/{presence-id}/microsoft.graph.setStatusMessage": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
+    },
     "/communications/presences/{presence-id}/microsoft.graph.setUserPreferredPresence": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"

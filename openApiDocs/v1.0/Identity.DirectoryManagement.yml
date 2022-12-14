@@ -226,33 +226,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.orgContact'
-          links:
-            directReports:
-              operationId: contacts.ListDirectReports
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            manager:
-              operationId: contacts.GetManager
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            memberOf:
-              operationId: contacts.ListMemberGraphOPre
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            transitiveMemberOf:
-              operationId: contacts.ListTransitiveMemberGraphOPre
-              parameters:
-                orgContact-id: $request.path.orgContact-id
-            checkMemberGroups:
-              operationId: contacts.orgContact.checkMemberGroups
-            checkMemberObjects:
-              operationId: contacts.orgContact.checkMemberObjects
-            getMemberGroups:
-              operationId: contacts.orgContact.getMemberGroups
-            getMemberObjects:
-              operationId: contacts.orgContact.getMemberObjects
-            restore:
-              operationId: contacts.orgContact.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1470,17 +1443,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contract'
-          links:
-            checkMemberGroups:
-              operationId: contracts.contract.checkMemberGroups
-            checkMemberObjects:
-              operationId: contracts.contract.checkMemberObjects
-            getMemberGroups:
-              operationId: contracts.contract.getMemberGroups
-            getMemberObjects:
-              operationId: contracts.contract.getMemberObjects
-            restore:
-              operationId: contracts.contract.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2175,37 +2137,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.device'
-          links:
-            memberOf:
-              operationId: devices.ListMemberGraphOPre
-              parameters:
-                device-id: $request.path.device-id
-            registeredOwners:
-              operationId: devices.ListRegisteredOwners
-              parameters:
-                device-id: $request.path.device-id
-            registeredUsers:
-              operationId: devices.ListRegisteredUsers
-              parameters:
-                device-id: $request.path.device-id
-            transitiveMemberOf:
-              operationId: devices.ListTransitiveMemberGraphOPre
-              parameters:
-                device-id: $request.path.device-id
-            extensions:
-              operationId: devices.ListExtensions
-              parameters:
-                device-id: $request.path.device-id
-            checkMemberGroups:
-              operationId: devices.device.checkMemberGroups
-            checkMemberObjects:
-              operationId: devices.device.checkMemberObjects
-            getMemberGroups:
-              operationId: devices.device.getMemberGroups
-            getMemberObjects:
-              operationId: devices.device.getMemberObjects
-            restore:
-              operationId: devices.device.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3719,13 +3650,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directory'
-          links:
-            administrativeUnits:
-              operationId: directory.ListAdministrativeUnits
-            deletedItems:
-              operationId: directory.ListDeletedItems
-            federationConfigurations:
-              operationId: directory.ListFederationConfigurations
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3910,19 +3834,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
-          links:
-            members:
-              operationId: directory.AdministrativeUnits.ListMembers
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-            scopedRoleMembers:
-              operationId: directory.AdministrativeUnits.ListScopedRoleMembers
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
-            extensions:
-              operationId: directory.AdministrativeUnits.ListExtensions
-              parameters:
-                administrativeUnit-id: $request.path.administrativeUnit-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4868,17 +4779,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-          links:
-            checkMemberGroups:
-              operationId: directory.deletedItems.directoryObject.checkMemberGroups
-            checkMemberObjects:
-              operationId: directory.deletedItems.directoryObject.checkMemberObjects
-            getMemberGroups:
-              operationId: directory.deletedItems.directoryObject.getMemberGroups
-            getMemberObjects:
-              operationId: directory.deletedItems.directoryObject.getMemberObjects
-            restore:
-              operationId: directory.deletedItems.directoryObject.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5710,25 +5610,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryRole'
-          links:
-            members:
-              operationId: directoryRoles.ListMembers
-              parameters:
-                directoryRole-id: $request.path.directoryRole-id
-            scopedMembers:
-              operationId: directoryRoles.ListScopedMembers
-              parameters:
-                directoryRole-id: $request.path.directoryRole-id
-            checkMemberGroups:
-              operationId: directoryRoles.directoryRole.checkMemberGroups
-            checkMemberObjects:
-              operationId: directoryRoles.directoryRole.checkMemberObjects
-            getMemberGroups:
-              operationId: directoryRoles.directoryRole.getMemberGroups
-            getMemberObjects:
-              operationId: directoryRoles.directoryRole.getMemberObjects
-            restore:
-              operationId: directoryRoles.directoryRole.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6843,17 +6724,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryRoleTemplate'
-          links:
-            checkMemberGroups:
-              operationId: directoryRoleTemplates.directoryRoleTemplate.checkMemberGroups
-            checkMemberObjects:
-              operationId: directoryRoleTemplates.directoryRoleTemplate.checkMemberObjects
-            getMemberGroups:
-              operationId: directoryRoleTemplates.directoryRoleTemplate.getMemberGroups
-            getMemberObjects:
-              operationId: directoryRoleTemplates.directoryRoleTemplate.getMemberObjects
-            restore:
-              operationId: directoryRoleTemplates.directoryRoleTemplate.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7506,27 +7376,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.domain'
-          links:
-            domainNameReferences:
-              operationId: domains.ListDomainNameReferences
-              parameters:
-                domain-id: $request.path.domain-id
-            federationConfiguration:
-              operationId: domains.ListFederationConfiguration
-              parameters:
-                domain-id: $request.path.domain-id
-            serviceConfigurationRecords:
-              operationId: domains.ListServiceConfigurationRecords
-              parameters:
-                domain-id: $request.path.domain-id
-            verificationDnsRecords:
-              operationId: domains.ListVerificationDnsRecords
-              parameters:
-                domain-id: $request.path.domain-id
-            forceDelete:
-              operationId: domains.domain.forceDelete
-            verify:
-              operationId: domains.domain.verify
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8040,6 +7889,38 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/domains/{domain-id}/microsoft.graph.promote':
+    post:
+      tags:
+        - domains.Actions
+      summary: Invoke action promote
+      operationId: domains_promote
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -8806,31 +8687,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.organization'
-          links:
-            branding:
-              operationId: organization.GetBranding
-              parameters:
-                organization-id: $request.path.organization-id
-            certificateBasedAuthConfiguration:
-              operationId: organization.ListCertificateBasedAuthConfiguration
-              parameters:
-                organization-id: $request.path.organization-id
-            extensions:
-              operationId: organization.ListExtensions
-              parameters:
-                organization-id: $request.path.organization-id
-            checkMemberGroups:
-              operationId: organization.organization.checkMemberGroups
-            checkMemberObjects:
-              operationId: organization.organization.checkMemberObjects
-            getMemberGroups:
-              operationId: organization.organization.getMemberGroups
-            getMemberObjects:
-              operationId: organization.organization.getMemberObjects
-            restore:
-              operationId: organization.organization.restore
-            setMobileDeviceManagementAuthority:
-              operationId: organization.organization.setMobileDeviceManagementAuthority
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8953,11 +8809,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.organizationalBranding'
-          links:
-            localizations:
-              operationId: organization.Branding.ListLocalizations
-              parameters:
-                organization-id: $request.path.organization-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10941,7 +10792,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string

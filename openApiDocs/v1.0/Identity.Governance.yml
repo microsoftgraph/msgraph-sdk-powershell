@@ -107,19 +107,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.agreement'
-          links:
-            acceptances:
-              operationId: agreements.ListAcceptances
-              parameters:
-                agreement-id: $request.path.agreement-id
-            file:
-              operationId: agreements.GetFile
-              parameters:
-                agreement-id: $request.path.agreement-id
-            files:
-              operationId: agreements.ListFiles
-              parameters:
-                agreement-id: $request.path.agreement-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -515,11 +502,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.agreementFile'
-          links:
-            localizations:
-              operationId: agreements.File.ListLocalizations
-              parameters:
-                agreement-id: $request.path.agreement-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -761,12 +743,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
-          links:
-            versions:
-              operationId: agreements.file.Localizations.ListVersions
-              parameters:
-                agreement-id: $request.path.agreement-id
-                agreementFileLocalization-id: $request.path.agreementFileLocalization-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1321,12 +1297,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
-          links:
-            versions:
-              operationId: agreements.Files.ListVersions
-              parameters:
-                agreement-id: $request.path.agreement-id
-                agreementFileLocalization-id: $request.path.agreementFileLocalization-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1737,15 +1707,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.identityGovernance'
-          links:
-            accessReviews:
-              operationId: identityGovernance.GetAccessReviews
-            appConsent:
-              operationId: identityGovernance.GetAppConsent
-            termsOfUse:
-              operationId: identityGovernance.GetTermsGraphOPreUse
-            entitlementManagement:
-              operationId: identityGovernance.GetEntitlementManagement
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1809,11 +1770,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewSet'
-          links:
-            definitions:
-              operationId: identityGovernance.AccessReviews.ListDefinitions
-            historyDefinitions:
-              operationId: identityGovernance.AccessReviews.ListHistoryDefinitions
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2048,13 +2004,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
-          links:
-            instances:
-              operationId: identityGovernance.accessReviews.Definitions.ListInstances
-              parameters:
-                accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
-            stop:
-              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.stop
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2303,34 +2252,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-          links:
-            contactedReviewers:
-              operationId: identityGovernance.accessReviews.definitions.Instances.ListContactedReviewers
-              parameters:
-                accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
-                accessReviewInstance-id: $request.path.accessReviewInstance-id
-            decisions:
-              operationId: identityGovernance.accessReviews.definitions.Instances.ListDecisions
-              parameters:
-                accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
-                accessReviewInstance-id: $request.path.accessReviewInstance-id
-            stages:
-              operationId: identityGovernance.accessReviews.definitions.Instances.ListStages
-              parameters:
-                accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
-                accessReviewInstance-id: $request.path.accessReviewInstance-id
-            acceptRecommendations:
-              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.acceptRecommendations
-            applyDecisions:
-              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.applyDecisions
-            batchRecordDecisions:
-              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.batchRecordDecisions
-            resetDecisions:
-              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.resetDecisions
-            sendReminder:
-              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.sendReminder
-            stop:
-              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.stop
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3550,15 +3471,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewStage'
-          links:
-            decisions:
-              operationId: identityGovernance.accessReviews.definitions.instances.Stages.ListDecisions
-              parameters:
-                accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
-                accessReviewInstance-id: $request.path.accessReviewInstance-id
-                accessReviewStage-id: $request.path.accessReviewStage-id
-            stop:
-              operationId: identityGovernance.accessReviews.definitions.accessReviewScheduleDefinition.instances.accessReviewInstance.stages.accessReviewStage.stop
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4683,11 +4595,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewHistoryDefinition'
-          links:
-            instances:
-              operationId: identityGovernance.accessReviews.HistoryDefinitions.ListInstances
-              parameters:
-                accessReviewHistoryDefinition-id: $request.path.accessReviewHistoryDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4928,9 +4835,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewHistoryInstance'
-          links:
-            generateDownloadUri:
-              operationId: identityGovernance.accessReviews.historyDefinitions.accessReviewHistoryDefinition.instances.accessReviewHistoryInstance.generateDownloadUri
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5080,9 +4984,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.appConsentApprovalRoute'
-          links:
-            appConsentRequests:
-              operationId: identityGovernance.AppConsent.ListAppConsentRequests
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5269,11 +5170,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
-          links:
-            userConsentRequests:
-              operationId: identityGovernance.appConsent.AppConsentRequests.ListUserConsentRequests
-              parameters:
-                appConsentRequest-id: $request.path.appConsentRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5518,12 +5414,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userConsentRequest'
-          links:
-            approval:
-              operationId: identityGovernance.appConsent.appConsentRequests.UserConsentRequests.GetApproval
-              parameters:
-                appConsentRequest-id: $request.path.appConsentRequest-id
-                userConsentRequest-id: $request.path.userConsentRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5653,12 +5543,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.approval'
-          links:
-            stages:
-              operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.Approval.ListStages
-              parameters:
-                appConsentRequest-id: $request.path.appConsentRequest-id
-                userConsentRequest-id: $request.path.userConsentRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6257,23 +6141,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.entitlementManagement'
-          links:
-            accessPackageAssignmentApprovals:
-              operationId: identityGovernance.EntitlementManagement.ListAccessPackageAssignmentApprovals
-            accessPackages:
-              operationId: identityGovernance.EntitlementManagement.ListAccessPackages
-            assignmentPolicies:
-              operationId: identityGovernance.EntitlementManagement.ListAssignmentPolicies
-            assignmentRequests:
-              operationId: identityGovernance.EntitlementManagement.ListAssignmentRequests
-            assignments:
-              operationId: identityGovernance.EntitlementManagement.ListAssignments
-            catalogs:
-              operationId: identityGovernance.EntitlementManagement.ListCatalogs
-            connectedOrganizations:
-              operationId: identityGovernance.EntitlementManagement.ListConnectedOrganizations
-            settings:
-              operationId: identityGovernance.EntitlementManagement.GetSettings
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6445,11 +6312,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.approval'
-          links:
-            stages:
-              operationId: identityGovernance.entitlementManagement.AccessPackageAssignmentApprovals.ListStages
-              parameters:
-                approval-id: $request.path.approval-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7006,29 +6868,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-          links:
-            accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.AccessPackages.ListAccessPackagesIncompatibleGraphWPre
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-            assignmentPolicies:
-              operationId: identityGovernance.entitlementManagement.AccessPackages.ListAssignmentPolicies
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.AccessPackages.GetCatalog
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-            incompatibleAccessPackages:
-              operationId: identityGovernance.entitlementManagement.AccessPackages.ListIncompatibleAccessPackages
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-            incompatibleGroups:
-              operationId: identityGovernance.entitlementManagement.AccessPackages.ListIncompatibleGroups
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-            getApplicablePolicyRequirements:
-              operationId: identityGovernance.entitlementManagement.accessPackages.accessPackage.getApplicablePolicyRequirements
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7250,32 +7089,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-          links:
-            accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackages.AccessPackagesIncompatibleGraphWPre.ListAccessPackagesIncompatibleGraphWPre
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackage-id1: $request.path.accessPackage-id1
-            assignmentPolicies:
-              operationId: identityGovernance.entitlementManagement.accessPackages.AccessPackagesIncompatibleWith.ListAssignmentPolicies
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackage-id1: $request.path.accessPackage-id1
-            catalog:
-              operationId: identityGovernance.entitlementManagement.accessPackages.AccessPackagesIncompatibleWith.GetCatalog
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackage-id1: $request.path.accessPackage-id1
-            incompatibleAccessPackages:
-              operationId: identityGovernance.entitlementManagement.accessPackages.AccessPackagesIncompatibleWith.ListIncompatibleAccessPackages
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackage-id1: $request.path.accessPackage-id1
-            incompatibleGroups:
-              operationId: identityGovernance.entitlementManagement.accessPackages.AccessPackagesIncompatibleWith.ListIncompatibleGroups
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackage-id1: $request.path.accessPackage-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7482,17 +7295,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
-          links:
-            accessPackage:
-              operationId: identityGovernance.entitlementManagement.accessPackages.AssignmentPolicies.GetAccessPackage
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.accessPackages.AssignmentPolicies.GetCatalog
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7635,32 +7437,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-          links:
-            accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            assignmentPolicies:
-              operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies.AccessPackage.ListAssignmentPolicies
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies.AccessPackage.GetCatalog
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            incompatibleAccessPackages:
-              operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies.AccessPackage.ListIncompatibleAccessPackages
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            incompatibleGroups:
-              operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies.AccessPackage.ListIncompatibleGroups
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7728,12 +7504,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
-          links:
-            accessPackages:
-              operationId: identityGovernance.entitlementManagement.accessPackages.assignmentPolicies.Catalog.ListAccessPackages
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7792,11 +7562,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
-          links:
-            accessPackages:
-              operationId: identityGovernance.entitlementManagement.accessPackages.Catalog.ListAccessPackages
-              parameters:
-                accessPackage-id: $request.path.accessPackage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8761,15 +8526,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
-          links:
-            accessPackage:
-              operationId: identityGovernance.entitlementManagement.AssignmentPolicies.GetAccessPackage
-              parameters:
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.AssignmentPolicies.GetCatalog
-              parameters:
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8888,27 +8644,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-          links:
-            accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.assignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
-              parameters:
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            assignmentPolicies:
-              operationId: identityGovernance.entitlementManagement.assignmentPolicies.AccessPackage.ListAssignmentPolicies
-              parameters:
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.assignmentPolicies.AccessPackage.GetCatalog
-              parameters:
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            incompatibleAccessPackages:
-              operationId: identityGovernance.entitlementManagement.assignmentPolicies.AccessPackage.ListIncompatibleAccessPackages
-              parameters:
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            incompatibleGroups:
-              operationId: identityGovernance.entitlementManagement.assignmentPolicies.AccessPackage.ListIncompatibleGroups
-              parameters:
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8968,11 +8703,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
-          links:
-            accessPackages:
-              operationId: identityGovernance.entitlementManagement.assignmentPolicies.Catalog.ListAccessPackages
-              parameters:
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9147,23 +8877,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
-          links:
-            accessPackage:
-              operationId: identityGovernance.entitlementManagement.AssignmentRequests.GetAccessPackage
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
-            assignment:
-              operationId: identityGovernance.entitlementManagement.AssignmentRequests.GetAssignment
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
-            requestor:
-              operationId: identityGovernance.entitlementManagement.AssignmentRequests.GetRequestor
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
-            cancel:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.accessPackageAssignmentRequest.cancel
-            reprocess:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.accessPackageAssignmentRequest.reprocess
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9282,27 +8995,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-          links:
-            accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
-            assignmentPolicies:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.AccessPackage.ListAssignmentPolicies
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.AccessPackage.GetCatalog
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
-            incompatibleAccessPackages:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.AccessPackage.ListIncompatibleAccessPackages
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
-            incompatibleGroups:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.AccessPackage.ListIncompatibleGroups
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9363,19 +9055,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
-          links:
-            accessPackage:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.Assignment.GetAccessPackage
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
-            assignmentPolicy:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.Assignment.GetAssignmentPolicy
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
-            target:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.Assignment.GetTarget
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9480,11 +9159,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
-          links:
-            connectedOrganization:
-              operationId: identityGovernance.entitlementManagement.assignmentRequests.Requestor.GetConnectedOrganization
-              parameters:
-                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9736,21 +9410,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
-          links:
-            accessPackage:
-              operationId: identityGovernance.entitlementManagement.Assignments.GetAccessPackage
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
-            assignmentPolicy:
-              operationId: identityGovernance.entitlementManagement.Assignments.GetAssignmentPolicy
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
-            target:
-              operationId: identityGovernance.entitlementManagement.Assignments.GetTarget
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
-            reprocess:
-              operationId: identityGovernance.entitlementManagement.assignments.accessPackageAssignment.reprocess
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9869,27 +9528,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-          links:
-            accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.assignments.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
-            assignmentPolicies:
-              operationId: identityGovernance.entitlementManagement.assignments.AccessPackage.ListAssignmentPolicies
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.assignments.AccessPackage.GetCatalog
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
-            incompatibleAccessPackages:
-              operationId: identityGovernance.entitlementManagement.assignments.AccessPackage.ListIncompatibleAccessPackages
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
-            incompatibleGroups:
-              operationId: identityGovernance.entitlementManagement.assignments.AccessPackage.ListIncompatibleGroups
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9955,15 +9593,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
-          links:
-            accessPackage:
-              operationId: identityGovernance.entitlementManagement.assignments.AssignmentPolicy.GetAccessPackage
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.assignments.AssignmentPolicy.GetCatalog
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10043,11 +9672,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
-          links:
-            connectedOrganization:
-              operationId: identityGovernance.entitlementManagement.assignments.Target.GetConnectedOrganization
-              parameters:
-                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10469,11 +10093,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
-          links:
-            accessPackages:
-              operationId: identityGovernance.entitlementManagement.Catalogs.ListAccessPackages
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10723,34 +10342,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-          links:
-            accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.catalogs.AccessPackages.ListAccessPackagesIncompatibleGraphWPre
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-            assignmentPolicies:
-              operationId: identityGovernance.entitlementManagement.catalogs.AccessPackages.ListAssignmentPolicies
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.catalogs.AccessPackages.GetCatalog
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-            incompatibleAccessPackages:
-              operationId: identityGovernance.entitlementManagement.catalogs.AccessPackages.ListIncompatibleAccessPackages
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-            incompatibleGroups:
-              operationId: identityGovernance.entitlementManagement.catalogs.AccessPackages.ListIncompatibleGroups
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-            getApplicablePolicyRequirements:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackageCatalog.accessPackages.accessPackage.getApplicablePolicyRequirements
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11004,37 +10595,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-          links:
-            accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.AccessPackagesIncompatibleGraphWPre.ListAccessPackagesIncompatibleGraphWPre
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackage-id1: $request.path.accessPackage-id1
-            assignmentPolicies:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.AccessPackagesIncompatibleWith.ListAssignmentPolicies
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackage-id1: $request.path.accessPackage-id1
-            catalog:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.AccessPackagesIncompatibleWith.GetCatalog
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackage-id1: $request.path.accessPackage-id1
-            incompatibleAccessPackages:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.AccessPackagesIncompatibleWith.ListIncompatibleAccessPackages
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackage-id1: $request.path.accessPackage-id1
-            incompatibleGroups:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.AccessPackagesIncompatibleWith.ListIncompatibleGroups
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackage-id1: $request.path.accessPackage-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11265,19 +10825,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentPolicy'
-          links:
-            accessPackage:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.AssignmentPolicies.GetAccessPackage
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.AssignmentPolicies.GetCatalog
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11444,37 +10991,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-          links:
-            accessPackagesIncompatibleWith:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies.AccessPackage.ListAccessPackagesIncompatibleGraphWPre
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            assignmentPolicies:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies.AccessPackage.ListAssignmentPolicies
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            catalog:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies.AccessPackage.GetCatalog
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            incompatibleAccessPackages:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies.AccessPackage.ListIncompatibleAccessPackages
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
-            incompatibleGroups:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies.AccessPackage.ListIncompatibleGroups
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11550,13 +11066,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
-          links:
-            accessPackages:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.assignmentPolicies.Catalog.ListAccessPackages
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
-                accessPackageAssignmentPolicy-id: $request.path.accessPackageAssignmentPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11623,12 +11132,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
-          links:
-            accessPackages:
-              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.Catalog.ListAccessPackages
-              parameters:
-                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
-                accessPackage-id: $request.path.accessPackage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12649,15 +12152,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
-          links:
-            externalSponsors:
-              operationId: identityGovernance.entitlementManagement.ConnectedOrganizations.ListExternalSponsors
-              parameters:
-                connectedOrganization-id: $request.path.connectedOrganization-id
-            internalSponsors:
-              operationId: identityGovernance.entitlementManagement.ConnectedOrganizations.ListInternalSponsors
-              parameters:
-                connectedOrganization-id: $request.path.connectedOrganization-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13611,11 +13105,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.termsOfUseContainer'
-          links:
-            agreementAcceptances:
-              operationId: identityGovernance.TermsGraphOPreUse.ListAgreementAcceptances
-            agreements:
-              operationId: identityGovernance.TermsGraphOPreUse.ListAgreements
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14058,19 +13547,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.agreement'
-          links:
-            acceptances:
-              operationId: identityGovernance.termsGraphOPreUse.Agreements.ListAcceptances
-              parameters:
-                agreement-id: $request.path.agreement-id
-            file:
-              operationId: identityGovernance.termsGraphOPreUse.Agreements.GetFile
-              parameters:
-                agreement-id: $request.path.agreement-id
-            files:
-              operationId: identityGovernance.termsGraphOPreUse.Agreements.ListFiles
-              parameters:
-                agreement-id: $request.path.agreement-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14466,11 +13942,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.agreementFile'
-          links:
-            localizations:
-              operationId: identityGovernance.termsGraphOPreUse.agreements.File.ListLocalizations
-              parameters:
-                agreement-id: $request.path.agreement-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14712,12 +14183,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
-          links:
-            versions:
-              operationId: identityGovernance.termsGraphOPreUse.agreements.file.Localizations.ListVersions
-              parameters:
-                agreement-id: $request.path.agreement-id
-                agreementFileLocalization-id: $request.path.agreementFileLocalization-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15272,12 +14737,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
-          links:
-            versions:
-              operationId: identityGovernance.termsGraphOPreUse.agreements.Files.ListVersions
-              parameters:
-                agreement-id: $request.path.agreement-id
-                agreementFileLocalization-id: $request.path.agreementFileLocalization-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17262,7 +16721,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLabel'
-              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.'
+              description: 'The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.'
             assignedLicenses:
               type: array
               items:
@@ -22125,7 +21584,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -25894,7 +25353,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -25934,7 +25393,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object
@@ -28966,7 +28425,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string

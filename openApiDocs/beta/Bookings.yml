@@ -216,37 +216,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
-          links:
-            appointments:
-              operationId: bookingBusinesses.ListAppointments
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            calendarView:
-              operationId: bookingBusinesses.ListCalendarView
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            customers:
-              operationId: bookingBusinesses.ListCustomers
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            customQuestions:
-              operationId: bookingBusinesses.ListCustomQuestions
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            services:
-              operationId: bookingBusinesses.ListServices
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            staffMembers:
-              operationId: bookingBusinesses.ListStaffMembers
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            getStaffAvailability:
-              operationId: bookingBusinesses.bookingBusiness.getStaffAvailability
-            publish:
-              operationId: bookingBusinesses.bookingBusiness.publish
-            unpublish:
-              operationId: bookingBusinesses.bookingBusiness.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -615,9 +584,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-          links:
-            cancel:
-              operationId: bookingBusinesses.bookingBusiness.appointments.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1068,9 +1034,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-          links:
-            cancel:
-              operationId: bookingBusinesses.bookingBusiness.calendarView.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2604,9 +2567,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
-          links:
-            businessScenarios:
-              operationId: solutions.ListBusinessScenarios
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2786,11 +2746,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.businessScenario'
-          links:
-            planner:
-              operationId: solutions.BusinessScenarios.GetPlanner
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2899,21 +2854,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.businessScenarioPlanner'
-          links:
-            planConfiguration:
-              operationId: solutions.businessScenarios.Planner.GetPlanConfiguration
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-            taskConfiguration:
-              operationId: solutions.businessScenarios.Planner.GetTaskConfiguration
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-            tasks:
-              operationId: solutions.businessScenarios.Planner.ListTasks
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-            getPlan:
-              operationId: solutions.businessScenarios.businessScenario.planner.getPlan
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3061,11 +3001,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.plannerPlanConfiguration'
-          links:
-            localizations:
-              operationId: solutions.businessScenarios.planner.PlanConfiguration.ListLocalizations
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3723,27 +3658,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.businessScenarioTask'
-          links:
-            assignedToTaskBoardFormat:
-              operationId: solutions.businessScenarios.planner.Tasks.GetAssignedToTaskBoardFormat
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-                businessScenarioTask-id: $request.path.businessScenarioTask-id
-            bucketTaskBoardFormat:
-              operationId: solutions.businessScenarios.planner.Tasks.GetBucketTaskBoardFormat
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-                businessScenarioTask-id: $request.path.businessScenarioTask-id
-            details:
-              operationId: solutions.businessScenarios.planner.Tasks.GetDetails
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-                businessScenarioTask-id: $request.path.businessScenarioTask-id
-            progressTaskBoardFormat:
-              operationId: solutions.businessScenarios.planner.Tasks.GetProgressTaskBoardFormat
-              parameters:
-                businessScenario-id: $request.path.businessScenario-id
-                businessScenarioTask-id: $request.path.businessScenarioTask-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5208,7 +5122,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object

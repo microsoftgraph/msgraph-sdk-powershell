@@ -45,9 +45,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.external'
-          links:
-            connections:
-              operationId: external.ListConnections
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -235,23 +232,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
-          links:
-            groups:
-              operationId: external.Connections.ListGroups
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-            items:
-              operationId: external.Connections.ListItems
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-            operations:
-              operationId: external.Connections.ListOperations
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-            schema:
-              operationId: external.Connections.GetSchema
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -475,12 +455,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
-          links:
-            members:
-              operationId: external.connections.Groups.ListMembers
-              parameters:
-                externalConnection-id: $request.path.externalConnection-id
-                externalGroup-id: $request.path.externalGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1438,9 +1412,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.searchEntity'
-          links:
-            query:
-              operationId: search.query
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

@@ -53,11 +53,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
-          links:
-            downloadApplePushNotificationCertificateSigningRequest:
-              operationId: deviceManagement.applePushNotificationCertificate.downloadApplePushNotificationCertificateSigningRequest
-            generateApplePushNotificationCertificateSigningRequest:
-              operationId: deviceManagement.applePushNotificationCertificate.generateApplePushNotificationCertificateSigningRequest
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1649,9 +1644,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
-          links:
-            terminate:
-              operationId: deviceManagement.deviceManagementPartners.deviceManagementPartner.terminate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2072,9 +2064,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
-          links:
-            sync:
-              operationId: deviceManagement.exchangeConnectors.deviceManagementExchangeConnector.sync
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2279,11 +2268,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeOnPremisesPolicy'
-          links:
-            conditionalAccessSettings:
-              operationId: deviceManagement.ExchangeOnPremisesPolicies.GetConditionalAccessSettings
-              parameters:
-                deviceManagementExchangeOnPremisesPolicy-id: $request.path.deviceManagementExchangeOnPremisesPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2492,9 +2476,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeOnPremisesPolicy'
-          links:
-            conditionalAccessSettings:
-              operationId: deviceManagement.ExchangeOnPremisesPolicy.GetConditionalAccessSettings
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2776,23 +2757,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
-          links:
-            children:
-              operationId: deviceManagement.GroupPolicyCategories.ListChildren
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-            definitionFile:
-              operationId: deviceManagement.GroupPolicyCategories.GetDefinitionFile
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-            definitions:
-              operationId: deviceManagement.GroupPolicyCategories.ListDefinitions
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-            parent:
-              operationId: deviceManagement.GroupPolicyCategories.GetParent
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3003,27 +2967,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
-          links:
-            children:
-              operationId: deviceManagement.groupPolicyCategories.Children.ListChildren
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-                groupPolicyCategory-id1: $request.path.groupPolicyCategory-id1
-            definitionFile:
-              operationId: deviceManagement.groupPolicyCategories.Children.GetDefinitionFile
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-                groupPolicyCategory-id1: $request.path.groupPolicyCategory-id1
-            definitions:
-              operationId: deviceManagement.groupPolicyCategories.Children.ListDefinitions
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-                groupPolicyCategory-id1: $request.path.groupPolicyCategory-id1
-            parent:
-              operationId: deviceManagement.groupPolicyCategories.Children.GetParent
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-                groupPolicyCategory-id1: $request.path.groupPolicyCategory-id1
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3085,11 +3028,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
-          links:
-            definitions:
-              operationId: deviceManagement.groupPolicyCategories.DefinitionFile.ListDefinitions
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3283,32 +3221,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyCategories.Definitions.GetCategory
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyCategories.Definitions.GetDefinitionFile
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyCategories.Definitions.GetNextVersionDefinition
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            presentations:
-              operationId: deviceManagement.groupPolicyCategories.Definitions.ListPresentations
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyCategories.Definitions.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3371,23 +3283,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
-          links:
-            children:
-              operationId: deviceManagement.groupPolicyCategories.Parent.ListChildren
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyCategories.Parent.GetDefinitionFile
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-            definitions:
-              operationId: deviceManagement.groupPolicyCategories.Parent.ListDefinitions
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
-            parent:
-              operationId: deviceManagement.groupPolicyCategories.Parent.GetParent
-              parameters:
-                groupPolicyCategory-id: $request.path.groupPolicyCategory-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3559,11 +3454,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
-          links:
-            definitions:
-              operationId: deviceManagement.GroupPolicyDefinitionFiles.ListDefinitions
-              parameters:
-                groupPolicyDefinitionFile-id: $request.path.groupPolicyDefinitionFile-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3810,32 +3700,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyDefinitionFiles.Definitions.GetCategory
-              parameters:
-                groupPolicyDefinitionFile-id: $request.path.groupPolicyDefinitionFile-id
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitionFiles.Definitions.GetDefinitionFile
-              parameters:
-                groupPolicyDefinitionFile-id: $request.path.groupPolicyDefinitionFile-id
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitionFiles.Definitions.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinitionFile-id: $request.path.groupPolicyDefinitionFile-id
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            presentations:
-              operationId: deviceManagement.groupPolicyDefinitionFiles.Definitions.ListPresentations
-              parameters:
-                groupPolicyDefinitionFile-id: $request.path.groupPolicyDefinitionFile-id
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitionFiles.Definitions.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinitionFile-id: $request.path.groupPolicyDefinitionFile-id
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4035,27 +3899,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.GroupPolicyDefinitions.GetCategory
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.GroupPolicyDefinitions.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            nextVersionDefinition:
-              operationId: deviceManagement.GroupPolicyDefinitions.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            presentations:
-              operationId: deviceManagement.GroupPolicyDefinitions.ListPresentations
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            previousVersionDefinition:
-              operationId: deviceManagement.GroupPolicyDefinitions.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4171,23 +4014,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
-          links:
-            children:
-              operationId: deviceManagement.groupPolicyDefinitions.Category.ListChildren
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.Category.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitions:
-              operationId: deviceManagement.groupPolicyDefinitions.Category.ListDefinitions
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            parent:
-              operationId: deviceManagement.groupPolicyDefinitions.Category.GetParent
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4249,11 +4075,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
-          links:
-            definitions:
-              operationId: deviceManagement.groupPolicyDefinitions.DefinitionFile.ListDefinitions
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4326,27 +4147,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyDefinitions.NextVersionDefinition.GetCategory
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.NextVersionDefinition.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.NextVersionDefinition.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            presentations:
-              operationId: deviceManagement.groupPolicyDefinitions.NextVersionDefinition.ListPresentations
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.NextVersionDefinition.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4462,23 +4262,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
-          links:
-            children:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.Category.ListChildren
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.Category.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitions:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.Category.ListDefinitions
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            parent:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.Category.GetParent
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4540,11 +4323,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
-          links:
-            definitions:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.DefinitionFile.ListDefinitions
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4713,12 +4491,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
-          links:
-            definition:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.Presentations.GetDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4868,32 +4640,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.presentations.Definition.GetCategory
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.presentations.Definition.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.presentations.Definition.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            presentations:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.presentations.Definition.ListPresentations
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.presentations.Definition.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4966,27 +4712,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.PreviousVersionDefinition.GetCategory
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.PreviousVersionDefinition.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.PreviousVersionDefinition.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            presentations:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.PreviousVersionDefinition.ListPresentations
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.PreviousVersionDefinition.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5102,23 +4827,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
-          links:
-            children:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.Category.ListChildren
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.Category.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitions:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.Category.ListDefinitions
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            parent:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.Category.GetParent
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5180,11 +4888,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
-          links:
-            definitions:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.DefinitionFile.ListDefinitions
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5353,12 +5056,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
-          links:
-            definition:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.Presentations.GetDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5508,32 +5205,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.presentations.Definition.GetCategory
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.presentations.Definition.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.presentations.Definition.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            presentations:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.presentations.Definition.ListPresentations
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.nextVersionDefinition.previousVersionDefinition.presentations.Definition.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5702,12 +5373,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
-          links:
-            definition:
-              operationId: deviceManagement.groupPolicyDefinitions.Presentations.GetDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5857,32 +5522,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.GetCategory
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            presentations:
-              operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.ListPresentations
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5955,27 +5594,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyDefinitions.PreviousVersionDefinition.GetCategory
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.PreviousVersionDefinition.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.PreviousVersionDefinition.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            presentations:
-              operationId: deviceManagement.groupPolicyDefinitions.PreviousVersionDefinition.ListPresentations
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.PreviousVersionDefinition.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6091,23 +5709,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
-          links:
-            children:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.Category.ListChildren
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.Category.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitions:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.Category.ListDefinitions
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            parent:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.Category.GetParent
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6169,11 +5770,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
-          links:
-            definitions:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.DefinitionFile.ListDefinitions
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6246,27 +5842,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.NextVersionDefinition.GetCategory
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.NextVersionDefinition.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.NextVersionDefinition.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            presentations:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.NextVersionDefinition.ListPresentations
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.NextVersionDefinition.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6382,23 +5957,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
-          links:
-            children:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.Category.ListChildren
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.Category.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            definitions:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.Category.ListDefinitions
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-            parent:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.Category.GetParent
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6460,11 +6018,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
-          links:
-            definitions:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.DefinitionFile.ListDefinitions
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6633,12 +6186,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
-          links:
-            definition:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.Presentations.GetDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6788,32 +6335,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.presentations.Definition.GetCategory
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.presentations.Definition.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.presentations.Definition.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            presentations:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.presentations.Definition.ListPresentations
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.nextVersionDefinition.presentations.Definition.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6982,12 +6503,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
-          links:
-            definition:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.Presentations.GetDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7137,32 +6652,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
-          links:
-            category:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.presentations.Definition.GetCategory
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            definitionFile:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.presentations.Definition.GetDefinitionFile
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            nextVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.presentations.Definition.GetNextVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            presentations:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.presentations.Definition.ListPresentations
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
-            previousVersionDefinition:
-              operationId: deviceManagement.groupPolicyDefinitions.previousVersionDefinition.presentations.Definition.GetPreviousVersionDefinition
-              parameters:
-                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
-                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7354,15 +6843,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyMigrationReport'
-          links:
-            groupPolicySettingMappings:
-              operationId: deviceManagement.GroupPolicyMigrationReports.ListGroupPolicySettingMappings
-              parameters:
-                groupPolicyMigrationReport-id: $request.path.groupPolicyMigrationReport-id
-            unsupportedGroupPolicyExtensions:
-              operationId: deviceManagement.GroupPolicyMigrationReports.ListUnsupportedGroupPolicyExtensions
-              parameters:
-                groupPolicyMigrationReport-id: $request.path.groupPolicyMigrationReport-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8365,25 +7845,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyUploadedDefinitionFile'
-          links:
-            definitions:
-              operationId: deviceManagement.GroupPolicyUploadedDefinitionFiles.ListDefinitions
-              parameters:
-                groupPolicyUploadedDefinitionFile-id: $request.path.groupPolicyUploadedDefinitionFile-id
-            groupPolicyOperations:
-              operationId: deviceManagement.GroupPolicyUploadedDefinitionFiles.ListGroupPolicyOperations
-              parameters:
-                groupPolicyUploadedDefinitionFile-id: $request.path.groupPolicyUploadedDefinitionFile-id
-            addLanguageFiles:
-              operationId: deviceManagement.groupPolicyUploadedDefinitionFiles.groupPolicyUploadedDefinitionFile.addLanguageFiles
-            remove:
-              operationId: deviceManagement.groupPolicyUploadedDefinitionFiles.groupPolicyUploadedDefinitionFile.remove
-            removeLanguageFiles:
-              operationId: deviceManagement.groupPolicyUploadedDefinitionFiles.groupPolicyUploadedDefinitionFile.removeLanguageFiles
-            updateLanguageFiles:
-              operationId: deviceManagement.groupPolicyUploadedDefinitionFiles.groupPolicyUploadedDefinitionFile.updateLanguageFiles
-            uploadNewVersion:
-              operationId: deviceManagement.groupPolicyUploadedDefinitionFiles.groupPolicyUploadedDefinitionFile.uploadNewVersion
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8941,13 +8402,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.intuneBrandingProfile'
-          links:
-            assignments:
-              operationId: deviceManagement.IntuneBrandingProfiles.ListAssignments
-              parameters:
-                intuneBrandingProfile-id: $request.path.intuneBrandingProfile-id
-            assign:
-              operationId: deviceManagement.intuneBrandingProfiles.intuneBrandingProfile.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10081,11 +9535,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
-          links:
-            beginOnboarding:
-              operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner.beginOnboarding
-            disconnect:
-              operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner.disconnect
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10290,9 +9739,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.resourceOperation'
-          links:
-            getScopesForUser:
-              operationId: deviceManagement.resourceOperations.resourceOperation.getScopesGraphFPreUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10509,15 +9955,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
-          links:
-            roleDefinition:
-              operationId: deviceManagement.RoleAssignments.GetRoleDefinition
-              parameters:
-                deviceAndAppManagementRoleAssignment-id: $request.path.deviceAndAppManagementRoleAssignment-id
-            roleScopeTags:
-              operationId: deviceManagement.RoleAssignments.ListRoleScopeTags
-              parameters:
-                deviceAndAppManagementRoleAssignment-id: $request.path.deviceAndAppManagementRoleAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10712,12 +10149,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
-          links:
-            assignments:
-              operationId: deviceManagement.roleAssignments.RoleScopeTags.ListAssignments
-              parameters:
-                deviceAndAppManagementRoleAssignment-id: $request.path.deviceAndAppManagementRoleAssignment-id
-                roleScopeTag-id: $request.path.roleScopeTag-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10881,11 +10312,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roleDefinition'
-          links:
-            roleAssignments:
-              operationId: deviceManagement.RoleDefinitions.ListRoleAssignments
-              parameters:
-                roleDefinition-id: $request.path.roleDefinition-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11119,12 +10545,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roleAssignment'
-          links:
-            roleDefinition:
-              operationId: deviceManagement.roleDefinitions.RoleAssignments.GetRoleDefinition
-              parameters:
-                roleDefinition-id: $request.path.roleDefinition-id
-                roleAssignment-id: $request.path.roleAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11261,12 +10681,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roleDefinition'
-          links:
-            roleAssignments:
-              operationId: deviceManagement.roleDefinitions.roleAssignments.RoleDefinition.ListRoleAssignments
-              parameters:
-                roleDefinition-id: $request.path.roleDefinition-id
-                roleAssignment-id: $request.path.roleAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11414,13 +10828,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roleScopeTag'
-          links:
-            assignments:
-              operationId: deviceManagement.RoleScopeTags.ListAssignments
-              parameters:
-                roleScopeTag-id: $request.path.roleScopeTag-id
-            assign:
-              operationId: deviceManagement.roleScopeTags.roleScopeTag.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12090,19 +11497,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
-          links:
-            acceptanceStatuses:
-              operationId: deviceManagement.TermsAndConditions.ListAcceptanceStatuses
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-            assignments:
-              operationId: deviceManagement.TermsAndConditions.ListAssignments
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-            groupAssignments:
-              operationId: deviceManagement.TermsAndConditions.ListGroupAssignments
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12332,12 +11726,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
-          links:
-            termsAndConditions:
-              operationId: deviceManagement.termsAndConditions.AcceptanceStatuses.GetTermsAndConditions
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12481,22 +11869,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
-          links:
-            acceptanceStatuses:
-              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListAcceptanceStatuses
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
-            assignments:
-              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListAssignments
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
-            groupAssignments:
-              operationId: deviceManagement.termsAndConditions.acceptanceStatuses.TermsAndConditions.ListGroupAssignments
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsAcceptanceStatus-id: $request.path.termsAndConditionsAcceptanceStatus-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12890,12 +12262,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditionsGroupAssignment'
-          links:
-            termsAndConditions:
-              operationId: deviceManagement.termsAndConditions.GroupAssignments.GetTermsAndConditions
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsGroupAssignment-id: $request.path.termsAndConditionsGroupAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13039,22 +12405,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
-          links:
-            acceptanceStatuses:
-              operationId: deviceManagement.termsAndConditions.groupAssignments.TermsAndConditions.ListAcceptanceStatuses
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsGroupAssignment-id: $request.path.termsAndConditionsGroupAssignment-id
-            assignments:
-              operationId: deviceManagement.termsAndConditions.groupAssignments.TermsAndConditions.ListAssignments
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsGroupAssignment-id: $request.path.termsAndConditionsGroupAssignment-id
-            groupAssignments:
-              operationId: deviceManagement.termsAndConditions.groupAssignments.TermsAndConditions.ListGroupAssignments
-              parameters:
-                termsAndConditions-id: $request.path.termsAndConditions-id
-                termsAndConditionsGroupAssignment-id: $request.path.termsAndConditionsGroupAssignment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13358,39 +12708,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.virtualEndpoint'
-          links:
-            auditEvents:
-              operationId: deviceManagement.VirtualEndpoint.ListAuditEvents
-            cloudPCs:
-              operationId: deviceManagement.VirtualEndpoint.ListCloudPCs
-            crossCloudGovernmentOrganizationMapping:
-              operationId: deviceManagement.VirtualEndpoint.GetCrossCloudGovernmentOrganizationMapping
-            deviceImages:
-              operationId: deviceManagement.VirtualEndpoint.ListDeviceImages
-            externalPartnerSettings:
-              operationId: deviceManagement.VirtualEndpoint.ListExternalPartnerSettings
-            galleryImages:
-              operationId: deviceManagement.VirtualEndpoint.ListGalleryImages
-            onPremisesConnections:
-              operationId: deviceManagement.VirtualEndpoint.ListOnPremisesConnections
-            organizationSettings:
-              operationId: deviceManagement.VirtualEndpoint.GetOrganizationSettings
-            provisioningPolicies:
-              operationId: deviceManagement.VirtualEndpoint.ListProvisioningPolicies
-            reports:
-              operationId: deviceManagement.VirtualEndpoint.GetReports
-            servicePlans:
-              operationId: deviceManagement.VirtualEndpoint.ListServicePlans
-            sharedUseServicePlans:
-              operationId: deviceManagement.VirtualEndpoint.ListSharedUseServicePlans
-            snapshots:
-              operationId: deviceManagement.VirtualEndpoint.ListSnapshots
-            supportedRegions:
-              operationId: deviceManagement.VirtualEndpoint.ListSupportedRegions
-            userSettings:
-              operationId: deviceManagement.VirtualEndpoint.ListUserSettings
-            getEffectivePermissions:
-              operationId: deviceManagement.virtualEndpoint.getEffectivePermissions
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13888,31 +13205,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.cloudPC'
-          links:
-            changeUserAccountType:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.changeUserAccountType
-            endGracePeriod:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.endGracePeriod
-            getCloudPcConnectivityHistory:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.getCloudPcConnectivityHistory
-            getCloudPcLaunchInfo:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.getCloudPcLaunchInfo
-            getShiftWorkCloudPcAccessState:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.getShiftWorkCloudPcAccessState
-            getSupportedCloudPcRemoteActions:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.getSupportedCloudPcRemoteActions
-            reboot:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.reboot
-            rename:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.rename
-            reprovision:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.reprovision
-            restore:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.restore
-            retryPartnerAgentInstallation:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.retryPartnerAgentInstallation
-            troubleshoot:
-              operationId: deviceManagement.virtualEndpoint.cloudPCs.cloudPC.troubleshoot
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14226,9 +13518,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
-          links:
-            reupload:
-              operationId: deviceManagement.virtualEndpoint.deviceImages.cloudPcDeviceImage.reupload
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14791,6 +14080,8 @@ paths:
                 - type desc
                 - virtualNetworkId
                 - virtualNetworkId desc
+                - virtualNetworkLocation
+                - virtualNetworkLocation desc
               type: string
         - name: $select
           in: query
@@ -14819,6 +14110,7 @@ paths:
                 - subscriptionName
                 - type
                 - virtualNetworkId
+                - virtualNetworkLocation
               type: string
         - name: $expand
           in: query
@@ -14910,6 +14202,7 @@ paths:
                 - subscriptionName
                 - type
                 - virtualNetworkId
+                - virtualNetworkLocation
               type: string
         - name: $expand
           in: query
@@ -14930,11 +14223,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
-          links:
-            runHealthChecks:
-              operationId: deviceManagement.virtualEndpoint.onPremisesConnections.cloudPcOnPremisesConnection.runHealthChecks
-            updateAdDomainPassword:
-              operationId: deviceManagement.virtualEndpoint.onPremisesConnections.cloudPcOnPremisesConnection.updateAdDomainPassword
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15014,6 +14302,7 @@ paths:
               enum:
                 - id
                 - enableMEMAutoEnroll
+                - enableSingleSignOn
                 - osVersion
                 - userAccountType
                 - windowsSettings
@@ -15118,6 +14407,8 @@ paths:
                 - displayName desc
                 - domainJoinConfiguration
                 - domainJoinConfiguration desc
+                - enableSingleSignOn
+                - enableSingleSignOn desc
                 - gracePeriodInHours
                 - gracePeriodInHours desc
                 - imageDisplayName
@@ -15155,6 +14446,7 @@ paths:
                 - description
                 - displayName
                 - domainJoinConfiguration
+                - enableSingleSignOn
                 - gracePeriodInHours
                 - imageDisplayName
                 - imageId
@@ -15247,6 +14539,7 @@ paths:
                 - description
                 - displayName
                 - domainJoinConfiguration
+                - enableSingleSignOn
                 - gracePeriodInHours
                 - imageDisplayName
                 - imageId
@@ -15279,13 +14572,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
-          links:
-            assignments:
-              operationId: deviceManagement.virtualEndpoint.ProvisioningPolicies.ListAssignments
-              parameters:
-                cloudPcProvisioningPolicy-id: $request.path.cloudPcProvisioningPolicy-id
-            assign:
-              operationId: deviceManagement.virtualEndpoint.provisioningPolicies.cloudPcProvisioningPolicy.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15612,19 +14898,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcReports'
-          links:
-            exportJobs:
-              operationId: deviceManagement.virtualEndpoint.Reports.ListExportJobs
-            getDailyAggregatedRemoteConnectionReports:
-              operationId: deviceManagement.virtualEndpoint.reports.getDailyAggregatedRemoteConnectionReports
-            getRealTimeRemoteConnectionLatency:
-              operationId: deviceManagement.virtualEndpoint.reports.getRealTimeRemoteConnectionLatency
-            getRealTimeRemoteConnectionStatus:
-              operationId: deviceManagement.virtualEndpoint.reports.getRealTimeRemoteConnectionStatus
-            getRemoteConnectionHistoricalReports:
-              operationId: deviceManagement.virtualEndpoint.reports.getRemoteConnectionHistoricalReports
-            getTotalAggregatedRemoteConnectionReports:
-              operationId: deviceManagement.virtualEndpoint.reports.getTotalAggregatedRemoteConnectionReports
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16783,13 +16056,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcUserSetting'
-          links:
-            assignments:
-              operationId: deviceManagement.virtualEndpoint.UserSettings.ListAssignments
-              parameters:
-                cloudPcUserSetting-id: $request.path.cloudPcUserSetting-id
-            assign:
-              operationId: deviceManagement.virtualEndpoint.userSettings.cloudPcUserSetting.assign
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18991,6 +18257,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
+              description: The results of every partner agent's installation status on Cloud PC.
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -19229,6 +18496,9 @@ components:
             virtualNetworkId:
               type: string
               description: 'The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.'
+            virtualNetworkLocation:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcOrganizationSettings:
@@ -19240,6 +18510,9 @@ components:
             enableMEMAutoEnroll:
               type: boolean
               description: Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
+              nullable: true
+            enableSingleSignOn:
+              type: boolean
               nullable: true
             osVersion:
               $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
@@ -19273,6 +18546,9 @@ components:
               nullable: true
             domainJoinConfiguration:
               $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
+            enableSingleSignOn:
+              type: boolean
+              nullable: true
             gracePeriodInHours:
               maximum: 2147483647
               minimum: -2147483648
@@ -21111,11 +20387,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
           nullable: true
       additionalProperties:
         type: object
@@ -21327,6 +20605,8 @@ components:
         - remoteConnectionHistoricalReports
         - dailyAggregatedRemoteConnectionReports
         - totalAggregatedRemoteConnectionReports
+        - sharedUseLicenseUsageReport
+        - sharedUseLicenseUsageRealTimeReport
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcSnapshotStatus:

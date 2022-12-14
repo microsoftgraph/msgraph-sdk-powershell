@@ -342,69 +342,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.application'
-          links:
-            appManagementPolicies:
-              operationId: applications.ListAppManagementPolicies
-              parameters:
-                application-id: $request.path.application-id
-            createdOnBehalfOf:
-              operationId: applications.GetCreatedOnBehalfGraphOPre
-              parameters:
-                application-id: $request.path.application-id
-            extensionProperties:
-              operationId: applications.ListExtensionProperties
-              parameters:
-                application-id: $request.path.application-id
-            federatedIdentityCredentials:
-              operationId: applications.ListFederatedIdentityCredentials
-              parameters:
-                application-id: $request.path.application-id
-            homeRealmDiscoveryPolicies:
-              operationId: applications.ListHomeRealmDiscoveryPolicies
-              parameters:
-                application-id: $request.path.application-id
-            owners:
-              operationId: applications.ListOwners
-              parameters:
-                application-id: $request.path.application-id
-            tokenIssuancePolicies:
-              operationId: applications.ListTokenIssuancePolicies
-              parameters:
-                application-id: $request.path.application-id
-            tokenLifetimePolicies:
-              operationId: applications.ListTokenLifetimePolicies
-              parameters:
-                application-id: $request.path.application-id
-            connectorGroup:
-              operationId: applications.GetConnectorGroup
-              parameters:
-                application-id: $request.path.application-id
-            synchronization:
-              operationId: applications.GetSynchronization
-              parameters:
-                application-id: $request.path.application-id
-            addKey:
-              operationId: applications.application.addKey
-            addPassword:
-              operationId: applications.application.addPassword
-            checkMemberGroups:
-              operationId: applications.application.checkMemberGroups
-            checkMemberObjects:
-              operationId: applications.application.checkMemberObjects
-            getMemberGroups:
-              operationId: applications.application.getMemberGroups
-            getMemberObjects:
-              operationId: applications.application.getMemberObjects
-            removeKey:
-              operationId: applications.application.removeKey
-            removePassword:
-              operationId: applications.application.removePassword
-            restore:
-              operationId: applications.application.restore
-            setVerifiedPublisher:
-              operationId: applications.application.setVerifiedPublisher
-            unsetVerifiedPublisher:
-              operationId: applications.application.unsetVerifiedPublisher
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -725,15 +662,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.connectorGroup'
-          links:
-            applications:
-              operationId: applications.ConnectorGroup.ListApplications
-              parameters:
-                application-id: $request.path.application-id
-            members:
-              operationId: applications.ConnectorGroup.ListMembers
-              parameters:
-                application-id: $request.path.application-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -760,15 +688,6 @@ paths:
             application/json:
               schema:
                 type: string
-          links:
-            applications:
-              operationId: applications.ConnectorGroup.ListApplications
-              parameters:
-                application-id: $request.path.application-id
-            members:
-              operationId: applications.ConnectorGroup.ListMembers
-              parameters:
-                application-id: $request.path.application-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1523,12 +1442,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-          links:
-            appliesTo:
-              operationId: applications.HomeRealmDiscoveryPolicies.ListAppliesTo
-              parameters:
-                application-id: $request.path.application-id
-                homeRealmDiscoveryPolicy-id: $request.path.homeRealmDiscoveryPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2317,19 +2230,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronization'
-          links:
-            jobs:
-              operationId: applications.Synchronization.ListJobs
-              parameters:
-                application-id: $request.path.application-id
-            templates:
-              operationId: applications.Synchronization.ListTemplates
-              parameters:
-                application-id: $request.path.application-id
-            acquireAccessToken:
-              operationId: applications.application.synchronization.acquireAccessToken
-            Ping:
-              operationId: applications.application.synchronization.Ping
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2566,24 +2466,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
-          links:
-            schema:
-              operationId: applications.synchronization.Jobs.GetSchema
-              parameters:
-                application-id: $request.path.application-id
-                synchronizationJob-id: $request.path.synchronizationJob-id
-            pause:
-              operationId: applications.application.synchronization.jobs.synchronizationJob.pause
-            provisionOnDemand:
-              operationId: applications.application.synchronization.jobs.synchronizationJob.provisionOnDemand
-            restart:
-              operationId: applications.application.synchronization.jobs.synchronizationJob.restart
-            start:
-              operationId: applications.application.synchronization.jobs.synchronizationJob.start
-            stop:
-              operationId: applications.application.synchronization.jobs.synchronizationJob.stop
-            validateCredentials:
-              operationId: applications.application.synchronization.jobs.synchronizationJob.validateCredentials
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2966,18 +2848,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
-          links:
-            directories:
-              operationId: applications.synchronization.jobs.Schema.ListDirectories
-              parameters:
-                application-id: $request.path.application-id
-                synchronizationJob-id: $request.path.synchronizationJob-id
-            filterOperators:
-              operationId: applications.application.synchronization.jobs.synchronizationJob.schema.filterOperators
-            functions:
-              operationId: applications.application.synchronization.jobs.synchronizationJob.schema.functions
-            parseExpression:
-              operationId: applications.application.synchronization.jobs.synchronizationJob.schema.parseExpression
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3255,9 +3125,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
-          links:
-            discover:
-              operationId: applications.application.synchronization.jobs.synchronizationJob.schema.directories.directoryDefinition.discover
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3910,12 +3777,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
-          links:
-            schema:
-              operationId: applications.synchronization.Templates.GetSchema
-              parameters:
-                application-id: $request.path.application-id
-                synchronizationTemplate-id: $request.path.synchronizationTemplate-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4047,18 +3908,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
-          links:
-            directories:
-              operationId: applications.synchronization.templates.Schema.ListDirectories
-              parameters:
-                application-id: $request.path.application-id
-                synchronizationTemplate-id: $request.path.synchronizationTemplate-id
-            filterOperators:
-              operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.filterOperators
-            functions:
-              operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.functions
-            parseExpression:
-              operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.parseExpression
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4332,9 +4181,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
-          links:
-            discover:
-              operationId: applications.application.synchronization.templates.synchronizationTemplate.schema.directories.directoryDefinition.discover
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5590,9 +5436,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.applicationTemplate'
-          links:
-            instantiate:
-              operationId: applicationTemplates.applicationTemplate.instantiate
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6129,27 +5972,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesPublishingProfile'
-          links:
-            agentGroups:
-              operationId: onPremisesPublishingProfiles.ListAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-            agents:
-              operationId: onPremisesPublishingProfiles.ListAgents
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-            connectorGroups:
-              operationId: onPremisesPublishingProfiles.ListConnectorGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-            connectors:
-              operationId: onPremisesPublishingProfiles.ListConnectors
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-            publishedResources:
-              operationId: onPremisesPublishingProfiles.ListPublishedResources
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6386,17 +6208,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgentGroup'
-          links:
-            agents:
-              operationId: onPremisesPublishingProfiles.AgentGroups.ListAgents
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-            publishedResources:
-              operationId: onPremisesPublishingProfiles.AgentGroups.ListPublishedResources
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6666,13 +6477,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
-          links:
-            agentGroups:
-              operationId: onPremisesPublishingProfiles.agentGroups.Agents.ListAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7211,13 +7015,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
-          links:
-            agentGroups:
-              operationId: onPremisesPublishingProfiles.agentGroups.PublishedResources.ListAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgentGroup-id: $request.path.onPremisesAgentGroup-id
-                publishedResource-id: $request.path.publishedResource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7786,12 +7583,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesAgent'
-          links:
-            agentGroups:
-              operationId: onPremisesPublishingProfiles.Agents.ListAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                onPremisesAgent-id: $request.path.onPremisesAgent-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8273,17 +8064,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.connectorGroup'
-          links:
-            applications:
-              operationId: onPremisesPublishingProfiles.ConnectorGroups.ListApplications
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-            members:
-              operationId: onPremisesPublishingProfiles.ConnectorGroups.ListMembers
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8680,67 +8460,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.application'
-          links:
-            appManagementPolicies:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListAppManagementPolicies
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $request.path.application-id
-            createdOnBehalfOf:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.GetCreatedOnBehalfGraphOPre
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $request.path.application-id
-            extensionProperties:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListExtensionProperties
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $request.path.application-id
-            federatedIdentityCredentials:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListFederatedIdentityCredentials
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $request.path.application-id
-            homeRealmDiscoveryPolicies:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListHomeRealmDiscoveryPolicies
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $request.path.application-id
-            owners:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListOwners
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $request.path.application-id
-            tokenIssuancePolicies:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListTokenIssuancePolicies
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $request.path.application-id
-            tokenLifetimePolicies:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.ListTokenLifetimePolicies
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $request.path.application-id
-            connectorGroup:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.GetConnectorGroup
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $request.path.application-id
-            synchronization:
-              operationId: onPremisesPublishingProfiles.connectorGroups.Applications.GetSynchronization
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connectorGroup-id: $request.path.connectorGroup-id
-                application-id: $request.path.application-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9225,12 +8944,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.connector'
-          links:
-            memberOf:
-              operationId: onPremisesPublishingProfiles.Connectors.ListMemberGraphOPre
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                connector-id: $request.path.connector-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9709,12 +9422,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.publishedResource'
-          links:
-            agentGroups:
-              operationId: onPremisesPublishingProfiles.PublishedResources.ListAgentGroups
-              parameters:
-                onPremisesPublishingProfile-id: $request.path.onPremisesPublishingProfile-id
-                publishedResource-id: $request.path.publishedResource-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10427,99 +10134,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
-          links:
-            appManagementPolicies:
-              operationId: servicePrincipals.ListAppManagementPolicies
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            appRoleAssignedTo:
-              operationId: servicePrincipals.ListAppRoleAssignedTo
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            appRoleAssignments:
-              operationId: servicePrincipals.ListAppRoleAssignments
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            claimsMappingPolicies:
-              operationId: servicePrincipals.ListClaimsMappingPolicies
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            createdObjects:
-              operationId: servicePrincipals.ListCreatedObjects
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            delegatedPermissionClassifications:
-              operationId: servicePrincipals.ListDelegatedPermissionClassifications
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            endpoints:
-              operationId: servicePrincipals.ListEndpoints
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            federatedIdentityCredentials:
-              operationId: servicePrincipals.ListFederatedIdentityCredentials
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            homeRealmDiscoveryPolicies:
-              operationId: servicePrincipals.ListHomeRealmDiscoveryPolicies
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            licenseDetails:
-              operationId: servicePrincipals.ListLicenseDetails
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            memberOf:
-              operationId: servicePrincipals.ListMemberGraphOPre
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            oauth2PermissionGrants:
-              operationId: servicePrincipals.ListOauth2PermissionGrants
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            ownedObjects:
-              operationId: servicePrincipals.ListOwnedObjects
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            owners:
-              operationId: servicePrincipals.ListOwners
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            tokenIssuancePolicies:
-              operationId: servicePrincipals.ListTokenIssuancePolicies
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            tokenLifetimePolicies:
-              operationId: servicePrincipals.ListTokenLifetimePolicies
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            transitiveMemberOf:
-              operationId: servicePrincipals.ListTransitiveMemberGraphOPre
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            synchronization:
-              operationId: servicePrincipals.GetSynchronization
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            addTokenSigningCertificate:
-              operationId: servicePrincipals.servicePrincipal.addTokenSigningCertificate
-            checkMemberGroups:
-              operationId: servicePrincipals.servicePrincipal.checkMemberGroups
-            checkMemberObjects:
-              operationId: servicePrincipals.servicePrincipal.checkMemberObjects
-            createPasswordSingleSignOnCredentials:
-              operationId: servicePrincipals.servicePrincipal.createPasswordSingleSignOnCredentials
-            deletePasswordSingleSignOnCredentials:
-              operationId: servicePrincipals.servicePrincipal.deletePasswordSingleSignOnCredentials
-            getMemberGroups:
-              operationId: servicePrincipals.servicePrincipal.getMemberGroups
-            getMemberObjects:
-              operationId: servicePrincipals.servicePrincipal.getMemberObjects
-            getPasswordSingleSignOnCredentials:
-              operationId: servicePrincipals.servicePrincipal.getPasswordSingleSignOnCredentials
-            restore:
-              operationId: servicePrincipals.servicePrincipal.restore
-            updatePasswordSingleSignOnCredentials:
-              operationId: servicePrincipals.servicePrincipal.updatePasswordSingleSignOnCredentials
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10730,12 +10344,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.appManagementPolicy'
-          links:
-            appliesTo:
-              operationId: servicePrincipals.AppManagementPolicies.ListAppliesTo
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                appManagementPolicy-id: $request.path.appManagementPolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13948,19 +13556,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronization'
-          links:
-            jobs:
-              operationId: servicePrincipals.Synchronization.ListJobs
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            templates:
-              operationId: servicePrincipals.Synchronization.ListTemplates
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-            acquireAccessToken:
-              operationId: servicePrincipals.servicePrincipal.synchronization.acquireAccessToken
-            Ping:
-              operationId: servicePrincipals.servicePrincipal.synchronization.Ping
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14197,24 +13792,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
-          links:
-            schema:
-              operationId: servicePrincipals.synchronization.Jobs.GetSchema
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronizationJob-id: $request.path.synchronizationJob-id
-            pause:
-              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.pause
-            provisionOnDemand:
-              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.provisionOnDemand
-            restart:
-              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.restart
-            start:
-              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.start
-            stop:
-              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.stop
-            validateCredentials:
-              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.validateCredentials
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14597,18 +14174,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
-          links:
-            directories:
-              operationId: servicePrincipals.synchronization.jobs.Schema.ListDirectories
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronizationJob-id: $request.path.synchronizationJob-id
-            filterOperators:
-              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.filterOperators
-            functions:
-              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.functions
-            parseExpression:
-              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.parseExpression
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14886,9 +14451,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
-          links:
-            discover:
-              operationId: servicePrincipals.servicePrincipal.synchronization.jobs.synchronizationJob.schema.directories.directoryDefinition.discover
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15541,12 +15103,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
-          links:
-            schema:
-              operationId: servicePrincipals.synchronization.Templates.GetSchema
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronizationTemplate-id: $request.path.synchronizationTemplate-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15678,18 +15234,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
-          links:
-            directories:
-              operationId: servicePrincipals.synchronization.templates.Schema.ListDirectories
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                synchronizationTemplate-id: $request.path.synchronizationTemplate-id
-            filterOperators:
-              operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.filterOperators
-            functions:
-              operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.functions
-            parseExpression:
-              operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.parseExpression
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15963,9 +15507,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
-          links:
-            discover:
-              operationId: servicePrincipals.servicePrincipal.synchronization.templates.synchronizationTemplate.schema.directories.directoryDefinition.discover
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16465,12 +16006,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-          links:
-            appliesTo:
-              operationId: servicePrincipals.TokenIssuancePolicies.ListAppliesTo
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                tokenIssuancePolicy-id: $request.path.tokenIssuancePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16620,12 +16155,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-          links:
-            appliesTo:
-              operationId: servicePrincipals.TokenLifetimePolicies.ListAppliesTo
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                tokenLifetimePolicy-id: $request.path.tokenLifetimePolicy-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17492,7 +17021,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.servicePrincipalLockConfiguration'
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. Supports $filter (eq, ne, not).'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).'
               nullable: true
             spa:
               $ref: '#/components/schemas/microsoft.graph.spaApplication'

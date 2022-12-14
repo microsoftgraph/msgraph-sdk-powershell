@@ -20507,6 +20507,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action retryPartnerAgentInstallation
+      description: Retry installation for the partner agents which failed to install on the Cloud PC. Service side will check which agent installation failed firstly and retry.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-1.0
       operationId: users.cloudPCs_retryPartnerAgentInstallation
       parameters:
         - name: user-id
@@ -27366,7 +27370,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reply
-      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply to a message, and send it later."
+      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply to a message, and send it later."
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
@@ -28121,7 +28125,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reply
-      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply to a message, and send it later."
+      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply to a message, and send it later."
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
@@ -30672,7 +30676,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reply
-      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply to a message, and send it later."
+      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply to a message, and send it later."
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
@@ -34548,6 +34552,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/presence/microsoft.graph.setStatusMessage':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action setStatusMessage
+      operationId: users.presence_setStatusMessage
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                statusMessage:
+                  $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/presence/microsoft.graph.setUserPreferredPresence':
     post:
       tags:
@@ -34597,6 +34634,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action evaluateApplication
+      description: 'Compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents. Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-sensitivitylabel-evaluateapplication?view=graph-rest-1.0
       operationId: users.security.informationProtection.sensitivityLabels_evaluateApplication
       parameters:
         - name: user-id
@@ -34649,6 +34690,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action evaluateClassificationResults
+      description: 'Use the classification results to compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.  To evaluate based on classification results, provide the contentInfo, which includes existing content metadata key-value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-sensitivitylabel-evaluateclassificationresults?view=graph-rest-1.0
       operationId: users.security.informationProtection.sensitivityLabels_evaluateClassificationResults
       parameters:
         - name: user-id
@@ -34703,6 +34748,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action evaluateRemoval
+      description: 'Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following: '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-sensitivitylabel-evaluateremoval?view=graph-rest-1.0
       operationId: users.security.informationProtection.sensitivityLabels_evaluateRemoval
       parameters:
         - name: user-id
@@ -34755,6 +34804,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action extractContentLabel
+      description: Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-sensitivitylabel-extractcontentlabel?view=graph-rest-1.0
       operationId: users.security.informationProtection.sensitivityLabels_extractContentLabel
       parameters:
         - name: user-id
@@ -36833,6 +36886,21 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.security.contentInfo:
       title: contentInfo
       type: object
@@ -37990,7 +38058,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -41095,7 +41163,7 @@ components:
       properties:
         href:
           type: string
-          description: The url of the link.
+          description: The URL of the link.
           nullable: true
       additionalProperties:
         type: object
@@ -41766,6 +41834,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
+              description: The results of every partner agent's installation status on Cloud PC.
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -44715,6 +44784,8 @@ components:
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -46088,11 +46159,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
+          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
           nullable: true
       additionalProperties:
         type: object
@@ -47398,18 +47471,40 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
-            pageLayoutType:
-              type: string
-              nullable: true
+            pageLayout:
+              $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
+            promotionKind:
+              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
+            reactions:
+              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
+            showComments:
+              type: boolean
+              description: Determines whether or not to show comments at the bottom of the page.
+              nullable: true
+            showRecommendedPages:
+              type: boolean
+              description: Determines whether or not to show recommended pages at the bottom of the page.
+              nullable: true
+            thumbnailWebUrl:
+              type: string
+              description: Url of the sitePage's thumbnail image
+              nullable: true
             title:
               type: string
+              description: Title of the sitePage.
               nullable: true
+            titleArea:
+              $ref: '#/components/schemas/microsoft.graph.titleArea'
+            canvasLayout:
+              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
             webParts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: Collection of webparts on the SharePoint page
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.termStore.store:
@@ -50981,6 +51076,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             onBehalfOf:
@@ -52672,18 +52768,112 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.webPart:
-      title: webPart
+    microsoft.graph.pageLayoutType:
+      title: pageLayoutType
+      enum:
+        - microsoftReserved
+        - article
+        - home
+        - unknownFutureValue
+      type: string
+    microsoft.graph.pagePromotionType:
+      title: pagePromotionType
+      enum:
+        - microsoftReserved
+        - page
+        - newsPost
+        - unknownFutureValue
+      type: string
+    microsoft.graph.reactionsFacet:
+      title: reactionsFacet
       type: object
       properties:
-        data:
-          $ref: '#/components/schemas/microsoft.graph.sitePageData'
-        type:
-          type: string
-          description: A unique identifier specifying the webPart type. Read-only.
+        commentCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of comments.
+          format: int32
+          nullable: true
+        likeCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of likes.
+          format: int32
+          nullable: true
+        shareCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of shares.
+          format: int32
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.titleArea:
+      title: titleArea
+      type: object
+      properties:
+        alternativeText:
+          type: string
+          description: Alternative text on the title area.
+          nullable: true
+        enableGradientEffect:
+          type: boolean
+          description: Indicates whether the title area has a gradient effect enabled.
+          nullable: true
+        imageWebUrl:
+          type: string
+          description: URL of the image in the title area.
+          nullable: true
+        layout:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
+        serverProcessedContent:
+          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
+        showAuthor:
+          type: boolean
+          description: Indicates whether the author should be shown in title area.
+          nullable: true
+        showPublishedDate:
+          type: boolean
+          description: Indicates whether the published date should be shown in title area.
+          nullable: true
+        showTextBlockAboveTitle:
+          type: boolean
+          description: Indicates whether the text block above title should be shown in title area.
+          nullable: true
+        textAboveTitle:
+          type: string
+          description: The text above title line.
+          nullable: true
+        textAlignment:
+          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
+      additionalProperties:
+        type: object
+    microsoft.graph.canvasLayout:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: canvasLayout
+          type: object
+          properties:
+            horizontalSections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
+              description: Collection of horizontal sections on the SharePoint page.
+              x-ms-navigationProperty: true
+            verticalSection:
+              $ref: '#/components/schemas/microsoft.graph.verticalSection'
+          additionalProperties:
+            type: object
+    microsoft.graph.webPart:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: webPart
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.request:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -54006,7 +54196,7 @@ components:
           properties:
             orderHint:
               type: string
-              description: Hint used to order tasks in the Bucket view of the Task Board. The format is defined as outlined here.
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
               nullable: true
           additionalProperties:
             type: object
@@ -54752,6 +54942,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
@@ -56209,11 +56400,92 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.sitePageData:
-      title: sitePageData
+    microsoft.graph.titleAreaLayoutType:
+      title: titleAreaLayoutType
+      enum:
+        - imageAndTitle
+        - plain
+        - colorBlock
+        - overlap
+        - unknownFutureValue
+      type: string
+    microsoft.graph.serverProcessedContent:
+      title: serverProcessedContent
       type: object
+      properties:
+        componentDependencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+        customMetadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
+          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
+        htmlStrings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
+        imageSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+        searchablePlainTexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
+          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
       additionalProperties:
         type: object
+    microsoft.graph.titleAreaTextAlignmentType:
+      title: titleAreaTextAlignmentType
+      enum:
+        - left
+        - center
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            layout:
+              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
+            columns:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
+              description: The set of vertical columns in this section.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.verticalSection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: verticalSection
+          type: object
+          properties:
+            emphasis:
+              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The set of web parts in this section.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.decisionItemPrincipalResourceMembershipType:
       title: decisionItemPrincipalResourceMembershipType
       enum:
@@ -58968,6 +59240,74 @@ components:
               type: string
               description: Read only value that indicates version discovered. null if discovery has not yet occurred.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.metaDataKeyStringPair:
+      title: metaDataKeyStringPair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the meta data.
+          nullable: true
+        value:
+          type: string
+          description: Value of the meta data.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.metaDataKeyValuePair:
+      title: metaDataKeyValuePair
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key of the metadata.
+          nullable: true
+        value:
+          $ref: '#/components/schemas/microsoft.graph.Json'
+      additionalProperties:
+        type: object
+    microsoft.graph.sectionEmphasisType:
+      title: sectionEmphasisType
+      enum:
+        - none
+        - netural
+        - soft
+        - strong
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionLayoutType:
+      title: horizontalSectionLayoutType
+      enum:
+        - none
+        - oneColumn
+        - twoColumns
+        - threeColumns
+        - oneThirdLeftColumn
+        - oneThirdRightColumn
+        - fullWidth
+        - unknownFutureValue
+      type: string
+    microsoft.graph.horizontalSectionColumn:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: horizontalSectionColumn
+          type: object
+          properties:
+            width:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
+              format: int32
+              nullable: true
+            webparts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.webPart'
+              description: The collection of WebParts in this column.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.settingSourceType:

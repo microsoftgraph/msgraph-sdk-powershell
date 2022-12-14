@@ -47,11 +47,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.solutionsRoot'
-          links:
-            bookingBusinesses:
-              operationId: solutions.ListBookingBusinesses
-            bookingCurrencies:
-              operationId: solutions.ListBookingCurrencies
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -279,37 +274,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
-          links:
-            appointments:
-              operationId: solutions.BookingBusinesses.ListAppointments
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            calendarView:
-              operationId: solutions.BookingBusinesses.ListCalendarView
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            customers:
-              operationId: solutions.BookingBusinesses.ListCustomers
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            customQuestions:
-              operationId: solutions.BookingBusinesses.ListCustomQuestions
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            services:
-              operationId: solutions.BookingBusinesses.ListServices
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            staffMembers:
-              operationId: solutions.BookingBusinesses.ListStaffMembers
-              parameters:
-                bookingBusiness-id: $request.path.bookingBusiness-id
-            getStaffAvailability:
-              operationId: solutions.bookingBusinesses.bookingBusiness.getStaffAvailability
-            publish:
-              operationId: solutions.bookingBusinesses.bookingBusiness.publish
-            unpublish:
-              operationId: solutions.bookingBusinesses.bookingBusiness.unpublish
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -622,9 +586,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-          links:
-            cancel:
-              operationId: solutions.bookingBusinesses.bookingBusiness.appointments.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -995,9 +956,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-          links:
-            cancel:
-              operationId: solutions.bookingBusinesses.bookingBusiness.calendarView.bookingAppointment.cancel
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

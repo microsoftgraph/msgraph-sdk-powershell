@@ -58,19 +58,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.officeGraphInsights'
-          links:
-            shared:
-              operationId: users.Insights.ListShared
-              parameters:
-                user-id: $request.path.user-id
-            trending:
-              operationId: users.Insights.ListTrending
-              parameters:
-                user-id: $request.path.user-id
-            used:
-              operationId: users.Insights.ListUsed
-              parameters:
-                user-id: $request.path.user-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -304,17 +291,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-          links:
-            lastSharedMethod:
-              operationId: users.insights.Shared.GetLastSharedMethod
-              parameters:
-                user-id: $request.path.user-id
-                sharedInsight-id: $request.path.sharedInsight-id
-            resource:
-              operationId: users.insights.Shared.GetResource
-              parameters:
-                user-id: $request.path.user-id
-                sharedInsight-id: $request.path.sharedInsight-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -675,12 +651,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.trending'
-          links:
-            resource:
-              operationId: users.insights.Trending.GetResource
-              parameters:
-                user-id: $request.path.user-id
-                trending-id: $request.path.trending-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -983,12 +953,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
-          links:
-            resource:
-              operationId: users.insights.Used.GetResource
-              parameters:
-                user-id: $request.path.user-id
-                usedInsight-id: $request.path.usedInsight-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

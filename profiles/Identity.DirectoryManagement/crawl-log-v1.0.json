@@ -429,6 +429,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
     },
+    "/domains/{domain-id}/microsoft.graph.promote": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
     "/domains/{domain-id}/microsoft.graph.verify": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"

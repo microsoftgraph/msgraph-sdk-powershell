@@ -45,9 +45,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.financials'
-          links:
-            companies:
-              operationId: financials.ListCompanies
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -329,147 +326,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.company'
-          links:
-            accounts:
-              operationId: financials.Companies.ListAccounts
-              parameters:
-                company-id: $request.path.company-id
-            agedAccountsPayable:
-              operationId: financials.Companies.ListAgedAccountsPayable
-              parameters:
-                company-id: $request.path.company-id
-            agedAccountsReceivable:
-              operationId: financials.Companies.ListAgedAccountsReceivable
-              parameters:
-                company-id: $request.path.company-id
-            companyInformation:
-              operationId: financials.Companies.ListCompanyInformation
-              parameters:
-                company-id: $request.path.company-id
-            countriesRegions:
-              operationId: financials.Companies.ListCountriesRegions
-              parameters:
-                company-id: $request.path.company-id
-            currencies:
-              operationId: financials.Companies.ListCurrencies
-              parameters:
-                company-id: $request.path.company-id
-            customerPaymentJournals:
-              operationId: financials.Companies.ListCustomerPaymentJournals
-              parameters:
-                company-id: $request.path.company-id
-            customerPayments:
-              operationId: financials.Companies.ListCustomerPayments
-              parameters:
-                company-id: $request.path.company-id
-            customers:
-              operationId: financials.Companies.ListCustomers
-              parameters:
-                company-id: $request.path.company-id
-            dimensions:
-              operationId: financials.Companies.ListDimensions
-              parameters:
-                company-id: $request.path.company-id
-            dimensionValues:
-              operationId: financials.Companies.ListDimensionValues
-              parameters:
-                company-id: $request.path.company-id
-            employees:
-              operationId: financials.Companies.ListEmployees
-              parameters:
-                company-id: $request.path.company-id
-            generalLedgerEntries:
-              operationId: financials.Companies.ListGeneralLedgerEntries
-              parameters:
-                company-id: $request.path.company-id
-            itemCategories:
-              operationId: financials.Companies.ListItemCategories
-              parameters:
-                company-id: $request.path.company-id
-            items:
-              operationId: financials.Companies.ListItems
-              parameters:
-                company-id: $request.path.company-id
-            journalLines:
-              operationId: financials.Companies.ListJournalLines
-              parameters:
-                company-id: $request.path.company-id
-            journals:
-              operationId: financials.Companies.ListJournals
-              parameters:
-                company-id: $request.path.company-id
-            paymentMethods:
-              operationId: financials.Companies.ListPaymentMethods
-              parameters:
-                company-id: $request.path.company-id
-            paymentTerms:
-              operationId: financials.Companies.ListPaymentTerms
-              parameters:
-                company-id: $request.path.company-id
-            picture:
-              operationId: financials.Companies.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-            purchaseInvoiceLines:
-              operationId: financials.Companies.ListPurchaseInvoiceLines
-              parameters:
-                company-id: $request.path.company-id
-            purchaseInvoices:
-              operationId: financials.Companies.ListPurchaseInvoices
-              parameters:
-                company-id: $request.path.company-id
-            salesCreditMemoLines:
-              operationId: financials.Companies.ListSalesCreditMemoLines
-              parameters:
-                company-id: $request.path.company-id
-            salesCreditMemos:
-              operationId: financials.Companies.ListSalesCreditMemos
-              parameters:
-                company-id: $request.path.company-id
-            salesInvoiceLines:
-              operationId: financials.Companies.ListSalesInvoiceLines
-              parameters:
-                company-id: $request.path.company-id
-            salesInvoices:
-              operationId: financials.Companies.ListSalesInvoices
-              parameters:
-                company-id: $request.path.company-id
-            salesOrderLines:
-              operationId: financials.Companies.ListSalesOrderLines
-              parameters:
-                company-id: $request.path.company-id
-            salesOrders:
-              operationId: financials.Companies.ListSalesOrders
-              parameters:
-                company-id: $request.path.company-id
-            salesQuoteLines:
-              operationId: financials.Companies.ListSalesQuoteLines
-              parameters:
-                company-id: $request.path.company-id
-            salesQuotes:
-              operationId: financials.Companies.ListSalesQuotes
-              parameters:
-                company-id: $request.path.company-id
-            shipmentMethods:
-              operationId: financials.Companies.ListShipmentMethods
-              parameters:
-                company-id: $request.path.company-id
-            taxAreas:
-              operationId: financials.Companies.ListTaxAreas
-              parameters:
-                company-id: $request.path.company-id
-            taxGroups:
-              operationId: financials.Companies.ListTaxGroups
-              parameters:
-                company-id: $request.path.company-id
-            unitsOfMeasure:
-              operationId: financials.Companies.ListUnitsGraphOPreMeasure
-              parameters:
-                company-id: $request.path.company-id
-            vendors:
-              operationId: financials.Companies.ListVendors
-              parameters:
-                company-id: $request.path.company-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1887,17 +1743,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customerPaymentJournal'
-          links:
-            account:
-              operationId: financials.companies.CustomerPaymentJournals.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                customerPaymentJournal-id: $request.path.customerPaymentJournal-id
-            customerPayments:
-              operationId: financials.companies.CustomerPaymentJournals.ListCustomerPayments
-              parameters:
-                company-id: $request.path.company-id
-                customerPaymentJournal-id: $request.path.customerPaymentJournal-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2268,13 +2113,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customerPayment'
-          links:
-            customer:
-              operationId: financials.companies.customerPaymentJournals.CustomerPayments.GetCustomer
-              parameters:
-                company-id: $request.path.company-id
-                customerPaymentJournal-id: $request.path.customerPaymentJournal-id
-                customerPayment-id: $request.path.customerPayment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2453,37 +2291,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customer'
-          links:
-            currency:
-              operationId: financials.companies.customerPaymentJournals.customerPayments.Customer.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                customerPaymentJournal-id: $request.path.customerPaymentJournal-id
-                customerPayment-id: $request.path.customerPayment-id
-            paymentMethod:
-              operationId: financials.companies.customerPaymentJournals.customerPayments.Customer.GetPaymentMethod
-              parameters:
-                company-id: $request.path.company-id
-                customerPaymentJournal-id: $request.path.customerPaymentJournal-id
-                customerPayment-id: $request.path.customerPayment-id
-            paymentTerm:
-              operationId: financials.companies.customerPaymentJournals.customerPayments.Customer.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                customerPaymentJournal-id: $request.path.customerPaymentJournal-id
-                customerPayment-id: $request.path.customerPayment-id
-            picture:
-              operationId: financials.companies.customerPaymentJournals.customerPayments.Customer.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                customerPaymentJournal-id: $request.path.customerPaymentJournal-id
-                customerPayment-id: $request.path.customerPayment-id
-            shipmentMethod:
-              operationId: financials.companies.customerPaymentJournals.customerPayments.Customer.GetShipmentMethod
-              parameters:
-                company-id: $request.path.company-id
-                customerPaymentJournal-id: $request.path.customerPaymentJournal-id
-                customerPayment-id: $request.path.customerPayment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3823,12 +3630,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customerPayment'
-          links:
-            customer:
-              operationId: financials.companies.CustomerPayments.GetCustomer
-              parameters:
-                company-id: $request.path.company-id
-                customerPayment-id: $request.path.customerPayment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3983,32 +3784,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customer'
-          links:
-            currency:
-              operationId: financials.companies.customerPayments.Customer.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                customerPayment-id: $request.path.customerPayment-id
-            paymentMethod:
-              operationId: financials.companies.customerPayments.Customer.GetPaymentMethod
-              parameters:
-                company-id: $request.path.company-id
-                customerPayment-id: $request.path.customerPayment-id
-            paymentTerm:
-              operationId: financials.companies.customerPayments.Customer.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                customerPayment-id: $request.path.customerPayment-id
-            picture:
-              operationId: financials.companies.customerPayments.Customer.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                customerPayment-id: $request.path.customerPayment-id
-            shipmentMethod:
-              operationId: financials.companies.customerPayments.Customer.GetShipmentMethod
-              parameters:
-                company-id: $request.path.company-id
-                customerPayment-id: $request.path.customerPayment-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5212,32 +4987,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customer'
-          links:
-            currency:
-              operationId: financials.companies.Customers.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                customer-id: $request.path.customer-id
-            paymentMethod:
-              operationId: financials.companies.Customers.GetPaymentMethod
-              parameters:
-                company-id: $request.path.company-id
-                customer-id: $request.path.customer-id
-            paymentTerm:
-              operationId: financials.companies.Customers.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                customer-id: $request.path.customer-id
-            picture:
-              operationId: financials.companies.Customers.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                customer-id: $request.path.customer-id
-            shipmentMethod:
-              operationId: financials.companies.Customers.GetShipmentMethod
-              parameters:
-                company-id: $request.path.company-id
-                customer-id: $request.path.customer-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6334,12 +6083,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.dimension'
-          links:
-            dimensionValues:
-              operationId: financials.companies.Dimensions.ListDimensionValues
-              parameters:
-                company-id: $request.path.company-id
-                dimension-id: $request.path.dimension-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6852,12 +6595,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.employee'
-          links:
-            picture:
-              operationId: financials.companies.Employees.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                employee-id: $request.path.employee-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7455,12 +7192,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.generalLedgerEntry'
-          links:
-            account:
-              operationId: financials.companies.GeneralLedgerEntries.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                generalLedgerEntry-id: $request.path.generalLedgerEntry-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7981,17 +7712,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.Items.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                item-id: $request.path.item-id
-            picture:
-              operationId: financials.companies.Items.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                item-id: $request.path.item-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8757,12 +8477,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.journalLine'
-          links:
-            account:
-              operationId: financials.companies.JournalLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                journalLine-id: $request.path.journalLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9077,19 +8791,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.journal'
-          links:
-            account:
-              operationId: financials.companies.Journals.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                journal-id: $request.path.journal-id
-            journalLines:
-              operationId: financials.companies.Journals.ListJournalLines
-              parameters:
-                company-id: $request.path.company-id
-                journal-id: $request.path.journal-id
-            post:
-              operationId: financials.companies.company.journals.journal.post
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9448,13 +9149,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.journalLine'
-          links:
-            account:
-              operationId: financials.companies.journals.JournalLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                journal-id: $request.path.journal-id
-                journalLine-id: $request.path.journalLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10650,17 +10344,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceLine'
-          links:
-            account:
-              operationId: financials.companies.PurchaseInvoiceLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoiceLine-id: $request.path.purchaseInvoiceLine-id
-            item:
-              operationId: financials.companies.PurchaseInvoiceLines.GetItem
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoiceLine-id: $request.path.purchaseInvoiceLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10835,17 +10518,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.purchaseInvoiceLines.Item.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoiceLine-id: $request.path.purchaseInvoiceLine-id
-            picture:
-              operationId: financials.companies.purchaseInvoiceLines.Item.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoiceLine-id: $request.path.purchaseInvoiceLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11648,24 +11320,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.purchaseInvoice'
-          links:
-            currency:
-              operationId: financials.companies.PurchaseInvoices.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
-            purchaseInvoiceLines:
-              operationId: financials.companies.PurchaseInvoices.ListPurchaseInvoiceLines
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
-            vendor:
-              operationId: financials.companies.PurchaseInvoices.GetVendor
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
-            post:
-              operationId: financials.companies.company.purchaseInvoices.purchaseInvoice.post
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12093,19 +11747,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.purchaseInvoiceLine'
-          links:
-            account:
-              operationId: financials.companies.purchaseInvoices.PurchaseInvoiceLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
-                purchaseInvoiceLine-id: $request.path.purchaseInvoiceLine-id
-            item:
-              operationId: financials.companies.purchaseInvoices.PurchaseInvoiceLines.GetItem
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
-                purchaseInvoiceLine-id: $request.path.purchaseInvoiceLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12304,19 +11945,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines.Item.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
-                purchaseInvoiceLine-id: $request.path.purchaseInvoiceLine-id
-            picture:
-              operationId: financials.companies.purchaseInvoices.purchaseInvoiceLines.Item.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
-                purchaseInvoiceLine-id: $request.path.purchaseInvoiceLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13056,27 +12684,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.vendor'
-          links:
-            currency:
-              operationId: financials.companies.purchaseInvoices.Vendor.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
-            paymentMethod:
-              operationId: financials.companies.purchaseInvoices.Vendor.GetPaymentMethod
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
-            paymentTerm:
-              operationId: financials.companies.purchaseInvoices.Vendor.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
-            picture:
-              operationId: financials.companies.purchaseInvoices.Vendor.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                purchaseInvoice-id: $request.path.purchaseInvoice-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14124,17 +13731,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesCreditMemoLine'
-          links:
-            account:
-              operationId: financials.companies.SalesCreditMemoLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemoLine-id: $request.path.salesCreditMemoLine-id
-            item:
-              operationId: financials.companies.SalesCreditMemoLines.GetItem
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemoLine-id: $request.path.salesCreditMemoLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14309,17 +13905,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.salesCreditMemoLines.Item.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemoLine-id: $request.path.salesCreditMemoLine-id
-            picture:
-              operationId: financials.companies.salesCreditMemoLines.Item.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemoLine-id: $request.path.salesCreditMemoLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15134,27 +14719,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesCreditMemo'
-          links:
-            currency:
-              operationId: financials.companies.SalesCreditMemos.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-            customer:
-              operationId: financials.companies.SalesCreditMemos.GetCustomer
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-            paymentTerm:
-              operationId: financials.companies.SalesCreditMemos.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-            salesCreditMemoLines:
-              operationId: financials.companies.SalesCreditMemos.ListSalesCreditMemoLines
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15407,32 +14971,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customer'
-          links:
-            currency:
-              operationId: financials.companies.salesCreditMemos.Customer.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-            paymentMethod:
-              operationId: financials.companies.salesCreditMemos.Customer.GetPaymentMethod
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-            paymentTerm:
-              operationId: financials.companies.salesCreditMemos.Customer.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-            picture:
-              operationId: financials.companies.salesCreditMemos.Customer.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-            shipmentMethod:
-              operationId: financials.companies.salesCreditMemos.Customer.GetShipmentMethod
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16758,19 +16296,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesCreditMemoLine'
-          links:
-            account:
-              operationId: financials.companies.salesCreditMemos.SalesCreditMemoLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-                salesCreditMemoLine-id: $request.path.salesCreditMemoLine-id
-            item:
-              operationId: financials.companies.salesCreditMemos.SalesCreditMemoLines.GetItem
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-                salesCreditMemoLine-id: $request.path.salesCreditMemoLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -16969,19 +16494,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.salesCreditMemos.salesCreditMemoLines.Item.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-                salesCreditMemoLine-id: $request.path.salesCreditMemoLine-id
-            picture:
-              operationId: financials.companies.salesCreditMemos.salesCreditMemoLines.Item.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesCreditMemo-id: $request.path.salesCreditMemo-id
-                salesCreditMemoLine-id: $request.path.salesCreditMemoLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17860,17 +17372,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesInvoiceLine'
-          links:
-            account:
-              operationId: financials.companies.SalesInvoiceLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoiceLine-id: $request.path.salesInvoiceLine-id
-            item:
-              operationId: financials.companies.SalesInvoiceLines.GetItem
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoiceLine-id: $request.path.salesInvoiceLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18045,17 +17546,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.salesInvoiceLines.Item.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoiceLine-id: $request.path.salesInvoiceLine-id
-            picture:
-              operationId: financials.companies.salesInvoiceLines.Item.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoiceLine-id: $request.path.salesInvoiceLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18894,42 +18384,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesInvoice'
-          links:
-            currency:
-              operationId: financials.companies.SalesInvoices.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-            customer:
-              operationId: financials.companies.SalesInvoices.GetCustomer
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-            paymentTerm:
-              operationId: financials.companies.SalesInvoices.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-            salesInvoiceLines:
-              operationId: financials.companies.SalesInvoices.ListSalesInvoiceLines
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-            shipmentMethod:
-              operationId: financials.companies.SalesInvoices.GetShipmentMethod
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-            cancel:
-              operationId: financials.companies.company.salesInvoices.salesInvoice.cancel
-            cancelAndSend:
-              operationId: financials.companies.company.salesInvoices.salesInvoice.cancelAndSend
-            post:
-              operationId: financials.companies.company.salesInvoices.salesInvoice.post
-            postAndSend:
-              operationId: financials.companies.company.salesInvoices.salesInvoice.postAndSend
-            send:
-              operationId: financials.companies.company.salesInvoices.salesInvoice.send
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -19182,32 +18636,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customer'
-          links:
-            currency:
-              operationId: financials.companies.salesInvoices.Customer.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-            paymentMethod:
-              operationId: financials.companies.salesInvoices.Customer.GetPaymentMethod
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-            paymentTerm:
-              operationId: financials.companies.salesInvoices.Customer.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-            picture:
-              operationId: financials.companies.salesInvoices.Customer.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-            shipmentMethod:
-              operationId: financials.companies.salesInvoices.Customer.GetShipmentMethod
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20678,19 +20106,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesInvoiceLine'
-          links:
-            account:
-              operationId: financials.companies.salesInvoices.SalesInvoiceLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-                salesInvoiceLine-id: $request.path.salesInvoiceLine-id
-            item:
-              operationId: financials.companies.salesInvoices.SalesInvoiceLines.GetItem
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-                salesInvoiceLine-id: $request.path.salesInvoiceLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -20889,19 +20304,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.salesInvoices.salesInvoiceLines.Item.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-                salesInvoiceLine-id: $request.path.salesInvoiceLine-id
-            picture:
-              operationId: financials.companies.salesInvoices.salesInvoiceLines.Item.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesInvoice-id: $request.path.salesInvoice-id
-                salesInvoiceLine-id: $request.path.salesInvoiceLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -21925,17 +21327,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesOrderLine'
-          links:
-            account:
-              operationId: financials.companies.SalesOrderLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                salesOrderLine-id: $request.path.salesOrderLine-id
-            item:
-              operationId: financials.companies.SalesOrderLines.GetItem
-              parameters:
-                company-id: $request.path.company-id
-                salesOrderLine-id: $request.path.salesOrderLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22110,17 +21501,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.salesOrderLines.Item.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                salesOrderLine-id: $request.path.salesOrderLine-id
-            picture:
-              operationId: financials.companies.salesOrderLines.Item.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesOrderLine-id: $request.path.salesOrderLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22947,27 +22327,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesOrder'
-          links:
-            currency:
-              operationId: financials.companies.SalesOrders.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-            customer:
-              operationId: financials.companies.SalesOrders.GetCustomer
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-            paymentTerm:
-              operationId: financials.companies.SalesOrders.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-            salesOrderLines:
-              operationId: financials.companies.SalesOrders.ListSalesOrderLines
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23220,32 +22579,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customer'
-          links:
-            currency:
-              operationId: financials.companies.salesOrders.Customer.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-            paymentMethod:
-              operationId: financials.companies.salesOrders.Customer.GetPaymentMethod
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-            paymentTerm:
-              operationId: financials.companies.salesOrders.Customer.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-            picture:
-              operationId: financials.companies.salesOrders.Customer.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-            shipmentMethod:
-              operationId: financials.companies.salesOrders.Customer.GetShipmentMethod
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24587,19 +23920,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesOrderLine'
-          links:
-            account:
-              operationId: financials.companies.salesOrders.SalesOrderLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-                salesOrderLine-id: $request.path.salesOrderLine-id
-            item:
-              operationId: financials.companies.salesOrders.SalesOrderLines.GetItem
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-                salesOrderLine-id: $request.path.salesOrderLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -24798,19 +24118,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.salesOrders.salesOrderLines.Item.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-                salesOrderLine-id: $request.path.salesOrderLine-id
-            picture:
-              operationId: financials.companies.salesOrders.salesOrderLines.Item.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesOrder-id: $request.path.salesOrder-id
-                salesOrderLine-id: $request.path.salesOrderLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25681,17 +24988,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesQuoteLine'
-          links:
-            account:
-              operationId: financials.companies.SalesQuoteLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                salesQuoteLine-id: $request.path.salesQuoteLine-id
-            item:
-              operationId: financials.companies.SalesQuoteLines.GetItem
-              parameters:
-                company-id: $request.path.company-id
-                salesQuoteLine-id: $request.path.salesQuoteLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -25866,17 +25162,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.salesQuoteLines.Item.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                salesQuoteLine-id: $request.path.salesQuoteLine-id
-            picture:
-              operationId: financials.companies.salesQuoteLines.Item.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesQuoteLine-id: $request.path.salesQuoteLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26707,36 +25992,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesQuote'
-          links:
-            currency:
-              operationId: financials.companies.SalesQuotes.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-            customer:
-              operationId: financials.companies.SalesQuotes.GetCustomer
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-            paymentTerm:
-              operationId: financials.companies.SalesQuotes.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-            salesQuoteLines:
-              operationId: financials.companies.SalesQuotes.ListSalesQuoteLines
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-            shipmentMethod:
-              operationId: financials.companies.SalesQuotes.GetShipmentMethod
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-            makeInvoice:
-              operationId: financials.companies.company.salesQuotes.salesQuote.makeInvoice
-            send:
-              operationId: financials.companies.company.salesQuotes.salesQuote.send
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -26989,32 +26244,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.customer'
-          links:
-            currency:
-              operationId: financials.companies.salesQuotes.Customer.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-            paymentMethod:
-              operationId: financials.companies.salesQuotes.Customer.GetPaymentMethod
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-            paymentTerm:
-              operationId: financials.companies.salesQuotes.Customer.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-            picture:
-              operationId: financials.companies.salesQuotes.Customer.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-            shipmentMethod:
-              operationId: financials.companies.salesQuotes.Customer.GetShipmentMethod
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28390,19 +27619,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.salesQuoteLine'
-          links:
-            account:
-              operationId: financials.companies.salesQuotes.SalesQuoteLines.GetAccount
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-                salesQuoteLine-id: $request.path.salesQuoteLine-id
-            item:
-              operationId: financials.companies.salesQuotes.SalesQuoteLines.GetItem
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-                salesQuoteLine-id: $request.path.salesQuoteLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -28601,19 +27817,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.item'
-          links:
-            itemCategory:
-              operationId: financials.companies.salesQuotes.salesQuoteLines.Item.GetItemCategory
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-                salesQuoteLine-id: $request.path.salesQuoteLine-id
-            picture:
-              operationId: financials.companies.salesQuotes.salesQuoteLines.Item.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                salesQuote-id: $request.path.salesQuote-id
-                salesQuoteLine-id: $request.path.salesQuoteLine-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -30584,27 +29787,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.vendor'
-          links:
-            currency:
-              operationId: financials.companies.Vendors.GetCurrency
-              parameters:
-                company-id: $request.path.company-id
-                vendor-id: $request.path.vendor-id
-            paymentMethod:
-              operationId: financials.companies.Vendors.GetPaymentMethod
-              parameters:
-                company-id: $request.path.company-id
-                vendor-id: $request.path.vendor-id
-            paymentTerm:
-              operationId: financials.companies.Vendors.GetPaymentTerm
-              parameters:
-                company-id: $request.path.company-id
-                vendor-id: $request.path.vendor-id
-            picture:
-              operationId: financials.companies.Vendors.ListPicture
-              parameters:
-                company-id: $request.path.company-id
-                vendor-id: $request.path.vendor-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

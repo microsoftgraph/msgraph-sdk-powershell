@@ -517,6 +517,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
+    "/reports/microsoft.graph.getTeamsTeamCounts(period='{period}')": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
     "/reports/microsoft.graph.getTeamsUserActivityCounts(period='{period}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"

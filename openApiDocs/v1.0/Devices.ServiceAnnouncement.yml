@@ -51,13 +51,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.serviceAnnouncement'
-          links:
-            healthOverviews:
-              operationId: admin.ServiceAnnouncement.ListHealthOverviews
-            issues:
-              operationId: admin.ServiceAnnouncement.ListIssues
-            messages:
-              operationId: admin.ServiceAnnouncement.ListMessages
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -240,11 +233,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealth'
-          links:
-            issues:
-              operationId: admin.serviceAnnouncement.HealthOverviews.ListIssues
-              parameters:
-                serviceHealth-id: $request.path.serviceHealth-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -510,9 +498,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
-          links:
-            incidentReport:
-              operationId: admin.serviceAnnouncement.healthOverviews.serviceHealth.issues.serviceHealthIssue.incidentReport
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -812,9 +797,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.serviceHealthIssue'
-          links:
-            incidentReport:
-              operationId: admin.serviceAnnouncement.issues.serviceHealthIssue.incidentReport
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1098,11 +1080,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.serviceUpdateMessage'
-          links:
-            attachments:
-              operationId: admin.serviceAnnouncement.Messages.ListAttachments
-              parameters:
-                serviceUpdateMessage-id: $request.path.serviceUpdateMessage-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

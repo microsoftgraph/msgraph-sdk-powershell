@@ -150,17 +150,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-          links:
-            checkMemberGroups:
-              operationId: directoryObjects.directoryObject.checkMemberGroups
-            checkMemberObjects:
-              operationId: directoryObjects.directoryObject.checkMemberObjects
-            getMemberGroups:
-              operationId: directoryObjects.directoryObject.getMemberGroups
-            getMemberObjects:
-              operationId: directoryObjects.directoryObject.getMemberObjects
-            restore:
-              operationId: directoryObjects.directoryObject.restore
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation

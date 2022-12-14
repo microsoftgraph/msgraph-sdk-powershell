@@ -1709,7 +1709,23 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },
+    "/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns/{horizontalSectionColumn-id}/webparts/{webPart-id}/microsoft.graph.getPositionOfWebPart": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/verticalSection/webparts/{webPart-id}/microsoft.graph.getPositionOfWebPart": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/microsoft.graph.getWebPartsByPosition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
     "/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/microsoft.graph.publish": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
+    "/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/webParts/{webPart-id}/microsoft.graph.getPositionOfWebPart": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },
